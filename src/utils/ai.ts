@@ -10,7 +10,9 @@
  *    https://tcb.cloud.tencent.com/dev?envId=你的envId#/ai
  *    推荐先开 deepseek-v4-flash（便宜快）+ hunyuan-2.0-instruct-20251111
  *
- * 3. 已用真实身份登录（手机号/邮箱/微信/账号密码），匿名用户没有 AI 权限
+ * 3. 游戏项目【不强制登录】—— 已放开匿名限制（设计要求"进来就能玩"）。
+ *    注意：真实业务里匿名用户用 AI 通常需要控制台开"匿名可访问 AI"。
+ *    如果遇到 Anonymous 用户被拒，去控制台 → AI+ → 调用方设置中放行匿名。
  *
  * 模型选择速查：
  * - deepseek-v4-flash       便宜、快，日常对话/简单生成
@@ -27,14 +29,27 @@ import { auth } from './cloudbase';
 // 创建 AI 实例
 export const ai = app.ai();
 
-// 默认模型（可在调用时覆盖）
-export const DEFAULT_MODEL = 'deepseek-v4-flash';
+// 默认模型（可在调用时覆盖）。newtest 环境已开通：hy3-preview / glm-5 / glm-5.1
+export const DEFAULT_MODEL = 'hy3-preview';
 
-/** 调用前的登录态校验：匿名用户会被拒绝调用 AI */
+/** 调用前确保有登录会话：游戏不强制账号登录，这里自动做【匿名登录】拿到会话。
+ *  纯 Publishable Key（无会话）直调 AI 会报 EXCEED_AUTHORITY，匿名会话可解决。
+ *  ⚠️ 需在控制台【身份认证 → 登录方式】开启「匿名登录」。
+ */
 async function ensureSignedIn() {
-  const { data } = await auth.getSession();
-  if (!data?.session || (data.session as any).user?.is_anonymous) {
-    throw new Error('AI 调用前请先登录（手机号/邮箱/微信/账号密码），匿名用户不能调用 AI');
+  try {
+    const { data } = await auth.getSession();
+    if (data?.session) return true;
+  } catch (e) {
+    // 无会话，继续走匿名登录
+  }
+  try {
+    await auth.signInAnonymously();
+    console.log('%c[AI] 匿名登录成功', 'color:#7C6FE0');
+    return true;
+  } catch (e) {
+    console.warn('[AI] 匿名登录失败（请在控制台开启「匿名登录」登录方式）：', e);
+    return false;
   }
 }
 

@@ -1,0 +1,9 @@
+{
+  "name": "galgame-ai",
+  "version": "1.0.0",
+  "description": "赛博恋爱文游 AI 云函数（台词/开放题回应/结局报告/结局生图）",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.16.0"
+  }
+}

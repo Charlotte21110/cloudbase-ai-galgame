@@ -1,10 +1,20 @@
 {
-  "envId": "your-env-id",
+  "envId": "newtest-6gzd5kqm6c4eaa2b",
   "$schema": "https://static.cloudbase.net/cli/cloudbaserc.schema.json",
   "app": {
     "buildCommand": "npm run build:h5",
     "outputDir": "dist/build/h5",
     "deployPath": "/"
   },
-  "functionRoot": "./cloudfunctions"
+  "functionRoot": "./cloudfunctions",
+  "functions": [
+    {
+      "name": "galgame-ai",
+      "timeout": 20,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": ["node_modules", "node_modules/**/*", ".git"]
+    }
+  ]
 } 

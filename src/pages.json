@@ -1,6 +1,42 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/game/pick/pick",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "赛博恋爱文游"
+			}
+		},
+		{
+			"path": "pages/game/opening/opening",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "开场"
+			}
+		},
+		{
+			"path": "pages/game/play/play",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "恋爱进行中",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/game/ending/ending",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "结局"
+			}
+		},
+		{
+			"path": "pages/game/report/report",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "恋爱成绩单"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "CloudBase UniApp",
@@ -59,9 +95,9 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "CloudBase UniApp",
-		"navigationBarBackgroundColor": "#667eea",
-		"backgroundColor": "#f5f5f5"
+		"navigationBarTitleText": "赛博恋爱文游",
+		"navigationBarBackgroundColor": "#FF7EA8",
+		"backgroundColor": "#FFF5F8"
 	},
 	"easycom": {
 	"autoscan": true,

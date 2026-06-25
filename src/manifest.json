@@ -52,6 +52,10 @@
     /* 小程序特有相关 */
     "mp-weixin" : {
         "appid" : "",
+        /* 上线前需在【微信公众平台→开发管理→服务器域名→request合法域名】添加：
+           https://newtest-6gzd5kqm6c4eaa2b-1308771514.ap-shanghai.app.tcloudbase.com  (AI 云函数 HTTP 访问)
+           https://tcb-api.tencentcloudapi.com  (CloudBase SDK)
+           开发期 urlCheck:false 已免校验，真机/发布必须加上 */
         "setting" : {
             "urlCheck" : false
         },

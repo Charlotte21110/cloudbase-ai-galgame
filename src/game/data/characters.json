@@ -1,0 +1,68 @@
+[
+  {
+    "_id": "char_guchenzhou",
+    "id": "guchenzhou",
+    "name": "顾沉舟",
+    "gender": "male",
+    "style": "real",
+    "persona": "冷峻禁欲系总裁，掌控欲强、嘴硬心软，习惯用命令句式掩饰在乎",
+    "tagline": "我的时间很贵，但可以为你浪费。",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_luyan",
+    "id": "luyan",
+    "name": "陆衍",
+    "gender": "male",
+    "style": "real",
+    "persona": "阳光体育竹马，宠溺暖男，娇妻文学男主，黏人又护短",
+    "tagline": "别人我不管，你只能黏着我。",
+    "themeKey": "sakura",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_baishiyu",
+    "id": "baishiyu",
+    "name": "白时屿",
+    "gender": "male",
+    "style": "anime",
+    "persona": "清冷天才医生兼小提琴家，矜贵疏离的精英，话少而克制",
+    "tagline": "你是我手术刀之外，唯一的失控。",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_jiangzhaoyue",
+    "id": "jiangzhaoyue",
+    "name": "江照月",
+    "gender": "female",
+    "style": "real",
+    "persona": "杀伐果断的大女主总裁/女王，强势又心软，不轻易示弱",
+    "tagline": "跪着的我不需要，站着陪我的才配。",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_lintaotao",
+    "id": "lintaotao",
+    "name": "林桃桃",
+    "gender": "female",
+    "style": "anime",
+    "persona": "元气治愈萌妹，黏人撒娇、甜到犯规，情绪写在脸上",
+    "tagline": "今天也要第一个想我哦，不然我会哭给你看！",
+    "themeKey": "sakura",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_sumanqing",
+    "id": "sumanqing",
+    "name": "苏曼卿",
+    "gender": "female",
+    "style": "real",
+    "persona": "高冷御姐学姐，外表清冷内心闷骚，撩人于无形",
+    "tagline": "靠这么近，是想被我记住吗？",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  }
+]
