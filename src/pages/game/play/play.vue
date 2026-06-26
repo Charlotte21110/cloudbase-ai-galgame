@@ -3,16 +3,23 @@
     <image v-if="bg" class="bg" :src="bg" mode="aspectFill" />
     <view class="bg-mask"></view>
 
-    <!-- 顶部 HUD -->
-    <view class="hud">
-      <view class="hud-row">
-        <text class="hud-name">{{ char?.name }}</text>
-        <text class="hud-score">羁绊 {{ session.score }}/100</text>
+    <!-- 左上角：极简角色名 + 幕数 -->
+    <view class="hud-name-tag">
+      <text class="hud-name">{{ char?.name }}</text>
+      <text class="hud-step">第 {{ session.step }} 幕</text>
+    </view>
+
+    <!-- 右上角：竖向羁绊条（数字 / 竖条 / 标签） -->
+    <view class="affinity">
+      <text class="affinity-num">{{ session.score }}</text>
+      <view class="affinity-bar">
+        <view
+          class="affinity-fill"
+          :class="{ bump: bumping }"
+          :style="{ height: session.score + '%' }"
+        ></view>
       </view>
-      <view class="bar">
-        <view class="bar-fill" :class="{ bump: bumping }" :style="{ width: session.score + '%' }"></view>
-      </view>
-      <text class="hud-step">{{ node?.chapter || '长夜' }} · 第 {{ session.step }} 幕</text>
+      <text class="affinity-label">羁绊</text>
     </view>
 
     <!-- 飘分 / 心形粒子 -->
@@ -387,37 +394,82 @@ onUnmounted(() => clearInterval(typingTimer))
   background: linear-gradient(180deg, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.6) 100%);
 }
 
-/* HUD */
-.hud {
+/* 左上角：角色名标签 —— 极简，不再用厚黑色胶囊 */
+.hud-name-tag {
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: calc(28rpx + env(safe-area-inset-top));
+  left: 28rpx;
   z-index: 10;
-  padding: 24rpx 32rpx 16rpx;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0));
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 20rpx;
+  background: rgba(20, 16, 32, 0.42);
+  backdrop-filter: blur(8rpx);
+  -webkit-backdrop-filter: blur(8rpx);
+  border-radius: 14rpx;
+  border-left: 4rpx solid var(--c-primary);
 }
-.hud-row { display: flex; justify-content: space-between; align-items: center; }
-.hud-name { color: #fff; font-size: 26rpx; font-weight: 700; }
-.hud-score { color: #fff; font-size: 24rpx; }
-.bar {
-  margin-top: 12rpx;
-  height: 16rpx;
-  border-radius: 12rpx;
-  background: rgba(255,255,255,0.3);
+.hud-name {
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+}
+.hud-step {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 20rpx;
+  margin-top: 4rpx;
+  letter-spacing: 2rpx;
+}
+
+/* 右上角：竖向羁绊条 —— 数字 / 竖条 / 标签 */
+.affinity {
+  position: absolute;
+  top: calc(28rpx + env(safe-area-inset-top));
+  right: 28rpx;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+.affinity-num {
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: 800;
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
+.affinity-bar {
+  position: relative;
+  width: 14rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+  background: rgba(255, 255, 255, 0.22);
   overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.25);
 }
-.bar-fill {
-  height: 100%;
-  border-radius: 12rpx;
-  background: linear-gradient(90deg, var(--c-primary), var(--c-up));
-  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+.affinity-fill {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  border-radius: 10rpx;
+  background: linear-gradient(180deg, var(--c-up), var(--c-primary));
+  transition: height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.bar-fill.bump { animation: bump 0.5s; }
-@keyframes bump {
-  0% { transform: scaleY(1); }
-  50% { transform: scaleY(1.8); }
-  100% { transform: scaleY(1); }
+.affinity-fill.bump { animation: bumpV 0.5s; }
+@keyframes bumpV {
+  0% { transform: scaleX(1); }
+  50% { transform: scaleX(1.8); }
+  100% { transform: scaleX(1); }
 }
-.hud-step { display: block; color: rgba(255,255,255,0.85); font-size: 20rpx; margin-top: 8rpx; letter-spacing: 2rpx; }
+.affinity-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 20rpx;
+  letter-spacing: 4rpx;
+  writing-mode: vertical-rl;
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.5);
+}
 
 /* 飘分 */
 .delta {
@@ -451,15 +503,17 @@ onUnmounted(() => clearInterval(typingTimer))
   100% { opacity: 0; transform: translateY(-260rpx) scale(1.2); }
 }
 
-/* 立绘 */
+/* 立绘：底部贴到对话框上沿，不再悬在屏幕中间 */
 .portrait {
   position: absolute;
   z-index: 5;
   left: 50%;
-  bottom: 440rpx;
+  /* .dock 的内容高度约 320~380rpx，这里让立绘底部正好落在 dock 上沿 */
+  bottom: 320rpx;
   transform: translateX(-50%);
-  width: 560rpx;
-  height: 720rpx;
+  /* 用 rem 控制立绘整体尺寸；宽高比保持 7:9 = 560:720 */
+  width: 25.28rem;
+  height: 32.5rem;
   filter: drop-shadow(0 12rpx 24rpx rgba(0,0,0,0.3));
   opacity: 0;
   transition: opacity 0.5s ease;
