@@ -3,6 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <script>
+      // Polyfill: @cloudbase/js-sdk 内部的 bson 模块会调用 process.getBuiltinModule('v8')
+      // 这是 Node 22+ 的 API，浏览器没有 → 必须 polyfill 否则白屏
+      (function () {
+        var g = typeof globalThis !== 'undefined' ? globalThis : window;
+        if (!g.process) g.process = {};
+        if (typeof g.process.getBuiltinModule !== 'function') {
+          g.process.getBuiltinModule = function () { return {}; };
+        }
+      })();
+    </script>
+    <script>
       var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
         CSS.supports('top: constant(a)'))
       document.write(

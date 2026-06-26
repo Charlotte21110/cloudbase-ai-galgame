@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import { session, currentVariant } from '@/game/store'
+import { session } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
 import { faceImg, bgImg } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
@@ -42,9 +42,11 @@ onMounted(() => {
 const themeVars = computed(() => (char.value ? themeCssVars(char.value.themeKey) : {}))
 const avatar = computed(() => (char.value ? faceImg(char.value.style, char.value.id, 'happy') : ''))
 const bg = computed(() => {
-  const v = currentVariant()
-  if (!char.value || !v) return ''
-  return bgImg(char.value.style, v.sceneKey)
+  const s = session.script
+  if (!char.value || !s) return ''
+  const startNode = s.nodes.find((n) => n.id === s.start)
+  const key = startNode?.sceneKey || 'office_night'
+  return bgImg(char.value.style, key)
 })
 const tip = computed(() =>
   session.script ? replaceTokens(session.script.openingTip, session.char) : ''

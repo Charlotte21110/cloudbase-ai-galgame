@@ -1,23 +1,18 @@
 <template>
-  <view class="play" :class="{ shake: shaking }" :style="themeVars">
+  <view class="play" :class="{ shake: shaking }" :style="themeVars" @click="onScreenTap">
     <image v-if="bg" class="bg" :src="bg" mode="aspectFill" />
     <view class="bg-mask"></view>
 
-    <!-- 顶部：角色名 + 当前幕 -->
+    <!-- 顶部 HUD -->
     <view class="hud">
-      <view class="hud-chip">
+      <view class="hud-row">
         <text class="hud-name">{{ char?.name }}</text>
-        <text class="hud-step">第 {{ stepNo }} 幕</text>
+        <text class="hud-score">羁绊 {{ session.score }}/100</text>
       </view>
-    </view>
-
-    <!-- 侧边羁绊竖条 -->
-    <view class="affinity">
-      <text class="affinity-num" :class="{ bump: bumping }">{{ session.score }}</text>
-      <view class="affinity-track">
-        <view class="affinity-fill" :style="{ height: session.score + '%' }"></view>
+      <view class="bar">
+        <view class="bar-fill" :class="{ bump: bumping }" :style="{ width: session.score + '%' }"></view>
       </view>
-      <text class="affinity-label">羁绊</text>
+      <text class="hud-step">{{ node?.chapter || '长夜' }} · 第 {{ session.step }} 幕</text>
     </view>
 
     <!-- 飘分 / 心形粒子 -->
@@ -26,68 +21,50 @@
       <text v-for="i in 6" :key="i" class="heart" :style="heartStyle(i)">💗</text>
     </view>
 
-    <!-- 立绘：贴底，从底部升起，下部由对话框自然覆盖 -->
-    <view v-if="portrait" class="portrait-wrap" :class="{ in: portraitIn }">
-      <image class="portrait-img" :src="portrait" mode="aspectFill" />
-    </view>
+    <!-- 立绘 -->
+    <image v-if="portrait && showPortrait" class="portrait" :class="{ in: portraitIn }" :src="portrait" mode="aspectFit" />
 
     <!-- 对话框 / 操作区 -->
     <view class="dock">
-      <!-- 情境 / 旁白 -->
-      <view v-if="phase === 'scene' || phase === 'narration'" class="bubble narr">
-        <text class="narr-label">{{ phase === 'narration' ? '旁白' : '' }}</text>
-        <text class="narr-text">{{ typed }}</text>
+      <!-- 文本气泡：旁白 / TA 对话 / 主角心声 / TA 回应 -->
+      <view class="bubble" :class="bubbleClass">
+        <text v-if="bubbleLabel" class="bubble-label">{{ bubbleLabel }}</text>
+        <text class="bubble-text" :class="{ os: phase === 'react' && curOS }">{{ typed }}</text>
+        <text v-if="phase === 'react' && curOS && doneTyping" class="os-text">（{{ curOS }}）</text>
       </view>
 
-      <!-- TA 回应 -->
-      <view v-else-if="phase === 'react' || phase === 'reacting'" class="bubble line">
-        <text class="speaker">{{ char?.name }}</text>
-        <text class="line-text">{{ phase === 'reacting' ? '……' : typed }}</text>
-        <text v-if="phase === 'react' && os" class="os-text">（{{ os }}）</text>
-      </view>
-
-      <!-- 开放题题面 -->
-      <view v-else-if="phase === 'open'" class="bubble narr">
-        <text class="narr-text">{{ typed }}</text>
-      </view>
-
-      <!-- 操作区 -->
       <view class="actions">
-        <!-- 选择题选项 -->
-        <template v-if="phase === 'scene' && node?.type === 'choice' && sceneDone">
+        <!-- 关键抉择：选项 -->
+        <template v-if="phase === 'choosing'">
           <button
             v-for="(opt, idx) in options"
             :key="idx"
             class="opt-btn"
-            @click="pickOption(opt)"
+            @click.stop="pickOption(opt)"
           >{{ txt(opt.text) }}</button>
         </template>
 
         <!-- 开放题输入 -->
-        <template v-else-if="phase === 'open' && sceneDone">
+        <template v-else-if="phase === 'open' && doneTyping">
           <textarea
             class="open-input"
             v-model="openText"
             :maxlength="100"
             placeholder="写下你最想说的那句话…（≤100字）"
             :adjust-position="true"
+            @click.stop
           />
           <view class="open-row">
             <text class="open-count">{{ openText.length }}/100</text>
-            <button class="opt-btn primary" :disabled="!openText.trim()" @click="submitOpen">说出口</button>
+            <button class="opt-btn primary" :disabled="!openText.trim()" @click.stop="submitOpen">说出口</button>
           </view>
         </template>
 
-        <!-- 继续 -->
-        <template v-else-if="phase === 'react' && reactDone">
-          <button class="opt-btn primary" @click="nextStep">继续 →</button>
-        </template>
-        <template v-else-if="phase === 'narration' && sceneDone">
-          <button class="opt-btn primary" @click="afterNarration">继续 →</button>
-        </template>
-
         <!-- 加载态 -->
-        <view v-else-if="phase === 'reacting'" class="loading">TA 正在回应…</view>
+        <view v-else-if="phase === 'reacting'" class="loading">{{ char?.name }} 正在回应…</view>
+
+        <!-- 继续（剧情/回应推进）。点屏幕任意处也可推进。 -->
+        <view v-else class="tap-hint">{{ doneTyping ? '轻触继续 →' : '轻触跳过 ▸' }}</view>
       </view>
     </view>
   </view>
@@ -98,30 +75,38 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import {
   session,
   currentNode,
-  currentVariant,
   applyChoice,
-  advance,
-  isOpenNode,
+  gotoNode,
+  filterBeats,
 } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
 import { faceImg, bgImg } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
 import { aiLine, aiOpenLine } from '@/game/ai'
-import type { ScriptOption } from '@/game/types'
+import type { NodeOption, Beat } from '@/game/types'
 
-type Phase = 'scene' | 'reacting' | 'react' | 'narration' | 'open'
+// phase：
+//  story   逐条展示 beats（旁白/对话/心声）
+//  choosing 展示选项
+//  reacting 选后等 AI 回应
+//  react    展示 TA 回应（+OS）
+//  open     开放题输入
+type Phase = 'story' | 'choosing' | 'reacting' | 'react' | 'open'
 
 const char = computed(() => session.char)
 const node = computed(() => currentNode())
-const variant = computed(() => currentVariant())
 
-const phase = ref<Phase>('scene')
+const phase = ref<Phase>('story')
+const beatIdx = ref(0)
 const typed = ref('')
-const os = ref('')
-const sceneDone = ref(false)
-const reactDone = ref(false)
+const doneTyping = ref(false)
+const curOS = ref('')
 const openText = ref('')
 const portraitIn = ref(true)
+
+// 当前展示用的背景 / 表情（beat 可临时覆盖）
+const curScene = ref('')
+const curFace = ref<string>('happy')
 
 // 视觉反馈
 const deltaText = ref('')
@@ -132,53 +117,211 @@ const shaking = ref(false)
 
 const themeVars = computed(() => (char.value ? themeCssVars(char.value.themeKey) : {}))
 const bg = computed(() =>
-  char.value && variant.value ? bgImg(char.value.style, variant.value.sceneKey) : ''
+  char.value && curScene.value ? bgImg(char.value.style, curScene.value) : ''
 )
 const portrait = computed(() =>
-  char.value ? faceImg(char.value.style, char.value.id, session.face) : ''
+  char.value ? faceImg(char.value.style, char.value.id, (curFace.value as any) || 'happy') : ''
 )
-const options = computed<ScriptOption[]>(() =>
-  variant.value?.options ? variant.value.options : []
-)
+const options = computed<NodeOption[]>(() => (node.value?.options ? node.value.options : []))
 
-const stepNo = computed(() => session.index + 1)
+const beats = computed<Beat[]>(() => filterBeats(node.value?.beats))
+const curBeat = computed<Beat | null>(() => beats.value[beatIdx.value] || null)
 
-// —— 打字机 ——
-let typingTimer: any = null
-function typeOut(full: string, done?: () => void) {
-  clearInterval(typingTimer)
-  typed.value = ''
-  let i = 0
-  typingTimer = setInterval(() => {
-    i += 1
-    typed.value = full.slice(0, i)
-    if (i >= full.length) {
-      clearInterval(typingTimer)
-      done && done()
-    }
-  }, 32)
-}
+// 立绘仅在「有角色开口 / 抉择 / 回应」时强调显示，纯旁白也保留但弱化
+const showPortrait = computed(() => !!portrait.value)
+
+const bubbleClass = computed(() => {
+  if (phase.value === 'react') return 'line'
+  if (phase.value === 'reacting') return 'line'
+  const who = curBeat.value?.who
+  if (who === 'name') return 'line'
+  if (who === 'self') return 'self'
+  return 'narr'
+})
+const bubbleLabel = computed(() => {
+  if (phase.value === 'react' || phase.value === 'reacting') return char.value?.name || ''
+  const who = curBeat.value?.who
+  if (who === 'name') return char.value?.name || ''
+  if (who === 'self') return '我'
+  if (who && who !== 'narration') return who // 具名第三者
+  return '' // 旁白无标签
+})
 
 function txt(s?: string) {
   return replaceTokens(s || '', session.char)
 }
 
+// —— 打字机 ——
+let typingTimer: any = null
+function typeOut(full: string, done?: () => void) {
+  clearInterval(typingTimer)
+  doneTyping.value = false
+  typed.value = ''
+  let i = 0
+  const text = full
+  typingTimer = setInterval(() => {
+    i += 1
+    typed.value = text.slice(0, i)
+    if (i >= text.length) {
+      clearInterval(typingTimer)
+      doneTyping.value = true
+      done && done()
+    }
+  }, 30)
+}
+
+function applyBeatVisual(b: Beat | null) {
+  if (!b) return
+  if (b.sceneKey) curScene.value = b.sceneKey
+  if (b.face) curFace.value = b.face
+}
+
 // —— 进入节点 ——
 function enterNode() {
-  sceneDone.value = false
-  reactDone.value = false
-  os.value = ''
+  const n = node.value
+  if (!n) {
+    uni.redirectTo({ url: '/pages/game/ending/ending' })
+    return
+  }
+  // 背景 / 表情初始化
+  if (n.sceneKey) curScene.value = n.sceneKey
+  if (n.face) curFace.value = n.face
+  curOS.value = ''
+  beatIdx.value = 0
   portraitIn.value = false
-  // 立绘淡入
   setTimeout(() => (portraitIn.value = true), 30)
 
-  if (isOpenNode()) {
-    phase.value = 'open'
-    typeOut(txt(variant.value?.scene), () => (sceneDone.value = true))
+  if (n.beats && n.beats.length) {
+    phase.value = 'story'
+    applyBeatVisual(curBeat.value)
+    typeOut(txt(curBeat.value?.text))
   } else {
-    phase.value = 'scene'
-    typeOut(txt(variant.value?.scene), () => (sceneDone.value = true))
+    // 没有铺垫文本：直接进入交互
+    afterBeats()
   }
+}
+
+// 所有 beats 看完后的去向
+function afterBeats() {
+  const n = node.value
+  if (!n) return
+  if (n.type === 'choice') {
+    phase.value = 'choosing'
+  } else if (n.type === 'open') {
+    phase.value = 'open'
+    typeOut(txt(n.prompt))
+  } else {
+    // story：直接跳转
+    proceedGoto(n.goto)
+  }
+}
+
+// —— 屏幕轻触：推进剧情 / 跳过打字 ——
+function onScreenTap() {
+  if (phase.value === 'choosing' || phase.value === 'reacting' || phase.value === 'open') return
+  // 打字中：先把当前这句补全
+  if (!doneTyping.value) {
+    clearInterval(typingTimer)
+    typed.value = phase.value === 'react' ? typed.value : txt(curBeat.value?.text)
+    if (phase.value === 'react') {
+      // react 文案在 pickOption 里已设置 typed 目标，这里直接补全
+      typed.value = reactFull.value
+    }
+    doneTyping.value = true
+    return
+  }
+  advanceTap()
+}
+
+// 打字完成后，轻触的推进逻辑
+function advanceTap() {
+  if (phase.value === 'story') {
+    if (beatIdx.value < beats.value.length - 1) {
+      beatIdx.value += 1
+      applyBeatVisual(curBeat.value)
+      typeOut(txt(curBeat.value?.text))
+    } else {
+      afterBeats()
+    }
+  } else if (phase.value === 'react') {
+    proceedGoto(pendingGoto.value)
+  }
+}
+
+// —— 关键抉择 ——
+const reactFull = ref('')
+const pendingGoto = ref('')
+async function pickOption(opt: NodeOption) {
+  const delta = applyChoice({ score: opt.score, tag: opt.tag, face: opt.face, flag: opt.flag })
+  feedback(delta)
+  pendingGoto.value = opt.goto
+
+  phase.value = 'reacting'
+  doneTyping.value = false
+
+  const res = await aiLine({
+    name: char.value!.name,
+    persona: char.value!.persona,
+    score: session.score,
+    scene: txt(lastStoryText()),
+    optionText: txt(opt.text),
+  })
+
+  const line = res?.line || txt(opt.reply || '……')
+  curOS.value = res?.os || txt(opt.os || '')
+  reactFull.value = line
+
+  phase.value = 'react'
+  typeOut(line)
+}
+
+// 取当前节点最后一条铺垫文本，作为 AI 的情境上下文
+function lastStoryText(): string {
+  const b = beats.value
+  return b.length ? b[b.length - 1].text : ''
+}
+
+// —— 开放题提交 ——
+async function submitOpen() {
+  const text = openText.value.trim()
+  if (!text) return
+  if (text.length > 100) {
+    uni.showToast({ title: '不能超过 100 字哦', icon: 'none' })
+    return
+  }
+  session.openAnswer = text
+  session.face = 'shy'
+  curFace.value = 'shy'
+  pendingGoto.value = node.value?.goto || 'END'
+
+  phase.value = 'reacting'
+  doneTyping.value = false
+
+  const res = await aiOpenLine({
+    name: char.value!.name,
+    persona: char.value!.persona,
+    score: session.score,
+    userText: text,
+  })
+  const fallback =
+    session.score >= 50
+      ? `${char.value!.name}久久看着你，轻声说：「这句话，我会记一辈子。」`
+      : `${char.value!.name}沉默了一会儿：「……谢谢你，告诉我这些。」`
+  reactFull.value = res || fallback
+  curOS.value = ''
+
+  phase.value = 'react'
+  typeOut(reactFull.value)
+}
+
+// —— 跳转 ——
+function proceedGoto(goto?: string) {
+  const isEnd = gotoNode(goto || 'END')
+  if (isEnd) {
+    uni.redirectTo({ url: '/pages/game/ending/ending' })
+    return
+  }
+  enterNode()
 }
 
 // —— 视觉反馈 ——
@@ -210,88 +353,12 @@ function heartStyle(i: number) {
   return `left:${left}%;animation-delay:${delay}s;`
 }
 
-// —— 选择题：选项 ——
-async function pickOption(opt: ScriptOption) {
-  const delta = applyChoice({ score: opt.score, tag: opt.tag, face: opt.face })
-  feedback(delta)
-
-  phase.value = 'reacting'
-  reactDone.value = false
-
-  const res = await aiLine({
-    name: char.value!.name,
-    persona: char.value!.persona,
-    score: session.score,
-    scene: txt(variant.value?.scene),
-    optionText: txt(opt.text),
-  })
-
-  const line = res?.line || txt(opt.fallbackLine)
-  os.value = res?.os || txt(opt.fallbackOS)
-
-  phase.value = 'react'
-  typeOut(line, () => (reactDone.value = true))
-}
-
-// —— 开放题提交 ——
-async function submitOpen() {
-  const text = openText.value.trim()
-  if (!text) return
-  if (text.length > 100) {
-    uni.showToast({ title: '不能超过 100 字哦', icon: 'none' })
-    return
-  }
-  session.openAnswer = text
-  // 深情注视
-  session.face = 'shy'
-  phase.value = 'reacting'
-  reactDone.value = false
-
-  const res = await aiOpenLine({
-    name: char.value!.name,
-    persona: char.value!.persona,
-    score: session.score,
-    userText: text,
-  })
-
-  const fallback =
-    session.score >= 50
-      ? `${char.value!.name}久久看着你，轻声说：「这句话，我会记一辈子。」`
-      : `${char.value!.name}沉默了一会儿：「……谢谢你，告诉我这些。」`
-  const line = res || fallback
-
-  phase.value = 'react'
-  typeOut(line, () => (reactDone.value = true))
-}
-
-// —— 继续逻辑 ——
-function nextStep() {
-  // react 之后：选择题→若有旁白先放旁白，否则进下一节点；开放题→去结局
-  if (isOpenNode()) {
-    uni.redirectTo({ url: '/pages/game/ending/ending' })
-    return
-  }
-  const narr = variant.value?.narration
-  if (narr) {
-    phase.value = 'narration'
-    sceneDone.value = false
-    typeOut(txt(narr), () => (sceneDone.value = true))
-  } else {
-    advance()
-    enterNode()
-  }
-}
-
-function afterNarration() {
-  advance()
-  enterNode()
-}
-
 onMounted(() => {
   if (!session.char || !session.script) {
     uni.reLaunch({ url: '/pages/game/pick/pick' })
     return
   }
+  curFace.value = session.face || 'happy'
   enterNode()
 })
 
@@ -317,92 +384,40 @@ onUnmounted(() => clearInterval(typingTimer))
 .bg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .bg-mask {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.6) 100%);
 }
 
-/* 顶部 HUD：角色名 + 当前幕 */
+/* HUD */
 .hud {
   position: absolute;
-  top: calc(24rpx + env(safe-area-inset-top));
-  left: 28rpx;
-  z-index: 12;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  padding: 24rpx 32rpx 16rpx;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0));
 }
-.hud-chip {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 4rpx;
-  padding: 14rpx 26rpx;
-  border-radius: 24rpx;
-  background: rgba(18, 14, 28, 0.34);
-  backdrop-filter: blur(14rpx);
-  -webkit-backdrop-filter: blur(14rpx);
-  border: 1rpx solid rgba(255, 255, 255, 0.18);
-}
-.hud-name {
-  color: #fff;
-  font-size: 30rpx;
-  font-weight: 700;
-  letter-spacing: 1rpx;
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.35);
-}
-.hud-step {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 20rpx;
-  letter-spacing: 1rpx;
-}
-
-/* 侧边羁绊竖条 */
-.affinity {
-  position: absolute;
-  right: 24rpx;
-  top: 50%;
-  transform: translateY(-58%);
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12rpx;
-  padding: 18rpx 14rpx;
-  border-radius: 30rpx;
-  background: rgba(18, 14, 28, 0.30);
-  backdrop-filter: blur(14rpx);
-  -webkit-backdrop-filter: blur(14rpx);
-  border: 1rpx solid rgba(255, 255, 255, 0.18);
-}
-.affinity-num {
-  color: #fff;
-  font-size: 28rpx;
-  font-weight: 800;
-  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.3);
-}
-.affinity-num.bump { animation: numPop 0.5s; }
-@keyframes numPop {
-  0%, 100% { transform: scale(1); }
-  45% { transform: scale(1.4); }
-}
-.affinity-track {
-  position: relative;
-  width: 14rpx;
-  height: 240rpx;
+.hud-row { display: flex; justify-content: space-between; align-items: center; }
+.hud-name { color: #fff; font-size: 26rpx; font-weight: 700; }
+.hud-score { color: #fff; font-size: 24rpx; }
+.bar {
+  margin-top: 12rpx;
+  height: 16rpx;
   border-radius: 12rpx;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255,255,255,0.3);
   overflow: hidden;
 }
-.affinity-fill {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.bar-fill {
+  height: 100%;
   border-radius: 12rpx;
-  background: linear-gradient(180deg, var(--c-up), var(--c-primary));
-  box-shadow: 0 0 14rpx var(--c-primary);
-  transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(90deg, var(--c-primary), var(--c-up));
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.affinity-label {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 18rpx;
-  letter-spacing: 2rpx;
+.bar-fill.bump { animation: bump 0.5s; }
+@keyframes bump {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.8); }
+  100% { transform: scaleY(1); }
 }
+.hud-step { display: block; color: rgba(255,255,255,0.85); font-size: 20rpx; margin-top: 8rpx; letter-spacing: 2rpx; }
 
 /* 飘分 */
 .delta {
@@ -436,37 +451,20 @@ onUnmounted(() => clearInterval(typingTimer))
   100% { opacity: 0; transform: translateY(-260rpx) scale(1.2); }
 }
 
-/* 立绘：贴底，从底部升起，下部由对话框自然覆盖，无缝衔接 */
-.portrait-wrap {
+/* 立绘 */
+.portrait {
   position: absolute;
   z-index: 5;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 82vh;
+  left: 50%;
+  bottom: 440rpx;
+  transform: translateX(-50%);
+  width: 560rpx;
+  height: 720rpx;
+  filter: drop-shadow(0 12rpx 24rpx rgba(0,0,0,0.3));
   opacity: 0;
-  transform: translateY(24rpx);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
-.portrait-wrap.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-.portrait-img {
-  width: 100%;
-  height: 100%;
-}
-/* 立绘底部渐隐，弱化照片硬边，自然过渡到对话区 */
-.portrait-wrap::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 32%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
-}
+.portrait.in { opacity: 1; }
 
 /* 对话框 / 操作 */
 .dock {
@@ -476,35 +474,34 @@ onUnmounted(() => clearInterval(typingTimer))
   padding: 0 28rpx calc(36rpx + env(safe-area-inset-bottom));
 }
 .bubble {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(8rpx);
-  -webkit-backdrop-filter: blur(8rpx);
-  border-radius: 28rpx;
-  padding: 30rpx 32rpx;
-  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.22);
-  border: 1rpx solid rgba(255, 255, 255, 0.6);
-  min-height: 120rpx;
+  background: rgba(255,255,255,0.96);
+  border-radius: 24rpx;
+  padding: 28rpx 30rpx;
+  box-shadow: 0 -4rpx 24rpx rgba(0,0,0,0.12);
+  min-height: 150rpx;
 }
-.narr-label { font-size: 20rpx; color: var(--c-deep); }
-.narr-text { font-size: 28rpx; line-height: 1.65; color: var(--c-text); }
-.speaker {
+.bubble.narr { background: rgba(20,16,32,0.78); }
+.bubble.narr .bubble-text { color: #f3effa; }
+.bubble.self { background: rgba(255,255,255,0.92); }
+.bubble.self .bubble-text { color: #6b5f86; font-style: italic; }
+.bubble-label {
   display: inline-block;
   font-size: 24rpx;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(90deg, var(--c-primary), var(--c-deep));
-  padding: 6rpx 22rpx;
-  border-radius: 22rpx;
-  margin-bottom: 14rpx;
-  box-shadow: 0 4rpx 14rpx rgba(0, 0, 0, 0.18);
+  background: var(--c-primary);
+  padding: 4rpx 18rpx;
+  border-radius: 20rpx;
+  margin-bottom: 12rpx;
 }
-.line-text { display: block; font-size: 30rpx; line-height: 1.6; color: var(--c-text); }
+.bubble.narr .bubble-label { background: rgba(255,255,255,0.18); }
+.bubble-text { display: block; font-size: 29rpx; line-height: 1.7; color: var(--c-text); }
 .os-text { display: block; margin-top: 12rpx; font-size: 24rpx; color: #9a93a6; font-style: italic; }
 
-.actions { margin-top: 20rpx; }
+.actions { margin-top: 18rpx; min-height: 64rpx; }
 .opt-btn {
   width: 100%;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.96);
   color: var(--c-text);
   font-size: 28rpx;
   border: 2rpx solid var(--c-soft);
@@ -527,7 +524,7 @@ onUnmounted(() => clearInterval(typingTimer))
   width: 100%;
   box-sizing: border-box;
   min-height: 160rpx;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.98);
   border-radius: 18rpx;
   padding: 24rpx;
   font-size: 28rpx;
@@ -545,6 +542,14 @@ onUnmounted(() => clearInterval(typingTimer))
   text-align: center;
   color: #fff;
   font-size: 26rpx;
-  padding: 24rpx;
+  padding: 18rpx;
 }
+.tap-hint {
+  text-align: right;
+  color: rgba(255,255,255,0.85);
+  font-size: 24rpx;
+  padding: 8rpx 4rpx;
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 </style>

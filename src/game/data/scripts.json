@@ -2,605 +2,531 @@
   {
     "_id": "script_default",
     "id": "script_default",
-    "title": "群星不眠之夜",
-    "openingTip": "今夜是七十年一度的「长夜」。接下来 19 幕抉择 + 1 句心里话，你的每个选择都会被长夜记下。天亮时，它会告诉你——在一段关系里，你究竟是个怎样的人。",
-    "prologue": "传说辰星市每隔七十年，会迎来一次「长夜」：星轨倒转，黎明迟迟不来，沉睡者心底压抑的执念会苏醒，化作游荡街巷的「心象」。绝大多数人会在长夜里沉睡、遗忘；只有极少数「醒着的人」，能记得这一夜发生的一切。今夜，你和 {name} 恰好同时醒来。你们要在天亮前穿过这座失序的城市，弄清长夜的真相——而长夜，会忠实地记下你做的每一个选择。",
+    "title": "辰星·长夜轮回",
+    "openingTip": "辰星，一座悬于星海之上的城。每七十年，长夜降临，星辰熄灭。今夜你睁眼时，发现自己是这座沉睡之城里，极少数还醒着的人之一……这一夜很长，大多数时候你只需轻触屏幕，读完这个故事。真正需要你抉择的路口，不会太多——但每一个，都算数。",
+    "prologue": "传说辰星每隔七十年迎来一次「长夜」：星轨倒转，黎明不至，沉睡者尽数遗忘。可没有人知道，长夜并非天灾——它是远古封印松动时，名为「噬星」的虚无之潮，正一寸寸啃食着这座城的星之心。七十年前，有人用自己的生命点亮了长明灯，把它压了回去。如今，灯将熄，潮将至。而你，是被星辰选中、在这一夜醒来的人。你与 {name} 的相遇，是巧合，还是又一次轮回的开始？",
     "initScore": 50,
+    "start": "s1",
     "nodes": [
       {
-        "nodeId": "N1",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N1a",
-            "sceneKey": "office_night",
-            "scene": "你在写字楼里抬起头，窗外整片星空倒转，街灯一盏盏无声熄灭——长夜降临了。走廊尽头，{name}也正望着你：「你也……醒着？看来今晚，只能靠我们两个了。」",
-            "narration": "长夜里，沉睡的人会遗忘一切，唯有极少数醒者记得发生的事；此刻全城只有你们两个还醒着。",
-            "options": [
-              { "text": "既然都醒着，那就一起走，我不会丢下你。", "score": 12, "tag": "真心", "face": "shy", "next": "N2", "fallbackLine": "{name}点了点头：「……行，那就说定了。」", "fallbackOS": "（有人愿意同行，心里踏实了些。）" },
-              { "text": "有美人作伴的长夜，倒也不算太糟。", "score": 3, "tag": "海王", "face": "happy", "next": "N2", "fallbackLine": "{name}挑眉：「这种时候你还有心思贫嘴。」", "fallbackOS": "（油腔滑调，几分真心难说。）" },
-              { "text": "你说怎么走我就怎么走，全听你的。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N2", "fallbackLine": "{name}：「也不用全听我的，你也有脑子。」", "fallbackOS": "（这么没主见，反倒让人不放心。）" },
-              { "text": "各走各的吧，别拖累我。", "score": -10, "tag": "渣", "face": "angry", "next": "N2", "fallbackLine": "{name}神色一冷：「……也好，省得互相耽误。」", "fallbackOS": "（开局就这么凉。）" }
-            ]
-          },
-          {
-            "variantId": "N1b",
-            "sceneKey": "rain_street",
-            "scene": "暴雨倒灌进静止的街道，路灯一盏盏熄灭，唯独你和屋檐下的 {name} 还动着。{ta}偏过头：「看来今晚醒着的，只有我们俩了。」",
-            "narration": "长夜吞没了城市所有的声音，只剩雨声，和两个人的心跳。",
-            "options": [
-              { "text": "那就并肩走，要淋也一起淋。", "score": 12, "tag": "真心", "face": "shy", "next": "N2", "fallbackLine": "{name}把伞往你这边挪了挪：「……随你。」", "fallbackOS": "（愿意一起淋雨的人，不多。）" },
-              { "text": "能和你共撑一把伞，这雨夜也值了。", "score": 3, "tag": "海王", "face": "happy", "next": "N2", "fallbackLine": "{name}笑了笑，没接话。", "fallbackOS": "（这话{ta}怕是对谁都说过。）" },
-              { "text": "伞给你，我淋一点没关系。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N2", "fallbackLine": "{name}把伞推回来：「别逞这种强。」", "fallbackOS": "（动不动就牺牲自己。）" },
-              { "text": "雨太大，我先找地方躲了。", "score": -10, "tag": "渣", "face": "angry", "next": "N2", "fallbackLine": "{name}看着你跑开，没有追。", "fallbackOS": "（说走就走。）" }
-            ]
-          }
+        "id": "s1",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "序章 · 长夜将临",
+        "goto": "s2",
+        "beats": [
+          { "who": "narration", "text": "辰星——一座悬浮于无尽星海之上的城。传说它每隔七十年，会迎来一次「长夜」：星辰熄灭，黎明迟迟不来。" },
+          { "who": "narration", "text": "没有人知道长夜真正的含义。人们只记得：长夜降临时，整座城都会陷入沉睡，醒来后，仿佛什么都不曾发生。" },
+          { "who": "narration", "text": "而此刻，你睁开了眼。写字楼的灯尽数熄灭，窗外的星轨正缓缓倒转，像一只巨大的、正在闭合的眼睛。" },
+          { "who": "self", "text": "……为什么，全城只有我，还醒着？" },
+          { "who": "narration", "text": "街道死寂，霓虹凝固在半空。在这片沉睡的城里，唯有你的心跳，清晰得近乎刺耳。" },
+          { "who": "self", "text": "长夜……传说里那个，每七十年吞掉一整夜记忆的长夜。它，真的降临了。" },
+          { "who": "narration", "text": "你扶着冰冷的玻璃幕墙站起身。倒影里，那只由倒转星轨拼成的、巨大的眼睛，正静静俯瞰着你。" }
         ]
       },
       {
-        "nodeId": "N2",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N2a",
-            "sceneKey": "rain_street",
-            "scene": "街角蜷着一团心象——某个沉睡者遗落的执念，化作低声啜泣的孩子，朝你们伸出手。{name}：「它不伤人，但缠上来会很麻烦。」",
-            "narration": "心象是说不出口的执念所化：安抚它要耗时费力，放任它会一路跟到天亮。",
-            "options": [
-              { "text": "再麻烦也是一缕执念，先安抚它。", "score": 12, "tag": "真心", "face": "shy", "next": "N3", "fallbackLine": "{name}陪你蹲下来：「你总是这样心软。」", "fallbackOS": "（这份傻气，难得。）" },
-              { "text": "乖别哭，我最会哄人了，交给我。", "score": 3, "tag": "海王", "face": "happy", "next": "N3", "fallbackLine": "{name}斜你一眼：「哄人的本事练得挺熟。」", "fallbackOS": "（这套对多少人用过。）" },
-              { "text": "你别沾手，脏活累活我来弄。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N3", "fallbackLine": "{name}皱眉：「凡事都抢着扛，你不累吗。」", "fallbackOS": "（什么都自己揽。）" },
-              { "text": "一团虚影而已，绕开走。", "score": -10, "tag": "渣", "face": "angry", "next": "N3", "fallbackLine": "{name}回头看了那孩子一眼，没说话。", "fallbackOS": "（连一眼都吝啬。）" }
-            ]
-          },
-          {
-            "variantId": "N2b",
-            "sceneKey": "cafe_window",
-            "scene": "废弃咖啡馆里，一团心象正反复擦拭着根本不存在的杯子——那是某人放不下的旧习惯。{name}：「打扰它，它可能会闹。」",
-            "narration": "心象沉在自己的执念里，唤醒它，需要耐心，也需要冒一点险。",
-            "options": [
-              { "text": "我轻声跟它说说话，别吓着它。", "score": 12, "tag": "真心", "face": "shy", "next": "N3", "fallbackLine": "{name}：「……你倒是真有耐心。」", "fallbackOS": "（这份温柔不是装的。）" },
-              { "text": "小忙而已，包在我身上，我向来吃得开。", "score": 3, "tag": "海王", "face": "happy", "next": "N3", "fallbackLine": "{name}：「吹吧你。」", "fallbackOS": "（嘴上没个把门的。）" },
-              { "text": "危险的事我上，你退后。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N3", "fallbackLine": "{name}拉住你：「别总往前冲。」", "fallbackOS": "（这股劲让人心疼。）" },
-              { "text": "别惹它，喝口水我们就走。", "score": -10, "tag": "渣", "face": "angry", "next": "N3", "fallbackLine": "{name}没说话，跟上你。", "fallbackOS": "（凡事先想着脱身。）" }
-            ]
-          }
+        "id": "s2",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "序章 · 长夜将临",
+        "goto": "c1",
+        "beats": [
+          { "who": "narration", "text": "你循着唯一一点流动的光走出大楼。雨不知何时落了下来，却悬停在半空，凝成无数静止的银线。" },
+          { "who": "name", "text": "「你也……醒着？」一个身影立在雨幕中央，为你撑着伞，却没有撑给自己。是 {name}。" },
+          { "who": "name", "text": "「太好了。我还以为，这一轮，又只剩我一个人。」{ta}的声音里，有种近乎疲惫的释然。" },
+          { "who": "self", "text": "『这一轮』……{ta}说得，好像已经历过无数次长夜。" },
+          { "who": "name", "text": "「来不及细说了。在长夜里醒着的人，会被『它』盯上。」{ta}把伞塞进你手心，「跟紧我——除非你想被吞掉。」" },
+          { "who": "narration", "text": "话音未落，街角的阴影开始蠕动、隆起，凝成一团没有面孔的黑雾，无声地朝你们涌来。" }
         ]
       },
       {
-        "nodeId": "N3",
+        "id": "c1",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N3a",
-            "sceneKey": "rain_street",
-            "scene": "长街空荡，远处似有微弱灯火在动。{name}：「去找其他醒者，还是我们自己走？人多，未必是好事。」",
-            "narration": "长夜里，并非每个醒着的人，都怀着善意。",
-            "options": [
-              { "text": "去看看，能多救一个是一个。", "score": 12, "tag": "真心", "face": "shy", "next": "N4", "fallbackLine": "{name}：「……也好，路上互相有个照应。」", "fallbackOS": "（{ta}心底其实也不愿见死不救。）" },
-              { "text": "人多热闹，说不定还能多认识几个朋友。", "score": 3, "tag": "海王", "face": "happy", "next": "N4", "fallbackLine": "{name}：「你倒是走到哪都不寂寞。」", "fallbackOS": "（连长夜都像个交际场。）" },
-              { "text": "你怕危险的话，我先去探路。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N4", "fallbackLine": "{name}按住你：「谁说我怕了，一起去。」", "fallbackOS": "（总把危险往自己身上揽。）" },
-              { "text": "多一事不如少一事，我们自己走。", "score": -10, "tag": "渣", "face": "angry", "next": "N4", "fallbackLine": "{name}望了眼远处的灯火，沉默地跟上。", "fallbackOS": "（那点灯火，{ta}到底是惦记的。）" }
-            ]
-          },
-          {
-            "variantId": "N3b",
-            "sceneKey": "office_night",
-            "scene": "大厦顶层有一面会映出全城醒者位置的窗，零星的光点散落如星。{name}：「要去汇合，还是避开所有人？」",
-            "narration": "每一个光点，都是一颗未知的人心。",
-            "options": [
-              { "text": "去汇合，长夜里更该抱成一团。", "score": 12, "tag": "真心", "face": "shy", "next": "N4", "fallbackLine": "{name}：「难得，你比我更信人。」", "fallbackOS": "（这份信任，但愿别被辜负。）" },
-              { "text": "挑近的几个去打个招呼呗。", "score": 3, "tag": "海王", "face": "happy", "next": "N4", "fallbackLine": "{name}：「打招呼？你是去收编后宫吧。」", "fallbackOS": "（{ta}这是什么爱好。）" },
-              { "text": "你说避开就避开，我都听你的。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N4", "fallbackLine": "{name}：「别老把决定权全推给我。」", "fallbackOS": "（一味依从，不见得是好事。）" },
-              { "text": "离他们远点，免得被拖后腿。", "score": -10, "tag": "渣", "face": "angry", "next": "N4", "fallbackLine": "{name}的眉头几不可察地皱了一下。", "fallbackOS": "（把谁都当累赘。）" }
-            ]
-          }
+        "sceneKey": "rain_street",
+        "face": "angry",
+        "chapter": "序章 · 长夜将临",
+        "beats": [
+          { "who": "narration", "text": "黑雾贴地疾行，所过之处，连凝固的雨丝都被吞噬成虚无。{name}已摆开架势，却仍分出一线目光，看向你。" },
+          { "who": "name", "text": "「它是『噬星』的残象。别怕——但接下来这一夜怎么走，得你自己决定。」" }
+        ],
+        "options": [
+          { "text": "我跟你并肩，要打就一起打。", "score": 12, "tag": "真心", "face": "shy", "goto": "s3", "reply": "{name}一怔，随即扬起唇角：「……好，那就一起。」", "os": "（{ta}眼里，闪过一丝久违的光。）" },
+          { "text": "美人在前，我怎么好意思躲在后面。", "score": 3, "tag": "海王", "face": "happy", "goto": "s3", "reply": "{name}：「贫嘴。手别抖就行。」", "os": "（玩笑归玩笑，{ta}还是悄悄把你护在了身侧。）" },
+          { "text": "你退后，让我来挡！", "score": 6, "tag": "忠犬", "face": "happy", "goto": "s3", "reply": "{name}拉住你：「逞什么强，我们一起。」", "os": "（这股莽劲，让人又急又无奈。）" },
+          { "text": "你不是很能打？我打个下手就好。", "score": -10, "tag": "渣", "face": "angry", "goto": "s3", "reply": "{name}淡淡收回目光：「……行吧。」", "os": "（刚刚那点光，又暗了下去。）" }
+        ]
+      }
+      ,
+      {
+        "id": "s3",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "shy",
+        "chapter": "第一章 · 执灯人的宿命",
+        "goto": "s3b",
+        "beats": [
+          { "who": "narration", "text": "黑雾溃散成点点星尘的刹那，{name}收了势，胸口微微起伏。{ta}望着重新坠落的雨，眼神很远。" },
+          { "who": "name", "text": "「你该有很多疑问。我尽量长话短说。」" },
+          { "who": "name", "text": "「这座城叫辰星，浮在星海之上。它的中心，有一颗『星之心』——是它，给了全城的光，和所有人的梦。」" },
+          { "who": "name", "text": "「但星海深处，藏着一种叫『噬星』的东西。它不饿，也不恨，只是想把一切有光的，都拉回最初的虚无。」" },
+          { "who": "name", "text": "「七十年前，它差点得手。是一群被称作『执灯人』的人，用自己的命，点亮了长明灯，才把它重新压了回去。」" },
+          { "who": "self", "text": "用命点灯……那这些人，后来呢？" },
+          { "who": "name", "text": "「点灯的人，会永远留在长夜里。城会忘记他们，连同那一整夜。」{ta}顿了顿，「而我，是上一位执灯人，留下的传人。」" },
+          { "who": "name", "text": "「现在，灯快灭了。长夜，又一次回来了。」{ta}说这话时，像在陈述一件早已注定的事。" },
+          { "who": "self", "text": "七十年一次，用一条命，换全城七十年的安稳……这买卖，太残忍了。" },
+          { "who": "name", "text": "「别用那种眼神看我。」{ta}偏开头，「这是执灯人生来就背着的东西。轮到谁，谁认命。」" }
         ]
       },
       {
-        "nodeId": "N4",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N4a",
-            "sceneKey": "rain_street",
-            "scene": "一个浑身发抖的醒者撞进你们怀里：「救救我，那些影子在追我！」{name}看你一眼：「帮，还是不帮？」",
-            "narration": "陌生人的恐惧是真是假，长夜里难以分辨。",
-            "options": [
-              { "text": "别怕，跟着我们，一起走。", "score": 12, "tag": "真心", "face": "shy", "next": "N5", "fallbackLine": "{name}：「……行吧，多照看一个。」", "fallbackOS": "（{ta}嘴上嫌麻烦，手却扶了那人一把。）" },
-              { "text": "别抖了，跟紧我，有我罩着你。", "score": 3, "tag": "海王", "face": "happy", "next": "N5", "fallbackLine": "{name}：「你这罩着的人是不是有点多。」", "fallbackOS": "（来者不拒。）" },
-              { "text": "你护着 {name}，我去把那些影子引开。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N5", "fallbackLine": "{name}：「站住，别拿自己当诱饵！」", "fallbackOS": "（又是这套自我牺牲。）" },
-              { "text": "自己的麻烦自己扛，我们自身难保。", "score": -10, "tag": "渣", "face": "angry", "next": "N5", "fallbackLine": "那人被影子吞没前，绝望地看了你一眼。", "fallbackOS": "（这一眼，{name}也看见了。）" }
-            ]
-          },
-          {
-            "variantId": "N4b",
-            "sceneKey": "office_night",
-            "scene": "电梯里多了个缩在角落的醒者，死死攥着你的衣角不肯松开。{name}：「带上{ta}，我们的速度会慢一半。」",
-            "narration": "带上一个累赘，可能是善意，也可能是隐患。",
-            "options": [
-              { "text": "慢就慢，没人该被丢在长夜里。", "score": 12, "tag": "真心", "face": "shy", "next": "N5", "fallbackLine": "{name}轻轻叹气，却帮那人理了理衣领。", "fallbackOS": "（{ta}总在嘴硬之后心软。）" },
-              { "text": "小可怜别怕，哥哥/姐姐带你走。", "score": 3, "tag": "海王", "face": "happy", "next": "N5", "fallbackLine": "{name}：「你这称呼换得真快。」", "fallbackOS": "（对谁都自来熟。）" },
-              { "text": "{ta}交给我背，你只管在前头探路。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N5", "fallbackLine": "{name}：「逞强会害了我们三个。」", "fallbackOS": "（莽撞不等于善良。）" },
-              { "text": "甩开{ta}，我们走我们的。", "score": -10, "tag": "渣", "face": "angry", "next": "N5", "fallbackLine": "{name}掰开那人的手时，没敢看{ta}的眼睛。", "fallbackOS": "（{ta}并不认同，却被你带着走了。）" }
-            ]
-          }
+        "id": "s3b",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "第一章 · 执灯人的宿命",
+        "goto": "c2",
+        "beats": [
+          { "who": "narration", "text": "你们沿着空荡的长街往城心走。沿途橱窗里，凝固着一张张沉睡者安详的脸——他们不会知道，今夜有人在为他们赌命。" },
+          { "who": "name", "text": "「这座城里的每个人，此刻都做着各自的梦。」{name}轻声，「而执灯人的职责，就是替他们，把梦守到天亮。」" },
+          { "who": "self", "text": "{ta}说『职责』两个字时，那么轻，又那么重。" },
+          { "who": "narration", "text": "头顶的星轨仍在缓慢倒转，像一只不肯闭上的眼。城心的方向，那盏长明灯的微光，明灭不定。" },
+          { "who": "name", "text": "「走吧。趁灯还没彻底灭掉，我想……让你看看这座城，最值得被守护的样子。」" }
         ]
       },
       {
-        "nodeId": "N5",
+        "id": "c2",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N5a",
-            "sceneKey": "piano_room",
-            "scene": "推开琴房的门，一段不属于你的记忆扑面而来——那是 {name} 藏了很久的过去，被长夜照成了实体。{name}伸手想挡：「别看……这不是你该看的。」",
-            "narration": "长夜把人最不愿提起的过去，翻了出来。",
-            "options": [
-              { "text": "我不偷看。等你愿意了，再亲口告诉我。", "score": 12, "tag": "真心", "face": "shy", "next": "N6", "fallbackLine": "{name}的手慢慢放下：「……谢谢你。」", "fallbackOS": "（愿意等我开口的人，太少了。）" },
-              { "text": "原来你也有这么一面，更有意思了。", "score": 3, "tag": "海王", "face": "happy", "next": "N6", "fallbackLine": "{name}冷下脸：「我的过去不是你拿来解闷的。」", "fallbackOS": "（连伤口都成了谈资。）" },
-              { "text": "你不想我看，那我闭眼，看到哪你说一声。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N6", "fallbackLine": "{name}哭笑不得：「用不着这么夸张。」", "fallbackOS": "（小心翼翼得让人过意不去。）" },
-              { "text": "藏这么严，看来是把柄，以后用得上。", "score": -10, "tag": "渣", "face": "angry", "next": "N6", "fallbackLine": "{name}盯着你，眼神彻底冷了：「我记住了。」", "fallbackOS": "（原来在{ta}眼里我只是个可利用的人。）" }
-            ]
-          },
-          {
-            "variantId": "N5b",
-            "sceneKey": "office_night",
-            "scene": "墙上的旧照片活了过来，无声地演着 {name} 一段不堪回首的旧事。{ta}脸色发白：「这些……与你无关。」",
-            "narration": "你离 {name} 的伤口，从未这么近过。",
-            "options": [
-              { "text": "无关也想懂你。但你不想说，我就不问。", "score": 12, "tag": "真心", "face": "shy", "next": "N6", "fallbackLine": "{name}怔了怔，肩膀松了下来。", "fallbackOS": "（有人懂得分寸，是种偏爱。）" },
-              { "text": "往事而已，过去的就让它过去嘛。", "score": 3, "tag": "海王", "face": "happy", "next": "N6", "fallbackLine": "{name}：「你倒是看得开，对什么都看得开。」", "fallbackOS": "（轻飘飘的，像没走心。）" },
-              { "text": "别难过，要骂要哭都冲我来。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N6", "fallbackLine": "{name}：「我的情绪，不该你来兜底。」", "fallbackOS": "（你总想替我承受。）" },
-              { "text": "这种黑历史，知道的人多了不好。", "score": -10, "tag": "渣", "face": "angry", "next": "N6", "fallbackLine": "{name}别过脸去，没再说话。", "fallbackOS": "（一句话，把人推回了壳里。）" }
-            ]
-          }
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "第一章 · 执灯人的宿命",
+        "beats": [
+          { "who": "narration", "text": "你们穿过沉睡的街区。一栋居民楼前，一个没能及时入睡的人，正被一团残象缠住，意识在飞快流失。" },
+          { "who": "name", "text": "「救{ta}要耗费力气，也会暴露我们的位置。不过……」{name}看向你，把话留在了半空。" }
+        ],
+        "options": [
+          { "text": "救。能多护一个，就多护一个。", "score": 12, "tag": "真心", "face": "shy", "goto": "s4", "reply": "{name}颔首，与你一同上前：「……我就知道，你会这么选。」", "os": "（这份心软，{ta}见过，也曾被它救过。）" },
+          { "text": "放心，哄睡一只小残象，我最在行。", "score": 3, "tag": "海王", "face": "happy", "goto": "s4", "reply": "{name}：「嘴上没个正形，手倒是稳。」", "os": "（关键时刻，{ta}还是靠得住的。）" },
+          { "text": "你保存体力，危险的事我来。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "s4", "reply": "{name}：「别总把自己往前推。」", "os": "（又是这样，把退路全让给别人。）" },
+          { "text": "我们自身难保，别管闲事。", "score": -10, "tag": "渣", "face": "angry", "goto": "s4", "reply": "{name}沉默地看了那人一眼，跟上你。", "os": "（那一眼里的失望，你没有看见。）" }
         ]
       },
       {
-        "nodeId": "N6",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N6a",
-            "sceneKey": "rain_street",
-            "scene": "长街在面前分作两条：一条近，却挤满游荡的心象；一条远，安静却绕路。{name}已经体力不支：「别管我，你走近的那条，我自己想办法。」",
-            "narration": "越靠近黎明，城市越不稳定。这一步，关乎你愿意为身边的人放慢多少。",
-            "options": [
-              { "text": "走远的那条，我陪你慢慢走到天亮。", "score": 12, "tag": "真心", "face": "shy", "next": "N7", "fallbackLine": "{name}跟上你的脚步：「……你这人，真是。」", "fallbackOS": "（愿意为我放慢脚步，头一回。）" },
-              { "text": "急什么，长夜漫漫，慢慢走也是情调。", "score": 3, "tag": "海王", "face": "happy", "next": "N7", "fallbackLine": "{name}：「都什么时候了你还有闲心。」", "fallbackOS": "（真情还是逢场作戏。）" },
-              { "text": "我背你走近的那条！再累也扛得动。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N7", "fallbackLine": "{name}：「逞强会害了我们两个。」", "fallbackOS": "（一股脑往前冲不是勇敢。）" },
-              { "text": "那我先走了，天亮各凭本事。", "score": -10, "tag": "渣", "face": "angry", "next": "N7", "fallbackLine": "{name}望着你的背影，慢慢收回了手。", "fallbackOS": "（说丢就丢，我什么都不是。）" }
-            ]
-          },
-          {
-            "variantId": "N6b",
-            "sceneKey": "rooftop_dusk",
-            "scene": "天桥断了一截，对岸才是安全的路。{name}腿伤未愈，盯着那道缺口：「我跳不过去……你先过，别等我。」",
-            "narration": "把人留下，还是想办法一起过——长夜在等你的答案。",
-            "options": [
-              { "text": "一起想办法，我绝不会把你留在这。", "score": 12, "tag": "真心", "face": "shy", "next": "N7", "fallbackLine": "{name}：「……好。那就一起。」", "fallbackOS": "（『一起』两个字，分量很重。）" },
-              { "text": "别怕，抱紧我，我可是很靠得住的。", "score": 3, "tag": "海王", "face": "happy", "next": "N7", "fallbackLine": "{name}：「靠得住？我看是嘴最靠得住。」", "fallbackOS": "（油嘴滑舌。）" },
-              { "text": "我先跳过去，再回来接你，等着。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N7", "fallbackLine": "{name}：「太冒险了，别拿命赌。」", "fallbackOS": "（你的命也是命。）" },
-              { "text": "那我先过去了，你慢慢来。", "score": -10, "tag": "渣", "face": "angry", "next": "N7", "fallbackLine": "{name}独自望着缺口，笑得很淡。", "fallbackOS": "（果然，没人会为我停下。）" }
-            ]
-          }
+        "id": "s4",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "第一章 · 执灯人的宿命",
+        "goto": "s4b",
+        "beats": [
+          { "who": "narration", "text": "越往城中心走，星轨倒转得越急。脚下的地面偶尔变得透明，露出底下翻涌的、墨一样的星海。" },
+          { "who": "name", "text": "「噬星的潮，已经漫到这里了。」{name}指尖凝起一点微光——那是执灯人之力，却比{ta}记忆中，黯淡了太多。" },
+          { "who": "self", "text": "{ta}的光在抖。{ta}比看上去的样子，要疲惫得多。" },
+          { "who": "name", "text": "「别这么看我。」{ta}像是察觉到了，淡淡一笑，「这条路我走过太多次，闭着眼都不会迷。」" },
+          { "who": "narration", "text": "可你分明听见，{ta}说这话时，声音里压着一种很深、很久的孤独。" }
         ]
       },
       {
-        "nodeId": "N7",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N7a",
-            "sceneKey": "office_night",
-            "scene": "一位自称「守夜人」的老者拦住你们，递来一盏冷灯：「长夜，靠人们咽回肚里的真心话续命。想让天亮，就得有人把心底最真的那句说出口。」",
-            "narration": "原来终结长夜的钥匙，不是力量，而是坦诚——可越亲近的人，越难开口。",
-            "options": [
-              { "text": "那这盏灯我来点，该说的话我从不憋。", "score": 12, "tag": "真心", "face": "shy", "next": "N8", "fallbackLine": "{name}看着灯火映亮你的脸：「你倒从不绕弯。」", "fallbackOS": "（敢摊开真心的人最让人没辙。）" },
-              { "text": "真心话？我对每个人都挺真心的呀。", "score": 3, "tag": "海王", "face": "happy", "next": "N8", "fallbackLine": "守夜人摇头：「对谁都真心，等于对谁都没真心。」", "fallbackOS": "（连长夜都看穿了那点把戏。）" },
-              { "text": "只要能帮到 {name}，让我说什么都行。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N8", "fallbackLine": "{name}低声：「别总把『为了我』挂嘴边。」", "fallbackOS": "（你的真心话，不该只为我而说。）" },
-              { "text": "把真心话交出去，那不等于递人软肋？", "score": -10, "tag": "渣", "face": "angry", "next": "N8", "fallbackLine": "守夜人叹气：「连真话都不敢说，长夜留不住光。」", "fallbackOS": "（捂这么严，在怕什么。）" }
-            ]
-          },
-          {
-            "variantId": "N7b",
-            "sceneKey": "cafe_window",
-            "scene": "守夜人坐在打烊的吧台后，给你们各斟了一杯热茶：「这一夜的规矩很简单——谁先对身边人说真话，谁就先看到光。可惜，几乎没人做得到。」",
-            "narration": "茶在凉，灯在等，而真心话哽在每个人喉咙里。",
-            "options": [
-              { "text": "那我先来。有些话，我早就想跟你说了。", "score": 12, "tag": "真心", "face": "shy", "next": "N8", "fallbackLine": "{name}握杯的手紧了紧：「……你说。」", "fallbackOS": "（{ta}其实，等这句很久了。）" },
-              { "text": "说真话多没劲，留点神秘感不好吗。", "score": 3, "tag": "海王", "face": "happy", "next": "N8", "fallbackLine": "守夜人意味深长地看你一眼。", "fallbackOS": "（神秘的背后，常是空的。）" },
-              { "text": "你不想先开口，那由我来当那个人。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N8", "fallbackLine": "{name}：「为什么难的总是你先扛。」", "fallbackOS": "（你又把退路让给了我。）" },
-              { "text": "凭什么先交底的得是我。", "score": -10, "tag": "渣", "face": "angry", "next": "N8", "fallbackLine": "守夜人收回了那盏灯。", "fallbackOS": "（连一句真话都要算计输赢。）" }
-            ]
-          }
+        "id": "s4b",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "第一章 · 执灯人的宿命",
+        "goto": "c3",
+        "beats": [
+          { "who": "narration", "text": "越靠近城心，沉睡的痕迹越重。公交车停在轨道中央，乘客们伏在座位上，嘴角还挂着没做完的梦。" },
+          { "who": "self", "text": "你忽然意识到——你的脚步声，是这整座城里唯一的声响。这种安静，比任何怪物都更让人发慌。" },
+          { "who": "name", "text": "「会怕吗？」{name}没有回头，「第一次走进长夜的人，都会怕。」" },
+          { "who": "self", "text": "那{ta}呢？走过这么多次，{ta}是不是早就把『怕』这种东西，弄丢了。" },
+          { "who": "name", "text": "「别担心。」{ta}的声音放轻了些，「只要还有一个人醒着，这座城，就没真正睡死。」" }
         ]
       },
       {
-        "nodeId": "N8",
+        "id": "c3",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N8a",
-            "sceneKey": "cafe_window",
-            "scene": "长夜变出一座灯火通明的市集，每个摊位都摆着你最想要的东西，温暖得不真实。{name}：「这是长夜的甜梦，沉进去就再也醒不来了。」",
-            "narration": "幻境越美，越是陷阱。",
-            "options": [
-              { "text": "再美也是假的，拉着你走，一刻都不留。", "score": 12, "tag": "真心", "face": "shy", "next": "N9", "fallbackLine": "{name}被你牵着穿过幻象：「……还好有你清醒。」", "fallbackOS": "（清醒的人，才拉得住沉沦的人。）" },
-              { "text": "尝个鲜又何妨，反正我拎得清。", "score": 3, "tag": "海王", "face": "happy", "next": "N9", "fallbackLine": "{name}：「拎得清的人，不会先伸手。」", "fallbackOS": "（贪一点，就会陷一寸。）" },
-              { "text": "你想看就多留会儿，我守着你。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N9", "fallbackLine": "{name}：「该清醒的是你，别跟着我犯傻。」", "fallbackOS": "（连陪我沉沦都愿意。）" },
-              { "text": "这里挺好，要走你走，我歇够再说。", "score": -10, "tag": "渣", "face": "angry", "next": "N9", "fallbackLine": "{name}用力把你拽出幻象：「醒醒！」", "fallbackOS": "（差一点，就把你弄丢了。）" }
-            ]
-          },
-          {
-            "variantId": "N8b",
-            "sceneKey": "sakura_path",
-            "scene": "一条永不凋谢的樱花长廊在眼前展开，廊下站着你最思念的人影。{name}：「那是长夜照出来的妄念，别过去。」",
-            "narration": "妄念，总会用你最软的地方下手。",
-            "options": [
-              { "text": "我知道那是假的。真正要紧的人，在我身边。", "score": 12, "tag": "真心", "face": "shy", "next": "N9", "fallbackLine": "{name}怔住，随即移开了视线。", "fallbackOS": "（『在我身边』四个字，砸进了心里。）" },
-              { "text": "过去看看也无妨，又不会少块肉。", "score": 3, "tag": "海王", "face": "happy", "next": "N9", "fallbackLine": "{name}：「你呀，对什么都舍不得拒绝。」", "fallbackOS": "（来者不拒，连妄念也是。）" },
-              { "text": "你别看了，我挡在你和它中间。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N9", "fallbackLine": "{name}：「我没那么脆弱，不用你挡。」", "fallbackOS": "（这份维护，沉甸甸的。）" },
-              { "text": "难得的好梦，让我多站一会儿。", "score": -10, "tag": "渣", "face": "sad", "next": "N9", "fallbackLine": "{name}的声音冷下来：「那你留下吧。」", "fallbackOS": "（连此刻，你也宁愿要幻象。）" }
-            ]
-          }
+        "sceneKey": "piano_room",
+        "face": "sad",
+        "chapter": "第一章 · 执灯人的宿命",
+        "beats": [
+          { "who": "narration", "text": "推开一扇虚掩的门，一段不属于你的记忆扑面而来——画面里，是更年幼的 {name}，跪在另一个执灯人渐渐消散的身影前。" },
+          { "who": "name", "text": "「……这扇门，不该开的。」{name}脸色骤白，伸手想挡住那段记忆，「你别看。」" }
+        ],
+        "options": [
+          { "text": "我不看。等你愿意了，再亲口讲给我听。", "score": 12, "tag": "真心", "face": "shy", "goto": "s5", "reply": "{name}的手缓缓放下：「……谢谢你。」", "os": "（愿意等我开口的人，太稀有了。）" },
+          { "text": "原来你是这样长大的，更让人心疼了。", "score": 3, "tag": "海王", "face": "happy", "goto": "s5", "reply": "{name}冷下脸：「我的过去，不是用来心疼的谈资。」", "os": "（连这种事，都能被轻飘飘带过。）" },
+          { "text": "别难过，要哭就靠着我，我什么都扛得住。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "s5", "reply": "{name}：「我的伤，不该压到你肩上。」", "os": "（你总想替我背下一切。）" },
+          { "text": "上代执灯人也死了？那你岂不就是下一个。", "score": -10, "tag": "渣", "face": "angry", "goto": "s5", "reply": "{name}别过脸，闭了闭眼：「……是啊。下一个。」", "os": "（你戳中的，是{ta}最不敢碰的地方。）" }
+        ]
+      }
+      ,
+      {
+        "id": "s5",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "第二章 · 七十年的轮回",
+        "goto": "c4",
+        "beats": [
+          { "who": "narration", "text": "城心广场，一位披着旧斗篷的老者，守着一盏将熄的长明灯。{ta}抬头看你们，浑浊的眼里掠过一丝了然。" },
+          { "who": "守夜人", "text": "「又到这一夜了啊。{name}，你都长这么大了……和当年的{ta}，真像。」" },
+          { "who": "name", "text": "{name}的身体几不可察地僵了一下：「……守夜人。灯，还能撑多久？」" },
+          { "who": "守夜人", "text": "「撑不到天亮。要么有人续上新的火，要么，全城就跟着这盏灯，一起沉进噬星里。」" },
+          { "who": "守夜人", "text": "老者转向你：「你是这一轮被星辰选中的人。所以你该明白——『续火』，意味着续火的人，要把自己，永远留在长夜里。」" },
+          { "who": "self", "text": "永远留下……和 {name} 方才说的，一模一样。" },
+          { "who": "守夜人", "text": "「七十年一轮回，每一轮，都是执灯人独自走进灯火。」老者看向 {name}，「这一次，本也该是{ta}。」" },
+          { "who": "narration", "text": "{name}没有否认。{ta}只是望着那盏摇曳的灯，背影单薄得，像随时会被风吹散。" },
+          { "who": "守夜人", "text": "「灯芯认人。它只认执灯人的血脉，外人续不了火。」老者意味深长地看了你一眼，「至少……从前是这样。」" },
+          { "who": "self", "text": "『从前』……{ta}话里有话。难道这一轮，有什么不一样了？" }
         ]
       },
       {
-        "nodeId": "N9",
+        "id": "c4",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N9a",
-            "sceneKey": "piano_room",
-            "scene": "一团庞大的心象堵在路口，那是 {name} 最深的恐惧具现而成。{name}脚步一滞，声音发紧：「这个……我自己来面对，你别管。」",
-            "narration": "有些恐惧，旁人插手反而会更痛；可留 {ta} 独自面对，你于心何忍。",
-            "options": [
-              { "text": "我陪你一起面对，你不用一个人扛。", "score": 12, "tag": "真心", "face": "shy", "next": "N10", "fallbackLine": "{name}的手被你握住，颤了一下：「……别松开。」", "fallbackOS": "（有人并肩，恐惧也淡了。）" },
-              { "text": "别紧张，看着我，把它当空气就好。", "score": 3, "tag": "海王", "face": "happy", "next": "N10", "fallbackLine": "{name}：「轻飘飘一句，你懂什么。」", "fallbackOS": "（{ta}的怕，不是哄哄就好的。）" },
-              { "text": "你退后，让我去引开它。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N10", "fallbackLine": "{name}：「这是我的恐惧，凭什么你去扛。」", "fallbackOS": "（连我的怕，你都想替我担。）" },
-              { "text": "你的心魔你自己解决，我在旁边等。", "score": -10, "tag": "渣", "face": "angry", "next": "N10", "fallbackLine": "{name}独自走向那团阴影，背影很孤单。", "fallbackOS": "（最怕的时候，你选择了旁观。）" }
-            ]
-          },
-          {
-            "variantId": "N9b",
-            "sceneKey": "rain_street",
-            "scene": "雨幕中浮出一个心象，竟是 {name} 早已失去的某个人。{ta}浑身僵硬，眼眶瞬间红了：「……是{ta}。我以为，我早就不在乎了。」",
-            "narration": "长夜最残忍的，是把你以为放下的，重新摆到眼前。",
-            "options": [
-              { "text": "想哭就哭，我在这，不急着走。", "score": 12, "tag": "真心", "face": "shy", "next": "N10", "fallbackLine": "{name}背过身，肩膀微微发抖。", "fallbackOS": "（终于有人，准我软弱一次。）" },
-              { "text": "都过去啦，往前看，未来还有我嘛。", "score": 3, "tag": "海王", "face": "happy", "next": "N10", "fallbackLine": "{name}：「这种时候，你也能说出这种话。」", "fallbackOS": "（轻佻得让人心凉。）" },
-              { "text": "我去把那心象赶走，你别看了。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N10", "fallbackLine": "{name}拉住你：「……让我好好看{ta}最后一眼。」", "fallbackOS": "（有些告别，得亲自完成。）" },
-              { "text": "睹物伤情有什么用，赶紧赶路。", "score": -10, "tag": "渣", "face": "angry", "next": "N10", "fallbackLine": "{name}抹了把脸，跟上你，一言不发。", "fallbackOS": "（连这一刻，你都不肯给我。）" }
-            ]
-          }
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "第二章 · 七十年的轮回",
+        "beats": [
+          { "who": "narration", "text": "离开城心，{name}久久没有说话。直到登上一处高台，{ta}才停下脚步，望着脚下沉睡的万家灯火。" },
+          { "who": "name", "text": "「你都听见了。这一夜的尽头，我会像{ta}当年那样，走进灯里。」" },
+          { "who": "name", "text": "「所以……别和我走太近。被注定要遗忘的人，身边不该有牵挂。」{ta}转过身，似笑非笑，「这是我欠这座城的。」" }
+        ],
+        "options": [
+          { "text": "你的宿命，凭什么要你一个人扛？我陪你，找别的路。", "score": 12, "tag": "真心", "face": "shy", "goto": "sA1", "flag": "并肩", "reply": "{name}怔住，像是被这句话击中：「……你不懂，这本就没有别的路。」", "os": "（可{ta}的眼神，分明松动了一瞬。）" },
+          { "text": "那就让我替你走进灯里，你活下去。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "sA1", "flag": "并肩", "reply": "{name}厉声：「胡说什么！我绝不允许。」", "os": "（{ta}骤然的慌乱，泄露了藏得最深的在乎。）" },
+          { "text": "别说这么丧的话，天亮的事，天亮再想嘛。", "score": 3, "tag": "海王", "face": "happy", "goto": "sB1", "flag": "独行", "reply": "{name}笑了笑，笑意却没到眼底：「……也对。」", "os": "（你的回避，让{ta}默默退回了壳里。）" },
+          { "text": "这是你的命，我一个外人，不该插手。", "score": -10, "tag": "渣", "face": "sad", "goto": "sB1", "flag": "独行", "reply": "{name}沉默片刻：「……说得对。是我不该，把你拖下水。」", "os": "（{ta}最后那点期待，也熄灭了。）" }
+        ]
+      }
+      ,
+      {
+        "id": "sA1",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "间章 · 并肩之路",
+        "goto": "cA",
+        "beats": [
+          { "who": "narration", "text": "{name}盯着你看了很久，久到你以为{ta}要动怒。可{ta}最终，只是极轻地叹了口气。" },
+          { "who": "name", "text": "「你知道吗，七十年来，没有一个被选中的人，对执灯人说过『我陪你』。」" },
+          { "who": "name", "text": "「他们要么敬畏，要么逃开。只有你……偏要往我身边凑。」{ta}的耳尖，在残夜里悄悄红了。" },
+          { "who": "self", "text": "原来{ta}不是冷，只是太久，没人敢靠近了。" },
+          { "who": "narration", "text": "{ta}伸出手，极轻地碰了碰你的指尖，像在确认你是真实的。漫天凝固的樱色光尘，竟随着{ta}的动作，轻轻飘动起来。" },
+          { "who": "name", "text": "「那就……一起找找看。哪怕只有万分之一，不必进灯里的可能。」" }
         ]
       },
       {
-        "nodeId": "N10",
+        "id": "cA",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N10a",
-            "sceneKey": "office_night",
-            "scene": "守夜人只留下一枚能驱散心象的护符，而前方有两个陌生醒者同样命悬一线。{name}：「只有一枚，你给谁？」",
-            "narration": "把活路让给别人，意味着自己冒险。",
-            "options": [
-              { "text": "先给最危险的那个，我们再想办法。", "score": 12, "tag": "真心", "face": "shy", "next": "N11", "fallbackLine": "{name}：「……你总把自己排在最后。」", "fallbackOS": "（这样的人，值得被人护一次。）" },
-              { "text": "都想要？我去跟他们谈谈，总能两全。", "score": 3, "tag": "海王", "face": "happy", "next": "N11", "fallbackLine": "{name}：「就怕你两头讨好，最后两头空。」", "fallbackOS": "（八面玲珑，未必周全。）" },
-              { "text": "给 {name}，护住你比什么都重要。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N11", "fallbackLine": "{name}把护符塞回你手里：「我没那么脆弱。」", "fallbackOS": "（你眼里只有我，那你自己呢。）" },
-              { "text": "留着自用，凭什么便宜外人。", "score": -10, "tag": "渣", "face": "angry", "next": "N11", "fallbackLine": "{name}看着那两人被阴影吞没，闭了闭眼。", "fallbackOS": "（你的『自保』，我记下了。）" }
-            ]
-          },
-          {
-            "variantId": "N10b",
-            "sceneKey": "rain_street",
-            "scene": "你们只剩最后一份能恢复体力的口粮，可身边的小醒者已经饿得走不动。{name}：「分给{ta}，我们后半夜就得硬撑。」",
-            "narration": "善良在长夜里，是有代价的。",
-            "options": [
-              { "text": "分给{ta}，硬撑我也撑得住。", "score": 12, "tag": "真心", "face": "shy", "next": "N11", "fallbackLine": "{name}也掰了半块自己的递过去。", "fallbackOS": "（善良会传染，原来是真的。）" },
-              { "text": "小朋友嘴甜的话，哥哥/姐姐就给你。", "score": 3, "tag": "海王", "face": "happy", "next": "N11", "fallbackLine": "{name}：「给就给，还要人哄你。」", "fallbackOS": "（连做好事都要讨彩头。）" },
-              { "text": "我那份也给{ta}，我不饿。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N11", "fallbackLine": "{name}：「你脸都白了还说不饿。」", "fallbackOS": "（总是亏待自己。）" },
-              { "text": "粮食有限，先紧着我们自己。", "score": -10, "tag": "渣", "face": "angry", "next": "N11", "fallbackLine": "小醒者低下头，{name}没说话。", "fallbackOS": "（你的算盘，打得真清楚。）" }
-            ]
-          }
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "间章 · 并肩之路",
+        "beats": [
+          { "who": "narration", "text": "你们翻找上代执灯人留下的线索。{name}找到半卷残页，递给你时，却迟疑了。" },
+          { "who": "name", "text": "「这上面，可能写着我活不下去的真相。你……真的要和我一起看吗？」" }
+        ],
+        "options": [
+          { "text": "一起看。是好是坏，我都和你一起面对。", "score": 12, "tag": "真心", "face": "shy", "goto": "sA2", "reply": "{name}把残页摊在你们之间：「……好。」", "os": "（『一起』这两个字，{ta}终于敢信了。）" },
+          { "text": "我先看，坏消息我替你筛过再告诉你。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "sA2", "reply": "{name}：「别替我挡，我没那么脆弱。」", "os": "（你的维护，{ta}收下了，也心疼着。）" },
+          { "text": "看之前先答应我——别自己吓自己。", "score": 3, "tag": "海王", "face": "happy", "goto": "sA2", "reply": "{name}失笑：「都这时候了，你还贫。」", "os": "（你总能在最紧的弦上，松一下。）" },
+          { "text": "你自己看吧，我对这些不感兴趣。", "score": -10, "tag": "渣", "face": "angry", "goto": "sA2", "reply": "{name}的手顿了顿，默默收回了残页。", "os": "（说好的『一起』呢。）" }
         ]
       },
       {
-        "nodeId": "N11",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N11a",
-            "sceneKey": "rooftop_dusk",
-            "scene": "长夜忽然在你耳边低语，许你一个交易：只要献出身边人的一段记忆，你就能立刻抽身、毫发无伤地离开。{name}没听见这低语，只是疲惫地靠在你肩侧。",
-            "narration": "这是长夜给每个醒者的考验——在「自保」与「不出卖身边人」之间。",
-            "options": [
-              { "text": "想都别想，{ta}的记忆我一分一秒都不卖。", "score": 12, "tag": "真心", "face": "shy", "next": "N12", "fallbackLine": "{name}似有所觉：「你刚在跟什么较劲？」", "fallbackOS": "（{ta}替我挡掉了什么，我浑然不知。）" },
-              { "text": "诱惑是不错……但出卖朋友，划不来。", "score": 3, "tag": "海王", "face": "happy", "next": "N12", "fallbackLine": "低语散去，留下一声轻笑。", "fallbackOS": "（拒绝的理由是『划不来』，而非『不愿意』。）" },
-              { "text": "要献就献我的记忆，别动 {name} 的。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N12", "fallbackLine": "低语顿了顿，似乎很意外。", "fallbackOS": "（总把自己往火里推。）" },
-              { "text": "一段记忆而已，{ta}反正会忘——成交。", "score": -10, "tag": "渣", "face": "angry", "next": "N12", "fallbackLine": "{name}踉跄了一下：「我刚刚……在想什么来着？」", "fallbackOS": "（{ta}的什么，被我亲手抹掉了。）" }
-            ]
-          },
-          {
-            "variantId": "N11b",
-            "sceneKey": "piano_room",
-            "scene": "长夜在你心底种下一个念头：只要把这一夜的疲惫与责任，悄悄推给 {name} 去背，你就能轻松抵达黎明。这念头甜得让人心动。",
-            "narration": "最危险的诱惑，往往不需要你动手，只需要你默许。",
-            "options": [
-              { "text": "我的担子我自己背，不会压到你身上。", "score": 12, "tag": "真心", "face": "shy", "next": "N12", "fallbackLine": "{name}：「你今晚……格外可靠。」", "fallbackOS": "（这份担当，看得见。）" },
-              { "text": "互相分担嘛，又不是只我一人享福。", "score": 3, "tag": "海王", "face": "happy", "next": "N12", "fallbackLine": "{name}：「说得好听，做起来呢。」", "fallbackOS": "（话术而已。）" },
-              { "text": "要背就我来背，你已经够累了。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N12", "fallbackLine": "{name}：「别什么都自己扛，会垮的。」", "fallbackOS": "（你的逞强，我心疼。）" },
-              { "text": "{ta}体力还行，让{ta}多担点也合理。", "score": -10, "tag": "渣", "face": "angry", "next": "N12", "fallbackLine": "{name}的脚步，悄悄沉了几分。", "fallbackOS": "（你的轻松，是我替你扛的。）" }
-            ]
-          }
+        "id": "sA2",
+        "type": "story",
+        "sceneKey": "piano_room",
+        "face": "happy",
+        "chapter": "间章 · 并肩之路",
+        "goto": "sA3",
+        "beats": [
+          { "who": "narration", "text": "残页上的字迹早已斑驳，却拼出一个惊人的猜测：噬星并非要毁灭一切，它只是……在反复重演一段，无人回应的孤独。" },
+          { "who": "name", "text": "「上一位执灯人，至死都在追查这件事。」{name}的指尖抚过那行字，「{ta}说，也许有一天，会有人不必牺牲，就能让长夜结束。」" },
+          { "who": "self", "text": "不必牺牲……那 {name}，就不用走进灯里了。" },
+          { "who": "name", "text": "{ta}抬眼看你，眼里第一次盛着不属于宿命的东西——是希望。「谢谢你。让我开始相信，这条路，或许真的存在。」" },
+          { "who": "narration", "text": "你们之间的距离，在这一夜里，悄悄近得，像是已经认识了很久很久。" }
         ]
       },
       {
-        "nodeId": "N12",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N12a",
-            "sceneKey": "rain_street",
-            "scene": "{name}忽然停下脚步，定定地看着你：「刚才那个选择……我有点不认识你了。你到底，是个怎样的人？」",
-            "narration": "被在乎的人当面质疑，是这一夜最难接的一招。",
-            "options": [
-              { "text": "我做的每个选择都问心无愧，你可以信我。", "score": 12, "tag": "真心", "face": "shy", "next": "N13", "fallbackLine": "{name}盯了你两秒，点头：「……我信你。」", "fallbackOS": "（敢被审视的人，多半经得起。）" },
-              { "text": "别这么严肃嘛，我哪有那么复杂。", "score": 3, "tag": "海王", "face": "happy", "next": "N13", "fallbackLine": "{name}：「你就爱用玩笑糊弄过去。」", "fallbackOS": "（一笑而过，是最熟练的逃。）" },
-              { "text": "是我不好，让你不舒服，都是我的错。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N13", "fallbackLine": "{name}：「我没在怪你，别动不动就认错。」", "fallbackOS": "（什么都往自己身上揽。）" },
-              { "text": "我怎样关你什么事，少管。", "score": -10, "tag": "渣", "face": "angry", "next": "N13", "fallbackLine": "{name}后退一步，眼神凉了：「……是我多问了。」", "fallbackOS": "（一句话，把人推出了三步远。）" }
-            ]
-          },
-          {
-            "variantId": "N12b",
-            "sceneKey": "cafe_window",
-            "scene": "短暂歇脚时，{name}低头搅着杯里的凉茶，忽然开口：「这一路看下来……我有点猜不透，对你来说，我到底算什么。」",
-            "narration": "{ta}问的不是答案，是你愿不愿意给一个答案。",
-            "options": [
-              { "text": "算我想护到天亮、也想护到以后的人。", "score": 12, "tag": "真心", "face": "shy", "next": "N13", "fallbackLine": "{name}抬眼，耳尖悄悄红了：「……贫嘴。」", "fallbackOS": "（这句，{ta}信了。）" },
-              { "text": "你对我来说很特别呀，独一无二的那种。", "score": 3, "tag": "海王", "face": "happy", "next": "N13", "fallbackLine": "{name}：「『独一无二』你说过几回了？」", "fallbackOS": "（特别得有点廉价。）" },
-              { "text": "你想我是什么，我就努力做成什么。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N13", "fallbackLine": "{name}：「我想要的是你，不是你扮的样子。」", "fallbackOS": "（别为了我，弄丢了你。）" },
-              { "text": "都什么时候了，纠结这些有意义吗。", "score": -10, "tag": "渣", "face": "angry", "next": "N13", "fallbackLine": "{name}低下头，把那句话咽了回去。", "fallbackOS": "（鼓起的勇气，被你一句噎回。）" }
-            ]
-          }
+        "id": "sA3",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "happy",
+        "chapter": "间章 · 并肩之路",
+        "goto": "s6",
+        "beats": [
+          { "who": "narration", "text": "寻找线索的间隙，你们在一处屋檐下歇脚。凝固的花瓣悬在你们之间，像被谁按下了暂停。" },
+          { "who": "name", "text": "「说起来，我好像……还不知道你的事。」{name}难得主动开口，「长夜结束后，你想做什么？」" },
+          { "who": "self", "text": "这是{ta}第一次问起『长夜之后』。仿佛在{ta}心里，那个未来，第一次有了你的位置。" },
+          { "who": "narration", "text": "你们有一搭没一搭地聊着，聊那些与宿命无关、琐碎而温暖的小事。那一刻，{ta}笑得很轻，像个普通人。" },
+          { "who": "name", "text": "「真奇怪。」{ta}低声，「明明是最该绝望的一夜，我却……有点不想让它结束了。」" }
         ]
       },
       {
-        "nodeId": "N13",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N13a",
-            "sceneKey": "rain_street",
-            "scene": "被一路忽视的心象终于失控，化作黑潮朝你们涌来。{name}挡在你身前：「我顶住，你快走！」可你看得出，{ta}撑不了多久。",
-            "narration": "这一刻没有时间犹豫。护人、自保，还是另有盘算，长夜都看在眼里。",
-            "options": [
-              { "text": "要走一起走！我拉着你，谁也不丢下谁。", "score": 12, "tag": "真心", "face": "shy", "next": "N14", "fallbackLine": "{name}被你拽开，声音发紧：「你疯了，那么危险。」", "fallbackOS": "（明知危险还回头拉我的人，记住了。）" },
-              { "text": "别逞强，我来分散它注意，我可受欢迎了。", "score": 3, "tag": "海王", "face": "happy", "next": "N14", "fallbackLine": "{name}急道：「都这时候了，正经点！」", "fallbackOS": "（玩笑背后，是真心还是逃避。）" },
-              { "text": "你退后！让我挡，受伤的人是我就好。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N14", "fallbackLine": "{name}一把扯住你：「谁准你拿命换的！」", "fallbackOS": "（你的命，不比我的轻。）" },
-              { "text": "谢了，那我先撤——你顶住啊。", "score": -10, "tag": "渣", "face": "angry", "next": "N14", "fallbackLine": "{name}独自迎着黑潮，没有回头。", "fallbackOS": "（被丢在身后的滋味，{ta}尝到了。）" }
-            ]
-          },
-          {
-            "variantId": "N13b",
-            "sceneKey": "office_night",
-            "scene": "整栋大楼开始坍缩成心象的漩涡，脚下的地面正一块块崩落。{name}抓住你的手腕：「桥要塌了，我拉不住太久——你得自己抓稳！」",
-            "narration": "千钧一发，你的本能会暴露你究竟把谁放在前面。",
-            "options": [
-              { "text": "抓紧我！我数三下，我们一起跳。", "score": 12, "tag": "真心", "face": "shy", "next": "N14", "fallbackLine": "{name}和你一起跃过裂口：「……好险。」", "fallbackOS": "（危急关头还想着我，难得。）" },
-              { "text": "放心，我身手好得很，看我的。", "score": 3, "tag": "海王", "face": "happy", "next": "N14", "fallbackLine": "{name}：「少耍帅，先把命保住！」", "fallbackOS": "（这时候还逞能。）" },
-              { "text": "先拉你过去，我殿后！", "score": 6, "tag": "忠犬", "face": "happy", "next": "N14", "fallbackLine": "{name}：「殿后的凭什么总是你！」", "fallbackOS": "（你又要把危险留给自己。）" },
-              { "text": "顾不上那么多了，我先跳！", "score": -10, "tag": "渣", "face": "angry", "next": "N14", "fallbackLine": "{name}在你身后险险稳住身形，脸色发白。", "fallbackOS": "（你松手的那一下，我看见了。）" }
-            ]
-          }
+        "id": "sB1",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "间章 · 独行之路",
+        "goto": "cB",
+        "beats": [
+          { "who": "narration", "text": "你没有再追问。{name}也如{ta}所愿，把你远远落在了身后半步的距离。" },
+          { "who": "name", "text": "「这样很好。」{ta}走在前面，没有回头，「牵挂越少，到最后，越不疼。」" },
+          { "who": "self", "text": "{ta}的背影，比任何残象都更像——一个正在慢慢消失的人。" },
+          { "who": "narration", "text": "雨丝重新凝固。这一次，{name}没有再把伞，分给你。" },
+          { "who": "name", "text": "「快到了。剩下的路，你跟着就好，别多想。」{ta}的声音隔着雨，听起来很远很远。" }
         ]
       },
       {
-        "nodeId": "N14",
+        "id": "cB",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N14a",
-            "sceneKey": "office_night",
-            "scene": "守夜人道出真相：第一场长夜，源于一个被所有人遗忘的醒者——{ta}的孤独执念至今仍在城底燃烧，七十年不灭。{name}沉默了。",
-            "narration": "原来长夜不是天灾，而是一颗从没被人接住的心。",
-            "options": [
-              { "text": "那我们去找{ta}，没人该被永远遗忘。", "score": 12, "tag": "真心", "face": "shy", "next": "N15", "fallbackLine": "{name}：「……我陪你去。」", "fallbackOS": "（愿意为陌生人转身的人，难得。）" },
-              { "text": "可怜是可怜，可这跟我们有什么关系？", "score": 3, "tag": "海王", "face": "happy", "next": "N15", "fallbackLine": "守夜人摇头：「事不关己，长夜便没有尽头。」", "fallbackOS": "（凉薄藏在轻佻里。）" },
-              { "text": "只要能结束长夜，要我做什么都行。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N15", "fallbackLine": "{name}：「先问清楚代价，别急着卖命。」", "fallbackOS": "（你总是先把自己豁出去。）" },
-              { "text": "一个旧鬼的执念，烧就烧呗，与我无关。", "score": -10, "tag": "渣", "face": "angry", "next": "N15", "fallbackLine": "{name}看了你一眼，那眼神很复杂。", "fallbackOS": "（你连一点悲悯都不肯给。）" }
-            ]
-          },
-          {
-            "variantId": "N14b",
-            "sceneKey": "piano_room",
-            "scene": "城底深处传来一段重复了七十年的旋律。守夜人说：「那是第一个醒者留下的，{ta}只是想等一个，愿意听完这首曲子的人。」",
-            "narration": "再庞大的灾厄，源头也许只是一句『有人在听吗』。",
-            "options": [
-              { "text": "那我们就去把这首曲子，听到最后。", "score": 12, "tag": "真心", "face": "shy", "next": "N15", "fallbackLine": "{name}轻声：「……好，我陪你听完。」", "fallbackOS": "（愿意倾听的人，能化开很多坚冰。）" },
-              { "text": "旋律是挺好听，可惜我不太懂欣赏。", "score": 3, "tag": "海王", "face": "happy", "next": "N15", "fallbackLine": "{name}：「你懂的，向来只有热闹。」", "fallbackOS": "（什么都不往心里去。）" },
-              { "text": "需要听就我去听，你在这歇着。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N15", "fallbackLine": "{name}：「这种事，该一起。」", "fallbackOS": "（别什么都一个人。）" },
-              { "text": "听首破曲子就能完事？太天真了。", "score": -10, "tag": "渣", "face": "angry", "next": "N15", "fallbackLine": "那旋律，似乎黯了一分。", "fallbackOS": "（连听一听，你都不屑。）" }
-            ]
-          }
+        "sceneKey": "rain_street",
+        "face": "angry",
+        "chapter": "间章 · 独行之路",
+        "beats": [
+          { "who": "narration", "text": "一道格外凶猛的潮汐扑来，{name}替你挡下，自己却被掀翻在地，半跪着，迟迟没能起身。" },
+          { "who": "name", "text": "「别过来。」{ta}咬牙撑着，「我说过……别和我走太近。」" }
+        ],
+        "options": [
+          { "text": "闭嘴。我现在就过去，扶你起来。", "score": 12, "tag": "真心", "face": "shy", "goto": "sB2", "reply": "{name}愣住，任你扶起，没再推开：「……你这个人。」", "os": "（迟来的靠近，也仍是靠近。）" },
+          { "text": "你受伤了还逞强，下次让我挡！", "score": 6, "tag": "忠犬", "face": "happy", "goto": "sB2", "reply": "{name}：「……谢谢。」声音轻得几乎听不见。", "os": "（{ta}没想到，你还会回头。）" },
+          { "text": "瞧你这狼狈样，还嘴硬。", "score": 3, "tag": "海王", "face": "happy", "goto": "sB2", "reply": "{name}扯了扯唇角，撑着自己站了起来。", "os": "（连此刻，你也只给得出一句调侃。）" },
+          { "text": "你让我别靠近，那我就在这儿等你。", "score": -10, "tag": "渣", "face": "sad", "goto": "sB2", "reply": "{name}独自站起，拍了拍身上的尘，没有说话。", "os": "（你真的，就停在了原地。）" }
         ]
       },
       {
-        "nodeId": "N15",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N15a",
-            "sceneKey": "rooftop_dusk",
-            "scene": "守夜人道出代价：要终结长夜，需有人留在城底，用真心话点亮长明灯——而那个人，将被永远留在这一夜里。{name}攥紧拳：「让我来。」",
-            "narration": "总得有人留下，而 {name} 已经先一步开了口。",
-            "options": [
-              { "text": "谁都不许留下，我们一定能找到第三条路。", "score": 12, "tag": "真心", "face": "shy", "next": "N16", "fallbackLine": "{name}：「……你怎么总是这么不肯认命。」", "fallbackOS": "（{ta}不肯放弃我，那我也不放弃{ta}。）" },
-              { "text": "留下？这种事，还是从长计议吧。", "score": 3, "tag": "海王", "face": "happy", "next": "N16", "fallbackLine": "{name}：「到这一步，你还想着抽身。」", "fallbackOS": "（关键时刻，看清一个人。）" },
-              { "text": "要留就留我，你必须活着出去。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N16", "fallbackLine": "{name}：「凭什么是你！我不同意。」", "fallbackOS": "（你抢着赴死的样子，最让人怕。）" },
-              { "text": "{ta}想留就让{ta}留，正好省事。", "score": -10, "tag": "渣", "face": "angry", "next": "N16", "fallbackLine": "{name}惨然一笑：「……也对，正好。」", "fallbackOS": "（原来我的命，在你眼里是『正好』。）" }
-            ]
-          },
-          {
-            "variantId": "N15b",
-            "sceneKey": "rain_street",
-            "scene": "长明灯前只够站一个人。守夜人退到一旁：「点灯者会被这一夜永远铭记，也会被永远困住。你们，谁来？」{name}已经抬起了脚。",
-            "narration": "前一步是英雄，也是永别。",
-            "options": [
-              { "text": "先别动！一起想办法，一定有两全的解法。", "score": 12, "tag": "真心", "face": "shy", "next": "N16", "fallbackLine": "{name}的脚顿住了：「……我听你的。」", "fallbackOS": "（{ta}拦下了我的孤勇。）" },
-              { "text": "急什么，说不定天自己就亮了呢。", "score": 3, "tag": "海王", "face": "happy", "next": "N16", "fallbackLine": "{name}：「你总在赌别人替你扛。」", "fallbackOS": "（侥幸，是另一种自私。）" },
-              { "text": "那个位置，让我去站。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N16", "fallbackLine": "{name}死死拽住你：「不行，绝对不行！」", "fallbackOS": "（你怎么敢，连商量都不商量。）" },
-              { "text": "{ta}都迈步了，就别拦着了。", "score": -10, "tag": "渣", "face": "angry", "next": "N16", "fallbackLine": "{name}回头看你，眼里的光一点点熄了。", "fallbackOS": "（你连一句挽留都不肯。）" }
-            ]
-          }
+        "id": "sB2",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "间章 · 独行之路",
+        "goto": "sB3",
+        "beats": [
+          { "who": "narration", "text": "后半程，你们几乎没再说话。{name}独自扛下了一次次潮汐，伤口在身上层层叠叠。" },
+          { "who": "name", "text": "「马上就到星之心了。」{ta}回头看你一眼，眼神里没有怨，只有一种你读不懂的平静。" },
+          { "who": "self", "text": "{ta}像是早就习惯了——一个人，走到终点。" },
+          { "who": "name", "text": "「这一夜，谢谢你陪了我这么久。够了。」{ta}轻声道，「接下来，是我一个人的事。」" },
+          { "who": "narration", "text": "{ta}转身走向城心，背影没有半分犹豫，仿佛七十年来的每一轮，都是这样独自走向终局。" }
+        ]
+      }
+      ,
+      {
+        "id": "sB3",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "间章 · 独行之路",
+        "goto": "s6",
+        "beats": [
+          { "who": "narration", "text": "你们之间始终隔着那半步距离。{name}走得很稳，稳得像一台早已认命的机器。" },
+          { "who": "self", "text": "{ta}的背影，被凝固的雨割成一道孤直的线。我几次想开口，话到嘴边，又被那道距离堵了回去。" },
+          { "who": "narration", "text": "路过一面漆黑的橱窗，玻璃里映出你们两人——明明并行，却像隔着一整个长夜那么远。" },
+          { "who": "name", "text": "「……其实这样也好。」{ta}忽然轻声开口，像在对自己说，「习惯一个人，就不怕最后只剩一个人。」" },
+          { "who": "self", "text": "那句话{ta}说得很淡，可你分明听见，那道半步的距离里，藏着多少没说出口的孤独。" }
         ]
       },
       {
-        "nodeId": "N16",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N16a",
-            "sceneKey": "piano_room",
-            "scene": "趁你不备，{name}独自走向城底，想一个人承担一切。你追上去时，{ta}头也不回：「别拦我，这是我欠这座城的。」",
-            "narration": "{ta}想用自己，去换所有人的天亮。",
-            "options": [
-              { "text": "要还一起还！我不准你一个人扛。", "score": 12, "tag": "真心", "face": "shy", "next": "N17", "fallbackLine": "{name}脚步一滞，声音哑了：「……你这个笨蛋。」", "fallbackOS": "（被人死死拉住的感觉，原来这么暖。）" },
-              { "text": "何必这么悲壮，办法多得是嘛。", "score": 3, "tag": "海王", "face": "happy", "next": "N17", "fallbackLine": "{name}：「你永远都有『办法』，就是没有真心。」", "fallbackOS": "（连追都不肯用力。）" },
-              { "text": "那让我陪你一起留下，别丢下我。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N17", "fallbackLine": "{name}：「我要你活着，不是要你陪葬。」", "fallbackOS": "（你的『一起』，太沉了。）" },
-              { "text": "你想当英雄，我不拦你。", "score": -10, "tag": "渣", "face": "angry", "next": "N17", "fallbackLine": "{name}的背影顿了顿，终究没有回头。", "fallbackOS": "（连一次挽留都没有，是吗。）" }
-            ]
-          },
-          {
-            "variantId": "N16b",
-            "sceneKey": "rooftop_dusk",
-            "scene": "{name}把你推开，挡在通往城底的门前，勉强笑着：「这一夜遇见你，已经够了。剩下的，交给我。」{ta}的手在抖。",
-            "narration": "{ta}在用一个微笑，跟你做最后的告别。",
-            "options": [
-              { "text": "够个屁，我还要和你一起看明天的太阳。", "score": 12, "tag": "真心", "face": "shy", "next": "N17", "fallbackLine": "{name}破涕为笑：「……粗话都飙出来了。」", "fallbackOS": "（这么不讲理地要我活着的人，是你。）" },
-              { "text": "笑得这么好看，真舍得丢下我吗？", "score": 3, "tag": "海王", "face": "happy", "next": "N17", "fallbackLine": "{name}：「都这时候了，还撩。」", "fallbackOS": "（连告别，你都要俏皮。）" },
-              { "text": "你让开，该挡在门前的是我。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N17", "fallbackLine": "{name}：「我说了，剩下的我来。」", "fallbackOS": "（我们都想替对方去死。）" },
-              { "text": "你既然决定了，那我尊重你。", "score": -10, "tag": "渣", "face": "sad", "next": "N17", "fallbackLine": "{name}的笑，僵在了脸上。", "fallbackOS": "（我盼的是挽留，不是尊重。）" }
-            ]
-          }
+        "id": "s6",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "angry",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "s7",
+        "beats": [
+          { "who": "narration", "text": "你们抵达了城心最深处。脚下的星海几乎要漫上来，每一步，都像踩在世界与虚无的交界线上。" },
+          { "who": "name", "text": "「再往前，就没有退路了。」{name}停下，回头看你一眼。", "when": "flag:并肩" },
+          { "who": "name", "text": "「这一路，多亏有你在身边……七十年来，我头一次，不觉得这条路那么冷。」", "when": "flag:并肩" },
+          { "who": "self", "text": "{ta}始终走在你前面半步，那道刻意留出的距离，你们谁都没有再提起。", "when": "flag:独行" },
+          { "who": "narration", "text": "长明灯的尽头，是一片向下旋卷的虚无。星之心悬在漩涡正中，光芒微弱得，像一次次将熄的呼吸。" },
+          { "who": "narration", "text": "你们靠近的刹那，那片虚无骤然抬起——凝成一个庞大的、由无数张面孔叠成的身影。那，就是噬星。" },
+          { "who": "name", "text": "「它每一轮，都长这样。」{name}挡在你身前，声音很低，「一个由被遗忘者的脸，拼成的怪物。」" },
+          { "who": "self", "text": "被遗忘者……那些一轮轮走进灯里、被全城忘记的，执灯人。" }
         ]
       },
       {
-        "nodeId": "N17",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N17a",
-            "sceneKey": "office_night",
-            "scene": "城底，最初的那个旧醒者蜷在长明灯的残骸里。七十年的孤独，把{ta}化成了庞大而悲伤的心象，正缓缓朝你们伸出手。",
-            "narration": "{ta}要的从来不是毁灭，只是——有人看见。",
-            "options": [
-              { "text": "我看见你了。从现在起，你不是一个人。", "score": 12, "tag": "真心", "face": "shy", "next": "N18", "fallbackLine": "那庞大的心象，第一次安静了下来。", "fallbackOS": "（一句『我看见你』，融化了七十年。）" },
-              { "text": "嘿，孤独这么久，要不要听我讲点开心的？", "score": 3, "tag": "海王", "face": "happy", "next": "N18", "fallbackLine": "心象怔了怔，并未平息。", "fallbackOS": "（敷衍的热闹，填不满真正的空。）" },
-              { "text": "要平息你，拿我顶上就好。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N18", "fallbackLine": "{name}拦住你：「{ta}要的不是祭品，是陪伴。」", "fallbackOS": "（你又想用牺牲解决一切。）" },
-              { "text": "挡路的，就该被清掉。", "score": -10, "tag": "渣", "face": "angry", "next": "N18", "fallbackLine": "心象发出一声呜咽，黑潮翻涌得更凶。", "fallbackOS": "（以暴制暴，只会喂大长夜。）" }
-            ]
-          },
-          {
-            "variantId": "N17b",
-            "sceneKey": "rain_street",
-            "scene": "旧醒者的心象在雨里崩解又重组，反复呢喃着一句话：「……还有人，记得我吗？」{name}握紧了你的手。",
-            "narration": "整场长夜，不过是这一句无人回应的发问。",
-            "options": [
-              { "text": "我记得。从今夜起，会一直有人记得你。", "score": 12, "tag": "真心", "face": "shy", "next": "N18", "fallbackLine": "雨，忽然小了。", "fallbackOS": "（被记得，是最后的救赎。）" },
-              { "text": "别伤心啦，认识我，往后就热闹了。", "score": 3, "tag": "海王", "face": "happy", "next": "N18", "fallbackLine": "心象的呢喃，没有停。", "fallbackOS": "（{ta}要的不是热闹。）" },
-              { "text": "你想要回应，那我留下陪你。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N18", "fallbackLine": "{name}：「陪伴不等于把自己困进来。」", "fallbackOS": "（你总想用余生去补别人的缺。）" },
-              { "text": "都七十年了，早该散了。", "score": -10, "tag": "渣", "face": "angry", "next": "N18", "fallbackLine": "那句呢喃，戛然而止，雨更大了。", "fallbackOS": "（最后一点光，被你说灭了。）" }
-            ]
-          }
+        "id": "s7",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "s7b",
+        "beats": [
+          { "who": "narration", "text": "噬星没有攻击。它只是俯视着你们，从那无数张脸里，渗出一个重叠的、苍老又稚嫩的声音。" },
+          { "who": "噬星", "text": "「……还有人，记得吗？记得我们，也曾是有名字、会笑、会怕黑的人吗？」" },
+          { "who": "name", "text": "{name}浑身一震：「这声音……是历代执灯人。它不是噬星——它是被遗忘的他们，攒了七十年又七十年的，回音。」" },
+          { "who": "narration", "text": "原来所谓灾厄，从来不是恨。而是一句问了千百年、却从没人停下来回答的——『有人记得我吗』。" },
+          { "who": "噬星", "text": "「我们……也曾被谁等过、被谁爱过吗？为什么走到最后，连一个名字，都没能留下……」" },
+          { "who": "name", "text": "{name}的眼眶红了：「{ta}们不是怪物。{ta}们只是……太久太久，没人对{ta}们说过一句话了。」" },
+          { "who": "self", "text": "牺牲，从不能平息它。因为它要的，从来都不是又一个被吞掉的名字。" }
         ]
       },
       {
-        "nodeId": "N18",
-        "type": "choice",
-        "variants": [
-          {
-            "variantId": "N18a",
-            "sceneKey": "rooftop_dusk",
-            "scene": "长夜终于开始退去，天边裂开一线微光。守夜人说：天亮后醒者也会忘记这一夜，除非——你主动选择把 {name} 与这一切「记住」。{name}：「忘了也好……反正这一夜本就不该存在。」",
-            "narration": "记住，意味着背负这一整夜的重量；遗忘，则一切归零。",
-            "options": [
-              { "text": "我要记住。记住你，记住每一个选择。", "score": 12, "tag": "真心", "face": "shy", "next": "N19", "fallbackLine": "{name}怔住，眼眶慢慢红了：「……傻瓜。」", "fallbackOS": "（有人愿意记得我，原来是这种感觉。）" },
-              { "text": "记忆太沉，留个念想就够了。", "score": 3, "tag": "海王", "face": "happy", "next": "N19", "fallbackLine": "{name}笑了笑，笑意没到眼底：「……你向来拿得起放得下。」", "fallbackOS": "（连记得，都要挑轻巧的。）" },
-              { "text": "你想被忘记？不行，哪怕只有我记得也好。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N19", "fallbackLine": "{name}：「连这种事，你都想替我决定。」", "fallbackOS": "（你的执着，让人又暖又心疼。）" },
-              { "text": "忘了正好，省得给自己添负担。", "score": -10, "tag": "渣", "face": "angry", "next": "N19", "fallbackLine": "{name}垂下眼：「……嗯，是该忘了。」", "fallbackOS": "（连记得都嫌麻烦，那这一夜算什么。）" }
-            ]
-          },
-          {
-            "variantId": "N18b",
-            "sceneKey": "cafe_window",
-            "scene": "天快亮了。守夜人递来两杯茶：「喝下它，你会忘掉这一夜，回到平静的生活；不喝，你就要带着这些记忆，独自醒着过完往后。」{name}已经端起了杯子。",
-            "narration": "遗忘是解脱，记得是负担——也是唯一能留住 {name} 的方式。",
-            "options": [
-              { "text": "我不喝。我宁愿醒着，也不想忘了你。", "score": 12, "tag": "真心", "face": "shy", "next": "N19", "fallbackLine": "{name}放下杯子，久久看你。", "fallbackOS": "（你竟为了我，选了更难走的那条。）" },
-              { "text": "喝一半留一半，记点好的就行嘛。", "score": 3, "tag": "海王", "face": "happy", "next": "N19", "fallbackLine": "{name}：「记忆哪能这样挑着来。」", "fallbackOS": "（连深情都要打折。）" },
-              { "text": "你喝吧，让我一个人记着就够了。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N19", "fallbackLine": "{name}：「凭什么独自记得的人，又是你。」", "fallbackOS": "（你总把孤独留给自己。）" },
-              { "text": "干杯，忘干净最省事。", "score": -10, "tag": "渣", "face": "angry", "next": "N19", "fallbackLine": "{name}盯着杯中的茶，迟迟没有喝。", "fallbackOS": "（你举杯举得，毫不犹豫。）" }
-            ]
-          }
+        "id": "s7b",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "c5",
+        "beats": [
+          { "who": "narration", "text": "那无数张脸静静悬在虚无里，等待着一个，七十年都没能等到的回答。" },
+          { "who": "name", "text": "{name}缓缓收回了凝聚到一半的执灯人之力，{ta}的手在抖。" },
+          { "who": "name", "text": "「我一直以为，走进灯里，是执灯人唯一的归宿……」{ta}回头看你，眼里有泪光，「可如果，连噬星都只是想要一句回应——」" },
+          { "who": "self", "text": "{ta}第一次，对自己背了一辈子的宿命，露出了动摇。" },
+          { "who": "name", "text": "「告诉我。」{ta}的声音很轻，却像抓住最后一根稻草，「这一次，我们……真的能不一样吗？」" }
         ]
       },
       {
-        "nodeId": "N19",
+        "id": "c5",
         "type": "choice",
-        "variants": [
-          {
-            "variantId": "N19a",
-            "sceneKey": "rooftop_dusk",
-            "scene": "长夜正在退去，第一缕真正的晨光打在你们脸上。{name}转过身：「这一夜……谢谢你，陪我走到了最后。」",
-            "narration": "千言万语，只剩下最后这一程的回应。",
-            "options": [
-              { "text": "不是陪你走到最后，是想和你走向以后。", "score": 12, "tag": "真心", "face": "shy", "next": "N20", "fallbackLine": "{name}耳尖泛红，别开脸：「……谁要和你走以后。」", "fallbackOS": "（嘴上嫌弃，心里早就软成一片。）" },
-              { "text": "下一个长夜，记得还找我作伴啊。", "score": 3, "tag": "海王", "face": "happy", "next": "N20", "fallbackLine": "{name}：「下一个？你的『下一个』可真多。」", "fallbackOS": "（连告别都像约场局。）" },
-              { "text": "只要你需要，我永远都在。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N20", "fallbackLine": "{name}：「我不想要『永远在』，我想要『一起』。」", "fallbackOS": "（守候不该是单方面的。）" },
-              { "text": "都结束了，那就这样吧，各自珍重。", "score": -10, "tag": "渣", "face": "sad", "next": "N20", "fallbackLine": "{name}愣了一下，轻轻点头：「……也好。」", "fallbackOS": "（连一句多余的话，你都不肯留。）" }
-            ]
-          },
-          {
-            "variantId": "N19b",
-            "sceneKey": "sakura_path",
-            "scene": "晨风里樱花纷飞，长夜的痕迹正一寸寸褪去。{name}停在花雨中央，回头看你：「走完这一程……你还会想再见到我吗？」",
-            "narration": "这是个问句，也是 {ta} 递出的最后一只手。",
-            "options": [
-              { "text": "何止想见，我想往后的每一天都见到你。", "score": 12, "tag": "真心", "face": "shy", "next": "N20", "fallbackLine": "{name}笑意漫开：「……记住你说的。」", "fallbackOS": "（这一句，我等了一整夜。）" },
-              { "text": "想啊，你这么好看，谁舍得不见。", "score": 3, "tag": "海王", "face": "happy", "next": "N20", "fallbackLine": "{name}：「你的嘴，还是这么不老实。」", "fallbackOS": "（甜话听听就好。）" },
-              { "text": "只要你愿意见我，我随时都在。", "score": 6, "tag": "忠犬", "face": "happy", "next": "N20", "fallbackLine": "{name}：「别总是『随时』，也为自己活。」", "fallbackOS": "（你把自己放得太低了。）" },
-              { "text": "缘分这种事，随缘吧。", "score": -10, "tag": "渣", "face": "sad", "next": "N20", "fallbackLine": "{name}收回了那只悬在半空的手。", "fallbackOS": "（鼓起的勇气，落了空。）" }
-            ]
-          }
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "终章 · 噬星与黎明",
+        "beats": [
+          { "who": "守夜人", "text": "守夜人的声音在身后响起：「点灯吧，{name}。像历代那样，把自己交出去，再压它七十年。」" },
+          { "who": "narration", "text": "{name}的脚，已经迈向那片虚无。" }
+        ],
+        "options": [
+          { "text": "不许去！它要的是回应，不是牺牲——我们已经知道了！", "score": 12, "tag": "真心", "face": "shy", "goto": "s8", "flag": "破轮回", "reply": "{name}的脚步骤然顿住：「……你是说，赌它一次？」", "os": "（你的笃定，给了{ta}停下来的勇气。）" },
+          { "text": "先别冲动！万一真有第三种办法呢？", "score": 3, "tag": "海王", "face": "happy", "goto": "s8", "flag": "破轮回", "reply": "{name}迟疑了：「……你总在最后关头，拦下我。」", "os": "（虽是圆滑，却也是一种挽留。）" },
+          { "text": "要交出去，也该是我，不是你。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "s8s", "flag": "牺牲", "reply": "{name}：「够了！可你拦不住一场注定的轮回……」", "os": "（你舍身的执念，终究没能改写宿命。）" },
+          { "text": "既然历代都这么做，那照做就是了。", "score": -10, "tag": "渣", "face": "angry", "goto": "s8s", "flag": "牺牲", "reply": "{name}的背影僵了一下，迈进了那片虚无。", "os": "（你亲手，把{ta}推完了最后一步。）" }
         ]
       },
       {
-        "nodeId": "N20",
+        "id": "s8",
+        "type": "story",
+        "sceneKey": "rooftop_dusk",
+        "face": "shy",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "s8b",
+        "beats": [
+          { "who": "narration", "text": "你越过 {name}，独自走向噬星那无数张脸。你没有点灯，也没有举起任何武器。" },
+          { "who": "self", "text": "如果它要的，只是被记得……那么，就让我来回答它。" },
+          { "who": "narration", "text": "你抬起头，对着那片由孤独凝成的虚无，一字一句地，说出了它等了千年的那句话。" },
+          { "who": "噬星", "text": "那无数张脸骤然静止。重叠的声音里，第一次有了哽咽：「……你……愿意，记得我们？」" },
+          { "who": "narration", "text": "漩涡停止了旋卷。星之心的光，一点一点，重新亮了起来。{name}怔怔望着这一幕，眼眶通红。" },
+          { "who": "name", "text": "「七十年……不，从第一夜起，从来没有人，这样回答过它。」" },
+          { "who": "name", "text": "「而这一次，」{ta}的声音发颤，望着你，「我身边……站着你。」", "when": "flag:并肩" },
+          { "who": "self", "text": "轮回，就在这一句被说出口的回答里，第一次，停了下来。" }
+        ]
+      },
+      {
+        "id": "s8b",
+        "type": "story",
+        "sceneKey": "rooftop_dusk",
+        "face": "shy",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "c6",
+        "beats": [
+          { "who": "narration", "text": "噬星的轮廓在晨曦里一点点柔软下来，那无数张脸，终于露出了近乎安详的神情。" },
+          { "who": "name", "text": "{name}怔怔站在原地，像不敢相信，那个压了{ta}一辈子的死局，竟真的有了另一种解法。" },
+          { "who": "name", "text": "「我准备了一辈子，要走进那盏灯……」{ta}的声音哽住，「可你，偏偏给了我一个，活下去的理由。」", "when": "flag:并肩" },
+          { "who": "self", "text": "七十年的轮回，无数人用命换来的安稳——而你们，赌赢了一个谁都没敢想的可能。" },
+          { "who": "narration", "text": "星之心的光彻底稳定下来。{name}转过身，眼里映着初升的天光，也映着你。" }
+        ]
+      },
+      {
+        "id": "c6",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "终章 · 噬星与黎明",
+        "beats": [
+          { "who": "narration", "text": "噬星正消散成温柔的星尘。守夜人说：长夜将尽，只要 {name} 与这一夜被全城记得，{ta}就不必再被灯火吞噬——可代价是，记得的人，要独自背负这一整夜。" },
+          { "who": "name", "text": "「忘了吧。」{name}轻声，「你回到你的白昼，我……留在该留的地方就好。」" }
+        ],
+        "options": [
+          { "text": "我偏要记得你。哪怕全城都忘了，我也不忘。", "score": 12, "tag": "真心", "face": "shy", "goto": "s9", "reply": "{name}的眼泪终于落下来：「……你这个大笨蛋。」", "os": "（被人坚持记住，原来是这种感觉。）" },
+          { "text": "让我来背这一夜，你轻轻松松地活下去。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "s9", "reply": "{name}：「凭什么独自扛的人，又是你。」", "os": "（你总把重的那头，留给自己。）" },
+          { "text": "记住你这么好看的人，我可舍不得忘。", "score": 3, "tag": "海王", "face": "happy", "goto": "s9", "reply": "{name}破涕，瞪你一眼：「都这时候了！」", "os": "（连深情，你都要裹上一层糖。）" },
+          { "text": "忘了也好，省得彼此惦记，多累。", "score": -10, "tag": "渣", "face": "sad", "goto": "s9", "reply": "{name}垂下眼，极轻地点了点头：「……嗯，也好。」", "os": "（你连最后一程，都不肯留下。）" }
+        ]
+      },
+      {
+        "id": "s9",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "happy",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "open1",
+        "beats": [
+          { "who": "narration", "text": "星之心彻底亮起的瞬间，倒转的星轨缓缓归位。沉睡了一夜的城市，正从最深处一点点苏醒。" },
+          { "who": "narration", "text": "噬星没有被消灭，而是被「回应」抚平了。那无数张脸化作温柔的星屑，融进重新升起的晨光里，像终于得以安睡。" },
+          { "who": "narration", "text": "第一缕真正的阳光刺破长夜，落在你们脚边。七十年的轮回，在这一夜，第一次，没有以任何人的牺牲收场。" },
+          { "who": "name", "text": "{name}站在晨光里，像还不敢相信自己仍站在这里。{ta}慢慢转过身，望向你。" },
+          { "who": "name", "text": "「这一路你都没松开过手……谢谢你，没让我一个人走到黑。」", "when": "flag:并肩" },
+          { "who": "name", "text": "「明明你大可以转身离开的……可你没有。」{ta}低声道，「是你，把我从那条独路上拽了回来。」", "when": "flag:独行" },
+          { "who": "self", "text": "从撑伞的那一夜起，你就没真正把{ta}一个人留下过——此刻也是。", "when": "tag:真心>=3" },
+          { "who": "name", "text": "「天……真的亮了。而我，还活着。」{ta}的声音有些发抖，「这一切，都是因为你。」" }
+        ]
+      },
+      {
+        "id": "open1",
         "type": "open",
-        "prompt": "天就要亮了，这一夜也即将被封存。最后——有什么话，你想趁现在对 {name} 说？（≤100字，它会成为长夜判词的一部分）",
-        "variants": [
-          {
-            "variantId": "N20a",
-            "sceneKey": "sakura_path",
-            "scene": "晨光漫过街道，残余的心象正化作光点缓缓消散。{name}安静地站在光里看你：「说吧，」{ta}轻声道，「趁长夜还没合上，我想听你最真的那一句。」"
-          },
-          {
-            "variantId": "N20b",
-            "sceneKey": "rooftop_dusk",
-            "scene": "天台上，最后一缕夜色正退向城市尽头。{name}转过身，把这一夜所有的疲惫与喧嚣都隔在身后：「趁现在，把你心里那句话，说给我一个人听。」"
-          }
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "终章 · 噬星与黎明",
+        "goto": "END",
+        "prompt": "这一夜即将被时间封存。趁现在——有什么话，你想对 {name} 说？（≤100字，它会成为你们故事的最后一笔）",
+        "beats": [
+          { "who": "narration", "text": "{name}静静站在花树下，晨风拂过{ta}的发。{ta}在等你开口——等一句，只属于此刻、也只属于你们的话。", "when": "flag:破轮回" },
+          { "who": "narration", "text": "{name}已经不在了。可你仍站在{ta}消失的地方，望着渐渐亮起的天，想把那句没来得及说的话，说给风听。", "when": "flag:牺牲" }
+        ]
+      }
+      ,
+      {
+        "id": "s8s",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "终章 · 灯火长明",
+        "goto": "c6s",
+        "beats": [
+          { "who": "narration", "text": "没有人能拦住一场注定的轮回。长明灯的火苗舔上 {name} 的轮廓，{ta}一步一步，走向那片虚无。" },
+          { "who": "name", "text": "「这样……才是对的。」{ta}最后回头看了你一眼，那眼神平静得让人心碎，「七十年来，本就该如此。」" },
+          { "who": "self", "text": "我冲上去想拉住{ta}，却被无形的星力挡在原地，一步也迈不动。", "when": "tag:真心>=2" },
+          { "who": "narration", "text": "{ta}的身影在灯火里，一点一点变得透明，像一幅被晨光晒淡的旧画。" },
+          { "who": "噬星", "text": "那无数张脸，平静地接纳了又一个名字：「……又一个。谢谢你，来陪我们。」" },
+          { "who": "narration", "text": "星之心重新亮起，城得救了。代价是——{name}，将和历代执灯人一样，被全城彻底遗忘，仿佛从未存在。" }
+        ]
+      },
+      {
+        "id": "c6s",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "终章 · 灯火长明",
+        "beats": [
+          { "who": "守夜人", "text": "守夜人苍老的声音在身后响起：「天亮后，你也会忘记这一夜，忘记 {name} 曾经存在过——除非，你选择独自记得。」" },
+          { "who": "narration", "text": "记得，意味着一个人扛着整夜的重量过完往后；遗忘，则像什么都没发生过。" }
+        ],
+        "options": [
+          { "text": "我要记得{ta}。哪怕全世界都忘了{ta}的名字。", "score": 12, "tag": "真心", "face": "shy", "goto": "s9s", "reply": "守夜人凝视你良久：「……七十年了，第一次有人这么选。」", "os": "（被记得，是你能为{ta}做的最后一件事。）" },
+          { "text": "求你，让我替{ta}留在灯里，把{ta}换回来！", "score": 6, "tag": "忠犬", "face": "sad", "goto": "s9s", "reply": "守夜人摇头：「灯火已封，换不回了，孩子。」", "os": "（迟来的舍身，终究晚了一步。）" },
+          { "text": "记得这么沉的事……留个模糊的影子就好。", "score": 3, "tag": "海王", "face": "happy", "goto": "s9s", "reply": "守夜人叹息：「连记得，你都要挑轻的。」", "os": "（你连缅怀，都不肯用力。）" },
+          { "text": "忘了吧。反正{ta}本就该消失。", "score": -10, "tag": "渣", "face": "angry", "goto": "s9s", "reply": "守夜人闭上了眼，没有再看你。", "os": "（连一缕记得，你都吝于给{ta}。）" }
+        ]
+      },
+      {
+        "id": "s9s",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "sad",
+        "chapter": "终章 · 灯火长明",
+        "goto": "open1",
+        "beats": [
+          { "who": "narration", "text": "晨光照常升起。城市苏醒，人们对昨夜一无所知；对『{name}』这个名字，更是从未听闻。" },
+          { "who": "self", "text": "可你记得。撑伞的{ta}，耳尖泛红的{ta}，那句『我陪你』时{ta}眼里的光——你一寸都没忘。", "when": "tag:真心>=2" },
+          { "who": "self", "text": "你想了想，最终还是没让自己记住太多。毕竟，记得太清，会疼。", "when": "tag:渣>=2" },
+          { "who": "narration", "text": "你独自站在 {name} 消失的地方。这一轮，仍以牺牲收场——可至少，这一次，有一个人，会永远记得{ta}曾来过。" }
         ]
       }
     ],
     "endings": [
-      { "endingId": "genuine", "title": "同行者", "trigger": "top:真心", "caption": "天亮了，你记得这一夜的每一个选择。{name}站在晨光里回头看你，笑了：「你这种人……真是让人没法不交付真心。」", "report": "【关系人格 · 同行者】你属于稀有的『安全型』：给得起真心，也守得住边界，不撩拨、不卑微。长夜里你始终选择并肩，天亮后你依然记得。能和你建立关系的人，是真的有福。" },
-      { "endingId": "playboy", "title": "逐光者", "trigger": "top:海王", "caption": "天亮了，你给这一夜的每个人都留下了温柔的余味，却没让任何一束光真正留住你。{name}意味深长地看你一眼：「你呀……到底有几个『唯一』？」", "report": "【关系人格 · 逐光者（海王）】你魅力拉满、左右逢源，对谁都三分温柔，却谁也不肯认真交付。鱼塘辽阔，真心稀缺。长夜照见了你最迷人、也最危险的一面——别等到所有光都散去，才发现身边空无一人。" },
-      { "endingId": "toxic", "title": "噬星者", "trigger": "top:渣", "caption": "天亮了，你毫发无伤地走出长夜，身后却空无一人——{name}的身影，连同这一夜，都被你亲手抹去了。", "report": "【关系人格 · 噬星者（渣）】你精于算计，把别人的真心当成可消耗的资源，需要时靠近，用完即弃。长夜照见了你最冷的那一面：你赢下了每一次博弈，却输掉了所有能被称为『关系』的东西。" },
-      { "endingId": "devoted", "title": "拾光者", "trigger": "top:忠犬", "caption": "天亮了，你为 {name} 耗尽了自己，{ta} 却未必全看得见。{name}怔怔望着你：「为什么……受伤的总是你。」", "report": "【关系人格 · 拾光者（忠犬）】你掏心掏肺、有求必应，把自己放得很低很低，常常感动了自己，却弄丢了自己。付出值得敬佩，但请记得：你也是需要被照亮的人，而不是只能替别人提灯的那个。" },
-      { "endingId": "wanderer", "title": "漫游者", "min": -99, "caption": "天亮了。这一夜你时而真诚、时而疏离，连长夜都没能给你下一个定论。{name}歪头看你：「我到现在，都没太看懂你。」", "report": "【关系人格 · 漫游者（多面体）】你的选择难以被归类，像一块还在转动的多面体——也许你还在试探，自己究竟想成为谁。这不是坏事：先看清自己，再决定如何对待别人。下一个长夜，会有答案。" }
+      { "endingId": "genuine", "title": "同行者", "trigger": "top:真心", "caption": "无论这一夜以怎样的方式收场——你都从未松开过 {name} 的手，从未把 {ta} 一个人留在身后。", "report": "【关系人格 · 同行者】你属于稀有的『安全型』：给得起真心，也守得住边界。整座长夜里，你始终选择并肩。你或许不是最强的醒者，却是最值得托付的那一个。能与你同行的人，是真的有福。" },
+      { "endingId": "playboy", "title": "逐光者", "trigger": "top:海王", "caption": "这一夜，你对遇见的每个人都报以温柔，却始终没让任何一束光，真正照进自己心里。", "report": "【关系人格 · 逐光者（海王）】你魅力夺目、左右逢源，对谁都三分暖意，却谁也不肯认真交付。你温暖了很多人，却唯独逃避了那个愿意为你停留的人。别等星光散尽，才发现身边空无一人。" },
+      { "endingId": "toxic", "title": "噬星者", "trigger": "top:渣", "caption": "你算计着走完了这一夜，把每一份递到面前的真心，都当成了可以利用、可以舍弃的筹码。", "report": "【关系人格 · 噬星者（渣）】你精于权衡，需要时靠近，用完即弃。你或许赢下了每一次取舍，却没发现——真正的『噬星』，那片吞噬一切温度的虚无，早就住进了你心里。" },
+      { "endingId": "devoted", "title": "拾光者", "trigger": "top:忠犬", "caption": "这一夜，你为 {name} 燃尽了自己，把所有重的、痛的，都默默揽到了自己肩上。", "report": "【关系人格 · 拾光者（忠犬）】你掏心掏肺、有求必应，把自己放得很低很低，常常感动了自己，却弄丢了自己。你愿做那盏替人燃烧的灯，可别忘了——你也是值得被人照亮、被人珍惜的星光。" },
+      { "endingId": "wanderer", "title": "漫游者", "min": -99, "caption": "走完这一整夜，连倒转又归位的星辰，都没能替你下一个定论。", "report": "【关系人格 · 漫游者（多面体）】你的选择难以归类，像一块仍在转动的多面体——时而赤诚，时而疏离。也许你还在长夜里寻找自己的形状。这不是坏事：先认清自己，再决定如何对待并肩之人。下一次轮回，会有答案。" }
     ]
   }
 ]

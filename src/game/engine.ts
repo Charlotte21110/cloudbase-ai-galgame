@@ -2,7 +2,7 @@
  * 游戏引擎纯函数（计分、占位符替换、结局判定）· 对应设计方案第七节
  * 全部内置 JS、零容错，不依赖 AI。
  */
-import type { Character, Script, Ending, Variant } from './types'
+import type { Character, Script, Ending } from './types'
 
 /** 文案占位符替换：{name}→角色名，{ta}→他/她，{TA}→TA */
 export function replaceTokens(text: string, char: Character | null): string {
@@ -23,6 +23,42 @@ export function clampScore(n: number): number {
 /** 数组随机取一 */
 export function pickRandom<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)]
+}
+
+/** beat 的 when 条件上下文 */
+export interface WhenCtx {
+  tags: Record<string, number>
+  score: number
+  flags: Record<string, number>
+}
+
+/**
+ * 求值 beat 的显示条件（「业力回收」核心）。空条件恒为真。支持：
+ *  - tag:真心>=3 / tag:渣<2     标签计数比较
+ *  - score>=60 / score<30        羁绊值比较
+ *  - flag:并肩 / flag:破轮回      之前选择留下的印记
+ *  - top:真心                    当前主导人格
+ *  - !xxx                        取反（如 !flag:独行）
+ */
+export function evalWhen(when: string | undefined, ctx: WhenCtx): boolean {
+  if (!when) return true
+  const t = when.trim()
+  if (!t) return true
+  if (t.startsWith('!')) return !evalWhen(t.slice(1), ctx)
+
+  let m: RegExpExecArray | null
+  if ((m = /^tag:(.+?)>=(\d+)$/.exec(t))) return (ctx.tags[m[1].trim()] || 0) >= Number(m[2])
+  if ((m = /^tag:(.+?)<(\d+)$/.exec(t))) return (ctx.tags[m[1].trim()] || 0) < Number(m[2])
+  if ((m = /^score>=(\d+)$/.exec(t))) return ctx.score >= Number(m[1])
+  if ((m = /^score<(\d+)$/.exec(t))) return ctx.score < Number(m[1])
+  if ((m = /^flag:(.+)$/.exec(t))) return (ctx.flags[m[1].trim()] || 0) > 0
+  if ((m = /^top:(.+)$/.exec(t))) {
+    const tag = m[1].trim()
+    const c = ctx.tags[tag] || 0
+    if (c <= 0) return false
+    return c === Math.max(0, ...Object.values(ctx.tags))
+  }
+  return true
 }
 
 /** 最少选够几次，才算形成一种「主导人格」（节点变多后相应提高，避免轻易定型） */
@@ -90,15 +126,8 @@ export function computeMatchRate(score: number, endingId: string): number {
 }
 
 /** 取节点已选中的变体（pickedVariants 里存了 variantId） */
-export function resolveVariant(
-  variants: Variant[],
-  pickedId: string | undefined
-): Variant {
-  if (pickedId) {
-    const v = variants.find((x) => x.variantId === pickedId)
-    if (v) return v
-  }
-  return variants[0]
+export function resolveVariant(): void {
+  // 已废弃：节点图版本不再使用随机变体（分支由 option.goto 决定）。保留空函数以兼容旧引用。
 }
 
 /** 标签云文案：{ '主动':3 } → ['主动×3'] */

@@ -1,23 +1,28 @@
 /**
- * 赛博恋爱文游 · 核心类型定义
- * 对应设计方案第八节「数据库设计（CloudBase FlexDB）」
+ * 赛博恋爱文游 · 核心类型定义（节点图版）
+ *
+ * 设计要点（对应「史诗叙事 + 少量关键抉择 + 分支个人线」）：
+ *  - 节点是一张「图」，靠 goto / option.goto 跳转，不再按数组顺序线性播放。
+ *  - story 节点：纯剧情，beats 逐条点出来（旁白 / TA 对话 / 主角心声），看完 goto 下一节点。
+ *  - choice 节点：关键抉择，先放 beats 铺垫，再给 options；不同 option 可 goto 到不同节点 → 个人线分支。
+ *  - open 节点：开放输入题（喂结局生图/判词）。
+ *  - goto 为 'END' 时进入结局结算。
  */
 
-/** 画风：与 material 素材文件夹一致（real=写实电影风 / anime=新海诚二次元风） */
+/** 画风：real=写实电影风 / anime=新海诚二次元风 */
 export type ArtStyle = 'real' | 'anime'
 
-/** 立绘表情：素材实际只有这 4 种（无 normal，默认用 happy 顶替） */
+/** 立绘表情（素材只有这 4 种，normal 自动用 happy 顶替） */
 export type Face = 'happy' | 'shy' | 'angry' | 'sad' | 'normal'
 
 /** 主题色板 key：甜系粉樱 / 高冷暗夜紫 */
 export type ThemeKey = 'sakura' | 'night'
 
-/** 集合 1：characters（人物库 · 内置） */
+/** 人物库 */
 export interface Character {
   id: string
   name: string
   gender: 'male' | 'female'
-  /** 该角色画风（画风跟随角色，不再单独选） */
   style: ArtStyle
   persona: string
   tagline: string
@@ -25,73 +30,94 @@ export interface Character {
   scriptId: string
 }
 
-/** 选项（仅选择题节点有） */
-export interface ScriptOption {
+/** 一条剧情文本（玩家点一下出一条） */
+export interface Beat {
+  /**
+   * 说话主体：
+   *  - 'narration'（或省略）：旁白
+   *  - 'name'：当前角色开口（配合立绘）
+   *  - 'self'：主角心声
+   *  - 其它字符串：具名旁白/第三者（直接当作前缀显示）
+   */
+  who?: 'narration' | 'name' | 'self' | string
+  /** 文本，支持 {name} {ta} {TA} 占位符 */
   text: string
-  /** 好感度增减，区间约 -15 ~ +15 */
-  score: number
-  /** 标签，用于隐藏结局判定（主动 / 舔狗 / 强势 等） */
-  tag: string
-  /** 选后 TA 的表情 */
-  face: Face
-  /** 下一节点 nodeId */
-  next: string
-  /** AI 失败时的兜底回应台词 */
-  fallbackLine: string
-  /** AI 失败时的兜底内心 OS */
-  fallbackOS: string
+  /** 这条出现时切换 TA 表情（可选） */
+  face?: Face
+  /** 这条出现时切换背景（可选） */
+  sceneKey?: string
+  /**
+   * 显示条件（可选，「业力回收」核心）：满足才显示这条，否则跳过。
+   * 支持：tag:真心>=3 / tag:渣<2 / score>=60 / flag:并肩 / !flag:独行 / top:真心
+   */
+  when?: string
 }
 
-/** 节点变体（剧本池随机抽 1） */
-export interface Variant {
-  variantId: string
-  /** 场景 key，对应背景图 */
-  sceneKey: string
-  /** 情境文案 */
-  scene: string
-  /** 选完后的剧情旁白（串联故事） */
-  narration?: string
-  /** 选择题选项（开放题节点为空） */
-  options?: ScriptOption[]
+/** 关键抉择的一个选项 */
+export interface NodeOption {
+  text: string
+  /** 羁绊值增减 */
+  score: number
+  /** 关系人格标签：真心 / 海王 / 忠犬 / 渣（决定结局人格） */
+  tag: string
+  /** 选后 TA 的表情 */
+  face?: Face
+  /** 选后 TA 的回应台词（AI 失败/超时时兜底） */
+  reply?: string
+  /** 选后 TA 的内心 OS（兜底） */
+  os?: string
+  /** 选后跳转到的节点 id（'END' 进入结局）——这是「分支个人线」的关键 */
+  goto: string
+  /** 选后写下的「印记」（可选）：供后续 beat 的 when:flag:xxx 回收，如 并肩 / 破轮回 */
+  flag?: string
 }
 
 /** 节点 */
 export interface GameNode {
-  nodeId: string
-  /** choice=选择题 / open=开放输入题 */
-  type: 'choice' | 'open'
-  /** 开放题题面 */
+  id: string
+  type: 'story' | 'choice' | 'open'
+  /** 进入该节点时的背景 */
+  sceneKey?: string
+  /** 进入该节点时的 TA 表情 */
+  face?: Face
+  /** 章节/幕标题（可选，HUD 顶部展示，烘托史诗感） */
+  chapter?: string
+  /** 逐条展示的剧情文本 */
+  beats?: Beat[]
+  /** choice 节点的选项 */
+  options?: NodeOption[]
+  /** open 节点题面 */
   prompt?: string
-  variants: Variant[]
+  /** story / open 节点看完后跳转的节点 id；'END' 进入结局 */
+  goto?: string
 }
 
 /** 结局 */
 export interface Ending {
   endingId: string
   title: string
-  /** 普通结局的好感度下限 */
+  /** 兜底结局的羁绊值下限 */
   min?: number
-  /** 隐藏结局触发条件，如 'tag:舔狗>=4' */
+  /** 触发条件：'top:标签'（主导人格）/ 'tag:标签>=数字'（固定阈值） */
   trigger?: string
-  /** 结局画面文案 */
   caption: string
-  /** AI 报告失败时的兜底文案 */
   report: string
 }
 
-/** 集合 2：scripts（剧本树 · 内置） */
+/** 剧本（节点图） */
 export interface Script {
   id: string
   title: string
   openingTip: string
-  /** 开场旁白（可选，开场页展示） */
   prologue?: string
   initScore: number
+  /** 起始节点 id */
+  start: string
   nodes: GameNode[]
   endings: Ending[]
 }
 
-/** 集合 3：endingCG（结局图库 · 兜底 D1） */
+/** 结局图库（兜底 D1） */
 export interface EndingCG {
   id: string
   charId: string
