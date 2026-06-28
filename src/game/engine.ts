@@ -130,10 +130,34 @@ export function resolveVariant(): void {
   // 已废弃：节点图版本不再使用随机变体（分支由 option.goto 决定）。保留空函数以兼容旧引用。
 }
 
-/** 标签云文案：{ '主动':3 } → ['主动×3'] */
+/**
+ * 选项原始 tag → 关系人格类型（结局判词体系，对应 endings.title）。
+ * 标签云不再直接暴露「海王/渣」这类选项 tag，而是统一展示成人格画像。
+ */
+const TAG_PERSONA: Record<string, string> = {
+  真心: '同行者',
+  海王: '逐光者',
+  忠犬: '拾光者',
+  渣: '噬星者',
+}
+
+/** 把选项 tag 映射为关系人格类型；未知 tag 原样返回 */
+export function personaOf(tag: string): string {
+  return TAG_PERSONA[tag] || tag
+}
+
+/**
+ * 标签云文案（按人格类型聚合）：{ '海王':2, '真心':1 } → ['逐光者×2','同行者×1']
+ * 同一人格的多个原始 tag 会被合并计数。
+ */
 export function formatTags(tagsCount: Record<string, number>): string[] {
-  return Object.entries(tagsCount)
-    .filter(([, n]) => n > 0)
+  const merged: Record<string, number> = {}
+  for (const [tag, n] of Object.entries(tagsCount)) {
+    if (n <= 0) continue
+    const persona = personaOf(tag)
+    merged[persona] = (merged[persona] || 0) + n
+  }
+  return Object.entries(merged)
     .sort((a, b) => b[1] - a[1])
-    .map(([tag, n]) => `${tag}×${n}`)
+    .map(([persona, n]) => `${persona}×${n}`)
 }

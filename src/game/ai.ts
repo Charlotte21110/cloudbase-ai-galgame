@@ -121,12 +121,18 @@ export async function aiLine(payload: {
   scene: string
   optionText: string
 }): Promise<LineResult | null> {
+  const mood =
+    payload.score >= 60
+      ? '你此刻对对方颇为信任、愿意亲近'
+      : payload.score >= 35
+        ? '你对对方有些好感，仍带着几分克制'
+        : '你对对方还较为疏离、戒备'
   const prompt =
-    `你扮演「${payload.name}」，人设：${payload.persona}。当前你与对方的羁绊值 ${payload.score}/100。\n` +
+    `你扮演「${payload.name}」，人设：${payload.persona}。${mood}。\n` +
     `情境（发生在「长夜」这场城市异变中）：${payload.scene}\n` +
     `对方刚对你说："${payload.optionText}"\n` +
     `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,贴合人设、有戏剧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
-    `羁绊高→温和、愿意袒露；羁绊低→疏离、戒备。正常对话即可，不必刻意暧昧。只输出 JSON，不要其它文字。`
+    `台词要自然走心；严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。只输出 JSON，不要其它文字。`
   const text = await chat(prompt, 'line')
   if (!text) return null
   const obj = safeParseJSON(text)
@@ -145,10 +151,18 @@ export async function aiOpenLine(payload: {
   userText: string
 }): Promise<string | null> {
   const safeUser = String(payload.userText || '').slice(0, 100)
+  const mood =
+    payload.score >= 60
+      ? '此刻你已对对方卸下防备、心生依恋'
+      : payload.score >= 35
+        ? '你对对方有好感，却仍带着几分克制与试探'
+        : '你对对方仍存着距离与保留，但并非冷漠'
   const prompt =
-    `你扮演「${payload.name}」，人设：${payload.persona}。当前你与对方的羁绊值 ${payload.score}/100。\n` +
+    `你扮演「${payload.name}」，人设：${payload.persona}。${mood}。\n` +
     `在「长夜」即将结束、记忆即将封存之际，对方对你说了一段心里话："${safeUser}"\n` +
-    `用 ${payload.name} 的口吻真诚回应这段话，1~3句、≤50字，符合人设、有情感张力。只输出台词本身，不要引号、不要解释。`
+    `请用 ${payload.name} 的口吻真诚回应这段话，1~3句、≤50字，像真人倾诉般自然走心、有画面感与情感张力。\n` +
+    `严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。\n` +
+    `只输出台词本身，不要引号、不要解释。`
   const text = await chat(prompt, 'openLine')
   return text ? text.trim().slice(0, 80) : null
 }

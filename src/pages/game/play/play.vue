@@ -1,23 +1,29 @@
 <template>
-  <view class="play" :class="{ shake: shaking }" :style="themeVars" @click="onScreenTap">
-    <image v-if="bg" class="bg" :src="bg" mode="aspectFill" />
+  <view class="play" :style="themeVars">
+    <!-- stage：移动端满宽，桌面端定宽居中（响应式核心） -->
+    <view class="stage" :class="{ shake: shaking }" @click="onScreenTap">
+      <image v-if="bg" class="bg" :src="bg" mode="aspectFill" />
     <view class="bg-mask"></view>
 
-    <!-- 左上角：极简角色名 + 幕数 -->
-    <view class="hud-name-tag">
-      <text class="hud-name">{{ char?.name }}</text>
-      <text class="hud-step">第 {{ session.step }} 幕</text>
+    <!-- 左上角：章节标题条（素材底图） -->
+    <view class="hud-chapter">
+      <image class="hud-chapter-bg" :src="chapterBar" mode="scaleToFill" />
+      <view class="hud-chapter-text">
+        <text class="hud-name">{{ char?.name }}</text>
+        <text class="hud-step">第 {{ session.step }} 幕</text>
+      </view>
     </view>
 
-    <!-- 右上角：竖向羁绊条（数字 / 竖条 / 标签） -->
+    <!-- 右上角：横向羁绊条（爱心 + 进度 + 数值 + 标签） -->
     <view class="affinity">
-      <text class="affinity-num">{{ session.score }}</text>
-      <view class="affinity-bar">
+      <view class="affinity-heart"></view>
+      <view class="affinity-track">
         <view
           class="affinity-fill"
           :class="{ bump: bumping }"
-          :style="{ height: session.score + '%' }"
+          :style="{ width: session.score + '%' }"
         ></view>
+        <text class="affinity-num">{{ session.score }}</text>
       </view>
       <text class="affinity-label">羁绊</text>
     </view>
@@ -25,31 +31,28 @@
     <!-- 飘分 / 心形粒子 -->
     <view v-if="deltaText" class="delta" :class="deltaClass">{{ deltaText }}</view>
     <view v-if="showHearts" class="hearts">
-      <text v-for="i in 6" :key="i" class="heart" :style="heartStyle(i)">💗</text>
+      <view v-for="i in 6" :key="i" class="heart" :style="heartStyle(i)"></view>
     </view>
 
     <!-- 立绘 -->
     <image v-if="portrait && showPortrait" class="portrait" :class="{ in: portraitIn }" :src="portrait" mode="aspectFit" />
 
+    <!-- 左下角罗盘装饰 -->
+    <image class="compass" :src="compass" mode="widthFix" />
+
     <!-- 对话框 / 操作区 -->
     <view class="dock">
-      <!-- 文本气泡：旁白 / TA 对话 / 主角心声 / TA 回应 -->
-      <view class="bubble" :class="bubbleClass">
-        <text v-if="bubbleLabel" class="bubble-label">{{ bubbleLabel }}</text>
-        <text class="bubble-text" :class="{ os: phase === 'react' && curOS }">{{ typed }}</text>
-        <text v-if="phase === 'react' && curOS && doneTyping" class="os-text">（{{ curOS }}）</text>
-      </view>
-
-      <view class="actions">
-        <!-- 关键抉择：选项 -->
-        <template v-if="phase === 'choosing'">
+      <!-- 操作区：选项 / 开放题 / 加载 —— 出现在对话框「上方」，半透明玻璃风 -->
+      <view v-if="showActions" class="actions">
+        <!-- 关键抉择：选项（2 列网格并列） -->
+        <view v-if="phase === 'choosing'" class="opt-grid">
           <button
             v-for="(opt, idx) in options"
             :key="idx"
             class="opt-btn"
             @click.stop="pickOption(opt)"
           >{{ txt(opt.text) }}</button>
-        </template>
+        </view>
 
         <!-- 开放题输入 -->
         <template v-else-if="phase === 'open' && doneTyping">
@@ -69,10 +72,40 @@
 
         <!-- 加载态 -->
         <view v-else-if="phase === 'reacting'" class="loading">{{ char?.name }} 正在回应…</view>
-
-        <!-- 继续（剧情/回应推进）。点屏幕任意处也可推进。 -->
-        <view v-else class="tap-hint">{{ doneTyping ? '轻触继续 →' : '轻触跳过 ▸' }}</view>
       </view>
+
+      <!-- 对话框：固定最小高度、常驻底部，玻璃透明气泡 -->
+      <view class="bubble" :class="bubbleClass">
+        <image class="bubble-bg" :src="textbox" mode="scaleToFill" />
+        <view class="bubble-content">
+          <text v-if="bubbleLabel" class="bubble-label">{{ bubbleLabel }}</text>
+          <text class="bubble-text" :class="{ os: phase === 'react' && curOS }">{{ typed }}</text>
+          <text v-if="phase === 'react' && curOS && doneTyping" class="os-text">（{{ curOS }}）</text>
+        </view>
+        <!-- 纯三角形「继续」：仅推进态显示 -->
+        <view v-if="canTap" class="tap-tri" :class="{ ready: doneTyping }"></view>
+      </view>
+    </view>
+
+    <!-- 底部控制栏：上一句 / 下一句 / 跳过 / 自动播放 -->
+    <view class="ctrl-bar">
+      <view class="ctrl-btn" :class="{ disabled: !canPrev }" @click.stop="goPrev">
+        <image class="ctrl-ico" :src="ctrlPrev" mode="aspectFit" />
+        <text class="ctrl-tip">上一句</text>
+      </view>
+      <view class="ctrl-btn" :class="{ disabled: !canNext }" @click.stop="goNext">
+        <image class="ctrl-ico" :src="ctrlNext" mode="aspectFit" />
+        <text class="ctrl-tip">下一句</text>
+      </view>
+      <view class="ctrl-btn" :class="{ disabled: !canSkip }" @click.stop="goSkip">
+        <image class="ctrl-ico" :src="ctrlSkip" mode="aspectFit" />
+        <text class="ctrl-tip">跳过</text>
+      </view>
+      <view class="ctrl-btn" :class="{ active: autoPlay }" @click.stop="toggleAuto">
+        <image class="ctrl-ico" :src="ctrlAuto" mode="aspectFit" />
+        <text class="ctrl-tip">{{ autoPlay ? '自动中' : '自动' }}</text>
+      </view>
+    </view>
     </view>
   </view>
 </template>
@@ -102,6 +135,21 @@ type Phase = 'story' | 'choosing' | 'reacting' | 'react' | 'open'
 
 const char = computed(() => session.char)
 const node = computed(() => currentNode())
+
+// 剧情页 UI 素材
+const compass = '/static/game/ui/compass.png'
+const textbox = '/static/game/ui/textbox.png'
+const chapterBar = '/static/game/ui/chapter-bar.png'
+
+// 底部控制栏图标素材
+const ctrlPrev = '/static/game/ui/ctrl-prev.png'
+const ctrlNext = '/static/game/ui/ctrl-next.png'
+const ctrlSkip = '/static/game/ui/ctrl-skip.png'
+const ctrlAuto = '/static/game/ui/ctrl-auto.png'
+
+// 自动播放
+const autoPlay = ref(false)
+let autoTimer: any = null
 
 const phase = ref<Phase>('story')
 const beatIdx = ref(0)
@@ -136,6 +184,21 @@ const curBeat = computed<Beat | null>(() => beats.value[beatIdx.value] || null)
 
 // 立绘仅在「有角色开口 / 抉择 / 回应」时强调显示，纯旁白也保留但弱化
 const showPortrait = computed(() => !!portrait.value)
+
+// 操作区（选项 / 开放题 / 加载）——出现在对话框「上方」
+const showActions = computed(
+  () =>
+    phase.value === 'choosing' ||
+    (phase.value === 'open' && doneTyping.value) ||
+    phase.value === 'reacting'
+)
+// 是否处于「可轻触推进」态（只在这两种相位显示小三角）
+const canTap = computed(() => phase.value === 'story' || phase.value === 'react')
+
+// 底部控制栏可用性
+const canPrev = computed(() => phase.value === 'story' && beatIdx.value > 0)
+const canNext = computed(() => canTap.value)
+const canSkip = computed(() => canTap.value)
 
 const bubbleClass = computed(() => {
   if (phase.value === 'react') return 'line'
@@ -173,6 +236,7 @@ function typeOut(full: string, done?: () => void) {
       clearInterval(typingTimer)
       doneTyping.value = true
       done && done()
+      scheduleAuto()
     }
   }, 30)
 }
@@ -235,9 +299,70 @@ function onScreenTap() {
       typed.value = reactFull.value
     }
     doneTyping.value = true
+    scheduleAuto()
     return
   }
   advanceTap()
+}
+
+// —— 底部控制栏 ——
+function clearAuto() {
+  if (autoTimer) {
+    clearTimeout(autoTimer)
+    autoTimer = null
+  }
+}
+// 打字完成后，自动播放态下延时推进
+function scheduleAuto() {
+  clearAuto()
+  if (!autoPlay.value) return
+  if (phase.value !== 'story' && phase.value !== 'react') return
+  autoTimer = setTimeout(() => {
+    if (autoPlay.value) advanceTap()
+  }, 1200)
+}
+function toggleAuto() {
+  autoPlay.value = !autoPlay.value
+  if (autoPlay.value) {
+    if (doneTyping.value) scheduleAuto()
+  } else {
+    clearAuto()
+  }
+}
+// 上一句：仅在当前节点 beats 内回看，直接显示完整文本
+function goPrev() {
+  clearAuto()
+  if (phase.value !== 'story' || beatIdx.value <= 0) return
+  clearInterval(typingTimer)
+  beatIdx.value -= 1
+  applyBeatVisual(curBeat.value)
+  typed.value = txt(curBeat.value?.text)
+  doneTyping.value = true
+}
+// 下一句：等同轻触推进（打字中先补全）
+function goNext() {
+  if (phase.value === 'choosing' || phase.value === 'reacting' || phase.value === 'open') return
+  clearAuto()
+  if (!doneTyping.value) {
+    clearInterval(typingTimer)
+    typed.value = phase.value === 'react' ? reactFull.value : txt(curBeat.value?.text)
+    doneTyping.value = true
+    scheduleAuto()
+    return
+  }
+  advanceTap()
+}
+// 跳过：跳过当前节点剩余铺垫，直达交互 / 跳转
+function goSkip() {
+  clearAuto()
+  if (phase.value === 'story') {
+    clearInterval(typingTimer)
+    beatIdx.value = Math.max(beats.value.length - 1, 0)
+    afterBeats()
+  } else if (phase.value === 'react') {
+    clearInterval(typingTimer)
+    proceedGoto(pendingGoto.value)
+  }
 }
 
 // 打字完成后，轻触的推进逻辑
@@ -336,7 +461,7 @@ function feedback(delta: number) {
   bumping.value = false
   setTimeout(() => (bumping.value = true), 10)
   if (delta > 0) {
-    deltaText.value = `+${delta} 💗`
+    deltaText.value = `+${delta}`
     deltaClass.value = 'up'
     showHearts.value = false
     setTimeout(() => (showHearts.value = true), 10)
@@ -369,18 +494,34 @@ onMounted(() => {
   enterNode()
 })
 
-onUnmounted(() => clearInterval(typingTimer))
+onUnmounted(() => {
+  clearInterval(typingTimer)
+  clearAuto()
+})
 </script>
 
 <style scoped>
+/* 外层：全屏深色背板（桌面端两侧留黑） */
 .play {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background: var(--c-bg);
+  background: #07060f;
+  display: flex;
+  justify-content: center;
 }
-.play.shake { animation: shake 0.45s; }
+/* stage：移动端满宽，桌面端定宽（750rpx≈手机宽）居中 */
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 750rpx;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--c-bg);
+  box-shadow: 0 0 60rpx rgba(0, 0, 0, 0.6);
+}
+.stage.shake { animation: shake 0.45s; }
 @keyframes shake {
   0%,100% { transform: translateX(0); }
   20% { transform: translateX(-12rpx); }
@@ -394,80 +535,126 @@ onUnmounted(() => clearInterval(typingTimer))
   background: linear-gradient(180deg, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.6) 100%);
 }
 
-/* 左上角：角色名标签 —— 极简，不再用厚黑色胶囊 */
-.hud-name-tag {
+/* 左上角：章节标题条（素材底图）—— 文字在整块内纯 flex 垂直居中（= banner 中线） */
+.hud-chapter {
   position: absolute;
-  top: calc(28rpx + env(safe-area-inset-top));
-  left: 28rpx;
+  top: calc(16rpx + env(safe-area-inset-top));
+  left: 18rpx;
   z-index: 10;
+  width: 350rpx;
+  height: 98rpx;
   display: flex;
-  flex-direction: column;
-  padding: 10rpx 20rpx;
-  background: rgba(20, 16, 32, 0.42);
-  backdrop-filter: blur(8rpx);
-  -webkit-backdrop-filter: blur(8rpx);
-  border-radius: 14rpx;
-  border-left: 4rpx solid var(--c-primary);
+  align-items: center;
+}
+.hud-chapter-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+/* 文字层：避开左侧罗盘和右侧箭头，竖直居中由父级 align-items 保证 */
+.hud-chapter-text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  padding-left: 70rpx;
+  padding-right: 44rpx;
 }
 .hud-name {
   color: #fff;
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: 700;
-  letter-spacing: 2rpx;
-  line-height: 1.2;
+  letter-spacing: 1rpx;
+  line-height: 1;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.55);
 }
 .hud-step {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 20rpx;
-  margin-top: 4rpx;
-  letter-spacing: 2rpx;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 23rpx;
+  margin-left: 12rpx;
+  letter-spacing: 1rpx;
+  line-height: 1;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.55);
 }
 
-/* 右上角：竖向羁绊条 —— 数字 / 竖条 / 标签 */
+/* 右上角：横向羁绊条 —— 与章节条同一水平中线 */
 .affinity {
   position: absolute;
-  top: calc(28rpx + env(safe-area-inset-top));
-  right: 28rpx;
+  top: calc(19rpx + env(safe-area-inset-top));
+  right: 22rpx;
   z-index: 10;
+  height: 92rpx;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8rpx;
+  gap: 10rpx;
 }
-.affinity-num {
-  color: #fff;
-  font-size: 28rpx;
-  font-weight: 800;
-  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.5);
-  line-height: 1;
-}
-.affinity-bar {
+/* CSS 发光爱心（标准构造，包围盒对称、居中不偏） */
+.affinity-heart {
   position: relative;
-  width: 14rpx;
-  height: 240rpx;
-  border-radius: 10rpx;
-  background: rgba(255, 255, 255, 0.22);
+  width: 40rpx;
+  height: 36rpx;
+  filter: drop-shadow(0 0 8rpx rgba(255, 143, 208, 0.85));
+}
+.affinity-heart::before,
+.affinity-heart::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 20rpx;
+  height: 32rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  background: linear-gradient(135deg, #ff8fd0, #b06bff);
+}
+.affinity-heart::before {
+  left: 20rpx;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.affinity-heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.affinity-track {
+  position: relative;
+  width: 176rpx;
+  height: 26rpx;
+  border-radius: 16rpx;
+  background: rgba(20, 16, 40, 0.55);
+  border: 1rpx solid rgba(180, 160, 255, 0.5);
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.35), inset 0 0 8rpx rgba(124, 111, 224, 0.3);
   overflow: hidden;
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.25);
 }
 .affinity-fill {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
-  border-radius: 10rpx;
-  background: linear-gradient(180deg, var(--c-up), var(--c-primary));
-  transition: height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  left: 0; top: 0; bottom: 0;
+  border-radius: 16rpx;
+  background: linear-gradient(90deg, #6f8bff, #b06bff, #ff8fd0);
+  box-shadow: 0 0 12rpx rgba(176, 107, 255, 0.7);
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.affinity-fill.bump { animation: bumpV 0.5s; }
-@keyframes bumpV {
-  0% { transform: scaleX(1); }
-  50% { transform: scaleX(1.8); }
-  100% { transform: scaleX(1); }
+.affinity-fill.bump { animation: bumpH 0.5s; }
+@keyframes bumpH {
+  0% { transform: scaleY(1); }
+  50% { transform: scaleY(1.5); }
+  100% { transform: scaleY(1); }
+}
+.affinity-num {
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+  font-size: 18rpx;
+  font-weight: 800;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.7);
 }
 .affinity-label {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 20rpx;
-  letter-spacing: 4rpx;
-  writing-mode: vertical-rl;
+  letter-spacing: 2rpx;
   text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.5);
 }
 
@@ -491,25 +678,53 @@ onUnmounted(() => clearInterval(typingTimer))
   100% { opacity: 0; transform: translate(-50%, -80rpx) scale(1); }
 }
 .hearts { position: absolute; inset: 0; z-index: 19; pointer-events: none; }
+/* CSS 绘制的心形粒子（替代 emoji） */
 .heart {
   position: absolute;
   bottom: 40%;
-  font-size: 40rpx;
+  width: 28rpx;
+  height: 28rpx;
+  transform: rotate(-45deg);
+  background: linear-gradient(135deg, #ff8fd0, #b06bff);
+  border-radius: 0 0 5rpx 0;
+  filter: drop-shadow(0 0 6rpx rgba(255, 143, 208, 0.7));
   animation: heartUp 1.2s ease-out forwards;
 }
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff8fd0, #b06bff);
+}
+.heart::before { top: -14rpx; left: 0; }
+.heart::after { top: 0; right: -14rpx; }
 @keyframes heartUp {
-  0% { opacity: 0; transform: translateY(0) scale(0.4); }
+  0% { opacity: 0; transform: rotate(-45deg) translate(0, 0) scale(0.4); }
   30% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-260rpx) scale(1.2); }
+  100% { opacity: 0; transform: rotate(-45deg) translate(130rpx, 130rpx) scale(1.1); }
 }
 
-/* 立绘：底部贴到对话框上沿，不再悬在屏幕中间 */
+/* 左下角罗盘装饰 */
+.compass {
+  position: absolute;
+  left: 22rpx;
+  bottom: calc(420rpx + env(safe-area-inset-bottom));
+  z-index: 6;
+  width: 110rpx;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10rpx rgba(176, 150, 255, 0.5));
+}
+
+/* 立绘：底部贴着对话框上沿（藏进气泡后方，无空隙） */
 .portrait {
   position: absolute;
   z-index: 5;
   left: 50%;
-  /* .dock 的内容高度约 320~380rpx，这里让立绘底部正好落在 dock 上沿 */
-  bottom: 320rpx;
+  /* 让立绘底部落到对话框上沿之下一点，被气泡盖住，从而无缝衔接 */
+  bottom: calc(300rpx + env(safe-area-inset-bottom));
   transform: translateX(-50%);
   /* 用 rem 控制立绘整体尺寸；宽高比保持 7:9 = 560:720 */
   width: 25.28rem;
@@ -523,66 +738,130 @@ onUnmounted(() => clearInterval(typingTimer))
 /* 对话框 / 操作 */
 .dock {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  left: 0; right: 0;
+  /* 底部预留出「上一句 / 下一句」操作栏的空间，整体上移 */
+  bottom: 0;
   z-index: 8;
-  padding: 0 28rpx calc(36rpx + env(safe-area-inset-bottom));
+  padding: 0 28rpx calc(116rpx + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
 }
 .bubble {
-  background: rgba(255,255,255,0.96);
+  position: relative;
   border-radius: 24rpx;
-  padding: 28rpx 30rpx;
-  box-shadow: 0 -4rpx 24rpx rgba(0,0,0,0.12);
-  min-height: 150rpx;
+  padding: 28rpx 34rpx 40rpx;
+  /* 固定最小高度，文字增减不跳动 */
+  min-height: 200rpx;
+  box-sizing: border-box;
 }
-.bubble.narr { background: rgba(20,16,32,0.78); }
-.bubble.narr .bubble-text { color: #f3effa; }
-.bubble.self { background: rgba(255,255,255,0.92); }
-.bubble.self .bubble-text { color: #6b5f86; font-style: italic; }
+.bubble-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.bubble-content {
+  position: relative;
+  z-index: 1;
+}
 .bubble-label {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-size: 24rpx;
   font-weight: 700;
+  letter-spacing: 1rpx;
   color: #fff;
-  background: var(--c-primary);
-  padding: 4rpx 18rpx;
-  border-radius: 20rpx;
-  margin-bottom: 12rpx;
+  background: linear-gradient(135deg, #c79bff, #7b6ee6);
+  padding: 6rpx 24rpx;
+  border-radius: 24rpx;
+  margin-bottom: 14rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4rpx 14rpx rgba(124, 111, 224, 0.5);
 }
-.bubble.narr .bubble-label { background: rgba(255,255,255,0.18); }
-.bubble-text { display: block; font-size: 29rpx; line-height: 1.7; color: var(--c-text); }
-.os-text { display: block; margin-top: 12rpx; font-size: 24rpx; color: #9a93a6; font-style: italic; }
+.bubble-text {
+  display: block;
+  font-size: 29rpx;
+  line-height: 1.7;
+  color: #f3effa;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.4);
+}
+.bubble.self .bubble-text { font-style: italic; color: #e7defb; }
+.os-text { display: block; margin-top: 12rpx; font-size: 24rpx; color: #c7bce0; font-style: italic; }
+/* 纯三角形「继续」：固定对话框右下角，无任何底框 */
+.tap-tri {
+  position: absolute;
+  right: 26rpx;
+  bottom: 22rpx;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-top: 18rpx solid rgba(255, 255, 255, 0.85);
+  opacity: 0.55;
+  filter: drop-shadow(0 1rpx 3rpx rgba(0, 0, 0, 0.5));
+}
+.tap-tri.ready { animation: blink 1.2s ease-in-out infinite; }
+@keyframes blink { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-.actions { margin-top: 18rpx; min-height: 64rpx; }
+/* 操作区：在对话框「上方」 */
+.actions { margin-bottom: 16rpx; }
+/* 选项：一行一个，纵向排列 */
+.opt-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
 .opt-btn {
   width: 100%;
-  background: rgba(255,255,255,0.96);
-  color: var(--c-text);
-  font-size: 28rpx;
-  border: 2rpx solid var(--c-soft);
-  border-radius: 18rpx;
-  padding: 22rpx 24rpx;
-  margin-bottom: 16rpx;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  background: rgba(38, 30, 66, 0.46);
+  color: #f3effa;
+  font-size: 27rpx;
+  border: 1rpx solid rgba(180, 160, 255, 0.42);
+  border-radius: 16rpx;
+  padding: 20rpx 26rpx;
   line-height: 1.4;
   text-align: left;
+  box-sizing: border-box;
+  backdrop-filter: blur(12rpx);
+  -webkit-backdrop-filter: blur(12rpx);
+  box-shadow: 0 6rpx 20rpx rgba(0, 0, 0, 0.3), inset 0 1rpx 0 rgba(255, 255, 255, 0.08);
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s ease, background 0.12s ease;
 }
-.opt-btn:active { background: var(--c-soft); }
+/* 去掉 uni-app button 默认 1px 边框 */
+.opt-btn::after { border: none; }
+.opt-btn:active {
+  background: rgba(124, 111, 224, 0.5);
+  transform: scale(0.97);
+}
 .opt-btn.primary {
+  justify-content: center;
   background: linear-gradient(90deg, var(--c-primary), var(--c-deep));
   color: #fff;
   text-align: center;
   font-weight: 700;
   border: none;
+  box-shadow: 0 6rpx 20rpx rgba(124, 111, 224, 0.4);
 }
 .opt-btn[disabled] { opacity: 0.5; }
 .open-input {
   width: 100%;
   box-sizing: border-box;
   min-height: 160rpx;
-  background: rgba(255,255,255,0.98);
+  background: rgba(38, 30, 66, 0.55);
+  border: 1rpx solid rgba(180, 160, 255, 0.42);
   border-radius: 18rpx;
   padding: 24rpx;
   font-size: 28rpx;
-  color: var(--c-text);
+  color: #f3effa;
+  backdrop-filter: blur(12rpx);
+  -webkit-backdrop-filter: blur(12rpx);
 }
 .open-row {
   display: flex;
@@ -590,7 +869,7 @@ onUnmounted(() => clearInterval(typingTimer))
   justify-content: space-between;
   margin-top: 16rpx;
 }
-.open-count { font-size: 22rpx; color: rgba(255,255,255,0.85); }
+.open-count { font-size: 22rpx; color: rgba(255, 255, 255, 0.85); }
 .open-row .opt-btn { width: auto; padding: 18rpx 48rpx; margin-bottom: 0; }
 .loading {
   text-align: center;
@@ -598,12 +877,56 @@ onUnmounted(() => clearInterval(typingTimer))
   font-size: 26rpx;
   padding: 18rpx;
 }
-.tap-hint {
-  text-align: right;
-  color: rgba(255,255,255,0.85);
-  font-size: 24rpx;
-  padding: 8rpx 4rpx;
-  animation: blink 1.4s ease-in-out infinite;
+
+/* 底部控制栏：上一句 / 下一句 / 跳过 / 自动播放 */
+.ctrl-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(26rpx + env(safe-area-inset-bottom));
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30rpx;
+  padding: 0 28rpx;
+  pointer-events: none;
 }
-@keyframes blink { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+.ctrl-btn {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+  transition: transform 0.12s ease, opacity 0.2s ease;
+}
+.ctrl-btn:active {
+  transform: scale(0.88);
+}
+.ctrl-btn.disabled {
+  opacity: 0.28;
+  pointer-events: none;
+}
+.ctrl-ico {
+  width: 78rpx;
+  height: 78rpx;
+  filter: drop-shadow(0 2rpx 8rpx rgba(176, 107, 255, 0.55));
+}
+.ctrl-btn.active .ctrl-ico {
+  filter: drop-shadow(0 0 16rpx rgba(255, 143, 208, 0.95));
+  animation: autoPulse 1.1s ease-in-out infinite;
+}
+@keyframes autoPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+.ctrl-tip {
+  font-size: 18rpx;
+  color: rgba(255, 255, 255, 0.82);
+  letter-spacing: 1rpx;
+  text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.6);
+}
+.ctrl-btn.active .ctrl-tip {
+  color: #ff8fd0;
+}
 </style>

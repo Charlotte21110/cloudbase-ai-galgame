@@ -24,12 +24,45 @@
   {
     "_id": "char_baishiyu",
     "id": "baishiyu",
-    "name": "白时屿",
+    "name": "白时屿【测试】",
     "gender": "male",
     "style": "anime",
     "persona": "清冷天才医生兼小提琴家，矜贵疏离的精英，话少而克制",
     "tagline": "你是我手术刀之外，唯一的失控。",
     "themeKey": "night",
+    "scriptId": "script_test"
+  },
+  {
+    "_id": "char_yunmobai",
+    "id": "yunmobai",
+    "name": "云墨白",
+    "gender": "male",
+    "style": "anime",
+    "persona": "古风银发冷艳剑客，孤高清冷如雪山月光，话少剑利、外冷内炽",
+    "tagline": "我的剑只为一人出鞘。",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_jianglinchuan",
+    "id": "jianglinchuan",
+    "name": "江临川",
+    "gender": "male",
+    "style": "anime",
+    "persona": "栗发痞帅乐队主唱，吊儿郎当桃花眼，嘴上不正经、心里却认死理",
+    "tagline": "全场就为你一个人唱，听到了没？",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_xiaye",
+    "id": "xiaye",
+    "name": "夏野",
+    "gender": "male",
+    "style": "anime",
+    "persona": "金棕短发奶狗学弟，乖巧黏人、元气治愈，眼里全是你",
+    "tagline": "学姐，今天也可以多看我一眼吗？",
+    "themeKey": "sakura",
     "scriptId": "script_default"
   },
   {
@@ -63,6 +96,39 @@
     "persona": "高冷御姐学姐，外表清冷内心闷骚，撩人于无形",
     "tagline": "靠这么近，是想被我记住吗？",
     "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_shenbaishuang",
+    "id": "shenbaishuang",
+    "name": "沈白霜",
+    "gender": "female",
+    "style": "anime",
+    "persona": "古风白发清冷剑修，雪山初雪般出尘，外冷内热、不善言辞",
+    "tagline": "心动如裂帛，我却假装不知。",
+    "themeKey": "night",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_chixiaoman",
+    "id": "chixiaoman",
+    "name": "池小满",
+    "gender": "female",
+    "style": "anime",
+    "persona": "粉发JK鬼马学妹，活泼俏皮、古灵精怪，黏人又爱捣蛋",
+    "tagline": "学长别跑，今天我赖定你啦！",
+    "themeKey": "sakura",
+    "scriptId": "script_default"
+  },
+  {
+    "_id": "char_xuzhixia",
+    "id": "xuzhixia",
+    "name": "许之夏",
+    "gender": "female",
+    "style": "anime",
+    "persona": "亚麻金温柔大姐姐设计师，知性独立、体贴入微，温柔如水",
+    "tagline": "累了就靠过来，姐姐都在。",
+    "themeKey": "sakura",
     "scriptId": "script_default"
   }
 ]

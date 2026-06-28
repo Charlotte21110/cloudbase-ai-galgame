@@ -528,5 +528,94 @@
       { "endingId": "devoted", "title": "拾光者", "trigger": "top:忠犬", "caption": "这一夜，你为 {name} 燃尽了自己，把所有重的、痛的，都默默揽到了自己肩上。", "report": "【关系人格 · 拾光者（忠犬）】你掏心掏肺、有求必应，把自己放得很低很低，常常感动了自己，却弄丢了自己。你愿做那盏替人燃烧的灯，可别忘了——你也是值得被人照亮、被人珍惜的星光。" },
       { "endingId": "wanderer", "title": "漫游者", "min": -99, "caption": "走完这一整夜，连倒转又归位的星辰，都没能替你下一个定论。", "report": "【关系人格 · 漫游者（多面体）】你的选择难以归类，像一块仍在转动的多面体——时而赤诚，时而疏离。也许你还在长夜里寻找自己的形状。这不是坏事：先认清自己，再决定如何对待并肩之人。下一次轮回，会有答案。" }
     ]
+  },
+  {
+    "_id": "script_test",
+    "id": "script_test",
+    "title": "【测试】速通短章",
+    "openingTip": "这是用来快速看结局的测试短章：两段剧情 + 两个抉择 + 一道开放题，几下就能走到结局。想测哪种结局，就一路点对应的 tag（真心/海王/忠犬/渣）。",
+    "prologue": "（测试用短剧本。要改剧情只动 scripts.json 里 id 为 script_test 的这一段；测完把角色 scriptId 改回 script_default 即可。）你与 {name} 在长夜里相遇——这一次，故事会很短。",
+    "initScore": 50,
+    "start": "t1",
+    "nodes": [
+      {
+        "id": "t1",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "测试 · 第一幕",
+        "goto": "tc1",
+        "beats": [
+          { "who": "narration", "text": "【测试短章】长夜降临，全城沉睡，只有你和 {name} 还醒着。" },
+          { "who": "name", "text": "「时间不多了。」{name}看向你，「接下来怎么走，你来选。」" }
+        ]
+      },
+      {
+        "id": "tc1",
+        "type": "choice",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "测试 · 抉择一",
+        "beats": [
+          { "who": "narration", "text": "黑雾涌来。{name}分出一线目光看你——这一夜的基调，由你定。" }
+        ],
+        "options": [
+          { "text": "我陪你，并肩一起扛。", "score": 12, "tag": "真心", "face": "shy", "goto": "t2", "flag": "并肩", "reply": "{name}扬唇：「……好，那就一起。」", "os": "（{ta}眼里闪过久违的光。）" },
+          { "text": "美人在前，我怎好躲后面。", "score": 3, "tag": "海王", "face": "happy", "goto": "t2", "flag": "独行", "reply": "{name}：「贫嘴。手别抖就行。」", "os": "（玩笑归玩笑，{ta}还是护住了你。）" },
+          { "text": "你退后，让我来挡！", "score": 6, "tag": "忠犬", "face": "happy", "goto": "t2", "flag": "并肩", "reply": "{name}拉住你：「逞什么强，一起。」", "os": "（这股莽劲，让人又急又暖。）" },
+          { "text": "你不是很能打？我打下手就行。", "score": -10, "tag": "渣", "face": "angry", "goto": "t2", "flag": "独行", "reply": "{name}淡淡收回目光：「……行吧。」", "os": "（刚亮起的那点光，又暗了。）" }
+        ]
+      },
+      {
+        "id": "t2",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "测试 · 第二幕",
+        "goto": "tc2",
+        "beats": [
+          { "who": "narration", "text": "黑雾溃散成星尘。你们在花树下喘息片刻。" },
+          { "who": "name", "text": "「有你在身边，这条路第一次不那么冷。」", "when": "flag:并肩" },
+          { "who": "name", "text": "「……保持点距离也好，牵挂越少越不疼。」", "when": "flag:独行" },
+          { "who": "self", "text": "（这条 when 演示了「印记/业力回收」——不同抉择会读到不同旁白。）" }
+        ]
+      },
+      {
+        "id": "tc2",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "测试 · 抉择二",
+        "beats": [
+          { "who": "narration", "text": "城心的长明灯将熄。{name}已迈向那片虚无——这是最后一次抉择。" }
+        ],
+        "options": [
+          { "text": "不许去！我们一起找别的路。", "score": 12, "tag": "真心", "face": "shy", "goto": "topen", "flag": "破轮回", "reply": "{name}顿住：「……你是说，赌它一次？」", "os": "（你的笃定，给了{ta}停下的勇气。）" },
+          { "text": "先别冲动，万一有第三种办法呢？", "score": 3, "tag": "海王", "face": "happy", "goto": "topen", "flag": "破轮回", "reply": "{name}迟疑：「你总在最后关头拦下我。」", "os": "（圆滑，却也是挽留。）" },
+          { "text": "要交出去，也该是我。", "score": 6, "tag": "忠犬", "face": "happy", "goto": "topen", "flag": "牺牲", "reply": "{name}：「够了！可你拦不住注定的轮回……」", "os": "（舍身的执念，没能改写宿命。）" },
+          { "text": "历代都这么做，照做就是。", "score": -10, "tag": "渣", "face": "angry", "goto": "topen", "flag": "牺牲", "reply": "{name}背影一僵，迈进了虚无。", "os": "（你亲手推完了最后一步。）" }
+        ]
+      },
+      {
+        "id": "topen",
+        "type": "open",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "测试 · 尾声",
+        "goto": "END",
+        "prompt": "测试开放题：有什么想对 {name} 说？（随便写一句，提交后即进入结局结算）",
+        "beats": [
+          { "who": "narration", "text": "{name}站在花树下等你开口。", "when": "flag:破轮回" },
+          { "who": "narration", "text": "{name}已经不在了，你对着风，说出那句没来得及说的话。", "when": "flag:牺牲" }
+        ]
+      }
+    ],
+    "endings": [
+      { "endingId": "genuine", "title": "同行者", "trigger": "top:真心", "caption": "无论这一夜以怎样的方式收场——你都从未松开过 {name} 的手。", "report": "【关系人格 · 同行者】（测试结局）你属于稀有的『安全型』：给得起真心，也守得住边界。" },
+      { "endingId": "playboy", "title": "逐光者", "trigger": "top:海王", "caption": "你对每个人都报以温柔，却没让任何一束光真正照进心里。", "report": "【关系人格 · 逐光者（海王）】（测试结局）魅力夺目、左右逢源，却谁也不肯认真交付。" },
+      { "endingId": "toxic", "title": "噬星者", "trigger": "top:渣", "caption": "你算计着走完了这一夜，把每份真心都当成可舍弃的筹码。", "report": "【关系人格 · 噬星者（渣）】（测试结局）精于权衡，需要时靠近，用完即弃。" },
+      { "endingId": "devoted", "title": "拾光者", "trigger": "top:忠犬", "caption": "你为 {name} 燃尽自己，把重的痛的都揽到肩上。", "report": "【关系人格 · 拾光者（忠犬）】（测试结局）掏心掏肺、有求必应，常常感动了自己，却弄丢了自己。" },
+      { "endingId": "wanderer", "title": "漫游者", "min": -99, "caption": "走完这一夜，连星辰都没能替你下一个定论。", "report": "【关系人格 · 漫游者（多面体）】（测试结局）你的选择难以归类，像一块仍在转动的多面体。" }
+    ]
   }
 ]
