@@ -51,7 +51,7 @@
             :key="idx"
             class="opt-btn"
             @click.stop="pickOption(opt)"
-          >{{ txt(opt.text) }}</button>
+          >{{ optTexts[idx] || txt(opt.text) }}</button>
         </view>
 
         <!-- 开放题输入 -->
@@ -119,7 +119,7 @@ import {
   gotoNode,
   filterBeats,
 } from '@/game/store'
-import { replaceTokens } from '@/game/engine'
+import { replaceTokens, pickRandom } from '@/game/engine'
 import { faceImg, bgImg } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
 import { aiLine, aiOpenLine } from '@/game/ai'
@@ -178,6 +178,8 @@ const portrait = computed(() =>
   char.value ? faceImg(char.value.style, char.value.id, (curFace.value as any) || 'happy') : ''
 )
 const options = computed<NodeOption[]>(() => (node.value?.options ? node.value.options : []))
+// 进入抉择节点时，为每个选项从其变体池里随机定一句展示文案（同一幕内稳定不闪）
+const optTexts = ref<string[]>([])
 
 const beats = computed<Beat[]>(() => filterBeats(node.value?.beats))
 const curBeat = computed<Beat | null>(() => beats.value[beatIdx.value] || null)
@@ -277,6 +279,10 @@ function afterBeats() {
   const n = node.value
   if (!n) return
   if (n.type === 'choice') {
+    // 为每个选项确定本次展示的文案（支持「选项变体」连玩不重样）
+    optTexts.value = (n.options || []).map((o) =>
+      txt(pickRandom([o.text, ...(o.textVariants || [])]))
+    )
     phase.value = 'choosing'
   } else if (n.type === 'open') {
     phase.value = 'open'

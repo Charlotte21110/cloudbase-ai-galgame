@@ -7,7 +7,7 @@
     <view class="pick-inner">
       <view class="pick-header">
         <image class="pick-title-art" :src="titleArt" mode="widthFix" />
-        <text class="pick-sub">长夜将至 · 在抉择中照见你的关系人格 · 选一位同行者</text>
+        <text class="pick-sub">12 个人，12 段故事 · 史诗 / 商战 / 暧昧 / 青春 / 友情 / 亲情 / 职场 / 日常 · 选一位，走进 TA 的开场</text>
       </view>
 
       <!-- 男生线 -->
@@ -31,6 +31,7 @@
             <text class="char-name">{{ c.name }}</text>
             <view class="persona-chip"><text>{{ shortPersona(c.persona) }}</text></view>
             <text class="char-tagline">「{{ c.tagline }}」</text>
+            <text v-if="c.intro" class="char-intro">{{ c.intro }}</text>
           </view>
         </view>
       </view>
@@ -56,6 +57,7 @@
             <text class="char-name">{{ c.name }}</text>
             <view class="persona-chip"><text>{{ shortPersona(c.persona) }}</text></view>
             <text class="char-tagline">「{{ c.tagline }}」</text>
+            <text v-if="c.intro" class="char-intro">{{ c.intro }}</text>
           </view>
         </view>
       </view>
@@ -249,6 +251,21 @@ const choose = (id: string) => {
   color: #a79fc2;
   line-height: 1.4;
   min-height: 52rpx;
+}
+/* 故事开头简介：小字、限 3 行，保持卡片整洁 */
+.char-intro {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  margin-top: 8rpx;
+  padding: 10rpx 10rpx 4rpx;
+  border-top: 1rpx solid rgba(154, 139, 255, 0.18);
+  font-size: 17rpx;
+  line-height: 1.45;
+  color: #8f86b3;
+  text-align: left;
 }
 .pick-foot {
   text-align: center;

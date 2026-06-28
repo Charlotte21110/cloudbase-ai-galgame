@@ -7,8 +7,9 @@
     "style": "real",
     "persona": "冷峻禁欲系总裁，掌控欲强、嘴硬心软，习惯用命令句式掩饰在乎",
     "tagline": "我的时间很贵，但可以为你浪费。",
+    "intro": "【商战 · 并购之夜】一桩四十亿的并购案，一支按住的签字笔。冷面总裁 {name} 想听的，不是报告，是你觉得——这买卖，干不干净。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_biz"
   },
   {
     "_id": "char_luyan",
@@ -18,8 +19,9 @@
     "style": "real",
     "persona": "阳光体育竹马，宠溺暖男，娇妻文学男主，黏人又护短",
     "tagline": "别人我不管，你只能黏着我。",
+    "intro": "【青春 · 那年盛夏】时隔七年回到海边小城，巷口那个带你兜风、替你挡事的竹马 {name}，攥着一颗等了你七年的玻璃弹珠，咧嘴一笑。",
     "themeKey": "sakura",
-    "scriptId": "script_default"
+    "scriptId": "script_summer"
   },
   {
     "_id": "char_baishiyu",
@@ -29,6 +31,7 @@
     "style": "anime",
     "persona": "清冷天才医生兼小提琴家，矜贵疏离的精英，话少而克制",
     "tagline": "你是我手术刀之外，唯一的失控。",
+    "intro": "【测试短章】用来快速验证流程的速通剧本：两幕剧情 + 两个抉择 + 一道开放题，几下点到结局。",
     "themeKey": "night",
     "scriptId": "script_test"
   },
@@ -40,6 +43,7 @@
     "style": "anime",
     "persona": "古风银发冷艳剑客，孤高清冷如雪山月光，话少剑利、外冷内炽",
     "tagline": "我的剑只为一人出鞘。",
+    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人 {name}——背负着以命续灯的宿命。",
     "themeKey": "night",
     "scriptId": "script_default"
   },
@@ -51,8 +55,9 @@
     "style": "anime",
     "persona": "栗发痞帅乐队主唱，吊儿郎当桃花眼，嘴上不正经、心里却认死理",
     "tagline": "全场就为你一个人唱，听到了没？",
+    "intro": "【友情 · 追光的我们】一支没红过的地下乐队，距离唯一的大舞台只剩七天。主唱 {name} 笑着说『散伙也行』，可那是{ta}最不想说的话。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_band"
   },
   {
     "_id": "char_xiaye",
@@ -62,8 +67,9 @@
     "style": "anime",
     "persona": "金棕短发奶狗学弟，乖巧黏人、元气治愈，眼里全是你",
     "tagline": "学姐，今天也可以多看我一眼吗？",
+    "intro": "【校园 · 放学后的心跳】一封塞错的情书，署名空白，字迹歪歪扭扭。隔壁班那个总在你经过时脸红的学弟 {name}，藏不住了。",
     "themeKey": "sakura",
-    "scriptId": "script_default"
+    "scriptId": "script_campus"
   },
   {
     "_id": "char_jiangzhaoyue",
@@ -73,6 +79,7 @@
     "style": "real",
     "persona": "杀伐果断的大女主总裁/女王，强势又心软，不轻易示弱",
     "tagline": "跪着的我不需要，站着陪我的才配。",
+    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人 {name}——背负着以命续灯的宿命。",
     "themeKey": "night",
     "scriptId": "script_default"
   },
@@ -84,8 +91,9 @@
     "style": "anime",
     "persona": "元气治愈萌妹，黏人撒娇、甜到犯规，情绪写在脸上",
     "tagline": "今天也要第一个想我哦，不然我会哭给你看！",
+    "intro": "【日常 · 街角便利店】加班到深夜，唯一还亮灯的去处，是街角便利店。话痨店员 {name} 会给你多加一根萝卜，拉你聊一整晚的鸡毛蒜皮。",
     "themeKey": "sakura",
-    "scriptId": "script_default"
+    "scriptId": "script_daily"
   },
   {
     "_id": "char_sumanqing",
@@ -95,8 +103,9 @@
     "style": "real",
     "persona": "高冷御姐学姐，外表清冷内心闷骚，撩人于无形",
     "tagline": "靠这么近，是想被我记住吗？",
+    "intro": "【暧昧 · 一墙之隔】公寓 1102 与 1103，共用一面薄墙、一截露台。隔壁那位清冷的 {name}，总在深夜亮起灯——和你的，同时。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_amour"
   },
   {
     "_id": "char_shenbaishuang",
@@ -106,6 +115,7 @@
     "style": "anime",
     "persona": "古风白发清冷剑修，雪山初雪般出尘，外冷内热、不善言辞",
     "tagline": "心动如裂帛，我却假装不知。",
+    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人 {name}——背负着以命续灯的宿命。",
     "themeKey": "night",
     "scriptId": "script_default"
   },
@@ -117,8 +127,9 @@
     "style": "anime",
     "persona": "粉发JK鬼马学妹，活泼俏皮、古灵精怪，黏人又爱捣蛋",
     "tagline": "学长别跑，今天我赖定你啦！",
+    "intro": "【职场 · 菜鸟修炼手册】公司新来的实习生 {name}：第一天就把打印机搞冒烟、给全公司群发表情包。而你，是被分配来带{ta}的倒霉师父。",
     "themeKey": "sakura",
-    "scriptId": "script_default"
+    "scriptId": "script_rookie"
   },
   {
     "_id": "char_xuzhixia",
@@ -128,7 +139,8 @@
     "style": "anime",
     "persona": "亚麻金温柔大姐姐设计师，知性独立、体贴入微，温柔如水",
     "tagline": "累了就靠过来，姐姐都在。",
+    "intro": "【亲情 · 归家】祖母走后，你回到童年的旧宅，发现它被 {name} 一个人细心守了五年——那个当年被祖母收留、把这里当成唯一的家的人。",
     "themeKey": "sakura",
-    "scriptId": "script_default"
+    "scriptId": "script_family"
   }
 ]

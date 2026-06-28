@@ -26,6 +26,7 @@ export interface Character {
   style: ArtStyle
   persona: string
   tagline: string
+  intro?: string
   themeKey: ThemeKey
   scriptId: string
 }
@@ -56,6 +57,12 @@ export interface Beat {
 /** 关键抉择的一个选项 */
 export interface NodeOption {
   text: string
+  /**
+   * 选项文案的「变体池」（可选）：连玩不重样。
+   * 进入抉择节点时，引擎会在 [text, ...textVariants] 里随机取一句展示，
+   * 但 score / tag / goto / flag 不变——只是「同一选择的不同说法」。
+   */
+  textVariants?: string[]
   /** 羁绊值增减 */
   score: number
   /** 关系人格标签：真心 / 海王 / 忠犬 / 渣（决定结局人格） */
