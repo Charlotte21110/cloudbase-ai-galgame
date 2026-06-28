@@ -10,6 +10,16 @@
       <text class="loading-sub">{{ char?.name }} 与你的故事，正落下最后一笔</text>
     </view>
 
+    <!-- 全屏 CG：生成完成后先整图展示，点击进入结局 -->
+    <view v-else-if="showCG" class="cg-full" @click="enterResult">
+      <image class="cg-full-img" :src="session.cgUrl" mode="aspectFit" />
+      <view class="cg-full-tag">{{ ending?.title }}</view>
+      <view class="cg-full-tip">
+        <text class="cg-full-tip-text">轻触继续</text>
+        <view class="cg-full-tri"></view>
+      </view>
+    </view>
+
     <!-- 结局展示 -->
     <view v-else class="result-box">
       <image class="float-star s1" :src="starMain" mode="aspectFit" />
@@ -45,6 +55,7 @@ const bgImg = '/static/game/ui/report/starfield-bg.png'
 const starMain = '/static/game/ui/report/star-main.png'
 
 const loading = ref(true)
+const showCG = ref(false)
 const char = computed(() => session.char)
 const ending = computed(() => session.ending)
 const caption = computed(() => replaceTokens(ending.value?.caption || '', session.char))
@@ -82,7 +93,13 @@ onMounted(async () => {
 
   await Promise.all([minDelay, reportP, imageP])
   loading.value = false
+  // 先进入全屏 CG，轻触后才展开结局
+  showCG.value = true
 })
+
+const enterResult = () => {
+  showCG.value = false
+}
 
 const goReport = () => {
   uni.redirectTo({ url: '/pages/game/report/report' })
@@ -140,6 +157,71 @@ const goReport = () => {
   text-shadow: 0 0 18rpx rgba(196, 150, 255, 0.7);
 }
 .loading-sub { margin-top: 16rpx; font-size: 24rpx; color: #c4b3e8; }
+
+/* 全屏 CG：整图（aspectFit）展示，上下露出星空背景 */
+.cg-full {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cgFade 0.6s ease;
+}
+@keyframes cgFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.cg-full-img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 40rpx rgba(170, 110, 255, 0.55));
+}
+.cg-full-tag {
+  position: absolute;
+  top: calc(48rpx + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(176, 107, 255, 0.85), rgba(255, 126, 200, 0.85));
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 800;
+  letter-spacing: 4rpx;
+  padding: 14rpx 44rpx;
+  border-radius: 40rpx;
+  box-shadow: 0 0 24rpx rgba(255, 120, 200, 0.6);
+  backdrop-filter: blur(10rpx);
+  -webkit-backdrop-filter: blur(10rpx);
+}
+.cg-full-tip {
+  position: absolute;
+  bottom: calc(70rpx + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+  animation: tipBreath 1.4s ease-in-out infinite;
+}
+.cg-full-tip-text {
+  font-size: 26rpx;
+  letter-spacing: 4rpx;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.6);
+}
+.cg-full-tri {
+  width: 0;
+  height: 0;
+  border-left: 14rpx solid transparent;
+  border-right: 14rpx solid transparent;
+  border-top: 16rpx solid rgba(255, 255, 255, 0.92);
+  filter: drop-shadow(0 1rpx 4rpx rgba(0, 0, 0, 0.5));
+}
+@keyframes tipBreath {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, 0); }
+  50% { opacity: 1; transform: translate(-50%, 6rpx); }
+}
 
 .result-box {
   position: relative;

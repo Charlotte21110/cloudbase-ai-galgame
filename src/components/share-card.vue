@@ -219,12 +219,13 @@ async function render() {
     let sxc = 0
     let syc = 0
     if (sr > dr) {
+      // 图更宽：水平居中裁切
       sw = cg.h * dr
       sxc = (cg.w - sw) / 2
     } else {
+      // 图更高：垂直居中裁切（双人 CG 居中，不再从顶部切）
       sh = cg.w / dr
-      // 顶部对齐：立绘多为半身竖图，从顶部裁切才能完整露出头部
-      syc = 0
+      syc = (cg.h - sh) / 2
     }
     ctx.drawImage(cg.path, sxc, syc, sw, sh, cgX, cgY, cgW, cgH)
   } else {
