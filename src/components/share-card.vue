@@ -30,20 +30,22 @@
         </view>
       </view>
 
-      <!-- 三个操作按钮 -->
+      <!-- 操作按钮（微信分享仅小程序端显示） -->
       <view class="sc-actions">
         <view class="act" :class="{ disabled: !shotUrl || saving }" @click="save">
-          <view class="act-circle"><view class="ic ic-dl"><view class="dl-head"></view></view></view>
+          <view class="act-circle"><view class="ic ic-dl"><view class="dl-tray"></view></view></view>
           <text class="act-label">保存到相册</text>
         </view>
         <view class="act" @click="copyLink">
-          <view class="act-circle"><view class="ic ic-link"></view></view>
+          <view class="act-circle"><view class="ic ic-copy"></view></view>
           <text class="act-label">复制链接</text>
         </view>
+        <!-- #ifdef MP-WEIXIN -->
         <view class="act" @click="shareWx">
-          <view class="act-circle"><view class="ic ic-share"><view class="sh-head"></view></view></view>
+          <view class="act-circle"><view class="ic ic-share"><view class="sh-tray"></view></view></view>
           <text class="act-label">微信分享</text>
         </view>
+        <!-- #endif -->
       </view>
     </view>
   </view>
@@ -295,15 +297,12 @@ async function render() {
     ctx.fillText(ln, cx, sumY + i * 44)
   })
 
-  // 9. 底部引导（二维码位先留空，以文字代替）
-  const footY = CH - 150
+  // 9. 底部署名
+  const footY = CH - 120
   ctx.setTextAlign('center')
-  ctx.setFontSize(24)
-  ctx.setFillStyle('#c9b8ee')
-  ctx.fillText('—— 扫码开启你的长夜 ——', cx, footY)
   ctx.setFontSize(22)
   ctx.setFillStyle('#8d7bc0')
-  ctx.fillText('Powered by CloudBase · 云开发', cx, footY + 46)
+  ctx.fillText('Powered by CloudBase · 云开发', cx, footY)
 
   ctx.draw(false, () => {
     setTimeout(() => exportImage(), 150)
@@ -374,8 +373,11 @@ function save() {
 }
 
 function shareLink(): string {
+  // 复制站点根目录链接（自动跳首页），避免带上当前页 hash 路由
   // #ifdef H5
-  if (typeof window !== 'undefined' && window.location) return window.location.href
+  if (typeof window !== 'undefined' && window.location) {
+    return `${window.location.origin}/`
+  }
   // #endif
   return 'https://tcb.cloud.tencent.com'
 }
@@ -499,7 +501,6 @@ function shareWx() {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  margin-top: 48rpx;
 }
 .act {
   display: flex;
@@ -526,73 +527,88 @@ function shareWx() {
   letter-spacing: 1rpx;
 }
 
-/* CSS 图标（规范绘制：托盘+箭头 / 链条） */
-.ic { position: relative; }
-/* 保存到相册：托盘 + 下箭头 */
-.ic-dl { width: 40rpx; height: 40rpx; }
+/* CSS 图标（重绘：更规整清晰） */
+.ic { position: relative; width: 44rpx; height: 44rpx; }
+
+/* 保存到相册：向下箭头 + 底托盘 */
 .ic-dl::before {
+  /* 箭头杆 */
   content: '';
   position: absolute;
-  left: 4rpx; right: 4rpx; bottom: 2rpx;
-  height: 14rpx;
-  border: 5rpx solid #ecdfff;
-  border-top: none;
-  border-radius: 0 0 7rpx 7rpx;
-}
-.ic-dl::after {
-  content: '';
-  position: absolute;
-  left: 50%; top: 2rpx;
+  left: 50%; top: 4rpx;
   transform: translateX(-50%);
-  width: 5rpx; height: 13rpx;
+  width: 5rpx; height: 18rpx;
   background: #ecdfff;
   border-radius: 3rpx;
 }
-.ic-dl .dl-head {
+.ic-dl::after {
+  /* 向下箭头头 */
+  content: '';
   position: absolute;
-  left: 50%; top: 12rpx;
+  left: 50%; top: 16rpx;
   transform: translateX(-50%);
   width: 0; height: 0;
   border-left: 9rpx solid transparent;
   border-right: 9rpx solid transparent;
   border-top: 11rpx solid #ecdfff;
 }
-/* 复制链接：两节链条 */
-.ic-link { width: 46rpx; height: 46rpx; }
-.ic-link::before,
-.ic-link::after {
-  content: '';
+.ic-dl .dl-tray {
+  /* 底托盘（U 形） */
   position: absolute;
-  width: 26rpx;
-  height: 15rpx;
-  border: 5rpx solid #ecdfff;
-  border-radius: 10rpx;
-}
-.ic-link::before { left: 3rpx; top: 9rpx; transform: rotate(-45deg); }
-.ic-link::after { right: 3rpx; bottom: 9rpx; transform: rotate(-45deg); }
-/* 微信分享：托盘 + 上箭头 */
-.ic-share { width: 40rpx; height: 40rpx; }
-.ic-share::before {
-  content: '';
-  position: absolute;
-  left: 4rpx; right: 4rpx; bottom: 2rpx;
-  height: 14rpx;
-  border: 5rpx solid #ecdfff;
+  left: 5rpx; right: 5rpx; bottom: 3rpx;
+  height: 13rpx;
+  border: 4rpx solid #ecdfff;
   border-top: none;
-  border-radius: 0 0 7rpx 7rpx;
+  border-radius: 0 0 8rpx 8rpx;
+}
+
+/* 复制链接：经典「复制」双纸图标（背纸只露右上角，前纸完整） */
+.ic-copy::before {
+  /* 背面纸：仅显示上、右两条边 => 露出的纸角 */
+  content: '';
+  position: absolute;
+  left: 15rpx; top: 5rpx;
+  width: 22rpx; height: 22rpx;
+  border: 4rpx solid #ecdfff;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 7rpx 0 0;
+}
+.ic-copy::after {
+  /* 正面纸：完整圆角方框 */
+  content: '';
+  position: absolute;
+  left: 5rpx; top: 15rpx;
+  width: 22rpx; height: 22rpx;
+  border: 4rpx solid #ecdfff;
+  border-radius: 7rpx;
+}
+
+/* 微信分享：向上箭头 + 底托盘 */
+.ic-share::before {
+  /* 底托盘（U 形） */
+  content: '';
+  position: absolute;
+  left: 5rpx; right: 5rpx; bottom: 3rpx;
+  height: 13rpx;
+  border: 4rpx solid #ecdfff;
+  border-top: none;
+  border-radius: 0 0 8rpx 8rpx;
 }
 .ic-share::after {
+  /* 箭头杆 */
   content: '';
   position: absolute;
-  left: 50%; top: 7rpx;
+  left: 50%; top: 9rpx;
   transform: translateX(-50%);
-  width: 5rpx; height: 16rpx;
+  width: 5rpx; height: 18rpx;
   background: #ecdfff;
   border-radius: 3rpx;
 }
-.ic-share .sh-head {
+.ic-share .sh-tray {
+  /* 向上箭头头 */
   position: absolute;
-  left: 50%; top: 0;
+  left: 50%; top: 2rpx;
   transform: translateX(-50%);
   width: 0; height: 0;
   border-left: 9rpx solid transparent;

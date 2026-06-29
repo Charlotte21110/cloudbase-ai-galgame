@@ -5,17 +5,16 @@
       <image v-if="bg" class="bg" :src="bg" mode="aspectFill" />
     <view class="bg-mask"></view>
 
-    <!-- 左上角：章节标题条（素材底图） -->
-    <view class="hud-chapter">
-      <image class="hud-chapter-bg" :src="chapterBar" mode="scaleToFill" />
-      <view class="hud-chapter-text">
-        <text class="hud-name">{{ char?.name }}</text>
-        <text class="hud-step">第 {{ session.step }} 幕</text>
-      </view>
+    <!-- 左上角：菜单按钮（圆形半透明汉堡） -->
+    <view class="hud-menu" @click.stop="openMenu">
+      <view class="hud-menu-line"></view>
+      <view class="hud-menu-line"></view>
+      <view class="hud-menu-line"></view>
     </view>
 
-    <!-- 右上角：横向羁绊条（爱心 + 进度 + 数值 + 标签） -->
-    <view class="affinity">
+    <!-- 右上角：第N幕（灰色半透明圆角） + 羁绊条 -->
+    <view class="topbar-right">
+      <view class="step-pill">第 {{ session.step }} 幕</view>
       <view class="affinity-heart"></view>
       <view class="affinity-track">
         <view
@@ -25,7 +24,7 @@
         ></view>
         <text class="affinity-num">{{ session.score }}</text>
       </view>
-      <text class="affinity-label">羁绊</text>
+      <text class="bond-label">羁绊</text>
     </view>
 
     <!-- 飘分 / 心形粒子 -->
@@ -36,9 +35,6 @@
 
     <!-- 立绘 -->
     <image v-if="portrait && showPortrait" class="portrait" :class="{ in: portraitIn }" :src="portrait" mode="aspectFit" />
-
-    <!-- 左下角罗盘装饰 -->
-    <image class="compass" :src="compass" mode="widthFix" />
 
     <!-- 对话框 / 操作区 -->
     <view class="dock">
@@ -55,20 +51,23 @@
         </view>
 
         <!-- 开放题输入 -->
-        <template v-else-if="phase === 'open' && doneTyping">
+        <view v-else-if="phase === 'open' && doneTyping" class="open-box">
           <textarea
             class="open-input"
             v-model="openText"
             :maxlength="100"
             placeholder="写下你最想说的那句话…（≤100字）"
+            placeholder-class="open-ph"
             :adjust-position="true"
             @click.stop
           />
           <view class="open-row">
             <text class="open-count">{{ openText.length }}/100</text>
-            <button class="opt-btn primary" :disabled="!openText.trim()" @click.stop="submitOpen">说出口</button>
+            <button class="open-send" :disabled="!openText.trim()" @click.stop="submitOpen">
+              <view class="send-ico"></view>
+            </button>
           </view>
-        </template>
+        </view>
 
         <!-- 加载态 -->
         <view v-else-if="phase === 'reacting'" class="loading">{{ char?.name }} 正在回应…</view>
@@ -137,9 +136,7 @@ const char = computed(() => session.char)
 const node = computed(() => currentNode())
 
 // 剧情页 UI 素材
-const compass = '/static/game/ui/compass.png'
 const textbox = '/static/game/ui/textbox.png'
-const chapterBar = '/static/game/ui/chapter-bar.png'
 
 // 底部控制栏图标素材
 const ctrlPrev = '/static/game/ui/ctrl-prev.png'
@@ -150,6 +147,19 @@ const ctrlAuto = '/static/game/ui/ctrl-auto.png'
 // 自动播放
 const autoPlay = ref(false)
 let autoTimer: any = null
+
+// 左上角菜单
+function openMenu() {
+  clearAuto()
+  uni.showActionSheet({
+    itemList: ['返回首页', '重新选择角色'],
+    success: (res) => {
+      if (res.tapIndex === 0 || res.tapIndex === 1) {
+        uni.reLaunch({ url: '/pages/game/pick/pick' })
+      }
+    },
+  })
+}
 
 const phase = ref<Phase>('story')
 const beatIdx = ref(0)
@@ -541,66 +551,69 @@ onUnmounted(() => {
   background: linear-gradient(180deg, rgba(0,0,0,0.12) 30%, rgba(0,0,0,0.6) 100%);
 }
 
-/* 左上角：章节标题条（素材底图）—— 文字在整块内纯 flex 垂直居中（= banner 中线） */
-.hud-chapter {
+/* 左上角：圆形半透明菜单（汉堡） */
+.hud-menu {
   position: absolute;
-  top: calc(16rpx + env(safe-area-inset-top));
-  left: 18rpx;
+  top: calc(28rpx + env(safe-area-inset-top));
+  left: 24rpx;
   z-index: 10;
-  width: 350rpx;
-  height: 98rpx;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  background: rgba(22, 16, 40, 0.62);
+  border: 2rpx solid rgba(206, 188, 255, 0.45);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10rpx);
+  -webkit-backdrop-filter: blur(10rpx);
+  transition: transform 0.12s ease;
 }
-.hud-chapter-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-/* 文字层：避开左侧罗盘和右侧箭头，竖直居中由父级 align-items 保证 */
-.hud-chapter-text {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: baseline;
-  padding-left: 70rpx;
-  padding-right: 44rpx;
-}
-.hud-name {
-  color: #fff;
-  font-size: 32rpx;
-  font-weight: 700;
-  letter-spacing: 1rpx;
-  line-height: 1;
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.55);
-}
-.hud-step {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 23rpx;
-  margin-left: 12rpx;
-  letter-spacing: 1rpx;
-  line-height: 1;
-  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.55);
+.hud-menu:active { transform: scale(0.92); }
+.hud-menu-line {
+  width: 32rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background: rgba(255, 255, 255, 0.88);
 }
 
-/* 右上角：横向羁绊条 —— 与章节条同一水平中线 */
-.affinity {
+/* 右上角：第N幕 + 羁绊条（整体靠右对齐） */
+.topbar-right {
   position: absolute;
-  top: calc(19rpx + env(safe-area-inset-top));
-  right: 22rpx;
+  top: calc(28rpx + env(safe-area-inset-top));
+  right: 24rpx;
   z-index: 10;
-  height: 92rpx;
+  height: 72rpx;
   display: flex;
   align-items: center;
-  gap: 10rpx;
+  gap: 12rpx;
 }
-/* CSS 发光爱心（标准构造，包围盒对称、居中不偏） */
+/* 灰色半透明圆角胶囊（第N幕 / 羁绊） */
+.step-pill {
+  height: 48rpx;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 22rpx;
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(22, 16, 40, 0.62);
+  border: 2rpx solid rgba(206, 188, 255, 0.4);
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8rpx);
+  -webkit-backdrop-filter: blur(8rpx);
+  white-space: nowrap;
+}
+/* CSS 发光爱心（包围盒对称、居中不偏） */
 .affinity-heart {
   position: relative;
-  width: 40rpx;
-  height: 36rpx;
+  width: 36rpx;
+  height: 32rpx;
+  flex-shrink: 0;
   filter: drop-shadow(0 0 8rpx rgba(255, 143, 208, 0.85));
 }
 .affinity-heart::before,
@@ -608,13 +621,13 @@ onUnmounted(() => {
   content: '';
   position: absolute;
   top: 0;
-  width: 20rpx;
-  height: 32rpx;
-  border-radius: 20rpx 20rpx 0 0;
+  width: 18rpx;
+  height: 29rpx;
+  border-radius: 18rpx 18rpx 0 0;
   background: linear-gradient(135deg, #ff8fd0, #b06bff);
 }
 .affinity-heart::before {
-  left: 20rpx;
+  left: 18rpx;
   transform: rotate(-45deg);
   transform-origin: 0 100%;
 }
@@ -622,6 +635,14 @@ onUnmounted(() => {
   left: 0;
   transform: rotate(45deg);
   transform-origin: 100% 100%;
+}
+/* 羁绊：纯文字（无胶囊底色/边框） */
+.bond-label {
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
 }
 .affinity-track {
   position: relative;
@@ -656,12 +677,6 @@ onUnmounted(() => {
   font-size: 18rpx;
   font-weight: 800;
   text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.7);
-}
-.affinity-label {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 20rpx;
-  letter-spacing: 2rpx;
-  text-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.5);
 }
 
 /* 飘分 */
@@ -713,17 +728,6 @@ onUnmounted(() => {
   100% { opacity: 0; transform: rotate(-45deg) translate(130rpx, 130rpx) scale(1.1); }
 }
 
-/* 左下角罗盘装饰 */
-.compass {
-  position: absolute;
-  left: 22rpx;
-  bottom: calc(420rpx + env(safe-area-inset-bottom));
-  z-index: 6;
-  width: 110rpx;
-  opacity: 0.85;
-  filter: drop-shadow(0 0 10rpx rgba(176, 150, 255, 0.5));
-}
-
 /* 立绘：底部贴着对话框上沿（藏进气泡后方，无空隙） */
 .portrait {
   position: absolute;
@@ -732,9 +736,9 @@ onUnmounted(() => {
   /* 让立绘底部落到对话框上沿之下一点，被气泡盖住，从而无缝衔接 */
   bottom: calc(300rpx + env(safe-area-inset-bottom));
   transform: translateX(-50%);
-  /* 用 rem 控制立绘整体尺寸；宽高比保持 7:9 = 560:720 */
+  /* 用 rem 控制立绘整体尺寸 */
   width: 25.28rem;
-  height: 32.5rem;
+  height: 27.5rem;
   filter: drop-shadow(0 12rpx 24rpx rgba(0,0,0,0.3));
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -745,10 +749,10 @@ onUnmounted(() => {
 .dock {
   position: absolute;
   left: 0; right: 0;
-  /* 底部预留出「上一句 / 下一句」操作栏的空间，整体上移 */
+  /* 底部留出控制栏空间 + 与控制栏之间的间隙；bubble 内容增多时整体向上扩展 */
   bottom: 0;
   z-index: 8;
-  padding: 0 28rpx calc(116rpx + env(safe-area-inset-bottom));
+  padding: 0 28rpx calc(190rpx + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
 }
@@ -798,7 +802,7 @@ onUnmounted(() => {
 .tap-tri {
   position: absolute;
   right: 26rpx;
-  bottom: 22rpx;
+  bottom: 32rpx;
   z-index: 2;
   width: 0;
   height: 0;
@@ -846,37 +850,65 @@ onUnmounted(() => {
   background: rgba(124, 111, 224, 0.5);
   transform: scale(0.97);
 }
-.opt-btn.primary {
-  justify-content: center;
-  background: linear-gradient(90deg, var(--c-primary), var(--c-deep));
-  color: #fff;
-  text-align: center;
-  font-weight: 700;
-  border: none;
-  box-shadow: 0 6rpx 20rpx rgba(124, 111, 224, 0.4);
-}
 .opt-btn[disabled] { opacity: 0.5; }
+/* 开放题：紫色描边圆角输入框（计数器内置左下，纸飞机发送内置右下） */
+.open-box {
+  position: relative;
+  background: linear-gradient(160deg, rgba(48, 33, 88, 0.92), rgba(28, 18, 56, 0.94));
+  border: 2rpx solid rgba(176, 130, 255, 0.75);
+  border-radius: 28rpx;
+  padding: 24rpx 24rpx 18rpx;
+  box-shadow: 0 8rpx 26rpx rgba(0, 0, 0, 0.42), 0 0 22rpx rgba(150, 110, 230, 0.3), inset 0 0 18rpx rgba(150, 110, 230, 0.14);
+}
 .open-input {
   width: 100%;
   box-sizing: border-box;
-  min-height: 160rpx;
-  background: rgba(38, 30, 66, 0.55);
-  border: 1rpx solid rgba(180, 160, 255, 0.42);
-  border-radius: 18rpx;
-  padding: 24rpx;
+  min-height: 120rpx;
+  max-height: 260rpx;
+  background: transparent;
+  border: none;
+  padding: 4rpx 4rpx;
   font-size: 28rpx;
-  color: #f3effa;
-  backdrop-filter: blur(12rpx);
-  -webkit-backdrop-filter: blur(12rpx);
+  line-height: 1.6;
+  color: #fff;
+}
+.open-ph {
+  color: rgba(206, 192, 238, 0.55);
 }
 .open-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16rpx;
+  margin-top: 10rpx;
 }
-.open-count { font-size: 22rpx; color: rgba(255, 255, 255, 0.85); }
-.open-row .opt-btn { width: auto; padding: 18rpx 48rpx; margin-bottom: 0; }
+.open-count { font-size: 24rpx; color: rgba(220, 205, 245, 0.85); }
+/* 纸飞机发送：偏紫色圆形按钮 */
+.open-send {
+  width: 72rpx;
+  height: 72rpx;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9b7bff, #b06bff);
+  box-shadow: 0 6rpx 18rpx rgba(138, 107, 255, 0.55);
+  transition: transform 0.12s ease, opacity 0.15s ease;
+}
+.open-send::after { border: none; }
+.open-send:active { transform: scale(0.92); }
+.open-send[disabled] { opacity: 0.4; box-shadow: none; }
+/* 纸飞机图标（clip-path 绘制） */
+.send-ico {
+  width: 34rpx;
+  height: 34rpx;
+  background: #fff;
+  clip-path: polygon(4% 0%, 100% 50%, 4% 100%, 26% 50%);
+  transform: translateX(2rpx);
+}
 .loading {
   text-align: center;
   color: #fff;
@@ -884,17 +916,17 @@ onUnmounted(() => {
   padding: 18rpx;
 }
 
-/* 底部控制栏：上一句 / 下一句 / 跳过 / 自动播放 */
+/* 底部控制栏：上一句 / 下一句 / 跳过 / 自动播放（整体宽度与剧情对话框对齐） */
 .ctrl-bar {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: calc(26rpx + env(safe-area-inset-bottom));
+  bottom: calc(48rpx + env(safe-area-inset-bottom));
   z-index: 12;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
-  gap: 30rpx;
+  /* 与 .dock 同一水平内边距，确保两端与对话框对齐 */
   padding: 0 28rpx;
   pointer-events: none;
 }

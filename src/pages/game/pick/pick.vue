@@ -26,7 +26,6 @@
           >
             <view class="avatar-wrap">
               <image class="avatar" :src="avatar(c)" mode="aspectFill" />
-              <text class="style-badge" :class="c.style">{{ c.style === 'anime' ? '二次元' : '写实' }}</text>
             </view>
             <text class="char-name">{{ c.name }}</text>
             <view class="persona-chip"><text>{{ shortPersona(c.persona) }}</text></view>
@@ -52,7 +51,6 @@
           >
             <view class="avatar-wrap">
               <image class="avatar" :src="avatar(c)" mode="aspectFill" />
-              <text class="style-badge" :class="c.style">{{ c.style === 'anime' ? '二次元' : '写实' }}</text>
             </view>
             <text class="char-name">{{ c.name }}</text>
             <view class="persona-chip"><text>{{ shortPersona(c.persona) }}</text></view>
@@ -210,18 +208,6 @@ const choose = (id: string) => {
   background: rgba(20, 16, 40, 0.6);
 }
 .avatar { width: 100%; height: 100%; }
-.style-badge {
-  position: absolute;
-  left: 8rpx;
-  top: 8rpx;
-  font-size: 18rpx;
-  padding: 4rpx 12rpx;
-  border-radius: 20rpx;
-  color: #fff;
-  backdrop-filter: blur(4rpx);
-}
-.style-badge.anime { background: rgba(124, 111, 224, 0.85); }
-.style-badge.real { background: rgba(224, 77, 128, 0.85); }
 .char-name {
   display: block;
   text-align: center;

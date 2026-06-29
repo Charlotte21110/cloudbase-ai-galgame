@@ -1,7 +1,10 @@
 <template>
-  <view class="ending">
-    <image class="bg" :src="bgImg" mode="aspectFill" />
-    <view class="bg-veil"></view>
+  <view class="ending" :class="{ 'ending--result': !loading && !showCG }">
+    <!-- 暗色星空背景：仅「生成中 / 全屏CG」阶段 -->
+    <template v-if="loading || showCG">
+      <image class="bg" :src="bgImg" mode="aspectFill" />
+      <view class="bg-veil"></view>
+    </template>
 
     <!-- 生成中 -->
     <view v-if="loading" class="loading-box">
@@ -22,25 +25,37 @@
 
     <!-- 结局展示 -->
     <view v-else class="result-box">
-      <image class="float-star s1" :src="starMain" mode="aspectFit" />
-      <image class="float-star s2" :src="starMain" mode="aspectFit" />
+      <view class="result-card">
+        <!-- 顶部立绘 / CG -->
+        <view class="hero-frame">
+          <image class="hero-img" :src="session.cgUrl" mode="aspectFill" />
+          <view class="hero-glow"></view>
+        </view>
 
-      <!-- CG 霓虹相框 -->
-      <view class="cg-frame">
-        <image class="cg" :src="session.cgUrl" mode="aspectFill" />
-        <view class="cg-glow"></view>
-        <view class="cg-tag">{{ ending?.title }}</view>
+        <!-- 标题（渐变） + 两侧装饰 -->
+        <view class="title-row">
+          <view class="title-deco left"></view>
+          <text class="result-title">{{ ending?.title }}</text>
+          <view class="title-deco right"></view>
+        </view>
+        <text class="result-caption">{{ caption }}</text>
+
+        <!-- 长夜判词卡 -->
+        <view class="verdict">
+          <view class="verdict-head">
+            <view class="verdict-star"></view>
+            <text class="verdict-label">长夜判词</text>
+            <view class="verdict-star"></view>
+          </view>
+          <text class="verdict-text">{{ session.aiReport }}</text>
+        </view>
+
+        <!-- 主按钮：渐变胶囊 + 渐变星 -->
+        <button class="result-btn" @click="goReport">
+          <view class="btn-star"></view>
+          <text class="btn-tx">查看关系人格档案 →</text>
+        </button>
       </view>
-
-      <text class="ending-title">{{ ending?.title }}</text>
-      <text class="ending-caption">{{ caption }}</text>
-
-      <view class="report-card">
-        <text class="report-label">✦ 长夜判词 ✦</text>
-        <text class="report-text">{{ session.aiReport }}</text>
-      </view>
-
-      <button class="go-btn" @click="goReport">查看关系人格档案 →</button>
     </view>
   </view>
 </template>
@@ -52,7 +67,6 @@ import { replaceTokens } from '@/game/engine'
 import { aiReport, aiEndingImage } from '@/game/ai'
 
 const bgImg = '/static/game/ui/report/starfield-bg.png'
-const starMain = '/static/game/ui/report/star-main.png'
 
 const loading = ref(true)
 const showCG = ref(false)
@@ -114,6 +128,11 @@ const goReport = () => {
   background: #140a26;
   padding: calc(60rpx + env(safe-area-inset-top)) 40rpx calc(60rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
+}
+/* 结局态：整屏淡紫渐变铺满，无内边距（卡片自身全屏） */
+.ending--result {
+  padding: 0;
+  background: linear-gradient(180deg, #d9c9f2 0%, #e7d8f3 42%, #f3e6f3 78%, #f8edf4 100%);
 }
 .bg {
   position: fixed;
@@ -226,103 +245,167 @@ const goReport = () => {
 .result-box {
   position: relative;
   z-index: 2;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+/* 淡紫梦幻卡片：撑满一屏，内部自适应，不需要滚动 */
+.result-card {
+  position: relative;
+  width: 100%;
+  max-width: 720rpx;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-.float-star { position: absolute; width: 50rpx; height: 50rpx; opacity: 0.85; }
-.float-star.s1 { top: -10rpx; left: 30rpx; }
-.float-star.s2 { top: 120rpx; right: 24rpx; width: 36rpx; height: 36rpx; }
-
-/* CG 霓虹相框 */
-.cg-frame {
-  position: relative;
-  width: 560rpx;
-  height: 560rpx;
-  border-radius: 28rpx;
-  overflow: hidden;
-  border: 3rpx solid rgba(210, 170, 255, 0.85);
+  padding: calc(28rpx + env(safe-area-inset-top)) 36rpx calc(36rpx + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, #d9c9f2 0%, #e7d8f3 42%, #f3e6f3 78%, #f8edf4 100%);
+  /* 内发光描边，呼应参考图的霓虹边框 */
   box-shadow:
-    0 0 0 1rpx rgba(255, 150, 230, 0.3),
-    0 0 40rpx rgba(170, 110, 255, 0.7);
+    inset 0 0 0 3rpx rgba(255, 255, 255, 0.55),
+    inset 0 0 40rpx rgba(200, 170, 245, 0.45);
+  box-sizing: border-box;
 }
-.cg { width: 100%; height: 100%; }
-.cg-glow {
+
+/* 顶部立绘相框：高度约占一屏 4 成，避免过大需要滚动 */
+.hero-frame {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  max-height: 720rpx;
+  flex-shrink: 0;
+  border-radius: 24rpx;
+  overflow: hidden;
+  border: 2rpx solid rgba(230, 210, 255, 0.95);
+  box-shadow: 0 8rpx 26rpx rgba(120, 80, 200, 0.28);
+}
+.hero-img { width: 100%; height: 100%; }
+.hero-glow {
   position: absolute;
   inset: 0;
-  border-radius: 28rpx;
-  box-shadow: inset 0 0 40rpx rgba(120, 70, 200, 0.35);
+  border-radius: 24rpx;
+  /* 底部柔化，使立绘融入淡紫背景 */
+  box-shadow: inset 0 -70rpx 70rpx rgba(243, 230, 243, 0.6);
   pointer-events: none;
 }
-.cg-tag {
-  position: absolute;
-  left: 0; bottom: 0;
-  background: linear-gradient(135deg, #b06bff, #ff7ec8);
-  color: #fff;
-  font-size: 24rpx;
-  font-weight: 700;
-  padding: 10rpx 24rpx;
-  border-top-right-radius: 20rpx;
-  box-shadow: 0 0 16rpx rgba(255, 120, 200, 0.6);
+
+/* 标题行：渐变标题 + 两侧麦穗式装饰 */
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+  gap: 20rpx;
 }
-.ending-title {
-  margin-top: 40rpx;
-  font-size: 56rpx;
+.result-title {
+  font-size: 64rpx;
   font-weight: 800;
-  color: #fff;
   letter-spacing: 6rpx;
-  text-shadow: 0 0 24rpx rgba(196, 150, 255, 0.9);
+  background: linear-gradient(135deg, #a979e8 0%, #c189e6 50%, #e58fc8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2rpx 6rpx rgba(180, 140, 230, 0.4));
 }
-.ending-caption {
-  margin-top: 18rpx;
+/* 两侧叶饰：用 CSS 画的对称小弧叶 */
+.title-deco {
+  position: relative;
+  width: 44rpx;
+  height: 34rpx;
+}
+.title-deco::before,
+.title-deco::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 22rpx;
+  height: 12rpx;
+  border-radius: 0 16rpx 0 16rpx;
+  background: linear-gradient(135deg, #d9a35e, #f0c98a);
+}
+.title-deco.left::before { left: 0; transform: translateY(-9rpx) rotate(20deg); }
+.title-deco.left::after { left: 6rpx; transform: translateY(4rpx) rotate(-20deg); }
+.title-deco.right::before { right: 0; transform: translateY(-9rpx) rotate(-20deg) scaleX(-1); }
+.title-deco.right::after { right: 6rpx; transform: translateY(4rpx) rotate(20deg) scaleX(-1); }
+
+.result-caption {
+  display: block;
+  margin-top: 20rpx;
   font-size: 26rpx;
-  color: #d8c8ff;
+  color: #9a82c0;
   text-align: center;
   line-height: 1.7;
-  padding: 0 20rpx;
+  padding: 0 24rpx;
 }
-.report-card {
-  margin-top: 40rpx;
+
+/* 长夜判词卡 */
+.verdict {
+  margin-top: 28rpx;
   width: 100%;
-  background: linear-gradient(160deg, rgba(60, 40, 110, 0.5), rgba(28, 16, 56, 0.6));
-  border: 2rpx solid rgba(196, 160, 255, 0.5);
+  background: rgba(255, 255, 255, 0.55);
+  border: 2rpx solid rgba(216, 190, 255, 0.8);
   border-radius: 24rpx;
-  padding: 32rpx 30rpx;
-  box-shadow: 0 0 28rpx rgba(170, 110, 255, 0.45), inset 0 0 30rpx rgba(150, 110, 255, 0.12);
+  padding: 26rpx 30rpx 30rpx;
+  box-shadow: inset 0 0 24rpx rgba(220, 200, 255, 0.4);
   box-sizing: border-box;
-  backdrop-filter: blur(16rpx);
-  -webkit-backdrop-filter: blur(16rpx);
 }
-.report-label {
-  display: block;
-  text-align: center;
-  font-size: 26rpx;
-  font-weight: 700;
-  color: #ffaee0;
-  letter-spacing: 2rpx;
-  text-shadow: 0 0 14rpx rgba(255, 130, 210, 0.6);
+.verdict-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
 }
-.report-text {
-  display: block;
-  margin-top: 18rpx;
+.verdict-label {
   font-size: 28rpx;
-  line-height: 1.8;
-  color: #e7ddff;
-  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 3rpx;
+  color: #9b6fd6;
 }
-.go-btn {
-  margin-top: 50rpx;
-  width: 84%;
-  background: linear-gradient(90deg, #b06bff, #ff7ec8);
+/* 渐变四角星装饰 */
+.verdict-star {
+  width: 22rpx;
+  height: 22rpx;
+  background: linear-gradient(135deg, #c79bff, #ff9ed6);
+  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+}
+.verdict-text {
+  display: block;
+  margin-top: 22rpx;
+  font-size: 27rpx;
+  line-height: 1.85;
+  color: #7d6aa8;
+  text-align: left;
+}
+
+/* 主按钮：渐变胶囊 + 渐变星（推到卡片底部） */
+.result-btn {
+  margin-top: auto;
+  margin-bottom: 6rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  background: linear-gradient(90deg, #b48cf0 0%, #d49ae0 55%, #f3a6d2 100%);
   color: #fff;
-  font-size: 30rpx;
+  font-size: 32rpx;
   font-weight: 700;
   letter-spacing: 2rpx;
   border: none;
   border-radius: 48rpx;
-  padding: 26rpx 0;
-  box-shadow: 0 0 24rpx rgba(255, 120, 200, 0.6);
+  padding: 28rpx 0;
+  box-shadow: 0 12rpx 30rpx rgba(190, 130, 220, 0.55);
 }
-.go-btn::after { border: none; }
-.go-btn:active { transform: scale(0.98); }
+.result-btn::after { border: none; }
+.result-btn:active { transform: scale(0.98); }
+.btn-tx { line-height: 1; }
+/* 渐变五角星图标 */
+.btn-star {
+  width: 40rpx;
+  height: 40rpx;
+  background: linear-gradient(135deg, #ffe27a, #ffb0d8);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  filter: drop-shadow(0 2rpx 6rpx rgba(255, 170, 90, 0.5));
+}
 </style>
