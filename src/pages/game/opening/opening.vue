@@ -12,10 +12,17 @@
         </view>
       </view>
 
-      <view class="tip-card">
-        <text v-if="prologue" class="prologue-text">{{ prologue }}</text>
-        <view v-if="prologue" class="tip-divider"></view>
-        <text class="tip-text">{{ tip }}</text>
+      <view class="opening-card prologue-card" v-if="prologue">
+        <image class="opening-card-icon doc" src="/static/game/ui/opening/doc-icon.png" mode="aspectFit" />
+        <text class="prologue-text">{{ prologue }}</text>
+      </view>
+
+      <view class="opening-card tip-card">
+        <image class="opening-card-icon sparkle" src="/static/game/ui/opening/sparkle-icon.png" mode="aspectFit" />
+        <view class="tip-copy">
+          <text class="tip-title">这是用来快速看结局的测试短章：</text>
+          <text class="tip-text">{{ tip }}</text>
+        </view>
       </view>
 
       <button class="start-btn" @click="start">走进长夜 →</button>
@@ -78,7 +85,9 @@ const back = () => {
 .mask {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 100%);
+  background:
+    radial-gradient(70% 42% at 50% 28%, rgba(111, 112, 190, 0.12), rgba(7, 11, 24, 0) 70%),
+    linear-gradient(180deg, rgba(7, 11, 24, 0.24) 0%, rgba(7, 11, 24, 0.58) 100%);
 }
 .opening-inner {
   position: relative;
@@ -88,75 +97,136 @@ const back = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60rpx 48rpx;
+  padding: calc(88rpx + env(safe-area-inset-top)) 40rpx calc(64rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 .who {
+  width: 560rpx;
   display: flex;
   align-items: center;
-  background: rgba(255,255,255,0.85);
-  border-radius: 40rpx;
-  padding: 12rpx 28rpx 12rpx 12rpx;
-  margin-bottom: 48rpx;
+  margin-bottom: 38rpx;
+  align-self: center;
 }
 .who-avatar {
-  width: 88rpx;
-  height: 88rpx;
+  width: 124rpx;
+  height: 124rpx;
   border-radius: 50%;
-  border: 4rpx solid var(--c-soft);
+  border: 5rpx solid rgba(166, 151, 255, 0.85);
+  box-shadow: 0 0 22rpx rgba(144, 130, 255, 0.48), inset 0 0 0 2rpx rgba(255, 255, 255, 0.34);
+  flex-shrink: 0;
 }
-.who-meta { margin-left: 16rpx; max-width: 460rpx; }
+.who-meta { margin-left: 24rpx; max-width: 410rpx; }
 .who-name {
   display: block;
-  font-size: 30rpx;
-  font-weight: 700;
-  color: var(--c-text);
+  font-size: 36rpx;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.15;
+  text-shadow: 0 3rpx 12rpx rgba(0, 0, 0, 0.55);
 }
 .who-tag {
   display: block;
-  font-size: 20rpx;
-  color: var(--c-deep);
-  margin-top: 4rpx;
+  font-size: 24rpx;
+  color: rgba(171, 166, 238, 0.95);
+  margin-top: 12rpx;
+  line-height: 1.35;
+  text-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.5);
+}
+.opening-card {
+  width: 640rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 22rpx;
+  background: linear-gradient(180deg, rgba(21, 28, 48, 0.78), rgba(17, 25, 44, 0.66));
+  border: 2rpx solid rgba(156, 168, 221, 0.36);
+  box-shadow:
+    0 18rpx 42rpx rgba(2, 7, 18, 0.36),
+    inset 0 1rpx 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1rpx 0 rgba(138, 152, 214, 0.12);
+  backdrop-filter: blur(18rpx);
+  -webkit-backdrop-filter: blur(18rpx);
+}
+.opening-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22rpx;
+  background: radial-gradient(80% 120% at 100% 0%, rgba(118, 132, 202, 0.16), rgba(255, 255, 255, 0) 60%);
+  pointer-events: none;
+}
+.prologue-card {
+  min-height: 184rpx;
+  padding: 34rpx 34rpx 34rpx 146rpx;
 }
 .tip-card {
-  background: rgba(255,255,255,0.94);
-  border-radius: 28rpx;
-  padding: 40rpx 36rpx;
-  box-shadow: 0 12rpx 40rpx rgba(0,0,0,0.18);
+  min-height: 170rpx;
+  margin-top: 28rpx;
+  padding: 34rpx 34rpx 34rpx 122rpx;
+}
+.opening-card-icon {
+  position: absolute;
+  left: 26rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.opening-card-icon.doc { width: 82rpx; height: 82rpx; }
+.opening-card-icon.sparkle { width: 74rpx; height: 74rpx; }
+.tip-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+.tip-title {
+  display: block;
+  font-size: 29rpx;
+  line-height: 1.45;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.45);
 }
 .tip-text {
-  font-size: 30rpx;
-  line-height: 1.7;
-  color: var(--c-text);
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.75;
+  color: rgba(188, 188, 242, 0.94);
 }
 .prologue-text {
+  position: relative;
+  z-index: 1;
   display: block;
-  font-size: 26rpx;
-  line-height: 1.8;
-  color: var(--c-deep);
-  font-style: italic;
-}
-.tip-divider {
-  height: 2rpx;
-  background: var(--c-soft);
-  margin: 22rpx 0;
+  font-size: 24rpx;
+  line-height: 1.78;
+  color: rgba(191, 190, 247, 0.96);
 }
 .start-btn {
   margin-top: 56rpx;
-  width: 70%;
-  background: linear-gradient(90deg, var(--c-primary), var(--c-deep));
+  width: 620rpx;
+  min-height: 112rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(100deg, #9368f1 0%, #7864f0 48%, #4d6bf2 100%);
   color: #fff;
-  font-size: 32rpx;
-  font-weight: 700;
+  font-size: 34rpx;
+  font-weight: 800;
+  letter-spacing: 2rpx;
   border: none;
-  border-radius: 48rpx;
-  padding: 24rpx 0;
-  box-shadow: 0 10rpx 28rpx rgba(0,0,0,0.25);
+  border-radius: 58rpx;
+  padding: 0;
+  box-shadow: 0 16rpx 42rpx rgba(76, 96, 242, 0.48), inset 0 2rpx 0 rgba(255,255,255,0.22);
 }
-.start-btn:active { opacity: 0.9; }
+.start-btn::after { border: none; }
+.start-btn:active { opacity: 0.9; transform: scale(0.98); }
 .back {
   margin-top: 30rpx;
   font-size: 24rpx;
-  color: rgba(255,255,255,0.9);
+  letter-spacing: 1rpx;
+  color: rgba(209, 210, 238, 0.82);
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.45);
 }
 </style>

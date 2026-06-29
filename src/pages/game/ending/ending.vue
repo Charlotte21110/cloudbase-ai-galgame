@@ -26,33 +26,35 @@
     <!-- 结局展示 -->
     <view v-else class="result-box">
       <view class="result-card">
+        <image class="result-bg-img" src="/static/game/ui/ending/result-clean-bg.png" mode="aspectFill" />
+
         <!-- 顶部立绘 / CG -->
         <view class="hero-frame">
           <image class="hero-img" :src="session.cgUrl" mode="aspectFill" />
-          <view class="hero-glow"></view>
+          <image class="hero-mist" src="/static/game/ui/ending/soft-mist-overlay.png" mode="scaleToFill" />
         </view>
 
         <!-- 标题（渐变） + 两侧装饰 -->
         <view class="title-row">
-          <view class="title-deco left"></view>
+          <image class="title-sparkle" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
           <text class="result-title">{{ ending?.title }}</text>
-          <view class="title-deco right"></view>
+          <image class="title-sparkle right" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
         </view>
         <text class="result-caption">{{ caption }}</text>
 
         <!-- 长夜判词卡 -->
         <view class="verdict">
           <view class="verdict-head">
-            <view class="verdict-star"></view>
+            <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
             <text class="verdict-label">长夜判词</text>
-            <view class="verdict-star"></view>
+            <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
           </view>
           <text class="verdict-text">{{ session.aiReport }}</text>
         </view>
 
         <!-- 主按钮：渐变胶囊 + 渐变星 -->
         <button class="result-btn" @click="goReport">
-          <view class="btn-star"></view>
+          <image class="btn-star" src="/static/game/ui/ending/button-star.png" mode="aspectFit" />
           <text class="btn-tx">查看关系人格档案 →</text>
         </button>
       </view>
@@ -132,7 +134,7 @@ const goReport = () => {
 /* 结局态：整屏淡紫渐变铺满，无内边距（卡片自身全屏） */
 .ending--result {
   padding: 0;
-  background: linear-gradient(180deg, #d9c9f2 0%, #e7d8f3 42%, #f3e6f3 78%, #f8edf4 100%);
+  background: #f8edf4;
 }
 .bg {
   position: fixed;
@@ -260,43 +262,55 @@ const goReport = () => {
   display: flex;
   flex-direction: column;
   padding: calc(28rpx + env(safe-area-inset-top)) 36rpx calc(36rpx + env(safe-area-inset-bottom));
-  background: linear-gradient(180deg, #d9c9f2 0%, #e7d8f3 42%, #f3e6f3 78%, #f8edf4 100%);
-  /* 内发光描边，呼应参考图的霓虹边框 */
+  background: #f8edf4;
   box-shadow:
-    inset 0 0 0 3rpx rgba(255, 255, 255, 0.55),
-    inset 0 0 40rpx rgba(200, 170, 245, 0.45);
+    inset 0 0 0 3rpx rgba(255, 255, 255, 0.58),
+    inset 0 0 42rpx rgba(200, 170, 245, 0.36);
   box-sizing: border-box;
+  overflow: hidden;
+}
+.result-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 /* 顶部立绘相框：高度约占一屏 4 成，避免过大需要滚动 */
 .hero-frame {
   position: relative;
+  z-index: 1;
   width: 100%;
   height: 40vh;
   max-height: 720rpx;
   flex-shrink: 0;
-  border-radius: 24rpx;
+  border-radius: 28rpx;
   overflow: hidden;
-  border: 2rpx solid rgba(230, 210, 255, 0.95);
-  box-shadow: 0 8rpx 26rpx rgba(120, 80, 200, 0.28);
+  border: 2rpx solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10rpx 34rpx rgba(145, 102, 198, 0.22), 0 0 26rpx rgba(255, 255, 255, 0.48);
 }
 .hero-img { width: 100%; height: 100%; }
-.hero-glow {
+.hero-mist {
   position: absolute;
-  inset: 0;
-  border-radius: 24rpx;
-  /* 底部柔化，使立绘融入淡紫背景 */
-  box-shadow: inset 0 -70rpx 70rpx rgba(243, 230, 243, 0.6);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 56%;
   pointer-events: none;
 }
 
-/* 标题行：渐变标题 + 两侧麦穗式装饰 */
+/* 标题行：渐变标题 + 素材星光装饰 */
 .title-row {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 30rpx;
-  gap: 20rpx;
+  gap: 10rpx;
 }
 .result-title {
   font-size: 64rpx;
@@ -306,30 +320,19 @@ const goReport = () => {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2rpx 6rpx rgba(180, 140, 230, 0.4));
+  filter: drop-shadow(0 2rpx 6rpx rgba(180, 140, 230, 0.34));
 }
-/* 两侧叶饰：用 CSS 画的对称小弧叶 */
-.title-deco {
-  position: relative;
-  width: 44rpx;
-  height: 34rpx;
+.title-sparkle {
+  width: 54rpx;
+  height: 54rpx;
+  opacity: 0.82;
+  transform: translateY(6rpx) scale(0.82);
 }
-.title-deco::before,
-.title-deco::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 22rpx;
-  height: 12rpx;
-  border-radius: 0 16rpx 0 16rpx;
-  background: linear-gradient(135deg, #d9a35e, #f0c98a);
-}
-.title-deco.left::before { left: 0; transform: translateY(-9rpx) rotate(20deg); }
-.title-deco.left::after { left: 6rpx; transform: translateY(4rpx) rotate(-20deg); }
-.title-deco.right::before { right: 0; transform: translateY(-9rpx) rotate(-20deg) scaleX(-1); }
-.title-deco.right::after { right: 6rpx; transform: translateY(4rpx) rotate(20deg) scaleX(-1); }
+.title-sparkle.right { transform: translateY(6rpx) scale(0.82) rotate(22deg); }
 
 .result-caption {
+  position: relative;
+  z-index: 1;
   display: block;
   margin-top: 20rpx;
   font-size: 26rpx;
@@ -341,13 +344,17 @@ const goReport = () => {
 
 /* 长夜判词卡 */
 .verdict {
+  position: relative;
+  z-index: 1;
   margin-top: 28rpx;
   width: 100%;
-  background: rgba(255, 255, 255, 0.55);
-  border: 2rpx solid rgba(216, 190, 255, 0.8);
-  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.43);
+  border: 2rpx solid rgba(216, 190, 255, 0.62);
+  border-radius: 26rpx;
   padding: 26rpx 30rpx 30rpx;
-  box-shadow: inset 0 0 24rpx rgba(220, 200, 255, 0.4);
+  box-shadow: inset 0 0 24rpx rgba(220, 200, 255, 0.30), 0 10rpx 28rpx rgba(174, 124, 218, 0.12);
+  backdrop-filter: blur(16rpx);
+  -webkit-backdrop-filter: blur(16rpx);
   box-sizing: border-box;
 }
 .verdict-head {
@@ -362,12 +369,10 @@ const goReport = () => {
   letter-spacing: 3rpx;
   color: #9b6fd6;
 }
-/* 渐变四角星装饰 */
 .verdict-star {
-  width: 22rpx;
-  height: 22rpx;
-  background: linear-gradient(135deg, #c79bff, #ff9ed6);
-  clip-path: polygon(50% 0%, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0% 50%, 40% 40%);
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.72;
 }
 .verdict-text {
   display: block;
@@ -380,6 +385,8 @@ const goReport = () => {
 
 /* 主按钮：渐变胶囊 + 渐变星（推到卡片底部） */
 .result-btn {
+  position: relative;
+  z-index: 1;
   margin-top: auto;
   margin-bottom: 6rpx;
   width: 100%;
@@ -393,19 +400,16 @@ const goReport = () => {
   font-weight: 700;
   letter-spacing: 2rpx;
   border: none;
-  border-radius: 48rpx;
+  border-radius: 52rpx;
   padding: 28rpx 0;
-  box-shadow: 0 12rpx 30rpx rgba(190, 130, 220, 0.55);
+  box-shadow: 0 12rpx 30rpx rgba(190, 130, 220, 0.45), inset 0 2rpx 0 rgba(255,255,255,0.35);
 }
 .result-btn::after { border: none; }
 .result-btn:active { transform: scale(0.98); }
 .btn-tx { line-height: 1; }
-/* 渐变五角星图标 */
 .btn-star {
-  width: 40rpx;
-  height: 40rpx;
-  background: linear-gradient(135deg, #ffe27a, #ffb0d8);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  filter: drop-shadow(0 2rpx 6rpx rgba(255, 170, 90, 0.5));
+  width: 46rpx;
+  height: 46rpx;
+  filter: drop-shadow(0 2rpx 8rpx rgba(255, 188, 105, 0.46));
 }
 </style>
