@@ -118,10 +118,10 @@ export function judgeEnding(
 
 /** 灵魂契合度%（成绩单展示用，按关系人格 + 羁绊值换算） */
 export function computeMatchRate(score: number, endingId: string): number {
-  if (endingId === 'toxic') return 13 // 噬星者（渣）：最低
+  if (endingId === 'toxic') return Math.min(25, Math.max(8, Math.round(score * 0.2 + 5))) // 噬星者（渣）：低区间
   if (endingId === 'playboy') return Math.min(66, Math.max(40, Math.round(score * 0.6 + 18))) // 逐光者（海王）：中等封顶
   if (endingId === 'devoted') return Math.min(92, Math.max(60, Math.round(score * 0.9 + 8))) // 拾光者（忠犬）：偏高
-  if (endingId === 'wanderer') return 50 // 漫游者（多面体）：居中
+  if (endingId === 'wanderer') return Math.min(85, Math.max(35, Math.round(score * 0.7 + 10))) // 漫游者（多面体）：跟随羁绊值
   return Math.min(99, Math.max(15, Math.round(score * 0.9 + 12))) // 同行者（真心）等
 }
 

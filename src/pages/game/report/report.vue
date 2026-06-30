@@ -57,7 +57,7 @@
           <text class="summary-text">{{ session.aiReport }}</text>
         </view>
 
-        <text class="brand">辰星 · 长夜文游 · {{ char?.style === 'anime' ? '新海诚画风' : '电影写实风' }}</text>
+        <text class="brand">辰星 · 长夜文游 · {{ char?.style === 'anime' ? '二次元画风' : '电影写实风' }}</text>
       </view>
 
       <!-- 底部按钮：半透明磨砂 + 发光描边 -->
@@ -70,6 +70,11 @@
           <view class="ico ico-refresh"></view>
           <text class="rbtn-tx">再玩一次</text>
         </view>
+      </view>
+
+      <!-- 统计页入口 -->
+      <view class="stats-entry" @click="goStats">
+        <text class="stats-entry-text">看看大家都怎么选的 →</text>
       </view>
 
       <!-- Powered by CloudBase 广告徽章 -->
@@ -111,6 +116,10 @@ const saveShot = () => {
 const again = () => {
   resetGame()
   uni.reLaunch({ url: '/pages/game/pick/pick' })
+}
+
+const goStats = () => {
+  uni.navigateTo({ url: '/pages/game/stats/stats' })
 }
 </script>
 
@@ -431,5 +440,24 @@ const again = () => {
   border: 7rpx solid transparent;
   border-bottom-color: currentColor;
   transform: rotate(135deg);
+}
+
+/* 统计页入口 */
+.stats-entry {
+  margin-top: 32rpx;
+  text-align: center;
+  padding: 24rpx 0;
+  border-radius: 40rpx;
+  background: rgba(38, 28, 72, 0.35);
+  border: 1rpx solid rgba(180, 150, 255, 0.35);
+  backdrop-filter: blur(10rpx);
+  -webkit-backdrop-filter: blur(10rpx);
+  transition: transform 0.12s ease;
+}
+.stats-entry:active { transform: scale(0.97); }
+.stats-entry-text {
+  font-size: 28rpx;
+  color: #d4c5f0;
+  letter-spacing: 2rpx;
 }
 </style>

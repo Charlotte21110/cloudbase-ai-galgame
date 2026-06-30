@@ -26,14 +26,14 @@
   {
     "_id": "char_baishiyu",
     "id": "baishiyu",
-    "name": "白时屿【测试】",
+    "name": "白时屿",
     "gender": "male",
     "style": "anime",
     "persona": "清冷天才医生兼小提琴家，矜贵疏离的精英，话少而克制",
     "tagline": "你是我手术刀之外，唯一的失控。",
     "intro": "【测试短章】用来快速验证流程的速通剧本：两幕剧情 + 两个抉择 + 一道开放题，几下点到结局。",
     "themeKey": "night",
-    "scriptId": "script_test"
+    "scriptId": "script_default"
   },
   {
     "_id": "char_yunmobai",

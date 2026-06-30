@@ -15,6 +15,14 @@
       "handler": "index.main",
       "installDependency": true,
       "ignore": ["node_modules", "node_modules/**/*", ".git"]
+    },
+    {
+      "name": "galgame-stats",
+      "timeout": 10,
+      "runtime": "Nodejs18.15",
+      "handler": "index.main",
+      "installDependency": true,
+      "ignore": ["node_modules", "node_modules/**/*", ".git"]
     }
   ]
 } 

@@ -29,6 +29,8 @@ export interface GameSession {
   face: Face
   /** 开放题玩家输入 */
   openAnswer: string
+  /** 性别画像（男/女/保密） */
+  gender: 'male' | 'female' | 'secret' | ''
   /** 结局结算 */
   ending: Ending | null
   matchRate: number
@@ -49,6 +51,7 @@ function createSession(): GameSession {
     step: 0,
     face: 'happy',
     openAnswer: '',
+    gender: '',
     ending: null,
     matchRate: 0,
     aiReport: '',

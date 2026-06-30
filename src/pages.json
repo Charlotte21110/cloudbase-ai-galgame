@@ -23,6 +23,13 @@
 			}
 		},
 		{
+			"path": "pages/game/gender/gender",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "性别画像"
+			}
+		},
+		{
 			"path": "pages/game/ending/ending",
 			"style": {
 				"navigationStyle": "custom",
@@ -34,6 +41,13 @@
 			"style": {
 				"navigationStyle": "custom",
 				"navigationBarTitleText": "恋爱成绩单"
+			}
+		},
+		{
+			"path": "pages/game/stats/stats",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "长夜众生相"
 			}
 		},
 		{

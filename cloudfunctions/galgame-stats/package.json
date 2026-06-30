@@ -1,0 +1,9 @@
+{
+  "name": "galgame-stats",
+  "version": "1.0.0",
+  "description": "全站匿名统计（incStats / getStats）",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "^3.16.0"
+  }
+}

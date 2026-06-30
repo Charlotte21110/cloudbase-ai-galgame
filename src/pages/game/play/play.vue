@@ -88,21 +88,24 @@
 
     <!-- 底部控制栏：上一句 / 下一句 / 跳过 / 自动播放 -->
     <view class="ctrl-bar">
-      <view class="ctrl-btn" :class="{ disabled: !canPrev }" @click.stop="goPrev">
-        <image class="ctrl-ico" :src="ctrlPrev" mode="aspectFit" />
-        <text class="ctrl-tip">上一句</text>
-      </view>
-      <view class="ctrl-btn" :class="{ disabled: !canNext }" @click.stop="goNext">
-        <image class="ctrl-ico" :src="ctrlNext" mode="aspectFit" />
-        <text class="ctrl-tip">下一句</text>
-      </view>
-      <view class="ctrl-btn" :class="{ disabled: !canSkip }" @click.stop="goSkip">
-        <image class="ctrl-ico" :src="ctrlSkip" mode="aspectFit" />
-        <text class="ctrl-tip">跳过</text>
-      </view>
-      <view class="ctrl-btn" :class="{ active: autoPlay }" @click.stop="toggleAuto">
-        <image class="ctrl-ico" :src="ctrlAuto" mode="aspectFit" />
-        <text class="ctrl-tip">{{ autoPlay ? '自动中' : '自动' }}</text>
+      <view class="ctrl-line"></view>
+      <view class="ctrl-row">
+        <view class="ctrl-btn" :class="{ disabled: !canPrev }" @click.stop="goPrev">
+          <view class="ctrl-ico-css ico-prev"></view>
+          <text class="ctrl-tip">上一句</text>
+        </view>
+        <view class="ctrl-btn" :class="{ disabled: !canNext }" @click.stop="goNext">
+          <view class="ctrl-ico-css ico-next"></view>
+          <text class="ctrl-tip">下一句</text>
+        </view>
+        <view class="ctrl-btn" :class="{ disabled: !canSkip }" @click.stop="goSkip">
+          <view class="ctrl-ico-css ico-skip"></view>
+          <text class="ctrl-tip">跳过</text>
+        </view>
+        <view class="ctrl-btn" :class="{ active: autoPlay }" @click.stop="toggleAuto">
+          <view class="ctrl-ico-css ico-auto"></view>
+          <text class="ctrl-tip">{{ autoPlay ? '自动中' : '自动' }}</text>
+        </view>
       </view>
     </view>
     </view>
@@ -138,11 +141,7 @@ const node = computed(() => currentNode())
 // 剧情页 UI 素材
 const textbox = '/static/game/ui/textbox.png'
 
-// 底部控制栏图标素材
-const ctrlPrev = '/static/game/ui/ctrl-prev.png'
-const ctrlNext = '/static/game/ui/ctrl-next.png'
-const ctrlSkip = '/static/game/ui/ctrl-skip.png'
-const ctrlAuto = '/static/game/ui/ctrl-auto.png'
+
 
 // 自动播放
 const autoPlay = ref(false)
@@ -263,7 +262,8 @@ function applyBeatVisual(b: Beat | null) {
 function enterNode() {
   const n = node.value
   if (!n) {
-    uni.redirectTo({ url: '/pages/game/ending/ending' })
+    // 剧情结束 → 先到性别画像页，再进结局
+    uni.redirectTo({ url: '/pages/game/gender/gender' })
     return
   }
   // 背景 / 表情初始化
@@ -466,7 +466,8 @@ async function submitOpen() {
 function proceedGoto(goto?: string) {
   const isEnd = gotoNode(goto || 'END')
   if (isEnd) {
-    uni.redirectTo({ url: '/pages/game/ending/ending' })
+    // 剧情结束 → 先到性别画像页，再进结局
+    uni.redirectTo({ url: '/pages/game/gender/gender' })
     return
   }
   enterNode()
@@ -752,7 +753,7 @@ onUnmounted(() => {
   /* 底部留出控制栏空间 + 与控制栏之间的间隙；bubble 内容增多时整体向上扩展 */
   bottom: 0;
   z-index: 8;
-  padding: 0 28rpx calc(190rpx + env(safe-area-inset-bottom));
+  padding: 0 28rpx calc(140rpx + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
 }
@@ -921,21 +922,32 @@ onUnmounted(() => {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: calc(48rpx + env(safe-area-inset-bottom));
+  bottom: calc(36rpx + env(safe-area-inset-bottom));
   z-index: 12;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  /* 与 .dock 同一水平内边距，确保两端与对话框对齐 */
   padding: 0 28rpx;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+/* 分隔线条 */
+.ctrl-line {
+  width: 100%;
+  height: 2rpx;
+  background: linear-gradient(90deg, transparent 0%, rgba(200, 180, 255, 0.7) 20%, rgba(200, 180, 255, 0.7) 80%, transparent 100%);
+  margin-bottom: 28rpx;
+}
+.ctrl-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .ctrl-btn {
   pointer-events: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 4rpx;
+  gap: 10rpx;
   transition: transform 0.12s ease, opacity 0.2s ease;
 }
 .ctrl-btn:active {
@@ -945,13 +957,107 @@ onUnmounted(() => {
   opacity: 0.28;
   pointer-events: none;
 }
-.ctrl-ico {
-  width: 78rpx;
-  height: 78rpx;
-  filter: drop-shadow(0 2rpx 8rpx rgba(176, 107, 255, 0.55));
+/* CSS 绘制图标 */
+.ctrl-ico-css {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  flex-shrink: 0;
 }
-.ctrl-btn.active .ctrl-ico {
-  filter: drop-shadow(0 0 16rpx rgba(255, 143, 208, 0.95));
+/* 上一句：← 左箭头 */
+.ico-prev::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 6rpx;
+  width: 24rpx;
+  height: 3rpx;
+  background: rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%);
+}
+.ico-prev::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 4rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-left: 3rpx solid rgba(200, 180, 255, 0.9);
+  border-bottom: 3rpx solid rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%) rotate(45deg);
+}
+/* 下一句：→ 右箭头 */
+.ico-next::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 6rpx;
+  width: 24rpx;
+  height: 3rpx;
+  background: rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%);
+}
+.ico-next::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 4rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 3rpx solid rgba(200, 180, 255, 0.9);
+  border-top: 3rpx solid rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%) rotate(45deg);
+}
+/* 跳过：▶▶ 双三角 */
+.ico-skip::before,
+.ico-skip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-bottom: 10rpx solid transparent;
+  border-left: 14rpx solid rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%);
+}
+.ico-skip::before {
+  left: 4rpx;
+}
+.ico-skip::after {
+  left: 20rpx;
+}
+/* 自动：▶ 单三角 */
+.ico-auto::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  width: 0;
+  height: 0;
+  border-top: 11rpx solid transparent;
+  border-bottom: 11rpx solid transparent;
+  border-left: 18rpx solid rgba(200, 180, 255, 0.9);
+  transform: translateY(-50%);
+}
+.ctrl-btn.active .ctrl-ico-css::before,
+.ctrl-btn.active .ctrl-ico-css::after {
+  border-left-color: #ff8fd0;
+}
+.ctrl-btn.active .ico-prev::before,
+.ctrl-btn.active .ico-next::before {
+  background: #ff8fd0;
+}
+.ctrl-btn.active .ico-prev::after {
+  border-left-color: #ff8fd0;
+  border-bottom-color: #ff8fd0;
+}
+.ctrl-btn.active .ico-next::after {
+  border-right-color: #ff8fd0;
+  border-top-color: #ff8fd0;
+}
+.ctrl-btn.active .ctrl-ico-css {
+  filter: drop-shadow(0 0 12rpx rgba(255, 143, 208, 0.8));
   animation: autoPulse 1.1s ease-in-out infinite;
 }
 @keyframes autoPulse {
@@ -959,8 +1065,8 @@ onUnmounted(() => {
   50% { transform: scale(1.12); }
 }
 .ctrl-tip {
-  font-size: 18rpx;
-  color: rgba(255, 255, 255, 0.82);
+  font-size: 24rpx;
+  color: rgba(200, 180, 255, 0.88);
   letter-spacing: 1rpx;
   text-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.6);
 }

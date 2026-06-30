@@ -81,7 +81,8 @@ onMounted(async () => {
     uni.reLaunch({ url: '/pages/game/pick/pick' })
     return
   }
-  const e = finalize()
+  // 结局已在 gender 页 finalize()，这里直取；如果直接跳来则兜底 finalize
+  const e = session.ending || finalize()
   // 先填兜底报告，AI 成功再覆盖
   session.aiReport = replaceTokens(e.report, session.char)
 

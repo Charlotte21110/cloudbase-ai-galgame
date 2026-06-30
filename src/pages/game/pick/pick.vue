@@ -61,7 +61,7 @@
       </view>
 
       <view class="pick-foot">
-        <text>AI文字游戏：选一张卡）→ 开始你们的故事</text>
+        <text>AI Agent文字游戏：选一张卡→ 开始你们的故事</text>
       </view>
     </view>
   </view>
