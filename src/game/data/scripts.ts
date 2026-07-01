@@ -25,8 +25,11 @@ import campusFirstlove from './scripts/campus_firstlove.json'
 import dailyKonbini from './scripts/daily_konbini.json'
 import officeRookie from './scripts/office_rookie.json'
 import oldHouseFamily from './scripts/old_house_family.json'
+import campusAmbiguity from './scripts/campus_ambiguity.json'
+import wuxiaSword from './scripts/wuxia_sword.json'
+import queenRise from './scripts/queen_rise.json'
 
-/** 专属剧本集合（顾沉舟/苏曼卿/陆衍/江临川/夏野/林桃桃/池小满/许之夏） */
+/** 专属剧本集合 */
 const EXTRA_SCRIPTS: Script[] = [
   bizMerger,
   urbanAmour,
@@ -36,6 +39,9 @@ const EXTRA_SCRIPTS: Script[] = [
   dailyKonbini,
   officeRookie,
   oldHouseFamily,
+  campusAmbiguity,
+  wuxiaSword,
+  queenRise,
 ].map((s) => s as unknown as Script)
 
 export const SCRIPTS: Script[] = [

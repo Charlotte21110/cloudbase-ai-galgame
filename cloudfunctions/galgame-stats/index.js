@@ -32,6 +32,7 @@ const VALID_SCRIPTS = [
   'script_default', 'script_amour', 'script_family',
   'script_campus', 'script_daily', 'script_biz',
   'script_summer', 'script_band', 'script_rookie',
+  'script_campus_love', 'script_wuxia', 'script_queen',
   'script_test',
 ]
 

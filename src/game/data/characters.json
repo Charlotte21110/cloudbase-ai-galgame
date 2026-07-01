@@ -43,9 +43,9 @@
     "style": "anime",
     "persona": "古风银发冷艳剑客，孤高清冷如雪山月光，话少剑利、外冷内炽",
     "tagline": "我的剑只为一人出鞘。",
-    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人云墨白——背负着以命续灯的宿命。",
+    "intro": "【武侠 · 霜刃寒山】三年前云隐山庄一夜灭门，云墨白背负弑师罪名独行天涯。一场暴雪、一碗汤、一个不该相信的人——将改写整个江湖。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_wuxia"
   },
   {
     "_id": "char_jianglinchuan",
@@ -79,9 +79,9 @@
     "style": "real",
     "persona": "杀伐果断的大女主总裁/女王，强势又心软，不轻易示弱",
     "tagline": "跪着的我不需要，站着陪我的才配。",
-    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人江照月——背负着以命续灯的宿命。",
+    "intro": "【大女主 · 凤鸣九天】三年前被合伙人背刺出局，如今带着一份颠覆行业的计划书杀回来。她不需要王冠——因为她就是王冠。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_queen"
   },
   {
     "_id": "char_lintaotao",
@@ -115,9 +115,9 @@
     "style": "anime",
     "persona": "古风白发清冷剑修，雪山初雪般出尘，外冷内热、不善言辞",
     "tagline": "心动如裂帛，我却假装不知。",
-    "intro": "【史诗 · 长夜轮回】辰星城每七十年迎来一次长夜。你在沉睡之城中醒来，撞见执灯人沈白霜——背负着以命续灯的宿命。",
+    "intro": "【暧昧 · 落樱纷飞】转学来的她安静如水，却在四十七张纸条里藏满了欲言又止。一支旧钢笔、一片枫叶、一颗薄荷糖——写尽了十七岁最隐秘的心事。",
     "themeKey": "night",
-    "scriptId": "script_default"
+    "scriptId": "script_campus_love"
   },
   {
     "_id": "char_chixiaoman",

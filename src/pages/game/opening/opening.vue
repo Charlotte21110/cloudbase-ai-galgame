@@ -20,7 +20,7 @@
       <view class="opening-card tip-card">
         <image class="opening-card-icon sparkle" src="/static/game/ui/opening/sparkle-icon.png" mode="aspectFit" />
         <view class="tip-copy">
-          <text class="tip-title">这是用来快速看结局的测试短章：</text>
+          <text class="tip-title">背景简介：</text>
           <text class="tip-text">{{ tip }}</text>
         </view>
       </view>
