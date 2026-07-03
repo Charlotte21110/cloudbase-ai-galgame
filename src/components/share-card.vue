@@ -373,13 +373,13 @@ function save() {
 }
 
 function shareLink(): string {
-  // 复制站点根目录链接（自动跳首页），避免带上当前页 hash 路由
+  // 复制 /star/ 子目录链接
   // #ifdef H5
   if (typeof window !== 'undefined' && window.location) {
-    return `${window.location.origin}/`
+    return `${window.location.origin}/star/`
   }
   // #endif
-  return 'https://tcb.cloud.tencent.com'
+  return 'https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/star/'
 }
 
 function copyLink() {
