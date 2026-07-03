@@ -32,8 +32,8 @@ function getAI() {
 
 // 默认文本模型（newtest 环境已开通：hy3-preview / glm-5 / glm-5.1 / glm-5v-turbo）
 const TEXT_MODEL = process.env.GALGAME_TEXT_MODEL || 'hy3-preview'
-// 生图模型（newtest 环境已开通 hunyuan-image）
-const IMAGE_MODEL = process.env.GALGAME_IMAGE_MODEL || 'hunyuan-image'
+// 生图模型（newtest 环境已开通 HY-Image-3.0-Plus-4090-Tob-v1.0）
+const IMAGE_MODEL = process.env.GALGAME_IMAGE_MODEL || 'HY-Image-3.0-Plus-4090-Tob-v1.0'
 
 function ok(data) {
   return { success: true, data }
@@ -148,7 +148,7 @@ async function genImage(event) {
     if (typeof aiInst.createImageModel !== 'function') {
       return fail('当前环境 AI SDK 暂不支持 createImageModel，前端将回退预设图')
     }
-    const imgModel = aiInst.createImageModel('cloudbase')
+    const imgModel = aiInst.createImageModel('hunyuan-image')
     const res = await imgModel.generateImage({
       model: IMAGE_MODEL,
       prompt,

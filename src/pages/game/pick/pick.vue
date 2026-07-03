@@ -62,6 +62,8 @@
 
       <view class="pick-foot">
         <text>AI Agent文字游戏：选一张卡→ 开始你们的故事</text>
+        <br/>
+        <text>By：小夏-云开发CloudBase构建</text>
       </view>
     </view>
   </view>

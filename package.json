@@ -1,7 +1,7 @@
 {
   "name": "galgame-cloudbase-ai",
   "version": "0.1.0",
-  "description": "Galgame CloudBase AI - 基于 UniApp + 腾讯云开发的三端（微信小程序 / H5 / iOS/Android App）应用",
+  "description": "多角色文字游戏 - 基于 UniApp + 腾讯云开发的三端（微信小程序 / H5 / iOS/Android App）应用",
   "scripts": {
     "dev:custom": "uni -p",
     "dev:h5": "uni",

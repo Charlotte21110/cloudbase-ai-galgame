@@ -4,7 +4,7 @@
 			"path": "pages/game/pick/pick",
 			"style": {
 				"navigationStyle": "custom",
-				"navigationBarTitleText": "赛博恋爱文游"
+				"navigationBarTitleText": "(*´∀`)~♥文游"
 			}
 		},
 		{
@@ -18,7 +18,7 @@
 			"path": "pages/game/play/play",
 			"style": {
 				"navigationStyle": "custom",
-				"navigationBarTitleText": "恋爱进行中",
+				"navigationBarTitleText": "故事进行中^_−☆",
 				"disableScroll": true
 			}
 		},
@@ -40,7 +40,7 @@
 			"path": "pages/game/report/report",
 			"style": {
 				"navigationStyle": "custom",
-				"navigationBarTitleText": "恋爱成绩单"
+				"navigationBarTitleText": "关系成绩单"
 			}
 		},
 		{
@@ -109,7 +109,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "赛博恋爱文游",
+		"navigationBarTitleText": "乙游gal(●´ω｀●)ゞ",
 		"navigationBarBackgroundColor": "#FF7EA8",
 		"backgroundColor": "#FFF5F8"
 	},

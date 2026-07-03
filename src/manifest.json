@@ -1,7 +1,7 @@
 {
-    "name" : "Galgame CloudBase AI",
+    "name" : "长夜·星恋语",
     "appid" : "",
-    "description" : "Galgame CloudBase AI - 基于 UniApp + 腾讯云开发的三端应用",
+    "description" : "多角色 × AI实时回应 · 选择你的故事线，开启一场沉浸式文字冒险",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
