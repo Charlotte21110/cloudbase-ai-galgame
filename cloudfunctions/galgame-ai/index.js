@@ -80,12 +80,18 @@ async function genRaw(event) {
 /** 模板 A：台词 + 内心 OS */
 async function genLine(event) {
   const { name, persona, score, scene, optionText } = event
+  const mood =
+    score >= 60
+      ? '你此刻对对方颇为信任、愿意亲近'
+      : score >= 35
+        ? '你对对方有些好感，仍带着几分克制'
+        : '你对对方还较为疏离、戒备'
   const prompt =
-    `你扮演「${name}」，人设：${persona}。当前好感度 ${score}/100。\n` +
-    `情境：${scene}\n` +
+    `你扮演「${name}」，人设：${persona}。${mood}。\n` +
+    `情境（发生在「长夜」这场城市异变中）：${scene}\n` +
     `对方刚对你说："${optionText}"\n` +
-    `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,有暧昧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
-    `好感高→脸红/口是心非；好感低→冷淡疏离。不露骨，点到为止。只输出 JSON，不要其它文字。`
+    `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,贴合人设、有戏剧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
+    `台词要自然走心；严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。只输出 JSON，不要其它文字。`
   const text = await genText([{ role: 'user', content: prompt }])
   const obj = safeParseJSON(text)
   if (obj && obj.line) {
@@ -99,10 +105,18 @@ async function genLine(event) {
 async function genOpenLine(event) {
   const { name, persona, score, userText } = event
   const safeUser = String(userText || '').slice(0, 100)
+  const mood =
+    score >= 60
+      ? '此刻你已对对方卸下防备、心生依恋'
+      : score >= 35
+        ? '你对对方有好感，却仍带着几分克制与试探'
+        : '你对对方仍存着距离与保留，但并非冷漠'
   const prompt =
-    `你扮演「${name}」，人设：${persona}。当前好感度 ${score}/100。\n` +
-    `对方对你说了一段心里话："${safeUser}"\n` +
-    `用 ${name} 的口吻真诚回应这段话，1~3句、≤50字，符合人设、有情感张力。只输出台词本身，不要引号、不要解释。`
+    `你扮演「${name}」，人设：${persona}。${mood}。\n` +
+    `在「长夜」即将结束、记忆即将封存之际，对方对你说了一段心里话："${safeUser}"\n` +
+    `请用 ${name} 的口吻真诚回应这段话，1~3句、≤50字，像真人倾诉般自然走心、有画面感与情感张力。\n` +
+    `严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。\n` +
+    `只输出台词本身，不要引号、不要解释。`
   const text = await genText([{ role: 'user', content: prompt }])
   if (text && text.trim()) return ok({ line: text.trim().slice(0, 80) })
   return fail('AI 未返回内容')
@@ -113,8 +127,8 @@ async function genReport(event) {
   const { name, endingTitle, score, tags } = event
   const tagStr = Array.isArray(tags) ? tags.join('、') : ''
   const prompt =
-    `玩家与「${name}」的恋爱结局是「${endingTitle}」，最终好感度 ${score}，选择标签：${tagStr}。\n` +
-    `写一段 ≤80 字的恋爱小结，口吻随结局（甜或毒舌），像朋友点评 TA 的恋爱风格。只输出正文。`
+    `在「长夜」这场城市异变里，玩家与「${name}」相处下来，被判定的关系人格是「${endingTitle}」，最终羁绊值 ${score}，行为标签：${tagStr}。\n` +
+    `写一段 ≤80 字的「关系人格判词」，像 MBTI 人格点评那样犀利又有趣（可暖可毒舌），点评 TA 在一段关系里待人的方式与底色。只输出正文。`
   const text = await genText([{ role: 'user', content: prompt }])
   if (text && text.trim()) return ok({ text: text.trim().slice(0, 160) })
   return fail('AI 未返回内容')
@@ -166,7 +180,7 @@ async function genImage(event) {
   }
 }
 
-exports.main = async (event) => {
+exports.main = async (event, context) => {
   // 兼容两种调用方式：
   //  - SDK callFunction：event 直接就是参数对象（event.action 有值）
   //  - HTTP 访问触发：真正的 JSON 参数在 event.body（字符串）里
@@ -177,6 +191,7 @@ exports.main = async (event) => {
       /* body 不是 JSON，保持原样 */
     }
   }
+
   const { action } = event || {}
   try {
     switch (action) {

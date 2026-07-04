@@ -1,26 +1,16 @@
 /**
  * 游戏 AI 客户端 · 对应设计方案第十一节 Prompt 模板
  *
- * 调用策略（修复 EXCEED_AUTHORITY 后）：
- *   1) 端上直调 AI（需先匿名登录拿到会话，见 utils/ai.ts 的 ensureSignedIn）；
- *   2) 端上失败再尝试云函数 galgame-ai（服务端凭证，需先部署）；
- *   3) 都失败返回 null，由调用方使用内置兜底，保证主流程不崩。
- *
- * 全程 console 打印请求与 AI 回复，方便在浏览器控制台排查。
+ * 调用策略：
+ *   - Prompt 模板全部放在云函数 galgame-ai 里（前端看不到 prompt）
+ *   - 前端只传业务参数（name/persona/score/scene/optionText 等）
+ *   - 通过 SDK callFunction 调用，自带鉴权，外部裸 fetch 打不进来
+ *   - 失败返回 null，由调用方使用内置兜底，保证主流程不崩
  */
 import { callFunction } from '@/utils/cloudfn'
+import { auth, login } from '@/utils/cloudbase'
 
-/** 模型名：取 .env.local 的 VITE_MODEL，缺省 hy3-preview。
- *  ⚠️ 必须是控制台「AI+」里已开通的模型 id，否则会报 model not found。 */
-const MODEL = (import.meta.env.VITE_MODEL as string) || 'hy3-preview'
-
-/** 云函数 galgame-ai 的公开 HTTP 访问地址（无需登录、自带 CORS，三端通用）。
- *  可用 .env.local 的 VITE_AI_FN_URL 覆盖（换环境时改这里）。 */
-const AI_FN_URL =
-  (import.meta.env.VITE_AI_FN_URL as string) ||
-  'https://newtest-6gzd5kqm6c4eaa2b-1308771514.ap-shanghai.app.tcloudbase.com/galgame-ai'
-
-const AI_TIMEOUT = 15000
+const AI_TIMEOUT = 20000
 
 function log(...args: any[]) {
   console.log('%c[GAL-AI]', 'color:#FF7EA8;font-weight:bold', ...args)
@@ -33,75 +23,62 @@ function withTimeout<T>(p: Promise<T>, ms = AI_TIMEOUT): Promise<T | null> {
   return Promise.race([p, new Promise<null>((r) => setTimeout(() => r(null), ms))])
 }
 
-/** 用 uni.request 调用公开 HTTP 端点（三端通用：H5/小程序/App） */
-function requestFn(body: Record<string, any>): Promise<any> {
-  return new Promise((resolve, reject) => {
-    uni.request({
-      url: AI_FN_URL,
-      method: 'POST',
-      header: { 'Content-Type': 'application/json' },
-      data: body,
-      timeout: AI_TIMEOUT,
-      success: (res) => resolve(res.data),
-      fail: (err) => reject(err),
-    })
-  })
-}
+// ── 确保已登录（匿名），拿到 session 才能调 callFunction ──
+let _authReady = false
+let _authPromise: Promise<boolean> | null = null
 
-/** 尽力把模型输出解析成 JSON 对象 */
-function safeParseJSON(text: string): any | null {
-  if (!text) return null
-  try {
-    return JSON.parse(text)
-  } catch (_) {
-    const s = text.indexOf('{')
-    const e = text.lastIndexOf('}')
-    if (s >= 0 && e > s) {
-      try {
-        return JSON.parse(text.slice(s, e + 1))
-      } catch (_) {
-        return null
+async function ensureAuth(): Promise<boolean> {
+  if (_authReady) return true
+  if (_authPromise) return _authPromise
+
+  _authPromise = (async () => {
+    try {
+      const { data } = await auth.getSession()
+      if (data?.session) {
+        _authReady = true
+        return true
       }
+    } catch (_) { /* 无会话，继续登录 */ }
+
+    try {
+      await login()
+      console.log('%c[GAL-AI] 匿名登录成功', 'color:#7C6FE0')
+      _authReady = true
+      return true
+    } catch (e) {
+      console.warn('[GAL-AI] 匿名登录失败，callFunction 将无法使用:', e)
+      return false
     }
-    return null
-  }
+  })()
+
+  return _authPromise
 }
 
 /**
- * 统一对话入口：走云函数 galgame-ai（服务端管理员身份调 AI）。
- *
- * 为什么不端上直调：CloudBase 的 AI 不对匿名/未登录用户开放，端上直调会
- * ACTION_FORBIDDEN。所以必须由云函数代调（函数内是管理员身份，无此限制）。
- * 主路径：公开 HTTP 端点（uni.request，三端通用、零鉴权、自带 CORS）；
- * 兜底：SDK callFunction。
+ * 统一调用入口：先匿名登录拿到 session，再走 SDK callFunction。
+ * callFunction 自带鉴权，外部裸 fetch 打不进来。
+ * ⚠️ Prompt 模板在云函数里拼接，前端只传业务参数。
  */
-async function chat(prompt: string, tag: string): Promise<string | null> {
-  log(`▶ 请求[${tag}] model=${MODEL}\n`, prompt)
+async function callAI(action: string, payload: Record<string, any>, tag: string): Promise<any | null> {
+  log(`▶ 请求[${tag}]`)
 
-  // 1) 公开 HTTP 端点
-  try {
-    const res = await withTimeout(requestFn({ action: 'raw', prompt, model: MODEL }))
-    if (res && res.success && res.data && res.data.text) {
-      log(`✔ AI回复[${tag}]（HTTP galgame-ai）：`, res.data.text)
-      return res.data.text
-    }
-    logErr(`✗ HTTP 端点返回异常[${tag}]`, res)
-  } catch (e) {
-    logErr(`✗ HTTP 端点调用失败[${tag}]`, e)
+  const authed = await ensureAuth()
+  if (!authed) {
+    logErr('✗ 登录失败，无法调用 AI')
+    return null
   }
 
-  // 2) SDK callFunction 兜底
   try {
     const res = await withTimeout(
-      callFunction<any>('galgame-ai', { action: 'raw', prompt, model: MODEL })
+      callFunction<any>('galgame-ai', { action, ...payload })
     )
-    if (res && res.success && res.data && res.data.text) {
-      log(`✔ AI回复[${tag}]（callFunction）：`, res.data.text)
-      return res.data.text
+    if (res && res.success && res.data) {
+      log(`✔ AI回复[${tag}]：`, res.data)
+      return res.data
     }
-    logErr(`✗ callFunction 返回异常[${tag}]`, res)
+    logErr(`✗ AI返回异常[${tag}]`, res)
   } catch (e) {
-    logErr(`✗ callFunction 调用失败[${tag}]`, e)
+    logErr(`✗ AI调用失败[${tag}]`, e)
   }
 
   log(`↩ [${tag}] 走内置兜底文案`)
@@ -121,25 +98,12 @@ export async function aiLine(payload: {
   scene: string
   optionText: string
 }): Promise<LineResult | null> {
-  const mood =
-    payload.score >= 60
-      ? '你此刻对对方颇为信任、愿意亲近'
-      : payload.score >= 35
-        ? '你对对方有些好感，仍带着几分克制'
-        : '你对对方还较为疏离、戒备'
-  const prompt =
-    `你扮演「${payload.name}」，人设：${payload.persona}。${mood}。\n` +
-    `情境（发生在「长夜」这场城市异变中）：${payload.scene}\n` +
-    `对方刚对你说："${payload.optionText}"\n` +
-    `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,贴合人设、有戏剧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
-    `台词要自然走心；严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。只输出 JSON，不要其它文字。`
-  const text = await chat(prompt, 'line')
-  if (!text) return null
-  const obj = safeParseJSON(text)
-  if (obj && obj.line) {
-    return { line: String(obj.line).slice(0, 60), os: String(obj.os || '').slice(0, 40) }
+  const data = await callAI('line', payload, 'line')
+  if (!data) return null
+  if (data.line) {
+    return { line: String(data.line).slice(0, 60), os: String(data.os || '').slice(0, 40) }
   }
-  logErr('✗ line 无法解析为 JSON，走兜底：', text)
+  logErr('✗ line 返回格式异常，走兜底')
   return null
 }
 
@@ -150,21 +114,9 @@ export async function aiOpenLine(payload: {
   score: number
   userText: string
 }): Promise<string | null> {
-  const safeUser = String(payload.userText || '').slice(0, 100)
-  const mood =
-    payload.score >= 60
-      ? '此刻你已对对方卸下防备、心生依恋'
-      : payload.score >= 35
-        ? '你对对方有好感，却仍带着几分克制与试探'
-        : '你对对方仍存着距离与保留，但并非冷漠'
-  const prompt =
-    `你扮演「${payload.name}」，人设：${payload.persona}。${mood}。\n` +
-    `在「长夜」即将结束、记忆即将封存之际，对方对你说了一段心里话："${safeUser}"\n` +
-    `请用 ${payload.name} 的口吻真诚回应这段话，1~3句、≤50字，像真人倾诉般自然走心、有画面感与情感张力。\n` +
-    `严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。\n` +
-    `只输出台词本身，不要引号、不要解释。`
-  const text = await chat(prompt, 'openLine')
-  return text ? text.trim().slice(0, 80) : null
+  const data = await callAI('openLine', payload, 'openLine')
+  if (!data || !data.line) return null
+  return String(data.line).slice(0, 80)
 }
 
 /** 模板 B：结局总结报告 */
@@ -174,12 +126,9 @@ export async function aiReport(payload: {
   score: number
   tags: string[]
 }): Promise<string | null> {
-  const tagStr = Array.isArray(payload.tags) ? payload.tags.join('、') : ''
-  const prompt =
-    `在「长夜」这场城市异变里，玩家与「${payload.name}」相处下来，被判定的关系人格是「${payload.endingTitle}」，最终羁绊值 ${payload.score}，行为标签：${tagStr}。\n` +
-    `写一段 ≤80 字的「关系人格判词」，像 MBTI 人格点评那样犀利又有趣（可暖可毒舌），点评 TA 在一段关系里待人的方式与底色。只输出正文。`
-  const text = await chat(prompt, 'report')
-  return text ? text.trim().slice(0, 160) : null
+  const data = await callAI('report', payload, 'report')
+  if (!data || !data.text) return null
+  return String(data.text).slice(0, 160)
 }
 
 /**
@@ -194,8 +143,14 @@ export async function aiEndingImage(payload: {
   userText: string
   style: string
 }): Promise<string | null> {
+  const authed = await ensureAuth()
+  if (!authed) return null
+
   try {
-    const res = await withTimeout(requestFn({ action: 'image', ...payload }), 25000)
+    const res = await withTimeout(
+      callFunction<any>('galgame-ai', { action: 'image', ...payload }),
+      30000
+    )
     if (res && res.success && res.data && res.data.url) {
       log('✔ 结局生图成功：', res.data.url)
       return String(res.data.url)
