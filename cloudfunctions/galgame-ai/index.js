@@ -79,19 +79,30 @@ async function genRaw(event) {
 
 /** 模板 A：台词 + 内心 OS */
 async function genLine(event) {
-  const { name, persona, score, scene, optionText } = event
-  const mood =
-    score >= 60
-      ? '你此刻对对方颇为信任、愿意亲近'
-      : score >= 35
-        ? '你对对方有些好感，仍带着几分克制'
-        : '你对对方还较为疏离、戒备'
-  const prompt =
-    `你扮演「${name}」，人设：${persona}。${mood}。\n` +
-    `情境（发生在「长夜」这场城市异变中）：${scene}\n` +
-    `对方刚对你说："${optionText}"\n` +
-    `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,贴合人设、有戏剧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
-    `台词要自然走心；严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。只输出 JSON，不要其它文字。`
+  const { name, persona, score, scene, optionText, language } = event
+  const isEn = language === 'en-US'
+  const mood = isEn
+    ? (score >= 60
+        ? 'You feel quite trusting and close to the other person right now'
+        : score >= 35
+          ? 'You feel some attraction but remain somewhat reserved'
+          : 'You still feel distant and guarded toward the other person')
+    : (score >= 60
+        ? '你此刻对对方颇为信任、愿意亲近'
+        : score >= 35
+          ? '你对对方有些好感，仍带着几分克制'
+          : '你对对方还较为疏离、戒备')
+  const prompt = isEn
+    ? `You are roleplaying as "${name}". Personality: ${persona}. ${mood}.\n` +
+      `Scene (set during the "Long Night", a city-wide anomaly): ${scene}\n` +
+      `The other person just said to you: "${optionText}"\n` +
+      `Output ONLY this JSON: { "line":"<spoken response, 1-2 sentences, in character, natural and heartfelt>", "os":"<true inner thoughts, 1 sentence, contrasting with spoken words>" }\n` +
+      `Do NOT mention any numbers, scores, or system terms like "bond level", "affinity", "compatibility", "rating", etc. Output pure JSON, nothing else.`
+    : `你扮演「${name}」，人设：${persona}。${mood}。\n` +
+      `情境（发生在「长夜」这场城市异变中）：${scene}\n` +
+      `对方刚对你说："${optionText}"\n` +
+      `请只输出 JSON：{ "line":"<口头回应,1~2句≤40字,贴合人设、有戏剧张力>", "os":"<真实内心想法,1句≤25字,与口头有反差>" }\n` +
+      `台词要自然走心；严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。只输出 JSON，不要其它文字。`
   const text = await genText([{ role: 'user', content: prompt }])
   const obj = safeParseJSON(text)
   if (obj && obj.line) {
@@ -103,20 +114,30 @@ async function genLine(event) {
 
 /** 模板 A2：开放题专属回应 */
 async function genOpenLine(event) {
-  const { name, persona, score, userText } = event
+  const { name, persona, score, userText, language } = event
   const safeUser = String(userText || '').slice(0, 100)
-  const mood =
-    score >= 60
-      ? '此刻你已对对方卸下防备、心生依恋'
-      : score >= 35
-        ? '你对对方有好感，却仍带着几分克制与试探'
-        : '你对对方仍存着距离与保留，但并非冷漠'
-  const prompt =
-    `你扮演「${name}」，人设：${persona}。${mood}。\n` +
-    `在「长夜」即将结束、记忆即将封存之际，对方对你说了一段心里话："${safeUser}"\n` +
-    `请用 ${name} 的口吻真诚回应这段话，1~3句、≤50字，像真人倾诉般自然走心、有画面感与情感张力。\n` +
-    `严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。\n` +
-    `只输出台词本身，不要引号、不要解释。`
+  const isEn = language === 'en-US'
+  const mood = isEn
+    ? (score >= 60
+        ? 'You have let your guard down completely and grown deeply attached'
+        : score >= 35
+          ? 'You feel affection but still hold some restraint and hesitation'
+          : 'You keep a certain distance, but not out of indifference')
+    : (score >= 60
+        ? '此刻你已对对方卸下防备、心生依恋'
+        : score >= 35
+          ? '你对对方有好感，却仍带着几分克制与试探'
+          : '你对对方仍存着距离与保留，但并非冷漠')
+  const prompt = isEn
+    ? `You are roleplaying as "${name}". Personality: ${persona}. ${mood}.\n` +
+      `The "Long Night" is about to end and all memories will soon be sealed. The other person says these heartfelt words to you: "${safeUser}"\n` +
+      `Respond sincerely in ${name}'s voice, 1-3 sentences, heartfelt and vivid with emotional depth.\n` +
+      `Do NOT mention any numbers, scores, or system terms. Output only the dialogue line itself — no quotes, no explanation.`
+    : `你扮演「${name}」，人设：${persona}。${mood}。\n` +
+      `在「长夜」即将结束、记忆即将封存之际，对方对你说了一段心里话："${safeUser}"\n` +
+      `请用 ${name} 的口吻真诚回应这段话，1~3句、≤50字，像真人倾诉般自然走心、有画面感与情感张力。\n` +
+      `严禁出现任何数字、分数，以及「羁绊值/好感度/契合度/标准/达标/未达标/等级/系统」之类的系统化字眼。\n` +
+      `只输出台词本身，不要引号、不要解释。`
   const text = await genText([{ role: 'user', content: prompt }])
   if (text && text.trim()) return ok({ line: text.trim().slice(0, 80) })
   return fail('AI 未返回内容')
@@ -124,11 +145,14 @@ async function genOpenLine(event) {
 
 /** 模板 B：结局报告 */
 async function genReport(event) {
-  const { name, endingTitle, score, tags } = event
+  const { name, endingTitle, score, tags, language } = event
   const tagStr = Array.isArray(tags) ? tags.join('、') : ''
-  const prompt =
-    `在「长夜」这场城市异变里，玩家与「${name}」相处下来，被判定的关系人格是「${endingTitle}」，最终羁绊值 ${score}，行为标签：${tagStr}。\n` +
-    `写一段 ≤80 字的「关系人格判词」，像 MBTI 人格点评那样犀利又有趣（可暖可毒舌），点评 TA 在一段关系里待人的方式与底色。只输出正文。`
+  const isEn = language === 'en-US'
+  const prompt = isEn
+    ? `In the city anomaly known as the "Long Night", the player spent time with "${name}" and was judged to have the relationship persona "${endingTitle}", with a final bond score of ${score}, and behavior tags: ${tagStr}.\n` +
+      `Write a short "relationship persona verdict" of ≤80 words, sharp and fun like an MBTI-style critique (can be warm or sassy). Comment on how this person navigates intimacy. Output only the verdict text.`
+    : `在「长夜」这场城市异变里，玩家与「${name}」相处下来，被判定的关系人格是「${endingTitle}」，最终羁绊值 ${score}，行为标签：${tagStr}。\n` +
+      `写一段 ≤80 字的「关系人格判词」，像 MBTI 人格点评那样犀利又有趣（可暖可毒舌），点评 TA 在一段关系里待人的方式与底色。只输出正文。`
   const text = await genText([{ role: 'user', content: prompt }])
   if (text && text.trim()) return ok({ text: text.trim().slice(0, 160) })
   return fail('AI 未返回内容')

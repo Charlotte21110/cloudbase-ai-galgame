@@ -9,6 +9,7 @@
  */
 import { callFunction } from '@/utils/cloudfn'
 import { auth, login } from '@/utils/cloudbase'
+import { getLocale } from '@/locale/lang'
 
 const AI_TIMEOUT = 20000
 
@@ -58,6 +59,7 @@ async function ensureAuth(): Promise<boolean> {
  * 统一调用入口：先匿名登录拿到 session，再走 SDK callFunction。
  * callFunction 自带鉴权，外部裸 fetch 打不进来。
  * ⚠️ Prompt 模板在云函数里拼接，前端只传业务参数。
+ * 自动附带 language 字段，让云函数知道当前语言、调整 prompt 行为。
  */
 async function callAI(action: string, payload: Record<string, any>, tag: string): Promise<any | null> {
   log(`▶ 请求[${tag}]`)
@@ -70,7 +72,7 @@ async function callAI(action: string, payload: Record<string, any>, tag: string)
 
   try {
     const res = await withTimeout(
-      callFunction<any>('galgame-ai', { action, ...payload })
+      callFunction<any>('galgame-ai', { action, language: getLocale(), ...payload })
     )
     if (res && res.success && res.data) {
       log(`✔ AI回复[${tag}]：`, res.data)

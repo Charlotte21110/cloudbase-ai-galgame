@@ -3,12 +3,16 @@
  * 全部内置 JS、零容错，不依赖 AI。
  */
 import type { Character, Script, Ending } from './types'
+import { getLocale } from '@/locale/lang'
 
-/** 文案占位符替换：{name}→角色名，{ta}→他/她，{TA}→TA */
+/** 文案占位符替换：{name}→角色名，{ta}→他/她(中文)/he/she(英文)，{TA}→TA */
 export function replaceTokens(text: string, char: Character | null): string {
   if (!text) return ''
   if (!char) return text
-  const ta = char.gender === 'male' ? '他' : '她'
+  const isEn = getLocale() === 'en-US'
+  const ta = isEn
+    ? (char.gender === 'male' ? 'he' : 'she')
+    : (char.gender === 'male' ? '他' : '她')
   return text
     .replace(/\{name\}/g, char.name)
     .replace(/\{ta\}/g, ta)

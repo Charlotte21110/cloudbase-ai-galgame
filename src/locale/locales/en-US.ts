@@ -208,6 +208,8 @@ export default {
     ctrlSkip: 'Skip',
     ctrlAuto: 'Auto',
     ctrlAutoPlaying: 'Auto (on)',
+    fallbackOpenHigh: '{name} gazes at you for a long moment, then whispers, "I will remember these words for the rest of my life."',
+    fallbackOpenLow: '{name} falls silent. "...Thank you. For telling me this."',
   },
 
   // ────────── Gender ──────────

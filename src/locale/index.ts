@@ -11,8 +11,32 @@ export const LOCALES: { value: Locale; label: string }[] = [
 
 const STORAGE_KEY = 'app_locale'
 
-/** 读取初始语言：本地缓存 > 系统语言 > 默认中文 */
+/** 从 URL query 中检测语言参数（如 ?language=en-US） */
+function detectLocaleFromQuery(): Locale | null {
+  try {
+    // #ifdef H5
+    if (typeof window !== 'undefined' && window.location) {
+      const p = new URLSearchParams(window.location.search)
+      const q = p.get('language') || p.get('lang')
+      if (q === 'en-US' || q === 'en') return 'en-US'
+      if (q === 'zh-CN' || q === 'zh') return 'zh-CN'
+    }
+    // #endif
+    // #ifdef MP-WEIXIN
+    const launch = uni.getLaunchOptionsSync?.()
+    const q = (launch?.query as any)?.language || (launch?.query as any)?.lang
+    if (q === 'en-US' || q === 'en') return 'en-US'
+    if (q === 'zh-CN' || q === 'zh') return 'zh-CN'
+    // #endif
+  } catch (_) { /* ignore */ }
+  return null
+}
+
+/** 读取初始语言：URL 参数 > 本地缓存 > 系统语言 > 默认中文 */
 function detectLocale(): Locale {
+  const fromUrl = detectLocaleFromQuery()
+  if (fromUrl) return fromUrl
+
   const saved = uni.getStorageSync(STORAGE_KEY)
   if (saved === 'zh-CN' || saved === 'en-US') return saved
 

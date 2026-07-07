@@ -115,6 +115,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import {
   session,
   currentNode,
   applyChoice,
@@ -225,7 +226,7 @@ const bubbleLabel = computed(() => {
   if (phase.value === 'react' || phase.value === 'reacting') return char.value?.name || ''
   const who = curBeat.value?.who
   if (who === 'name') return char.value?.name || ''
-  if (who === 'self') return '我'
+  if (who === 'self') return t('common.me')
   if (who && who !== 'narration') return who // 具名第三者
   return '' // 旁白无标签
 })
@@ -455,8 +456,8 @@ async function submitOpen() {
   })
   const fallback =
     session.score >= 50
-      ? `${char.value!.name}久久看着你，轻声说：「这句话，我会记一辈子。」`
-      : `${char.value!.name}沉默了一会儿：「……谢谢你，告诉我这些。」`
+      ? t('play.fallbackOpenHigh', { name: char.value!.name })
+      : t('play.fallbackOpenLow', { name: char.value!.name })
   reactFull.value = res || fallback
   curOS.value = ''
 

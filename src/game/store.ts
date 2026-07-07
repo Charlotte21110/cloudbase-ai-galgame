@@ -7,7 +7,7 @@
 import { reactive } from 'vue'
 import type { Character, Script, GameNode, Beat, Ending, Face } from './types'
 import { getCharacter } from './data/characters'
-import { getScript } from './data/scripts'
+import { getScript, loadScripts } from './data/scripts'
 import { getEndingCG } from './data/endingCG'
 import { clampScore, judgeEnding, computeMatchRate, formatTags, evalWhen } from './engine'
 import { faceImg } from './assets'
@@ -63,7 +63,8 @@ function createSession(): GameSession {
 export const session = reactive<GameSession>(createSession())
 
 /** 开始一局 */
-export function startGame(charId: string): boolean {
+export async function startGame(charId: string): Promise<boolean> {
+  await loadScripts()
   const char = getCharacter(charId)
   if (!char) return false
   const script = getScript(char.scriptId)

@@ -205,6 +205,8 @@ export default {
     ctrlSkip: '跳过',
     ctrlAuto: '自动',
     ctrlAutoPlaying: '自动中',
+    fallbackOpenHigh: '{name}久久看着你，轻声说：「这句话，我会记一辈子。」',
+    fallbackOpenLow: '{name}沉默了一会儿：「……谢谢你，告诉我这些。」',
   },
 
   // ────────── 性别画像页 ──────────

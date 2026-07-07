@@ -81,13 +81,13 @@ import { faceImg } from '@/game/assets'
 import { startGame } from '@/game/store'
 import type { Character } from '@/game/types'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
 const males = computed(() => getCharacters().filter((c) => c.gender === 'male'))
 const females = computed(() => getCharacters().filter((c) => c.gender === 'female'))
 
 const starryBg = '/static/game/ui/starry-bg.png'
-const titleArt = '/static/game/ui/title-art.png'
+const titleArt = computed(() => locale.value === 'en-US' ? '/static/game/ui/title-art-en.png' : '/static/game/ui/title-art.png')
 
 const avatar = (c: Character) => faceImg(c.style, c.id, 'happy')
 
@@ -97,8 +97,9 @@ const shortPersona = (p: string) => {
   return seg.length > 8 ? seg.slice(0, 8) : seg
 }
 
-const choose = (id: string) => {
-  if (startGame(id)) {
+const choose = async (id: string) => {
+  const ok = await startGame(id)
+  if (ok) {
     uni.navigateTo({ url: '/pages/game/opening/opening' })
   } else {
     uni.showToast({ title: t('pick.toast.loadFail'), icon: 'none' })
