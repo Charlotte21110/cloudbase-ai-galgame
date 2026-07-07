@@ -1,0 +1,818 @@
+{
+  "_id": "script_wuxia",
+  "id": "script_wuxia",
+  "title": "Frosty Blade Cold Mountain: A Fragment of the Martial World",
+  "openingTip": "In the vast and desolate world of martial arts, a nameless sword wields, and a distorted tale of a sect's past. {name} is a disgraced disciple of Cloud Hidden Manor, burdened with the crime of murdering his master, wandering the world—while you are a secret agent of the Ninth Division of the Imperial Guard, ordered to hunt down {ta}. A chance encounter in a blizzard binds two people with drastically different fates together on the same bloody path. This is a story of tenderness hidden amidst the clash of swords. Most of the time, you only need to tap the screen to finish reading this fragment of martial arts history; there are few crossroads where you truly have to make decisions, but each one concerns life and death, loyalty, and that phrase that can never be uttered—\"Stay.\"",
+  "prologue": "At the edge of the desert, the inn teetered precariously in the blizzard. As you pushed open the door, you saw the person on the wanted poster—{name}. {ta} sat in the corner, dried blood staining his white robes, a flask of wine long since cold before him. The wanted poster declared {ta} a traitor who murdered his master, betrayed his sect, and was a ruthless killer, utterly unforgivable. But what you saw was a man who poured the last drop of wine from the flask onto the inn's old dog—{ta} couldn't even bear to mistreat a dog. Three years ago, the Cloud Hidden Manor was massacred overnight; the sect leader died a gruesome death by sword, and {name}, the only survivor, became the enemy of the world. But the truth behind that massacre, even in the imperial archives, was summed up in just three words—\"No evidence found.\"",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "happy",
+      "chapter": "Prologue: Snowstorm at the Post Station",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The blizzard had blocked the roads for three days. Besides the old dog, the old postmaster, you, and {name}—there was no other living creature in the inn. The fire burned low, and the wind squeezed in through the cracks in the door, turning the candlelight into a thin thread. Your hand rested on the short blade hidden in your sleeve, but your heartbeat was calmer than expected—this wasn't the first time you'd killed someone, but it was the first time you felt the knife in your hand feel somewhat heavy."
+        },
+        {
+          "who": "self",
+          "text": "The wanted poster said {ta} killed thirty-seven people. But the way {ta} sat there was like a sword that had been sheathed for too long—its sharpness concealed, its coldness bitter. If {ta} were truly that ruthless killer, why would they feed wine to a stray dog ​​on a snowy day?"
+        },
+        {
+          "who": "narration",
+          "text": "The old postmaster was dozing behind the counter. Suddenly, {name} looked up at you—his gaze clear and sharp, like meltwater flowing down from a snow-capped mountain. Then {ta} did something you hadn't expected: he pushed the only bowl of hot soup in front of him to the center of the table."
+        },
+        {
+          "who": "name",
+          "text": "\"You've been sitting here for the time it takes to burn an incense stick.\" {ta}'s voice was indifferent, like stone hitting stone. \"Put what you're holding away. In this cold weather—even if you kill me, you won't escape this snow. Why don't you have some soup first?\""
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "happy",
+      "chapter": "Prologue: Snowstorm at the Post Station",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "self",
+          "text": "{It} recognized me. No—{It} didn't recognize me as a person, {It} recognized the 'killing intent'. A person who has lived on the edge of a knife for three years has a perception of killing intent a hundred times more sensitive than an ordinary person. Yet {It} recognized my intentions—but didn't draw its sword."
+        },
+        {
+          "who": "narration",
+          "text": "You slowly sat down. The soup was clear, with only a few dried vegetable leaves and a piece of salt the size of a fingernail—the inn's conditions were pitifully basic. {name} watched you take a sip, and the corner of your mouth twitched almost imperceptibly—not a smile, but an almost instinctive relaxation, a confirmation that the other person was safe."
+        },
+        {
+          "who": "name",
+          "text": "\"You're from the Ninth Division.\" {ta} lowered her eyes, her finger slowly circling the spout of the wine jug. \"The Ninth Division specializes in killing wanted criminals with bounties exceeding three thousand taels. How much is my head worth? Five thousand taels? Or has it gone up?\""
+        },
+        {
+          "who": "self",
+          "text": "Eight thousand taels. The price went up again after spring. But I didn't say it aloud—because the tone of {ta} when she asked the question was like she was asking about today's vegetable prices. Someone who doesn't even care about the price of her own head—what exactly does {ta} care about?"
+        },
+        {
+          "who": "narration",
+          "text": "The fire suddenly crackled and sparked. {name} added a piece of dry firewood, and the firelight illuminated {ta}'s profile—you could see a gruesome scar below {ta}'s collarbone, stretching from her left shoulder to her chest—it wasn't a battle wound, but a stab wound from behind."
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Prologue: Snowstorm at the Post Station",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The blizzard raged all night. At dawn, the wind subsided a bit, and you awoke from a light, drowsy sleep—to find yourself wearing an old robe. {name} sat by the window, toying with a jade pendant in her hand—a worthless piece of bluish-white jade, yet {ta} held it as if it were the most precious thing in the world."
+        },
+        {
+          "who": "name",
+          "text": "\"It belongs to my master.\" {ta} seemed to know you were watching, a barely perceptible warmth in her voice. \"He taught me swordsmanship for twenty years. From age three to twenty-three. Everyone says I killed him—but this jade pendant was placed in my hand by him before he died. Why would a master killed by his disciple leave his belongings to the murderer on his deathbed?\""
+        },
+        {
+          "who": "self",
+          "text": "This question—there's no answer in the Imperial Archives. Three years ago, on the night of the massacre, all witnesses died, all evidence was burned, leaving only a blood-soaked {ta}—and a sword plunged into the sect leader's chest. But that sword…was it {ta}'s sword?"
+        },
+        {
+          "who": "narration",
+          "text": "{ta} put the jade pendant back into her bosom, stood up, and looked out the window at the vast snow-covered plain. The blizzard had turned into fine snowflakes, and the world was a vast expanse of white—like a blank sheet of paper. {ta} turned to look at you, her gaze holding something you couldn't decipher—not murderous intent, not pleading, but a weary calm, as if she had made all the necessary preparations."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "mountain_shrine",
+      "face": "happy",
+      "chapter": "Prologue: Snowstorm at the Post Station",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The snow stopped. The road was passable. {ta} stood at the entrance of the post station, carrying the longsword that had never been drawn. If you intervened, {ta} might not survive. If you didn't intervene—how would you explain yourself back home? Eight thousand taels of bounty and a head should have been a simple transaction."
+        }
+      ],
+      "options": [
+        {
+          "text": "Let's go. I'll pretend I didn't see you. This bowl of soup is a debt of gratitude that will save your life.",
+          "textVariants": [
+            "I'm snowblind today and can't see anything. Go west—there are people from the Ninth Division to the east.",
+            "The person on the wanted poster doesn't look like you. I've mistaken you for someone else."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s2",
+          "flag": "Release",
+          "reply": "{name} looked at you—it was the first time in three years that {ta} had seen a stranger's gaze devoid of murderous intent. {ta} remained silent for a long time, then bowed slightly—no more, no less, as if addressing a worthy opponent: \"...You will regret this.\" But there was a barely perceptible tremor in {ta}'s voice.",
+          "os": "({ta} thought she would never be moved by human kindness again. But the person who was supposed to kill {ta} gave her a life in return. For the first time, {ta}'s hand holding the sword trembled with gratitude.)"
+        },
+        {
+          "text": "There's something fishy about your case. Come with me, I'll help you investigate.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s2",
+          "flag": "peers",
+          "reply": "{name}'s brow furrowed for a moment—then relaxed. {ta} touched the jade pendant in her bosom: \"Do you know what the price is for helping me? The Ninth Division's defection—the execution of nine generations of your family.\" But {ta} didn't refuse. Because in three years—this was the first time {ta} had met someone who said: There's something fishy about your case. Not 'Are you innocent?' but a direct assertion: There's something fishy.",
+          "os": "({ta} no longer dared to hope that anyone would believe {ta}. But this person—without even asking, stood on {ta}'s side.)"
+        },
+        {
+          "text": "Your head is worth eight thousand taels. I'll count to three—it's up to you whether you run or not.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s2",
+          "flag": "Release",
+          "reply": "{name} gave a cold laugh, picked up his sword, and turned to leave—but stopped after three steps without turning his head: \"Eight thousand taels is too little. Wait until I clear my name—then come back to kill me, and the price will at least double.\" There was a hint of mockery in his voice—but more than that, it was a show of bravado.",
+          "os": "(She didn't want to owe anyone a favor. But she knew in her heart that this count to three was the only time in three years that she could leave alive without drawing her sword.)"
+        },
+        {
+          "text": "I've taken the reward money from the imperial court. If you don't leave—don't blame me for taking action.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s2",
+          "flag": "hostility",
+          "reply": "{name}'s hand landed on the sword hilt—the movement as fluid as a drop of water flowing into a crack in the stone: \"Come.\" Just one word, yet it lowered the temperature of the entire inn by a third. But {ta} didn't strike first—{ta} was waiting for you to make the first move. Because of that bowl of soup—{ta} didn't want to kill the person who offered {ta} a bowl of soup out of gratitude.",
+          "os": "(Even when faced with someone who wanted to kill them—they still refused to betray them. This almost foolish pride was a rule ingrained in the very bones of Cloud Hidden Manor: a swordsman never uses a hidden sword.)"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "happy",
+      "chapter": "Chapter 1: Pursuers at the Ferry Crossing",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Three days later, you encountered {name} again at a ferry crossing—no coincidence. The Ninth Division had sent six men to blockade the crossing, and {ta} was surrounded between the ferry and the dock, her left arm wound still healing, her right hand gripping a worn longsword. The six guards spread out in a fan shape, and no one spoke—the Ninth Division never wasted words."
+        },
+        {
+          "who": "self",
+          "text": "I recognized the leader—Commander Zhao, the second-in-command of the Ninth Division. His swordsmanship was swift, accurate, and ruthless; he had killed forty-seven wanted criminals, none of whom had survived to see the next day's sunrise. But at this moment, his sword remained sheathed—because he was waiting for me. As the advance pursuer, according to protocol, I should be the one to deliver the first blow."
+        },
+        {
+          "who": "narration",
+          "text": "{name} saw you. {ta}'s expression didn't change—like looking at a stone. But {ta}'s gaze lingered on your face for half a breath longer than others—in that half a breath, {ta} held the only thing {ta} wanted to confirm: Did you come to kill me, or to help me?"
+        },
+        {
+          "who": "name",
+          "text": "\"Six men surrounding a man with a wounded arm—when did the imperial guards become so afraid of death?\" {ta}'s voice wasn't loud, but it made all six men grip their sword hilts tightly. This oppressive feeling—didn't come from force, but from the aura of a single person. A true swordsman, even covered in wounds, can make his opponents feel like prey."
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "angry",
+      "chapter": "Chapter 1: Pursuers at the Ferry Crossing",
+      "goto": "s2c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The instant the attack began, you saw {name}'s swordsmanship clearly—not the 'brutal and violent' style described on the wanted poster. {ta}'s sword was extremely fast, but every strike was precise and controlled: piercing a sleeve without injuring the wrist, slicing through a belt without breaking the abdominal armor, sweeping across the face and stopping three inches from the tip of the nose. Six guards were forced back four steps by a man with a wounded left arm—yet not a single one bled."
+        },
+        {
+          "who": "self",
+          "text": "Not killing. {ta} chose not to kill. A demon wanted by the entire world for three years, said to be a ruthless killer—when driven to the brink, chose not to kill. This is not mercy—it is a restraint harder than killing. A sword capable of taking lives, willingly serving only as an umbrella to block the way."
+        },
+        {
+          "who": "narration",
+          "text": "Commander Zhao's expression changed. He gritted his teeth and drew his sword—a narrow-bladed scimitar poisoned with a dark purple sheen. \"Stop dawdling,\" he glanced at you, \"the job of a scout—are you going to do it or not?\"",
+          "when": "flag: Allow passage"
+        },
+        {
+          "who": "narration",
+          "text": "Commander Zhao looked at you and {name} standing side by side, a hint of murderous intent flashing in his eyes: \"Traitor. Have you forgotten the rules of the Ninth Division? Helping a fugitive is tantamount to treason.\" He drew his sword and pointed it at the two of you.",
+          "when": "flag: peers"
+        },
+        {
+          "who": "narration",
+          "text": "Commander Zhao drew his sword. {ta}'s sword was also drawn. The wind at the ferry suddenly picked up, blowing the mist from the river into a white curtain. Behind that curtain—you saw {name}'s eyes: clear, solitary, fearless—but not directed at the enemy. {ta} was watching you. In the final moment, {ta} was watching you."
+        }
+      ]
+    },
+    {
+      "id": "s2c",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "sad",
+      "chapter": "Chapter 1: Pursuers at the Ferry Crossing",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the chaos of battle, Commander Zhao's poisoned blade grazed {name}'s right shoulder—the wound wasn't deep, but the poison took effect quickly. {ta}'s face turned pale within moments, and the longsword in his hand began to tremble. {ta} staggered back to the edge of the ferry—behind him was the river; in the dead of winter, falling into the water meant certain death."
+        },
+        {
+          "who": "name",
+          "text": "{ta} knelt on one knee on the deck, sword supporting her weight, cold sweat beading on her forehead. Yet {ta} was still smiling—a bitter, knowing smile: \"Three years. Three years of running… it's time for an end.\" {ta} looked up at you one last time—a fleeting glance, like a snowflake falling on water, \"Go. This is not your battle.\""
+        },
+        {
+          "who": "self",
+          "text": "It wasn't my battle. Yet you fed me a bowl of soup. You poured a last sip of wine for a stray dog ​​in the blizzard. You killed six bodyguards without harming a single one. You ran for three years carrying your master's jade pendant—not to escape, but to find the truth. A traitor who murdered his master wouldn't carry his master's belongings. At this moment—more than ever, I'm certain: every word on the wanted poster is a lie."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "seaside_crossing",
+      "face": "sad",
+      "chapter": "Chapter 1: Pursuers at the Ferry Crossing",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The poison is spreading. {name}'s sword is too heavy to lift. Commander Zhao, carrying the poisoned blade, approaches step by step—his blade leaves no survivors. You stand between {ta}, facing the wind of the ferry crossing, behind you the chill of the river—and someone who is about to collapse."
+        }
+      ],
+      "options": [
+        {
+          "text": "He stood in front of {ta}, drawing his short blade: \"If you want to kill {ta}, you'll have to get past me first.\"",
+          "textVariants": [
+            "Standing in front of {ta}: Commander Zhao, there are doubts about this case. The court's rule is—no killings for doubtful cases.",
+            "He drew his sword to block Commander Zhao's life: \"I'll save {ta}'s life today.\""
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "flag": "Sword Guard",
+          "reply": "{name} looked up abruptly—for the first time in three years, {ta}'s eyes showed helplessness. Her lips moved, but she managed to squeeze out only two words: \"...Why.\" But {ta}'s fingers tightened around your sleeve—the strength wasn't like someone pleading for help, but like someone who had finally grasped something.",
+          "os": "({ta} was prepared to die at the ferry crossing. But someone stepped forward and said: Let me go first. After three years of struggling alone—for the first time, {ta} wasn't alone. {ta} suddenly wanted to live.)"
+        },
+        {
+          "text": "He throws out the antidote: \"The medicine is here. I'll give you a stick of incense—run away yourself.\"",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "cover",
+          "reply": "{name} caught the antidote bottle, glanced at you—a glance sharper than a sword, yet without any intention to harm. {ta} swallowed the medicine, turned, and jumped onto the ferry: \"Remember—you owe me a bowl of soup, I owe you a life. Next time we meet… I'll repay you.\" The boat disappeared into the river mist.",
+          "os": "(When someone says, \"I'll repay you next time we meet,\" it means they intend to live until the day they see you again. Someone who no longer cares about living suddenly has a reason to keep their promise.)"
+        },
+        {
+          "text": "To Commander Zhao: Capture him alive and bring him back to the capital. Killing him will mean losing the full reward.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "cover",
+          "reply": "Commander Zhao hesitated for a moment—in that instant, {name} seized the opportunity to leap onto the ferry. {ta} glanced back at you through the river mist: a slight smile curved her lips—not out of gratitude, but out of unspoken understanding. {ta} knew you were helping {ta}, just in a different way.",
+          "os": "(They don't need you to explain. They understand your excuses and the meaning behind them. In the world of human relationships, there's no need to spell out good intentions.)"
+        },
+        {
+          "text": "Stand aside and don't move: This is your fate. End it yourself.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "flag": "bystander",
+          "reply": "{name} glanced at you—no resentment, no disappointment, only a calm that was almost relieved: \"Very well. Thank you—for the soup.\" {ta} used her last strength to grip the longsword and lunged at Commander Zhao—not to seek death, but to let the truth live on for a moment longer before she died.",
+          "os": "({ta} doesn't blame you. Because you never promised to save {ta}. But in the instant {ta} rushed out—the last thing {ta} thought about wasn't revenge against her master, or the truth—it was the bowl of soup {ta} handed out that snowy night. At least someone drank it.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter Two: Questioning the Heart in the Snow Mountain",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Two weeks later, you found {name} in the ruins of Cloud Hidden Mountain. The fire three years ago had reduced the entire manor to charred remains, but {ta} had built a makeshift shack in the ruins—supported by charred door panels and half a stone pillar. Dry grass covered the ground, and in the corner lay the jade pendant and an old sword with a blunted blade. {ta}'s wounds had mostly healed, but she was emaciated—like a sword repeatedly sharpened until only the edge remained.",
+          "when": "!flag: spectator"
+        },
+        {
+          "who": "narration",
+          "text": "You arrive alone at the ruins of Cloud Hidden Mountain. Three years ago, a fire engulfed the entire manor, leaving only charred ruins. You rummage through the ashes—searching for something unknown. Perhaps evidence, perhaps an answer, perhaps—the lingering taste of that soup. In the wind and snow, a thin figure emerges from the depths of the ruins—it is {name}. {ta} is not dead.",
+          "when": "flag: Bystander"
+        },
+        {
+          "who": "name",
+          "text": "\"It's you again.\" {ta} leaned against the stone pillar, her tone carrying a subtle warmth—like a dark spring flowing beneath the ice. \"I thought—no one would come to a place like this.\""
+        },
+        {
+          "who": "self",
+          "text": "This is where {ta}'s master was buried, and also the starting point of {ta}'s sin. A person burdened with the name of murdering their master chose to live beside their master's grave—never venturing too far in three years. This is not atonement—this is keeping vigil. A person who killed their master will not return to keep vigil."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} took out the bluish-white jade pendant from her bosom and placed it in your palm—the back of the pendant was engraved with two lines of small characters: \"The sword heart is like the moon, reflecting one's true nature. Never forget the master's teachings—a sword in hand, no hatred in the heart.\" This was engraved by the head of Cloud Hidden Manor himself."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "sad",
+      "chapter": "Chapter Two: Questioning the Heart in the Snow Mountain",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "name",
+          "text": "\"Three years ago, on the Mid-Autumn Festival night,\" {ta}'s voice was calm, as if telling someone else's story, \"a man came to the manor—my senior brother. The eldest senior brother. He had been away from the manor for ten years, and suddenly returned with twenty men in black. He said he wanted to take over the position of sect leader. Master did not agree—so he took action.\""
+        },
+        {
+          "who": "narration",
+          "text": "{ta}'s gaze fell upon the charred training ground in the distance—where thirty-six plum blossom stakes had once stood. {ta} had practiced swordsmanship on those stakes for a full twenty years. \"When I arrived, Master had already been stabbed three times. I drew my sword and fought with my eldest brother—we fought for one hundred and twenty moves. He couldn't beat me—so he set it on fire. The whole mountain was ablaze. Finally… Master stuffed the jade pendant into my hand and pushed me out of the inferno. I looked back—my eldest brother had already plunged his sword into Master's chest. Then he disappeared with those twenty men. When the people outside arrived—they only saw me standing in the fire, covered in blood. Everyone thought I had killed him.\""
+        },
+        {
+          "who": "self",
+          "text": "This is the truth. A disgraced disciple, framed for three years, survived alone, bearing the world's infamy—not to escape, but because of his master's last words: \"Find your eldest brother. Let the truth speak for me.\""
+        },
+        {
+          "who": "narration",
+          "text": "After {ta} finished speaking, she remained silent for a long time. The wind blew up the ashes from the ruins, swirling them in the moonlight—like a funeral ceremony three years overdue. {ta} leaned against a stone pillar, her fingers caressing the jade pendant—her fingertips tracing the four characters \"Never Forget the Teacher's Teachings.\""
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter Two: Questioning the Heart in the Snow Mountain",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "name",
+          "text": "\"My senior brother's name is Wei Wuyai.\" {ta}'s voice suddenly turned cold—like a sword just pulled from icy water. \"He has changed his name and his face, and now he holds a very high-ranking official position in the capital. The warrant your court issued for my arrest—was signed by him.\""
+        },
+        {
+          "who": "self",
+          "text": "This means that the person I'm hunting is innocent, and the person who issued the kill order is the real culprit. If all of this is true, then every order I've carried out over the past three years has been to eliminate the only witness for a murderer."
+        },
+        {
+          "who": "narration",
+          "text": "Moonlight shone on the ruins, turning all the charred blackness silvery-white. {name} stood up, raising the old, chipped sword—{ta} looked at you, her gaze filled with a desperate resolve: \"What I've said has no evidence. It's just my own words. Whether you believe me or not—it doesn't matter to me. But I promised my master—the truth must be heard.\" {ta} paused, \"You—are the first one willing to listen.\""
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter Two: Questioning the Heart in the Snow Mountain",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind howled through every gap in the ruins on the snow-capped mountain. {ta} stood before her master's grave, old sword in hand, awaiting your answer—not whether you believe her or not, but which side you choose."
+        }
+      ],
+      "options": [
+        {
+          "text": "I believe you. I believed you from the moment you refused to kill those six guards.",
+          "textVariants": [
+            "I believe you. Your master's sword teaching was \"Have no hatred in your heart\"—and you have achieved that.",
+            "No evidence is needed. Your sword speaks for you—you lack the malice to kill your master."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "flag": "trust",
+          "reply": "{name}'s lips trembled—it was the first time in three years that {ta} had lost her composure in front of someone. {ta} turned her face away, but the moonlight revealed a line of moisture at the corner of her eye: \"...Do you know how many people have listened to me in these three years and then said—'Nobody believes that!'\" But you believed it. Not because of the evidence—but because of {ta}'s sword.",
+          "os": "(Three years. {ta} told the truth countless times—each time it was taken as a lie. Until today, finally someone said: I believe you. For the first time, the sword in {ta}'s hand was no longer for self-defense—but for doing something for someone who believed in {ta}.)"
+        },
+        {
+          "text": "I'll help you find out the truth. But you need to come with me to a safe place first.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "flag": "trust",
+          "reply": "{name} paused for a moment, then sheathed his sword—a gesture no more than three people had ever made before {ta}: \"Lead the way. I'll go with you.\" Those two words carried a weight ten thousand times greater than the eight thousand taels of silver reward—because {ta} had entrusted his life to you.",
+          "os": "(With you. This means that {ta} has completely exposed their back to a former bodyguard who once wielded a dagger. {ta} isn't fearless—they've decided to be fearless.)"
+        },
+        {
+          "text": "The story is quite interesting. But I need evidence—otherwise, anyone can fabricate a wrongful conviction.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "flag": "Wait and see",
+          "reply": "{name} raised an eyebrow—a slight smile curving his lips, almost an expression of admiration: \"Of all the bodyguards I've met—you're the most like one. Good. The evidence is in the Imperial City—in Wei Wuyai's study. Are you coming with me?\"",
+          "os": "({ta} isn't angry. A fugitive who's lived for three years knows best—empty words are thinner than a knife. You want evidence—at least that shows you didn't outright deny it. For {ta}, that's enough.)"
+        },
+        {
+          "text": "What you're saying has nothing to do with me. I only care about arrest warrants.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "flag": "hostility",
+          "reply": "{name} slowly raised the old sword—the movement was slow, but without a single wasted movement. {ta} looked at you, her gaze returning to the calmness of their first meeting at the inn—no, colder than that: \"Then do it. But there's one thing—after you kill me, the taste of that soup will stay with you for the rest of your life. Because you owe an innocent person's life.\"",
+          "os": "({ta} doesn't resent you for following orders—{ta} resents you for seeing {ta}'s sword with your own eyes, hearing {ta}'s story—and choosing to turn a blind eye. This is more despairing for {ta} than disbelief. But {ta}'s last words weren't a curse—they were a warning: You will regret this.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "happy",
+      "chapter": "Chapter Three: Night Raid on the Imperial City",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Half a month later, on a rainy night, you and {name} stood in a dark alley outside the imperial city. {ta} had changed into black clothes—no sword, only a dagger at her waist. Rain dripped from the eaves, soaking {ta}'s hair. {ta} looked thinner than on the snow-capped mountains, her jawline sharply defined."
+        },
+        {
+          "who": "self",
+          "text": "I tucked the Ninth Division's pass into my pocket—this was the greatest help I could offer {ta}. Once inside the capital, {ta} wouldn't just face six secret guards—it would be the entire court's dark web. Yet {ta}'s steps were more steady than ever. A person with no way out is often the most resolute in their decision."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} suddenly stopped, took out the jade pendant from her bosom, wiped it in the rain—and then did something unexpected: {ta} handed the jade pendant to you."
+        },
+        {
+          "who": "name",
+          "text": "\"If I don't come back—bury it in front of Master's grave.\" {ta}'s voice was mostly drowned out by the rain, but every word was clear. \"You are the only one who knows what this jade pendant means. I trust you—not because you let me go once, but because you listened to my story and didn't turn around and leave.\""
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Chapter Three: Night Raid on the Imperial City",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Wei Wuyai's mansion was brightly lit—in the vast courtyard, artificial hills and flowing water, pavilions and towers, every brick was gilded. Ten years ago, this man was the eldest disciple of Yunyin Manor—now he is a high-ranking official of the third rank in the imperial court, wielding immense power. When you sneaked into the study, there was a half-written memorial spread out on the desk—the first three characters: \"Your subject, Wei Wuyai.\""
+        },
+        {
+          "who": "name",
+          "text": "{ta} crouched before the desk, opening a hidden compartment—inside lay a stack of yellowed letters and a blood-red seal. {ta}'s hands trembled—not from fear, but because {ta} had finally seen it—the words engraved on the seal: \"Seal of the Cloud Hidden Sect Leader.\" This seal had disappeared after the great fire three years ago—if {ta} had truly murdered her master, the sect leader's seal should be in {ta}'s possession. But here it was."
+        },
+        {
+          "who": "self",
+          "text": "The sect leader's seal was in the murderer's study. The letter detailed why Wei Wuyai was expelled from the sect ten years ago—he had secretly learned the forbidden technique \"Heart-Eating Sword,\" and the sect leader personally crippled his martial arts and banished him from the mountain. But ten years later, he returned with even stronger martial arts and twenty assassins. Everything made sense—the one who murdered the master wasn't {name}, but this senior brother who had changed his name."
+        },
+        {
+          "who": "narration",
+          "text": "{name} carefully put away the letter and the sect leader's seal, her gaze falling on a painting hanging on the wall—a panoramic view of Cloud Hidden Manor. Spring peach blossoms, plum blossom stakes in the sword-training arena, the waterfall in the back mountain… This was a painting hung in the study of someone who had killed her master and burned down the manor. {ta}'s fingers lingered for a moment on the sword-training arena in the painting—her fingertips gently brushing against the peach blossoms, as if caressing a burned memory."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Chapter Three: Night Raid on the Imperial City",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The door was pushed open. Wei Wuyai stood in the doorway—in his forties, with a fair complexion, dressed in the robes of a third-rank official, a jade belt hanging from his waist—looking like a refined and gentle scholar. But in his hand he carried a sword—the hilt of which was engraved with the mark of Yunyin Manor. It was his master's sword. He had kept it all along."
+        },
+        {
+          "who": "Wei Wuyai",
+          "text": "\"Junior Brother.\" His tone was like that of someone greeting a long-lost relative—gentle beyond what one would expect from someone who had killed their master. \"It's been three years. You've lost a lot of weight. If Master could see you like this in heaven—it would break his heart.\""
+        },
+        {
+          "who": "name",
+          "text": "{ta}'s eyes instantly turned icy—a coldness not of hatred, but something deeper. Like a knife sharpened for three years—not to kill, but to cleanly sever the lie in this moment: \"You still have the nerve to mention Master. Your hands are stained with his blood—you killed him with his own sword—and then pinned the blame on me.\""
+        },
+        {
+          "who": "narration",
+          "text": "Wei Wuyai laughed. A truly dangerous man—his laughter is always more chilling than his tears: \"Evidence? What evidence do you have? The sect leader's seal? Letters? If these things were in court—and I said you secretly placed them, who would believe a wanted criminal?\" He was right. The words of a third-rank official—in the imperial court—carried more weight than all the evidence against a fugitive combined."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Chapter Three: Night Raid on the Imperial City",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Three people stood in the study. On one side was a powerful third-rank official, holding what everyone believed to be the \"truth\"; on the other was a wanted outcast, possessing only a jade pendant, a stack of letters, and a chance to be believed for the first time. You stood in the middle—like standing on the fulcrum of a scale."
+        }
+      ],
+      "options": [
+        {
+          "text": "He pulled out the Ninth Commander's token: \"I am the Secret Guard. I saw everything tonight—your testimony, his evidence. Tomorrow in court, I will testify in the name of the Ninth Division.\"",
+          "textVariants": [
+            "Showing his token: The Ninth Division is investigating—regardless of your rank. The case of the murder of the master will reopen tonight.",
+            "Standing in front of {name}: I guarantee with the reputation of the Ninth Division—this evidence is true."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s5",
+          "flag": "Break the situation",
+          "reply": "Wei Wuyai's expression changed for the first time—he hadn't expected the guards to side with the fugitive. {name} glanced at you—in {ta}'s eyes, three years of hardship, three years of loneliness, three years of being treated as a demon—all condensed into two words at that moment. {ta} didn't say it aloud, but you understood: Thank you.",
+          "os": "(She thought the truth would never be spoken for her. But tonight, someone who should have killed her has become her only witness. Three years of solitude—finally, she is no longer alone.)"
+        },
+        {
+          "text": "Take the evidence and leave first—only by returning alive can we overturn the case. We won't fight him tonight.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s5",
+          "flag": "comprehensive",
+          "reply": "{name} nodded—decisive and without a word. {ta} put away the evidence and together they climbed out the window. Behind them came Wei Wuyai's roar and the footsteps of pursuers. While running, {ta} suddenly turned back and glanced at you: \"You're not slow—it seems the Shadow Guards' legs are indeed quite good.\" This was the first time {ta} had said something like a joke in such a tense moment.",
+          "os": "({ta} made a joke while running for their life—meaning {ta} wasn't afraid anymore because someone was running alongside them. Running alone is escaping for one's life—running with someone is called running side by side.)"
+        },
+        {
+          "text": "To Wei Wuyai: My lord, these letters were sent by {ta} to frame you. I am handing {ta} over to you for disposal.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "angry",
+          "goto": "s5s",
+          "flag": "betray",
+          "reply": "{name} froze. {ta} looked at you—in those clear eyes, there wasn't anger—but a disappointment colder than death. \"...I really shouldn't have trusted people.\" {ta}'s voice was as flat as a stagnant pool. But {ta} didn't attack you—even betrayed, {ta} didn't draw her sword. Because her master's teachings said—a sword in hand, but no hatred in the heart.",
+          "os": "({ta} trusted you. At the post station, at the ferry crossing, in the snow-capped mountains—{ta} chose to believe you time and time again. And you used {ta}'s trust to make the most profitable deal. {ta} doesn't hate you—{ta} hates that she could still trust people.)"
+        },
+        {
+          "text": "Take a step back: This is a matter between you and your fellow disciples. You settle it yourselves—I won't interfere.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s5s",
+          "flag": "Discarding the sword",
+          "reply": "{name} didn't look at you. {ta} raised her old sword, facing Wei Wuyai—a man, a dulled sword, facing someone backed by the entire court. {ta} knew she couldn't win—but {ta}'s sword couldn't be left unsheathed: \"Fine. This was originally—my own affair.\" The last sentence was spoken very softly—as if forgiving your retreat.",
+          "os": "(She never relies on others. But this time—she allowed herself to rely on someone. Then she was reminded: on the road of life, one ultimately walks alone.)"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "happy",
+      "chapter": "Final Chapter: Moonlit Sword Heart",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Six months later. Autumn came late to the capital—more than a month later than on the snow-capped mountains. Wei Wuyai's case was brought to light in the court—the sect leader's seal, the letters, and your testimony as a secret guard—three ironclad pieces of evidence, like three swords, pierced a lie that had lasted for three years. Wei Wuyai was imprisoned, awaiting execution in the autumn. And {name}—the three-year-long arrest warrant was finally lifted.",
+          "when": "flag:break"
+        },
+        {
+          "who": "narration",
+          "text": "Six months later. After you escaped the capital, you delivered the evidence to the Censorate—the only place beyond the reach of the powerful and influential, the only place that might give a fugitive a chance to speak. The head of the Censorate spent three months reviewing the case—and finally brought it to the imperial court. Wei Wuyai fell. The arrest warrant was withdrawn. The name {name} was finally clean.",
+          "when": "flag: comprehensive"
+        },
+        {
+          "who": "self",
+          "text": "The day the news of the arrest warrant's withdrawal arrived, {name} stood alone on the ruins of Cloud Hidden Manor. {ta} placed the jade pendant before her master's grave and knelt for a long time. I stood at a distance—not approaching. Some farewells need no audience."
+        },
+        {
+          "who": "narration",
+          "text": "When {ta} stood up from the grave, her shoulders felt much lighter—as if she had taken off a suit of armor she had carried for three years. {ta} walked up to you, and the wind from the snow-capped mountains fluttered the hem of her clothes like a white flag."
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter: Moonlit Sword Heart",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "name",
+          "text": "\"I owe you my life.\" {ta} stood before you, her expression as solemn as if she were performing the most solemn salute in the martial world. The wind blew {ta}'s hair across her face, but {ta} didn't brush it away—she just stared straight at you. \"You let me go, you believed me, you testified for me—I don't know how to repay you. I only have a sword, a manor that no longer exists, and…\" {ta} paused, her voice suddenly softening, \"and a bowl of soup that I've owed you for a long time.\""
+        },
+        {
+          "who": "self",
+          "text": "A bowl of soup. From that bowl of clear soup at the Blizzard Inn—to now. {ta} has remembered it for a whole year. A person living on the edge of a knife remembers not hatred, not injustice—but a bowl of soup."
+        },
+        {
+          "who": "narration",
+          "text": "The wind on the mountain stopped. The moonlight illuminated the ruins like a traditional Chinese ink painting—clearly black and white, with no gray areas. Like {name}'s sword—it never resorts to underhanded tactics, never leaves itself an escape route. {ta} stood there, like a sword finally returned to its master's hand—its sharpness concealed, waiting only for a reason worthy of being drawn."
+        }
+      ]
+    },
+    {
+      "id": "s5s",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Final Chapter: A Lonely Sword Under a Crescent Moon",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Many things happened in the capital that night. {name} faced Wei Wuyai and his assassins alone—{ta} was severely wounded, but ultimately threw the sect leader's seal and the letter at the gate of the Censorate, pinning them to the stone steps with a broken sword. The Censorate dared not suppress it—the case was overturned. Six months later, Wei Wuyai was brought to justice. The arrest warrant was revoked.",
+          "when": "flag: Discard the sword"
+        },
+        {
+          "who": "narration",
+          "text": "That night, you helped Wei Wuyai—but the evidence had already been sent out in the chaos by {name}. Six months later, the case was overturned. Your identity as a secret guard was also exposed. The court didn't pursue you—because the evidence was conclusive, and no one was willing to offend the Censorate for the sake of a fallen third-rank official. But you knew—{name} would never appear again.",
+          "when": "flag: betrayal"
+        },
+        {
+          "who": "self",
+          "text": "The case was overturned. {ta}'s name was finally cleared. But I only found one thing in the ruins of Cloud Hidden Manor—the jade pendant. I placed it before my master's grave, beside which a line was carved with a dagger: \"Master, your disciple has not disgraced you. With a sword in hand, but no hatred in my heart—from this day forward, there is no more resentment. Your disciple departs.\""
+        },
+        {
+          "who": "narration",
+          "text": "{ta} is gone. Without a trace. Three years of being wanted, a year of running around, a reversal of the verdict—all these forged a person into a sword. But a sword doesn't need to be sheathed—it only needs a sufficiently vast world. You stand on the ruins, clutching that jade pendant in your hand—the four characters on the back, \"Never forget your teacher's teachings,\" gleam faintly in the moonlight."
+        },
+        {
+          "who": "self",
+          "text": "I don't know where {ta} went. Maybe to the desert, maybe to the South China Sea, maybe to another snow-capped mountain. But I know one thing—{ta} will never return here. Because there was once someone here whom {ta} could trust—but that person didn't accept {ta}'s trust."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter: Moonlit Sword Heart",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The ruins of Yunyin Manor stood serenely like a painting under the moonlight. {ta} stood before you—three years of wind, snow, blood, and loneliness were all contained in those clear, cold eyes. At this moment, {ta} was no longer a fugitive, no longer an outcast—just someone who wanted to say thank you, but didn't know how to begin."
+        }
+      ],
+      "options": [
+        {
+          "text": "Stay. Come with me. Wherever we go—don't be alone.",
+          "textVariants": [
+            "You don't need to return that bowl of soup. From now on, we'll share every bowl of soup.",
+            "Isn't your sword only meant to be drawn for one person? Then I'm not leaving."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "flag": "side by side",
+          "reply": "{name} remained silent for a long time—so long that the moon had moved from the mountaintop to the mountainside. Then {ta} did something she had never done before: {ta} smiled. Not a cold smile, not a bitter smile—it was a pure smile, like the first drop of meltwater falling into a spring after the snow has melted: \"...Okay.\" Just one word. But it was enough.",
+          "os": "({ta} walked a solitary path for three years. Today—she is no longer alone. When {ta} said \"okay,\" the sword she had always held in her hand finally willingly returned to its sheath. Because someone was beside her—she no longer needed to be ready to draw her sword at any moment.)"
+        },
+        {
+          "text": "Your name has been cleared. From now on, you can go wherever you want—you are free.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "flag": "Let go",
+          "reply": "{name} nodded—so decisively it hurt your heart. {ta} sheathed her sword, turned, and took a step—three steps, then suddenly stopped. Without turning her head: \"Free—and then?\" Those three words held a meaning {ta} couldn't express: free, but without direction. For three years, {ta}'s direction had been 'finding the truth'—once the truth was found, all that lay ahead was a vast, empty void.",
+          "os": "(You gave them freedom—but they don't know what to do with that freedom. A person who lived for three years for revenge—after taking revenge, suddenly doesn't know who to live for.)"
+        },
+        {
+          "text": "See you again in the martial world. Perhaps—we can be friends in our next life, without having to fight and kill each other.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6s",
+          "flag": "bid farewell",
+          "reply": "{name} raised an eyebrow—a slight smile playing on her lips: \"Next life? Okay. Next life—you buy me soup, I'll buy you wine.\" {ta} turned and walked into the moonlight—her back slender, the sword tassel swaying gently in the wind. After walking a long way, {ta} suddenly turned back and called out: \"Remember—you owe me a drink!\"",
+          "os": "(She shouted those words very loudly—so loudly it seemed she was etching them into the echo of a valley. Because she was afraid she'd forget them in the next life—and afraid you'd forget them in this one too.)"
+        },
+        {
+          "text": "I should go back and report. From now on—we'll go our separate ways.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6s",
+          "flag": "bid farewell",
+          "reply": "{name} was silent for three breaths. Then {ta} took the dagger from her waist and placed it at your feet: \"This dagger has been with me for three years. You'll need it—the road ahead isn't safe.\" She turned and left—her steps were quick, as if afraid that if she hesitated even a step, she would turn back: \"...Take care.\"",
+          "os": "(They gave you their weapons, they gave you their safety—they walked into the night empty-handed. Because what they wanted to do in the end was not to keep you, but to ensure your safety on your journey. This kind of tenderness—it's impossible to hate them.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "happy",
+      "chapter": "Epilogue: Spring Returns",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The following spring, peach blossoms bloomed all over the ruins of Yunyin Manor—no one had planted them; they were old tree roots that had survived the fire three years prior, sprouting new branches. {name} built a small thatched hut beside the ruins, with a wooden plaque hanging in front of the door—on which were written two words in a thin, old fountain pen-like handwriting: 'Question Your Heart'."
+        },
+        {
+          "who": "name",
+          "text": "\"My master said—a swordsman's true home isn't the martial world, but peace of mind.\" {ta} sat in front of the door, sharpening the old sword—not to kill, but to smooth the dulled edge. Just like {ta}'s life these past three years—bent over, now slowly straightened. \"I won't rebuild the manor. A thatched hut, a sword, a pot of wine, a bowl of soup—that's enough.\""
+        },
+        {
+          "who": "self",
+          "text": "A bowl of soup. It's that same bowl of soup again. It started at the Blizzard Inn—that bowl of clear soup with only a few dried vegetable leaves and a piece of salt the size of a fingernail—and passed through the ferry, the snow-capped mountains, the imperial city, and the court—finally arriving here: a thatched hut, a peach tree, two people who survived the knife's edge, sitting face to face, drinking soup."
+        },
+        {
+          "who": "narration",
+          "text": "A peach petal fell into the soup bowl. {ta} didn't scoop it up—saying that peach blossoms in soup bring good fortune in love. You smiled. {ta} smiled too. The mountain wind blew through the thatched hut, causing the two characters \"问心\" (ask your heart) on the wooden plaque to sway slightly. Two people who had once risked their lives for each other—now, on a spring mountain, quietly drank a bowl of soup with peach blossoms. Peace and tranquility were truly found in this."
+        }
+      ]
+    },
+    {
+      "id": "s6s",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Epilogue - The End of the World",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You returned to the capital. {name} went to the ends of the earth. From then on, news of {ta} occasionally circulated in the martial world—some saw a white-clad swordsman in the desert driving away bandits for a caravan; some saw {ta} helping fishermen repair their boats in fishing villages; some saw {ta} adding new soil to an unmarked grave in the deep mountains. Wherever {ta} went, an injustice was lessened."
+        },
+        {
+          "who": "self",
+          "text": "I sometimes think back to that inn on that snowy night—to the bowl of clear soup, the old dog that was given its last sip of wine, and the pale blue jade pendant engraved with \"Never forget your teacher's teachings.\" I think of someone who walked a dangerous path for three years, finally entrusting me with their trust—and I, did I accept it?"
+        },
+        {
+          "who": "narration",
+          "text": "Years later, one spring, you passed by Cloud Hidden Mountain—the ruins of the manor were covered in peach blossoms. Before your master's grave lay the jade pendant and a pot of clear wine. The wine had dried, but the words on the jade pendant remained: \"A sword heart like the moon, illuminating one's true nature. Never forget your master's teachings—a sword in hand, no hatred in the heart.\" You stood before the grave for a long time—then turned and descended the mountain. The wind blew peach petals onto your shoulder—you didn't brush them away."
+        },
+        {
+          "who": "self",
+          "text": "Some people enter your life like a sword slicing through—leaving a deep mark. You don't know where they are—but you know that somewhere in this world, someone is holding an old sword, keeping a promise made over a bowl of soup—waiting for a next encounter that may never come."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "mountain_shrine",
+      "face": "shy",
+      "chapter": "Final Chapter: Questioning the Heart",
+      "goto": "END",
+      "prompt": "The glint of swords has faded, the moonlight is clear. If I were given a pot of wine and a late night to sit with, what would you say to {name}? (≤100 words)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Beneath the peach blossoms, before the thatched hut. {name} poured you a bowl of soup—the same clear soup as the one at the inn a year ago. {ta} said: Drink it while it's hot. But in {ta}'s eyes—there was something warmer than this soup. Now—say what you want to say.",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "narration",
+          "text": "The moonlight shines on the ruins of Cloud Hidden Mountain. You clutch the pale blue jade pendant in your hand—engraved with your master's last words. He/She has gone far away, but the taste of that soup still lingers. Before the wind scatters the memories—on this final page, write down what you want to say to him/her.",
+          "when": "!flag: Side by side"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Sword Couple",
+      "trigger": "top: sincerity",
+      "caption": "From a bowl of soup at the Blizzard Inn to a peach tree in the Spring Thatched Cottage—you laid down the guard's blade and accepted three years of loneliness and trust from {name}. Two people who should have fought to the death finally stood side by side. The best sword in the world—is not for killing, but for protecting.",
+      "report": "[Relationship Personality - Sword Companion] You are the most precious existence in the martial world—able to see a person's true heart amidst the clash of swords. You were not blinded by wanted posters, nor swayed by self-interest. With the kindness of a bowl of soup, the courage to stand up at the ferry crossing, and the testimony in court, you pulled a person misunderstood by the whole world back from the abyss. You proved one thing: in this dog-eat-dog world, the sharpest weapon is not a sword—it is trust."
+    },
+    {
+      "endingId": "playboy",
+      "title": "passerby",
+      "trigger": "Top: Aquaman",
+      "caption": "You helped {name} and gave {ta} hope. But you always stood at a safe distance—like an observer, watching a feud unfold before turning away. {ta} remembered you—but all you remembered was a legend.",
+      "report": "[Relationship Personality - Passerby] You are astute, flexible, and adept at weighing options—making the smartest choices at every crucial moment. But the smartest choice isn't necessarily the right one. You gave {them} a way out, but not a place to settle down. The greatest distance in life isn't the ends of the earth, but two people brushing past each other, each thinking, \"Maybe we'll meet again next time\"—but there will never be a next time."
+    },
+    {
+      "endingId": "toxic",
+      "title": "betrayer",
+      "trigger": "top: scum",
+      "caption": "You chose to stand idly by—even using {ta}'s trust as a bargaining chip. {name} single-handedly overturned the verdict and went to the ends of the earth alone—leaving you with only a jade pendant and a memory.",
+      "report": "[Relationship Personality - The Betrayer] You are calm to the point of being cold-blooded—faced with someone who trusts you wholeheartedly, you chose the path most beneficial to yourself. You are not a bad person—you are just too smart, too smart to allow yourself to take risks for anyone. But have you ever thought—where did the smartness of the person who pushed the last bowl of soup to you on that snowy night go? They gave all their smartness to kindness—while you gave all your kindness to smartness."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Sword Guardian",
+      "trigger": "top: Loyal Dog",
+      "caption": "You silently did everything you were supposed to do—let them go, provide cover, investigate the case, and overturn the verdict. You were the most solid shield behind {name}—but you never went to {ta}'s side or stood shoulder to shoulder with {ta}.",
+      "report": "[Relationship Personality - Guardian of the Sword] You are loyal, reliable, and trustworthy—the best partner and the most stable support in the martial world. But you're used to standing behind—shielding others from the wind and rain, yet unwilling to step forward. {they} needs more than just a shield—they need someone to stand beside them and say: I'm not just helping you, I'm with you."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "duckweed",
+      "min": -99,
+      "caption": "You come and go in {name}'s story—like a piece of duckweed on the river, coming close and then drifting away. {ta}'s sword, {ta}'s soup, {ta}'s trust—you've touched them all, but none of them have stayed in your hands.",
+      "report": "[Relationship Personality - Duckweed] Your choices are fickle—like the wind, blowing past everyone but never lingering by anyone's side. You're not heartless—you just haven't found a harbor worth anchoring in yet. But remember: on the road of life, some people only appear once. Miss them—and it's for a lifetime."
+    }
+  ]
+}

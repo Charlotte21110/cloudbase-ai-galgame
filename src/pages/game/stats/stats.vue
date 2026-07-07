@@ -6,27 +6,27 @@
     <scroll-view class="wrap" scroll-y>
       <!-- 顶部 Banner -->
       <view class="banner">
-        <text class="banner-title">✨ 长夜众生相 ✨</text>
-        <text class="banner-count" v-if="totalPlays >= 1000">已有 {{ formatNum(totalPlays) }} 人走过长夜</text>
-        <text class="banner-count" v-else>内测中</text>
-        <text class="banner-sub">以下数据匿名实时更新</text>
+        <text class="banner-title">{{ t('stats.bannerTitle') }}</text>
+        <text class="banner-count" v-if="totalPlays >= 1000">{{ t('stats.bannerCount', { n: formatNum(totalPlays) }) }}</text>
+        <text class="banner-count" v-else>{{ t('stats.betaLabel') }}</text>
+        <text class="banner-sub">{{ t('stats.bannerSub') }}</text>
       </view>
 
       <view v-if="loadErr" class="err-box">
-        <text class="err-text">数据加载失败，请稍后再试</text>
+        <text class="err-text">{{ t('stats.loadErrText') }}</text>
         <button class="retry-btn" @click="loadStats">
-          <text class="retry-text">重新加载</text>
+          <text class="retry-text">{{ t('stats.retryBtn') }}</text>
         </button>
       </view>
 
       <template v-if="loaded && !loadErr">
         <!-- 模块 ① 角色热度榜 Top5 -->
         <view class="section">
-          <text class="sec-title">🔥 角色热度榜 Top5</text>
+          <text class="sec-title">{{ t('stats.sectionCharRank') }}</text>
           <view class="bar-list">
             <view v-for="(item, idx) in charRankTop5" :key="item.id" class="bar-row">
               <text class="bar-rank" :class="'rank-' + (idx + 1)">{{ idx + 1 }}</text>
-              <text class="bar-name">{{ charNameMap[item.id] || item.id }}</text>
+              <text class="bar-name">{{ charNameMap.map[item.id] || item.id }}</text>
               <view class="bar-track">
                 <view class="bar-fill" :style="{ width: item.pct + '%' }"></view>
               </view>
@@ -37,7 +37,7 @@
 
         <!-- 模块 ② 五大关系人格分布 -->
         <view class="section">
-          <text class="sec-title">🌟 五大关系人格分布</text>
+          <text class="sec-title">{{ t('stats.sectionPersona') }}</text>
           <view class="persona-list">
             <view
               v-for="p in personaDist"
@@ -51,17 +51,17 @@
                 <view class="bar-fill" :style="{ width: p.pct + '%', background: personaColors[p.id] }"></view>
               </view>
               <text class="bar-pct">{{ p.pct }}%</text>
-              <text v-if="p.id === myPersona" class="mine-tag">← 你</text>
+              <text v-if="p.id === myPersona" class="mine-tag">{{ t('stats.mineTag') }}</text>
             </view>
           </view>
         </view>
 
         <!-- 模块 ③ 角色 × 变体人格配对榜 -->
         <view class="section">
-          <text class="sec-title">💫 角色 × 人格配对榜</text>
-          <view v-for="cid in charIds" :key="cid" class="collapse-card">
+          <text class="sec-title">{{ t('stats.sectionPair') }}</text>
+          <view v-for="cid in charNameMap.ids" :key="cid" class="collapse-card">
             <view class="collapse-head" @click="toggleCard(cid)">
-              <text class="collapse-name">{{ charNameMap[cid] || cid }}</text>
+              <text class="collapse-name">{{ charNameMap.map[cid] || cid }}</text>
               <text class="collapse-arrow">{{ expandedCards[cid] ? '▾' : '▸' }}</text>
             </view>
             <view v-if="expandedCards[cid]" class="collapse-body">
@@ -78,15 +78,15 @@
 
         <!-- 模块 ④ 玩家画像 -->
         <view class="section">
-          <text class="sec-title">🌏 玩家画像</text>
+          <text class="sec-title">{{ t('stats.sectionProfile') }}</text>
           <view class="meta-card">
             <view class="meta-row" v-if="genderDist">
-              <text class="meta-label">性别分布</text>
-              <text class="meta-val">♀ 女生 {{ genderDist.female }}% · ♂ 男生 {{ genderDist.male }}% · 🌙 保密 {{ genderDist.secret }}%</text>
+              <text class="meta-label">{{ t('stats.genderLabel') }}</text>
+              <text class="meta-val">{{ t('stats.genderText', { f: genderDist.female, m: genderDist.male, s: genderDist.secret }) }}</text>
             </view>
             <view class="meta-row" v-if="deviceDist">
-              <text class="meta-label">使用设备</text>
-              <text class="meta-val">📱 手机 {{ deviceDist.mobile }}% · 💻 电脑 {{ deviceDist.desktop }}% · 📟 平板 {{ deviceDist.tablet }}%</text>
+              <text class="meta-label">{{ t('stats.deviceLabel') }}</text>
+              <text class="meta-val">{{ t('stats.deviceText', { m: deviceDist.mobile, d: deviceDist.desktop, t: deviceDist.tablet }) }}</text>
             </view>
           </view>
         </view>
@@ -94,7 +94,7 @@
 
       <!-- 底部按钮 -->
       <view class="bottom-btn" @click="goBack">
-        <text class="bottom-btn-text">← 返回人格档案</text>
+        <text class="bottom-btn-text">{{ t('stats.backBtn') }}</text>
       </view>
 
       <view class="bottom-spacer"></view>
@@ -104,8 +104,11 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed, onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { session } from '@/game/store'
-import { CHARACTERS as characters } from '@/game/data/characters'
+import { getCharacters } from '@/game/data/characters'
+
+const { t } = useI18n()
 
 /** 统计云函数的公开 HTTP 端点（和 galgame-ai 同环境，免登录、自带 CORS） */
 const STATS_FN_URL =
@@ -128,13 +131,13 @@ function requestStatsFn(body: Record<string, unknown>): Promise<any> {
 
 // 人格常量
 const PERSONA_IDS = ['genuine', 'playboy', 'toxic', 'devoted', 'wanderer'] as const
-const personaNames: Record<string, string> = {
-  genuine: '同行者（安全型）',
-  playboy: '逐光者（海王型）',
-  toxic: '噬星者（渣型）',
-  devoted: '拾光者（忠犬型）',
-  wanderer: '漫游者（漫游型）',
-}
+const personaNames = computed(() => ({
+  genuine: t('stats.personaNames.genuine'),
+  playboy: t('stats.personaNames.playboy'),
+  toxic: t('stats.personaNames.toxic'),
+  devoted: t('stats.personaNames.devoted'),
+  wanderer: t('stats.personaNames.wanderer'),
+}))
 const personaColors: Record<string, string> = {
   genuine: '#6fbaff',
   playboy: '#ff8fd0',
@@ -143,13 +146,16 @@ const personaColors: Record<string, string> = {
   wanderer: '#8dd9a8',
 }
 
-// 角色名映射
-const charNameMap: Record<string, string> = {}
-const charIds: string[] = []
-for (const c of characters) {
-  charNameMap[c.id] = c.name
-  charIds.push(c.id)
-}
+// 角色名映射（响应式）
+const charNameMap = computed(() => {
+  const map: Record<string, string> = {}
+  const ids: string[] = []
+  for (const c of getCharacters()) {
+    map[c.id] = c.name
+    ids.push(c.id)
+  }
+  return { map, ids }
+})
 
 const myPersona = computed(() => session.ending?.endingId || '')
 

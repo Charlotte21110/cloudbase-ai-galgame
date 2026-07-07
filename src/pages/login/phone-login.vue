@@ -1,18 +1,18 @@
 <template>
   <view class="login-container">
     <view class="login-header">
-      <text class="title">手机验证码登录</text>
-      <text class="subtitle">请输入手机号获取验证码</text>
+      <text class="title">{{ t('phoneLogin.title') }}</text>
+      <text class="subtitle">{{ t('phoneLogin.subtitle') }}</text>
     </view>
     
     <view class="login-form">
       <!-- 手机号输入 -->
       <view class="input-group">
-        <text class="label">手机号</text>
+        <text class="label">{{ t('phoneLogin.phoneLabel') }}</text>
         <input 
           class="input-field"
           type="number"
-          placeholder="请输入手机号"
+          :placeholder="t('phoneLogin.phonePlaceholder')"
           v-model="phoneNumber"
           maxlength="11"
         />
@@ -20,12 +20,12 @@
       <show-captcha />
       <!-- 验证码输入 -->
       <view class="input-group">
-        <text class="label">验证码</text>
+        <text class="label">{{ t('phoneLogin.codeLabel') }}</text>
         <view class="verification-row">
           <input 
             class="input-field verification-input"
             type="number"
-            placeholder="请输入验证码"
+            :placeholder="t('phoneLogin.codePlaceholder')"
             v-model="verificationCode"
             maxlength="6"
           />
@@ -34,7 +34,7 @@
             :disabled="!isPhoneValid || countdown > 0"
             @click="getVerificationCode"
           >
-            {{ countdown > 0 ? `${countdown}s后重试` : '获取验证码' }}
+            {{ countdown > 0 ? t('phoneLogin.codeRetry', { n: countdown }) : t('phoneLogin.getCode') }}
           </button>
         </view>
       </view>
@@ -45,12 +45,12 @@
         :disabled="!canLogin"
         @click="handleLogin"
       >
-        登录
+        {{ t('phoneLogin.loginBtn') }}
       </button>
       
       <!-- 返回链接 -->
       <view class="back-login">
-        <text @click="goBack" class="link-text">返回登录方式选择</text>
+        <text @click="goBack" class="link-text">{{ t('phoneLogin.backLink') }}</text>
       </view>
     </view>
   
@@ -58,8 +58,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, computed, onUnmounted, onMounted } from 'vue'
 import { signInWithOtp } from '../../utils/cloudbase'
+
+const { t } = useI18n()
 
 // 响应式数据
 const phoneNumber = ref('')
@@ -85,7 +88,7 @@ const canLogin = computed(() => {
 const getVerificationCode = async () => {
   if (!isPhoneValid.value) {
     uni.showToast({
-      title: '请输入正确的手机号',
+      title: t('phoneLogin.toast.invalidPhone'),
       icon: 'none'
     })
     return
@@ -93,13 +96,13 @@ const getVerificationCode = async () => {
   
   try {
     loading.value = true
-    loadingText.value = '发送验证码中...'
+    loadingText.value = t('phoneLogin.toast.sending')
     
     const result = await signInWithOtp({ phone: phoneNumber.value })
     verifyOtp.value = result
     
     uni.showToast({
-      title: '验证码发送成功',
+      title: t('phoneLogin.toast.codeSent'),
       icon: 'success'
     })
     
@@ -109,7 +112,7 @@ const getVerificationCode = async () => {
   } catch (error: any) {
     console.error('获取验证码失败:', error)
     uni.showToast({
-      title: error.message || '获取验证码失败',
+      title: error.message || t('phoneLogin.toast.codeFail'),
       icon: 'none'
     })
   } finally {
@@ -133,7 +136,7 @@ const startCountdown = () => {
 const handleLogin = async () => {
   if (!canLogin.value) {
     uni.showToast({
-      title: '请完善登录信息',
+      title: t('phoneLogin.toast.incomplete'),
       icon: 'none'
     })
     return
@@ -141,7 +144,7 @@ const handleLogin = async () => {
   
   try {
     loading.value = true
-    loadingText.value = '登录中...'
+    loadingText.value = t('phoneLogin.toast.loading')
 
     const { error } = await verifyOtp.value({ token: verificationCode.value })
     
@@ -150,7 +153,7 @@ const handleLogin = async () => {
     }
 
     uni.showToast({
-      title: '登录成功',
+      title: t('phoneLogin.toast.success'),
       icon: 'success'
     })
     
@@ -162,7 +165,7 @@ const handleLogin = async () => {
   } catch (error: any) {
     console.error('登录失败:', error)
     uni.showToast({
-      title: error.message || '登录失败',
+      title: error.message || t('phoneLogin.toast.fail'),
       icon: 'none'
     })
   } finally {

@@ -1,0 +1,1040 @@
+{
+  "_id": "script_summer",
+  "id": "script_summer",
+  "title": "That summer, childhood sweethearts",
+  "openingTip": "Seven years later, you return to that seaside town for summer vacation and bump into the person from your childhood who always bullied you but also always protected you—{name}. One summer, an old bicycle, a sea breeze smelling of soda. This is a story of youth that slowly warms up. Most of the time, you only need to tap the screen to read on; there aren't many crossroads that truly require you to make decisions, but each one is related to whether that summer will have a result.",
+  "prologue": "Summer in this small town always arrives slowly and leaves too quickly. {name} is your childhood friend, the one you grew up with, walking the same alleyways as us: she'd take you for bike rides, shield you from bullies, and awkwardly slip you a nearly melted popsicle when you cried. Seven years ago, you moved away with your family, without even a proper goodbye. Now you're back, and {ta} stands under the old banyan tree at the alley entrance, tanned dark by the sun, grinning: \"Hey, you actually came back.\" A summer is just enough to say everything left unsaid.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Prologue: The Alleyway Seven Years Later",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sound of cicadas surged in like a tide, engulfing the entire alley. You dragged your suitcase and turned into that familiar stone-paved road. The walls on both sides were much shorter than you remembered, and the roots of the old banyan tree had grown longer. In the old spot by the riverbank, a figure was squatting down, polishing an old bicycle until it shone—the chain was oiled, the tires were freshly inflated, and even the rust on the back seat had been sanded away."
+        },
+        {
+          "who": "name",
+          "text": "\"Yo.\" {name} turned around, grinning mischievously, his canine teeth gleaming in the setting sun. \"I thought you'd completely forgotten about this dump. Seven years—I've grown taller, but you haven't changed at all!\""
+        },
+        {
+          "who": "self",
+          "text": "Seven years have passed. {He} has grown taller and broader. The little boy who used to always run after me with a runny nose now has to tilt his head down slightly to see my eyes. But that mischievous grin—it's still the same as when we were kids."
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "shy",
+      "chapter": "Prologue: The Alleyway Seven Years Later",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} cleaned the car so thoroughly, and even tied a newly bought cotton cushion to the back seat—the kind of floral cushion that costs ten yuan at the market, so tacky, but you can tell she picked it out on purpose."
+        },
+        {
+          "who": "name",
+          "text": "\"Give me the luggage.\" {ta} snatched the suitcase without a word, strapped it to the back seat of the bike, and did it with practiced ease. \"Get on, same old routine, I'll give you a ride. I could ride this riverbank with my eyes closed—didn't you always say you were afraid of bumpy rides when you were little? I'll ride slower this time.\""
+        },
+        {
+          "who": "self",
+          "text": "I was afraid of being jostled—that was seven years ago. {ta} still remembers. Remembering for so long, it's like she's packed up her entire childhood, just waiting for me to come back and unpack it."
+        },
+        {
+          "who": "narration",
+          "text": "The wheels clattered and clanged as they rolled over the stone path. The dappled sunlight filtering through the sycamore leaves overhead fell on {ta}'s tanned, glossy neck."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "shy",
+      "chapter": "Prologue: The Alleyway Seven Years Later",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The bicycle wobbled along the riverbank, the wind carrying the scent of moisture and freshly cut grass. {name} pedaled, rambling on and on, recounting all the trivialities of the past seven years—from Grandma Wang's cat going missing and then being found, to the shop behind the school changing owners—to you."
+        },
+        {
+          "who": "name",
+          "text": "\"...Anyway, this alleyway's been totally boring since you left.\" {ta} suddenly blurted out, nearly slipping and falling, then quickly added, \"I mean—nobody's going to cause trouble with me anymore! Nothing else! Don't get the wrong idea!\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s ears turned slightly red, and she pedaled even faster—so fast that the sycamore trees on either side of her seemed to be falling backward. This was a habit {ta} had since childhood: the more she explained, the more obvious it became."
+        },
+        {
+          "who": "narration",
+          "text": "At the end of the riverbank lay a wide expanse of mudflats, the setting sun painting the water with shimmering gold. {ta} stopped the car, braced one foot on the ground, and suddenly fell silent—as if taking in the scenery and you together in this moment."
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Prologue: The Alleyway Seven Years Later",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The summer evening sky transitioned from orange-red to pale purple, like a glass of sparkling water being mixed with color. {name}, kicking the bicycle kickstand, suddenly turned around."
+        },
+        {
+          "who": "name",
+          "text": "\"Hey.\" {ta} squinted, pretending to be nonchalant, but her eyes betrayed her. \"This summer vacation—what are you planning to do? Don't just stay home all day with the air conditioning on. This town may be small, but one summer is enough for me to take you to all the best restaurants.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} wasn't talking about 'how to spend it,' but 'how to spend it with me.' Seven years had passed, and the very first meeting had me on the agenda for the entire summer. This person—still hasn't learned to be subtle at all."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Prologue: The Alleyway Seven Years Later",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A summer breeze wafts into your shirt collar, and {ta} awaits your reply ahead. The bicycle bell rings unconsciously—a habit {ta} has had since childhood when nervous."
+        }
+      ],
+      "options": [
+        {
+          "text": "I want to spend this summer vacation with you.",
+          "textVariants": [
+            "I'm not going anywhere; I'll just stay with you and get through this summer.",
+            "I want to make up for all the seven years I haven't spent with you."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name} almost lost her grip on the handlebars, and the bicycle bell was rang out in a series of rings by {ta}: \"...Who, who wants you to stick to me every day! It's tiring for me to ride with someone on my bike!\" But her voice was already fading away.",
+          "os": "(Though she complained, her heart was secretly delighted, making her pedal the bicycle with a lighter pace.)"
+        },
+        {
+          "text": "Let's go and see what's there; there are so many beautiful things to see in this small town.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} scoffed, \"You're full of tricks. Be careful you don't get sunburned—the sun here doesn't discriminate.\"",
+          "os": "({ta} pouted, inexplicably a little annoyed. Good-looking? Isn't the most beautiful thing right in front of you?)"
+        },
+        {
+          "text": "I'll go with you wherever you want to go, and I'll follow your arrangements.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name}: \"Who lets their guests follow orders? You're back for summer vacation, so I need to plan your entire summer perfectly.\"",
+          "os": "({ta} wishes she could plan down to the smallest detail, down to each day, each meal, and each stretch of road.)"
+        },
+        {
+          "text": "It's so comfortable to just lie at home and enjoy the air conditioning.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name} deflated, the bicycle bell stopped ringing: \"...Fine, forget I asked. Anyway, I've been riding alone all these years since you left—I'm used to it.\"",
+          "os": "({ta} had prepared a whole plan, but you gently deflected it. The phrase \"used to it\" in that sentence was ironic.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "happy",
+      "chapter": "Chapter 1: Waiting for a Bus That Never Comes",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next evening, {name} insisted on taking you to the mountaintop for a panoramic view of the town. You both climbed the winding stone steps, sweating profusely, and {ta}'s hand, pulling you along, was as strong as it had been seven years ago. At the summit, there was an abandoned bus stop sign; the metal was rusted, and the words were long since blurred by wind and rain. {ta} plopped down on a bench, swinging her legs, beaming with pride."
+        },
+        {
+          "who": "name",
+          "text": "\"Hehe, just kidding—this station stopped operating a long time ago, the last train was canceled ten years ago.\" {ta} laughed like a triumphant child. \"I just wanted to find a quiet place to talk to you. There are so many people I know in the city, it's so annoying.\""
+        },
+        {
+          "who": "self",
+          "text": "Find a secluded place—and talk to me. This person's lies about asking people out are so clumsy, yet every lie hides the message: \"I want to be alone with you.\""
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter 1: Waiting for a Bus That Never Comes",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As the sun dipped below the mountains, the small town was shrouded in a thin layer of twilight. {name} pulled something wrapped in several layers of towels from the side pocket of his backpack—an old-fashioned point-and-shoot camera, the box bearing the faded words \"Seagull.\""
+        },
+        {
+          "who": "name",
+          "text": "\"My dad's. He was a clockmaker in town when he was young—one of his hobbies was taking pictures of the neighbors.\" {ta} held up the camera, adjusted the focus, \"My mom said she wanted to throw it away after she died, but I secretly hid it. Every year on this day, I come to the top of the hill and take a picture—a picture of this small town.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} never mentioned {ta}'s father to me. It turns out that in these seven years—{ta} not only rode a bike alone, but also went up the mountain alone, pressed the shutter alone, and recorded this small town seven times with thirty-six rolls of film."
+        },
+        {
+          "who": "name",
+          "text": "\"I used to hope you'd be in my film.\" {ta} points the camera at you. \"This time—I can't just press the shutter button on thin air again. Come on—smile, let's take a picture for the person we didn't say goodbye to seven years ago.\"",
+          "when": "tag: Sincerity>=1"
+        },
+        {
+          "who": "narration",
+          "text": "A click. The wind on the mountaintop carried the lingering smell of gunpowder from the film canister, mingling with the salty, fishy scent of the distant sea breeze. {ta} carefully packed away the camera, clutching it tightly to her chest—more carefully than any expensive item."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter 1: Waiting for a Bus That Never Comes",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled two bottles of soda from her bag—glass bottles, an old brand, the caps still sealed with wire. The bottle she handed you still had beads of ice water clinging to it. The setting sun was sinking, bathing the densely packed rooftops of the small town below in layers of gold. {ta} suddenly fell silent, simply gazing down the mountain—in that direction, towards the old train station."
+        },
+        {
+          "who": "name",
+          "text": "\"The year you left,\" {ta}'s voice suddenly became as soft as the wind rustling through the grass, \"I chased after you to the station, but the train had already left. I was still clutching the marble I wanted to give you—the blue one with a moon pattern inside; we promised to use it as a token of our love.\""
+        },
+        {
+          "who": "self",
+          "text": "That marble—I've forgotten it. But {they} still remember the pattern, the color, and the playful joke we made while playing house. A childish remark from seven years ago has become a promise {they} has held onto until now."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "hilltop_bus_stop",
+      "face": "shy",
+      "chapter": "Chapter 1: Waiting for a Bus That Never Comes",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled an old glass marble from her pocket—blue, with a tiny crescent moon inside. It gleamed warmly in the setting sun. {ta} placed it in her palm, handed it over, and her ears turned red again."
+        }
+      ],
+      "options": [
+        {
+          "text": "Holding the marble and {ta}'s hand together: Seven years late, I accept it.",
+          "textVariants": [
+            "Taking the marble, I naturally grasped {ta}'s hand: I won't return it this time.",
+            "He clenched his outstretched hand, along with the marble: \"I've waited seven years for you.\""
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "reply": "{name} froze on the spot, palms sweating, and after a long pause, managed to stammer, \"...You, you're pushing your luck.\" But she didn't pull her hand away. The marble was warm in both of their palms.",
+          "os": "(Something I've held onto for seven years, I finally gave away today. {ta} felt that what was in her palm wasn't just a marble, but words she hadn't spoken for seven years.)"
+        },
+        {
+          "text": "Flick on the forehead: You kept this broken bead for so long just for it?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} covered her forehead and exclaimed exaggeratedly, \"Ouch—you're so vain! I won't leave any for you next time!\" But her mouth was stretched wide, revealing her canine teeth.",
+          "os": "(Your teasing actually made them less nervous. Playful bickering is how they express intimacy.)"
+        },
+        {
+          "text": "Carefully put away the marbles: I'll keep them safe for you from now on.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}: \"What do you mean 'keep safe'? That was originally meant for you. It should have been given to you seven years ago—it's just that my legs were too short back then, and I couldn't catch up with that beat-up bus.\"",
+          "os": "(They just want to express their feelings, not entrust them to you. They've waited for you for seven years, not for a mere 'custodian'.)"
+        },
+        {
+          "text": "You're too old to still be playing marbles. You can keep it yourself.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "reply": "{name}'s hand froze in mid-air, the marble flashing briefly in the setting sun. {ta} sheepishly withdrew her hand: \"...Yeah, yeah, childish. I'm already in my twenties, still holding a marble and waiting for someone—it's pretty silly when you think about it.\"",
+          "os": "(The feelings that {ta} had held onto for seven years were shattered by your single sentence. \"It was pretty foolish\"—these were the harshest words {ta} had ever uttered.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "happy",
+      "chapter": "Chapter Two: Traffic Lights by the Sea",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As evening fell, you cycled to the deserted little intersection by the sea. The traffic lights were still dutifully changing—red, green, red, green—but there wasn't a single car in sight. The sea breeze shattered the reflection of the traffic lights in the puddles. In the distance, the receding tide created mudflats, where a few egrets strolled in the shallows. The sky was ablaze with the colors of the sunset, turning the horizon into a blurred line of gold."
+        },
+        {
+          "who": "name",
+          "text": "\"When you were little, you were most afraid of crossing the street.\" {ta} laughed, holding onto the handlebars, her canine teeth flashing in the twilight. \"Every time we crossed this intersection, she would tug at my sleeve—tug so hard that her fingernails would leave marks on my arm. And now? Does she still need someone to hold her hand?\""
+        },
+        {
+          "who": "self",
+          "text": "The sea breeze softened {ta}'s words. {ta} stretched out her hand—half-jokingly, palm up, outstretched in the sunset. That hand was much bigger than it had been seven years ago, but the lines were still the same."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Chapter Two: Traffic Lights by the Sea",
+      "goto": "s4c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The green light came on. {ta}'s hand remained suspended in mid-air, not retracted. In the salty sea breeze, {ta}'s voice was as soft as if she were talking to herself."
+        },
+        {
+          "who": "name",
+          "text": "\"The light's green.\" {ta} turned her head away from you, her hand remaining motionless. \"...Whether you hold hands or not is up to you. This time, I won't rush you. Anyway—we've waited seven years.\""
+        },
+        {
+          "who": "self",
+          "text": "Anyway, we've waited seven years. That was said so lightly, like saying, \"The weather's nice today.\" But I know that in every single summer of those seven years of waiting, {they} polished that marble again and again."
+        }
+      ]
+    },
+    {
+      "id": "s4c2",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Chapter Two: Traffic Lights by the Sea",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A sudden gust of sea breeze blew, making {ta}'s hair obscure her eyes. An old minivan drove up from a distance—driven by Wang Gang, the son of Grandma Wang from the alleyway. He rolled down the window and called out to {name}, \"Linchuan! Is this your childhood friend—oh my, you're back! You've grown up to be so handsome!\""
+        },
+        {
+          "who": "name",
+          "text": "{ta} waved Wang Gang away, her ears turning red again. \"Grandma Wang's son—always gossiping. Don't tell him—what did I just say... never mind, forget it.\" {ta} buried her face in her shirt collar, but her canine teeth still peeked out from the collar edge."
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta} was in this small town—and I wasn't the only one waiting. The whole alley remembers this: {name} was always waiting for someone to come back. Wang Gang's words, \"He's back,\" were meant for the whole alley to hear."
+        },
+        {
+          "who": "narration",
+          "text": "The red light turns green and then back to red. You're standing at this intersection by the sea, where no cars ever pass by, like standing on a static runway waiting for someone to decide your direction."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Chapter Two: Traffic Lights by the Sea",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The traffic lights had gone through countless cycles, and the sea breeze had blown {ta}'s hair so that it covered half her face. The hand was still there—like a lighthouse that had waited seven years on the shore."
+        }
+      ],
+      "options": [
+        {
+          "text": "Holding your hand: From now on, I want to cross every intersection with you.",
+          "textVariants": [
+            "Place your hand in their palm: Let's walk the road ahead together.",
+            "Hold their hand tightly, don't let go: This time it's my turn, I won't let go."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "Holding hands",
+          "reply": "{name}'s hand tightened suddenly, her fingertips trembling slightly, but her voice remained calm: \"...It's a deal, every intersection. No backing out.\"",
+          "os": "({ta} smiled as if she had stolen an entire summer. The green light she had waited seven years for had finally come; it was all worth it.)"
+        },
+        {
+          "text": "I'll be there for you, don't be afraid, I'm here for you.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "Holding hands",
+          "reply": "{name}: \"Hey, I used to be the one holding your hand—you were even afraid of ants when you were little.\" But she let you hold her hand without arguing.",
+          "os": "(She pretended to be dissatisfied, but inside she was bubbling with sweetness. Being protected didn't feel so bad.)"
+        },
+        {
+          "text": "Pretend you didn't see {ta}'s hand, and run across the road first.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "miss",
+          "reply": "{name} paused for a moment, then caught up, panting, \"Why did you run so fast! There weren't any cars here—never mind. I won't do it next time.\"",
+          "os": "(He put his hand back in his pocket, thinking: So not every green light has someone waiting.)"
+        },
+        {
+          "text": "You can manage on your own; you're not a child anymore.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "miss",
+          "reply": "{name} slowly withdrew her hand and stuffed it into her jeans pocket—the marble inside poked {ta}'s palm: \"...That's right. We've grown up, haven't we? I'll ride first, you follow.\"",
+          "os": "(The red light comes on. {ta} rides off first, leaving you standing there. The sea breeze suddenly feels a bit chilly.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "happy",
+      "chapter": "Interlude: Fireworks on a Summer Night",
+      "goto": "sA1a2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The small town's annual summer night festival. The lakeside is packed with people, and stalls selling cotton candy and goldfish scooping stretch as far as the eye can see. {name} holds your hand tightly, palms sweaty, but refuses to let go."
+        },
+        {
+          "who": "name",
+          "text": "\"Don't get lost.\" {ta} turned around and reminded you, even though she was also in a crowded place, she kept you on the inside. \"There are too many people—you got lost once at a temple fair when you were little, and you cried so hard that the whole street could hear you. I don't want to hear that again.\""
+        },
+        {
+          "who": "self",
+          "text": "The time I got lost as a child—{ta} remembers it again. All my embarrassing moments, childhood memories, anxieties—this person keeps them all in their heart, and even after seven years, they are still crystal clear."
+        },
+        {
+          "who": "narration",
+          "text": "The fireworks hadn't started yet, but the warm glow of the lanterns on the shore was already reflected on the lake. {ta} bought two sparklers, handed one to you, but hadn't lit her own."
+        }
+      ]
+    },
+    {
+      "id": "sA1a2",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Interlude: Fireworks on a Summer Night",
+      "goto": "sA1a3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After the summer night festival ended, {name} didn't go home—{ta} took you to the black rocky beach by the sea. The moon hadn't risen yet, and the sea breeze stirred up a thin layer of silver light in the puddles on the rocks. {ta} crouched down and dug out a rusty tin box with a White Rabbit candy pattern from under a half-buried rock."
+        },
+        {
+          "who": "name",
+          "text": "\"We buried it together when we were eight.\" {ta} held the box in front of you. \"We said we'd dig it up in ten years—but you moved away when you were eleven. I dug it up myself when I was eighteen—the box was still there. But I didn't open it. These things only count if two people open them together.\""
+        },
+        {
+          "who": "self",
+          "text": "I had completely forgotten about it. But {ta} not only remembered the location, but also that it was a tin candy box, and that it was a letter written to her eighteenth birthday. {ta} took every childhood promise—to an alarming degree."
+        },
+        {
+          "who": "narration",
+          "text": "The box was rusty, and {ta} had to tap the lid with his fist to open it—inside were two childish letters from elementary school students, and a White Rabbit milk candy that had lost all its sugar over time, leaving only a hard core. The candy wrapper was long since brittle like a withered leaf."
+        }
+      ]
+    },
+    {
+      "id": "sA1a3",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "happy",
+      "chapter": "Interlude: Fireworks on a Summer Night",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} unfolded the two letters. Yours—actually, {ta} wrote it for you, because you couldn't write yet at that age. The crooked, messy handwriting was {ta}'s handwriting when she was eight years old:"
+        },
+        {
+          "who": "name",
+          "text": "“‘When I turn eighteen, I’m going to buy {name} a real bicycle.’” {ta} read this line aloud, then laughed at herself. “See—you’ve even forgotten your own wish. But my old bike, I’ve ridden it all this time, the chain has been replaced twice, and the tires have been replaced three times—it’s just waiting for you to buy me a new one.”"
+        },
+        {
+          "who": "self",
+          "text": "A melted candy, two pencil letters, a seven-year-old bicycle—{ta} packed her entire adolescence into this tin box, intact, waiting for me to return and unpack it together. I never knew—that someone who remembered this would use this method to let me make up for it too."
+        },
+        {
+          "who": "name",
+          "text": "\"But—you don't actually need to buy a new car.\" {ta} carefully closed the metal box again. \"I'm used to that old clunker. It's been with me for seven years—longer than you. If we're going to get a new one, we have to go pick it out together—that's the rule.\""
+        },
+        {
+          "who": "self",
+          "text": "Yuan Mei said, \"The most valuable thing about friendship between people is knowing each other's hearts.\" {ta} is not just knowing each other's hearts—{ta} has kept that heart in an iron box, untouched by the ebb and flow of the tides year after year."
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "shy",
+      "chapter": "Interlude: Fireworks on a Summer Night",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "When the first firework exploded, the entire night sky was dyed golden red. Everyone looked up and gasped in amazement, except for {ta} who turned her head to look at you."
+        },
+        {
+          "who": "name",
+          "text": "\"I've had something to say for seven years.\" {ta} leaned close to your ear, her voice mostly drowned out by the booming fireworks, but you heard every word clearly. \"From the day you dragged your suitcase out of the alley, I wanted to say—\" \"I like you.\" {ta} blushed, her canine teeth gleaming in the fireworks. \"From the first day you tugged at my sleeve to cross the street, I liked you. Now, I've finally said it. It took me seven years—if you dare say no, I'll wait another seven years.\""
+        },
+        {
+          "who": "self",
+          "text": "The ancients spoke of \"childhood sweethearts.\" But in the end, even the most innocent feelings harbor the deepest fear—the fear that if they were spoken aloud, their childhood friendship would end. {ta} took seven years to dare gamble on this firework."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "sad",
+      "chapter": "Interlude: Fireworks on a Summer Night",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Fireworks bloom as usual by the lake during the summer night festival. {name} stands beside you—about half a step away. Smiling, you watch the fireworks, but don't reach out your hand."
+        },
+        {
+          "who": "name",
+          "text": "\"Isn't it beautiful?\" {ta} looked up at the golden chrysanthemums bursting open in the sky, her voice filled with a lively enthusiasm. \"When we were little, I said I'd bring you to see this once. And here it is—I did it. See, I didn't lie to you.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} was still as lively as ever, but the hand that used to always hold mine was kept tightly tucked into its pocket all night—holding the marble that hadn't been given away."
+        },
+        {
+          "who": "narration",
+          "text": "Fireworks burst forth one after another, illuminating the distance between you—a distance neither of you had ever crossed, and one you didn't even know if you could ever cross. Like sparks falling into water, they flashed and then vanished."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "happy",
+      "chapter": "Chapter Three: Summer is Coming to an End",
+      "goto": "s5a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Summer vacation is almost over. There's a hint of coolness in the autumn breeze, and the cicadas' chirping has thinned out. You stroll slowly along the old road in the small town lined with sycamore trees—a road you walked seven years ago, only back then you couldn't reach the leaves on the trees, but now you can touch them with a simple reach."
+        },
+        {
+          "who": "name",
+          "text": "\"This summer has been the happiest I've ever had.\" {ta} kicked pebbles along the way, from one end of the road to the other. \"Because you were here. Every summer before, I would ride my bike up the riverbank—alone. This year, there was someone on the bike, so it was a bit heavier, but I was happy.\"",
+          "when": "flag: holding hands"
+        },
+        {
+          "who": "name",
+          "text": "\"Summer is almost over...\" {ta} muttered softly, kicking a pebble far away. \"If we don't say these things now, will we have to wait another seven years? But I don't know if you'll come back in the next seven years.\"",
+          "when": "flag: missed"
+        },
+        {
+          "who": "self",
+          "text": "I'm reluctant to leave too. I'm reluctant to leave this road, this breeze, and the person beside me, tanned dark-skinned, with a missing canine tooth when they smile. But holidays always come to an end—just like all the wonderful, carefree days in this world, they all come to a close one day."
+        }
+      ]
+    },
+    {
+      "id": "s5a",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Chapter Three: Summer is Coming to an End",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the way home, a sudden downpour began—the last downpour of summer. You didn't have time to cycle back, so you took shelter in the basement of an abandoned lighthouse by the sea. The door was broken, and rainwater poured in through the cracked windows, soaking the steps."
+        },
+        {
+          "who": "name",
+          "text": "{ta} pushed her bicycle in and leaned it against the wall, then squatted on the doorstep watching the rain. Raindrops pounded on the ground, splashing high into the air, and {ta}'s canine teeth gleamed in the mist. \"My dad used to say—after the last rain of summer, it's time to say goodbye. He and my mom—every year they broke up on that day at the beginning of autumn.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta} is so sensitive to the 'end of summer' because she watched her father leave one autumn and never return. {ta} isn't afraid of summer ending—it's afraid that the changing of the seasons means people will also leave. And this fear has never healed since {ta} was seven years old."
+        },
+        {
+          "who": "name",
+          "text": "{ta} pulled the marble out of her pocket—the Blue Moon marble was splashed with rainwater, and a thin layer of condensation covered its surface. \"But this year—\" {ta} held the marble in her palm and pushed it in front of you, \"someone's going to get soaked in the rain with me. I'm not afraid of summer ending.\""
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Chapter Three: Summer is Coming to an End",
+      "goto": "s5_ride",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At the end of the road was the riverbank—the same riverbank where {ta} had taken you here for your bike ride on the first day. {ta} stopped, leaned against the old bicycle, and took a deep breath."
+        },
+        {
+          "who": "name",
+          "text": "\"This time,\" {ta} gripped the handlebars, her knuckles white, \"I don't want to watch you leave again. I don't want to relive that scene from seven years ago. And you—when you leave this time, could you please not make me watch you go?\""
+        },
+        {
+          "who": "self",
+          "text": "The words she hadn't spoken seven years ago were finally laid bare in the sunlight at the tail end of this summer. Not sweet words—just one sentence: Don't let me watch you leave again."
+        }
+      ]
+    },
+    {
+      "id": "s6_ride",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "s6_farewell",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The traffic light by the sea switched back to green. {name} parked the car in the middle of the intersection—this time there were no cars, and no one in a hurry. {ta} took the Blue Moon marble from the back seat and held it in her fist."
+        },
+        {
+          "who": "name",
+          "text": "\"Get in.\" {ta} patted the back seat without turning around. \"The last leg—I'll take you. Same as always—I'll ride slowly, try not to make it too bumpy.\" The marble was quietly slipped into your palm by {ta}—the icy glass had been warmed by {ta}'s body heat for too long, and was already a little warm."
+        },
+        {
+          "who": "self",
+          "text": "I sat on the floral cotton cushion that I had sat on all summer. {ta}'s back seemed broader than the first day I returned—and held a strength I hadn't yet noticed, a strength I couldn't hold onto."
+        }
+      ]
+    },
+    {
+      "id": "s6_farewell",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "s6_station",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The bicycle stopped in the middle of the intersection. The green light came on for the third time. {name} gripped the handlebars, the bony knuckles particularly clear in the sunset. The sea breeze blew, blowing all the hair from {ta}'s forehead—revealing eyes that had waited all summer, now brighter than any summer."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually, I'm reluctant to let you go,\" {ta} said softly. \"But I won't chase after you this time. Because I know—you're not leaving, you're going to the next stop. And I—will continue riding my bike, fixing bikes, and collecting marbles here. When you come back next time—I'll still be able to ride.\""
+        },
+        {
+          "who": "self",
+          "text": "They no longer say \"Don't go.\" They've learned to say \"I'll wait for you.\" Seven years—from chasing after someone while crying to waiting while smiling. This growth isn't about compromise, it's about belief. Believing they deserve to be waited for, believing the person they're waiting for will return."
+        }
+      ]
+    },
+    {
+      "id": "s5_ride",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "shy",
+      "chapter": "Chapter Three: Summer is Coming to an End",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You rode along the riverbank for a while longer. This was the last bike ride of the summer vacation—{name} rode incredibly slowly, so slowly that even a dragonfly could easily overtake you. {ta}'s bicycle chain made a soft, clattering sound—{ta} had been saying for seven years that the chain on this old bike needed replacing, but in the end, it still hadn't been."
+        },
+        {
+          "who": "name",
+          "text": "\"When we were little, you sat on the back of my bike—always clinging to my clothes.\" {ta} didn't turn around, her voice drifting back on the wind, \"Later I realized—it wasn't me giving you a ride, it was you yelling 'Slow down!' from behind—more effective than my brakes. I was afraid you'd fall, afraid you'd be scared—these were my demands on this old bike. It's not that it's hard to ride—it doesn't make any demands when you're not around.\""
+        },
+        {
+          "who": "self",
+          "text": "A rickety bicycle—the chain hasn't been changed in seven years, simply because if it were, there wouldn't be any trace of you riding it. {ta} doesn't need repairs—because if it were fixed, no one would urge {ta} to ride slower. This sentence is more powerful than any love letter."
+        },
+        {
+          "who": "narration",
+          "text": "At the end of the riverbank—that's the alleyway where you first met again. {ta} stopped her bicycle, bracing herself on one foot. The sunset was just as red as it had been seven years ago on that first day—only the banyan tree's tendrils had grown longer, and Grandma Wang's cat had been replaced with a new one."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Chapter Three: Summer is Coming to an End",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind on the riverbank rustled the sycamore leaves, as if urging for an answer. {ta} stood before you, leaning on the railing, waiting even more nervously than she had been at the station seven years ago."
+        }
+      ],
+      "options": [
+        {
+          "text": "Then I won't leave, or—next time I'll chase after you.",
+          "textVariants": [
+            "This time it's my turn to stay, or to take you with me.",
+            "We'll never be apart again. I'll include you wherever you are, from north to south."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "reply": "{name}'s eyes lit up instantly, his fangs almost reaching his ears: \"...You can't go back on your word! Pinky promise! Never to change your mind—no, this time I have to bet big!\"",
+          "os": "({ta} extends her little finger, as if she has returned to when she was eight years old. What has grown is her body, but what remains unchanged is the promise.)"
+        },
+        {
+          "text": "Long-distance relationships are fine as long as we stay in touch; what's there to be afraid of?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Contact... okay. Don't forget me again. This time I'm saving three of your phone numbers—and pinning you to the top of my WeChat contacts.\"",
+          "os": "(She smiled and agreed, but felt uncertain. Being in touch and being physically present are two different things.)"
+        },
+        {
+          "text": "Stay here and I'll come back to see you often.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Why is it always you who has to run back and forth? This time, I can come to you too—I have a car now, even if it's just a bicycle.\"",
+          "os": "(She doesn't want to wait passively anymore. Even if there's only one bicycle, she wants to ride it to you.)"
+        },
+        {
+          "text": "Summer will always end, don't take it too seriously.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6",
+          "reply": "{name} lowered her head and kicked away an innocent pebble at her feet: \"...Yeah. I know. Summer will end—it's like this every year, I understand.\"",
+          "os": "(The courage she mustered vanished. But when she said, \"I understand,\" her voice was hoarse.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "happy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "s6_ride",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the day we parted, {name} rode his bike to that intersection by the sea again. The traffic lights were still flashing, and the sea breeze was still salty—exactly the same as when we arrived, only the colors of summer had changed from deep green to pale gold."
+        },
+        {
+          "who": "name",
+          "text": "\"Seven years ago, I couldn't catch up with you at the train station.\" {ta} looked back at you, the sea breeze making {ta}'s hair a mess. \"This time, I want to say it properly. I won't say goodbye—we've agreed, next summer, we'll still spend it together.\"",
+          "when": "flag: holding hands"
+        },
+        {
+          "who": "name",
+          "text": "\"Get in.\" {ta} patted the back seat, her smile a little forced—you know, that kind of smile, it's forced. \"I'll give you the last ride. Same old rules—I'll ride slowly, so you won't get jostled.\"",
+          "when": "flag: missed"
+        },
+        {
+          "who": "self",
+          "text": "I sat on that familiar back seat. {ta}'s back was much broader than it was seven years ago, but the rhythm of pedaling was still the same. Time will pass, people will grow up, but some things—like the sound of a bicycle chain—will never change."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The car stopped in the middle of the intersection, and the green light came on again. {name} didn't move, just gripped the handlebars with both hands, as if making a very important decision. The sea breeze pushed the sound of the waves towards him, then pulled them back."
+        },
+        {
+          "who": "name",
+          "text": "\"I actually—don't want you to leave at all.\" {ta} finally said it, without turning around, her voice so low it was as if she were talking to the handlebars, \"But I won't stop you. Go wherever you want to go—as long as you don't forget, there's someone here, and they'll always be here.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said, \"I won't stop you.\" The child who chased after her to the train station seven years ago has grown up. She has learned to let go, to give way, and to consider other people's future before speaking."
+        }
+      ]
+    },
+    {
+      "id": "s6_station",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "shy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next morning at the station. {name} came to see you off, pushing that old bicycle—a small bunch of wild daisies picked from the roadside tied to the back seat. {ta} squatted on the platform, carrying your luggage piece by piece onto the bike, and finally stuffing that blue moon marble into your coat pocket."
+        },
+        {
+          "who": "name",
+          "text": "\"Here, take the marble.\" {ta} patted the outside of her pocket. \"I found a new one on the beach—it's blue too, but not as pretty as this one. This one's been with you for seven years—it's time for it to go with you.\""
+        },
+        {
+          "who": "self",
+          "text": "A new marble. On some afternoon I don't know, someone went to the beach and found a replacement. Not to forget the old—but to tell me: it's okay that you took my childhood, I'll find another one. I'll wait for you here—you take the old one, I'll wait with the new one."
+        },
+        {
+          "who": "narration",
+          "text": "The bus started moving. {ta} stood on the platform—neither running nor chasing. She simply raised a hand and waved. The bicycle was parked beside her, its chain gleaming in the morning light—{ta} had finally given that old, beat-up bike some fresh oil."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "seaside_crossing",
+      "face": "shy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The green light turned yellow, and {ta}'s back was taut in the sea breeze. The floral cotton cushion in the back seat had been sat on so many times that it was already a bit flat."
+        }
+      ],
+      "options": [
+        {
+          "text": "Hug him/her from behind: I'm going to have you this summer.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}'s handlebars were all crooked, and he almost fell into the ditch by the roadside: \"...Hold on, hold on tight! I'm carrying you! If you fall, I won't pay for the repairs!\" But his voice was laughing like a firework.",
+          "os": "({ta} marked this moment as the end of the entire summer. No—it was a comma. There will be more to come.)"
+        },
+        {
+          "text": "He patted her shoulder with a smile: \"When I come back, I'll treat you to all the food on this street.\"",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}: \"Keep your word! Try standing me up and see what happens—I'll write your name on the alleyway wall and curse you every day!\"",
+          "os": "(They believed it because you said it. They even planned out how to insult you beforehand.)"
+        },
+        {
+          "text": "To avoid delaying {ta}, I'll just quietly walk away.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} got impatient and almost stood up from her seat: \"You're doing this again! Who said you were holding me up! I'm just afraid you'll think I'm holding you up!\"",
+          "os": "(You wanted to think of them, but you almost lost each other again. Two people who both care about the other are most likely to miss each other.)"
+        },
+        {
+          "text": "He waved and walked into the crowd without looking back.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} stood still, hands hanging limply on the handlebars, watching your figure recede into the distance—exactly the same as seven years ago. {ta} didn't call out. Not because she didn't want to, but because she was afraid you'd turn around, glance at her, and then keep walking.",
+          "os": "(The scene from seven years ago is repeating itself. History always finds itself at the same crossroads, repeating the same silence.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "happy",
+      "chapter": "Final Chapter: The Next Summer",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "That summer didn't end at the train station, but in a promise—to spend the next summer, and the summer after that, together. It wasn't just a slogan; it was a pinky promise."
+        },
+        {
+          "who": "narration",
+          "text": "The day you left, {name} didn't go to the station—because you had agreed to come back, not see you off. {ta} only sent a text message: 'How long will it take to ride the bike to your place? Getting ready to start practicing long-distance riding.'",
+          "when": "flag: Together"
+        },
+        {
+          "who": "name",
+          "text": "\"We made a pinky promise, no backing out.\" {ta} later held up her pinky finger in the video call, her face on the other end of the screen even darker from the sun, her canine teeth still shining brightly. \"This time it's my turn to go to your city to see the fireworks. I've saved enough for the fare—if I can't ride up, I'll take the bus. Anyway, I have to go.\""
+        },
+        {
+          "who": "self",
+          "text": "The glass marble I'd clutched for seven years is now warm in my pocket. It turns out some feelings really do grow stronger over many summers, slowly but surely. Unhurriedly, but with unwavering certainty.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "happy",
+      "chapter": "Final Chapter: The Next Summer",
+      "goto": "s7_postcard",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A month after you left, {name} really started practicing long-distance cycling. She updated her cycling routes on WeChat Moments every day—starting from the seaside intersection, each lap longer than the last."
+        },
+        {
+          "who": "name",
+          "text": "\"From now on,\" {ta} sent a voice message late at night, her voice broken by the sea breeze, \"the hottest days of the year will be ours. We won't say 'goodbye'—we'll say 'wait for me.' I'll be there soon.\""
+        },
+        {
+          "who": "self",
+          "text": "Bai Juyi wrote, \"No one knows except my two hearts.\" But I know—in this small town with its salty sea breeze, at every moment the traffic light changes, there is someone pedaling hard on their bicycle, heading towards me."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "sad",
+      "chapter": "Final Chapter: Seeing You Off Once Again",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You left the small town once again. {name} stood at the end of that old sycamore-lined road, holding her bicycle, just like seven years ago—watching you walk away. Only this time, {ta} didn't call out, just waved goodbye."
+        },
+        {
+          "who": "name",
+          "text": "\"Be careful on the road.\" {ta} laughed and shouted loudly, as if declaring to the whole street that she was not sad. \"...Come back often, hey! Grandma Wang at the alley entrance has given birth to another litter of cats. Next time you come back—you can touch them.\" Her voice was a little hoarse at the end."
+        },
+        {
+          "who": "self",
+          "text": "I clutched the marble and looked back one last time. {ta} was still standing there, like someone who would always be waiting. The sea breeze was strong, but {ta} wasn't wearing a coat—probably because she was in such a rush when she came out that she forgot.",
+          "when": "tag: Loyal dog >= 2"
+        },
+        {
+          "who": "narration",
+          "text": "Summer is over. Some things left unsaid can only be left for the next—or perhaps never another—summer. That blue moon marble, in {ta}'s pocket, cooled by the sea breeze."
+        }
+      ]
+    },
+    {
+      "id": "s7_postcard",
+      "type": "story",
+      "sceneKey": "seaside_crossing",
+      "face": "happy",
+      "chapter": "Final Chapter: Not Saying Goodbye",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After school started, you received your first postcard—from that little seaside town. The front showed a traffic light intersection by the sea, and the back had {name}'s scrawled handwriting: 'I rode along that riverbank again today. The banyan tree's tendrils have grown longer. Grandma Wang got a new orange cat. I added a new marble to the tin box—once you've collected enough, we'll have a pair.'"
+        },
+        {
+          "who": "self",
+          "text": "The postcard has a drawing of a crooked bicycle in the bottom left corner, with a stick figure sitting on the back. Next to it are two small words: You."
+        },
+        {
+          "who": "narration",
+          "text": "You put the postcard into that eight-year-old tin box and closed the rusty lid. The tin box is at the deepest part of the drawer, nestled among the remnants of White Rabbit candies and Blue Moon marbles. Like a small museum, just for you two."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "lakeside_fireworks",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This summer is coming to an end. Now—what would you like to say to {name}? (≤100 words, this will be the last thing you write about this summer)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} is holding up her pinky finger, waiting for you—even though we're separated by a phone screen, {ta} is truly waiting. Her eyes are filled with the sea breeze and fireworks. {ta} is waiting for a sentence that belongs to this summer, and to every summer to come.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "{name} is already out of sight at the alley entrance. You're alone in the car, clutching that Blue Moon marble, wanting to tell the words you've held back all summer to the wind outside the window—maybe the wind will ride an old bicycle and deliver your words for you.",
+          "when": "flag: fulfill"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Tongxia people",
+      "trigger": "top: sincerity",
+      "caption": "The bus you missed seven years ago, you finally stopped this summer—this time, neither of you watched the other go. The glass marble you'd clutched for seven years finally warmed the world between you two.",
+      "report": "[Relationship Personality - Summer Companion] You belong to the rare \"secure\" type: you don't shy away when your heart is moved, nor do you run away when parting is imminent. You neither treat relationships as a game, nor do you use \"for your own good\" as an excuse to leave—you always reach out when it's time to get closer. Poets write, \"Meeting is difficult, parting is even more difficult,\" but you've done the most difficult thing: made meeting no longer difficult. Those who can spend summers with you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "Wind Chaser",
+      "trigger": "Top: Aquaman",
+      "caption": "You had a lively and enjoyable summer, but you never truly gave your heart to anyone—just like the sea breeze, it blew by and then disappeared.",
+      "report": "[Relationship Personality - The Wind Chaser] You are sunny, charming, and free-spirited, showing only fleeting enthusiasm to everyone, yet fearing that a promise will stifle your freedom. You illuminated many people's summers, but left the one who waited seven years, clutching marbles, standing there, unseen. Don't wait until the cicadas' song fades to realize your surroundings are empty."
+    },
+    {
+      "endingId": "toxic",
+      "title": "cold-hearted people",
+      "trigger": "top: scum",
+      "caption": "You lightly flicked away every sincere offer that was presented to you, not even taking a summer or a marble you had held for seven years seriously.",
+      "report": "[Relationship Personality - The Cold-Hearted One] You're used to saying \"Don't take it too seriously,\" approaching others only when needed and turning away when not. You may never be tied down, but you've also missed the person you made a promise with as childhood marbles. The coldest thing isn't the summer night sea breeze, but a heart that refuses to take things seriously."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Lane Keeper",
+      "trigger": "top: Loyal Dog",
+      "caption": "In order not to delay {name}, you repeatedly backed down, preferring to walk away yourself rather than put {ta} in a difficult position—but you forgot that {ta} was never waiting for your concessions.",
+      "report": "[Relationship Personality - The Guardian] You give your all, always putting yourself last, often moving yourself in the process, but almost losing each other in the process. {name} doesn't want your concessions, but rather for you to stand by {their} side. Don't forget, you also deserve to be pursued and cherished."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "passerby",
+      "min": -99,
+      "caption": "A summer has passed, and even the fireworks in the sky and the sea breeze along the embankment couldn't write an ending for your story with {name}.",
+      "report": "[Relationship Personality - Passerby] Your choices are inconsistent and difficult to categorize—sometimes sincere, sometimes withdrawn. Perhaps you haven't figured out whether you want to give this summer a proper status. First, understand your own heart, then decide whether you want to stay on that riverbank."
+    }
+  ]
+}

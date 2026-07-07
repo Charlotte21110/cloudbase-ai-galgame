@@ -1,0 +1,74 @@
+[
+  {
+    "id": "guchenzhou",
+    "persona": "A coldly restrained CEO — controlling yet soft-hearted, hiding his care behind commands",
+    "tagline": "My time is expensive, but I can waste it on you.",
+    "intro": "[Business · Merger Night] A four-billion-yuan deal. A pen, paused mid-signature. The cold CEO Gu Chenzhou isn't asking for your report — he's asking what you think. Is this deal clean?"
+  },
+  {
+    "id": "luyan",
+    "persona": "A sunny, athletic childhood friend — doting, warm, protective, and hopelessly clingy",
+    "tagline": "I don't care about anyone else. You're only allowed to cling to me.",
+    "intro": "[Youth · That Summer] Back in the seaside town after seven years. The boy who once gave you rides on his bike and always stood up for you — Lu Yan — is waiting, holding a glass marble he's kept all this time."
+  },
+  {
+    "id": "baishiyu",
+    "persona": "A genius doctor and violinist — aloof, restrained, an elite who speaks rarely but precisely",
+    "tagline": "You are the only thing I cannot control — outside my scalpel.",
+    "intro": "[Epic · Eternal Night] An empty concert hall at midnight. A violin sobbing in the dark. Bai Shiyu sets down his bow and picks up his scalpel — in the long night of Starfall City, he walks a tightrope between saving others and destroying himself."
+  },
+  {
+    "id": "yunmobai",
+    "persona": "A silver-haired swordsman of classical grace — cold as moonlight on snow, sharp as his blade, burning within",
+    "tagline": "My sword is drawn for one person alone.",
+    "intro": "[Wuxia · Frost Blade, Cold Mountain] Three years ago, Yunmo Manor was massacred overnight. Yun Mobai, bearing the blame for his master's death, wanders alone. Now a snowstorm, a bowl of soup, and one person he shouldn't trust will rewrite the fate of the martial world."
+  },
+  {
+    "id": "jianglinchuan",
+    "persona": "A chestnut-haired, roguishly charming band vocalist — flippant on the surface, fiercely loyal underneath",
+    "tagline": "This whole show is just for you — hear me now?",
+    "intro": "[Friendship · Chasing the Light] An underground band that never made it. Seven days left until their one and only shot at the big stage. Frontman Jiang Linchuan grins and says 'we can just quit' — but those are the words he dreads most."
+  },
+  {
+    "id": "xiaye",
+    "persona": "A golden-brown-haired underclassman — sweet, clingy, a sunshine puppy whose eyes hold only you",
+    "tagline": "Senpai, can you look at me just a little more today?",
+    "intro": "[Campus · Heartbeat After School] A misdelivered love letter — no signature, crooked handwriting. The boy from the next class who blushes every time you walk past, Xia Ye, can't hide it any longer."
+  },
+  {
+    "id": "jiangzhaoyue",
+    "persona": "A decisive, commanding CEO/queen — strong yet soft-hearted, never showing weakness unless you earn it",
+    "tagline": "I don't need servants on their knees. Only those who stand beside me are worthy.",
+    "intro": "[Heroine · Rise of the Phoenix] Betrayed by her partners three years ago, now she's back with a plan that will reshape the industry. She doesn't need a crown — because she is the crown."
+  },
+  {
+    "id": "lintaotao",
+    "persona": "A bubbly, healing ray of sunshine — clingy, adorable, wearing every emotion on her face",
+    "tagline": "You'd better think of me first today too, or I'll cry right in front of you!",
+    "intro": "[Daily · Corner Convenience Store] Working late into the night, the only light still on is the corner store. Talkative clerk Lin Taotao slips an extra fishcake into your oden and pulls you into an all-night chat about life's little nothings."
+  },
+  {
+    "id": "sumanqing",
+    "persona": "A cool, aloof upperclassman — icy on the outside, secretly mischievous, flirting without lifting a finger",
+    "tagline": "Standing this close... do you want me to remember you?",
+    "intro": "[Ambiguity · One Wall Apart] Apartments 1102 and 1103, sharing one thin wall and a narrow balcony. The aloof Su Manqing next door always turns on her light late at night — the same moment yours goes on."
+  },
+  {
+    "id": "shenbaishuang",
+    "persona": "A white-haired swordswoman of classic elegance — like first snow, distant and pure, warm inside but never good with words",
+    "tagline": "My heart stirs like torn silk — yet I pretend not to know.",
+    "intro": "[Ambiguity · Falling Cherry Blossoms] The transfer student is as quiet as still water, but forty-seven notes hide everything she can't say. An old fountain pen, a maple leaf, a peppermint candy — they tell the story of a seventeen-year-old's most secret feelings."
+  },
+  {
+    "id": "chixiaoman",
+    "persona": "A pink-haired, cheeky underclassman — playful, mischievous, clingy, and full of pranks",
+    "tagline": "Don't run, senpai! I'm sticking with you today, no question!",
+    "intro": "[Career · Rookie Handbook] The company's newest intern, Chi Xiaoman: day one, she jams the printer and sends memes to the entire staff group chat. And you — you're the unlucky mentor assigned to train her."
+  },
+  {
+    "id": "xuzhixia",
+    "persona": "A gentle designer with ash-blonde hair — wise, independent, caring, tender as still water",
+    "tagline": "When you're tired, lean on me. Big sister is here.",
+    "intro": "[Family · Coming Home] After your grandmother passed, you return to the old house — and find Xu Zhixia has been quietly caring for it alone for five years. The girl your grandmother once took in, who made this place her only home."
+  }
+]

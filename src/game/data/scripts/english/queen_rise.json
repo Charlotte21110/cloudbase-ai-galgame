@@ -1,0 +1,789 @@
+{
+  "_id": "script_queen",
+  "id": "script_queen",
+  "title": "Phoenix Cries in the Nine Heavens - She Doesn't Need a Crown",
+  "openingTip": "Three years ago, {name} was betrayed and ousted by his most trusted partner, falling from the founder of a company valued at billions to a penniless \"business outcast.\" Three years later, {ta} returns to the city that once banished {ta} with a business plan that could revolutionize the entire industry. And you—a stranger {ta} rescued by chance, and the only person {ta} can't truly understand. This is a story about ambition, rebuilding, trust, and independence. Most of the time, you only need to tap the screen to read on; there aren't many crossroads where you truly have to make decisions, but each one concerns whether you're willing to stand beside someone who doesn't need anyone to save them.",
+  "prologue": "{name}. Three years ago, this name ranked seventh on Forbes Asia's 30 Under 30 list—but overnight, the partners and the board of directors launched a meticulously planned expulsion. {ta} was sidelined, falsely accused, and forced out of the company she had built with her own hands. Everyone thought {ta} was finished—including the media, investors, and those who had once adored {ta} and said \"we'll always support you\" when {ta} was at her peak. But three years later, one late night, you met {ta} under a pedestrian bridge in a downpour—{ta} was soaked to the bone, clutching a phone with a cracked screen, making a call to her last potential investor. The call had already ended—but {ta} finished speaking into the dial tone: \"It's okay. We'll invest in the next one.\" You handed {ta} your umbrella. {ta} didn't take it—but glanced at you. In that glance, there was no gratitude, no vulnerability—only a chilling determination: {ta} would not fall. Not because {ta} was fearless—but because {ta} wouldn't allow herself to be afraid.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "happy",
+      "chapter": "Prologue: The Overpass in the Rainstorm",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The torrential rain poured down all night. You worked overtime until the early hours of the morning, and as you crossed the overpass, you saw a person standing at the very top of the steps—{name}. {ta} wasn't holding an umbrella, his hair was plastered to his face, his suit jacket was draped over his arm, and his white shirt was soaked through. But the way {ta} stood there didn't look like a downtrodden person drenched in the rain—it looked like a sword thrown into the mud, blade facing upwards."
+        },
+        {
+          "who": "self",
+          "text": "I recognized her. Three years ago, she graced the covers of every business magazine—\"The Youngest Female Founder of a Tech Company,\" \"A Rising Star in Business,\" \"An Industry Disruptor.\" But three years later, those magazines have changed their cover figures—to her former partner who climbed to the top by stepping on her."
+        },
+        {
+          "who": "narration",
+          "text": "You handed her the umbrella. She didn't take it. She looked down at her soaked shirt and suddenly laughed—not a bitter laugh, but a nonchalant laugh that said, \"I've seen it all.\""
+        },
+        {
+          "who": "name",
+          "text": "\"No need.\" The sound of rain drowned out half of {ta}'s voice, but the other half was clearer than thunder. \"I'm not used to owing favors. An umbrella will do.\" {ta} glanced at you—her gaze sharp as if scrutinizing a contract. \"Who are you?\""
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "happy",
+      "chapter": "Prologue: The Overpass in the Rainstorm",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "self",
+          "text": "\"Who are you?\"—these three words, coming from {ta}'s mouth, didn't sound like a casual greeting. It sounded like he was assessing a variable—are you an opportunity, a risk, or just insignificant noise? Someone who has been betrayed by the whole world looks at everyone like they're reading a due diligence report."
+        },
+        {
+          "who": "narration",
+          "text": "You introduced yourself. {ta} didn't react much afterward—she simply put her cracked phone into her pocket and wiped the rain off her face with her sleeve. But {ta}'s next words left you stunned."
+        },
+        {
+          "who": "name",
+          "text": "\"You do data analysis?\" {ta}'s eyes lit up for a moment—not out of genuine interest in you, but in your skills. \"I have a project. I need someone who knows data modeling. Are you free tonight?\""
+        },
+        {
+          "who": "self",
+          "text": "It's 1 a.m. A torrential downpour. An overpass. A woman, soaked to the bone, asks me if I'm free to discuss projects tonight. This isn't a flirtation—this is someone who's back at the mall, starting their first interview on a rain-soaked overpass."
+        },
+        {
+          "who": "narration",
+          "text": "Before you could answer, she turned and walked down the steps—her steps were quick, her high heels making a crisp sound in the puddles. After three steps, without turning her head, she tossed out a sentence: \"Whether you come with me or not is up to you. I'm at that 24-hour café on the corner. If you come—close your umbrella; I don't want charity.\""
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Prologue: The Overpass in the Rainstorm",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You followed. The café was dimly lit, with only a dozing clerk and a humming coffee machine. {name} sat in the corner, pulling an old laptop covered in sticky notes from her bag—the screen was densely packed with data charts and business models. {ta} wrung out her wet hair and tossed it over her shoulder—a move as swift as shaking off three years of gloom."
+        },
+        {
+          "who": "name",
+          "text": "\"Sit.\" {ta} gestured to the chair opposite—not a request, but an instruction. \"Let me make this clear—I'm not asking for help. I'm selecting people. I don't need to see your resume—the fact that you're willing to follow a soaking wet person into a coffee shop tonight proves two things: first, you're very curious; second, you're not afraid of risks. I need both of those.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} speaks like a scalpel. Precise, calm, and not a single word is wasted. Three years of hardship haven't dulled {ta}'s edge—they've instead honed {ta} into an even sharper weapon. The person sitting before me isn't a downtrodden victim in need of pity—it's a leopard sharpening its claws."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} turned the laptop towards you. On the screen was a business plan—the company was called \"Phoenix Cry.\" Below, in small print, was the following: 'Overthrowing you isn't about proving you wrong. It's about proving—I don't need any of you to stand here.' This wasn't a business plan—it was a declaration of war."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Prologue: The Overpass in the Rainstorm",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A coffee shop at 2 AM. A person who has just been abandoned by the whole world is plotting a dramatic counterattack with an old laptop and a cup of black coffee. And you—are the first person {they} chose. Not because you are so outstanding—but because you offered an umbrella on a rainy overpass, and {they}, though they didn't take it, remembered it."
+        }
+      ],
+      "options": [
+        {
+          "text": "Your business model has three flaws. But your thinking is sharp—I can help you fix them.",
+          "textVariants": [
+            "Sit down and turn on your computer: I can optimize your data model. Let's discuss terms.",
+            "After carefully reading the business plan: You're not starting a business—you're waging war. I'm joining."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s2",
+          "reply": "{name}'s gaze shifted slightly—not with surprise, but with an almost admiring scrutiny. {ta} pushed the cup towards you: \"Three loopholes. Tell me—if you get more than two right, you'll be 'Phoenix Cry's' number one employee starting tomorrow.\" {ta}'s lips curved into a smile—the first time in three years that {ta} had smiled because of someone's words.",
+          "os": "(They interviewed seventeen people—sixteen said, \"Your project is great,\" but only this one said, \"Your project has flaws.\" They don't need flatterers—they need people who can challenge them.)"
+        },
+        {
+          "text": "The business plan is strong. But you can't handle it alone—you need a team.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s2",
+          "reply": "{name} gave a cold laugh: \"A team? Three years ago I had a team of 120 people—and they were the ones who betrayed me in the end. I don't need a team. What I need is—someone I can't bring down.\" {ta} looked at you, \"Can you bring them down?\"",
+          "os": "(They don't trust the team—because they've been hurt by it before. But when they ask you \"Can you break it down?\"—it means they're considering: maybe, they could try trusting someone else.)"
+        },
+        {
+          "text": "I admire your courage. But I'm just passing by—good luck.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s2",
+          "reply": "{name} picked up her coffee cup: \"Good luck? I don't rely on luck.\" {ta} raised her chin, \"But—remember tonight. The day I turn the tables, you'll regret missing out.\" This wasn't a threat—it was a promise.",
+          "os": "(They remember you. Not because you helped them—but because you were the first person to hand them an umbrella on the overpass in the pouring rain. Even though you're gone now—they will remember that umbrella.)"
+        },
+        {
+          "text": "Sorry, I don't want to get involved. Your enemies are too big—I can't afford to mess with them.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s2",
+          "reply": "{name} closed the laptop. {ta}'s expression remained unchanged—like a wall that had stood firm for three years: \"Thank you for your honesty. Most people don't dare to say they're afraid—at least you did.\" {ta} stood up, placed the coffee money on the table—paying for your cup too: \"Take care. As for the umbrella—I don't owe you anything.\"",
+          "os": "(He/She) even settles accounts with those who refuse to help—not even owing a favor for a cup of coffee. This pride isn't bravado—it's the only self-respect a betrayed person can still cling to.)"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Chapter One: The Phoenix's First Cry",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Three months later, {name}'s company, \"Fengming Technology,\" was officially registered—the office was a 50-square-meter unfinished room, with only four employees including {ta}. Yet, every day, {ta} would walk into that office, which didn't even have air conditioning, dressed in a sharp-tailored suit, exuding an aura as if entering a Wall Street trading floor."
+        },
+        {
+          "who": "name",
+          "text": "\"If the budget isn't enough for air conditioning—then open the windows.\" {ta} placed a secondhand fan on the table, the wind whipping her hair into a mess, but her gaze as she looked at the reports was more focused than any CEO's. \"Air conditioning is for comfort zones. We—have no comfort zones.\""
+        },
+        {
+          "who": "self",
+          "text": "In three months, {ta} met with forty-three investors—forty-two of whom rejected her. The reasons were varied: \"Your industry history is too heavy,\" \"Your former partner will blacklist you,\" \"It's too difficult for female founders to raise funds.\" But every time {ta} was rejected, she revised her business plan—she's already on the forty-third version."
+        },
+        {
+          "who": "narration",
+          "text": "The forty-third investor finally said \"yes.\" That night, {name} didn't celebrate—{ta} worked alone until 3 a.m., reviewing every single clause of the financing agreement twice. {ta} wrote a line in the blank space on the last page of the contract: \"Never let someone else's money become someone else's knife.\" Three years ago, {ta} was cut in the same way."
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Chapter One: The Phoenix's First Cry",
+      "goto": "s2c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The good times didn't last long. {name}'s former partner—now Zhao Dingshan, CEO of the industry giant Dingfeng Group—publicly criticized him at an industry summit: \"Some failed entrepreneurs' entrepreneurial shows are nothing more than exploiting sympathy. The market doesn't need avengers—it needs truly valuable products.\" The audience roared with laughter. {name} was sitting in the third row."
+        },
+        {
+          "who": "name",
+          "text": "{ta} stood up. The entire room fell silent. {ta} didn't refute—she simply took a document from her bag, walked to the stage, and slammed it onto Zhao Dingshan's podium: \"This is Dingfeng's user churn data for last quarter. Your product's penetration rate in the three core markets has decreased by twenty-two percent year-on-year. Before you laugh at me—look at how many cracks are under your own feet.\""
+        },
+        {
+          "who": "narration",
+          "text": "The entire hall fell silent. Zhao Dingshan's expression changed—not because he had been publicly humiliated, but because the data was real. {name} turned and walked off the stage, her steps neither fast nor slow—{ta} disdained to run after a petty person. As she passed by you, {ta} whispered something—only you heard it."
+        },
+        {
+          "who": "name",
+          "text": "\"Remember today.\" There was a cold certainty in {ta}'s voice. \"This is the last time {ta} will stand on this stage and laugh at me. Next time—the person standing on this stage will be me.\""
+        }
+      ]
+    },
+    {
+      "id": "s2c",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "sad",
+      "chapter": "Chapter One: The Phoenix's First Cry",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Late at night after the summit. You're working overtime at the office when you hear noises on the rooftop. You push open the door—{name} is sitting alone on the concrete steps, clutching a cup of now-cold coffee. {ta}'s suit jacket is off, and the sleeves of his white shirt are rolled up to his elbows—he doesn't look like a CEO who just stole the spotlight at an industry summit, but rather someone who's been holding on for too long and has finally found a corner where no one can see him."
+        },
+        {
+          "who": "name",
+          "text": "\"...I'm not afraid of him.\" {ta} didn't turn around, but her voice was softer than ever before. \"What I'm afraid of is—one day becoming like him. To win, he'll stop at nothing. He'll use other people's trust as a weapon and betrayal as a springboard.\" {ta} looked down at her palm—the hand that had signed countless contracts, now clenched tightly, her knuckles white."
+        },
+        {
+          "who": "self",
+          "text": "So this is what lies beneath {ta}'s armor. {ta} isn't afraid of losing—{ta} is afraid of winning the wrong way. Someone who has been crushed and risen again in the meat grinder of capital fears not the enemy—but becoming their own enemy. This clarity—is something rarer than ambition."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} suddenly turned to look at you—those eyes, always sharp as a scalpel, now resembled two leaves washed by rain: transparent, fragile, yet unwilling to fall. \"Do you think—what I've done—was worth it? Not in terms of commercial value. It's about…whether I, as a person, am worth it?\""
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "sad",
+      "chapter": "Chapter One: The Phoenix's First Cry",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind on the rooftop tousled {ta}'s hair. {ta} didn't bother to fix it—because at this moment, {ta} wasn't the CEO, the founder, or the soul of 'Fengming Technology'. {ta} was just an ordinary person on a rooftop in the dead of night, cautiously asking the only person who didn't judge {ta}, \"Am I worthy?\""
+        }
+      ],
+      "options": [
+        {
+          "text": "You deserve it. Not because of your company or your plans—but because you stood there in the rain all night.",
+          "textVariants": [
+            "It's worth it. A person who is afraid of going astray is already better than most people.",
+            "You ask me if it's worth it? When you finished speaking your last words to the last investor on the overpass in the pouring rain—it was already worth it."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "flag": "trust",
+          "reply": "{name} stood there stunned for a long time. {ta} put down the coffee cup—her fingers lingered on the rim for a moment. Then {ta} did something she had never done before: {ta} leaned against the rooftop railing, her shoulders relaxing slightly—like a bowstring stretched for three years, finally allowed to loosen a little. \"...Thank you.\" These two words came from {ta}'s mouth—heavier than signing a contract worth a hundred million.",
+          "os": "({ta} never says thank you. Because saying thank you means admitting you need someone—and {ta} hasn't allowed herself to need anyone for three years. But tonight—{ta} allowed herself.)"
+        },
+        {
+          "text": "You don't need me to answer this question. You know the answer better than anyone else.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "guard",
+          "reply": "{name} chuckled softly—not a sharp, cold laugh, but a bittersweet, almost relieved laugh: \"You're right. I know it. It's just that sometimes—I want to hear it from someone else.\" {ta} stood up, brushed the dust off her skirt, \"Let's go. Overtime—we still have three models to finish.\" She reverted to being the person who wouldn't allow herself to be vulnerable for more than five minutes.",
+          "os": "(They were vulnerable for only five minutes—then immediately withdrew all their softness. Not because they didn't want to be comforted—but because they were afraid that if they were comforted, they would never be able to stand up again.)"
+        },
+        {
+          "text": "Honestly? I don't know if you're worth it—but your project certainly has potential.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "bystander",
+          "reply": "{name} chuckled—a laugh tinged with hurt, but more so with an knowing \"I knew it\": \"A businessman. You're telling me it's worth it—you're concerned with the project, not the people. True. Who cares about people in the business world?\" {ta} stood up, transforming back into the invincible CEO.",
+          "os": "(The question asked, \"Am I worth it?\"—and you answered, \"The project has potential.\" The person understood: you care about commercial value, not the person. This honesty—the person respects it, but doesn't feel warm.)"
+        },
+        {
+          "text": "You're pushing yourself too hard. Some battles don't have to be won—letting go of yourself is also an option.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s3",
+          "flag": "negative",
+          "reply": "{name}'s eyes instantly turned cold—cold as they were on that night three years ago when she was ousted from the board: \"Let yourself go? Then who will let me go? Have those who falsely accused me let me go? Have those media outlets that kicked me when I was down let me go?\" {ta} stood up and slammed her coffee cup heavily against the railing—a crack appeared at the bottom of the cup. \"I don't need to be let go. What I need is—to stand back up.\"",
+          "os": "(You said the last thing they wanted to hear—give up. Telling someone who's been abandoned by the whole world to give up is like rubbing salt into their wounds. They don't hate you—they hate that there are always people in this world telling them: stop struggling.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Chapter Two: A Battle with No Way Out",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In six months, Fengming Technology grew from four to forty people. {name}'s product penetrated three of the most competitive markets—each one snatched from Zhao Dingshan. {ta} wasn't just doing business—{ta} was playing a game of chess, meticulously reclaiming all the pieces {ta} had captured three years prior."
+        },
+        {
+          "who": "self",
+          "text": "I've seen {them} still revising a PowerPoint presentation at 4 AM. I've seen {them} secretly take two painkillers in the bathroom after a seven-hour meeting. I've seen {them}'s voice suddenly soften when they receive a call from their mother—soft to the point of sounding like a different person. {them} can be tough on the whole world—except for two things: {them}'s mother's phone call, and every product {them} makes by hand."
+        },
+        {
+          "who": "narration",
+          "text": "But Zhao Dingshan wouldn't sit idly by. He began using all his connections to blacklist Fengming—cutting off the supply chain, poaching key employees, and spreading rumors that {name} was mentally unstable. People in the industry started whispering: 'She's gone mad. Going against Dingfeng is suicide.'"
+        },
+        {
+          "who": "name",
+          "text": "\"Let them talk,\" {ta} said to the forty worried employees at the morning meeting. Her voice wasn't loud, but every word seemed to pierce the air. \"Three years ago, they said I was finished—I wasn't. Now they say I'm crazy—I'm not crazy. The day I went crazy was the day I gave up. And that day—will never come.\""
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: A Battle with No Way Out",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The crisis arrived faster than expected. Zhao Dingshan used his connections to cut off Fengming's largest data source partner—without data, the product was just an empty shell. The entire company was thrown into panic. Two core technical staff members resigned on the same day—they had received offers from Dingfeng offering three times their current salary."
+        },
+        {
+          "who": "name",
+          "text": "{ta} sat in the empty conference room, two resignation letters spread out in front of her. {ta} felt no anger—{ta}'s fingers lightly traced the resignation letters, as if smoothing out a crumpled piece of paper: \"...I don't blame them. They have families to support, mortgages to pay. Three times the salary—if I were in their shoes, I might have wavered too.\" {ta} looked up at the ceiling, \"But I can't waver. Because if I fall—the remaining thirty-eight people won't even have the option of three times the salary.\""
+        },
+        {
+          "who": "self",
+          "text": "This is the weight that {ta} carries. Not for herself—but for the thirty-eight people who followed {ta} from scratch. {ta}'s shoulders are stronger than anyone else's—but even the strongest shoulders will ache carrying the expectations of so many people. {ta} just doesn't let anyone see {ta}'s pain."
+        },
+        {
+          "who": "narration",
+          "text": "It's late at night. You see {ta} still in the office—{ta} is on the phone. Her voice is low, and she's speaking in a dialect. You can't quite understand it—but you catch the last sentence: 'Mom—I'm fine. Don't worry. The company is doing well. Your daughter is doing well.' After {ta} hangs up, she buries her head in her arms—for a long time. Her shoulders don't move—but you see her hands are trembling."
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: A Battle with No Way Out",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You walked over and placed a cup of hot water on {ta}'s table. {ta} looked up with red eyes—but regained composure within three seconds. That speed of recovery—it was the result of three years of practice."
+        },
+        {
+          "who": "name",
+          "text": "\"I'm fine.\" {ta} picked up her water glass and took a sip—it was scalding hot, but {ta} didn't pull her hand away. \"It's just...sometimes I wonder—if I hadn't trusted Zhao Dingshan so much three years ago, would things be different now?\" {ta} gave a bitter smile. \"Never mind. Regret is the most expensive luxury—I can't afford it.\""
+        },
+        {
+          "who": "self",
+          "text": "They couldn't afford it and regretted it. Because they staked everything on \"going back\"—leaving no way out, no room for retreat. This kind of all-or-nothing courage is both heartbreaking and awe-inspiring. It's not that they weren't afraid—they swallowed their fear and then stood up and kept going."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} put the resignation letter on the table into the drawer—without tearing it up. {ta} said: Keep it. A reminder to herself—human hearts can't withstand tests, so don't test them. Make the product so good they won't want to leave—that's more effective than any attempt to retain them. This sentence—like an ironclad rule in management, and also like a rule set by a heartbroken person for themselves."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: A Battle with No Way Out",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It's late at night, and only the two of you are left in the office. {ta}'s eyes are still a little red—the three seconds of vulnerability have been recovered, but only you saw the traces of those three seconds. Sitting across from you is someone who refuses to break down—but you know that refusing to break down and not being able to break down are two different things."
+        }
+      ],
+      "options": [
+        {
+          "text": "You don't have to shoulder this alone. I'll figure out the data source issue—you go and rest.",
+          "textVariants": [
+            "You're not made of iron. Go back to sleep tonight—tomorrow's battles can wait until tomorrow.",
+            "Your shoulders are strong enough. Let me share some of the burden—this isn't charity, it's partnership."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "flag": "peers",
+          "reply": "{name} looked at you for a long time—the look wasn't like looking at a subordinate or colleague, but like scrutinizing someone who might be trustworthy. {ta} finally nodded—a slight nod, yet it took a lot of effort from {ta}: \"Okay. But remember—you said 'partnership,' not 'help.' I don't accept help—but I accept working side-by-side.\"",
+          "os": "({ta} agreed. This was the first time in three years that {ta} had allowed someone to share {ta}'s burden. Not because they couldn't carry it anymore—but because the person said \"partnership,\" not \"pity.\" This difference—for {ta}—was worlds apart.)"
+        },
+        {
+          "text": "Go ahead and cry for a while. I won't watch.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s4",
+          "flag": "guard",
+          "reply": "{name} paused for a second—then smiled. That smile held both emotion and stubbornness: \"I won't cry. Crying will ruin my makeup—I have to meet clients tomorrow.\" But {ta} remained silent for a long time. In that silence, you heard {ta} take a deep breath—and slowly exhale. That was the closest {ta} had come to crying in front of others in three years.",
+          "os": "(You said, \"I won't look.\" Those three words were more effective than any comforting words—because you gave them a vulnerable corner while preserving their dignity. They didn't cry—but they knew that if they did, there was someone who wouldn't look down on them.)"
+        },
+        {
+          "text": "To be honest, the situation is indeed very difficult. Have you considered negotiating with Zhao Dingshan?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "angry",
+          "goto": "s4",
+          "flag": "bystander",
+          "reply": "{name}'s eyes instantly turned cold: \"Negotiation? Negotiate with someone who stole my company, ruined my reputation, and publicly mocked me?\" {ta} slammed her water glass down. \"You can be afraid of him—but don't make me afraid of him too. I'd rather die on the front lines than live on my knees.\"",
+          "os": "({ta} knows you mean well—but the word 'negotiation' means 'defeat' to {ta}. A person pushed off their throne would rather crawl back by scratching themselves with their nails than shake hands with the hand that pushed them.)"
+        },
+        {
+          "text": "Maybe this is fate. You're already better than most people—why bother fighting him to the death?",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s4",
+          "flag": "negative",
+          "reply": "{name} slowly stood up. {ta} put down the glass of water—as steadily as if signing a contract: \"Thank you for your kindness. But—you're fired.\" {ta}'s voice was completely flat. \"I don't need someone who told me to 'accept my fate' by my side. Because those who told me to accept my fate three years ago—are now working for Zhao Dingshan. You can leave.\"",
+          "os": "(They fired you—not out of anger. It's because they can't allow someone with a \"resigned\" mindset to remain in the core team. They've been advised to give up by too many people—and everyone who advised them to give up ended up siding with the enemy. They don't want you to become like that.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Chapter Three: Phoenix Rebirth",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Three months later, {name} found an alternative data source—not through connections, but through the product itself. {ta} created an open-source tool using Fengming's core algorithm—and made it available free to the entire industry. Everyone said {ta} was crazy: \"You're handing ammunition to your competitors!\" But a month later, 70% of the companies in the industry were using Fengming's tool—and all the data generated by the tool flowed back to Fengming's platform."
+        },
+        {
+          "who": "self",
+          "text": "This tactic is called \"retreating to advance\"—open-sourcing your technology may seem like giving something away, but it's actually building an ecosystem. When everyone uses your tools, you become the standard. This kind of vision—it's something that {ta}, who only focused on product development three years ago, couldn't have conceived of. Three years of hardship have honed {ta} from a technical genius into a true business strategist."
+        },
+        {
+          "who": "narration",
+          "text": "Zhao Dingshan finally panicked. Dingfeng's stock price plummeted by 15% in a single quarter—while Fengming's valuation had exceeded one billion. {ta} did it. When everyone said it was impossible—{ta} did it. Not through revenge, not through anger—but through wisdom more ruthless than its opponents and the courage to lose more than anyone else."
+        },
+        {
+          "who": "name",
+          "text": "On the day the valuation surpassed one billion, {ta} didn't pop any champagne. {ta} sat in the office all night—in front of her was the employee badge she'd kept from being fired three years ago. The photo on the badge was of {ta} at twenty-seven—smiling brightly, her eyes still showing no signs of being stabbed. {ta} flipped the badge over—on the back was a line of text she'd written the night she left the company three years ago: 'You will regret this. Not because I will seek revenge—but because I will prove that what you threw away was something you could never have.'"
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: Phoenix Rebirth",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The night before Fengming's IPO. {ta} stood alone on the company rooftop—this time not from the exhaustion of overtime, but from the tranquility of looking down from a mountaintop. The city lights spread out beneath {ta}'s feet, just like the one seen from the overpass during that torrential rain three years ago—but this time, {ta} wasn't standing in the rain."
+        },
+        {
+          "who": "name",
+          "text": "\"You know what?\" {ta}'s voice was soft—softer than ever before. It wasn't a command, not a declaration—like a sigh in the dead of night, \"When I was kicked out three years ago, I told myself—I don't need anyone. I can rely on myself. I did it. But standing here today… I suddenly feel—after doing it, what happened?\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} did it. From nothing to a billion-dollar valuation, from being abandoned by the world to making the world regret it. But \"what happens after you do it?\"—this question is harder to answer than any other business problem. Because when a person's goal becomes proving themselves—and after proving themselves, {ta} has no goal left."
+        },
+        {
+          "who": "narration",
+          "text": "{they} turned to look at you. The city lights softened {they}'s profile—making them look ten years younger than the {they} they were during the daytime meeting. {they}'s lips moved, as if hesitating about something they'd never done before—then {they} said something you never expected to hear from {they}:"
+        },
+        {
+          "who": "name",
+          "text": "\"I'm... a difficult person. I'm controlling, unwilling to show weakness, and don't let anyone get close. For the past three years, I've turned myself into a castle—an impregnable fortress. But today I suddenly thought—what's the difference between a castle without doors and a prison?\" {ta} looked at you, her gaze, for the first time devoid of scrutiny and defensiveness—only revealing a person's honesty: \"You're the only one in the past three years—the one I couldn't push away. Not because you're so strong—it's because you've never been afraid of being pushed by me.\""
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: Phoenix Rebirth",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind blows across the rooftop. {TA} stands before you—not the CEO, not the founder, not the woman who silenced Zhao Dingshan at the industry summit. Just someone admitting under the moonlight that she built a castle without a door—and {TA} asks you: Are you willing to be that door?"
+        }
+      ],
+      "options": [
+        {
+          "text": "Then open a door. It doesn't need to be big—just big enough for one of me to go in.",
+          "textVariants": [
+            "Your castle doesn't need to be torn down—all you need is a door. I'll make that door.",
+            "You pushed me for three years—and I'm still standing here. So your question already has an answer."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s5",
+          "flag": "side by side",
+          "reply": "{name} remained silent for a long time—so long that you thought {ta} was about to withdraw her gentleness again. But {ta} didn't. {ta} extended her hand—not to shake hands, but to open her palm up in front of you—like handing over a weapon she had kept hidden for a long time: \"...Okay. One door. Open only for you.\" {ta}'s voice trembled—a person who commanded forty men in battle could not even speak a single word steadily at this moment.",
+          "os": "(It took them three years to build the castle—but a single second to open a door. That one second of courage was more difficult than any decision they had ever made in business. Because a failed business can be started over—but once someone enters the castle, it can never be closed again.)"
+        },
+        {
+          "text": "You don't need to open the door for me. I'll just guard outside the castle—your safety is my peace of mind.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s5",
+          "flag": "guard",
+          "reply": "{name}'s eyes reddened for a moment—then {ta} smiled. That smile held both heartache and relief: \"You're even more stubborn than me. Guarding outside the castle? Aren't you afraid of the cold?\" But in {ta}'s voice, there was a tenderness she'd never felt before—like the first undercurrent of spring breaking beneath a river frozen for three years.",
+          "os": "(They're not good at accepting kindness from others—but you gave it to them in a way they could accept. You didn't barge in—you waited outside. This patience—makes them feel more at ease than any courage.)"
+        },
+        {
+          "text": "You're right—you're difficult. But you're also quite interesting.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s5s",
+          "flag": "Wait and see",
+          "reply": "{name} was amused—a laugh three shades warmer than {ta}'s usual cold sneer: \"Interesting? You're the first person to describe me as 'interesting.' Most people use 'terrifying.'\" {ta} turned and walked towards the stairwell—twice a step and then turned back: \"See you tomorrow.\" Those two words—were the softest farewell {ta} had ever uttered.",
+          "os": "(I don't know if you're serious or joking—but I've decided to assume you're serious for now. Because if you are—then for the first time in three years, I feel that being 'seen' is a good thing.)"
+        },
+        {
+          "text": "You are indeed very capable. But I am just your employee—don't bring personal feelings into your work.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s5s",
+          "flag": "reject",
+          "reply": "{name}'s expression instantly transformed into that of the first time you met {ta}—cold, hard, and unyielding: \"You're right. Work is work.\" {ta} turned and walked away—twice as fast as she had come. At the stairwell, {ta} paused for a second—without turning back: \"...Work as usual tomorrow. As for tonight—pretend I didn't say anything.\"",
+          "os": "(The words that {they} took three years to muster the courage to say—were rejected by you with a simple \"Don't bring it to work.\" {they} will never say them a second time. Because {they}'s pride only allows {they} to be rejected once. This door—is closed forever.)"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "happy",
+      "chapter": "Final Chapter: No Crown Needed",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Fengming went public. On the day of the bell-ringing ceremony, {name} wore all red—not the formal red issued by the company, but a flamboyant, domineering red that screamed, \"I'm back, you'll regret this.\" Yet, {ta} stood in the stock exchange lobby even calmer than when she graced a magazine cover three years prior."
+        },
+        {
+          "who": "self",
+          "text": "I saw Zhao Dingshan sitting in the third row of the audience—the same seat {name} had sat at the summit three years ago. His face was ashen, like a expired check. But {name} didn't even glance at him—{ta}'s gaze swept over everyone else, settling on the ceiling light. {ta} had said: 'I didn't turn the tables to make them regret it—I did it so I wouldn't regret it myself.'"
+        },
+        {
+          "who": "narration",
+          "text": "The sound of the bell echoed throughout the hall. Applause, cheers, and flashing lights. But at that moment, {ta} did something no one noticed: {ta} reached into their pocket—and touched the old employee badge from three years ago. Then {ta} smiled—not a professional smile for the camera, but a smile of relief that only they knew."
+        },
+        {
+          "who": "name",
+          "text": "At the banquet after the bell-ringing ceremony, everyone surrounded {TA}, offering toasts. {TA} only drank one glass—then walked up to you. Amidst a room full of investors in suits and ties and media cameras, {TA} said only one sentence to you: \"That day on the overpass in the pouring rain—the umbrella you offered me. I've realized it since—it wasn't that I didn't want to take it. I was afraid that if I took it, I would owe you, and if I owed you, I would have to repay you, and if I repaid you, I would have one less reason to see you again.\"",
+          "when": "flag: side by side"
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "shy",
+      "chapter": "Final Chapter: No Crown Needed",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After the banquet, you walked along the riverbank. The night breeze, carrying moisture, blew, slightly ruffling {ta}'s hair—{ta} ignored it. Wearing a red dress, {ta} resembled a quiet flame under the streetlights—no longer scorching, but still warm."
+        },
+        {
+          "who": "name",
+          "text": "\"I've thought about this for a long time.\" {ta}'s voice was as light as a leaf in the night breeze. \"I'm not a good collaborator. Nor a good friend. I'm controlling, a workaholic, unwilling to show weakness, and incapable of being affectionate—I'm probably the most difficult person in the world.\" {ta} stopped and turned to face you. \"But I want you to know—the moments in these past three years that made me feel like I was more than just a money-making machine—all of them are related to you.\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} spoke these words—there was none of {ta}'s sharpness in meetings, none of {ta}'s fierceness in negotiations, none of {ta}'s coldness when facing Zhao Dingshan. {ta}'s voice was like that rainy night on the overpass three years ago—deep inside all the armor, there was someone who only dared to show themselves in the dead of night."
+        },
+        {
+          "who": "narration",
+          "text": "A cruise ship passed by on the river, its bright lights illuminating the water like a golden river. {He/She} stood on the bank of that golden river—as if standing on the edge of an empire {He/She} had built with his/her own hands. {He/She} didn't need a crown—but {He/She} needed someone. Someone who wasn't afraid of {He/She}'s sharpness, didn't find {He/She} difficult, and wouldn't be pushed away by {He/She}."
+        }
+      ]
+    },
+    {
+      "id": "s5s",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Final Chapter: Solo Summit",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Fengming went public. {name} stood alone in the very center of the stock exchange hall. {ta} was surrounded by people, but {ta} knew—these people were there for {ta}'s company, not for {ta}. The moment the bell rang, thunderous applause erupted—{ta} smiled. But that smile didn't reach her eyes."
+        },
+        {
+          "who": "self",
+          "text": "I saw {TA} on TV. {TA} on screen was glamorous, like a perfect business legend. But what I remembered was that person on the rooftop late at night, with red eyes—the one who asked me, \"Am I worth it?\" {TA} succeeded. {TA} proved themselves. But there are some things—like a corner where you don't have to pretend to be strong in the dead of night—{TA} still hasn't found them."
+        },
+        {
+          "who": "narration",
+          "text": "The first weekend after the IPO. {ta} went to that overpass alone—the Rainstorm Overpass. It didn't rain that day, and the overpass was deserted. {ta} stood in the spot where you handed her an umbrella three years ago—standing there for a long time. The wind blew {ta}'s hair, and it also brought back some memories."
+        },
+        {
+          "who": "name",
+          "text": "{ta} carved a line of words on the overpass railing with her fingernail—very small, almost invisible if you didn't look closely: 'I did it. But that umbrella that day—I should have accepted it.' Then {ta} turned and walked away—her high heels clicking crisply on the overpass, like someone walking alone for a very, very long time."
+        },
+        {
+          "who": "self",
+          "text": "{They} won't regret it. Because {They} never allow themselves to regret. But if they could go back to that stormy night—{They} might reach out and catch that umbrella. Not because they needed an umbrella—but because…some things are more important than proving themselves. Like a person."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "lakeside_fireworks",
+      "face": "shy",
+      "chapter": "Final Chapter: No Need for a Crown",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A river breeze blows. She stands before you—her red dress sways gently in the wind, like a flag that refuses to fall. She speaks the softest words she's said in three years—and then waits for your reply. Someone who never waits for anyone—is waiting for you now."
+        }
+      ],
+      "options": [
+        {
+          "text": "You don't need to become easy to deal with. You just need to let me stand next to you—as I am.",
+          "textVariants": [
+            "It's okay if you're difficult to deal with. I'm not simple either—we're even.",
+            "You don't need to change it. Sharp or difficult to handle—I can handle it all."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "flag": "Together",
+          "reply": "{name} lowered her head—it was the first time you'd ever seen {ta} lower her head. Not because she'd lost—but because she'd won something more important than any business victory. {ta}'s fingers touched the back of your hand—as lightly as a butterfly landing on a petal: \"...Alright. From today onward—you are the only resident in my castle. No rent—but you'll have to pay for a lifetime.\"",
+          "os": "(They used their strongest method—signing contracts—to express what they are least skilled at. A lifetime's rent—that was the most sincere promise they could think of.)"
+        },
+        {
+          "text": "I don't need you to become someone else. Just be yourself—I'll just watch from the sidelines.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "flag": "guard",
+          "reply": "{name} chuckled softly—a laugh like the first spring stream to melt beneath the ice: \"Just watching? Are you sure you can handle it? I work overtime until 3 a.m., have conference calls on weekends, and I yell at suppliers when I'm in a bad mood...\" But {ta}'s eyes were smiling—a smile even more genuine than her lips: \"Fine. Since you dare to say it—I'll believe you this once.\"",
+          "os": "(When someone says \"I trust you this once,\" it means that for the past three years, they've only ever trusted themselves. Now, they've trusted someone else. And there's only one such person in the entire world.)"
+        },
+        {
+          "text": "You deserve better. But I might not be that person—I just happen to be on the overpass.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6s",
+          "flag": "bid farewell",
+          "reply": "{name} stared at you intently—for three seconds. Then {ta} withdrew all her softness, as if closing a door again: \"...Fine. The person who happened to be on the overpass—is gone, is gone.\" {ta} smiled, \"Good luck. —I said it this time.\" {ta} turned and walked along the riverbank. Her steps were steady—even steadyer than when she came.",
+          "os": "({ta}'s castle has closed again. This time—it's closed even tighter than before. Because {ta} opened it once—and was told: it was just a coincidence. {ta} doesn't blame you. {ta} blames herself—for actually thinking this time would be different.)"
+        },
+        {
+          "text": "To be honest, your personality... is too tiring. Being with you would be very difficult for me.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6s",
+          "flag": "reject",
+          "reply": "{name}'s face was expressionless—like a wall that had processed too many emotions and learned not to reveal anything. {ta} turned and walked away. After five steps—she suddenly stopped, without turning her head: \"You're right. Being with me is tiring. So—thank you for not making yourself suffer.\" Then {ta} walked into the night—the last corner of her red dress disappeared beyond the streetlights.",
+          "os": "(At the end, they said thank you—and it was sincere. Because they would rather be rejected than have someone suffer because of them. The lesson they learned in three years of life is: don't let others pay for you—but they learned this lesson in the most painful way.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "lakeside_fireworks",
+      "face": "happy",
+      "chapter": "Epilogue - Her Name",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A year later. Fengming Technology became an industry leader. {name} graced the cover of Forbes—not the radiant 27-year-old girl from three years prior, but a 31-year-old woman with calm eyes, composed demeanor, and a hint of \"I've seen it all\" in her smile. The headline read: 'She doesn't need a crown—because she is the crown.'"
+        },
+        {
+          "who": "self",
+          "text": "The person on the magazine cover looks great—but I prefer the image of that person asking me, with red eyes, \"Was it worth it?\" late at night on the rooftop. That person—is more real than any cover, more precious than any valuation."
+        },
+        {
+          "who": "narration",
+          "text": "That night, {ta} turned to the cover page of the magazine and looked at it for a long time—then she crossed out \"She doesn't need a crown\" from the headline with a marker and wrote a new line: \"She doesn't need a crown—but she needs someone. That person offered her an umbrella on a rain-soaked overpass. She didn't take it—but she remembered it for a lifetime.\""
+        },
+        {
+          "who": "name",
+          "text": "\"Do you know why I kept refusing to take that umbrella?\" {ta} leaned on your shoulder—a position {ta} had practiced for a year to master—\"Because I was afraid. Afraid that if I took it, I would become dependent, and if I became dependent, I would become weak, and if I became weak, I would be pushed down like I was three years ago. But then I realized—when you handed me the umbrella, you never insisted that I take it. You just held it up—regardless of whether I took it or not, you held it up.\" {ta}'s voice was very soft, \"This unconditional kindness—that's the greatest investment I've ever made in my life.\""
+        }
+      ]
+    },
+    {
+      "id": "s6s",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Epilogue - After the Rainstorm",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A year after Fengming went public, {name} became an industry legend. Every business school included {ta}'s case in its textbooks—titled \"Counterattack,\" \"Rebirth,\" and \"The Unyielding Woman.\" But not a single textbook mentioned the page where {ta} asked herself \"Was it worth it?\" on a rooftop late at night."
+        },
+        {
+          "who": "self",
+          "text": "Sometimes I cross that overpass. There's a line of words carved with a fingernail on the railing—very small, almost invisible: 'I did it. But that umbrella that day—I should have taken it.' Every time I see those words, I stand there for a long time. When the wind blows, I always feel—the beeping of that phone screen from that stormy day still lingers, and {ta}'s last words on the other end of the line: 'It's okay. I'll submit the next one.'"
+        },
+        {
+          "who": "narration",
+          "text": "{ta} did it. {ta} can stand at the top without anyone. But the wind at the top is strong—so strong that {ta} has to lock up all its softness to avoid being blown down. Perhaps one day, {ta} will allow itself to loosen its grip a little in the wind. But that day—is not today."
+        },
+        {
+          "who": "self",
+          "text": "There are two kinds of courage in the world: one is not being afraid to lose, and the other is not being afraid of the loneliness that follows victory. {they} possesses both—but the latter is more heartbreaking than the former. If we could go back to that rain-soaked overpass—I wouldn't offer them an umbrella. I would hold the umbrella and stand beside {they}—without moving. Without saying a word. Just standing there. Let {they} know—someone is there. No need to take the umbrella. Just need to know—someone is there."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "The story has come to this point. If you were given the chance—to go back to that rain-soaked overpass and face {name}—what would you say? (≤100 words)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "They don't need a crown. But they need someone—someone who will hold an umbrella for them in the pouring rain, someone who won't leave whether they accept it or not. You are that person. Now—say it.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The umbrella on the overpass in the pouring rain, {they} didn't take it. But {they} remembered it for a lifetime. While the memory is still there—if you still have something to say to {they}, write it on this last page. The wind will carry it for you.",
+          "when": "!flag: Together"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "That door",
+      "trigger": "top: sincerity",
+      "caption": "You are the only person {name} couldn't push away in the past three years—not because you are stronger than {ta}, but because you were never afraid of being pushed away by {ta}. With an umbrella, a \"you deserve it,\" and a promise to stand shoulder to shoulder, you opened a door to an impregnable castle. That door is only open for you. Rent—for a lifetime.",
+      "report": "[Relationship Personality - That Door] You are the rarest existence—someone unafraid of sharp edges. Facing a fully armed soul, you didn't back down, didn't try to dismantle their armor—you simply stood there, telling them: You don't need to change. You are who you are—I can accept you. This courage isn't recklessness—it's a profound, almost heartbreaking tenderness. You proved one thing: the best love isn't about changing the other person, but about letting them dare to be themselves."
+    },
+    {
+      "endingId": "playboy",
+      "title": "bystander",
+      "trigger": "Top: Aquaman",
+      "caption": "You admire everything about {name}—{ta}'s sharpness, {ta}'s courage, {ta}'s rare vulnerability on the rooftop late at night. But you always stand at a safe distance—like an audience member, watching a wonderful performance, and then getting up and leaving.",
+      "report": "[Relationship Personality - The Bystander] You are intelligent, rational, and good at assessment—you know {them} is good, and you also know that being with {them} will be exhausting. So you chose the safest position for yourself: admiring without investing, caring without taking responsibility. You didn't do anything wrong—but you missed the opportunity for someone to open a door for you. That door—will never open a second time."
+    },
+    {
+      "endingId": "toxic",
+      "title": "indifferent people",
+      "trigger": "top: scum",
+      "caption": "When you needed to be seen the most, you chose to turn away. Not because you were cold-hearted, but because you didn't believe someone was worth the risk. But have you ever considered that the person who refused to take your umbrella on the rainy overpass was more afraid of being let down than you are?",
+      "report": "[Relationship Personality - The Indifferent] Your self-protective instinct is stronger than anyone else's—when faced with someone prickly, your first reaction is to back away. It's not that you don't care—you're afraid that caring means giving, and giving might lead to getting hurt. But some people's thorns aren't meant to hurt others; they're meant to protect their soft hearts. Your retreat doesn't protect you—it only makes both of you more lonely."
+    },
+    {
+      "endingId": "devoted",
+      "title": "defenders",
+      "trigger": "top: Loyal Dog",
+      "caption": "You silently stand guard outside {name}'s castle—through wind and sun, through cold and heat. You are {ta}'s strongest support, her quietest companion—yet you have never stepped inside. {ta} waits for you to come in—you wait for {ta} to open the door. The two of you are separated by a wall—each warming the other, yet each carrying their own regrets.",
+      "report": "[Relationship Personality - The Guardian] You are a natural guardian—silent, steadfast, and selfless. You offer {them} the safest form of companionship—waiting outside. But {them} needs more than just knowing you're there—{them} needs you to push the door open. Some castle doors—cannot be opened from the inside. They need someone to knock from the outside. You're just one knock away."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "passer",
+      "min": -99,
+      "caption": "On the overpass in the pouring rain, you offered her an umbrella. She didn't take it. Your story—perhaps it was just a chance encounter from the beginning. Not every chance encounter becomes a story. But that umbrella—she remembered it.",
+      "report": "[Relationship Personality - The Passerby] Your choices are indecisive—approaching when {they} need you, retreating when {they} open their hearts. It's not that you're bad—you're just not ready to stand still for someone. But remember: some people's castles only open one door in their lifetime. When you pass by that door—it's open."
+    }
+  ]
+}

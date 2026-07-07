@@ -20,23 +20,26 @@
       <view class="opening-card tip-card">
         <image class="opening-card-icon sparkle" src="/static/game/ui/opening/sparkle-icon.png" mode="aspectFit" />
         <view class="tip-copy">
-          <text class="tip-title">背景简介：</text>
+          <text class="tip-title">{{ t('opening.introTitle') }}</text>
           <text class="tip-text">{{ tip }}</text>
         </view>
       </view>
 
-      <button class="start-btn" @click="start">走进长夜 →</button>
-      <text class="back" @click="back">← 换一个同行者</text>
+      <button class="start-btn" @click="start">{{ t('opening.startBtn') }}</button>
+      <text class="back" @click="back">{{ t('opening.backBtn') }}</text>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { computed, onMounted } from 'vue'
 import { session } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
 import { faceImg, bgImg } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
+
+const { t } = useI18n()
 
 const char = computed(() => session.char)
 

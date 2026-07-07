@@ -1,0 +1,1123 @@
+{
+  "_id": "script_daily",
+  "id": "script_daily",
+  "title": "Corner Convenience Store - Random Thoughts Today",
+  "openingTip": "On the most inconspicuous street corner in the city, there's a 24-hour convenience store. The clerk, {name}, is a chatterbox—she'll slip an extra radish into your oden and chat with you about trivial matters all night long. There's no dramatic storyline, just warm bento boxes, cheap oden, and the slow, sweetening routine of everyday life. Most of the time, you just need to tap the screen to read on; a few small intersections occasionally determine whether these days will become warmer and warmer.",
+  "prologue": "You've just moved to this city, and working late into the night, the only place still lit up is the convenience store on the corner. Behind the counter stands {name}: with a crooked bun, a bright smile, and a mouth that never stops—\"You worked hard today too!\" \"The new pudding is super delicious!\" \"Hey, how was that instant noodle you bought yesterday?\" Life is uneventful, just going to work, coming home, and buying something to eat. But from some unknown day, you started looking forward to that \"Welcome!\"",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At 12:30 a.m., the fluorescent lights in the convenience store were blindingly bright. You dragged your body, exhausted from working overtime, through the door, and the doorbell rang—it sounded like \"You've arrived\" rather than \"Welcome.\" Potato chips, instant noodles, and oden pots steamed on the shelves, while sandwiches were neatly arranged in the refrigerated display case. The city's daytime hustle and bustle settled into the deep of night, leaving only this square, brightly lit island of a convenience store."
+        },
+        {
+          "who": "name",
+          "text": "\"Welcome—hey, it's you again!\" {name} peeked out from behind the cashier, her crooked bun bobbing. \"This is the fifth day in a row! A confirmed overtime workaholic! Let me count—instant noodles on Monday, rice balls on Tuesday, oden on Wednesday—how much do you hate cooking?!\""
+        },
+        {
+          "who": "self",
+          "text": "{TA} actually remembered what I bought every day. I wandered this street like a ghost, yet this talkative shop assistant kept a detailed shopping log for me. The feeling of being remembered—in this big city where everyone walks with their heads down—is a luxury that brings tears to your eyes."
+        },
+        {
+          "who": "name",
+          "text": "\"Same as usual, oden?\" {ta} had already deftly scooped up the largest skewer of radish, and secretly picked up an extra soft-boiled egg from the bottom of the broth and placed it next to her. \"Look how skinny you are, tsk tsk—you can't not eat properly! This is an egg I brought myself, there's only one left, I'll share it with you. Don't be shy.\""
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "There were no other customers in the shop late at night—even the cashier next door was dozing off on the counter half a meter away. The buzzing of the freezer and the bubbling of the oden soup mingled together, becoming the only background music in this little shop."
+        },
+        {
+          "who": "name",
+          "text": "{ta} leaned on the counter, chin resting on her clasped hands, chatting casually with you, \"You know, the worst thing about working the night shift isn't being tired—it's having no one to talk to. So many people come and go, pay, and leave. If I happen to run into someone willing to chat for a bit, I can be happy for a whole week.\""
+        },
+        {
+          "who": "self",
+          "text": "As {ta} spoke, her bun swayed slightly, and a fleeting look of melancholy crossed her eyes. It turns out that this seemingly perpetually energetic and talkative shop assistant also has something she fears—not the darkness itself, but the vastness and stillness of the night, and the loneliness of being alone."
+        },
+        {
+          "who": "narration",
+          "text": "The radish in the oden pot floated gently in the hot broth, and the aroma of bonito flakes and kelp filled the small shop, which was less than 30 square meters. The only warm color in this city late at night was not the streetlights or the neon lights—it was this pot of bubbling fire, always kept warm for those returning home late."
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You notice a small radio in the corner of the checkout counter. The antenna is crooked, and there's a crooked koala drawn on the casing with a marker—exactly the same nickname {ta} gave you."
+        },
+        {
+          "who": "name",
+          "text": "\"I listen to this when I'm working the night shift.\" {ta} turned on the radio, and the late-night station was playing Teresa Teng's \"The Moon Represents My Heart.\" The grainy texture of the old song came through the broken speakers, surprisingly gentle. \"When no one comes around at three in the morning, I hum along. Even though I'm tone-deaf—the radio doesn't mind.\""
+        },
+        {
+          "who": "self",
+          "text": "Three in the morning—that's the deepest abyss of the long night. A person sits alone in a brightly lit but deserted convenience store, relying on a broken radio to combat the silence of the entire city. I suddenly understand why {ta} always tries to talk to customers—it's not that she's a chatterbox, it's that she's afraid of being swallowed by the silence."
+        },
+        {
+          "who": "narration",
+          "text": "When Teresa Teng sang the last line, \"A deep affection,\" the radio suddenly crackled and then resumed normal playback. {ta} reached out and gently patted it, like patting an old friend on the head."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} suddenly perked up and pulled a crumpled notebook from under the counter—the cover was pink, stained with yellowish rings like tree rings from oden soup, and six large, crooked characters were written on it: \"Midnight Convenience Store Ghost Stories\"."
+        },
+        {
+          "who": "name",
+          "text": "\"Let me tell you, today an uncle came and bought thirty packs of spicy strips! Thirty packs!\" {ta} flipped to one of the pages, which not only recorded the date and quantity, but also included a very ugly sketch of an uncle. \"I asked him if he was doing wholesale—he said no! It's because he was so engrossed in watching a TV series that he couldn't stop! Isn't that strange—a middle-aged man buying thirty packs of spicy strips near the company in the middle of the night.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s world is pieced together from trivial details that others disdain to remember. Thirty packs of spicy strips, how many soft-boiled eggs are left, who loves white radishes and who loves seaweed knots, how deep are the dark circles under the eyes of the uncle who bought thirty packs of spicy strips—the late-night memories of a city are hidden in this crumpled notebook."
+        },
+        {
+          "who": "name",
+          "text": "\"Oh, right!\" {ta} suddenly slammed her notebook shut, her eyes sparkling as she leaned closer. Her bun was so close you could smell a faint scent of laundry detergent in her hair. \"You come in so late every day, what do you do for a living? I've been guessing for days! Programmer? Designer? Or a novelist? —Hey, you smiled! You finally smiled! I counted, this is the first time you've genuinely smiled in front of me.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s ramblings were like a wooden wall, keeping all the indifference and weariness of the city outside the convenience store. And inside this wall, I unconsciously relaxed my shoulders, which had been tense all day."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Prologue: Midnight Oden",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} rested her chin on her hand, her hair tie trembling slightly with anticipation. The steam from the oden rose gently between them—like a soft veil blurring the boundary between strangers and acquaintances."
+        }
+      ],
+      "options": [
+        {
+          "text": "I explained my work to {them} in detail and also asked about {them}.",
+          "textVariants": [
+            "After finishing his own story, he asked {them} in return: \"And what about you? Why are you working the night shift?\"",
+            "Answer truthfully, and also note {ta}'s little habit of loving to listen to gossip."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name}'s eyes lit up instantly, and she jumped up from behind the counter, almost knocking her notebook to the floor: \"Wow, you actually told me! And you even asked me! Customers usually complain that I'm noisy—you're the first person who, after asking if the instant noodles were good, also asked me why I work the night shift!\"",
+          "os": "(When someone takes your story seriously, you're so happy you want to spin around in circles. So this is what it feels like to be truly listened to.)"
+        },
+        {
+          "text": "I'll keep you in suspense: guess! If you guess right, I'll treat you to pudding.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name}: \"Ahhh, how cunning! I'm going to pester you to guess every day! I'm even going to solemnly write you into my 'Midnight Ghost Stories Record'—it'll be called 'The Unsolved Mystery of the Mysterious Koala'! I'll start writing the first page tonight!\"",
+          "os": "({ta}'s boundless curiosity was piqued, and her clingy mode was fully activated. She really got herself completely hooked.)"
+        },
+        {
+          "text": "To sum it up briefly, buy more of the things {ta} recommended.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name}, seeing the sudden appearance of a huge pile of snacks and drinks in your arms, stomped her feet in frustration: \"Hey, why did you buy so much! It's not like I need you to patronize my business! You, you, you—don't do this again next time, you hear me! This pudding is fine—it's on me! Take it back, take it back!\"",
+          "os": "(She can be as fierce as a teacher scolding a student, but her eyes are incredibly soft. She hasn't felt this kind of clumsy care in a long time.)"
+        },
+        {
+          "text": "I'm tired, I don't want to chat, I just want to pay the bill.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name} stuck out her tongue, her voice suddenly fading into her throat, like a radio that had been accidentally muted: \"...Oh, sorry, I talked too much again. You've had a long day, and I kept babbling on and on—I'm so tactless...Eighteen yuan in total.\"",
+          "os": "({ta}'s bun looked droopy. The line \"It's my fault for being so oblivious\" was spoken quickly and softly—like reciting a line she'd rehearsed countless times in her mind.)"
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "s2c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Just as you finished paying and were about to leave, {name} suddenly pulled a discounted, near-expiry yogurt from the freezer and shoved it into your hand."
+        },
+        {
+          "who": "name",
+          "text": "\"I brought it in today, it expires tomorrow,\" {ta} explained softly, as if covering something up. \"Anyway, if it doesn't sell, it'll just go to waste—you can have it for free. No thank you, okay?\""
+        },
+        {
+          "who": "self",
+          "text": "I glanced at the production date—it was still a full week away from expiration. {ta}'s \"near expiration\" was a white lie, and {ta}'s \"I'm going to throw it away anyway\" was a well-packaged sentiment."
+        },
+        {
+          "who": "narration",
+          "text": "The doorbell rang, and you turned to leave the convenience store. You glanced back—{ta} had already returned to the checkout counter, hunched over, and continued staring at the \"Midnight Ghost Stories\" book. The light cast {ta}'s shadow on the glass door, like a quiet painting clipped into the city night."
+        }
+      ]
+    },
+    {
+      "id": "s2c",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Midnight Oden",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You've walked a dozen steps out of the store when you suddenly realize—that yogurt is your favorite flavor. Plain, unsweetened, the Greek yogurt kind. You've never mentioned this preference to {them}."
+        },
+        {
+          "who": "self",
+          "text": "How many times did {ta} observe my hesitation in front of the freezer before noting down this preference that I myself had never explicitly stated? It's a strange kind of meticulousness that comes without any reward—like the ancient saying, \"It nourishes things silently.\""
+        },
+        {
+          "who": "narration",
+          "text": "You glance back at the square glass shop. {ta} is already greeting regular customers, her gestures exaggerated, her bun bobbing. But suddenly you realize—that carton of yogurt contains more than just lactic acid bacteria. It contains the rarest, most hidden kind of kindness in a big city."
+        },
+        {
+          "who": "self",
+          "text": "Zhou Guoping wrote in \"Man and Eternity\": \"The gentlest kindness often occurs in the most insignificant way.\" I think I was caught up in such kindness without even realizing it."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Chapter 1: A Chance Encounter During the Day",
+      "goto": "s3a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On a weekend afternoon, you're queuing for coffee at a quiet, independent coffee shop near your office. The grinder has just stopped whirring when someone taps you on the shoulder from behind—just enough to make your hot Americano wobble."
+        },
+        {
+          "who": "name",
+          "text": "\"Hey hey hey!!! It's you!!!\" {name} wasn't wearing her light blue convenience store uniform—her messy bun was replaced with flowing, shoulder-length hair, and she was wearing a white T-shirt with a cat print, holding a matcha latte that was almost empty—she was so surprised she nearly dropped the cup. \"Wow, so this is what you look like during the day! I thought you really were a nocturnal Australian koala!\""
+        },
+        {
+          "who": "self",
+          "text": "Not wearing a uniform, not standing behind the cashier, {ta} looks like an ordinary, cheerful girl enjoying a coffee shop on the weekend. The air is filled with the aroma of freshly ground coffee beans and the sweetness of cinnamon rolls, a hundred times more welcoming than the incandescent lights of a convenience store."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} came around from behind without saying a word and bought all the coffee and cakes you just ordered—scanning the code so fast you didn't even have time to open your mouth to refuse—then grabbed your sleeve and pulled you to a seat by the window."
+        }
+      ]
+    },
+    {
+      "id": "s3a",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Chapter 1: A Chance Encounter During the Day",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} cut the cake in half, pushing the larger piece towards you. Outside the window, the sycamore leaves were swept up by the autumn wind, casting shimmering, dark green patches of light onto the glass."
+        },
+        {
+          "who": "name",
+          "text": "\"You don't know, do you—\" {ta} stabbed a small piece of cake with her fork and put it in her mouth, mumbling, \"I come to this cafe every week. First, because I want to drink matcha—this place makes authentic Kyoto Uji matcha; second—\" \"Second, well—this place is right downstairs from your office. I was secretly thinking, if I come here to work overtime one weekend, I might bump into you on the street.\" {ta} blushed as she spoke, holding the rim of her matcha cup in front of her face, \"Uh, I forgot what I just said. I guess I had too much to drink.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} drank caffeine-free matcha—it wouldn't get drunk at all. {ta} used \"drunk\" as a way to gracefully back down from the honest words she had just accidentally uttered."
+        },
+        {
+          "who": "narration",
+          "text": "Outside the window, an elderly couple walked slowly across the street, hand in hand. {ta}'s gaze was momentarily drawn away, then returned to you—in that glance, there was a subtle, barely concealed longing."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Chapter 1: A Chance Encounter During the Day",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The afternoon sun on the weekend streamed in through the floor-to-ceiling windows like honey, bathing {ta}'s profile in a warm golden hue. {ta} slowly stirred the remaining green milk foam in her cup with a straw, suddenly becoming very quiet—a stark contrast to the chattering convenience store clerk."
+        },
+        {
+          "who": "name",
+          "text": "\"It's rare to bump into you outside.\" {ta} lowered her head, slowly drawing a small, half-formed heart on the matcha foam with the tip of her straw. \"Today I'm not a night shift worker, and you're not a regular customer buying oden—neither of us—neither needs to scan a code, doesn't need to pay at midnight, or catch the last train. Sitting together like this—can we be considered...friends?\""
+        },
+        {
+          "who": "self",
+          "text": "\"Are we friends?\" {ta} had just chattered on and on, but those three words—spoken so softly, like a bird trying to take flight for the first time—were spoken with an almost imperceptible lightness. Yet, the hidden expectation in those eyes was so intense that it couldn't be dissolved in the entire cup of matcha."
+        },
+        {
+          "who": "narration",
+          "text": "An old jazz tune played from the café's gramophone, the hissing sound of vinyl records filling the space. Outside the window, the streets stretched lazily on a weekend afternoon; inside, a person anxiously awaited the grading of a small test concerning interpersonal relationships."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Chapter 1: A Chance Encounter During the Day",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} blinked at you, the straw stirring the water in the cup, creating tiny whirlpools that seemed to tremble in the air. Sunlight shone directly on the ends of {ta}'s hair, turning them into small tufts of golden velvet."
+        }
+      ],
+      "options": [
+        {
+          "text": "Of course we're friends. I can hang out with you during the day now too.",
+          "textVariants": [
+            "Hey friend! Let's go shopping sometime sometime.",
+            "Yes, friends. But I think being a little closer than friends would be nice too."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "reply": "{name} grinned from ear to ear, her two little tiger teeth gleaming in the afternoon light: \"Yay—!!! I've made a friend who's willing to come out for coffee with me during the day!!! This weekend—it's definitely the most worthwhile day of my year!\"",
+          "os": "({ta} felt like drinking this now-cold matcha latte was like celebrating the Lunar New Year. 'Friend'—what a beautiful and formal word!)"
+        },
+        {
+          "text": "Friends? I thought you wanted to upgrade your relationship to something else.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}'s face flushed red from her ears to her neck: \"Huh?! What other relationship—you...you put something in your coffee—no, no, I mean—I just really wanted to increase your membership points by a few hundred points! Really!\"",
+          "os": "({ta} was so flustered she almost bit the straw in two. 'Member points'—it's amazing {ta} could come up with such an absurd excuse in 0.3 seconds.)"
+        },
+        {
+          "text": "My friend, I'll treat you to coffee, that's only fair.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} got impatient and grabbed your hand as you reached for your wallet, her palm warm: \"Hey, it was supposed to be my treat! Why are you trying to take it from me! You don't understand—treating someone you care about to coffee is a hundred times more enjoyable than getting coffee from someone else! This is the most worthwhile purchase I've ever made!\"",
+          "os": "(They might argue with you, but inside they feel a warmth like being scalded by a hot Americano. Having someone feel sorry for you is such a sweet feeling.)"
+        },
+        {
+          "text": "The shop assistant and the customer can hardly be considered friends.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "reply": "{name}'s smile froze for a moment—but quickly warmed up again, like a rice ball that had been microwaved again in a convenience store: \"...Yeah, that's right. I was too overly familiar, haha. Consider this coffee a gift—thank you for coming to buy things every day. I won't bother you anymore then.\"",
+          "os": "({ta} held an empty cup in front of her face, looking out from behind the rim—those eyes didn't lie.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It was a rainy evening. After get off work, you habitually walked to the convenience store. Looking through the rain-drenched glass door, you saw not the familiar person with the crooked bun, but a stranger wearing black-rimmed glasses. You pushed open the door; the doorbell rang. Hesitating for a moment, you asked the new clerk. The clerk adjusted her glasses and said casually, \"You mean the previous night shift worker? The manager said sales haven't been good lately, so they might be laying off staff. I think she won't be working next month.\" You searched the neighborhood with your umbrella. Finally, at the end of the old town's arcade-style shopping street covered with corrugated iron roofs—you saw a person sitting alone on the cold stone steps, their crooked bun slightly damp from the rain dripping from the eaves. They weren't smiling."
+        },
+        {
+          "who": "name",
+          "text": "\"Ah—you found me.\" {ta} saw you, hurriedly rubbed the corner of her eye with the back of her hand, and then quickly forced a smile—a smile more heartbreaking than the last pot of cold oden soup before closing time. \"Hehe, it's nothing... it's just—the manager told me that the shift schedule will be reduced starting next month. Someone like me who works the night shift—may be the first one to be laid off.\""
+        },
+        {
+          "who": "self",
+          "text": "That energetic girl who would cheerfully add an extra egg to the plate for tired customers every night, also had moments when she would curl up under the eaves in the rain, rubbing her eyes. It turns out that even the sun has times when it's obscured by clouds and doesn't want anyone to see it."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain intensified for a while, pounding against the tin archway roof with a booming sound, like someone drumming irregularly overhead. {ta} shrank further into the eaves, her bun hairstyle collapsing slightly from the rain, the hair tie almost slipping to the ends."
+        },
+        {
+          "who": "name",
+          "text": "\"That shop was shabby and small,\" {ta} said, hugging her knees and resting her chin on them, her voice muffled as if coming from under the covers, \"but I loved the people who came to buy things in the middle of the night—everyone looked exhausted, like they'd been beaten down by reality, but if I gave them an extra carrot or an extra egg—they'd genuinely smile. That smile was worth more than any bonus.\" \"Especially—that koala who always worked overtime until midnight.\" {ta}'s voice suddenly trailed off, like a radio being turned down a notch, \"Without that shop, where would I see {ta}? I can't just sit outside the coffee shop every day waiting for them to come—I'm not a private investigator.\""
+        },
+        {
+          "who": "self",
+          "text": "\"Where shall we meet?\" {ta} wasn't referring to that small shop with a monthly rent of three thousand. {ta} was saying—if this unique, naturally occurring connection between us disappears, where will I, this talkative sparrow flitting about in the city without a branch to perch on, finally land and wait for that last bus that takes you at midnight every day?"
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "goto": "s4d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain gradually subsided. In the distance, a thin slit of light appeared on the horizon, and the golden edge of the setting sun peeked out from under the clouds, falling on the wet arcade tiles, like someone had carelessly spilled fragments of gold."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually, I know—working at a convenience store isn't a promising career.\" {ta} straightened her legs, which had been curled up for a long time, and the soles of her sneakers slid gently down the steps, making a soft scraping sound. \"My mom keeps telling me to go back and take the civil service exam. I'm embarrassed to tell my classmates at reunions that I'm working—but I just, I just can't let go of this window at night.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} isn't saying she can't let go of a job that pays 3,000 a month—she can't let go of every stranger who walks in late at night, with dark circles under their eyes, needing a little hot food and a \"You've worked hard today\" to keep them going. Some people rely on caffeine to survive, others on carrots from a late-night convenience store. {ta} is the latter's night watchman."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The faint sunlight after the rain fell on {ta}'s damp shoulder and her slouching, crooked bun. The echo of {ta}'s words, \"Where should I go to see you?\" still lingered in the damp evening air, not dissipating for a long time."
+        }
+      ],
+      "options": [
+        {
+          "text": "That koala will come looking for you at another time—don't worry.",
+          "textVariants": [
+            "Even if the shop is gone, I'll still bother you every day.",
+            "Fool, I'm looking for you as a person, not that shop."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "heartwarming",
+          "reply": "{name} jerked her head up, her bun almost flying off from the force, her eyes shining like the brightest fluorescent lights in a convenience store: \"Really?! You didn't just come to buy discounted radishes? You—you come all the way from the company in the middle of the night every day—to wait for me?\"",
+          "os": "(The gloom that had been weighing on her heart all afternoon was instantly melted away by those words.)"
+        },
+        {
+          "text": "There's always a way out! Maybe you'll find a better job next time!",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "heartwarming",
+          "reply": "{name} chuckled and wiped her face haphazardly with the back of her sleeve—the cuff was wet, she couldn't tell if it was from rain or something else: \"Why are you always so carefree like me—but thank you, what we need most right now is someone who smiles and says 'it's okay'.\"",
+          "os": "(Your playful smile dispelled my anxiety. The dark clouds didn't disperse—but their edges were edged with a golden ray of optimism, something you casually drew on.)"
+        },
+        {
+          "text": "If you need money, I'll lend you some; if you're looking for a job, I'll help you keep an eye out.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "heartwarming",
+          "reply": "{name} paused for a moment, then quickly waved her hands in the air, \"No, no, no need! Don't worry so much about someone I've only met a few times—I'll figure something out myself! You work so hard every day, don't stay up all night browsing job websites for me anymore—I'll feel guilty.\"",
+          "os": "({ta} was taken aback by your seriousness. She felt both warm and flustered—being caught tightly when someone was utterly exhausted was an experience she hadn't had in a long time.)"
+        },
+        {
+          "text": "Losing your job is normal, don't take it too seriously.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "alienation",
+          "reply": "{name} lowered her eyes, gently picking at the dark green moss growing in the cracks of the steps with her index fingernail: \"...Yeah, I was being dramatic. Losing a job is perfectly normal. So many customers come and go—it's all just one business deal in the end.\"",
+          "os": "({ta} gently swallowed back the words she had been holding back for so long, \"Where should I go to see you?\" It turned out that in some people's eyes—she was just a talkative shop assistant.)"
+        }
+      ]
+    },
+    {
+      "id": "s4d",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "goto": "c3_skip",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You sit on the stone steps next to {ta}. The cool stone seeps through your trousers, as if adjusting your mood to the same temperature."
+        },
+        {
+          "who": "name",
+          "text": "\"Do you know why I like working the night shift?\" {ta} suddenly asked, her eyes not looking at you, but at the shimmering raindrops reflecting off the floor. \"The store is too crowded during the day, everyone has a purpose—buying cigarettes, buying drinks, and leaving. But the people who walk in late at night—don't seem to have any purpose. {ta} just don't want to go home, and they have nowhere else to go.\" \"So the people I can chat with for a bit are all like that. {ta} are lonely, and I'm lonely too—we can huddle together for warmth, half an hour is enough. The next day, when the sun rises—{ta} go back to work, and I go back to sleep, nobody owes anyone anything. Isn't that great?\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said \"how nice,\" but didn't say \"really nice.\" That one word difference represents the distance between acceptance and liking. {ta} turned \"finding warmth in a late-night convenience store\" into a carefully chosen lifestyle, one that wouldn't disturb anyone."
+        },
+        {
+          "who": "narration",
+          "text": "Haruki Murakami once wrote: \"No one likes loneliness, they just don't like disappointment.\" Beneath {ta}'s talkative exterior lies a child raised on disappointment, afraid to take initiative."
+        }
+      ]
+    },
+    {
+      "id": "c3_skip",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: The Troubles of Rainy Days",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} looked up at you, her eyes filled with a seriousness you'd never seen before."
+        },
+        {
+          "who": "name",
+          "text": "\"But you're different.\" {ta}'s voice was so soft it could only reach between the two of them. \"You didn't come here for half an hour to warm up—you came to warm up, and, and you come back every day on time to pay off your loan. This is the first time I've encountered this in the three years I've run this shop.\""
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Interlude: A Walk by the River",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain has completely stopped. The river surface is bathed in a long, gentle orange glow from the newly lit streetlights. You accompany {name} as you stroll slowly along the wooden boardwalk by the river. The air is filled with the fresh scent of earth and water after the rain, and raindrops still cling to the tips of the reeds."
+        },
+        {
+          "who": "name",
+          "text": "\"You know what—\" {ta} said as she walked, kicking at the puddles between the paving stones, her sneakers splashing water. \"I used to be very insecure. I felt like I talked too much and no one could stand it. My mom thought I was like a radio, and she made me sit in the corner at classmate gatherings. Even on blind dates, the other person would say, 'Do you have a speech-output compulsion?'\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} was laughing as she said this, but I know that laughter came from a long journey—the result of being used to being told she was noisy since she was very young, and then forcing herself to shut up every time. Some people protect themselves with silence, {ta} protects herself by talking incessantly—and then waiting for someone else to tell her to stop."
+        },
+        {
+          "who": "name",
+          "text": "\"So,\" {ta} suddenly stopped, turned around against the railing, and the dappled lights on the river fell into {ta}'s upturned eyes, \"Even if that lousy shop closes down next month—meeting you in this city, having you listen to every single word of my nonsense, is nothing to me. Not at all—you are worth a million times more than thirty packs of spicy strips, or a pot of oden.\""
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "shy",
+      "chapter": "Interlude: A Walk by the River",
+      "goto": "sA1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You walked to the end of an abandoned wooden boardwalk by the river. There was an old, dimly lit street lamp—the bulb was long gone—and a faded \"For Rent\" sign was nailed to a wooden post."
+        },
+        {
+          "who": "name",
+          "text": "\"Let me tell you a secret—\" {ta} leaned against the railing, kicking an empty plastic bottle into an obtuse angle with her toe. \"I'm actually—not from this city. I came from my hometown three years ago. I was fired after three days at my first job because I talked too much. I worked at my second job for half a month, and they scolded me for being useless.\" \"Later, I interviewed at a convenience store—the manager took one look and said, 'Your personality is suited for the night shift; no one will complain about how noisy you are.' The day I went home crying, I bought myself the cheapest bottle of rice wine—I felt like the whole world had banished me to a little box where the lights are never turned off.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that the convenience store wasn't just {their} job—it was a refuge they found during the lowest point in their life. {their} was kind to every late-night customer—because {their} knew just how cold it felt to have 'nowhere to go'."
+        }
+      ]
+    },
+    {
+      "id": "sA1c",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Interlude: A Walk by the River",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled a piece of fruit candy from her pocket—one of those hard, orange-flavored candies that cost five cents each at the corner store. The sound of the plastic wrapper being peeled off was particularly crisp on the quiet riverbank."
+        },
+        {
+          "who": "name",
+          "text": "\"People who work the night shift crave candy.\" {ta} handed you another candy; the wrapper was orange. \"When your blood sugar is low, one of these works better than coffee. I always carry one in my pocket—not just for myself, but also to anyone who comes into the store looking like they're about to collapse; I'll secretly slip one to them.\""
+        },
+        {
+          "who": "self",
+          "text": "The fruit candies in their pocket, the yogurt they secretly slipped to strangers, the soft-boiled egg they hid in the soup for me—it turns out that this person, whom the whole world finds annoying, has been giving sweets to strangers in the most discreet way."
+        },
+        {
+          "who": "narration",
+          "text": "The candy wrapper fluttered in the river breeze, and {ta} reached out to grab it—but you caught it first. {ta} paused for a moment, then laughed, a laugh brighter than all the streetlights combined."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "sad",
+      "chapter": "Interlude: Silence by the River",
+      "goto": "sB1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain stopped. You walked slowly along the wet riverbank, your arm shadows stretched long and short, near and far, by the uneven streetlights on the sidewalk. For the first time ever, you walked for almost twenty minutes without saying a word. The only sound was the soft rustling of your shoes on the puddles and fallen leaves."
+        },
+        {
+          "who": "name",
+          "text": "\"Am I—really too noisy and annoying?\" {ta} suddenly blurted out from the silence, not as if she were asking you, but as if she were weighing a question she had been thinking about for a long time in the air. \"My mom has always said that since I was little, and now I think she might be right. Even you think I talk too much.\""
+        },
+        {
+          "who": "self",
+          "text": "That usually loud, chattering voice, as if its signal had been boosted, now made his crooked bun and his entire silhouette appear tiny and dark. I had a vague feeling that my casual refusal just now might not have been a gentle push away of a sentence, but rather a heavy slamming shut on a door that the other person had mustered up courage to open even an inch of."
+        },
+        {
+          "who": "narration",
+          "text": "The river flowed calmly beneath the bridge, its surface reflecting a row of streetlights. The streetlights were all silent—so silent that it suddenly made one's heart pound. Those endless murmurs—for the first time, were stuck in my narrow throat."
+        }
+      ]
+    },
+    {
+      "id": "sB1b",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "sad",
+      "chapter": "Interlude: Silence by the River",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You parted ways at the bridgehead. {ta} didn't wave goodbye as usual, just nodded. A single strand of hair, loosely tied, hung from her side-swept bun under the streetlights, swaying gently in the night breeze."
+        },
+        {
+          "who": "name",
+          "text": "\"My 'Midnight Ghost Stories' record—\" {ta} whispered before leaving, \"I've decided to tear out the pages that record you. That way, when we meet again, we'll be back to how we were on the first day—a customer and a shop assistant. That might be better for both of us.\""
+        },
+        {
+          "who": "self",
+          "text": "What was torn away wasn't just a few pages of paper—it was all the little details {ta} had secretly kept—what I bought each week, whether I liked radishes, the first time I smiled. Someone who's used to treasuring everyone is now, for the first time ever, actively trying to forget someone."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} turned and walked into the night, her figure growing smaller and smaller. The ripples on the river reflected the streetlights, flickering like trembling flames. Zweig wrote in \"Letter from an Unknown Woman\": \"I love you, it has nothing to do with you.\" — In {ta}'s steps, there was the same stubbornness."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "happy",
+      "chapter": "Chapter 3: The Rooftop Bento Box",
+      "goto": "s5a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sky was still dimly lit—the sun had just risen over the rooftops of the six-story houses across the street, and the morning light cast a translucent, warm white glow on the sheets drying on the balconies. {name} invited you to the small terrace of her rented apartment, and from behind her back, she proudly presented two cloth-wrapped lunchboxes—one dark blue, the other light pink."
+        },
+        {
+          "who": "name",
+          "text": "\"I've found a new job—delivering handmade bento boxes!\" {ta} proudly lifted the lid of the lunchbox, revealing a carefully colored but still crookedly cut octopus sausage and a caramel-colored egg roll. \"Try it! This is the 108th practice version I made especially for you! The previous 107 were all inspected by the stray cats downstairs who like to mooch meals—they said 'meow'—which I took as a five-star review.\"",
+          "when": "flag: heartwarming"
+        },
+        {
+          "who": "name",
+          "text": "\"I... I've picked myself up again.\" {ta} gently pushed the pink lunchbox towards you, her smile somewhat reserved. \"Thank you for not bothering me that day—for squatting on the ground crying. I had already cut out all the job ads—but then I tore them all up one by one. Because I remembered—if I went to another district, and that koala who loves to work overtime came home late at night, there wouldn't be anyone to cook radishes for {ta}.\"",
+          "when": "flag: alienation"
+        },
+        {
+          "who": "self",
+          "text": "The bento box was presented clumsily, yet with such care that it brought tears to my eyes—the edges of the egg roll were slightly burnt, and the heart-shaped sausage had slipped and become a crooked heart. But the way {ta} leaned against the dew-kissed balcony railing, her hair tilted to one side, lips pursed, watching me eat the entire lunchbox—it was warmer than the first rays of morning sunlight. Perhaps this is the \"small, certain happiness\" that Haruki Murakami has talked about his whole life."
+        }
+      ]
+    },
+    {
+      "id": "s5a",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter 3: The Rooftop Bento Box",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As you eat, you secretly peek at {ta}'s small terrace—several potted plants hang on the railing, showing that {ta} has put a lot of care into them. The largest pot of jasmine has just sprouted a few small buds, and the small mint leaves next to it are a bright green."
+        },
+        {
+          "who": "name",
+          "text": "\"This jasmine plant was sent by my mom.\" {ta} followed your gaze, her eyes softening instantly. \"She wasn't very supportive of me working away from home, but every month she would secretly send me something—a jar of pickles, a few scarves, a pot of jasmine she grew herself. She never said she missed me, but each time she sent more than the last.\" \"There's a line in the Book of Songs—'Gazing at the sun and moon, my thoughts drift endlessly.' It was written on that note by my mom next to the jasmine pot. She went to a vocational school, and her speech is usually a bit rustic—but when she copied poems, she was more serious than anyone else.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta}'s talkativeness wasn't innate—it was inherited from a mother who wasn't good at expressing herself, a clumsy way of \"not wasting any opportunity to talk to people she cares about.\" The mother used jasmine flowers to convey messages—{ta} used babbling to convey messages. A direct lineage."
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter 3: The Rooftop Bento Box",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As the daylight shone brightly, the veins of the potted green ivy leaves on the terrace were clearly visible in the sunlight. {ta} watched you devour your entire bento box, then quietly placed her chopsticks beside the empty plate—as if she were delivering a very long confession."
+        },
+        {
+          "who": "name",
+          "text": "\"Is it good?... If—I mean, if—I make a packed homemade bento every day from now on, along with endless chatter—would you find it annoying while eating it? Like getting tired of the oden from the convenience store or complaining that the radio is too loud.\""
+        },
+        {
+          "who": "self",
+          "text": "Is {ta} asking about food? {ta} is asking—if I were to pack up all my mundane daily life, my rambling thoughts, my crooked bun, and my voice that I can never seem to shut down and give it to you—would you find this baggage too heavy? Like Haruki Murakami said, 'You have to be a composed adult'—but {ta} doesn't want to be. {ta} wants to be a talkative child."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter 3: The Rooftop Bento Box",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The morning breeze was light and soft. The lingering aroma of the burnt egg rolls hadn't completely dissipated, like the last lingering scent of this morning. {ta}'s fingertips nervously dug a small, shallow nail mark into the edge of the lunchbox."
+        }
+      ],
+      "options": [
+        {
+          "text": "I don't mind. I want to eat your bento boxes every day, along with your rambling.",
+          "textVariants": [
+            "I need to eat this every day. And your nagging too, let's pack it all up.",
+            "No problem. This is the best food I've ever eaten—because you made it."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "reply": "{name}'s face flushed—from her ears all the way down to her neck—and in her panic, she almost swept the empty lunchbox off the balcony: \"That...that...that isn't love—no, isn't it—it means seeing each other every day!! A lifetime—are you saying a lifetime?!\"",
+          "os": "(Their heart was pounding like they'd just finished a physical fitness test. The word \"a lifetime\"—the more it came out of their own mouth than it came from the other person.)"
+        },
+        {
+          "text": "It's delicious, but I want to see it every day—do you have ulterior motives?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Oh, no, I didn't mean anything by it—I just... I just enjoy watching you eat so much. Seeing you enjoy your meal gives me so much motivation—is that... is that being considerate???\"",
+          "os": "(Her thoughts were pinpointed so precisely that both of her hands trembled uncontrollably. But that final question, \"Was it sincere?\"—was more tender than any frank confession.)"
+        },
+        {
+          "text": "It's delicious. I'll cover all the grocery money from now on, so you don't have to work too hard.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"It's money again!!! I bring you lunch every day not to get reimbursed for groceries—it's so you won't eat those preservative-laden instant noodles every day! Stop calculating groceries with me—if you keep this up, I'll start growing my own radish seeds on the balcony tomorrow!\"",
+          "os": "(When {ta} pouted and sulked, she looked more like a child than usual. But the feeling of being genuinely cared for made {ta} secretly hide a big spoonful of candy while still pouting.)"
+        },
+        {
+          "text": "Your taste buds will get tired of eating food cooked by the same person every day.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6",
+          "reply": "{name} slowly closed the empty lunchbox lid. Then, she gently touched the now-cooled, golden-brown egg roll with her fingertip and smiled—but it was a very perfunctory smile: \"...Yeah, you're right. Eating the same dish all the time gets boring. Making it a full 108 times, maybe that's a bit too much, haha.\"",
+          "os": "({ta} gently tucked away her heartfelt rehearsals, practiced countless times, into the lunchbox along with the cooled egg roll. \"One Hundred and Eight Times\"—it was a way to save face, and also a way to give up.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Final Chapter - That \"Welcome\"",
+      "goto": "s6a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Months later, late one night. You finished work and dragged your feet back to that familiar street—the fluorescent light of that convenience store, stubbornly shining through the misty glass door, still shone. You hesitated for a moment before pushing the door open. Ding-dong. The familiar electronic doorbell. At the far end of the shelf—a girl with a crooked bun popped out from behind the oden pot, the hair tie still the same plastic one, a small new stain on her apron."
+        },
+        {
+          "who": "name",
+          "text": "\"The manager begged me to come back, he said—he found that without me, his late-night snack sales dropped by 40%, and several programmers in the office building next door are sending him bad reviews every day saying that the radish in the oden isn't flavorful enough—\" {ta} quickly summarized, then proudly swayed her bun three times. \"Welcome—hey, working overtime until this late again today, Mr./Ms. Koala? We have a new flavor of oden today—double soft-boiled egg. I kept some for myself, but you can have it.\"",
+          "when": "flag: heartwarming"
+        },
+        {
+          "who": "narration",
+          "text": "It's still those two words—Welcome. And that extra soft-boiled egg I secretly saved for you. This ordinary time after the last bus of overtime has become a destination you'll walk to on your own after get off work, thanks to that perpetually talking person with the crooked bun behind the cashier."
+        }
+      ]
+    },
+    {
+      "id": "s6a",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Final Chapter - That \"Welcome\"",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You're sitting at the small bar by the window, eating a radish. {ta} comes out from behind the cashier, moves a plastic stool, and sits opposite you—this is the first time you've sat across from {ta} at a table."
+        },
+        {
+          "who": "name",
+          "text": "\"Let me tell you—so much has happened these past few months.\" {ta} opened her notebook and began recounting her experiences. \"The programmer upstairs had twins; the guy selling spicy snacks finished watching his favorite show and is now watching the second season; my mom finally learned how to video chat on her smartphone—she calls me every Sunday night at nine sharp, urging me to find a boyfriend.\" \"She said—I'm already twenty-six, if I don't get married soon I'll be an old maid. I laughed at her for being out of touch—but after hanging up, I couldn't help but wonder if I should really consider it seriously.\" As {ta} spoke, her gaze subtly drifted to you before quickly looking away."
+        },
+        {
+          "who": "self",
+          "text": "{ta} didn't directly press for answers, but every word laid the groundwork for a proposal. This was {ta}'s style of proposal—not a kneeling proposal, not a diamond ring—it was done in a convenience store in the early morning, using his mother's phone call and the story of the spicy snack vendor to subtly weave the future into a casual conversation."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Final Chapter - That \"Welcome\"",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The shop was quiet—this hour of the early morning never belonged to anyone else. The round iron grid of the oden steamed steadily, and the air was filled with the warm aroma of bonito flakes, kelp, and radish."
+        },
+        {
+          "who": "name",
+          "text": "{name} suddenly put down the rag she was using to wipe the cups, twisting her fingertips together several times on her apron, creating wrinkles in the cotton-linen fabric. \"Um—\" {ta} began, her voice even softer than when listening to a late-night radio show, \"Could I... ask you a slightly—serious, rather unusual question?\""
+        },
+        {
+          "who": "narration",
+          "text": "{ta} took two deep breaths—she inhaled like an ordinary bird preparing to dive to the bottom of the water to retrieve a precious shell. The person who could mind the shop alone for eleven hours straight at night was so nervous when faced with this prepared question that even the straps of her apron twisted into a tightly knotted rope."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Final Chapter - That \"Welcome\"",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} slowly pulled out the old membership points card from her apron pocket—on the back of the card, {ta} had neatly pasted a sticky note with a ballpoint pen. On it was a line of small characters that she had practiced many times and copied many times before finally being satisfied with her writing."
+        }
+      ],
+      "options": [
+        {
+          "text": "I picked up a sticky note—it read: \"I'd like to be a part of your daily life. Is that alright?\"",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name} quickly covered her face with both hands—but deliberately left two gaps between her fingers, peeking out from behind them with extremely nervous eyes: \"Y-you should answer me!! Don't just look at it—the adhesive on the back of the sticker is almost dry—\"",
+          "os": "(This sentence took up half a sticky notepad to write. Now, this tiny sticker is being handed to you—a thousand times heavier than any item ever sold at a convenience store.)"
+        },
+        {
+          "text": "Holding {their} hand: Silly. You've already walked in without me even realizing it.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}'s tears suddenly burst through the dam of restraint—and then she burst into tears and laughter, almost blowing snot bubbles from her nose: \"Waaah...you, how did you suddenly become so eloquent!!! Even better than me—this is too cheating!\"",
+          "os": "({ta} felt this was the most brilliant night of all her night shifts—a night she could never have experienced. No amount of oden she could have made up for it.)"
+        },
+        {
+          "text": "He smiled and pushed the points card back: \"Be my 'lifetime super member' first?\"",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}: \"What lifetime super VIP membership—this card was originally maxed out with points by me, which was against my rules… But—I'm willing! Any title is fine—let's start by having convenience store breakfast together tomorrow morning!\"",
+          "os": "(Blushing, she carefully stuffed the loyalty card with the sticky note stuck to it back into the pocket of her apron, as if it were a treasure. She had already decided on tomorrow's menu.)"
+        },
+        {
+          "text": "I understand what you mean—but we can talk about these things slowly.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s7s",
+          "flag": "polite",
+          "reply": "{name}'s fingers paused on the corner of the sticky note—then she naturally tucked the card deeper into her apron pocket: \"...Hmm, take your time. The drink cooler seems to need restocking—you sit and eat first, I'll go get some boxes from the back.\"",
+          "os": "({ta} used restocking as a graceful and unpretentious way to exit the platform. Her retreating figure as she turned to go to the warehouse—a small section of it—appeared exceptionally quiet under the fluorescent lights.)"
+        },
+        {
+          "text": "I won't look at that sticker. It's fine as it is.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "polite",
+          "reply": "{name} silently tore the sticky note off the card—carefully, leaving no residue—then crumpled it into a tiny ball the size of a fingernail, and precisely tossed it into the wastebasket under the cashier, smiling slightly: \"Okay.\"",
+          "os": "(The crumpled sticky note rolled twice in the wastebasket before stopping. The convenience store's fluorescent lights were still as bright as day—but this late night seemed suddenly a million decibels quieter than usual.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Final Chapter: A Sweet Taste in Plainness",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the days that followed, your late-night bento boxes had their own dedicated bakers, and your ramblings had an audience that automatically listened. Life still consisted of going to get off work, coming home, and working late into the night, walking the same route home—only the convenience store lights had transformed from mere illumination into warm lamps waiting for you. {name} moved to a small apartment closer to your office—the balcony was planted with radish sprouts and mint. The bento box contents upgraded from crooked octopus sausages to teriyaki chicken legs and curry beef brisket—though occasionally, when you were in a bad mood, they'd still burn a little bit."
+        },
+        {
+          "who": "name",
+          "text": "\"I have some big news for you!\" {ta} linked arms with you as you walked along the riverbank illuminated by streetlights, their chatter filling the entire path. \"That uncle came to buy spicy strips again today—this time it was thirty-two packs! He said he'd finished watching the series! Season three is over! I stamped his membership points card with a whole set of stamps. He said he's going to frame it.\"",
+          "when": "flag: Together"
+        },
+        {
+          "who": "self",
+          "text": "There were no earth-shattering scenes, no dramatic plots. But the fluorescent light that never went out on the street corner, the oden and radish that were always warm in the pot, the doorbell that rang eternally, and the endless trivialities that the person next to me talked about—these constituted the most down-to-earth human warmth I could imagine.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7a",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Final Chapter: A Sweet Taste in Plainness",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You walked along the river to a stone bridge, beneath which was a small, shallow beach. {ta} suddenly stopped and took out a small, pre-prepared fruit candy, about the size of a pomegranate seed, from her pocket."
+        },
+        {
+          "who": "name",
+          "text": "\"Remember—that time by the river, I gave you an exactly the same one.\" {ta} unwrapped the candy and gave you half. \"My mom said that giving candy to someone you care about is addictive—once you start, you can't stop. I give you one almost every day now. Can this habit—continue?\""
+        },
+        {
+          "who": "self",
+          "text": "Sugar can be addictive. {ta} used the cheapest fruit candies and the most ordinary methods to build the most solid promise for me. This promise had no ring, no notarized document—just someone whose pocket was always filled with candy."
+        },
+        {
+          "who": "narration",
+          "text": "The candy slowly melts in your mouth, tasting the same orange flavor as last year. You suddenly remember it was your favorite candy from childhood—but you've never mentioned it to {them}. {Them}, however, has remembered. {Them} remembers everything, even better than you do yourself."
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Final Chapter: A Sweet Taste in Plainness",
+      "goto": "s7c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The moon rose to the top of the tower crane on the opposite bank of the river. Your shadows were shortened and lengthened by the side-by-side streetlights—like two pages of a calendar turned alternately by the wind, inseparable."
+        },
+        {
+          "who": "name",
+          "text": "\"Hey—you must have been spacing out when I was talking about the Spicy Snack Uncle Season 3 finale.\" {ta} puffed out her cheeks, pretending to be angry, but the fake anger deflated in less than two seconds, turning into a soft smile. \"Oh well, it's okay—I'll talk as much nonsense as I can in my lifetime anyway. The part you missed—I'll make up for it slowly later. More for the same price.\""
+        },
+        {
+          "who": "self",
+          "text": "\"Make it up.\" {ta} said these three words as matter-of-factly as saying, \"I'll add an extra egg to your oden.\" It turns out that the world's most expensive promises never need notarization or collateral—they are often quietly hidden in a convenience store's early morning carrot and a gentle \"Welcome.\""
+        }
+      ]
+    },
+    {
+      "id": "s7c",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Final Chapter: A Sweet Taste in Plainness",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the way home, {ta} took out the thick \"Midnight Ghost Stories Record\" from her bag—it was already on its second volume. The pages were worn and frayed, and a dried jasmine petal was tucked into the title page."
+        },
+        {
+          "who": "name",
+          "text": "\"Now it has a new title—'A Convenience Store Romance'.\" {ta} proudly flipped the page to show you. \"The first page is you. I drew you as a koala, wearing a name tag, holding instant noodles, and with two big dark circles under your eyes. It's terribly ugly—but it's my favorite drawing.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} spent three years documenting this vast, indifferent city, turning it into a \"Romance.\" The uncle with thirty packs of spicy strips, me buying discounted yogurt, every late-night doorbell ring—it's all an epic. {ta} is the city's most unassuming bard."
+        },
+        {
+          "who": "narration",
+          "text": "You take the notebook and turn to the latest page—on that page, {ta} has written a line in small red ink: 'Today, he/she finally entered my daily life.' Case closed. A new chapter begins. The date is today. The handwriting is neat, unlike {ta}'s usual sloppy style."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "sad",
+      "chapter": "Final Chapter - Welcome Again",
+      "goto": "s7sa",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You still go to that late-night convenience store every few days. {name} will still stand behind the counter, smiling and saying that crisp \"Welcome!\", skillfully picking out an extra thoroughly cooked radish from the soup for you. Only, the sticky note that used to be stuck to the back of your loyalty card is no longer mentioned. It's crumpled into a small ball and lies at the very bottom of the wastebasket under the cash register, along with other expired receipts."
+        },
+        {
+          "who": "name",
+          "text": "\"The usual—Oden.\" {ta}'s smile was as perfect as ever—energetic, warm, professional, and flawless. But compared to before, that welcome seemed to lack a certain recurring background noise: \"You've worked hard today too! Keep up the good work tomorrow! Goodnight—take care.\""
+        },
+        {
+          "who": "self",
+          "text": "I took the string of radishes and the spotless, routine lines. Suddenly, I desperately missed that guy with the crooked bun who would grab me out of the blue, count spicy strips, and bombard me with questions about my work, his hair as unpredictable as a radio. Some of the closest gateways between people—if you miss the opportunity in the early morning, you're forever back to the standard service lane of a late-night convenience store.",
+          "when": "tag: trash>=2"
+        },
+        {
+          "who": "narration",
+          "text": "The fluorescent lights still cast a pale, lifeless glow throughout the room. The doorbell still rang. But the subtle, almost ignited feeling at the checkout counter, which slowly cooled to room temperature—was flattened, folded, and then neatly archived, along with all the undelivered loyalty cards, into the last page of that long-worn-out book, \"Midnight Convenience Store Ghost Stories.\""
+        }
+      ]
+    },
+    {
+      "id": "s7sa",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "sad",
+      "chapter": "Final Chapter - Welcome Again",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Several months later, late one night, you pass by that convenience store—peeking through the glass door, you see a strange, bespectacled young man standing behind the counter. You hesitate for a moment, then push the door open and go in. The new clerk politely asks what you need. You instinctively open your mouth to say \"the usual\"—but the words become meaningless here."
+        },
+        {
+          "who": "name",
+          "text": "\"You mean the lady who used to work the night shift?\" The clerk pushed up her glasses, took a small envelope from the drawer, and handed it to you. \"This is what she left behind the day she quit. She said if that 'koala' comes again—give this to {ta}.\""
+        },
+        {
+          "who": "narration",
+          "text": "The envelope was light. You opened it and saw—inside was a sticky note folded into a square, the very same one from back then. Underneath it was a half-melted orange candy and the last page of {ta}'s \"Midnight Convenience Store Ghost Stories\"—torn off."
+        },
+        {
+          "who": "self",
+          "text": "The handwriting on the sticky note had faded a bit with time, but the nine words were still clearly legible: \"I want to be a part of your daily life. Is that alright?\" A new sentence followed: \"It's okay. I'll go first.\" I stood in the middle of the convenience store, clutching the note. The doorbell rang, and another latecomer walked in.",
+          "when": "tag: trash>=2"
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "riverside_summer",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This period of ordinary, uneventful life is about to come to an end. Now—what would you like to say to {name}? (≤100 words; it will be the final touch in your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name}, arm in arm with you, strolled along the riverbank, excitedly updating you on the upcoming fourth season of \"Spicy Noodle Uncle.\" {ta} suddenly stopped, looking up at you, the river breeze ruffling the strands of hair falling across her forehead—waiting for a single sentence, a sentence that belongs to these bubbling oden dishes and endless, honest love confessions.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The convenience store lights are still on at this hour. You stand alone in front of the stone railing by the river, a bunch of radishes half-cooled by the wind in your hand. You long to whisper the words that have been stuck deep in your chest, before the night shift ends—to the night breeze that caresses the river.",
+          "when": "flag: polite"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "People from the same kitchen",
+      "trigger": "top: sincerity",
+      "caption": "There were no dramatic ups and downs—you simply listened attentively to every clichéd rambling from {name} and accepted every clumsy yet heartfelt gesture from {ta}. The extra radish, the 108th bento box, the sticky note on the back of the loyalty card—these turned an ordinary, mundane encounter in the convenience store into a warm, everyday moment that would last until midnight.",
+      "report": "[Relationship Personality - Kitchen Partner] You belong to the rare \"secure\" type: you don't mind a mundane life, nor are you afraid of trivialities and complexities. You can listen to every bit of nonsense in the long nights, and you're willing to offer the promise of \"I'm here\" when the other person is at their lowest. Haruki Murakami wrote extensively about \"small joys\"—and you've turned countless early morning oden meals into moments of happiness. People who can eat with you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "talkative person",
+      "trigger": "Top: Aquaman",
+      "caption": "You're adept at weaving every flutter of the heart into a playful twist, making {name} blush and giggle uncontrollably. But that conversation—which could have been taken seriously for a lifetime—never saw you give the final answer. That sticky note, pasted and torn up again, never received a reply in the end.",
+      "report": "[Relationship Personality - The Talkative One] You're incredibly eloquent, quick-witted, and charming, capable of warming the air even in the dead of night. But you're afraid of things too heavy—a promise that might crush a moment of ease. You've lit up countless nights at the cashier, yet you hesitate to linger in someone's ordinary life after leaving the store. Don't wait until the door is closed and the sign is off to remember that silly question that should have been answered long ago."
+    },
+    {
+      "endingId": "toxic",
+      "title": "Cold-faced Guest",
+      "trigger": "top: scum",
+      "caption": "The last soft-boiled egg that {name} secretly slipped to you, the homemade bento box you practiced a full 108 times, and all those endless night shift chatter that you never had a chance to finish—you just casually pushed them all back to their original places, not even taking away a trace of warmth.",
+      "report": "[Relationship Personality - The Cold-Faced Guest] You are calm, aloof, and polite. You politely avoid any approach. You may never be bothered by random acts of kindness late at night—yet you've also missed the person who would have endured 108 failures for you without giving up. The coldest thing isn't the street corner at dawn, but the heart that has already issued an eviction notice."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Worrying person",
+      "trigger": "top: Loyal Dog",
+      "caption": "You frantically try to cover for {name}, stuff money into their pockets, and scour job postings, trying to shield them from all the storms. Ironically—you ignore that sticky note with only nine words on it.",
+      "report": "[Relationship Personality - The Worrying Person] You are sincere and always ready to help, habitually expressing your clumsy concern with \"I'll solve it.\" But what {name} truly wants isn't a one-on-one help manual—it wants you to be willing to sit down at the checkout counter with them. Don't forget, you also deserve an extra soft-boiled egg every night."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "passerby",
+      "min": -99,
+      "caption": "Days passed quietly by, and even the ding-dong that rang precisely at midnight every day couldn't give a real score to your relationship with {name}, a relationship that had attracted each other's attention.",
+      "report": "[Relationship Personality - Passerby] Your choices are like a text message drifting by in the dead of night—warm for a while, then fading into darkness, sometimes gazing intently, sometimes losing focus. Perhaps you haven't yet decided whether to give this warmth, which only appears in the early morning, the recognition of daytime. Recognize your own feelings before deciding whether to push open that glass sliding door that's always lit for you."
+    }
+  ]
+}

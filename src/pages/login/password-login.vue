@@ -1,8 +1,8 @@
 <template>
   <view class="login-container">
     <view class="login-header">
-      <text class="title">密码登录</text>
-      <text class="subtitle">支持手机号/邮箱/用户名 + 密码登录</text>
+      <text class="title">{{ t('passwordLogin.title') }}</text>
+      <text class="subtitle">{{ t('passwordLogin.subtitle') }}</text>
     </view>
     
     <view class="login-form">
@@ -13,11 +13,11 @@
       
       <!-- 账号输入 -->
       <view class="input-group">
-        <text class="label">账号</text>
+        <text class="label">{{ t('passwordLogin.accountLabel') }}</text>
         <input 
           class="input-field"
           type="text"
-          placeholder="请输入手机号/邮箱/用户名"
+          :placeholder="t('passwordLogin.accountPlaceholder')"
           v-model="username"
           @input="onUsernameInput"
         />
@@ -28,12 +28,12 @@
       
       <!-- 密码输入 -->
       <view class="input-group">
-        <text class="label">密码</text>
+        <text class="label">{{ t('passwordLogin.passwordLabel') }}</text>
         <view class="password-input-container">
           <input 
             class="input-field password-input"
             :type="showPassword ? 'text' : 'password'"
-            placeholder="请输入密码"
+            :placeholder="t('passwordLogin.passwordPlaceholder')"
             v-model="password"
           />
           <button class="toggle-password-btn" @click="togglePassword">
@@ -48,13 +48,13 @@
         :disabled="!canLogin"
         @click="handleLogin"
       >
-        {{ loading ? '登录中...' : '登录' }}
+        {{ loading ? t('passwordLogin.toast.loading') : t('passwordLogin.loginBtn') }}
       </button>
       
       <!-- 快捷链接 -->
       <view class="quick-links">
-        <text @click="goToCodeLogin" class="link-text">验证码登录</text>
-        <text @click="goBack" class="link-text">返回</text>
+        <text @click="goToCodeLogin" class="link-text">{{ t('passwordLogin.codeLoginLink') }}</text>
+        <text @click="goBack" class="link-text">{{ t('common.back') }}</text>
       </view>
     </view>
   </view>
@@ -62,8 +62,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, computed } from 'vue'
 import { signInWithPassword } from '../../utils/cloudbase'
+
+const { t } = useI18n()
 
 // 响应式数据
 const username = ref('')
@@ -82,15 +85,15 @@ const detectUsernameType = (value: string) => {
   if (!value) return ''
   
   if (/^1[3-9]\d{9}$/.test(value)) {
-    return '手机号'
+    return t('passwordLogin.typePhone')
   } else if (/^\+\d{1,3}\s\d{4,20}$/.test(value)) {
-    return '国际手机号'
+    return t('passwordLogin.typeIntlPhone')
   } else if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
-    return '邮箱'
+    return t('passwordLogin.typeEmail')
   } else if (/^[a-zA-Z0-9_]{3,20}$/.test(value)) {
-    return '用户名'
+    return t('passwordLogin.typeUser')
   } else if (value.length >= 3) {
-    return '用户名'
+    return t('passwordLogin.typeUser')
   }
   
   return ''
@@ -99,20 +102,20 @@ const detectUsernameType = (value: string) => {
 // 获取输入提示
 const getInputHint = () => {
   if (!username.value) {
-    return '支持以下格式：手机号、邮箱地址、用户名'
+    return t('passwordLogin.hintDefault')
   }
   
   switch (usernameType.value) {
-    case '手机号':
-      return '✅ 识别为手机号'
-    case '国际手机号':
-      return '✅ 识别为国际手机号'
-    case '邮箱':
-      return '✅ 识别为邮箱地址'
-    case '用户名':
-      return '✅ 识别为用户名'
+    case t('passwordLogin.typePhone'):
+      return t('passwordLogin.hintPhone')
+    case t('passwordLogin.typeIntlPhone'):
+      return t('passwordLogin.hintIntlPhone')
+    case t('passwordLogin.typeEmail'):
+      return t('passwordLogin.hintEmail')
+    case t('passwordLogin.typeUser'):
+      return t('passwordLogin.hintUsername')
     default:
-      return '请输入有效的手机号、邮箱或用户名'
+      return t('passwordLogin.hintInvalid')
   }
 }
 
@@ -130,7 +133,7 @@ const togglePassword = () => {
 const handleLogin = async () => {
   if (!canLogin.value) {
     uni.showToast({
-      title: '请完善登录信息',
+      title: t('passwordLogin.toast.incomplete'),
       icon: 'none'
     })
     return
@@ -139,13 +142,13 @@ const handleLogin = async () => {
   try {
     loading.value = true
     uni.showLoading({
-      title: '登录中...'
+      title: t('passwordLogin.toast.loading')
     })
     
     const loginResult = await signInWithPassword(username.value.trim(), password.value)
     
     uni.showToast({
-      title: '登录成功',
+      title: t('passwordLogin.toast.success'),
       icon: 'success'
     })
     
@@ -160,7 +163,7 @@ const handleLogin = async () => {
     console.error('登录失败:', error)
     
     // 显示友好的错误信息
-    let errorMessage = '登录失败'
+    let errorMessage = t('passwordLogin.toast.fail')
     if (error.message) {
       errorMessage = error.message
     }

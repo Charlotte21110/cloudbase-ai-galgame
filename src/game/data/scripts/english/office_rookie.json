@@ -1,0 +1,1072 @@
+{
+  "_id": "script_rookie",
+  "id": "script_rookie",
+  "title": "Workplace Novice's Guide",
+  "openingTip": "A new intern, {name}, has joined the company—pink-haired, mischievous, and clever. On her first day, she made the printer smoke and sent a bunch of emojis to the entire company. And you, the unfortunate \"mentor\" assigned to mentor {ta}, are here. This is a hilarious yet subtly warm workplace story. Most of the time, you just need to tap the screen to read on; a few key crossroads will determine how this mentor-mentee relationship will turn out.",
+  "prologue": "The rule for your first day on the job: Don't stand out. But {name} did the opposite—spilling coffee on the director's suit and turning a \"read but not replied\" message into a massive, company-wide social disaster. HR handed you this hot potato: \"Mentoring a new employee, that's your job.\" You facepalm, but {ta} flashes you a peace sign: \"Hello, mentor! My name is {name}, nice to meet you! Look after me, okay?\" And so, a seasoned employee who wanted to give up and a mischievous newbie who kept causing trouble were tied together like ants on a string.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Prologue: The Hot-Touch Intern",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At eight o'clock in the evening, the office lights were still on for those working overtime. A burnt smell wafted from the printing area, so strong it sounded like someone was secretly grilling meat in the break room—the new intern, {name}, was frantically patting the smoking printer, her pink hair sticking up like a ball of fluff."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, Master, save me!\" {ta}'s voice was choked with sobs. \"It...it started smoking by itself! I only pressed it once! Really just once! It's got a problem with me!\""
+        },
+        {
+          "who": "self",
+          "text": "Half a day on the job, I spilled the director's coffee, sent out panda emojis to the group chat, and now I've destroyed a printer. This isn't an intern, this is a walking disaster zone. HR says it's a \"mentorship\" system, but I think it's more like the experienced staff cleaning up the newbies' messes."
+        },
+        {
+          "who": "name",
+          "text": "\"Waaah... Am I going to get fired?\" {ta} pitifully tugged at your sleeve, her knuckles white. \"Master, you're the best! Please help me, please! I'll serve you tea, pour water, massage your shoulders! I'll do anything!\""
+        },
+        {
+          "who": "self",
+          "text": "My sleeve was being pulled tightly. The panic in those eyes reminded me of my first day at work—I also spilled a cup of coffee on the manager's desk. Only back then, no one was willing to protect me."
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Prologue: The Hot-Touch Intern",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You open the printer—there's a piece of paper stuck inside, with a panda head emoji of {name} printed on it. Pull the paper out, and the printer is working again. {name} watches you finish in three seconds, his mouth agape in disbelief."
+        },
+        {
+          "who": "name",
+          "text": "\"Wow—Master, you're so cool!\" {ta} clapped her hands loudly, her eyes almost sparkling. \"Just three seconds! You fixed it in three seconds! What took me half an hour, you finished in three seconds! I've decided—\" \"From now on, you're my one and only super mentor in the workplace! I'm going to learn from you like a sponge absorbs water!\" {ta} said this with great seriousness, her pink hair glistening under the fluorescent lights."
+        },
+        {
+          "who": "self",
+          "text": "\"The only thigh,\" \"sponge absorbs water\"... This person didn't even confess their feelings this hard. But for some reason, I feel that being so earnestly attached to me isn't so bad. After all, it's been a long time since we've seen such bright pink in the office."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Prologue: The Hot-Touch Intern",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The printer is fixed, and the office is quiet again. {name} is still standing next to you, twisting his fingers, his usual playful smile unusually absent."
+        },
+        {
+          "who": "name",
+          "text": "\"Master,\" {ta} suddenly became serious, her voice eight octaves lower than usual, \"I know I always cause trouble... but I really, really want to do this job well. I studied for four years in university just to get into this company.\""
+        },
+        {
+          "who": "self",
+          "text": "Four years, just like I was back then. Five interviews before finally getting an offer. Beneath {ta}'s panic, there was someone just like me back then, desperately trying to prove themselves."
+        },
+        {
+          "who": "name",
+          "text": "\"My parents both think I definitely won't even pass the probation period.\" {ta}'s voice was a little hoarse, then she quickly smiled. \"But I don't want them to be right. Master, are you willing to teach me? The kind of teaching that's serious and not perfunctory.\""
+        },
+        {
+          "who": "self",
+          "text": "Han Yu said, \"A teacher is one who imparts knowledge, teaches skills, and resolves doubts.\" But I never imagined that one day I would be called \"Master\"—and by such a serious, almost fearful, tone."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Prologue: The Hot-Touch Intern",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} unusually stopped her usual rambling and looked at you seriously. The smell of the printer hadn't completely dissipated, but this moment of sincerity was more effective than any air freshener."
+        }
+      ],
+      "options": [
+        {
+          "text": "Yes, I'm willing. From today onwards, I'll take care of things for you, but you also need to be willing to learn.",
+          "textVariants": [
+            "I'll teach you! But let me make this clear beforehand, I'll be keeping a close eye on things.",
+            "Deal. I'll show you the ropes, just don't try anything new."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name}'s eyes lit up, and he gave a crooked salute: \"Yes! Your disciple will definitely do his best! I will never let Master down! From now on, if Master says go east, I will never go west—at most, I'll go southeast!\"",
+          "os": "(The feeling of being taken seriously made {them} secretly vow to live up to expectations. This wasn't just polite talk; it was a promise.)"
+        },
+        {
+          "text": "Seeing how clever you are, it's not a loss to teach you.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} chuckled: \"Master, you think I'm cute too, right! Don't worry, I'm both cute and capable!\"",
+          "os": "({ta} smirked smugly, its tail practically flying in the air.)"
+        },
+        {
+          "text": "Okay, don't worry about it, I'll finish all the work for you.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} panicked: \"Then...then I won't be able to learn! Master, you have to teach me! I didn't come here to be lazy, I want to learn!\"",
+          "os": "(What they want is skill and growth, not to make things easier for you. They are more ambitious than you think.)"
+        },
+        {
+          "text": "I don't want to take on an apprentice who's a burden.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name}'s shoulders slumped, and the ends of her pink hair turned slightly gray: \"...Oh. I'm sorry for troubling you, Master. I...I'll try my best.\"",
+          "os": "(The stars in her eyes went out. That phrase, \"Keep going,\" sounded so bitter.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The project was rushed, and you were working overtime until late at night. The entire office building outside was dark, except for your floor. {name} proactively went downstairs to the convenience store, carrying back a bunch of oden and rice balls; the rustling plastic bags seemed to bring back the only warmth and life in the late night."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, you've worked so hard!\" {ta} proudly laid out the food on the table—radish, soft-boiled egg, seaweed knots—taking two of each. \"I've been observing you for a whole week—you love radish and soft-boiled egg the most, don't you, right?\""
+        },
+        {
+          "who": "self",
+          "text": "This guy is a complete mess at work, but his ability to observe people is top-notch. When did I ever say I liked radishes? I didn't even realize it myself, but {ta} had already memorized everything from the contents of my lunchbox to my afternoon tea choices."
+        },
+        {
+          "who": "name",
+          "text": "{ta} placed both soft-boiled eggs into your bowl: \"Master, eat more! Although you didn't say anything today, I noticed your typing pace was a little slower than usual—you must be tired. When you're tired, you should eat eggs to replenish your energy!\""
+        },
+        {
+          "who": "self",
+          "text": "The rhythm of typing... they even noticed that. This person isn't careless; they just use all their meticulousness on strange things."
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "goto": "s3d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You sat on the steps outside the convenience store, the streetlights casting long shadows of both of you. {name} pulled a crumpled little notebook from her bag, a pink bunny sticker on the cover."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, look—this is my 'No-Mistakes Notebook.'\" {ta} opened it to show you; it was filled with dense writing. \"I wrote down everything about messing up the printer today—'Don't force it when the printer jams; press the cancel button first.' I'll add a page every day when I get home, hoping to make fewer mistakes tomorrow.\""
+        },
+        {
+          "who": "self",
+          "text": "Beneath that cheerful exterior lies someone who meticulously reviews every failure. This isn't carelessness; it's secretly catching up with everyone using the most basic methods. I used to have a notebook like that too—but I lost it after working for a while."
+        },
+        {
+          "who": "name",
+          "text": "\"My mom says I learn everything slowly.\" {ta} closed the notebook and hugged it tightly to her chest. \"But it's okay to be slow—I have plenty of energy, I can catch up slowly. I'll write it down stroke by stroke, and one day I'll make those who laugh at me take it back.\""
+        },
+        {
+          "who": "self",
+          "text": "Han Yu said, \"Diligence leads to mastery, while idleness leads to ruin.\" {ta} hadn't read this quote, but {ta} lived it like a little notebook with a pink cover. It turns out that those who truly want to climb the ladder never make a fuss; they just silently swallow the word \"endure.\""
+        }
+      ]
+    },
+    {
+      "id": "s3d",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "goto": "s3e",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A middle-aged man, who had also finished working overtime, pushed open the door of the convenience store and came out—he was the team leader from the department next door, surnamed Zhao. He paused for a moment when he saw you squatting on the steps."
+        },
+        {
+          "who": "Team Leader Zhao",
+          "text": "\"Hey, isn't this the kid who made the printer smoke? Hasn't he been fired yet?\" There was no malice in his tone; it was more like he was looking at a brand-new machine that hadn't yet blown up."
+        },
+        {
+          "who": "name",
+          "text": "{name}'s face stiffened for a moment, but she immediately straightened her back and showed him her notebook: \"Team Leader Zhao, I write this down every day—what I broke today, and how to correct it next time. Don't worry, I won't keep doing this forever. I'm keeping a detailed record.\""
+        },
+        {
+          "who": "narration",
+          "text": "Team Leader Zhao glanced at the notebook for a few seconds—making sure it was indeed filled with dense writing—then patted {ta} on the shoulder: \"Better than me back then. After I broke the first printer... I just pretended nothing happened and walked away.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that in this building, it wasn't just {ta} quietly trying to mend things after the fact. Team Leader Zhao's words—were the most senior person in this office speaking words of kindness to a newcomer."
+        }
+      ]
+    },
+    {
+      "id": "s3e",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You stand up to help {name} clear away the paper bowl of oden. {ta} suddenly turns her head and quickly wipes her eye. When you look up again—{ta} has already resumed her cheerful expression."
+        },
+        {
+          "who": "name",
+          "text": "\"Master.\" {ta}'s voice trembled slightly, but was light and cheerful. \"What Team Leader Zhao said made me realize—it turns out that being told 'better than I was back then' by a stranger is so effective. I'll write that sentence down in my notebook when I get back. Item Seventeen: First time being recognized—from Team Leader Zhao next door.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} Even a casual compliment from a stranger is meticulously recorded in a notebook. This kind of person—is not afraid of making mistakes, but treats every opportunity to avoid mistakes as fertilizer bestowed by others."
+        },
+        {
+          "who": "narration",
+          "text": "The streetlights cast your shadows askew—one large, one small, one high, one low. The automatic doors of the convenience store slowly closed, the aroma of oden broth still lingering in the night breeze."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The convenience store was so quiet in the early morning that only the hum of the freezer could be heard. {name} poked at a radish with his chopsticks and suddenly said something completely unrelated."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually, I'm not as useless as you think,\" {ta} said softly, drawing circles on the rim of her bowl with the tip of her chopsticks. \"I just... tend to make mistakes when I'm nervous. I've been like this since I was little—it's the same with exams and interviews. But I've found that when my mentor is around, I actually calm down.\""
+        },
+        {
+          "who": "self",
+          "text": "\"Don't panic when Master is around.\" This is a very light sentence, but it contains a heavy sense of recognition—{they} consider me a safe haven."
+        },
+        {
+          "who": "name",
+          "text": "\"So,\" {ta} looked up, placed the soft-boiled egg into your bowl, and said very seriously, \"this egg isn't a bribe—it's a thank you. Thank you, Master, for not throwing me away the day I messed up the printer.\""
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter 1: Late-Night Snack During Overtime Work",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The soft-boiled egg sways gently in the oden soup, and {ta}'s fingers are still on the end of the chopsticks, waiting for you to accept this—not an egg, but a heartfelt statement that has been held back for a long time."
+        }
+      ],
+      "options": [
+        {
+          "text": "From then on, I would stand next to you during meetings and reports to encourage you.",
+          "textVariants": [
+            "If you're nervous, just look at me. With me here, what are you afraid of?",
+            "Remember, if you panic, call your master, and I'll cover for you."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "reply": "{name}'s eyes shone like the stars at dawn: \"Really! With Master by my side, I feel like I could take on ten! No—I could take on an entire conference room!\"",
+          "os": "({ta} felt like she had a mountain behind her that wouldn't run away. Very stable.)"
+        },
+        {
+          "text": "Oh, so this means you're only obedient in front of your master?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} blushed to the roots of her neck: \"N-no, that's not true! I'm like that with everyone! ...I was just kidding, only with you.\" She added the sentence quietly without even realizing it herself.",
+          "os": "({ta} was so flustered she almost threw the egg back into the bowl, but the second half of her sentence was spoken so softly it sounded like a secret.)"
+        },
+        {
+          "text": "It's okay if you make a mistake, I'll take the blame for you.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} slammed down her chopsticks, exclaiming anxiously, \"No way! I made this mess myself, how can I let Master take the blame! Let me shoulder this once—even if I get scolded and cry, I have to cry with a clear conscience!\"",
+          "os": "({ta} doesn't want to always hide behind you. The fledgling wants to learn to fly.)"
+        },
+        {
+          "text": "Being nervous is an excuse; you'll get better with more practice.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "reply": "{name} lowered her head and ate her rice, her chopsticks moving quickly, but her voice was muffled: \"...Yes, Master is right. I haven't been working hard enough. I'll go back and practice more.\"",
+          "os": "(She swallowed back her little bit of coquettish thought, and the egg, too, went cold.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A major blunder has occurred. A crucial tender document contained a data error—the decimal point was moved one place, tripling the original quote. The client immediately became furious, sending a strongly worded email and directly copying the director. The director summoned you all to his office, his face as dark as the calm before a storm. That tender document—you were responsible for reviewing it. {name} was just the initial entry. However, in the system log, the last person to make the edit is listed as {ta}."
+        },
+        {
+          "who": "name",
+          "text": "{name}'s face turned pale, and she clutched the hem of her clothes, crumpling the fabric: \"It's...it's my fault for missing a line when I was checking...but Master clearly taught me to check three times...It's my fault, I didn't check enough. It's all my fault.\""
+        },
+        {
+          "who": "self",
+          "text": "The director's gaze swept between us, waiting for an answer to \"who will be responsible.\" If this hurdle wasn't handled well, {ta}'s internship would end there—and as her mentor, I wouldn't be able to escape responsibility either."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The director tapped the table, the sound like an ultimatum. {name} stood beside you, palms sweaty, but back ramrod straight—more mature than ever before."
+        },
+        {
+          "who": "name",
+          "text": "\"I'll go apologize.\" {ta} took a deep breath, but her lips were still trembling. \"At worst... at worst I'll quit. I can't drag Master down with me. Master taught me so much and even fixed the printer for me—I can't let Master carry this burden for me again.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s voice trembled as she spoke, but she enunciated each word precisely. It turns out that the person who would only clutch her sleeves and cry for help when she got into trouble was more resilient than anyone else in a crucial moment."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "goto": "s4d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The break room was empty. {name} stood leaning against the refrigerator—not yet at the director's office—wrung her skirt into a ball. {ta}'s lipstick was smudged on one side, but {ta} didn't notice."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, I have something shameful to tell you.\" {ta} didn't look at you, her gaze fixed on the buzzing indicator light on the refrigerator. \"In my final year of university, I was made a scapegoat by a senior student—she made me write a report for her, and when things went wrong, she blamed it all on me. Back then, I didn't have a master, and no one spoke up for me. I failed that course and almost didn't graduate.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta} isn't just an intern afraid of causing trouble. {ta} has a past wound of being casually sacrificed. So this time, {ta}'s first reaction wasn't to shift blame—it was, \"I'll apologize so I won't drag you down with me.\" {ta} used her own past pain to earnestly draw a clear line on the bottom line of being a decent human being."
+        },
+        {
+          "who": "name",
+          "text": "\"So this time I'll take the blame.\" {ta} finally looked up at you, her eyes glistening with tears, but her expression was steady. \"Even if I get fired because of this—it's better than letting someone who's good to me take the blame for me. Master, please let me go in alone.\"",
+          "when": "tag: Sincerity>=1"
+        },
+        {
+          "who": "narration",
+          "text": "The microwave in the break room beeped—someone's food was still spinning inside. {ta} turned and walked towards the director's office—her back was slender, but she walked very straight. This was the first time I'd seen {ta} walk steadily without a 'mentor'."
+        }
+      ]
+    },
+    {
+      "id": "s4d",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "goto": "s4e",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The door to the director's office was ajar—Secretary Lin peeked out and waved to you. \"The director just got a call from a major client and's still furious. Anyone who goes in will be cannon fodder. Take it easy.\""
+        },
+        {
+          "who": "name",
+          "text": "{name}'s face paled even more upon hearing this, her pink hair trembling under the light. \"Master—that big client Sister Lin mentioned…did they call because of my data error? Did I mess up the whole project?\""
+        },
+        {
+          "who": "Sister Lin",
+          "text": "Sister Lin glanced at {ta}, her tone surprisingly calm: \"It's not a complete disaster. The client said the analytical logic on the first two pages of the proposal was quite good. They asked who wrote it and want you on the project team. The director is hesitating.\""
+        },
+        {
+          "who": "self",
+          "text": "The analysis logic on the first two pages—that was the only part of {ta} that didn't go wrong, because {ta} spent three times as much time on that as on the other parts. It turns out that no effort is ever wasted—even if you mess up the whole thing, at least one edge will be noticed."
+        }
+      ]
+    },
+    {
+      "id": "s4e",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} straightened up, turned to a brand new page in his notebook, and wrote a line in pencil: 'Item 18: The analytical logic was seen. Next time, make sure the data is correct too.'"
+        },
+        {
+          "who": "name",
+          "text": "\"Sister Lin, thank you for telling me.\" {ta} bowed slightly to the secretary. \"I'll go in and apologize now—no matter how much the director scolds me, I'll present the remedial plan. I just ask that I not be removed from this project team. Those first two pages—I wrote them carefully.\""
+        },
+        {
+          "who": "self",
+          "text": "From \"Am I going to be fired?\" to \"I wrote the first two pages carefully\"—less than three hours and a pink-covered notebook separated them. Han Yu also said, \"A disciple need not be inferior to his teacher\"—{ta}'s composure is something I should learn from."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter Two: The Crisis of Taking the Blame",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The director tapped the table again. {name} had already taken half a step—half a step toward that door, half a step toward you. This was {ta}'s first real decision in her career."
+        }
+      ],
+      "options": [
+        {
+          "text": "Go in with {ta} and present the remedial plan on the spot.",
+          "textVariants": [
+            "I'll share the blame with {ta}: we'll admit our mistakes together, and I've already come up with a solution.",
+            "Go in with them, admit your mistake first, and then give the director a solution."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "angry",
+          "goto": "sA1",
+          "flag": "side by side",
+          "reply": "{name} stood there stunned, her eyes instantly reddening: \"Master, why aren't you hiding? Why are you staying with me? Why... It's clearly my fault!\"",
+          "os": "(For the first time, someone didn't abandon {them}. {them} felt a lump in their throat, but straightened their back even more—because someone was there for them.)"
+        },
+        {
+          "text": "I'll try to dodge the issue with the director and calm things down first.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "side by side",
+          "reply": "{name}: \"Master, you're so eloquent... But this time, I want to face it together too. You teach me how to say it, and I'll take the blame—I can't always let you do it for me.\"",
+          "os": "({ta} doesn't want to just be someone who needs protection. Even a parrot has to speak first.)"
+        },
+        {
+          "text": "Get out of here. I'll take the blame for this myself; it has nothing to do with you.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "monopolize",
+          "reply": "{name} was so anxious she was almost in tears: \"No! It's clearly my fault! Master, don't take the blame for me—it makes me feel even worse! Worse than losing my job!\"",
+          "os": "(Your protection only makes {them} feel more indebted to you. {them} wants to stand beside you, not hide behind you.)"
+        },
+        {
+          "text": "It is indeed your fault; go in and admit it yourself.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "monopolize",
+          "reply": "{name} bit her lip and nodded: \"...Yes. It's my fault, I'll take responsibility. My master taught me—you have to bear the consequences of your own actions.\"",
+          "os": "(She walked alone towards the door, her figure small, but she never looked back. Her hands, gripping the hem of her clothes, were so tightly that her nails almost tore through the fabric.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Interlude: Side by Side, Making Amends",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You pulled {name} into the director's office. First, you apologized—no evasions, no excuses—then you worked through the night to draft a remedial plan: a proactive price reduction, an extended service period, and complimentary value-added services. You managed to win back the client who had turned against you. It was almost midnight when you left the office. The tension {name} had been holding onto snapped the moment the door closed."
+        },
+        {
+          "who": "name",
+          "text": "\"Master...\" {ta}'s tears finally broke free, falling in large drops onto her work badge. \"Thank you. If you hadn't been with me, my legs would have been too weak to even open the door today. You are the most loyal person I've ever met.\""
+        },
+        {
+          "who": "self",
+          "text": "{They} cried their eyes out, snot streaming down their face, but for the first time, they weren't at a loss—because {They} knew there was someone by their side who wouldn't abandon {They}. This feeling of being unconditionally supported is the rarest kind of security in the workplace."
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Interlude: Side by Side, Making Amends",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You sat down in the empty office area. {name} wiped away her tears and took out a notebook from her bag—it was filled with the key points she had learned from you these past few days, even the keyboard shortcuts you casually mentioned were written down on several pages."
+        },
+        {
+          "who": "name",
+          "text": "\"I swear.\" {ta} wiped away tears, her nose still red, and said earnestly, \"I will definitely become powerful in the future, powerful enough to stand beside Master instead of hiding behind him. I want to be the kind of disciple who is not protected, but worthy of him.\""
+        },
+        {
+          "who": "self",
+          "text": "\"He deserves it.\" This silly apprentice has actually started thinking that far ahead. But for some reason, I believe he/she can do it. Not because of talent, but because he/she writes down every mistake in a notebook—and then the next day, doesn't make the same mistake again."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Interlude: The Rain Alone",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} went in and got scolded. The rain had just stopped when she got off work, and there were still puddles on the ground—you saw {ta} sitting alone on a bench at the station, her shoulders swaying."
+        },
+        {
+          "who": "name",
+          "text": "\"It's alright.\" Seeing you approach, {ta} hurriedly wiped her face with her sleeve, forcing a signature wide smile. \"I'm tough! I've been scolded since I was a kid, this little storm is nothing! The director said it's fine as long as I correct it!\""
+        },
+        {
+          "who": "self",
+          "text": "The way she tried to put on a brave face was more heartbreaking than crying. That line, \"I've been scolded since I was a child,\" was said so quickly—like she'd practiced it countless times. It turns out that the person who was always laughing and joking had long ago learned not to cause trouble for anyone."
+        },
+        {
+          "who": "narration",
+          "text": "The last train pulled into the station, and the wind tousled {ta}'s pink hair. {ta} jumped onto the train with her bag in hand, turned back and waved at you—she smiled broadly, but her eyes were still red, like the sun that hadn't been brought back after the rain."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "With his three-month internship coming to an end and his thesis defense for full-time employment imminent, {name} sat in a coffee shop, repeatedly revising his presentation on his laptop, his straw covered in teeth marks."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, look!\" {ta} turned the screen around, her eyes shining. \"This is the plan I made myself—market analysis, competitor comparison, three alternative strategies—all written by me, without copying any templates! I've really learned so much in these three months!\"",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "name",
+          "text": "\"Master...\" {ta}'s voice was tinged with uncertainty, her fingers nervously circling on the touchpad, \"Can I get a permanent position? What if I mess up my thesis defense again? Is there really no way to fix it?\"",
+          "when": "flag: monopolize"
+        },
+        {
+          "who": "self",
+          "text": "Looking at the densely packed PowerPoint presentation, I suddenly realized—that newbie who used to make the printer smoke had unknowingly managed to organize the logic of market data more clearly than I had. This wasn't just progress; it was a transformation."
+        },
+        {
+          "who": "narration",
+          "text": "On the last slide of {ta}'s PowerPoint presentation, it read in pink: \"Thank you to my mentor—{ta}—for teaching me that making mistakes isn't scary; what's scary is not daring to take responsibility for your mistakes.\""
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} closed her laptop, stirred her now-cold coffee, and looked hesitant, reminding one of the day she first arrived—except now, {ta}'s eyes no longer held only panic, but also a more complex light."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, once I'm officially hired... we won't be master and apprentice anymore, right? Then, what are we then? Like—in the company system, when I fill in the 'Direct Supervisor' section, can I still fill in your name?\""
+        },
+        {
+          "who": "self",
+          "text": "\"Please fill in your name again.\" This isn't asking about organizational structure—it's asking whether the relationship after becoming a full-time employee can be more than just mentor and apprentice, or deeper than colleagues."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Soft jazz music played in the café, but after {ta} asked that question, the air suddenly became quieter than the sound of a keyboard. {ta}'s fingers circled the rim of the cup again and again."
+        }
+      ],
+      "options": [
+        {
+          "text": "I mean... the person who wants to stay by your side forever.",
+          "textVariants": [
+            "They went from being master and apprentice to having a closer relationship.",
+            "Once you're officially hired, I want to stay by your side in a different capacity."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s5c",
+          "reply": "{name}'s face flushed red to her ears, and she stammered, \"Master, don't be so handsome all of a sudden! My heart can't take it! I need to call 120!\"",
+          "os": "(She was flustered and overjoyed, almost knocking over her coffee cup. She thought she might be dreaming.)"
+        },
+        {
+          "text": "This is a little troublesome person I've been protecting for three months and am reluctant to let go of.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s5c",
+          "reply": "{name}: \"Who, who's a little trouble! Let me tell you, I'll soon be a full-fledged employee who can handle things on my own! ...But it's really nice to have you looking out for me.\" He muttered under his breath.",
+          "os": "(She was stubborn, but her ears were bright red. Saying one thing and meaning another was her forte.)"
+        },
+        {
+          "text": "We're colleagues, so I'll still help you out if you need anything in the future.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s5c",
+          "reply": "{name}'s voice suddenly lowered: \"We're just... colleagues? But you've helped me so much more than just a colleague...\"",
+          "os": "(The answer you expected didn't come. But you didn't blame them—just a little disappointed.)"
+        },
+        {
+          "text": "Once the internship is over, we'll have no further connection.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s5c",
+          "reply": "{name} lowered her head and stirred her coffee, which had been cold for a while and the milk foam had long since disappeared: \"...Oh. Well, that's right. Three months, what could it possibly matter? Haha. Master, you're busy, I'll go back and revise the PPT.\"",
+          "os": "(She stirred her unspoken expectations into her cold coffee. Then she stood up and walked away quickly.)"
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "goto": "s5d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled out that \"No Mistakes Notebook\" from her backpack again—it was three times thicker than before. {ta} flipped to the last page to show you: it listed every correction you had made over the past three months, neatly marked with four different colored pens."
+        },
+        {
+          "who": "name",
+          "text": "\"Master—look, I've listed thirty-seven points.\" {ta} pointed to each one with her finger. \"Every single one of them was taught to me by you. Thirty-seven points—more than I learned in four years of university. I've bound them all into a book. If I ever leave—this book will be left to the next intern.\""
+        },
+        {
+          "who": "self",
+          "text": "Thirty-seven points. {ta} didn't just write them down—{ta} is already paving the way for the next generation, who haven't even appeared yet. {ta} understands the word 'master' more deeply than I do—master isn't just a person's name, but a torch passed down from generation to generation."
+        },
+        {
+          "who": "name",
+          "text": "{ta} closed her notebook, her gaze softening suddenly. \"I used to think a good mentor was simply someone who taught me a lot of things,\" {ta} said slowly. \"Now I understand—it's about making me believe that I can be a mentor to others. Mentor, you made me believe that. That's a million times more valuable than professional knowledge.\""
+        },
+        {
+          "who": "narration",
+          "text": "The sycamore leaves outside the café window were swept up by the autumn wind. {ta} handed you the notebook—\"My mentor will keep it for now. You can return it to me when I'm mentoring a newcomer.\" {ta} had reapplied the pink rabbit sticker on the cover, the edges neatly trimmed."
+        }
+      ]
+    },
+    {
+      "id": "s5d",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "goto": "s5e",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The night before your defense. You pass by the empty conference room—through the blinds, you see {name} standing in front of a whiteboard, sketching an entire outline of their proposal with a marker. The projector is on, the PowerPoint presentation is on its last slide. {ta} is giving a presentation—to an empty chair."
+        },
+        {
+          "who": "name",
+          "text": "\"...In summary, this plan has increased the profit margin by two percentage points compared to before. I admit that the initial data input accuracy was insufficient—seven comparative analyses have been conducted, reducing the error rate from three per thousand to four per ten thousand—this is what my mentor taught me. Thank you.\" {ta} bowed to the empty chair, the angle of her bow exactly the same as the real one."
+        },
+        {
+          "who": "self",
+          "text": "Empty chairs. Empty meeting room. Empty air. {ta} In this room where no one is listening, he rehearsed tomorrow's defense—every word carried my verbal tic, my phrasing, and the \"admit your mistake first, then offer a solution\" approach I taught him. Han Yu said, \"A teacher need not be wiser than his disciple\"—but tonight, sitting outside the door, I can't help but wonder—who is really learning from whom?"
+        }
+      ]
+    },
+    {
+      "id": "s5e",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Chapter Three: The Eve of Official Promotion",
+      "goto": "s6",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} opened the door and bumped into you, paused for a second, then quickly hid the empty marker behind her back. But the nib, tilted to one side, still peeked out from between her fingers."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, what are you doing here—oh no, you saw me talking to an empty chair! How childish! I hope I won't be so nervous during my defense tomorrow—no, I promise I won't stutter.\""
+        },
+        {
+          "who": "self",
+          "text": "I don't think it's childish. I think this is the most sincere preparation I've ever seen—they even practiced the angle of their bow. It's not that they're afraid of failure, it's that they're afraid of letting others down. Afraid of letting down someone who's come this far, afraid of letting down the thirty-seven principles I taught them. This student—is far more successful than I was back then."
+        },
+        {
+          "who": "name",
+          "text": "\"Master—no matter what the outcome is tomorrow,\" {ta} said, taking a marker from behind her back and placing it on the table, extremely serious. \"You are not allowed to resign. Because you still have to train the next intern—don't let the next one mess up the printer too.\""
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "happy",
+      "chapter": "Final Chapter: Defense and Confession",
+      "goto": "s6_firstday",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The defense was passed and {name} was officially hired! The moment the news exploded in the company group, {ta} excitedly jumped up from her workstation, almost knocking over the break room—and then ran all the way to the rooftop."
+        },
+        {
+          "who": "name",
+          "text": "\"I got a permanent position!\" {ta} shouted towards the sunset over the entire city, her voice so loud that all the pigeons downstairs took flight. After shouting, she turned to you, panting, her eyes reflecting the sunset and you.",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "name",
+          "text": "\"I...did it.\" {ta} stood on the edge of the rooftop, her voice trembling, but no longer the trembling of fear—it was the trembling of finally proving herself.",
+          "when": "flag: monopolize"
+        },
+        {
+          "who": "self",
+          "text": "The sunset dyed {ta}'s pink hair a warm orange, like a flower that had been blooming for three months, finally raising its head in the autumn wind. The rookie who was crying on the first day, saying, \"Am I going to be fired?\" now stood here straight, shining brightly."
+        }
+      ]
+    },
+    {
+      "id": "s6_firstday",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Final Chapter: Defense and Confession",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The first workday after being officially hired. You walk into the office and find {name}'s new employee badge hanging next to her seat—no longer the plastic badge of an intern, but the dark blue magnetic card of a full-time employee. {ta} sits at her desk, in front of her the \"No Mistakes Notebook\" you gave her—it's almost falling apart from being flipped through, every page filled with subsequent corrections."
+        },
+        {
+          "who": "name",
+          "text": "{ta} saw you come in, tore a small sticky note from the last page of the notebook, and handed it to you. It read: 'Article Thirty-Eight: Effective today, the apprentice is officially recognized. This notebook is transferred to the master's archives. If a new apprentice joins—pass on the instruction on their behalf. Signed: {name}.'"
+        },
+        {
+          "who": "self",
+          "text": "\"Passing on the knowledge on behalf of someone else.\" {ta} handed me the notebook not to throw it away—but to keep it safe for {ta} until the next person who messes up the printer. This person treated the word \"master\" as a career—not a three-month career, but a career passed down from generation to generation."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} puts the laptop on your desk, then turns to go back to her workstation—a few steps later she turns back. \"Master—tonight, the convenience store downstairs sells oden, the usual. This time—it's on me. A proper treat, not a free meal.\""
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter: Defense and Confession",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled out her official employment notice from her pocket—the A4 paper was folded and folded so many times that it was covered in creases when unfolded. But when {ta} held it up to you, her eyes were shining, as if she were holding an award certificate."
+        },
+        {
+          "who": "name",
+          "text": "\"Master, Master.\" {ta} took a deep breath, as if inhaling the courage of an entire spring, \"Now that I've been officially hired, and my courage is overflowing—I have something I've been holding back for more than three months! Ever since the day you fixed my printer, it's been swirling in my chest!\" \"I like you!\" {ta} blushed, but no longer covered her eyes, instead looking straight at you, \"Not the kind of liking you have as a master! It's... it's the kind of liking where I want to eat with you after get off work, squeeze onto the subway with you, and complain about clients with you! No matter what we become after I'm officially hired—I have to say it!\""
+        },
+        {
+          "who": "self",
+          "text": "The ancients said, \"A teacher for one day is a father for life.\" But {ta} is different—after only three months as a teacher, he wants to change the seniority."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter: Defense and Confession",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The evening breeze gently lifted {ta}'s pink hair, like an unfinished sentence. {ta} held her breath after confessing her feelings, and even the sunset seemed to be waiting for her answer."
+        }
+      ],
+      "options": [
+        {
+          "text": "He patted her head and said, \"From today onwards, we'll walk home together after get off work.\"",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}'s hair was all ruffled from your caresses, but she beamed with joy: \"Really! Then, I'll wait for you every day after get off work! I'll bring you an umbrella when it rains, and I'll bring you food when I work overtime—another page has been added to my to-do list!\"",
+          "os": "(She felt happier than when she was offered a permanent position. This is the best offer she's ever received in her career.)"
+        },
+        {
+          "text": "Smiling as she hands him coffee: Shall we start with \"having dinner together after get off work\"?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}: \"Okay! My treat! No, Master should treat?... Let's split the bill! No, you treat this time, I'll treat next time, we're even!\"",
+          "os": "(She was so flustered that she even made arrangements to pay the bill and planned out her next meal.)"
+        },
+        {
+          "text": "You've just been promoted, so focus on securing your job and don't overthink it.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "avoid",
+          "reply": "{name}'s smile faltered for a moment, but quickly returned: \"...Oh. Work, work is important. I was just thinking of rushing things. Well, when you feel it's appropriate—I'll say it again.\"",
+          "os": "(Your \"for their own good\" extinguished their courage, but their \"say it again\" left a glimmer of hope.)"
+        },
+        {
+          "text": "Between master and apprentice, it's best not to overstep the boundaries.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "avoid",
+          "reply": "{name} slowly lowered her hands from her face, forcing an awkward smile: \"Oh yeah, I crossed the line. Master, never mind. I'm happy enough about getting promoted—really.\"",
+          "os": "All the courage she mustered shattered in the wind on the rooftop. Yet she still said, \"I'm happy enough\"—she didn't want to make things difficult for you."
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Leaving get off work Together",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Later, a couple started leaving get off work together at the company. {name} was no longer the newbie who would make the printer smoke—although occasionally, she would still accidentally send the weekly report to the company's main group chat, and then calmly add a message saying, \"Oops, slip of the hand.\""
+        },
+        {
+          "who": "narration",
+          "text": "On the platform at dusk, {ta} is holding your arm, holding two cups of milk tea she just bought in her other hand—one with pudding and one with pearls, exactly the same as the one you drank at the milk tea shop on the first day.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "name",
+          "text": "\"Master—oh no, I can't call you Master anymore! Call me by my name? Call me Baby? Ah, that's so cheesy—just call me Master, I'll be your disciple for life anyway!\" {ta} swayed on the yellow line of the platform, shivering from the subway wind."
+        },
+        {
+          "who": "self",
+          "text": "What started as mentoring a newbie gradually blossomed into someone I truly cared for. They went from being my apprentice to someone I wanted to mentor for life. This is probably the most unpredictable kind of reward in the workplace.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Leaving get off work Together",
+      "goto": "s7_note",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind blowing as the subway pulled into the station made your clothes flutter. But instead of rushing onto the train as usual, {name} simply leaned on your shoulder, waiting for the next one."
+        },
+        {
+          "who": "name",
+          "text": "\"Anyway, I'll be riding every train with you from now on.\" {ta} smiled brightly, her pink hair swaying under the platform lights. \"If you miss one, there's always another—but if you miss me, you're gone forever.\""
+        },
+        {
+          "who": "self",
+          "text": "Three months ago, {they} couldn't even fix a clogged printer. Three months later, {they} has a perfectly detailed life plan—while I'm just a part of every single one of those plans."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Final Chapter: Each Person's Last Train",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After {name} was promoted, she became a colleague who could work independently. Her workstation was moved to another area, and when you bumped into each other in the break room, you would still smile and nod. But that confession was never mentioned again."
+        },
+        {
+          "who": "name",
+          "text": "\"Master! I'll handle tomorrow's meeting myself—look at my proposal!\" {ta} waved at you from several rows away, still grinning broadly. \"See? I'm pretty good now! I don't need anyone to bail me out!\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} has indeed become very capable, so capable that she no longer needs my protection. But sometimes I miss her—that rookie who tugged at my sleeve and cried \"Help!\" As people grow up, they become less dependent. This is a good thing, and a bad thing.",
+          "when": "tag: trash>=2"
+        },
+        {
+          "who": "narration",
+          "text": "The last bus arrived. {ta} hopped on the previous one, while you took the next. Even though you were going the same way, you went your separate ways home. The notebook filled with everything you taught was locked away at the very bottom of {ta}'s drawer."
+        }
+      ]
+    },
+    {
+      "id": "s7_note",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Leaving get off work Together",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} pulled out his nearly falling-apart \"No-Mistakes Notebook\" from his bag—flipped to the last page, drew a small pink arrow in the blank space with his finger, and wrote: 'Rule Thirty-Nine: From today onwards—the apprentice leaves work with the master. This isn't something learned, it's something earned.'"
+        },
+        {
+          "who": "name",
+          "text": "\"My notebook is full.\" {ta} carefully placed the notebook back into the backpack's inner pocket. \"The next time I open it—it will be when I'm mentoring someone else. Mentor—thank you for teaching me in these three months; I'll repay you slowly over the rest of my life.\""
+        },
+        {
+          "who": "narration",
+          "text": "The subway roared into the station. {ta} jumped on first, then turned and reached out her hand—not because she needed you to pull her up, but because she was waiting for you to come along. The pink ends of her hair flickered gently in the carriage lights."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This master-disciple relationship is coming to an end. Now—what would you like to say to {name}? (≤100 words, it will be the final stroke of your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name}, arm in arm with you, the platform wind makes {ta}'s pink hair bounce. {ta} is waiting for you to speak—waiting for a word that belongs to this period of working life, and also to you both. That notebook, filled with entries for three months, still hasn't finished its last page.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "You're all alone on the rooftop. You think of the rookie who tugged at your sleeve and begged for help, the apprentice who put two soft-boiled eggs in your bowl, and you want to tell them the words you never said before—maybe the wind will carry them to their desk.",
+          "when": "flag: avoid"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Tongcheng people",
+      "trigger": "top: sincerity",
+      "caption": "From a flustered newbie to a capable colleague—you accompanied {name} through every mishap and growth, ultimately transforming a mentor-apprentice relationship into a professional partnership. The last page of that notebook filled with notes is of you.",
+      "report": "[Relationship Personality - Fellow Traveler] You belong to the rare \"secure\" type: you share your knowledge and experience when mentoring others, take responsibility without shirking it, stand up for them in crucial moments, and are willing to accept their sincerity. You are both a good mentor and a good partner. As the ancients said, \"Teaching and learning go hand in hand\"—you taught {them} for three months, and {them} also showed you your original self. Those who can fight alongside you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "Youtiao customer",
+      "trigger": "Top: Aquaman",
+      "caption": "You are adept and meticulous in the workplace, making {name} both angry and amused—yet you never give that feeling of attraction a proper explanation.",
+      "report": "[Relationship Personality - The Slick Guy] You're clever, useful, and loved by everyone; you're the most popular person in the office. But you're so good at using jokes to deflect attention that no one can guess your true feelings. Don't wait until the last bus leaves to realize you haven't said what you needed to say."
+    },
+    {
+      "endingId": "toxic",
+      "title": "Blame-shifter",
+      "trigger": "top: scum",
+      "caption": "You coldly pushed away {name}'s dependence, trust, and those little flutters of affection time and time again—not even bothering to offer a word of encouragement.",
+      "report": "[Relationship Personality - The Blame-Shifter] You are clear-headed, realistic, and draw clear lines. You're only needed when you're called upon, and you distance yourself when things go wrong. You may never get involved in trouble, but you've also failed to gain a partner willing to risk their life for you. The coldest thing isn't the nights spent working overtime, but that heart that refuses to mentor others."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Cover-up",
+      "trigger": "top: Loyal Dog",
+      "caption": "You're busy taking the blame, handling the problems, and smoothing things over for {name}, but you keep circumventing what {ta} truly wants—to grow together, not to be protected for a lifetime.",
+      "report": "[Relationship Personality - The Cover-Up] You're incredibly generous and always ready to help, habitually shielding your apprentices, often moving yourself in the process but hindering their growth. {name} wants someone to stand by your side, not hide behind you. Don't forget, you also deserve someone to share your burdens."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "bystander",
+      "min": -99,
+      "caption": "The internship has ended, and even the platform lights couldn't bring a conclusion to your relationship with {name}.",
+      "report": "[Relationship Personality - Bystander] Your choices are unpredictable and difficult to categorize—sometimes you're invested, sometimes you withdraw. Perhaps you haven't decided whether to give this mentor-student relationship a formal title. First, understand your own heart, then decide whether you want to get on the same train as {them}."
+    }
+  ]
+}

@@ -1,30 +1,30 @@
 <template>
   <view class="login-container">
     <view class="login-header">
-      <text class="title">邮箱验证码登录</text>
-      <text class="subtitle">请输入邮箱地址获取验证码</text>
+      <text class="title">{{ t('emailLogin.title') }}</text>
+      <text class="subtitle">{{ t('emailLogin.subtitle') }}</text>
     </view>
     
     <view class="login-form">
       <!-- 邮箱输入 -->
       <view class="input-group">
-        <text class="label">邮箱地址</text>
+        <text class="label">{{ t('emailLogin.emailLabel') }}</text>
         <input 
           class="input-field"
           type="text"
-          placeholder="请输入邮箱地址"
+          :placeholder="t('emailLogin.emailPlaceholder')"
           v-model="email"
         />
       </view>
       <show-captcha />
       <!-- 验证码输入 -->
       <view class="input-group">
-        <text class="label">验证码</text>
+        <text class="label">{{ t('emailLogin.codeLabel') }}</text>
         <view class="verification-row">
           <input 
             class="input-field verification-input"
             type="number"
-            placeholder="请输入验证码"
+            :placeholder="t('emailLogin.codePlaceholder')"
             v-model="verificationCode"
             maxlength="6"
           />
@@ -33,7 +33,7 @@
             :disabled="!isEmailValid || countdown > 0"
             @click="getVerificationCode"
           >
-            {{ countdown > 0 ? `${countdown}s后重试` : '获取验证码' }}
+            {{ countdown > 0 ? t('emailLogin.codeRetry', { n: countdown }) : t('emailLogin.getCode') }}
           </button>
         </view>
       </view>
@@ -44,20 +44,23 @@
         :disabled="!canLogin"
         @click="handleLogin"
       >
-        登录
+        {{ t('emailLogin.loginBtn') }}
       </button>
       
       <!-- 返回链接 -->
       <view class="back-login">
-        <text @click="goBack" class="link-text">返回登录方式选择</text>
+        <text @click="goBack" class="link-text">{{ t('emailLogin.backLink') }}</text>
       </view>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, computed, onUnmounted, onMounted } from 'vue'
 import { signInWithOtp } from '../../utils/cloudbase'
+
+const { t } = useI18n()
 
 // 响应式数据
 const email = ref('')
@@ -83,7 +86,7 @@ const canLogin = computed(() => {
 const getVerificationCode = async () => {
   if (!isEmailValid.value) {
     uni.showToast({
-      title: '请输入正确的邮箱地址',
+      title: t('emailLogin.toast.invalidEmail'),
       icon: 'none'
     })
     return
@@ -91,13 +94,13 @@ const getVerificationCode = async () => {
   
   try {
     loading.value = true
-    loadingText.value = '发送验证码中...'
+    loadingText.value = t('emailLogin.toast.sending')
     
     const result = await signInWithOtp({ email: email.value })
     verifyOtp.value = result
     
     uni.showToast({
-      title: '验证码发送成功',
+      title: t('emailLogin.toast.codeSent'),
       icon: 'success'
     })
     
@@ -107,7 +110,7 @@ const getVerificationCode = async () => {
   } catch (error: any) {
     console.error('获取验证码失败:', error)
     uni.showToast({
-      title: error.message || '获取验证码失败',
+      title: error.message || t('emailLogin.toast.codeFail'),
       icon: 'none'
     })
   } finally {
@@ -131,7 +134,7 @@ const startCountdown = () => {
 const handleLogin = async () => {
   if (!canLogin.value) {
     uni.showToast({
-      title: '请完善登录信息',
+      title: t('emailLogin.toast.incomplete'),
       icon: 'none'
     })
     return
@@ -139,7 +142,7 @@ const handleLogin = async () => {
   
   try {
     loading.value = true
-    loadingText.value = '登录中...'
+    loadingText.value = t('emailLogin.toast.loading')
     
     const  { error } = await verifyOtp.value({ token: verificationCode.value })
     
@@ -148,7 +151,7 @@ const handleLogin = async () => {
     }
 
     uni.showToast({
-      title: '登录成功',
+      title: t('emailLogin.toast.success'),
       icon: 'success'
     })
     
@@ -162,7 +165,7 @@ const handleLogin = async () => {
   } catch (error: any) {
     console.error('登录失败:', error)
     uni.showToast({
-      title: error.message || '登录失败',
+      title: error.message || t('emailLogin.toast.fail'),
       icon: 'none'
     })
   } finally {

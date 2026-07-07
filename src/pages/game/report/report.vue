@@ -25,7 +25,7 @@
             <text class="cg-badge">CG</text>
           </view>
           <view class="head-meta">
-            <view class="with-pill">与 {{ char?.name }} · 长夜档案</view>
+            <view class="with-pill">{{ t('report.withPill', { name: char?.name }) }}</view>
             <text class="ending-title">{{ ending?.title }}</text>
           </view>
         </view>
@@ -35,7 +35,7 @@
           <view class="match-num">
             <text class="num">{{ session.matchRate }}</text><text class="pct">%</text>
           </view>
-          <text class="match-label">灵魂契合度</text>
+          <text class="match-label">{{ t('report.matchLabel') }}</text>
           <view class="match-bar">
             <view class="match-fill" :style="{ width: barWidth }">
               <view class="bar-heart"></view>
@@ -45,10 +45,10 @@
 
         <!-- 标签云 -->
         <view class="tags">
-          <text class="tags-label">你的关系人格画像</text>
+          <text class="tags-label">{{ t('report.tagsLabel') }}</text>
           <view class="tag-cloud">
             <text v-for="(t, i) in tags" :key="i" class="tag-chip">✦ {{ t }}</text>
-            <text v-if="!tags.length" class="tag-chip">✦ 神秘玩家</text>
+            <text v-if="!tags.length" class="tag-chip">{{ t('report.tagsEmpty') }}</text>
           </view>
         </view>
 
@@ -57,28 +57,28 @@
           <text class="summary-text">{{ session.aiReport }}</text>
         </view>
 
-        <text class="brand">辰星 · 长夜文游 · {{ char?.style === 'anime' ? '二次元画风' : '电影写实风' }}</text>
+        <text class="brand">{{ t('report.brand', { style: char?.style === 'anime' ? t('report.styleAnime') : t('report.styleRealistic') }) }}</text>
       </view>
 
       <!-- 底部按钮：半透明磨砂 + 发光描边 -->
       <view class="btns">
         <view class="rbtn ghost" @click="saveShot">
           <view class="ico ico-upload"><view class="up-head"></view></view>
-          <text class="rbtn-tx">保存 / 分享</text>
+          <text class="rbtn-tx">{{ t('report.btnSaveShare') }}</text>
         </view>
         <view class="rbtn replay" @click="again">
           <view class="ico ico-refresh"></view>
-          <text class="rbtn-tx">再玩一次</text>
+          <text class="rbtn-tx">{{ t('report.btnReplay') }}</text>
         </view>
       </view>
 
       <!-- 统计页入口 -->
       <view class="stats-entry" @click="goStats">
-        <text class="stats-entry-text">看看大家都怎么选的 →</text>
+        <text class="stats-entry-text">{{ t('report.statsEntry') }}</text>
       </view>
 
       <!-- Powered by CloudBase 广告徽章 -->
-      <cloudbase-footer title="辰星 · 长夜文游" />
+      <cloudbase-footer :title="t('shareCard.brand')" />
     </view>
 
     <!-- 一键生成结局分享图 -->
@@ -87,10 +87,13 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { computed, onMounted, ref } from 'vue'
 import { session, tagCloud, resetGame } from '@/game/store'
 import shareCard from '@/components/share-card.vue'
 import cloudbaseFooter from '@/components/cloudbase-footer.vue'
+
+const { t } = useI18n()
 
 const bgImg = '/static/game/ui/report/starfield-bg.png'
 const starMain = '/static/game/ui/report/star-main.png'

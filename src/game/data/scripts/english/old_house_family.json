@@ -1,0 +1,1026 @@
+{
+  "_id": "script_family",
+  "id": "script_family",
+  "title": "Returning Home: The Tenderness of the Old House",
+  "openingTip": "After your grandmother passed away, you returned to the old house where you spent your entire childhood, only to find it carefully tended by someone—{name}, the designer sister who lived there and was doted on by your grandmother like her own child. An old house covered in vines, a room full of dusty old photographs, and a heartwarming story about 'home' and 'belonging'. Most of the time, you only need to tap the screen to read on; a few key intersections will determine whether this home will become lively again.",
+  "prologue": "The old house sits halfway up a hill in the town. In the yard is a glass greenhouse, its walls covered with photos of three generations. Grandma often said, \"This house has no shortage of family.\" {name} isn't a blood relative—{ta} was an orphan girl taken in by Grandma when she was destitute, and from then on, she considered this place her only home. After Grandma passed away, {ta} took care of every fallen leaf, every old photograph, every flower in the greenhouse, as if keeping an inextinguishable lamp for all those who had left. Now you've returned. {ta} stands at the door, her eyes red: \"You…you've finally come home.\"",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "happy",
+      "chapter": "Prologue: The Dusty Home",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The afternoon sun streamed through the old stained-glass windows of the old house, casting diamond-shaped dappled patterns on the wooden floor. You pushed open the creaking entryway door—the brass handle was still cold, and vines had half-covered the house number. The air smelled of turpentine and sun-dried cotton. An easel stood by the window in the living room, holding an unfinished oil painting—a depiction of sunflowers in the greenhouse. The paint wasn't dry yet."
+        },
+        {
+          "who": "name",
+          "text": "\"You're back.\" {name} looked up from behind the drawing table, her long flaxen hair pulled back, a stray strand falling beside her ear, stained with a small patch of sky-blue paint. {ta}'s eyes instantly reddened—reddened very quickly, as if she had been waiting for a long time. \"I knew...you would always come back.\""
+        },
+        {
+          "who": "self",
+          "text": "She is {name}. The older sister who would give me the last piece of jujube cake when I was little, and who would tuck me in at night. We're not related by blood, but she's more like family than anyone else. After Grandma passed away, {ta} has been alone, guarding this empty house for five years."
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "shy",
+      "chapter": "Prologue: The Dusty Home",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As {name} walked into the entryway, I instinctively helped you pull your suitcase in first, then took out a pair of cotton slippers from the shoe cabinet—not new, but the old pair, faded from washing, but very clean."
+        },
+        {
+          "who": "name",
+          "text": "\"I clean Grandma's room every day.\" {ta} walked ahead, pushing open the door at the end of the corridor. \"The flowers in the greenhouse are all doing well too. I was thinking—if you ever come back, I want you to see that home is still home. Not an empty house, but a home.\""
+        },
+        {
+          "who": "self",
+          "text": "In Grandma's room, the bedding was neatly folded, and on the bedside table sat that old photograph—Grandma holding me as a child, with young [herself] standing beside her, her smile brighter than a sunflower. Five years had passed, and not a speck of dust remained on the photograph."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} didn't cry when she said these words—her eyes were red, but her tone was steady, like a lighthouse that had been guarding for a long time, finally welcoming the returning ship."
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "sad",
+      "chapter": "Prologue: The Dusty Home",
+      "goto": "s1d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In Grandma's wardrobe, every garment hung neatly washed and ironed—a blue-printed cotton cheongsam, a grey wool coat, and a pale yellow wool cardigan. {name} walked to the wardrobe and reached out to stroke the cardigan:"
+        },
+        {
+          "who": "name",
+          "text": "\"This is Grandma's favorite. She says the color reminds her of the little courtyard she lived in when she was young. Every spring I take it out to air it, to keep out the bugs.\" {ta} pressed her face against the clothes and took a deep breath. \"The smell of mothballs—exactly the same as the ones Grandma wears.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} is not just guarding the house. {ta} is using every piece of memento to trace the outline of her grandmother—line by line—clearly and distinctly. So that even after she's gone, she's still 'in this house'."
+        },
+        {
+          "who": "narration",
+          "text": "On the bedside table sat a copy of *Cai Gen Tan* (菜根谭), its spine worn and tattered. Opening to the first page, I found a note in my grandmother's delicate handwriting from her youth: \"If the home is not settled, the person will drift.\" Below, she added a smaller line later: \"If there are people in the home, then there is stability.\" A question and answer, separated by more than a decade—a lifetime's worth of explanations."
+        }
+      ]
+    },
+    {
+      "id": "s1d",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "happy",
+      "chapter": "Prologue: The Dusty Home",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} stepped into her studio—formerly a storage room, which {ta} had transformed into a small workshop. The walls were covered with oil paintings—mostly of the old house: greenhouse mornings, kitchen afternoons, the wicker chair her grandmother used to sit in. Each painting bore the same date in the corner: the anniversary of her grandmother's death."
+        },
+        {
+          "who": "name",
+          "text": "\"I started painting it the day Grandma passed away.\" {ta} straightened a picture frame. \"I paint one every year on that day. This is the fifth one. I originally planned to paint until I couldn't paint anymore—but now that you're back, I don't need to paint anymore.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} turned mourning into a five-year-long diary. One oil painting each year, depicting different corners of the same house—in reality, painting the house in her heart each year, fearing it would gradually fade."
+        },
+        {
+          "who": "narration",
+          "text": "On the workbench sits a worn-out paintbrush with a small label on the barrel: \"Gift from Grandma, 1998.\" It was the first gift {ta} received when she was seven years old, shortly after being taken in by her grandmother. From that year until now—it has been used for over twenty years."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "shy",
+      "chapter": "Prologue: The Dusty Home",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} brewed two cups of hot tea, the same teacups from when she was a child—a blue-and-white porcelain cup with a small chip in the rim, a brown line from rainwater seeping into the bottom. {ta} handed you the cup, which contained your favorite jasmine tea. The living room walls were covered with photos of three generations—black and white, color, from her grandmother's youth to our generation. {ta} added photos from the last five years as well: newly blooming flowers in the greenhouse, the cat in the yard, and a New Year's Eve dinner for one."
+        },
+        {
+          "who": "name",
+          "text": "\"You must have suffered a lot these years, being all alone out there.\" {ta} looked at you with heartache, her gaze the same as five years ago, only now with a few more fine lines at the corners of her eyes. \"Grandma's biggest worry before she passed away was you.\" {ta} held my hand and said—let me take care of you for a few more years in {ta}'s place."
+        },
+        {
+          "who": "self",
+          "text": "{ta} said \"a few years\"—but it's been five years since Grandma passed away. For these five years, {ta} has been alone, guarding this old house, keeping a promise that was never renewed, and keeping watch over someone who may never return."
+        },
+        {
+          "who": "name",
+          "text": "\"This time when you come back—\" {ta}'s voice held a cautious anticipation, like cradling a newly hatched chick, \"Could you stay a few more days? Even if... just to keep this old house company. It misses you too.\""
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "art_studio_afternoon",
+      "face": "happy",
+      "chapter": "Prologue: The Dusty Home",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} held the chipped blue-and-white porcelain teacup, the fragrance of jasmine blossoms wafting from within. Sunlight shone directly on {ta}'s flaxen eyelashes, causing them to tremble slightly."
+        }
+      ],
+      "options": [
+        {
+          "text": "Not just for a few days. This is my home, and I want to stay with you.",
+          "textVariants": [
+            "I'm back, and I'm not leaving again. We'll protect this home together.",
+            "I'll stay with the house, and I'll stay with you. This time, I'm not going anywhere."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "Tears welled up in {name}'s eyes—tears she had held back for five years dripped into her teacup: \"Really... this house is finally, finally alive again. Grandma, did you hear that—{ta} said she's not leaving.\"",
+          "os": "(After five years of waiting, the response has finally arrived. The flowers in the greenhouse are blooming more vigorously today than ever before.)"
+        },
+        {
+          "text": "Sister, you must be so lonely all by yourself. Let me keep you company.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} chuckled while wiping her eyes, \"You're so sweet-talking. You've always been like this—calling jasmine 'snowflakes' and bitter tea 'sweet tea.' But—I really have been waiting to hear that for a long time.\"",
+          "os": "(They didn't call you out on your sweet talk because they needed that companionship so much. Even if it's just sweet talk, it's still sweet.)"
+        },
+        {
+          "text": "Don't overwork yourself; I'll take care of all the housework from now on.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name}: \"Silly child—I never feel tired taking care of this home. Watering the plants in the greenhouse isn't work, it's time to chat with you; cleaning isn't work, it's waiting for you.\"",
+          "os": "(What she's guarding isn't the house, but the memories and you. To call her sacrifices \"not work\"—that's the gentlest form of stubbornness.)"
+        },
+        {
+          "text": "I'm just back to deal with the house; I won't be staying long.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name} lowered her eyes, gently placing the teacup back on the tray: \"...That's true. You have your own life. I was too greedy—taking a simple request as a promise that could last a lifetime.\"",
+          "os": "({ta}'s fingers tightened around the teacup. The jasmine tea—suddenly—no longer smelled good.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "happy",
+      "chapter": "Chapter 1: Old Times in the Greenhouse",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At noon, {name} will take you to see the glass greenhouse in the yard. The moment you push open the door, sunlight refracts through the layers of glass, making the plants inside look like they're immersed in a pool of flowing golden water. The greenhouse isn't large, but it's full of life—jasmine, gardenias, orchids, a small pond of pennywort, and the sunflower in the corner that's blooming the most vigorously. Every leaf is a glossy green, and every flower is in full bloom."
+        },
+        {
+          "who": "name",
+          "text": "\"This jasmine plant—was Grandma's favorite. It blooms every year, even more beautifully than the year she passed away.\" {ta} carefully moved the jasmine leaves, her fingertips lighter than the petals. \"This sunflower plant—was the seed you casually tossed into the soil by the door when you were little. I've been replanting it for you every year, and this is the sixth year now.\""
+        },
+        {
+          "who": "self",
+          "text": "I had almost forgotten about that sunflower—it probably wasn't even sunflower seeds, just some carelessly discarded snack shells. But {ta} remembered, remembered for six whole years, planting new seeds for me every year, waiting for it to turn towards the sun every year."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Chapter 1: Old Times in the Greenhouse",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} crouched down and gently wiped away the soil specks from the rim of the flowerpot with her fingertips. Sunlight shone on {ta}'s flaxen hair, turning the ends golden."
+        },
+        {
+          "who": "name",
+          "text": "\"Home is something that isn't about how big the house is or how expensive the furniture is—it's about whether there's someone willing to remember the little things that no one else will. A flower, a cup of tea, a pair of slippers.\""
+        },
+        {
+          "who": "self",
+          "text": "Shen Fu of the Qing Dynasty wrote in *Six Records of a Floating Life*, \"Wearing simple clothes and eating plain food, one can be happy for a lifetime.\" {ta} hasn't read these works—but {ta}'s own life is the best testament to this statement."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Chapter 1: Old Times in the Greenhouse",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} picked a newly opened sunflower, carefully trimmed the stem with floral shears, and then gently tucked it into your lapel—the movement was as gentle as completing a work of art."
+        }
+      ],
+      "options": [
+        {
+          "text": "From then on—it's my turn to remember your things. The tea you loved to drink, your hands that were always cold.",
+          "textVariants": [
+            "This time it's my turn to carefully remember your little things.",
+            "You've remembered me for so many years; from now on, let me remember you too."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3c",
+          "reply": "{name} stood frozen in place, her hand hovering in mid-air, her eyes reddening again: \"...I've grown up so much. I can even feel sorry for people now. Grandma, you were right—this person is worth waiting for.\"",
+          "os": "(This is the first time someone who always takes care of others has been so cherished. Not as a benefactor to be thanked—but as someone to be remembered.)"
+        },
+        {
+          "text": "My sister is so good to me, I'm being spoiled rotten.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3c",
+          "reply": "{name} chuckled and gently poked your forehead: \"You've always been like this—when you make a mistake, you call for your sister's help. You haven't changed a bit.\"",
+          "os": "({ta} smiled indulgently, like looking at a sunflower that will never grow up. But in {ta}'s eyes—there was affection, but also a deeply hidden expectation.)"
+        },
+        {
+          "text": "The work of heating the house is too strenuous; I'll take care of it all from now on, and you can rest.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3c",
+          "reply": "{name} shook her head: \"Taking care of them isn't a chore for me, it's a source of longing. When I water the flowers, I think of you; when I pull the weeds, I think of Grandma. If I weren't allowed to do anything—I'd go crazy from boredom.\"",
+          "os": "(She guards these flowers as if they were a home that hadn't fallen apart. They're not a burden, but the only warmth in her daily life.)"
+        },
+        {
+          "text": "What's the point of planting these? It's easier to just tear down the greenhouse.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3c",
+          "reply": "{name} paused—gently protecting the leaves of the sunflower pot, as if protecting a precious memory: \"...Inside here, there are the songs Grandma hummed when watering the flowers, and the steps you stepped on and then repaired when you were little. It's not flowers.\"",
+          "os": "(Your casual remark shattered something {they} had guarded for six years. That potted plant wasn't just a potted plant—it was a promise.)"
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "happy",
+      "chapter": "Chapter 1: Old Times in the Greenhouse",
+      "goto": "s3d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On a wooden table in the corner of the greenhouse sat a rusty old tin box—the box bearing a faded English tea label. {name} opened it—inside was no tea, but a stack of postcards tied with red string."
+        },
+        {
+          "who": "name",
+          "text": "\"Grandma studied away from home when she was young.\" {ta} spread the postcards out on the table. \"These are the letters she exchanged with Grandpa when they were young—the postcards were sent over five years. Every single one begins with the words 'Looking forward to your return.'\""
+        },
+        {
+          "who": "self",
+          "text": "My grandmother, in her youth, also guarded the home and waited for people. This made me realize that the concept of \"waiting\" was passed down from my grandmother. In every generation of a house, there is someone who \"waits.\" I've simply taken up that torch."
+        },
+        {
+          "who": "name",
+          "text": "\"I sometimes look through these,\" {ta} said, pointing to a hand-drawn jasmine flower on the back of one of the postcards. \"It's like Grandma is talking to me. She said—the wait is worth it. When it's over, all the days weren't wasted.\""
+        }
+      ]
+    },
+    {
+      "id": "s3d",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Chapter 1: Old Times in the Greenhouse",
+      "goto": "s4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} retied the red string, closed the box, and then took a dried jasmine petal from her apron pocket and placed it on top of the box."
+        },
+        {
+          "who": "name",
+          "text": "\"I add one every year. This is the sixth one—the one from the year you came back.\" {ta} put the tin box back in its place. \"When this box is full in the future—it will prove that someone in this family is still waiting.\""
+        },
+        {
+          "who": "self",
+          "text": "Six jasmine petals, corresponding to five years plus \"the year you returned.\" {ta} isn't making a mark—it's creating a family tree for future generations. A family tree written with petals, one that doesn't require blood ties."
+        },
+        {
+          "who": "narration",
+          "text": "A breeze drifted in through the greenhouse window, gently swaying the leaves of the sunflower. Sunlight fell on a few strands of gray hair at {ta}'s temples—only then did you realize that five years of solitary waiting had left the marks of time on {ta}'s hair."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Chapter Two: A Tribute on the Mountain",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the evening, {name} will take you up the mountain to the small shrine where your grandmother is buried. The mountain path is paved with stone steps, and dense maple trees line both sides. The mountain breeze is gentle, and occasionally a red leaf swirls and falls onto your shoulders. The shrine is small, consisting of only a small stone house and a stone monument whose edges have been smoothed by time. Your grandmother's name is engraved on the monument—a small flowerbed surrounded by pebbles on either side, the flowers of which {ta} has clearly changed every time she visits."
+        },
+        {
+          "who": "name",
+          "text": "\"Grandma,\" {ta} spoke softly to the stone tablet, her voice trembling slightly in the mountain breeze, \"You see, I said I would wait—{ta} really came back. I haven't forgotten a single thing I promised you: I've protected this home for you.\""
+        },
+        {
+          "who": "self",
+          "text": "That's when I realized—what they'd been guarding for the past five years wasn't just a house. It was a promise to the deceased, a vow that would never be renewed. They swallowed all their loneliness into their New Year's Eve dinner alone."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Chapter Two: A Tribute on the Mountain",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The mountain wind made your clothes flutter. {name} turned to face you, tears welling in her eyes, but the corners of her mouth were turned up—that expression between laughter and tears was heartbreaking."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually—I've thought about leaving several times,\" {ta} said softly, as if revealing a secret she'd kept for too long. \"Going to another city, starting over. But the thought of you coming back one day and finding the door locked, the greenhouse dry, and no one waiting—makes me unable to leave.\""
+        },
+        {
+          "who": "self",
+          "text": "The phrase \"can't leave\" isn't about being bound by anything, but by a belief. What they fear isn't loneliness or isolation, but the fear that when you return, the last person in this world waiting for you will be gone."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "mountain_shrine",
+      "face": "sad",
+      "chapter": "Chapter Two: A Tribute on the Mountain",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The mountain breeze rustled through the maple forest, making the fallen red leaves rustle softly. Grandmother's tombstone stood there quietly—as if listening."
+        }
+      ],
+      "options": [
+        {
+          "text": "I'm sorry to have kept you waiting so long. From now on—it's my turn to be with you.",
+          "textVariants": [
+            "You've worked so hard all these years. From now on, you won't have to be alone.",
+            "I'm back, and I won't leave you alone anymore."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "Going home",
+          "reply": "{name} could no longer hold back—tears fell one by one onto the flowers in front of the tombstone: \"Hmm... It's good that you're back. It's good that you're back. Grandma—{ta} said that from now on, {ta} will be with me.\"",
+          "os": "(The lamp that had been kept lit for five years finally welcomed the person returning home. This moment—is heavier than any promise.)"
+        },
+        {
+          "text": "Silly sister, if you're going to leave, you should have left earlier. Why stay up so long for me?",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "sA1",
+          "flag": "Going home",
+          "reply": "{name} shook her head, raised her tear-streaked face, and looked at you earnestly: \"Waiting for you—it's never about enduring. It's about hoping. Hoping is different from enduring—the days of hoping have direction.\"",
+          "os": "({ta}'s waiting was never reluctant. Hope—that's the best name {ta} could give to this waiting.)"
+        },
+        {
+          "text": "Don't be sad, Grandma is watching from heaven—she'll be at peace.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "alienation",
+          "reply": "{name} wiped her eyes with her sleeve and forced a smile: \"...Yes, you're right. I'm too sentimental. Grandma doesn't like seeing me cry.\"",
+          "os": "(She gently suppressed the unspoken thoughts she had kept hidden in her heart about the past five years. Perhaps it wasn't the right time to speak.)"
+        },
+        {
+          "text": "It's all in the past, don't dwell on the memories.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "alienation",
+          "reply": "{name} remained silent for a moment, not even brushing off the fallen red leaves that landed on her shoulder. Finally, she simply said softly, \"...Yes. I'm too attached. Perhaps—it's time to turn the page.\"",
+          "os": "(What {ta} cherished for five years, you called a burden. The \"turning the page\" in that sentence—it's not just turning the page on the past.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "happy",
+      "chapter": "Interlude: Memories from the Seabed",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "To make you happy, {name} took you to the aquarium outside town—the one your grandmother used to take you to when you were little. Blue light shone through the domed tunnel, and schools of fish swam slowly overhead, casting their shadows on the ground."
+        },
+        {
+          "who": "name",
+          "text": "\"Remember?\" {ta} smiled and tilted her head back, blue light shimmering on her face. \"When you were little, you cried and wouldn't go to sleep, so Grandma brought us here. You said—you wanted to live underwater because it's quiet and beautiful here, and no one will leave.\""
+        },
+        {
+          "who": "self",
+          "text": "Those childhood fragments I had forgotten—{ta} hasn't forgotten a single one. My casual remark about \"living underwater,\" the rag doll I cried for, who would pick me up after I fell—{ta} has preserved all of these more completely than a museum."
+        },
+        {
+          "who": "name",
+          "text": "\"Back then, I thought—\" {ta} gazed at the manta ray traversing the dome, her voice as gentle as the blue light, \"No matter where I go in the future, I will make sure you have a place to come back to. Now... I've finally done it.\""
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "happy",
+      "chapter": "Interlude: Memories from the Seabed",
+      "goto": "sA1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A giant whale shark swam slowly across the dome, its shadow like a gentle cloud. {ta} leaned against the curved glass of the tunnel, her profile appearing exceptionally soft in the blue light."
+        },
+        {
+          "who": "name",
+          "text": "\"Grandma used to say—this house has no shortage of family. I didn't understand before, I thought family was something we were born with,\" {ta} said softly. \"Later I realized—family is something that stays. It's when someone leaves, but someone still remembers that potted plant for {ta}; it's when someone departs, but someone still waits for {ta} to come home.\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said this, her hand naturally grasped mine—with just the right amount of pressure, neither too light nor too heavy. It was as if she were saying: Look, now, those who were waiting and those who have returned are both here."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "sad",
+      "chapter": "Interlude: The Distance Under the Sea",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} still took you to the aquarium. Only this time—{ta} walked in front, and you followed behind. There was a distance between you, enough for a few viewing booths. We talked less, and the smiles faded."
+        },
+        {
+          "who": "name",
+          "text": "\"I used to think—if I took good care of the home, you'd be happy when you came back.\" {ta} watched a school of sardines gliding overhead, their silvery light flashing. \"Now I realize... maybe I was just being delusional. I kept guarding the home, and you ended up being just a guest too.\""
+        },
+        {
+          "who": "self",
+          "text": "In the blue light, {ta}'s profile conveyed a deep sense of loneliness—a loneliness not born of solitude, but of suddenly becoming uncertain about whether to continue anticipating something that had been anticipated for so long."
+        },
+        {
+          "who": "narration",
+          "text": "Schools of fish swam silently and in groups overhead. Between you lay a vast expanse of shimmering blue water, where no one had swum across first."
+        }
+      ]
+    },
+    {
+      "id": "sA1c",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "happy",
+      "chapter": "Interlude: Memories from the Seabed",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As you exit the aquarium, it's already early autumn evening. {name} stops at the souvenir counter near the exit—a row of miniature glass bottles filled with colorful sand specimens."
+        },
+        {
+          "who": "name",
+          "text": "\"Every time Grandma brought us here, she would let each of us pick a bottle.\" {ta} lightly touched the bottles with her fingertips, making a very soft clinking sound. \"You always picked the blue one, and I always picked the golden one. She said—your color is like the sea, and my color is like the sun. A home with both the sea and the sun—is complete.\""
+        },
+        {
+          "who": "self",
+          "text": "With a fairytale-like statement, the grandmother gave the two unrelated children a reason to \"belong to the same family.\" This reason may sound light, but in a childhood without relatives, it carried more weight than any certification."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} bought two bottles—one blue and one yellow. She put the blue one in your palm and held the yellow one in her own. The sunset outside the aquarium illuminated your two bottles, making them look like two small, portable homes."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "happy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "goto": "s5_neighbor",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "While tidying up old things, you found a dusty leather photo album at the bottom of your grandmother's bookcase. Opening the first page—it was a yellowed old photograph: young {name} standing timidly in the doorway, her eyes like those of a rain-soaked kitten."
+        },
+        {
+          "who": "name",
+          "text": "\"Back then, I had nothing—no one even called me by my name.\" {ta} stroked the corner of the photo. \"It was my grandmother who gave me a name, a bed, a bowl of hot food, and a home. That's why I was so afraid—afraid that this home would fall apart again.\"",
+          "when": "flag: Returning home"
+        },
+        {
+          "who": "name",
+          "text": "\"This home has given me so much.\" {ta}'s voice was hoarse, her fingers lingering on the photo for a long time. \"But now—I'm a little unsure whether I'm protecting this house or something else. Like—someone who will never come back.\"",
+          "when": "flag: alienation"
+        },
+        {
+          "who": "self",
+          "text": "The timid orphan girl in the photo has grown into a gentle older sister who cherishes everything. She has returned, little by little, the love her grandmother gave her to this family and the rest of its members. This isn't repayment—it's inheritance."
+        }
+      ]
+    },
+    {
+      "id": "s5_neighbor",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "happy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "goto": "s5_cook",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the afternoon, Grandma Zhang from next door knocked on the door carrying a jar of her homemade pickled vegetables. The old woman was over eighty years old and a little hard of hearing, but her voice was strong. \"Little Xu—I heard the person you've been waiting for is back? Let me see—oh my, she's grown so much! When you weren't here, she talked about it every day, and she always carried that pot of sunflowers to the door—saying that if you came back, the first thing you'd see was her.\""
+        },
+        {
+          "who": "name",
+          "text": "{name} took the pickled vegetable jar, blushing, \"Grandma Zhang, don't talk nonsense—I'm just, I'm just worried that the flower won't get any sun! It's not for anyone to see—I'll go make you some tea!\" After saying that, she quickly ran to the kitchen with the jar."
+        },
+        {
+          "who": "self",
+          "text": "Even the neighbors kept the secret for her. Grandma Zhang's words were not unintentional—among the neighbors, who secretly moved flowerpots to their doorsteps, who wiped the doorframes every day, who made dumplings alone on New Year's Eve and didn't eat them—these things were more real than any family tree."
+        },
+        {
+          "who": "narration",
+          "text": "Grandma Zhang placed the pickled vegetable jar on the living room table, then pulled a small bag of dried osmanthus flowers from her apron and handed it to you—\"These are the osmanthus flowers I dried. I dry them every year, and every year I put them by the window facing the intersection. She says the fragrance of osmanthus can travel far, so that everyone who passes by can smell it.\""
+        }
+      ]
+    },
+    {
+      "id": "s5_cook",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After seeing Grandma Zhang off, {name} brought out a clay pot of taro and pork rib stew from the kitchen—a dish her grandmother often made when she was alive. The rim of the clay pot had a smooth glaze, polished over decades with sandpaper."
+        },
+        {
+          "who": "name",
+          "text": "\"Grandma taught me—taro needs to be pan-fried first so it doesn't fall apart. The ribs need to be blanched and then caramelized with rock sugar—otherwise they won't absorb the flavor.\" {ta} recounted the process to you, her tone as serious as if she were taking an exam. \"I made this dish about seventy times in the first three years—each time I ate a whole pot by myself. I couldn't bear to throw away the leftovers—because this was the last thing Grandma taught me.\"",
+          "when": "tag: Sincerity>=1"
+        },
+        {
+          "who": "narration",
+          "text": "{ta} Place the clay pot on the table and lift the lid. A steaming, sweet aroma wafts out—you remember. This is the taste of childhood, the smell you could smell every time you came home from school on a rainy day."
+        },
+        {
+          "who": "self",
+          "text": "She made it seventy times in four years—a whole pot for one person. {ta} used these repeated recipes to combat the silence of the house. Now, finally, someone shared the first piece of taro with {ta}. The taro was cooked perfectly—golden edges, melt-in-your-mouth tender."
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} closed the photo album, her fingers tracing the cover for a long time. The light outside the window gradually dimmed, and the shadows of the old house slowly lengthened. {ta} suddenly looked up—more serious than ever before."
+        },
+        {
+          "who": "name",
+          "text": "\"Tell me—what are we?\" {ta} finally asked the question that had been lingering in her mind for so long. \"I'm not your family by blood—there's no family tree, no surname, no legal relationship. But in this family—it's clearly just the two of us left.\""
+        },
+        {
+          "who": "self",
+          "text": "Blood ties—in {ta}'s heart, this is a threshold that can never be crossed. But what {ta} doesn't know is that in her grandmother's heart, and in my heart, this threshold has long since ceased to exist."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta}'s hand was still on that old photo album—the cover was a floral fabric cover that her grandmother had sewn by hand many years ago. The sunlight cast your shadows and the old desk's shadows on the ground, the two shadows very close together."
+        }
+      ],
+      "options": [
+        {
+          "text": "Blood ties don't matter. You've always been my most important family member.",
+          "textVariants": [
+            "You are my family, ever since I can remember.",
+            "What does blood relation matter? Only those who can care for each other are called family."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s5c",
+          "reply": "Tears welled up in {name}'s eyes—not tears of sorrow, but the kind of tears of belonging, of being claimed and embraced: \"...Thank you. I've waited so many years for these words. So many years—longer than five years for a house.\"",
+          "os": "(A person with no blood relation is formally recognized as family for the first time. Not a guest, not an adopted daughter—but family.)"
+        },
+        {
+          "text": "What it is doesn't matter, I'm sticking to this family and sticking to you.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s5c",
+          "reply": "{name} bursts into laughter through tears, grabs a rag from the table, and pretends to hit you: \"How old are you to still be shirking your responsibilities! Have you paid the rent? Have you paid the utilities?... But—it's fine if you stay here. It'll be lively.\"",
+          "os": "(She lets you linger because she can't bear to let go. Her eyes were clearly still red when she mentioned \"rent.\")"
+        },
+        {
+          "text": "You've sacrificed so much for this family; I'll take care of things from now on.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s5c",
+          "reply": "{name}: \"Silly child—this family is meant to be held together by us. It's not about who holds on first or who holds on first—it's about two people, four hands, together.\"",
+          "os": "(I don't want you to shoulder this alone, I just want you to stay. A family needs people, not one person's heroism.)"
+        },
+        {
+          "text": "Ultimately, it's just a temporary arrangement, don't overthink it.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s5c",
+          "reply": "{name}'s smile faded little by little, as faint as the sunset outside the window turning gray: \"...Just staying here. Yes, I almost forgot—I'm just staying here temporarily. Thank you for reminding me.\"",
+          "os": "(Your words—reduced {ta} back to that timid, orphaned girl in the old photograph. \"Living as a guest\"—those two words are like a knife.)"
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Chapter Three: People in Old Photos",
+      "goto": "s6",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The photo album was turned to the last page—a blank page, with only a folded letter held up by a safety pin. {name} took the letter down and handed it to you, her hands trembling slightly."
+        },
+        {
+          "who": "name",
+          "text": "\"This was written by Grandma before she passed away. She told me to wait for you to come back before opening it. I've been waiting for five years—and now the day has finally come for me to give it to you.\""
+        },
+        {
+          "who": "narration",
+          "text": "The envelope was written in my grandmother's delicate handwriting: \"For my two children.\" Inside was only a thin sheet of paper—"
+        },
+        {
+          "who": "name",
+          "text": "\"After I'm gone, this house will be left to both of you. It doesn't matter who has more or less—you are both my children. One is related by blood, the other by not; but in my heart, I can never distinguish between you. I hope you will look after each other, and when you grow old, there will still be someone to tuck you in.\""
+        },
+        {
+          "who": "self",
+          "text": "Grandmother didn't use legal terms like \"will\" or \"inheritance\"—she only used \"you two.\" This unnotarized, unsigned will—carried more weight than any other document. It revealed something {name} hadn't dared to believe for the past five years—{ta} wasn't just a guest; {ta} was considered family."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} Holding the letter, tears fell drop by drop onto the four words \"My Child\"—blurring the ink slightly, but the four words were still clearly visible to everyone."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "happy",
+      "chapter": "Final Chapter: The Home Lively Again",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You decided to stay. The old house was filled again with the sounds of footsteps, doors opening and closing, and the warmth of cooking. New flowers were added to the greenhouse—pictures you and {name} picked out together at the flower market. A new photo hung on the wall—in it, you and {ta} stood side-by-side in front of sunflowers."
+        },
+        {
+          "who": "name",
+          "text": "\"It's been so long since it's been this lively.\" {ta} stood in the center of the greenhouse, bathed in sunlight and surrounded by flowers you all planted yourself. {ta}'s eyes shone with joy. \"If Grandma saw this—she'd be humming a little tune with happiness. {ta} loves to hum 'Jasmine Flower,' do you remember?\"",
+          "when": "flag: Returning home"
+        },
+        {
+          "who": "narration",
+          "text": "The sunflower I replanted for you six years ago is blooming exceptionally well this year. Its golden flower head is as big as a small sun, steadily facing the brightest direction.",
+          "when": "flag: Returning home"
+        },
+        {
+          "who": "self",
+          "text": "It turns out that whether a house can come back to life depends not on its bricks and walls, but on the people who stay and care for each other. My grandmother often said, \"The one thing this house has in abundance is family\"—and now, that statement has come true again."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Final Chapter: The Home Lively Again",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} took something out of her apron pocket—a bunch of old keys. They were from her grandmother, made of brass, worn smooth in places. {ta} held them in her palm and looked at them for a long time."
+        },
+        {
+          "who": "name",
+          "text": "\"There's something I've been thinking about for a long time.\" {ta} suddenly became a little nervous, twisting the strap of her apron, and her speech slowed down. \"This home—I hope that from now on, it won't be just me taking care of it. It will be a proper home for both of us, together. Are you willing?\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said \"the two of us,\" her voice was as soft as if she were talking to flowers in a greenhouse. But the weight of those words was heavier than any legal document. Because this wasn't a contract, it was a mutual and willing commitment."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Final Chapter: The Home Lively Again",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} blushed and gently placed the old keychain left by her grandmother into your palm. The keys still carried {ta}'s body heat; the coolness of the copper had been warmed by {ta}'s palm."
+        }
+      ],
+      "options": [
+        {
+          "text": "Hold the key and {ta}'s hand tightly: Our home—from today onwards.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name} gripped your hand tightly—a tight grip, as if afraid you'd run away: \"Mmm...our home. Not yours, not mine—it's ours. Finally, it's 'us'.\"",
+          "os": "(After a life of wandering, {ta} finally has a home of her own—and someone she belongs to. Not by blood, but closer than blood relatives.)"
+        },
+        {
+          "text": "Smiling, she hung the key back around his neck: \"You keep the key—I'm yours.\"",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}: \"You're so glib... but—this time I believe you. The key's here; it'll be there whenever you come back.\"",
+          "os": "(She blushed and hung the key on her chest—the spot closest to her heart. Trusting you isn't just a word, it's a place she holds dear.)"
+        },
+        {
+          "text": "To make things easier for you, I'll take care of all the household responsibilities.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name}'s smile faded, her hand hovering in mid-air, her fingertips still stained with greenhouse soil: \"I wasn't asking about burdens... Was I not clear enough? What I need isn't helpers—it's family.\"",
+          "os": "(The feelings that had been building up in her heart were gently bypassed by you. The key between you two suddenly felt lighter.)"
+        },
+        {
+          "text": "You should keep the key yourself; there's not much I can do to help.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} slowly withdrew her hand, putting the key back into her apron pocket—very slowly, as if putting something heavy back in its place: \"...Okay. I was just being presumptuous again. The flowers in the greenhouse need watering.\"",
+          "os": "(The set of keys that were solemnly handed over was gently returned to its original place. The flowers in the greenhouse—were {their} excuse to escape embarrassment.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "happy",
+      "chapter": "Final Chapter: Where You Are",
+      "goto": "s7_festival",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Later—the old house became the warmest light in the small town. During holidays, {name} would prepare a table full of dishes passed down from her grandmother: braised pork belly with preserved mustard greens, steamed sea bass, and lotus root with osmanthus-scented glutinous rice—each dish a replica of the flavors of bygone days. The neighbors all said: \"That house has never been quiet since you two moved in.\" The light that stayed on the longest at night was always in your living room—the warm orange glow seeping through the old lattice windows."
+        },
+        {
+          "who": "name",
+          "text": "\"Look—\" {ta} took your arm and stood with you once again under the blue light of the aquarium. The fish in the dome were still swimming quietly downstream. \"When you were little, you said you wanted to live underwater. Now you don't have to—because home has the peace and beauty you wanted. And—someone who won't leave.\"",
+          "when": "flag: Together"
+        },
+        {
+          "who": "self",
+          "text": "That timid orphan girl standing at the door, that sister who guarded the empty house alone for five years, now finally no longer has to guard a lamp that has been lit again and again, cold and cold, for someone.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7_festival",
+      "type": "story",
+      "sceneKey": "greenhouse_noon",
+      "face": "happy",
+      "chapter": "Final Chapter: Where You Are",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On Mid-Autumn Festival, {name} set up a moon-viewing feast in the greenhouse for the first time. The mooncakes were made by {ta} according to her grandmother's recipe—lotus seed paste with double yolks, and the pressed patterns were exactly the same as the molds her grandmother left in the old tin box."
+        },
+        {
+          "who": "name",
+          "text": "\"Every Mid-Autumn Festival before, this table only had one person's bowl and chopsticks.\" {ta} poured you a cup of osmanthus wine, and poured one for herself too. \"Grandma Zhang invited me to her house for dinner every year—but I was embarrassed and always said, 'There are people at home.' Actually, there weren't—I just wanted to keep a memory for myself, and as time went on, it really happened.\""
+        },
+        {
+          "who": "self",
+          "text": "Gu Cheng once wrote: \"The night gave me black eyes, yet I use them to seek the light.\" But {ta} waited alone through five years of darkness, until a room full of light was lit. When her grandmother passed away, only one lamp remained in the greenhouse—the lamp is still the same, but now it illuminates the shadows of two people."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} raised her glass and clinked it against yours—two cups of osmanthus wine reflected shimmering golden light under the full moon. The sunflowers overhead nodded slightly in the night breeze, as if to say: You are finally family."
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "aquarium_tunnel",
+      "face": "shy",
+      "chapter": "Final Chapter: Where You Are",
+      "goto": "s7_qingming",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The manta ray swam overhead again, its shadow still so gentle. {ta} leaned on your shoulder, entrusting her entire weight to you with complete peace of mind."
+        },
+        {
+          "who": "name",
+          "text": "\"Thank you,\" {ta} whispered, her voice floating in the shimmering water like a dream, \"for the first time, I've learned that the word 'home' is complete. It's not just a house or a hot meal—it's someone waiting, someone coming home.\""
+        },
+        {
+          "who": "self",
+          "text": "What is home? The ancients said, \"While parents are alive, one should not travel far.\" But I want to say—home is someone who waters the flowers for you when you travel far away, and warms tea for you when you return. That pot of sunflowers that has been replanted for six years—that is the answer."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "art_studio_afternoon",
+      "face": "sad",
+      "chapter": "Final Chapter: The Lamp Keeper",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You finally left the old house. Before leaving, {name} cleaned your room thoroughly one last time—the sheets were changed, jasmine flowers were placed on the windowsill, and even the sunflower pot was moved by {ta} to your bay window. Just like every day before, waiting for you to come home."
+        },
+        {
+          "who": "name",
+          "text": "\"Take care on the road.\" {ta} stood at the door, smiling and waving, exactly the same as five years ago, ten years ago, every time she saw you off. \"Home—it's always here. You can come back whenever you want. The door won't be locked, the flowers won't wither.\""
+        },
+        {
+          "who": "self",
+          "text": "I looked back one last time. {ta} was still standing behind that faded wooden door, like a lamp that refused to go out. Some family members—you only realize how precious they are after you've missed them your whole life.",
+          "when": "tag: trash>=2"
+        },
+        {
+          "who": "narration",
+          "text": "That night, the lights in the old house were on. But inside—once again, only {ta} was left, along with the old family photos that covered the walls, never to be updated. The sunflower, facing the door, waited for a long time."
+        }
+      ]
+    },
+    {
+      "id": "s7_qingming",
+      "type": "story",
+      "sceneKey": "mountain_shrine",
+      "face": "happy",
+      "chapter": "Final Chapter: Where You Are",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The following year, during the Qingming Festival, you went up the mountain together again. This time, the mountain path was no longer just filled with red leaves—you brought up the sunflower from the greenhouse and placed it next to Grandma's tombstone, its golden flower head facing the sun."
+        },
+        {
+          "who": "name",
+          "text": "\"Grandma—I brought the whole family this year.\" She knelt before the tombstone, poured three cups of jasmine tea, and pointed at you. \"This one—this is the person I told you about, the one I've been waiting for for five years. Now it's just the two of us here to sweep your grave. We'll come every year from now on.\""
+        },
+        {
+          "who": "self",
+          "text": "The word \"family\"—when it comes out of {ta}'s mouth, it's no longer just the dictionary definition. It's five years of jasmine tea, six years of sunflowers, a postcard in a tin box, and the warmth of a bowl of taro and pork rib stew."
+        },
+        {
+          "who": "narration",
+          "text": "The mountain breeze rustled through the maple forest, making the sunflower leaves rustle. {ta} stood up—straighter than when she climbed the mountain. The weight on her back was no longer the weight of an empty house, but the weight of a home finally filled."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "greenhouse_noon",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This story about 'home' is coming to an end. Now—what would you like to say to {name}? (≤100 words, it will be the final touch of your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Standing in the sun-drenched greenhouse, holding the sunflower I've replanted every year, my eyes are filled with you and the flowers. I'm waiting for you to speak—waiting for words that belong to this home, words that belong to both of you. That bunch of keys still hangs warmly on my heart.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The old house has fallen silent. You sit in the empty living room, outside the window the sunflower in the greenhouse still facing the sun. You want to tell the person who has watered your flowers for six years what you never said—maybe the flowers will convey your message.",
+          "when": "flag: fulfill"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Returning family",
+      "trigger": "top: sincerity",
+      "caption": "After waiting alone for five years, almost to the point of despair, you returned and chose to stay. You transformed an old house nearly swallowed by vines back into a home where people cooked, waited at the door, and watered the flowers together. The key finally found another hand.",
+      "report": "[Relationship Personality - Homebody] You belong to the rare \"secure\" type: you know how to cherish and hold on, and you dare to give a sense of belonging. You understand that home isn't about blood ties—it's about the little things you care about and remember. You've not only accepted someone who has wandered for half their life, but you've also found your roots again. Huang Tingjian wrote, \"Peach blossoms and plum blossoms in the spring breeze, a cup of wine; ten years of lamplight in the rainy nights of the rivers and lakes\"—you are the one who, after ten years of rainy nights, finally has someone to hold a candle for you. Those who can build a family with you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "Spoiled",
+      "trigger": "Top: Aquaman",
+      "caption": "You used sweet words and coaxing to make {name} laugh and sigh, but you never seriously uttered that solemn promise—\"This is our home.\"",
+      "report": "[Relationship Personality - The Flirtatious Type] You have a sweet tongue, are charming, and adept at coaxing people. You know best how to soften people's hearts, yet you're most afraid of being serious. You've warmed the heart of someone who's been guarding their home for five years, but you're hesitant to truly take responsibility for the family. Don't wait until the flowers in the greenhouse have withered before realizing you haven't said what you should have said."
+    },
+    {
+      "endingId": "toxic",
+      "title": "ruthless guest",
+      "trigger": "top: scum",
+      "caption": "You casually pushed away the promise you kept for five years, the sunflowers you replanted for six years, and the old key you solemnly handed over—turning the road home into a mere passerby's journey.",
+      "report": "[Relationship Personality - The Cold-Hearted Guest] You are clear-headed, detached, and constantly talk about \"staying in\" and \"the past,\" returning only when needed and turning away when not. You may never be bound by anything, yet you have personally caused someone who treated the entire old house as their heart to—once again find themselves alone. The coldest thing is not an empty house, but a heart that refuses to acknowledge its home."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Porter",
+      "trigger": "top: Loyal Dog",
+      "caption": "You're busy taking on all the heavy and tiring chores at home for {name}, but you keep circumventing what {ta} truly wants—a partner to build a family with, not a capable helper.",
+      "report": "[Relationship Personality - The Burden Bearer] You're incredibly open and helpful, always ready to lend a hand, and habitually express your care by saying \"I'll take care of it.\" You often impress yourself, but you fail to understand the other person's heart—{name} doesn't want you to do their work for them; they want you to stay home and be with them. Don't forget, you also need to be waited for and cared for."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "Passerby",
+      "min": -99,
+      "caption": "A story of returning home has come to an end, and even the sunflowers that bloom year after year in the greenhouse couldn't bring a conclusion to your relationship with {name}.",
+      "report": "[Relationship Personality - Passerby] Your choices are unpredictable, sometimes warm, sometimes distant. Perhaps you haven't decided whether to consider this old house—and the person waiting for you there—as your true home. First, understand your own heart, then decide whether to accept that warm key."
+    }
+  ]
+}

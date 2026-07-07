@@ -1,7 +1,7 @@
 /**
  * English language pack
  *
- * Keep keys in sync with zh-CN.ts. Items marked TODO need translation.
+ * Keep keys in sync with zh-CN.ts.
  */
 export default {
   common: {
@@ -9,6 +9,16 @@ export default {
     confirm: 'OK',
     cancel: 'Cancel',
     back: 'Back',
+    close: 'Close',
+    save: 'Save',
+    share: 'Share',
+    copy: 'Copy',
+    retry: 'Retry',
+    submit: 'Submit',
+    success: 'Success',
+    fail: 'Failed',
+    unknown: 'Unknown',
+    me: 'Me',
   },
 
   lang: {
@@ -19,6 +29,7 @@ export default {
     title: 'Please complete the security check',
   },
 
+  // ────────── Login ──────────
   login: {
     title: 'Choose a sign-in method',
     subtitle: 'Select your preferred way to sign in',
@@ -62,6 +73,107 @@ export default {
     },
   },
 
+  // ────────── Password Login ──────────
+  passwordLogin: {
+    title: 'Password Login',
+    subtitle: 'Sign in with phone / email / username + password',
+    accountLabel: 'Account',
+    accountPlaceholder: 'Phone / email / username',
+    passwordLabel: 'Password',
+    passwordPlaceholder: 'Enter password',
+    loginBtn: 'Sign in',
+    codeLoginLink: 'Verification code login',
+    hintDefault: 'Accepts: phone number, email, username',
+    hintPhone: '✅ Recognized as phone number',
+    hintIntlPhone: '✅ Recognized as international phone',
+    hintEmail: '✅ Recognized as email',
+    hintUsername: '✅ Recognized as username',
+    hintInvalid: 'Please enter a valid phone, email or username',
+    typePhone: 'Phone',
+    typeIntlPhone: 'Intl Phone',
+    typeEmail: 'Email',
+    typeUser: 'Username',
+    toast: {
+      incomplete: 'Please complete login info',
+      fail: 'Login failed',
+      success: 'Login successful',
+      loading: 'Signing in...',
+    },
+  },
+
+  // ────────── Phone Login ──────────
+  phoneLogin: {
+    title: 'Phone Verification',
+    subtitle: 'Enter your phone number to receive a code',
+    phoneLabel: 'Phone Number',
+    phonePlaceholder: 'Enter phone number',
+    codeLabel: 'Verification Code',
+    codePlaceholder: 'Enter verification code',
+    getCode: 'Get Code',
+    codeRetry: 'Retry in {n}s',
+    loginBtn: 'Sign in',
+    backLink: 'Back to login options',
+    toast: {
+      invalidPhone: 'Please enter a valid phone number',
+      sending: 'Sending code...',
+      codeSent: 'Code sent',
+      codeFail: 'Failed to send code',
+      incomplete: 'Please complete login info',
+      loading: 'Signing in...',
+      success: 'Login successful',
+      fail: 'Login failed',
+    },
+  },
+
+  // ────────── Email Login ──────────
+  emailLogin: {
+    title: 'Email Verification',
+    subtitle: 'Enter your email to receive a code',
+    emailLabel: 'Email Address',
+    emailPlaceholder: 'Enter email address',
+    codeLabel: 'Verification Code',
+    codePlaceholder: 'Enter verification code',
+    getCode: 'Get Code',
+    codeRetry: 'Retry in {n}s',
+    loginBtn: 'Sign in',
+    backLink: 'Back to login options',
+    toast: {
+      invalidEmail: 'Please enter a valid email',
+      sending: 'Sending code...',
+      codeSent: 'Code sent',
+      codeFail: 'Failed to send code',
+      incomplete: 'Please complete login info',
+      loading: 'Signing in...',
+      success: 'Login successful',
+      fail: 'Login failed',
+    },
+  },
+
+  // ────────── Profile ──────────
+  profile: {
+    title: 'User Info',
+    userId: 'User ID:',
+    phone: 'Phone:',
+    email: 'Email:',
+    username: 'Username:',
+    created: 'Created:',
+    lastLogin: 'Last Sign-in:',
+    logoutBtn: 'Sign out',
+    notLoggedIn: 'Not signed in',
+    gotoLogin: 'Sign in',
+    notSet: 'Not set',
+    invalidDate: 'Invalid date',
+    formatError: 'Format error',
+    anonymous: 'Anonymous ({id}...)',
+    logoutConfirmTitle: 'Sign out',
+    logoutConfirmTip: 'Are you sure you want to sign out?',
+    toast: {
+      loggedOut: 'Signed out',
+      fail: 'Sign out failed',
+    },
+  },
+
+  // ────────── Pick (game home) ──────────
   pick: {
     subtitle:
       '12 people, 12 stories · Epic / Business / Romance / Youth / Friendship / Family / Career / Daily · Pick one, step into their opening',
@@ -73,10 +185,214 @@ export default {
       ai: 'AI Agent text game: pick a card → start your story',
       by: 'By Xiaoxia — Built with CloudBase',
     },
-    toast: {
-      loadFail: 'Failed to load character',
+    toast: { loadFail: 'Failed to load character' },
+  },
+
+  // ────────── Opening ──────────
+  opening: {
+    introTitle: 'Background:',
+    startBtn: 'Enter the Night →',
+    backBtn: '← Choose another partner',
+  },
+
+  // ────────── Play ──────────
+  play: {
+    stepPill: 'Scene {n}',
+    bondLabel: 'Bond',
+    menuItems: ['Home', 'Choose Another Character'],
+    reacting: '{name} is responding…',
+    openPlaceholder: 'Say what you really want… (up to 100 chars)',
+    toastOpenMax: 'No more than 100 characters',
+    ctrlPrev: 'Previous',
+    ctrlNext: 'Next',
+    ctrlSkip: 'Skip',
+    ctrlAuto: 'Auto',
+    ctrlAutoPlaying: 'Auto (on)',
+  },
+
+  // ────────── Gender ──────────
+  gender: {
+    title: 'Before the Night Ends',
+    subtitle: 'Tell us who you are ✨',
+    male: 'Male',
+    female: 'Female',
+    secret: 'Secret',
+    submitting: 'Submitting…',
+    confirmBtn: 'Confirm → Ending',
+  },
+
+  // ────────── Ending ──────────
+  ending: {
+    loadingText: 'The night is being sealed for you…',
+    loadingSub: "{name}'s story with you is writing its final line",
+    tapContinue: 'Tap to continue',
+    verdictLabel: 'Night Verdict',
+    resultBtn: 'View Relationship Profile →',
+  },
+
+  // ────────── Report ──────────
+  report: {
+    pageTitle: 'RELATIONSHIP REPORT',
+    cgBadge: 'CG',
+    withPill: 'With {name} · Night Archive',
+    matchLabel: 'Soul Compatibility',
+    tagsLabel: 'Your Relationship Persona',
+    tagsEmpty: '✦ Mystery Player',
+    styleAnime: 'Anime',
+    styleRealistic: 'Cinematic',
+    brand: 'Starlight · Night Stories · {style}',
+    btnSaveShare: 'Save / Share',
+    btnReplay: 'Play Again',
+    statsEntry: 'See what others chose →',
+  },
+
+  // ────────── Stats ──────────
+  stats: {
+    bannerTitle: '✨ Faces of the Night ✨',
+    bannerCount: '{n} have walked through the night',
+    betaLabel: 'Beta Phase',
+    bannerSub: 'Anonymous real-time data',
+    loadErrText: 'Failed to load data, please try again later',
+    retryBtn: 'Reload',
+    sectionCharRank: '🔥 Character Popularity Top 5',
+    sectionPersona: '🌟 Five Persona Distribution',
+    sectionPair: '💫 Character × Persona Pairings',
+    sectionProfile: '🌏 Player Demographics',
+    genderLabel: 'Gender',
+    deviceLabel: 'Device',
+    genderText: '♀ Female {f}% · ♂ Male {m}% · 🌙 Secret {s}%',
+    deviceText: '📱 Mobile {m}% · 💻 Desktop {d}% · 📟 Tablet {t}%',
+    backBtn: '← Back to Report',
+    mineTag: '← You',
+    personaNames: {
+      genuine: 'The Secure (Safe)',
+      playboy: 'The Charmer (Player)',
+      toxic: 'The Devourer (Toxic)',
+      devoted: 'The Keeper (Loyal)',
+      wanderer: 'The Wanderer (Free)',
     },
   },
 
-  // TODO: translate the remaining pages (opening / play / gender / ending / report / stats / profile / demo / index)
+  // ────────── CloudBase Footer ──────────
+  cloudbaseFooter: {
+    authorNote: "Author's Note",
+    poweredBy: 'CloudBase AI ToolKit',
+    copyright: '© {year} {title} · Built with Tencent CloudBase',
+    modalTitle: "Author's Note",
+    closeBtn: 'Close',
+    memoText: "Thank you for playing! I'm a cosplayer-turned-coder who loves otome games and galgames. This text adventure is a passion project — with branching storylines, AI responses, and every choice leads to a different story. Assets from friends and the community — hope each playthrough brings you joy.",
+    memoTip: 'Feedback & suggestions welcome 💌',
+    memoUpdate: 'updated: 2026.7.1',
+    toastLinkCopied: 'Link copied',
+  },
+
+  // ────────── Share Card ──────────
+  shareCard: {
+    generating: 'Generating your night archive…',
+    saveToAlbum: 'Save to Album',
+    copyLink: 'Copy Link',
+    wxShare: 'Share on WeChat',
+    toast: {
+      saved: 'Saved to album 💜',
+      copied: 'Link copied 💜',
+      copyFail: 'Copy failed',
+      genFail: 'Generation failed — long press to screenshot',
+      download: 'Download started 💜',
+      longPress: 'Long press to save',
+      wxShare: 'Tap top-right ··· to share',
+      wxFallback: 'Link copied — paste to WeChat',
+    },
+    perms: {
+      title: 'Album Permission',
+      content: 'Please allow album access in settings',
+      confirm: 'Settings',
+    },
+    saveFail: 'Save failed — long press to save',
+    brand: 'Starlight · Night Stories',
+    poweredBy: 'Powered by CloudBase · 云开发',
+  },
+
+  // ────────── Index (Demo entry) ──────────
+  index: {
+    title: 'CloudBase UniApp Template',
+    subtitle: 'Cross-platform template powered by CloudBase',
+    feat1Title: 'Multi-platform',
+    feat1Desc: 'One codebase, all platforms',
+    feat2Title: 'CloudBase Integrated',
+    feat2Desc: 'Cloud functions, database, storage built-in',
+    feat3Title: 'Ready to Use',
+    feat3Desc: 'Complete dev toolchain',
+    btnDemo: 'Try CloudBase Features',
+    btnLogin: 'Sign-in Options',
+    btnProfile: 'View Profile',
+    btnDocs: 'Docs',
+    toastDocs: 'Docs link copied',
+  },
+
+  // ────────── Demo ──────────
+  demo: {
+    title: 'CloudBase Demo',
+    subtitle: 'CloudBase Demo',
+    sectionEnv: 'Environment',
+    sectionAuth: 'Authentication',
+    sectionCloudFn: 'Cloud Functions',
+    sectionCloudRun: 'CloudRun',
+    sectionDb: 'Database',
+    sectionDbWatch: 'DB Realtime',
+    sectionUpload: 'File Upload',
+    sectionDownload: 'File Download',
+    envChecking: 'Checking...',
+    envOk: '✅ Environment OK',
+    envFail: '❌ Env ID not set',
+    loginStatus: 'Status: {s}',
+    loggedIn: 'Signed in',
+    notLoggedIn: 'Not signed in',
+    initFail: 'Init failed',
+    loggedOut: 'Signed out',
+    relogin: 'Re-login',
+    gotoLogin: 'Sign in',
+    logoutBtn: 'Sign out',
+    callHello: 'Call hello function',
+    callCloudRun: 'Call CloudRun service',
+    fnResult: 'Function Result:',
+    svcResult: 'Service Result:',
+    addData: 'Add Record',
+    queryData: 'Query',
+    dbRecords: 'DB Records:',
+    inputPlaceholder: 'Enter data to add',
+    startWatch: 'Start Watch',
+    stopWatch: 'Stop Watch',
+    realtimeRecord: 'Realtime Record:',
+    recordAdd: 'Added: {content} ({time})',
+    recordDel: 'Deleted: {content} ({time})',
+    chooseUpload: 'Choose & Upload',
+    uploadResult: 'Upload Result:',
+    uploadSuccess: 'Upload success\nFileID: {fileId}',
+    downloadFile: 'Download File',
+    downloadResult: 'Download Result:',
+    downloadSuccess: 'Download success\nTemp path: {path}',
+    processing: 'Processing...',
+    toast: {
+      envNeed: 'Set Env ID first',
+      needLogin: 'Sign in first',
+      needContent: 'Enter content',
+      addSuccess: 'Added',
+      addFail: 'Add failed',
+      querySuccess: 'Queried',
+      queryFail: 'Query failed',
+      callSuccess: 'Call succeeded',
+      callFail: 'Call failed',
+      uploadSuccess: 'Uploaded',
+      uploadFail: 'Upload failed',
+      downloadSuccess: 'Downloaded',
+      downloadFail: 'Download failed',
+      watchStopped: 'Watch stopped',
+      watching: 'Already watching',
+      watchFail: 'Watch failed',
+      loginSuccess: 'Signed in',
+      notLogin: 'Not signed in',
+      loggedOut: 'Signed out',
+      logoutFail: 'Sign out failed',
+    },
+  },
 }

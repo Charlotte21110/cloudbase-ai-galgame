@@ -1,0 +1,1151 @@
+{
+  "_id": "script_band",
+  "id": "script_band",
+  "title": "Chasing the Light: Underground Band",
+  "openingTip": "An underground band that has never achieved fame, a leaky rehearsal room, and a lead singer who always talks about \"dreams\" but is on the verge of collapse—{name}. Only seven days remain until your one and only chance to step onto the big stage. This is a story about passion, friendship, and \"should we gamble on our dreams one more time?\" Most of the time you just need to tap the screen to read on; there aren't many crossroads where you actually have to make a decision, but each one concerns the fate of this band.",
+  "prologue": "The band \"Night Flight\" has been around for three years, and all they've accumulated is: a guitar covered in duct tape, dozens of original songs no one listens to, and a mountain of debt they can't shake off. Lead singer {name} is the one who brought everyone together—he's got a cocky attitude, but when he sings, it's like he's risking his life. Now, there are only seven days left until the auditions for their national tour, but the bassist just quit, and the rent is already at the door. {ta}, chugging cheap beer from a convenience store, says with a grin, \"Breaking up is fine too.\" But you know, that's the last thing {ta} wants to say.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "happy",
+      "chapter": "Prologue: Seven Days Left",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the rooftop, the setting sun bathed the entire city in the color of cheap beer. {name} sat on a rusty water tank, clutching an old guitar covered in tape—a deep dent on the neck, a result of being chased by security guards while busking in a subway station when {ta} was twenty. The wind rattled {ta}'s guitar picks, but {ta}'s fingers remained steady—steady like someone who had staked everything on one thing. And indeed, {ta} truly was. This guitar was the only valuable thing {ta}'s mother had left them, bought from a secondhand music store with money saved from three months of washing dishes. {ta}'s fingertips were covered in calluses—not from manual labor, but from pressing chords. The joint of their left ring finger was slightly deformed, a result of practicing barre chords. Each callus was a song, each song a sleepless early morning."
+        },
+        {
+          "who": "name",
+          "text": "\"Old Zhou ran away, taking his bass with him. He said he didn't want to stick around with us anymore—three years, still in this rehearsal room, still drowning in debt. His family's pressuring him; he's thirty, he can't stay single forever.\" {ta} grinned, a weary smile. \"The landlord came again today, posted the third overdue payment notice. Don't you think this lousy band should just break up?\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said \"Let's break up,\" her fingers pressed the G chord tightly—her fingertips turned white, and her nails dug into the strings. Her mouth said \"Let's break up,\" but her fingers seemed to be saying: \"Don't break up.\" This is the most contradictory aspect of {ta}—{ta}'s soul is split in two, one half surrendering, the other half stubbornly holding on."
+        },
+        {
+          "who": "name",
+          "text": "\"Seven days left until the auditions.\" {ta} tilted her head back and gulped down a mouthful of cheap beer, the foam dripping down her chin without being wiped away, staining the guitar's soundboard and mingling with old tape. \"Take a gamble—maybe lose everything; quit—at least I won't owe any more. I already owe the drummer two months' rehearsal fees... What do you think?\""
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Prologue: Seven Days Left",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} placed the beer can next to the water tank and wiped her mouth with the back of her hand. The setting sun cast a long orange reflection on the old guitar's lacquer, illuminating the faded sticker affixed to the body—\"Forever Young, Forever Tearful.\" {ta} had personally stuck it on three years ago when the band was formed; now the corners were curled."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually, I don't care.\" {ta} suddenly softened her voice, the guitar in {ta}'s hands becoming very quiet, as quiet as a tamed wild beast. \"Losing is losing. I've lost countless times anyway. From being eliminated in my first audition when I was eighteen until now—if you count, I've lost about a hundred times, big and small. I'm used to it.\""
+        },
+        {
+          "who": "self",
+          "text": "From eighteen to now. Over a hundred failures. {ta} is a mountain built from failures, and on this mountain, they continue to climb to the top. I suddenly understand why {ta} said, \"It's okay if we break up\"—it's not giving up, it's self-protection learned by someone who has overdrawn their hopes too many times."
+        },
+        {
+          "who": "name",
+          "text": "{ta} paused, her fingers gliding across the strings, producing a very soft harmonic: \"But I promised the drummer. The year he came with me, he had just been kicked out of his family home, and he only had three hundred yuan left in his pocket. I told him—work with me, and I'll take you to a real stage. Not the kind on the street, but the kind where the lights are on and the audience is packed. I can't break my promise.\""
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Prologue: Seven Days Left",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} jumped down from the water tank and walked to the railing. The city below was transitioning from day to night, and the lights in the office buildings lit up one by one, like a starry sky spread across the ground."
+        },
+        {
+          "who": "name",
+          "text": "\"Look at those people down there,\" {ta} pointed to the brightly lit high-rise buildings. \"They work nine-to-five, get paid, save for a down payment, and go on blind dates on weekends. Sometimes I think—should I do that too? Find a job, sell my guitar, give up my dreams, and become a normal person.\""
+        },
+        {
+          "who": "self",
+          "text": "\"Quitting Dreams\"—{ta} used the word \"quit.\" Like an addict, treating dreams as a drug that needs to be quit. But when {ta} said this, the posture of holding the guitar did not loosen in the slightest."
+        },
+        {
+          "who": "name",
+          "text": "{ta} remained silent for a long time. The wind was louder than the guitar, making the clotheslines on the rooftop rattle. \"But my mother said before she died—finding something in life that you're willing to fight for is more valuable than anything else. Even if you lose in the end, it's still better than never having tried.\" {ta}'s voice suddenly became hoarse. \"I can't let her down.\""
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Seven Days Left",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At 11:30 PM, the convenience store's white light resembled an operating room that never closed. You squatted by the door, sharing a bucket of discounted oden—radish, seaweed, fish balls, chikuwa (fish cakes), picking the cheapest of everything. This was the band's most extravagant late-night snack. {ta} put the only skewer of radish into your bowl, eating the remaining broth herself. In {ta}'s words: \"I don't like radish.\" But this was the thirty-seventh time—every time saying the same thing."
+        },
+        {
+          "who": "name",
+          "text": "\"Let me tell you something.\" {ta} chewed on seaweed, speaking indistinctly, but her eyes shone unusually bright under the streetlights—a brightness that shouldn't belong to a weary loser. \"When I was sixteen, I first heard Beyond on the radio—that song 'Boundless Oceans, Vast Skies.' I listened to it a hundred times under the covers. I knew the lyrics by heart. That night, I thought—in this life, I must stand in a spotlight and sing my own songs.\""
+        },
+        {
+          "who": "self",
+          "text": "The radio under the covers, the lyrics recited flawlessly, the bold pronouncements of a sixteen-year-old—these images are so vivid, as if they happened just yesterday. {ta} dedicated their entire youth to fulfilling the passion of that night, but the world clearly wasn't going to let {ta} get away with it so easily."
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Prologue: Seven Days Left",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The oden soup had gone cold, and the two cans of discounted beer were almost empty. The convenience store doorbell rang occasionally—people coming home from overtime, loners buying late-night snacks, young people speeding late at night—no one noticed the two down-on-their-luck musicians squatting at the door."
+        },
+        {
+          "who": "name",
+          "text": "\"You know what—\" {ta} tossed the skewer behind her, the plastic skewer bouncing twice on the sidewalk before landing by the ditch, \"I write new songs every night. I write until three or four in the morning, and the wastebasket is full of crumpled drafts. Sometimes I write four lines and think I'm a genius, but when I look at them the next morning—it's just dog shit.\""
+        },
+        {
+          "who": "self",
+          "text": "Around 3 or 4 PM. This person also works odd jobs every day—delivering food, driving, and singing at bars. They also have to rehearse and deal with creditors. This person's day is roughly 40 hours long."
+        },
+        {
+          "who": "name",
+          "text": "\"But dreams are a thing.\" {ta} squeezed the beer can, the metal making a crisp sound, \"They can't support a person. I can't drag my brothers down with me into poverty. The drummer's girlfriend's family said—if you can't come up with a dowry of 200,000, don't even talk about it. The keyboardist's mother is sick and needs medical expenses. Everyone has their own difficulties. Besides, breaking up—that would be truly bastardly.\""
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "convenience_midnight",
+      "face": "angry",
+      "chapter": "Prologue: Seven Days Left",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} hands you the last oden skewer—the pointed end facing herself, the blunt end facing you. It's done so naturally, as instinctively as breathing. This is an instinct ingrained in the bones of a child who grew up caring for others but receiving little care in return."
+        }
+      ],
+      "options": [
+        {
+          "text": "I'll take over the bass. I'll fight alongside you for the last seven days.",
+          "textVariants": [
+            "Need a bassist? I'll take it. I'll go all out for these seven days.",
+            "Don't break up. I'll carry the bass; let's stand on that stage together."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name} looked up abruptly, nearly choking on a carrot: \"You can play bass?! No problem—I'll teach you in seven days! Twelve hours a day, no sleeping until you're done! Bass is simpler than guitar, four strings, and you're not allowed to complain until calluses form on your fingers!\"",
+          "os": "(Someone is willing to go crazy with {them} one last time—this excites {them} more than any sponsorship. {them} is already mentally planning a seven-day grueling training schedule.)"
+        },
+        {
+          "text": "Why not give it a try? If we lose, we can just have a big drink together.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} laughed and scolded, \"You're so unserious! ...But I like hearing that.\" He raised an empty beer can and clinked it against yours—the can was empty and didn't make a sound, but {ta} made a 'bang' sound by himself, then threw the can behind him, accurately into the recycling bin.",
+          "os": "(Though seemingly carefree, {ta} sensed a hint of sincerity. Even if they ended up standing in the crowd cursing the heavens, at least they had someone to weather the storm with.)"
+        },
+        {
+          "text": "You just sing, and I'll take care of all the dirty and tiring work.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} got impatient, squeezing the beer can out of shape: \"Why should you carry it all by yourself! This is 'our' band! You can do the dirty work—but when we're on stage, we have to stand together! Stand under the lights! I can't be on stage while you're carrying boxes backstage!\"",
+          "os": "(What they want are brothers-in-arms, not a silent shadow. The battlefield is both on and off stage; not one can be missing.)"
+        },
+        {
+          "text": "I think we should stop making a fuss and break it up; it's better for everyone.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name} paused for a second—just a second. Then {ta} forced a smile, a smile so practiced it looked like it'd been rehearsed five hundred times in front of a mirror: \"...That's right. Discretion is the better part of valor. Tomorrow I'll talk to the drummer. This guitar—I'll put it on Xianyu (a second-hand marketplace) too. Everything that needs to be sold is sold, and I'll feel much lighter.\"",
+          "os": "(The light in {ta}'s eyes dimmed. The guitar in {ta}'s hands suddenly felt like a heavy piece of wood, no longer capable of being plucked.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter 1: The Leaky Rehearsal Room",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rehearsal room is in the basement—the lower level of an old residential building, with a monthly rent of eight hundred. There's always a water stain on the ceiling, crookedly shaped, which from a certain angle does indeed look like a treble clef. This is the only romance in this room. It's raining again tonight, and the basement is leaking even worse. You've used every container available in the rehearsal room—iron buckets, basins, takeout boxes, aluminum cans—rehearsing amidst the pattering rain. That title track, from the first drumbeat to the last chorus, has been practiced countless times. {name}'s expression changes every time he sings it. When he's good, his eyes shine; when he's bad, he looks like a boxer who can't get up from the mud. The drummer went back to his hometown—forced by his parents to go back for arranged dates by threatening suicide. The keyboardist works overtime at the company with bated breath, secretly checking your group messages on his phone. The entire rehearsal room right now consists only of air, rain, and you clutching that borrowed old bass."
+        },
+        {
+          "who": "name",
+          "text": "\"This song.\" {ta} stopped after singing the chorus for the thirty-seventh time, wiping her face with her fingers—it was hard to tell if it was rain or something else. {ta} played a very slow arpeggio, so slow that each note seemed to linger in the sound of the rain for a moment before disappearing. \"It was written the year my mother passed away.\""
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter 1: The Leaky Rehearsal Room",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled an old photograph out of her violin case—the edges were worn white. In the photo, a woman in her early thirties was holding a child of seven or eight years old. The child was holding a plastic microphone, his mouth wide open, as if he were singing a song that no one had ever heard before."
+        },
+        {
+          "who": "name",
+          "text": "{ta} turned the photo over; on the back was a line of delicate penmanship: 'May my children always have songs to sing.' It was a woman's handwriting, the ink slightly faded, but every word was clear, as if etched onto the paper rather than written on it. \"Her greatest wish in life was to hear me sing on a real stage. Not the kind on the street—the kind where the lights shine down on you and the sound system vibrates until your chest trembles.\" {ta} carefully put the photo away, her movements slow as if placing a sacred object. \"She was only thirty-four years old that year. When she passed away, she held my hand, speechless, but I knew what she wanted to say—she wanted to say, 'Don't give up.'\""
+        },
+        {
+          "who": "self",
+          "text": "Thirty-four years old. I only just realized that when {ta}'s mother passed away, she was about the same age {ta} now. This song is not just a eulogy for her mother—it's a dialogue between {ta} and herself in another time and space, across life and death."
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter 1: The Leaky Rehearsal Room",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain intensified, and two more water stains appeared on the basement ceiling. {name} didn't move the bucket—he just hugged the guitar tighter, as if holding onto the last bit of warmth the band had left."
+        },
+        {
+          "who": "name",
+          "text": "\"The drummer told me—if this fails again, he'll go back to his hometown to get married. It's not that he doesn't want to stay.\" {ta} gave a bitter smile, a smile more bitter than rain dripping from a leaky roof. \"His girlfriend's family said it's either a dowry of 200,000 yuan or he has to marry someone from another province. He's been playing music for three years, and he only has 15,000 yuan left in his pocket. 15,000 yuan—not even a fraction of the dowry. He didn't tell me anything, but his mother sent me a text message asking me to persuade him.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said this while her hands were still on the strings. A person who desperately tries to hold onto music with their fingertips, yet cannot hold onto the person beside them—that's the greatest irony. Yu Hua uses cruelty to joke in his novel *To Live*, but {ta}'s life is even crueler—dreams and reality are never a multiple-choice question; they are the kind of life-or-death question where you can only choose one, but either way, it's painful."
+        },
+        {
+          "who": "name",
+          "text": "{ta} carried the full bucket of water to the corner and emptied it, the murky sound of the water echoing from the bottom of the iron bucket: \"Look. I can barely keep even my brothers. It's not that I don't want to keep them—it's that life won't let me. Life, that's just how it is—if you don't compromise with it, it will push you to your death.\""
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter 1: The Leaky Rehearsal Room",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The metal bucket on the ground was full again, water overflowing and soaking the gray cement floor, wetting the soles of your shoes. The sounds of rain, guitar, and dripping water—three frequencies blended together, like a lament that no one had ever composed."
+        }
+      ],
+      "options": [
+        {
+          "text": "I'll go and persuade the drummer and everyone else to come back—not one of them can be missing.",
+          "textVariants": [
+            "Leave this to me. I'll talk to them one by one and bring them back.",
+            "Brothers cannot be separated. I went to find them that very night."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}'s guitar suddenly glided into a perfect tune—the kind of inversion that goes from off-key to heavenly: \"...Okay. Then these seven days—let's treat it as one last crazy day for my mom, for Lao Zhou, for every brother who's about to be driven back by life. We can lose, but we can't not have played a part.\"",
+          "os": "(Someone is willing to help {them} bring the scattered hearts back together—{them}'s hands steadied on the strings. Not because they trusted themselves, but because they trusted you.)"
+        },
+        {
+          "text": "I'll paint a rosy picture to fool them: This time we're guaranteed to win—I have a feeling!",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}: \"If you're going to draw a pie in the sky, you have to make it look real. Your pie doesn't even have a sesame seed in it. But—it's good to keep people calm for now. Let's lure the drummer back from his hometown, even if it's just to let him come and see us one last time. Even one last time needs someone to see it.\"",
+          "os": "(A delaying tactic—{ta} wasn't sure. But even lying was better than being scattered in different cities, occasionally thinking of each other and then pretending not to.)"
+        },
+        {
+          "text": "I'll figure out the money problem; you just focus on writing songs and practicing your instrument.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} grabbed your wrist, her tone both urgent and soft: \"You're going to be the one footing the bill again? This hole is huge—rehearsal rent, equipment maintenance, member subsidies—you can't fill it all by yourself. Don't take on debts that should be shared. You're not an ATM.\"",
+          "os": "({ta} doesn't want you to fill the hole everyone created by yourself. Brothers aren't for taking money—brothers are for being poor together, rich together, and getting yelled at by the landlord together.)"
+        },
+        {
+          "text": "If you can't keep someone, then don't. You can't force a relationship to work.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "reply": "{name} silently moved the leaky bucket right-side up—with a crash, water splashed all over the floor. Then {ta} lowered her head to tune the strings, turning and turning but still couldn't get it right. She didn't reply with a single word—not because she didn't want to, but because replying would only cause things to fall apart.",
+          "os": "(Even you say so. Suddenly, no matter how you turn the strings, they just won't tune. It's not just the piano that's out of tune—it's also the path everyone's been pushing towards giving up.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Chapter Two: Street Betting",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next evening. You carried your guitar across half the city, running to the arcade shopping street in the old town. A downpour had just passed, and puddles of water clung to the ochre-colored paving stones. The air was thick with the fumes of fried food, the musty smell of old bookstores, and the grassy scent of the rain. In the darkest corner of the arcade—under a flickering, warm yellow streetlamp—{name} opened the guitar case. The old guitar lay quietly in its patched velvet cover, like a horse that had seen too many battles."
+        },
+        {
+          "who": "name",
+          "text": "\"Isn't it embarrassing?\" {ta} squatted on the ground adjusting the effects pedal. That palm-sized secondhand effects pedal had been used for three years, and the knobs were all loose. {ta} had to use her fingernails to adjust it. \"The band's lead singer has fallen to the point of busking on the street. If word got out, people in the industry would laugh at us to death. Look at that sock seller next to me, he shouts a hundred times louder than me.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said nonchalantly, but her back was taut as she squatted. She had held that guitar for three years, and it had been like a sword in every small livehouse and every underground variety show—but now, it sat on the ground next to a coin box and a Coke bottle, like an old toy that no one would give a second glance."
+        },
+        {
+          "who": "name",
+          "text": "\"What if no one stops to listen later...\" {ta} took a deep breath, hugging the guitar three times tighter than usual, as if it were the last piece of driftwood. \"Tell me, should I grit my teeth and sing it all out, or pack my bags and leave before more people laugh at me? I'm pretty thick-skinned—but not thick enough to keep performing when there's no audience.\""
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "angry",
+      "chapter": "Chapter Two: Street Betting",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The evening rush hour crowds began to pour into the arcade. Office workers hurried past with briefcases, mothers pushing strollers stopped in front of discount stores, and groups of high school students ate ice cream. The flow of people passing by was estimated at eighty to one hundred per minute, yet everyone walked at a rapid pace—as if avoiding something. {name} stood by a puddle, oblivious to the soaking wet soles of his Doc Martens. {ta} held his guitar as if he were holding someone—no, more like a hero on the edge of a cliff, urged to jump. A single decision: either leap or—turn back."
+        },
+        {
+          "who": "self",
+          "text": "Thousands of people walk through this arcade every day. No one will remember the down-on-his-luck street singer tonight, just as no one will remember the old flower seller in the same spot last week. But {they} remember—remember every passing footstep, every glance that looked this way and then looked away, every back that paused for two seconds and then continued walking."
+        },
+        {
+          "who": "narration",
+          "text": "The old chandelier on the arcade ceiling suddenly flickered—as if winking at the person who was about to give up."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "angry",
+      "chapter": "Chapter Two: Street Betting",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A child ran by and was pulled away by his mother. A couple walked by; the girl said, \"How pitiful,\" and the boy said, \"Let's not look anymore, let's go.\" {ta} heard it all—because the dome of the arcade echoed, every word was amplified and stretched, like a public execution."
+        },
+        {
+          "who": "name",
+          "text": "\"How pitiful.\" {ta} repeated the last word, her voice very soft, as if she were tasting a very bitter medicine. \"For three years, from composing, arranging, mixing to making demos, I worked day and night, and in the end, all I got in other people's mouths was 'How pitiful'.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said this without anger—only exhaustion. The exhaustion of being misunderstood too many times, to the point of being too weary to explain. Like Van Gogh unable to sell a single painting during his lifetime, like Kafka asking his friends to burn his books before his death—there are too many geniuses in history who have been wronged, so many that {ta} doesn't feel she has been wronged at all."
+        },
+        {
+          "who": "narration",
+          "text": "But {ta} remained rooted to the spot. Her feet seemed to have taken root in the puddle. The guitar wasn't put back in its case; the strings were still taut, waiting for someone's fingers to trace their path."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "angry",
+      "chapter": "Chapter Two: Street Betting",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} stood in the middle of the damp arcade, being pushed and shoved by the crowds from all directions. The guitar pick was warm and sweaty from being squeezed in her palm. An old woman carrying groceries passed by, glanced at {ta}, and then looked away, as if looking at a stray animal soaked by the rain."
+        }
+      ],
+      "options": [
+        {
+          "text": "Sing! Even if I'm the only listener, I'll clap my ears for you.",
+          "textVariants": [
+            "Start singing! I'll be the first to applaud you.",
+            "Sing it to me, that's enough. Come on, I'll clap my feet for you."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "hard fight",
+          "reply": "{name} laughed—the first truly heartfelt laugh of the night. The pick glided across the strings, and the moment the first chord sounded, it was as if the whole world had been tuned: \"Fine! This street is our stage tonight! So what if the sound system is broken—my voice is the sound system!\"",
+          "os": "(With someone supporting them, {they} fears nothing. One listener is enough—more valuable than a thousand passersby.)"
+        },
+        {
+          "text": "I went to gather people to watch, and once I created some buzz, people started listening.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "hard fight",
+          "reply": "{name} tugged at your sleeve, not too hard, not too soft: \"Don't bother with anything—just stand across from me. Don't do anything, just look into my eyes. I'm fucking afraid of singing to thin air—afraid of discovering the audience is full of ghosts. With you here—even if it's just a few, I can treat this like a New Year's Eve concert.\"",
+          "os": "(She just wants one person who truly listens. Ten bystanders are not as good as one familiar face.)"
+        },
+        {
+          "text": "If no one is listening, it's better to pack up early to avoid getting more and more embarrassed.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "retreat",
+          "reply": "{name} shrugged, the guitar slowly sliding off his shoulder—very slowly, like a soldier removing armor he'd worn for too long and too heavily: \"Yeah, right. What's the point of forcing it? Who listens to live music these days—everyone's scrolling through TikTok.\"",
+          "os": "({ta} stopped, but there was a melody in her eyes that couldn't be uttered, stuck in her throat.)"
+        },
+        {
+          "text": "Street performances are too low-class; we're a legitimate band, after all.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "retreat",
+          "reply": "{name} silently laid the guitar flat into the patched-up, tattered guitar case, zipping it up one zipper at a time, like stitching up a gunshot wound: \"...Degrading. Yes. Degrading. I almost thought I was a dignified musician.\"",
+          "os": "(Your loss of self-worth is like a needle pricking their last shred of confidence. Their silence is more painful than their words.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "happy",
+      "chapter": "Interlude: Songs in the Heart of the Street",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} closed her eyes—took a deep breath—and strummed the first chord. The old guitar's tone was a bit muffled, as if it had traveled through thick water. But for some reason, under the domed structure of the arcade, the sound suddenly brightened—as if the entire century-old building was resonating with {ta}. {ta} sang. She sang an original song—called \"Lighthouse.\" One line in the lyrics was: \"When there is no lighthouse at sea, you are my only harbor.\" {ta}'s voice wasn't perfect; her high notes would occasionally crack, and her breath control would sometimes be insufficient, but every word seemed to be drawn from the deepest part of her lungs—carrying warmth, carrying the rusty taste of blood. At first, the entire arcade was bustling with people—aunties buying groceries, old men taking a stroll, young couples holding hands, delivery guys whizzing past on their electric bikes. The world went on as usual, and no one noticed the singing in the corner. Until the second chorus—{ta} hit a high, long note, cracking slightly, but it was that slight crack that made an auntie carrying groceries—stop."
+        },
+        {
+          "who": "self",
+          "text": "One person stopped. Then a second. A third. Like a pebble thrown into water—ripples spread little by little. First, the aunt stood there and listened to the entire chorus, then two middle school students with backpacks, then a couple walking a corgi—they held their phones high."
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "happy",
+      "chapter": "Interlude: Songs in the Heart of the Street",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "One, two, ten, thirty. Passersby turned on their phone flashlights—between the night and the warm yellow streetlights, those tiny white lights lit up one by one, like stars fallen to earth. The scene from {ta}'s sixteen-year-old dream was recreated on a rain-soaked street by a group of complete strangers. {ta} didn't open their eyes. Not because they dared not look—but because they were completely absorbed in the music. {ta}'s forehead was covered in sweat, their fingers danced across the strings, every nerve straining. This song had been written for three years and revised thirty-two times, and tonight it was finally heard. Not by friends, not by colleagues—but by passersby, complete strangers. The song ended. Three seconds of silence fell over the arcade—not the silence of awkward silence, but the silence of everyone savoring the moment after complete absorption. Then applause erupted like a school bell. The aunt who had stopped first put down her vegetables, took a crumpled twenty-yuan note from her pocket, and put it in the change box."
+        },
+        {
+          "who": "name",
+          "text": "{ta} opened her eyes. The first thing {ta} saw wasn't the money, the applause, the crowd, but you. You, standing in the front row, having clapped until half your arm was gone, your palms red from clapping. {ta} was separated from you by about ten strangers, but in that instant, you felt as if the entire arcade was filled with only the two of you looking at each other. {ta} paused for a moment, then—smiled like a silly child: \"It's done. We've done it.\""
+        }
+      ]
+    },
+    {
+      "id": "sA1c",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "happy",
+      "chapter": "Interlude: Songs in the Heart of the Street",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It was already 11 p.m. when the show ended. The bottom of the plastic box was full of loose change—crumpled bills and coins totaling about three hundred yuan. Not even enough for a change of rent. But when {ta} carried that box, it was like carrying a Grammy Award trophy."
+        },
+        {
+          "who": "name",
+          "text": "\"You know what?\" {ta} walked through the deserted arcade after the market closed, her voice echoing under the empty dome, \"For the past three years, I've been asking myself one question—are the songs I write really only good because I think so? Am I too narcissistic? Should I never have chosen this path in the first place?\""
+        },
+        {
+          "who": "self",
+          "text": "The biggest enemy wasn't poverty, the judges' disapproval, or the departure of band members—it was self-doubt. It was waking up every day wondering: Am I a crazy person deceiving myself? Am I wasting everyone's time? That's the most fatal torment on the road to realizing your dreams."
+        },
+        {
+          "who": "name",
+          "text": "\"But tonight,\" {ta} held up the coin box under the streetlight and shook it, the coins clattering, \"thirty-seven people—I counted—thirty-seven people stopped for me. Not because I'm handsome, not out of pity—it's because my song really touched them. Even if it only touched three of them, that's enough to keep me going for the next three years.\""
+        },
+        {
+          "who": "self",
+          "text": "I stood behind {ta}, watching {ta}'s back—an old guitar slung over his shoulder, its case patched upon patched. This was the person who, through thirty-seven brief visits from strangers, extended his life by three years. Dreams are never nurtured by success—they are slowly cultivated by tiny glimmers of light."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Interlude: The Hidden Guitar",
+      "goto": "sB1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You packed up and left. {name} put the guitar into its patched-up guitar case—the oldest patch was three years old, a hole left from when someone threw beer at it during its first performance at a bar. The zipper pull had long since fallen off, and {ta} had used a shoelace to hold it in place. The guitar case was slung over {ta}'s back, perfectly straight—like a veteran carrying a rifle across the parade ground for the last time. It wasn't showing off, nor was it reminiscing; it was just a sense of ritual—a final act of respect for something that had accompanied {ta} throughout its youth."
+        },
+        {
+          "who": "name",
+          "text": "\"Actually—I really, really wanted to sing just now.\" {ta} walked ahead alone, her voice broken by the wind, like a radio with a bad signal. \"I've been preparing for a long time. Before leaving home today, I practiced my opening remarks three times in front of the mirror—'Hello everyone, I'm the lead singer of the Night Flight Band, and I'm going to sing an original song for you...' I even practiced the angle of my bow.\""
+        },
+        {
+          "who": "self",
+          "text": "We practiced the opening remarks. We practiced the bowing angle. This performance, which we ourselves canceled—{ta} prepared more diligently than any formal livehouse show. Unfortunately, it didn't happen. Those who are most well-prepared are often the least likely to perform recklessly."
+        }
+      ]
+    },
+    {
+      "id": "sB1b",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Interlude: The Hidden Guitar",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The streetlights cast long shadows of the three of you—you, {ta}, and the guitar that you carried as if on your back or in your arms. A large gap in the middle represented the length of the song that couldn't be sung tonight."
+        },
+        {
+          "who": "name",
+          "text": "\"I'm just afraid—\" {ta} suddenly stopped. The streetlight was right behind her, and from your perspective, {ta}'s face was hidden in the shadows, so you couldn't see her expression, only a slightly wet reflection in her eyes. \"I'm afraid that even after I start singing, no one will stop. I'm afraid the lyrics are good, the melody is good, the feelings are real—but the world just doesn't need you. That feeling is a million times crueler than writing a draft and throwing it in the trash.\""
+        },
+        {
+          "who": "self",
+          "text": "Beneath {ta}'s bravado lies a boy who fears being sentenced to death by the world. That boy, who vowed to stand on the big stage at sixteen, is not most afraid of falling and getting bruised and battered—but of not even having the chance to stand on that stage and face judgment."
+        },
+        {
+          "who": "narration",
+          "text": "The entire street was silent. Only the occasional roar of a motorcycle returning home late could be heard. The guitar strings, tucked away in their case, were tightly bound by the city's immense silence—like a song stillborn."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "happy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The night before the auditions. 10 PM. The same convenience store in front of it. The difference is—tonight it's not just the two of you. The drummer really did take the old green train back overnight; his eye bags were practically drooping to his cheekbones, but his smile was brighter than anyone else's. The keyboardist skipped overtime at the company, showing up on the street corner with a secondhand synthesizer, saying, \"Anyway, next month's bonus is all gone.\" Even the bassist, Lao Zhou, who had been gone for two months—didn't show up, but he posted a photo in the group chat: he was standing on a pedestrian bridge in another city, holding a handwritten banner that read, in crooked handwriting, \"Night Flight Takes Off! Do My Portion Too!\" His new colleagues' signatures crowded around him."
+        },
+        {
+          "who": "name",
+          "text": "\"Thanks to you.\" {ta} squatted on the steps and tapped your shoulder with a full, ice-cold beer can—the biggest expense of the night. \"The drummer and keyboardist—you brought them back one by one through phone calls, WeChat messages, and door-to-door knocking. Old Zhou's wife called me and said—you persuaded him until midnight, and he cried on the balcony for a whole hour before tearing up his resignation letter. I'm not good with words; I don't know how to thank you. Tomorrow's song—is for you. Every single word.\"",
+          "when": "flag: head-on confrontation"
+        },
+        {
+          "who": "name",
+          "text": "\"Tomorrow...\" {ta} stared at the water droplets on the beer can, her voice carrying something you'd never heard from {ta} before—not strength, not swagger, but the most primal fear hidden for too long, \"What if the sound system malfunctions? What if I forget my lines? What if the judges don't even look at us—because we don't even have decent stage costumes—and give us a failing grade? What if—my mom is watching from heaven and thinks I'm no good?\"",
+          "when": "flag: retreat"
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "goto": "s5c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The drummer pulled a bag from his bag—osmanthus cakes he'd brought back from his hometown, wrapped in oil paper, half-broken from the jostling of the old green train. The keyboardist pulled five packets of spicy strips from his synthesizer bag, apologizing that he'd bought six but couldn't resist eating two on the way. The bassist, Lao Zhou, sent a red envelope containing 52.1 yuan—a homophone for 5201314. No one mentioned what would happen if they lost tomorrow. Not because they were afraid to—but on the steps of this convenience store, next to this bucket of oden that had been heated and cooled, then refilled with broth, the word \"lose\" seemed particularly meaningless. They'd lost so many times in the past three years; one more time wouldn't matter. What mattered was—this last time, could they lose with their heads held high?"
+        },
+        {
+          "who": "self",
+          "text": "Watching {ta} and his brothers scramble for the last string of fish balls—the drummer stole {ta}'s dipping sauce, and {ta} almost tripped over his own guitar string while chasing after him—I suddenly felt that whether they could become famous or advance in the competition didn't matter anymore. What mattered was this moment—this group of people, battered and bruised by reality but still getting back up with smiles, were still together."
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "goto": "s5d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It's late at night. The oden is almost gone, and the broth has gone cold. Beer cans lie scattered haphazardly on the steps—exactly ten cans in total. The convenience store clock strikes two in the morning."
+        },
+        {
+          "who": "name",
+          "text": "{ta} suddenly stood up, very formally—{ta} never usually acted like this. {ta} held the last unopened can of beer above her head, the streetlights illuminating the condensation on it. \"Before going on stage tomorrow—everyone has to say a few words. Not to be sentimental—but to ensure that no matter how tomorrow's performance turns out, there will be no regrets. I'll go first.\" {ta} cleared her throat; her voice, which hadn't gone hoarse from singing so many songs that night, suddenly became a little hoarse as she spoke: \"Regardless of whether the judges pass or not tomorrow—forming a band with you guys is the one thing I, Jiang Linchuan, have never regretted in my life. More worthwhile than getting into university, finding a job, or winning the lottery.\""
+        },
+        {
+          "who": "narration",
+          "text": "The drummer cried—the kind of cry that comes out without a sound, wiping his eyes haphazardly with the back of his hand and saying, \"Damn, the osmanthus cake is too spicy.\" The keyboardist next to him was laughing more like he was crying. The sound of ten cans of beer clinking together was louder than any song playing in the rehearsal room."
+        }
+      ]
+    },
+    {
+      "id": "s5d",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "goto": "s5e",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "With red eyes, the drummer pulled a cassette tape from his bag—a real cassette tape, the kind that only existed in the 1990s. He said embarrassedly that it was something his father had collected when he was young, and it contained the original recording of Beyond's \"Boundless Oceans, Vast Skies\"."
+        },
+        {
+          "who": "name",
+          "text": "{ta}'s fingers trembled as he took the cassette tape—not from the cold, but from excitement. \"This is…the original? Not a copy? How did your dad get this?\" the drummer asked, scratching his head. His dad had been in a band when he was younger, but later sold his guitar to support the family, leaving behind this tape."
+        },
+        {
+          "who": "self",
+          "text": "A generation's dream was passed on to the next. The drummer's father, who never got to stand on stage, put his last embers of passion into a cassette tape and handed it to his son—and then the son met {name}. This wasn't just a cassette tape; it was a torch relay."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} held the cassette tape to her nose and smelled it—it had the musty smell of twenty years, the smell of smoke, and the pine scent left on the fingers of someone who no longer played guitar. {ta} placed it next to a photo of {ta}'s mother. Two regrets from different eras—suddenly gained weight at the convenience store entrance late at night."
+        }
+      ]
+    },
+    {
+      "id": "s5e",
+      "type": "story",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The keyboardist suddenly asked a question everyone wanted to ask but dared not: \"Linchuan—if we really advance tomorrow, what do you want to do?\""
+        },
+        {
+          "who": "name",
+          "text": "{ta} thought for a long time—so long that a thin film of oil formed on the surface of the oden broth. Then {ta} looked up, his face devoid of its usual roguishness and jokingness: \"I want to go back to my mother's grave. Not to cry—but to tell her—that her son didn't disgrace her. Her last words, 'Don't give up,'—I did it. Although it wasn't an immediate success—at least, I never stopped.\""
+        },
+        {
+          "who": "narration",
+          "text": "The street was as quiet as a piece of velvet at 2:30 a.m. The breathing of the three people rose and fell in the night, like an unfinished song. The 15-watt incandescent light bulb buzzed overhead, illuminating a few young people who had mortgaged their youth to the unknown."
+        },
+        {
+          "who": "self",
+          "text": "I suddenly remembered Nietzsche's words: \"He who has a why to live can bear almost any how.\" {He} knew why he sang—not for money, not for fame, but so that those in heaven could hear him. Therefore, all the hardships of these past three years—the leaky rehearsal room, the snowballing debt, the broken friendship—he could endure them all. This is probably the power of faith."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "convenience_midnight",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Auditions",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} finished the last sip and placed the empty can in the center of the steps—like laying the first foundation stone for tomorrow's ceremony. {ta} then turned to look at you; the can of beer you hadn't touched lay quietly on the ground, waiting to clink glasses with you."
+        }
+      ],
+      "options": [
+        {
+          "text": "No matter what the outcome is tomorrow, I have no regrets about being able to team up with you guys.",
+          "textVariants": [
+            "I've accepted the outcome, win or lose. I'm definitely befriending these guys.",
+            "Whether it succeeds or not doesn't matter; the days we spent chasing our dreams together were worth it."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}'s eyes instantly reddened, but she didn't let the tears fall—{ta} smiled through gritted teeth, lightly punching your shoulder like a massage: \"What's with the sentimentality! It's making me unable to even drink my beer. But—me too. If you hadn't scolded me awake at the last minute these past three years, I would have given up playing long ago.\"",
+          "os": "(They've been holding this in for three years, afraid it would sound too sentimental—but since you spoke first, they dared to say it.)"
+        },
+        {
+          "text": "Tomorrow we'll blow the place up, then go out for a nice meal—it's on you!",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name} burst into laughter through tears, nearly choking on his beer: \"All you ever think about is food! Fine, fine—if I win, I'll buy out all the skewers shops on this street! Order whatever you want, whatever's expensive—if you don't eat your money's worth, I'll be furious!\"",
+          "os": "(Your comment made me relax. {ta} is already mentally calculating tomorrow's late-night snack budget—regardless of whether we win or lose, {ta} is definitely treating us to barbecue.)"
+        },
+        {
+          "text": "You can sing all you want, I'll take the blame if you ruin the show.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Why are there so many venues to crash! Your only task tomorrow is to play your bass well, stand up straight, and look at me. We are a complete unit on stage; it's not that one part is indispensable—it's that if one part is missing, it's not us.\"",
+          "os": "({ta} just wants you to enjoy every second on stage. Not to hammer nails or patch holes—but to shine and radiate light together with {ta}.)"
+        },
+        {
+          "text": "Don't put too much pressure on yourself—it's okay to lose.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6",
+          "reply": "{name}'s smile faded—not from anger, but from the chilling calm of someone doused with cold water. {ta} slowly placed the beer can back on the steps: \"...Yeah, losing isn't so bad. But we're not here to lose. We're here to win. Even if there's only a one percent chance.\"",
+          "os": "(Your casual remark touched on {their} most vulnerable spot—not the fear of losing, but the fear that even their closest loved ones wouldn't believe they could win. Yet {their} still picked up the jar.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "angry",
+      "chapter": "Final Chapter: That Beam of Light",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the day of the auditions, a livehouse in the city was temporarily requisitioned as the audition venue. The backstage was crowded and chaotic—everywhere there were sounds of sound mixing, zippers, anxious footsteps, and the buzzing of someone silently memorizing lyrics in a corner. 'Night Flight' was the third to last to perform. Seventeen bands had already passed by—there was an old man in a mink coat playing the erhu, a band of otaku all dressed in maid outfits covering anime, and a guy playing death metal whose stage presence was so strong that he fell off the stage and had to go to the emergency room. Fifteen minutes before 'Night Flight' was to go on stage—something went wrong. The monitor speakers suddenly emitted a sharp buzzing sound and then completely stopped working. The sound engineer, drenched in sweat, pried open the equipment panel and scratched his head at the dense network of wires. The time allotted for their audition—was compressed to three minutes."
+        },
+        {
+          "who": "name",
+          "text": "\"Three minutes—\" {ta} gripped the old guitar covered in tape, his knuckles as white as winter bones. Fine beads of sweat trickled down {ta}'s temples. \"If we go up there, the main amplifier will also be in trouble—not only will I lose face, but I'll also lose face for all the brothers who clinked glasses with us on the convenience store steps yesterday, the brothers who risked their lives for us.\"",
+          "when": "flag: head-on confrontation"
+        },
+        {
+          "who": "self",
+          "text": "{ta} was trying to appear calm, but {ta}'s Adam's apple was bobbing nervously. It was a subconscious reaction as {ta} forced herself to stay calm—like a rocket waiting to launch but stuck in the countdown.",
+          "when": "flag: head-on confrontation"
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s fingers suddenly slipped off the neck of the guitar—the dream she had chased since she was sixteen was now hanging precariously on a nearly broken nylon string, teetering on the brink of collapse with only three minutes left. Ten years—all the bets she had accumulated over ten years had been staked on this broken stereo.",
+          "when": "flag: retreat"
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Final Chapter: That Beam of Light",
+      "goto": "s6c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The stage manager parted the black curtain of the wings, and the staff anxiously urged the stage crew through their headphones. The drummer sat behind the drum kit wiping away sweat, while the keyboardist repeatedly pressed chords, released them, pressed chords, and released them. The tension in the air was so intense it could be sliced ​​apart by a pick."
+        },
+        {
+          "who": "name",
+          "text": "{ta} turned around, not looking at a teammate, not looking at a friend—but looking at you. That look held a thousand words, but {ta} only said eight: \"Whether I make a sound or not—I will sing. Even if it's just an empty sound, even if the only audience is the judges. Because this song is written for one person.\""
+        },
+        {
+          "who": "self",
+          "text": "This is written for someone. {TA} didn't name names. But only you know in the entire backend—it's written for {TA}'s mother. However, {TA} is reading it from you. Because you are the only person in the world, besides {TA}'s mother, who knows {TA}'s entire story."
+        },
+        {
+          "who": "narration",
+          "text": "The sound engineer's soldering iron hissed and smoked. The stage manager peeked out again, his expression increasingly anxious. Only one minute remained. {ta} slung the guitar behind him—a gesture as practiced as hanging a three-year-old."
+        }
+      ]
+    },
+    {
+      "id": "s6c",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "angry",
+      "chapter": "Final Chapter: That Beam of Light",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} used her hands, worn down from practicing guitar, to pull an old photograph of her mother from her pocket—she handed it to the drummer, saying, \"Keep an eye on her for me.\" The drummer hesitated for a moment, then carefully placed the photograph under the brass casing of the hi-hat."
+        },
+        {
+          "who": "name",
+          "text": "\"When I was sixteen, I told my mom I wanted to be a singer.\" {ta} suddenly started talking to herself, as if she were speaking to you, or perhaps to the audience who hadn't yet appeared in the audience. \"She didn't scold me—she smiled. She said, 'Okay, then when your music videos are on TV, I'll tell the neighbors, look—that's my son.' She didn't live to see that day. But tonight—\" {ta} paused, clutching her guitar so tightly it cracked, \"she's sitting in the audience. She knows her son hasn't given up.\""
+        },
+        {
+          "who": "self",
+          "text": "I know what {ta} meant when she said \"she was sitting in the audience.\" It's not superstition—it's that kind of belief that you have to accomplish something no matter what. Even if it's unscientific, even if it's unrealistic—the belief itself is the final fuel."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Final Chapter: That Beam of Light",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sound engineer finally shrugged – it was beyond repair. They could only manage to secure one basic amplification channel. The stage manager raised a twenty-second countdown sign. {name}, clutching the broken guitar, had already stepped one foot onto the stage steps."
+        }
+      ],
+      "options": [
+        {
+          "text": "Grab {ta}'s hand: If the sound system is broken, sing a cappella! Your voice—is the best instrument.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "On the field",
+          "reply": "{name} froze, looking down at the wrist you were gripping—your palms were sweaty, exactly like {ta}'s. Then {ta}'s lips went from tight to a wide grin: \"...Fine! Then I'll sing a cappella! Let everyone hear—one guitar isn't enough, one amplifier isn't enough, then how about my voice?!\"",
+          "os": "(In short—it pulled {ta} back from the brink of 'it's all over. {ta} put the guitar on the side of the stage—and stepped onto the stage empty-handed. Because {ta} finally understood: the best instrument is not the guitar, but the spirit of never giving up.)"
+        },
+        {
+          "text": "Pat {ta} on the back: So what if your voice cracks? Cracking is just part of your style!",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "On the field",
+          "reply": "{name} burst out laughing, her shoulders, which had been stiff with tension all night, suddenly relaxing slightly: \"Your mouth deserves to be a stand-up comedian. Fine—just for that line, go up there and break it with style and attitude! Break the reputation of our Night Flight!\"",
+          "os": "(Your words snapped a taut string—but it was a good one. {ta} is no longer afraid of cracking her voice, because someone is waiting in the audience to laugh at {ta}—no, to listen to {ta}. That's more effective than anything else.)"
+        },
+        {
+          "text": "I'll rush over and fix the stereo. If I can't fix it, I'll take all the boos for you!",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "mistake",
+          "reply": "{name} reached out to stop you, but you rushed forward too fast. You scrambled to the mixing console, frantically pulling out cables, while the sound engineer screamed, \"Don't touch that—that's the main cable!\" It was too late. A sharp screech echoed throughout the livehouse, and everyone covered their ears. {name} watched this from the stage, her guitar drooping.",
+          "os": "(Your selfless act—wronged. But seeing your flustered and disheveled figure by the mixing console, {they} couldn't be angry. Because {they} understood—you just wanted to help. It's just that your method was wrong.)"
+        },
+        {
+          "text": "Forget it. Going up there in this state would be embarrassing; I'd rather withdraw.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "mistake",
+          "reply": "{name}'s shoulders slumped abruptly—not in a state of despair, but as if a spine that had supported them for a very long time had finally snapped. \"...Yeah. Shameful. Three years—the last performance I didn't even have confidence in. It's better not to perform at all. I'll go tell the organizers that 'Night Flight' is withdrawing from the competition.\"",
+          "os": "(At the last moment, you let go. {ta} stood alone in the shadows of the side curtain, like a ship whose anchor had been pulled out. The guitar in {ta}'s hands suddenly felt as heavy as a tombstone.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} placed the guitar on the side of the stage—not just put it down, but truly let it go. He let go of a deep-seated belief: the song wasn't in the guitar, but in his lungs. {ta} walked to the center of the stage. A spotlight shone directly down on {ta}'s head, stretching his shadow into a giant human shape. There was no accompaniment. No sound effects. No transitions. {ta} stood there in the empty center of the stage, facing the whispering judges and audience—he took a deep breath and began to sing. The first a cappella note pierced every corner of the livehouse, like a red-hot nail driven into wood. The entire venue fell silent. Not a polite silence—it was the silence of someone struck in the chest, mouth agape, unable to speak. Three seconds later, someone in the back row was the first to turn on their phone flashlight. Then the second. The twentieth. The hundredth—the entire venue's lights transformed into a sky full of stars, illuminating the man singing a cappella a mother's song."
+        },
+        {
+          "who": "name",
+          "text": "The song ended. {ta}'s voice was so hoarse she could barely speak—yet {ta} remained there, standing in the brightest spotlight, like a star finally illuminated. {ta} didn't bow—she simply placed her right hand on her left chest and gently nodded towards the old photograph beneath the hi-hat in the audience."
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The judges were silent for a full ten seconds. Then, all three judges stood up and applauded. One of the oldest judges took off his glasses, wiped his eyes, and uttered a comment that was recorded live and later went viral online: \"I've judged over four thousand bands in my life—you're the first one who, after giving me a 6 out of 10 for technical skill, left me speechless in the emotional score column.\" The results were in. The band \"Night Flight\" advanced to the preliminary rounds of the national tour auditions—ranked third overall. They didn't rely on good looks, connections, or a well-connected arranger—they relied entirely on a broken guitar, a broken sound system, and an indomitable spirit. After the show, you waited for the last bus at the station outside the livehouse. The platform was empty in the early morning, the wind still carrying the heat from the stage. The drummer's makeup was ruined from crying—even though {ta} wasn't wearing makeup. The keyboardist squatted on the ground, calling home, his voice trembling like a tractor."
+        },
+        {
+          "who": "name",
+          "text": "\"I wish my mom could see this.\" {ta} leaned against the dusty bus stop sign, gazing up at the sky above this city that never sleeps—the city lights were too bright to see the stars, but {ta}'s eyes held them. {ta} took the photo back from the drummer and placed it neatly in her inner pocket—the pocket closest to her heart. \"But it's okay—you all saw it. The stage lights, the audience lights, the judge's comment, 'There's no room to write numbers in the emotion section'—I've kept it all, I've kept it for you.\"",
+          "when": "flag: Enter the game"
+        }
+      ]
+    },
+    {
+      "id": "s7c",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The last bus was still a long way off. {name} laid the guitar across his lap and plucked the strings one by one with his fingertips—not a pick. Each string vibrated slightly, as if whispering secrets to {ta}."
+        },
+        {
+          "who": "name",
+          "text": "\"I used to think that dreams were about one person fighting the whole world.\" {ta}, guitar in hand, glanced at everyone sitting on the steps—the drummer, the keyboardist, the encouraging video from Lao Zhou—before finally settling on you. \"Now I understand—dreams aren't about fighting a war. Dreams are about building a ship. One person can build it, no matter how good, it'll only be a small sampan. But a group of people can build a cruiser that can cross oceans. 'Night Voyage'—not my autobiography. It's ours.\""
+        },
+        {
+          "who": "self",
+          "text": "In Beyond's song \"Boundless Oceans, Vast Skies,\" there's a line: \"Forgive me for my untamed and free-spirited life.\" But {they} never acted solely for their own freedom. Beneath {they}'s untamed spirit lies a deep commitment to every brother. Freedom isn't about flying the highest alone—it's about bringing everyone who follows you up with you, leaving no one behind. That's true courage.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7c2",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The drummer suddenly stood up, walked to the edge of the platform, and pulled his drumsticks out of his bag—not to practice, but just instinctively holding them like a soldier gripping his weapon. Looking at the distant city skyline, he said, \"Linchuan—for the next tour, I must play drums in a venue that can seat two thousand people.\""
+        },
+        {
+          "who": "name",
+          "text": "{ta} laughed, raising the guitar above her head—the guitar, so worn out it was covered in tape and patches from top to bottom, actually reflected a faint rainbow under the streetlights in the early morning: \"Not next time. It's this time. We've already taken off. From the moment that a cappella chorus started—'Night Flight' was no longer an underground band. We are—a proper band that has performed on stage and been praised for 'emotional scores that can't be written down in numbers'.\""
+        },
+        {
+          "who": "narration",
+          "text": "Those words silenced everyone. Not because they were shocked—but because they were savoring the moment. They were savoring the memory of that boy who had haunted their dreams since they were sixteen, from listening to the radio alone under the covers to sitting on the platform after a show, planning for the next tour—the gap wasn't seven years, but a hundred failures and a thousand sleepless nights."
+        },
+        {
+          "who": "self",
+          "text": "Lu Xun said, \"There was originally no road in the world, but as more people walk on it, it becomes a road.\" This saying also applies to music—there was originally no stage for you, but as you practice more, are rejected more, and your voice becomes hoarse more, unknowingly—a place will be made for you on the stage."
+        }
+      ]
+    },
+    {
+      "id": "s7c3",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The headlights of the last bus turned the corner, illuminating the entire platform in a flowing amber light. The drummer was the first to stand up, putting his drumsticks into his worn-out old canvas bag—on the bottom of which was a line his father had written in ballpoint pen years ago: \"A drummer's heart must be calm.\" The drummer walked up to {name}, and the two didn't say a word—they simply bumped fists. The force of that punch was just right, enough to compress all the rehearsals, arguments, reconciliations, and nights spent eating steamed buns together in the leaky rehearsal room over the past three years."
+        },
+        {
+          "who": "name",
+          "text": "\"Go back and find a good match.\" {ta} patted the drummer on the shoulder. \"If you don't have enough for the bride price, just tell us. Although we're dirt poor—we might not be able to scrape together 200,000, but we can still manage 20,000. A grown man can't get married with borrowed money—you'll have to earn the rest yourself.\""
+        },
+        {
+          "who": "narration",
+          "text": "The drummer smiled—and then his eyes welled up with tears. He turned and jumped onto the bus, and in the last second before the doors closed, he stuck his drumstick out the window and waved it—like a general bidding farewell to his comrades on a long campaign. Even after the bus had driven far away, the drumstick lingered in the night for several seconds."
+        },
+        {
+          "who": "self",
+          "text": "The keyboardist stood to one side, synthesizer slung over his shoulder, clutching a crumpled photocopy of a critical illness notice—his mother's. He hadn't shown it to anyone. But he stood ramrod straight, not like someone who had worked a month of overtime and whose eyes were bloodshot. {name} walked over, took the paper from his hand, glanced at it, folded it, and put it back in his pocket: \"Next tour—your mom will definitely be in the audience.\""
+        }
+      ]
+    },
+    {
+      "id": "s7c4",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "shy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "s7c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The keyboardist is gone too. Only you, {name}, and that old guitar leaning against the bench leg remain on the platform. The night wind makes the station sign sway gently—producing a low, metallic scraping sound, like a cello taking its final bow for the night."
+        },
+        {
+          "who": "name",
+          "text": "{ta} suddenly picked up the guitar, not playing it—just holding it, like holding a sleeping child. \"You know what—\" {ta}'s voice was very soft, so soft it was like telling you a secret that had been hidden for a long time, \"When I was sixteen, I hid under the covers listening to Beyond's 'Boundless Oceans, Vast Skies.' When I heard the line 'How many times have I faced cold stares and ridicule, but never given up on the ideals in my heart'—I cried all over my pillow.\""
+        },
+        {
+          "who": "self",
+          "text": "A sixteen-year-old boy cried himself into his pillow. Ten years later, he stood at the train station after the show, clutching a broken guitar, having just finished the most important a cappella performance of his life. Beyond's lyrics didn't lie—but fulfilling them required enduring a hundred cold stares and a thousand sleepless nights."
+        },
+        {
+          "who": "name",
+          "text": "\"But I'm not afraid anymore.\" {ta}'s fingers glided a very light harmonic on the strings—the first note of the intro to Beyond's \"Boundless Oceans, Vast Skies.\" \"Because I know—dreams aren't something one person does alone. My mom gave me the courage to keep singing, the drummer's dad gave him that cassette tape, Lao Zhou held up that banner on the overpass—and you, you've always been there. It's the kindness of everyone that makes 'Boundless Oceans, Vast Skies' more than just an empty phrase.\""
+        },
+        {
+          "who": "narration",
+          "text": "A few drops of rain remained on the edge of the platform roof, flickering in the taillights of the last train like uncomposed musical notes. {ta} put the guitar back on the bench, stood up, and walked to the edge of the platform—the city's night sky was starless, but {ta}'s posture as she looked up was exactly the same as when she was sixteen."
+        }
+      ]
+    },
+    {
+      "id": "s7c5",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "happy",
+      "chapter": "Final Chapter: Night Flight Takeoff",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} pulled the photograph of her mother from her inner pocket—the edges were worn faded again. The woman in the photo smiled serenely, as if saying: I knew it all along. I knew you would stand there. Not today, but tomorrow or the day after—but sooner or later, you would."
+        },
+        {
+          "who": "name",
+          "text": "{ta} held the photo up to the streetlight, letting the faint orange light illuminate her mother's face. \"Mom—\" {ta}'s voice choked for a moment, but she quickly regained her composure, \"I went on stage today. The sound system was broken, so I sang a cappella. The judge said—he couldn't fit any numbers in the emotion section. Did you hear that? It wasn't a consolation prize; I was truly heard.\""
+        },
+        {
+          "who": "self",
+          "text": "The world's most distant conversation—not a transoceanic call, not an interstellar signal—is a son standing at a train station after a show, looking at an old photograph under a streetlamp, reporting that he finally didn't give up. His mother's last words, \"Don't give up,\" were fulfilled by him with ten years of his youth, culminating in the judge's comment, \"I can't write down the numbers.\" This is perhaps the heaviest form of gratitude in the world."
+        },
+        {
+          "who": "name",
+          "text": "{ta} put the photo back into the pocket of her heart and buttoned it up—slowly and solemnly, as if pressing the pause button on a ten-year marathon. \"Okay, enough with the sentimentality.\" {ta} turned to look at you. \"Next stop—the preliminary round of the national tour. Our goal isn't to win a prize—it's to let more people hear how genuine the songs written by a group of people who crawled out of a leaky basement can be.\""
+        },
+        {
+          "who": "narration",
+          "text": "The last train finally arrived. The moment the doors opened, a warm breeze rushed out of the carriage—carrying the lemon scent of cleaning products and the quiet unique to the late night. {name} was the first to step on, then turned back and reached out his hand to you—not to pull you on, but to wait for you to walk the next leg of the journey together."
+        },
+        {
+          "who": "self",
+          "text": "I suddenly understood what true \"night voyage\" meant. It wasn't a ship setting sail in the dark—it was a group of people choosing to fly now, when everyone else advised them to wait until dawn. Not because of courage—it was because they knew the sun wouldn't rise on its own. Before dawn, someone had to row, someone had to steer, and someone had to sing. And {name}—was the one responsible for singing."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Final Chapter: A Night Flight with Broken Wings",
+      "goto": "s7s_b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "That performance ultimately lacked a complete chorus. The howling ruined the most crucial high note—the part written for {ta}'s mother. The judges politely applauded, saying \"commendable spirit,\" but when the list of those who advanced was displayed—\"Night Flight\" was not included. The show ended. The bus stop outside the livehouse was deserted, and a light rain had started again. The rain was fine, barely noticeable on the skin—but little by little, it eventually soaked through everyone's shoulders."
+        },
+        {
+          "who": "name",
+          "text": "\"It's alright.\" {ta} sat on the platform bench, placing the guitar beside her—not as if she were putting it down, but as if the guitar had temporarily left her. Raindrops dripped from the edge of the platform roof onto the guitar's surface, and {ta} quickly wiped them away with her sleeve. \"Three years. One more time—three more years.\" {ta}'s voice suddenly stopped. \"But the drummer really has to go back to get married next month. The keyboardist's mother's illness—the doctor said it can't be delayed any longer. Old Zhou already has a son and doesn't dare to venture out again.\""
+        },
+        {
+          "who": "narration",
+          "text": "Everyone fell silent. It wasn't that they didn't want to offer comfort—but in the face of these momentous life events, all words of comfort seemed inadequate. Music is worth risking one's life for—but family lives are worth it even more. This isn't anyone's fault. This is the inevitable outcome when dreams and reality collide head-on; no one can win."
+        }
+      ]
+    },
+    {
+      "id": "s7s_b",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Final Chapter: A Night Flight with Broken Wings",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled the old photograph from her violin case. In the photo, a young mother and a boy holding a plastic microphone—silently gazing at each other in the damp night air. {ta} looked at it for a long, long time, finally turning the photograph over and then over again—like flipping through a book, unsure which page to begin reading."
+        },
+        {
+          "who": "self",
+          "text": "I wanted to do something for {them}—rush over to fix the stereo, take the blame for {them}, take all my savings to plug the hole—but in the end, I accomplished nothing. The light {them} had been chasing for ten years was just missing a stroke of good luck—really, just a tiny bit more.",
+          "when": "tag: Loyal dog >= 2"
+        },
+        {
+          "who": "name",
+          "text": "\"But—\" {ta} suddenly hugged the guitar back to her chest, her hands resting on the strings, not plucking, just sitting there—like resting a flame that hadn't been extinguished. \"Losing one audition isn't losing your whole life. Luo Yonghao owed hundreds of millions and still got back on his feet. I only owe a few thousand in rent—why can't I get back on my feet? Someday—when the drummer is married, the keyboardist's mother is healthy, and Lao Zhou's kids are grown up—we'll get back together.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s voice trembled slightly at the end—because even {ta} herself didn't know if she could achieve what she was saying. But that didn't matter. What mattered was—in the cold rain at the train station after the show, there was a person, soaking wet and penniless, still thinking about forming a band again someday. That in itself is the most dignified form of a dream.",
+          "when": "tag: Sincerity>=2"
+        },
+        {
+          "who": "narration",
+          "text": "The last train finally arrived. Several people boarded in silence. {name} was the last to get on, glancing back at the empty station—as if looking at a place that hadn't taken off, but had at least tried. Then the doors closed, and the train sped into the night."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "station_after_rain",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This journey of chasing dreams is coming to an end. Now—what would you like to say to {name}? (≤100 words, this will be the last piece of your band's story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} leaned against the bus stop sign, clutching his old guitar covered in duct tape. The night wind tousled his sweaty hair, but his eyes shone brighter than any of the station lights. He was waiting for you to speak—waiting for a word that belonged to this band, to these unforgettable nights, and to you all.",
+          "when": "flag: Enter the game"
+        },
+        {
+          "who": "narration",
+          "text": "{name} A person sits on a bench at the train station after the show, an old guitar resting on their lap, raindrops still clinging to the strings. They want to tell {ta} the words they haven't had a chance to say along the way, before the last train arrives. Perhaps the wind will set it to music, a new song yet to be written.",
+          "when": "flag: mistake"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Fellow travelers",
+      "trigger": "top: sincerity",
+      "caption": "When {name} considered giving up and backing down time and time again, you never let go—in the end, you sent that nearly sunk \"Night Flight\" into the real starry sky. That a cappella song sung for his mother was remembered by the entire audience; that young man who refused to accept his fate was seen by the times.",
+      "report": "[Relationship Personality - Fellow Traveler] You belong to the rare \"secure\" type: you're there for your friends in times of trouble, and you hold the line when your dreams waver. You don't rely on passionate slogans to keep things going, nor do you easily say \"forget it\" to anyone who falls—you choose to be the first to light their way in their darkest night. When Beyond sang, \"Still free and myself, forever singing my song,\" you didn't grab the microphone, but you made those lyrics a reality. Those who have chased the light with you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "hecklers",
+      "trigger": "Top: Aquaman",
+      "caption": "You made every rehearsal and every street performance a lively affair, full of memorable quotes, but you never truly staked your heart on the fate of this band.",
+      "report": "[Relationship Personality - The Cheerleader] You're incredibly witty, always the life of the party, and the most endearing member of your group. But you're so good at using jokes to avoid seriousness that no one can really say for sure whether you believe in this dream you've held onto for three years. Don't wait until the band leaves to realize you're the only one who didn't bet on it."
+    },
+    {
+      "endingId": "toxic",
+      "title": "Those who pour cold water",
+      "trigger": "top: scum",
+      "caption": "You effortlessly extinguished every surge of passion, using 'reason' as a shield and 'pragmatism' as wisdom, personally persuading this band—every time they were about to take off—to return to the runway.",
+      "report": "[Relationship Personality - The Cold Water Maker] You are intelligent, clear-headed, and meticulously calculating. You applaud when needed, but pour cold water on things when they really matter. You may never pay for your dreams, but you've never had a group of brothers willing to take bullets for each other. The coldest thing is never the platform on a rainy night—it's that heart that never believes."
+    },
+    {
+      "endingId": "devoted",
+      "title": "substitutes",
+      "trigger": "top: Loyal Dog",
+      "caption": "You took on all the dirty work, the hard work, the debts, and the blame onto one person, wishing you could shoulder all the world's troubles for {name}—but your most impulsive move backfired.",
+      "report": "[Relationship Personality - Substitute] You're open and honest, always ready to help, and you excel at putting yourself in the back row. But the band doesn't need a shadow to take your place; they need a comrade on stage with whom they can make eye contact and give you a \"keep playing\" look. Don't forget, the spotlight should shine on you too."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "spectators",
+      "min": -99,
+      "caption": "As the audition concluded, even the light drizzle at the end of the night couldn't create a clear dividing line between your relationship with this band.",
+      "report": "[Relationship Personality - Spectator] Your choices are unpredictable and difficult to categorize—sometimes you're fired up, sometimes you're detached and observing. Perhaps you haven't figured out whether you want to be on stage sharing the microphone, or just sit in the audience as a safe spectator. Recognize this first before deciding whether to sign a lifetime crew contract with \"Night Flight\"."
+    }
+  ]
+}

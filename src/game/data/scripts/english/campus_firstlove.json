@@ -1,0 +1,1023 @@
+{
+  "_id": "script_campus",
+  "id": "script_campus",
+  "title": "Heartbeats after school: First love in its infancy",
+  "openingTip": "You're a senior in high school, and {name} is the junior from the next class who always blushes when you pass by. A love letter slipped into the wrong hand, an umbrella shared, a heartbeat hidden in a textbook. This is a sweet, bubbly, yet too innocent to confess first love in school. Most of the time, you just need to tap the screen to read on; there aren't many crossroads where you really have to make a decision, but each one is about whether or not you can say \"I like you.\"",
+  "prologue": "High school corridors are always long, just long enough for one person, perfectly concealing unrequited love. {name} was the most conspicuous among the younger students—short, golden-brown hair, two shallow dimples when he smiled, the fastest runner at the sports meet, yet he couldn't even speak properly in front of you. A love letter, slipped into your textbook by who knows who, ushered in this autumn. The signature section was blank, but the crooked handwriting and the way he peeked at you from around the corner had already betrayed the writer.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "happy",
+      "chapter": "Prologue: Letters in the Textbook",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The morning bell hadn't rung yet, and the morning light streamed in through the windowpanes, spreading small patches of gold across the desk. You opened your Chinese textbook, and a neatly folded letter from the page containing the poem \"Guan Ju\" from the Book of Songs fell out. On it, scrawled in a crooked hand, were the words: \"Senior, you look beautiful today too. I saw you in the hallway today, and... I wrote this.\" The handwriting was as immature as a fledgling bird's wings, not yet fully grown."
+        },
+        {
+          "who": "self",
+          "text": "Tucked inside the page with the phrase \"A fair maiden is sought after by a gentleman\"... Did this idiot put it here on purpose?"
+        },
+        {
+          "who": "narration",
+          "text": "You look up and bump into {name} from the next class peeking through the back door glass. The moment your eyes meet, {ta} darts back like a startled rabbit. But that tuft of golden-brown hair stubbornly sticks up on the door frame and twitches."
+        },
+        {
+          "who": "self",
+          "text": "It was that junior who ran the fastest, but turned away when he saw me in the hallway. Turns out, he wasn't turning away to avoid me, he was just nervous."
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Prologue: Letters in the Textbook",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "During break, a series of hurried footsteps suddenly echoed in the corridor. {name} rushed up to you, her face flushed, panting heavily, clutching a bottle of milk—warm, probably having been warmed in her arms all morning."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior! That letter, no, I mean... I wrote it! But I didn't mean to bother you! Ah, I'm leaving now!\" After saying that, she took off running, leaving the milk on your table, and had already run ten meters away."
+        },
+        {
+          "who": "self",
+          "text": "The milk was still warm; the bottle still held her body heat. I suddenly remembered a poem—\"A delicate die inlaid with red beans, does she know the longing that pierces to the bone?\" Someone who doesn't even dare finish a confession has already planted their longing in my textbook."
+        },
+        {
+          "who": "narration",
+          "text": "Your deskmate leaned over and poked the milk bottle with his pen: \"Hey, our senior has a junior chasing her? She's running faster than she did at the sports meet—is that called panicking or running away in disarray?\""
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Prologue: Letters in the Textbook",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After school, the milk tea shop near the school gate smells sweet caramel. You push open the door and find {name} standing behind you in line—actually, {ta} arrived first and watched you from the doorway for three minutes before coming in."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior, you drink from this place too!\" {ta} pretended to bump into her, but her ears were burning red. \"Their pudding milk tea is the best! I come here every day!\""
+        },
+        {
+          "who": "self",
+          "text": "Come every day? But you were clearly running on the track yesterday, how could you have time to hang out at a bubble tea shop every day? You can't even lie properly, your ears turn red faster than a neon light."
+        },
+        {
+          "who": "name",
+          "text": "{ta} slapped her change on the table, so nervous that she even misplaced the straw—splashing milk tea all over her hand. But her eyes, bright and sparkling, were only for you. Like a fawn seeing the moon for the first time, unsure how to take its first step, yet unwilling to back down."
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Prologue: Letters in the Textbook",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You sat down by the window, the afternoon autumn sunlight turning the milk tea a warm brown. {ta} held the cup, tracing circles on the rim with her finger—{ta} does this when she's nervous."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior.\" She suddenly mustered a lot of courage, her voice barely audible, yet not a single word was slurred, \"Um... from now on, could I... wait for you to walk home together after school every day?\""
+        },
+        {
+          "who": "self",
+          "text": "Every day after school. That means—every single day. A junior who only dares to write anonymous confessions actually wants to be tied to every single day of mine. This is probably the paradox of youth: the most timid courage is often the greatest."
+        },
+        {
+          "who": "narration",
+          "text": "The ginkgo leaves outside the window were swept up by the wind, swirling twice between you two before landing on {ta}'s tuft of hair. {ta} was completely oblivious, simply lowering her eyes, waiting for your answer—like waiting for a verdict that could change her entire high school life."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Prologue: Letters in the Textbook",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} held two cups of milk tea—one with your pudding and one with {ta}'s pearls—and held her breath nervously. The rustling of falling leaves outside the window seemed to provide background noise for {ta}'s pounding heart."
+        }
+      ],
+      "options": [
+        {
+          "text": "Sure. From today onwards, don't keep me waiting too long after school.",
+          "textVariants": [
+            "Okay. It's a promise, you'll come and wait for me every day.",
+            "Sure. But if you're late, you'll have to buy me bubble tea as punishment."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name} paused for two seconds, then suddenly grinned widely, her ahoge (cowlick) standing on end: \"Really! I... I'm the first one out every day—faster than at the sports meet!\"",
+          "os": "({ta} was so happy she almost raised the milk tea above her head, like she was raising a victory flag.)"
+        },
+        {
+          "text": "Is this junior student being so proactive with every female senior?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} jumped up from her chair in a panic: \"No! It was just... just the senior! Really! I swear! I swear to Milk Tea!\"",
+          "os": "({ta} panicked so much her face turned pale, and she even pledged her vow to the milk tea.)"
+        },
+        {
+          "text": "Okay, I'll carry your backpack for you, and I'll protect you on the way.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name}: \"No, no! It's my turn to carry your bag for you! I, I'm strong!\" Saying this, she has already snatched your backpack.",
+          "os": "({ta} just wants to do something for her senior, even if it's just carrying her backpack.)"
+        },
+        {
+          "text": "We're not even close, so don't follow me around every day.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name}'s smile froze instantly, and {ta} lowered her head, her ahoge (cowlick) drooping as well: \"...Oh. Sorry to bother you, senior. I'm sorry.\"",
+          "os": "(I've been gathering my courage for half a semester, only to have it all shattered by your single sentence.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1 Studying Together",
+      "goto": "s3a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sunset in the library was warmer than elsewhere—the high windows filtered the light into a honey color, spilling onto the long tables and the spines of old books. {name} insisted on 'asking for help with her studies,' opening her math test but asking the same question three times."
+        },
+        {
+          "who": "name",
+          "text": "\"Your handwriting is so beautiful...\" {ta} muttered softly, but you heard her, and she quickly added, \"I... I meant the solution to this problem! The solution is written so beautifully!\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s pen filled the edge of the draft paper with little suns. Upon closer inspection—next to each little sun was a tiny sign for her. It wasn't a coincidence; she had drawn an entire page."
+        },
+        {
+          "who": "narration",
+          "text": "{ta}'s handwriting was as crooked and messy as the letter, but each \"your name\" was traced three times. It was as if she were tracing something precious, something she was afraid would disappear if she let go."
+        }
+      ]
+    },
+    {
+      "id": "s3a",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1 Studying Together",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A window in the corner of the library was ajar, and the autumn wind made the tips of the leaves of the bonsai selaginella tamariscina tremble slightly. {name} made an excuse to ask his senior a math question, but what was spread out on the table was actually the back of a test paper—the back was densely covered with his handwriting: 'The senior wore a white shirt today,' 'The senior smiled again today,' 'The senior didn't notice me today.'"
+        },
+        {
+          "who": "name",
+          "text": "{ta} hurriedly covered the paper, almost spilling the orange juice: \"S-Senior, don't look at the back! That's just something I scribbled down—memorizing vocabulary! Yes, memorizing English vocabulary!\""
+        },
+        {
+          "who": "self",
+          "text": "There's probably only one person in the whole school who memorizes vocabulary words like a diary. I pretended not to see it—but a glance out of the corner of my eye revealed that the dates in that 'diary' spanned an entire semester. In other words—from the first day of school, {ta} had been secretly recording me in lines of pencil writing."
+        },
+        {
+          "who": "narration",
+          "text": "The setting sun cast long shadows from the bookshelf, falling on {ta}'s knuckles as she tightly clutched the exam paper—knuckles bluish-white from the force. This overly earnest unrequited love—a luxury only a seventeen-year-old would willingly commit to."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1 Studying Together",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The setting sun sank behind the bookshelves, leaving only a last ray of orange light that fell right on the table between you—like a shy bridge."
+        },
+        {
+          "who": "name",
+          "text": "Suddenly, {ta} pulled a candy from her pocket, one of those cheap candies that cost five cents at the corner store. {ta} pushed it between you, as if pushing a very important promise. \"Senior, this is for you.\" {ta}'s voice was so soft it almost melted into the sunset, \"It's sweet, like...like your smile. I've tried many candies, but this one tastes the most like it.\""
+        },
+        {
+          "who": "self",
+          "text": "Having tried so many candies... Just how much time did {ta} spend trying them one by one in the candy store to find the one that \"most resembles me\"?"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1 Studying Together",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The orange candy gleamed in the last rays of the setting sun, like a tiny piece of amber. {ta} lowered her head, her ears burning red, waiting for you to accept it—and also waiting for you to answer the question she hadn't asked."
+        }
+      ],
+      "options": [
+        {
+          "text": "Unwrapping the candy and popping it into my mouth: Mmm, so sweet, just like you said.",
+          "textVariants": [
+            "I accepted the candy and smiled back at him: \"Then I'll give my junior a piece in return.\"",
+            "Put the candy in your mouth: \"You have to give me this kind of sweet treat often in the future.\""
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "reply": "{name} covered her face, peeking at you through her fingers, her voice muffled: \"Senior, your smile is a hundred times sweeter than candy...\"",
+          "os": "({ta}'s heartbeat was so fast that the whole library could hear it.)"
+        },
+        {
+          "text": "Hey, is this junior confessing his feelings to me?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name} exclaimed \"Ah!\" as her hair stood on end, her ahoge standing straight up: \"N-no! I'm not ready yet! Confessing your love needs to be...it needs to be a ritual!\"",
+          "os": "({ta} was so flustered that she crumpled up the draft paper, but she was already thinking about 'ritual'.)"
+        },
+        {
+          "text": "Okay, I'll take care of all your homework from now on.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}'s eyes lit up immediately: \"Then, then I can see you every day! Starting tomorrow, I'll do ten problems every day and ask you about them!\"",
+          "os": "({ta} is plotting this; the abacus beads are practically about to pop out.)"
+        },
+        {
+          "text": "What should I do if I get caught eating candy during class?",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "reply": "{name} sheepishly withdrew the candy, her hand pausing in mid-air: \"...I'm sorry, I didn't think it through. I'll give it to you next time, next time after class.\"",
+          "os": "(Their carefully considered feelings were gently pushed away. But they still wanted a next time.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter Two: The Distance of an Umbrella",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The first rain of autumn came without warning. When the school bell rang, the playground was already flooded. You stood under the porch, your schoolbag on your head, gazing at the rain with worry. Suddenly, a small cartoon umbrella—with a yellow Shiba Inu printed on it—opened over your head. You were panting as if you'd just run 800 meters, half your school uniform soaked, but your smile was brighter than the Shiba Inu on the umbrella."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior, have you been waiting long?\" {ta} was still catching her breath. \"I'm so sorry, I searched the classroom for ages before I finally found this umbrella—I don't usually carry an umbrella, but I brought it today specifically!\""
+        },
+        {
+          "who": "self",
+          "text": "Bringing it on purpose... means that {ta} checked the weather forecast, knew it would rain today, and knows I often forget my umbrella. This idiot, when did she become so thoughtful?"
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter Two: The Distance of an Umbrella",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain was getting heavier, pattering loudly against the Shiba Inu's umbrella. {ta} tilted the umbrella almost entirely towards you, getting her right shoulder soaked as if she'd just been pulled out of the water."
+        },
+        {
+          "who": "name",
+          "text": "\"Did you get wet, senior?\" {ta} anxiously checked your sleeves, and only breathed a sigh of relief when she found that you weren't wet, but then sneezed herself—very lightly, like a puppy that had gotten wet in the rain."
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s school uniform had a large wet patch on the shoulder, and water droplets still clung to her ahoge (cowlick), but she was completely unaware, only concerned with sheltering me under the umbrella. Li Shangyin wrote \"Our hearts are connected by a single thread,\" but {ta}'s actions were even more clumsy and heartwarming than the words themselves."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior.\" Amidst the sound of rain, {ta}'s voice suddenly stopped stuttering, becoming soft yet firm, \"Could you... move a little closer to me? That way you won't get wet. I... I'm not afraid of getting wet.\""
+        },
+        {
+          "who": "self",
+          "text": "You're not afraid of getting wet in the rain... but you just sneezed."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter Two: The Distance of an Umbrella",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain lessened a little. You stood under the old carved porch at the entrance of the residential area to take shelter from the rain. {name} pulled a crumpled peach candy from his schoolbag and handed it to you—this kind of candy was only sold at the small shop behind the school gate, and it cost five cents a piece."
+        },
+        {
+          "who": "name",
+          "text": "\"Here, senior. I was planning to give it to you after school, but it's raining, so I took it out first—don't mind it.\" {ta} had already unwrapped the candy and handed it to you. \"I prepare one every day—I hide it in a compartment in my backpack, just in case I run into you, senior.\""
+        },
+        {
+          "who": "self",
+          "text": "I did the math: from the start of the school year until today—a total of over 120 days. That means that every day, {ta} keeps a piece of candy in the hidden compartment of her backpack, just in case of a chance encounter that may never happen. This is the most wasteful yet romantic thing that only a seventeen-year-old would be willing to do."
+        },
+        {
+          "who": "name",
+          "text": "\"My mom said I'm wasting money.\" {ta} blushed and scratched her head. \"But I think it's worth it—it would be such a shame if I actually ran into my senior someday and didn't get any candy. You always have to leave a loophole for hope.\""
+        },
+        {
+          "who": "narration",
+          "text": "The peach candy slowly melted in your mouth. The air after the rain carried the sweet scent of damp earth—mixed with the candy, becoming the most tangible flavor of that autumn. Years later, looking back—that flavor is called 'being truly loved by someone.'"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter Two: The Distance of an Umbrella",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain blurred the whole world, except for {ta}'s profile, which was dazzlingly clear under the umbrella. The small Shiba Inu umbrella was just big enough for the two of them to be close together—close enough to count the tiny raindrops clinging to {ta}'s eyelashes."
+        }
+      ],
+      "options": [
+        {
+          "text": "I moved closer and casually pushed the umbrella toward {ta}: You don't want to get wet either.",
+          "textVariants": [
+            "Move closer to him/her and push the umbrella towards him/her: Let's share the umbrella so neither of us gets wet.",
+            "She went over to him and quietly wiped the rain off his shoulders."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "near",
+          "reply": "{name} froze, her grip on the umbrella handle shaky: \"Senior, you're so close... My heart is pounding, like I just ran a kilometer...\"",
+          "os": "(This is the closest {ta} has ever been to the person they like. {ta} wants to frame this moment.)"
+        },
+        {
+          "text": "I'll get soaked with you; no one else will get wet alone.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "near",
+          "reply": "{name} jumped up and down anxiously: \"No, no! Senior will catch a cold if she gets caught in the rain! I'll be so worried about her if she catches a cold... oh wait, I mean!\"",
+          "os": "(He would rather get soaked to the bone himself than let you get a single drop of rain on him.)"
+        },
+        {
+          "text": "Laugh at him: \"Junior, why is your face so red? Do you have a fever?\"",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "shy",
+          "reply": "{name} covered her face, letting out a voice through her fingers: \"N-no! It's...it's just that the rain is too hot! Yes, the rain is hot...\"",
+          "os": "({ta} panicked and became incoherent, missing the best opportunity to approach.)"
+        },
+        {
+          "text": "Just keep your distance, that way it won't be crowded.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "shy",
+          "reply": "{name} quietly straightened her umbrella, making room for someone: \"...Yeah, senior is right. It's good that it's not crowded.\"",
+          "os": "({ta} quietly shifted to the side, her right shoulder getting soaked again. But {ta} didn't say anything more.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Interlude - Under the Cherry Blossom Tree",
+      "goto": "sA1_sport",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain stopped. You walked to the path on campus lined with late-blooming cherry blossoms. The rain-soaked petals carpeted the ground, pink and soft, like a sheet of spring paper. {name}'s shoulders were still wet, but her ahoge (cowlick) had dried a bit, sticking up stubbornly. {ta} walked half a step beside you, opening her mouth several times as if to say something, then swallowing it back."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior.\" {ta} suddenly stopped, took a deep breath—as big as a drowning person finally surfacing—and then clenched her fists. \"I... I have something that's been on my mind for a long time.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}'s face turned bright red to the roots of her neck, and even her ahoge (cowlicks) stood on end. At that moment, the wind stopped, the rain ceased, and the volume of the entire world was turned down to its lowest setting."
+        }
+      ]
+    },
+    {
+      "id": "sA1_sport",
+      "type": "story",
+      "sceneKey": "riverside_summer",
+      "face": "happy",
+      "chapter": "Interlude - Under the Cherry Blossom Tree",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "That afternoon was the school sports meet. {name} participated in the 400-meter relay—{ta} was the last runner. At the start, {ta} was half a lap behind, but you saw {ta} look up at the stands at the bend—find your seat—and then suddenly accelerate. A golden ahoge (cowlick) stretched into a straight line in the wind."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} crossed the finish line in third place. {ta}, bent over and panting heavily, didn't go to collect her medal—she glanced at you in the stands. That glance asked you: Did you see me?"
+        },
+        {
+          "who": "name",
+          "text": "After the race, {ta} ran up to you, covered in sweat, so excited she stammered, \"Senior, did you see that?! I ran the last part 0.3 seconds faster than before! I broke my personal record! Although I didn't get first place—but, I thought about you watching from up there—so I ran faster!\""
+        },
+        {
+          "who": "self",
+          "text": "0.3 seconds. Because I was watching, {ta} was 0.3 seconds faster. This number is so small as to be negligible—but for {ta}, it means squeezing out every last bit of effort within the limits allowed by physics."
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Interlude: Under the Cherry Blossom Tree",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Cherry blossoms drifted slowly down behind you, like a belated snowfall. {ta} clenched her fists, sweat seeping through her fingers, yet she refused to utter a single word."
+        },
+        {
+          "who": "name",
+          "text": "\"I like you!\" {ta} practically shouted, her voice so loud it startled a whole tree of sparrows. After shouting, she froze, her eyes wide, as if she couldn't believe she'd actually said it. \"From...from the first day of school, when you turned around and smiled at me in the hallway...no, even earlier! From the day you spoke at the freshman welcome party, I've been...I've been watching you!\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} poured out everything she'd kept hidden for most of the semester in one go. It was like finally overturning a piggy bank that had been brimming with countless little sunflowers and orange candies. Rumble, it was all love."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "sad",
+      "chapter": "Interlude: The Words Left Unsaid",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain stopped. You walked silently along the cherry blossom path, the wind rustling the fallen petals. {name} opened her mouth several times, but each time swallowed her words back—like a fish blowing a bubble on the surface of the water, then sinking back down."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior...it's okay.\" {ta} kicked a small pebble from one end of the road to the other. \"I...I just wanted to say that I'm really happy to be able to take you home today. I'm even happier than if I had won first place.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} kept her fist clenched in her pocket. The words stuck in her throat rolled around on her tongue, but she still didn't dare to say them. Like a piece of candy that had been held in her mouth for too long—it melted, but no one knew it had ever been sweet."
+        },
+        {
+          "who": "narration",
+          "text": "Cherry blossom petals fall between you, forming a pink and white river that neither of you dares to cross first. Gazing at each other from opposite banks is the longest yet shortest distance of adolescence."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: The Promise on the Rooftop",
+      "goto": "s5_rooftop",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "During lunch break, {name} invited you to the rooftop of the teaching building. The autumn wind was strong, blowing {ta}'s tuft of hair all over the place, but {ta} quietly draped her school uniform jacket over your shoulders—the movement was as light as if afraid of waking a butterfly."
+        },
+        {
+          "who": "name",
+          "text": "\"After I confessed to you,\" {ta} scratched her head and grinned sheepishly, too embarrassed to look at you, \"I was secretly laughing like an idiot in class, and I got punished by the Chinese teacher to stand twice! But I was still laughing even when I was standing in the hallway—because when I looked up, I could see your classroom window.\"",
+          "when": "flag: approach"
+        },
+        {
+          "who": "name",
+          "text": "\"Senior.\" {ta} mustered up her courage, her voice as soft as the wind rustling through leaves, \"Actually, that day under the cherry blossom tree... there was something I wanted to say, but I never dared to finish it. It made me have nightmares about running the 800 meters for several nights in a row.\"",
+          "when": "flag: shy"
+        },
+        {
+          "who": "self",
+          "text": "The wind on the rooftop made {ta}'s ahoge (cowlicks) stick up in all directions, and his school uniform jacket still smelled of {ta}'s laundry detergent—a light scent, like cotton fabric that had just been sun-dried. This junior, who was always flustered, suddenly had such a serious look in his eyes that my heart started racing."
+        }
+      ]
+    },
+    {
+      "id": "s5_rooftop",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: The Promise on the Rooftop",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind on the rooftop had died down a bit. {name} pulled a folded square registration form from the pocket of his school uniform jacket—a preliminary notice for the National High School Mathematics Competition."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior—I've been too afraid to tell you this.\" {ta} spread the form out on the railing. \"Actually, I've been preparing for the math competition since last year. If I get a prize, it'll give me extra points on the college entrance exam—which will give me a better chance of getting into the university you're at. I'm actually not bad at math—it's just that I get slow when I'm nervous.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta} wasn't asking me math questions at the library. {ta} was quietly building a path to my city using their weakness—that geometry proof they could never solve correctly. {ta} hadn't told anyone about this plan—that question they asked three times was probably just practice."
+        },
+        {
+          "who": "name",
+          "text": "\"So, senior—even if you graduate and leave—I'll still study hard here.\" {ta} folded the form back up and put it back in her pocket. \"It's not just talk—it means doing one more practice test every day. After I finish the college entrance exam next year—will I be the first to receive my acceptance letter?\""
+        },
+        {
+          "who": "narration",
+          "text": "Only the sound of the wind remained on the rooftop. You handed the coat back to {ta}—the fabric still held the warmth of your shoulders. {ta} took it and put it on, her ahoge sticking up slightly above the collar."
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: The Promise on the Rooftop",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled a crumpled kraft paper envelope from her schoolbag—a crooked heart was drawn on the seal, and a small \"urgent\" was written next to it."
+        },
+        {
+          "who": "name",
+          "text": "\"This is a love letter I rewrote.\" {ta} held it in her hands as if it were a fragile item. \"This time, I signed it. I wrote it seventeen times—the first time was too messy, the second time was too cheesy, the seventeenth time… Senior, would you accept it?\""
+        },
+        {
+          "who": "self",
+          "text": "Seventeen times. Was it \"seventeen\" years old, or exactly \"seventeen\" times? Either way, it was neatly written—filled with the complete sincerity of a young man."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Three: The Promise on the Rooftop",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The kraft paper envelope trembled slightly in the wind on the rooftop, and {ta}'s hands were shaking too—not because of the wind, but because giving one's heart away requires more courage than running 800 meters."
+        }
+      ],
+      "options": [
+        {
+          "text": "He accepted it, and then tiptoed to rub {ta}'s ahoge (cowlick): \"Then I like you too.\"",
+          "textVariants": [
+            "I took the love letter and nodded seriously: This time, it's my turn to say 'okay'.",
+            "Accept the letter and reply: \"From today onwards, you belong to me.\""
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "reply": "{name} froze like a statue, her ahoge (cowlick) twitching wildly. After a long pause, she managed to stammer out a tearful sentence: \"S-senpai said she likes me... I'm going to run laps to celebrate!\"",
+          "os": "({ta} thinks he's the happiest junior in the world, bar none.)"
+        },
+        {
+          "text": "I'll keep this letter for now; you can guess the answer later.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Guess, guess for as long as you want! I'm waiting for my senior! I've already been waiting—I've waited a whole semester, so waiting for another one won't bother me!\"",
+          "os": "(Although she was anxious, whatever her senior said was fine—being able to continue waiting was a kind of permitted happiness.)"
+        },
+        {
+          "text": "Take this. I'll protect you from now on.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"It's my job to protect my senior!\" She puffed out her chest, and her ahoge (cowlick) stood up too.",
+          "os": "({ta} wants to be someone who can protect her senior—even if she still needs to stand on tiptoe right now.)"
+        },
+        {
+          "text": "It's better if we just act like ordinary senior and junior students.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6",
+          "reply": "{name} slowly put the envelope back, rubbing her fingers along the heart-shaped crease several times, forcing a smile: \"...Hmm, okay. Ordinary is fine too. At least I can still see my senior.\"",
+          "os": "(He/She rewrote the love letter seventeen times, only to have it returned. But when he/she said \"It's fine,\" his/her voice trembled.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "happy",
+      "chapter": "Final Chapter: Graduation Day",
+      "goto": "s6_teacher",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Time flies, and before you know it, it's your graduation day. The classroom is empty; all the desks and chairs have been moved out, leaving only the farewell posters drawn by your younger schoolmates on the blackboard. {name} stands at the door, holding a large bouquet of flowers—daisies, baby's breath, and a sunflower."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior is going to a school even farther away...\" {ta}'s voice was muffled, her ahoge (cowlick) drooping down, \"But, but I'm still a sophomore here. From now on, I won't see your back in the hallway anymore.\"",
+          "when": "flag: approach"
+        },
+        {
+          "who": "name",
+          "text": "\"Senior.\" She finally finished saying what she'd been holding back for so long, each word deliberate and careful, as if afraid you'd misunderstand, \"I like you. This time, I don't want to just say half of it—I want you to know that from beginning to end, it's all about you.\"",
+          "when": "flag: shy"
+        },
+        {
+          "who": "self",
+          "text": "Looking at her red eyes and the tightly clutched bouquet rope, I suddenly understood: even budding affection can grow up. Just like Xi Murong wrote—\"Youth is a book written too hastily,\" but in this hasty book, there are the most earnest strokes."
+        }
+      ]
+    },
+    {
+      "id": "s6_teacher",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Final Chapter: Graduation Day",
+      "goto": "s6_classmates",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the hallway, our homeroom teacher, Ms. Chen, passed by with a folder tucked under her arm. Seeing you standing at the door of the empty classroom, she stopped. A woman who had taught for thirty years, she'd seen all sorts of puppy love—but she said nothing."
+        },
+        {
+          "who": "Teacher Chen",
+          "text": "\"{name}—you improved your math score by twelve points on the final exam last semester.\" She pushed up her glasses. \"I asked you why you suddenly studied so hard, and you said, 'I want to get into a university in someone's city.' That person—is it this senior?\""
+        },
+        {
+          "who": "narration",
+          "text": "{name}'s ahoge (cowlick) instantly transformed into a perfect exclamation mark. {ta} blushed and stammered for a long time before finally managing to utter only two words: \"Yes, yes.\" That honesty was braver than any sentence in a love letter."
+        },
+        {
+          "who": "Teacher Chen",
+          "text": "Teacher Chen smiled and tucked the folder under his arm. \"Then keep up the good work. When you get your acceptance letter next year—remember to bring it back for me to see. I want to see—what kind of power could make someone who has always barely passed math improve by twelve points?\""
+        },
+        {
+          "who": "self",
+          "text": "It turned out that everyone in the office knew about {ta}'s progress—and the source of it had been guessed. Teacher Chen didn't criticize or warn—she simply supported the young man's dream, which he was striving to achieve, in her own way."
+        }
+      ]
+    },
+    {
+      "id": "s6_classmates",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "happy",
+      "chapter": "Final Chapter: Graduation Day",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A few of your female classmates passed by and saw {name} standing at the door holding a large bouquet of flowers. The girl in the lead whistled, \"Wow—our senior is being pursued by a junior? This is the first time in school history!\""
+        },
+        {
+          "who": "name",
+          "text": "{name} shoved the flowers into your arms, turned to the girls and bowed solemnly: \"G-senior sisters—please rest assured that you are in my care! I-I will work hard to get into the same university! This is a guarantee I wrote—\" As he spoke, he actually pulled out a neatly folded piece of paper from his pocket."
+        },
+        {
+          "who": "narration",
+          "text": "The note, scrawled crookedly, read: \"Guarantee. I, {name}, guarantee to do two more math problems every day, play one less game every week, and memorize every single knowledge point my senior taught me in the library. This is my guarantee.\" Below was a cartoon Shiba Inu stamp."
+        },
+        {
+          "who": "self",
+          "text": "His pledge wasn't written to his teacher—it was written to the world around me. He used a note stamped with a dog's paw print to tell everyone: this person is serious. Serious enough to need black and white paper—to defy time and distance."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Final Chapter: Graduation Day",
+      "goto": "s6c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} handed over the flowers, but her fingers wouldn't let go—as if she were making a decision concerning her entire youth. The wrapping paper of the bouquet was crumpled into fine creases by {ta}."
+        },
+        {
+          "who": "name",
+          "text": "\"When you go to university, will you... forget about me?\" {ta}'s voice trailed off, the last word almost swallowed. \"Every morning, every PE class, every time I run the 800 meters, I pass by your classroom... Will those memories still be there in university?\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} wasn't asking whether they would forget—{ta} was asking whether the hundreds of kilometers between the two stations would turn the school walk they had taken together for a semester into two parallel lines."
+        }
+      ]
+    },
+    {
+      "id": "s6c",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Final Chapter: Graduation Day",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled out a small, sealed plastic bag from deep inside his pocket—with a dozen or so peach candies neatly arranged inside."
+        },
+        {
+          "who": "name",
+          "text": "\"These are the ones I've been saving since the start of the semester—I put one in my bag every day, so if I run into the senior and you reject her, I won't be able to give her any.\" {ta} stuffs the candy into your hand. \"I've saved twenty-seven now. The senior is going to university, and it takes her several hours to get there—she'll eat these on the way, and each one will be sweet.\""
+        },
+        {
+          "who": "self",
+          "text": "Twenty-seven candies. That's roughly the number of times we've actually met since the start of the semester. Yet, {ta} hasn't forgotten a single one—every candy she should have given but didn't for some reason has been put back in her backpack's inner pocket. This is a list, precise down to the last piece, belonging to our seventeen-year-old selves."
+        },
+        {
+          "who": "name",
+          "text": "\"When you get to that city, you'll be busy, you'll make new friends, and you'll have new stories.\" {ta} tried to smile brighter, but her eyes welled up with tears. \"These candies—I didn't mean to make things difficult for you. I just wanted you to know—regardless of whether you come back or not—every single one of these twenty-seven is something I truly cherish.\""
+        },
+        {
+          "who": "self",
+          "text": "Yan Jidao wrote, \"Falling blossoms, a lone figure stands; light rain, swallows fly in pairs.\" But this young man's farewell was more direct than any poem—it used only twenty-seven peach candies. I clutched the plastic bag tightly in my hand—clutching it so tightly I dared not squeeze it, afraid of breaking it—clutching it so tightly I dared not let go, afraid of missing it."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Final Chapter: Graduation Day",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Graduation songs drifted in from the loudspeakers; people were taking photos on the playground, some were crying. In this empty classroom, there were only the flowers handed to her by {ta}, and those eyes that were filled with tears yet still smiling."
+        }
+      ],
+      "options": [
+        {
+          "text": "We made a pinky promise: I'll wait for you to get into university, and we'll meet at the same university.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name} burst into laughter through her tears, extending her little finger: \"Pinky promise! I... I'll definitely study my hardest! I'll catch up to your ranking in the whole school and show you! Just wait and see me on the admission list!\"",
+          "os": "({ta} engraved this promise in her heart—more firmly than any math problem.)"
+        },
+        {
+          "text": "She playfully pinched his nose: \"Forgot you? How could I forget someone as clingy as you?\"",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}, still grinning foolishly after having her nose flicked, said, \"Then, I'm relieved! Senior, come back to see me often! I'll save up lots and lots of orange candies for you!\"",
+          "os": "(She believed it because it was her senior who said it. Even if it was a joke, she was still seriously looking forward to it.)"
+        },
+        {
+          "text": "To avoid interfering with your college entrance exam, let's put this relationship on hold for now.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} burst into tears: \"I don't want to put it off! Who said liking my senior would hold me back! You wait, I'll prove to you—liking you isn't a burden, it's a motivation!\"",
+          "os": "(You wanted what was best for them, but you almost lost them. But they still want to fight back.)"
+        },
+        {
+          "text": "Long-distance relationships are so difficult, why not just stay here?",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} held the flowers, tears falling one by one onto the wrapping paper, but {ta} was still smiling: \"...Oh. Okay. Take care, senior. Then this bouquet...can be considered a graduation congratulation.\"",
+          "os": "(The bouquet of sunflowers that {ta} held slowly drooped. Seventeen confessions of love only earned her a single \"Take care.\")"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Cherry Blossom",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A year later, in the spring, the cherry blossoms bloomed again. At the university gate, {name}, wearing a brand-new school uniform—not the one from high school, but the freshman uniform from your university—rushed over, still looking like he was running an 800-meter dash."
+        },
+        {
+          "who": "name",
+          "text": "\"Senior! I got in!\" {ta} held her acceptance letter high, her ahoge (cowlick) sticking up in the spring breeze. \"I moved up forty places in the whole school! I kept my word, didn't I? Pinky promise, no backing out!\"",
+          "when": "flag: Together"
+        },
+        {
+          "who": "self",
+          "text": "It turns out that the love letter that fell into the textbook with a blank signature, those little suns written on the edge of the draft paper, and the orange candy that filled the entire exercise book—in the end, they all received a complete answer.",
+          "when": "tag: Sincerity >= 3"
+        },
+        {
+          "who": "narration",
+          "text": "{ta} ran over, clutching a small plastic bag in her hand—it was full of orange candies, collected over a whole year, each one representing a day spent waiting for you."
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Final Chapter: The Same Cherry Blossom",
+      "goto": "s7_letter",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The cherry blossoms along the university's main road were more numerous and abundant than those along the high school's road. Petals smothered you, but {they} just stared at you—not like they were looking at an upperclassman, but like they were looking at a future they had waited so long for."
+        },
+        {
+          "who": "name",
+          "text": "\"This time,\" {ta} took a deep breath, using all the courage she had saved up for a year, \"Could you, officially be my girlfriend? Not a senior and junior relationship—it's a relationship between you and me, standing together.\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said this, there was no stuttering, no bowing of the head. The ahoge (cowlick) stood straight up in the spring breeze, like a package that had been waiting for a long time and was finally signed for."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "sad",
+      "chapter": "Final Chapter: The Empty Classroom",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You graduated and left. On the desk in that empty classroom, the love letter {name} rewrote was left in the drawer, next to an expired orange candy. No one mentioned it again."
+        },
+        {
+          "who": "name",
+          "text": "\"Good luck, senior!\" {ta} sent a final text message with a smiley face followed by a long string of exclamation marks. \"I...I will study hard. I'll do really, really well on the exam—regardless of whether you're reading this or not. Goodbye!\""
+        },
+        {
+          "who": "self",
+          "text": "As I looked at that text message, I suddenly missed the boy who offered me candy, held an umbrella for me, and filled my draft paper with his name. But some heartbeats, separated by 300 kilometers, could no longer be heard.",
+          "when": "tag: trash>=2"
+        },
+        {
+          "who": "narration",
+          "text": "The cherry blossoms bloom every year. But on that road home from school, there is no longer a person panting heavily, holding a Shiba Inu umbrella, one shoulder soaked with sweat, chasing after her and calling, \"Wait for me, senior!\""
+        }
+      ]
+    },
+    {
+      "id": "s7_letter",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Cherry Blossom",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Springtime a year later. You receive a registered letter from your high school in your university dorm—the envelope is covered in Shiba Inu stickers, and the postmark is crooked. You open it—and there's a photocopy of your university acceptance letter."
+        },
+        {
+          "who": "name",
+          "text": "On the back of the notification letter, {name} wrote only one sentence in crooked pencil: \"Senior, I passed the exam too. I kept my word. Please sign for it.\""
+        },
+        {
+          "who": "self",
+          "text": "That junior who spent a semester running the 800 meters countless times, practicing his love letter seventeen times, and writing twenty-seven candies densely—truly engraved his name on the admission list of the same university through math problems and competitions."
+        },
+        {
+          "who": "narration",
+          "text": "You take this letter and walk to the window—the late-blooming cherry blossoms on campus are in full bloom. They are the same color as the flowers on that path a year ago."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "This bittersweet first love is about to come to an end. Now—what would you like to say to {name}? (≤100 words, it will be the final touch in your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} stands beneath the cherry blossom trees on the university's main road, clutching a large bag of orange candies she's saved up for a year, her eyes filled only with you. {ta} is waiting for you to speak—waiting for a single word, a word that belongs to this first love, and to both of you.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The classroom is empty, the cherry blossoms have fallen. You remember the boy who offered you candy and held an umbrella for you, and you want to tell him the words you never said—maybe the wind will carry them for you.",
+          "when": "flag: fulfill"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "My deskmate",
+      "trigger": "top: sincerity",
+      "caption": "From the letter tucked inside the poem \"Guan Ju\" to the pinky promise at the university gate—you caught every bit of youthful, clumsy courage, turning the most tender affection into the most steadfast vow. Those seventeen love letters finally received a reply.",
+      "report": "[Relationship Personality - Desk Mate] You belong to the rare \"secure\" type: you don't shy away from being attracted to someone, and you're not dismissive of confessions. You cherish the other person's courage and dare to give your own true heart; even your naiveté is transformed into gentleness. The ancients said, \"The boy rides a bamboo horse, playing with green plums around the bed,\" and you are the one who finally brings that bamboo horse to its destination. Those who are genuinely loved by you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "Heartbreaker",
+      "trigger": "Top: Aquaman",
+      "caption": "You turned every flutter of your heart into a joke or teasing, making {name} blush and her heart race, but you never gave her a serious answer. That bag of orange candies, in the end, was never shared.",
+      "report": "[Relationship Personality - The Heartbreaker] You're sweet-talking, witty, and charming; you know exactly how to make people blush, yet you're most afraid of taking things seriously. You've stirred a young heart, but hesitated to reciprocate. Don't wait until the cherry blossoms have faded and the oranges have ripened to realize that the words you should have said are still stuck in your throat."
+    },
+    {
+      "endingId": "toxic",
+      "title": "indifferent",
+      "trigger": "top: scum",
+      "caption": "You gently pushed away the candy offered by {name}, the umbrella held up for you, and the love letter you wrote seventeen times—you didn't even take the fluttering of youth seriously.",
+      "report": "[Relationship Personality - The Cold One] You are clear-headed, aloof, and leave no room for negotiation, constantly saying \"We're not close.\" You may never be troubled by love, but you've also let down the person who mustered up the courage for half a semester. The coldest thing isn't the autumn rain, but that unresponsive heart."
+    },
+    {
+      "endingId": "devoted",
+      "title": "protector",
+      "trigger": "top: Loyal Dog",
+      "caption": "To avoid hindering {name}'s future, you repeatedly put your feelings aside, preferring to suffer yourself rather than put {them} in a difficult position. But you forgot—what {them} wants is not your concession, but your affirmation.",
+      "report": "[Relationship Personality - The Protector] You give your all, always thinking of the other person, habitually putting yourself last. You often move yourself, but almost lose them. What they want isn't your sacrifice, but for you to stand by them and say, \"I believe in you.\" Don't forget, in your youth, someone should also hold an umbrella for you."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "passers-by",
+      "min": -99,
+      "caption": "A period of campus life has passed, and even the cherry blossoms in full bloom and the bags full of orange candies couldn't write an ending for your story with {name}.",
+      "report": "[Relationship Personality - Passersby] Your choices are unpredictable, difficult to categorize—sometimes you're moved, sometimes you withdraw. Perhaps you haven't figured out whether to give this budding romance a proper status. First, understand your own heart, then decide whether or not to take the hand that offers the candy."
+    }
+  ]
+}

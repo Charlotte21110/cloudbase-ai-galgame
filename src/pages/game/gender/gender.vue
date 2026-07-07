@@ -12,8 +12,8 @@
       </view>
 
       <!-- 主标题 -->
-      <text class="title">长夜结束前</text>
-      <text class="subtitle">告诉我们你是谁 ✨</text>
+      <text class="title">{{ t('gender.title') }}</text>
+      <text class="subtitle">{{ t('gender.subtitle') }}</text>
 
       <!-- 三选一按钮 -->
       <view class="options">
@@ -23,7 +23,7 @@
           @click="pick('male')"
         >
           <text class="opt-icon">♂</text>
-          <text class="opt-label">男生</text>
+          <text class="opt-label">{{ t('gender.male') }}</text>
         </view>
 
         <view
@@ -32,7 +32,7 @@
           @click="pick('female')"
         >
           <text class="opt-icon">♀</text>
-          <text class="opt-label">女生</text>
+          <text class="opt-label">{{ t('gender.female') }}</text>
         </view>
 
         <view
@@ -41,21 +41,24 @@
           @click="pick('secret')"
         >
           <text class="opt-icon">🌙</text>
-          <text class="opt-label">保密</text>
+          <text class="opt-label">{{ t('gender.secret') }}</text>
         </view>
       </view>
 
       <!-- 确认按钮 -->
       <button class="confirm-btn" :disabled="!selected || submitting" @click="submit">
-        <text class="btn-text">{{ submitting ? '提交中…' : '确认，进入结局 →' }}</text>
+        <text class="btn-text">{{ submitting ? t('gender.submitting') : t('gender.confirmBtn') }}</text>
       </button>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, onMounted } from 'vue'
 import { session, finalize } from '@/game/store'
+
+const { t } = useI18n()
 
 /** 统计云函数的公开 HTTP 端点（免登录） */
 const STATS_FN_URL =

@@ -1,0 +1,1049 @@
+{
+  "_id": "script_amour",
+  "id": "script_amour",
+  "title": "Separated by a wall, an ambiguous temperature",
+  "openingTip": "On your first night in your new apartment, you bump into the woman next door who always comes home late at night. {name}—she's as aloof as if separated by frosted glass, yet she always manages to subtly draw you closer. This is a story about \"how close is crossing the line.\" Most of the time, you only need to tap the screen to read on; there aren't many crossroads where you actually have to make a decision, but each one is about whether or not that wall should be pushed down.",
+  "prologue": "Apartment 1102 and 1103 share a thin wall and a narrow terrace. On the other side of the wall lives {name}: a cold voice, faint perfume, and never initiating a greeting. Strangely, every sleepless night, two lights on the terrace always come on simultaneously. Separated by a railing, you chat about the weather, about working overtime, about trivial matters—neither of you speaks your mind, each waiting for the other to take a step back first, or at least move closer.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "happy",
+      "chapter": "Prologue: The Light Next Door",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On your first night in the new place, you're woken by the sound of high heels outside your door. At one in the morning, the door to apartment 1102 next door closes softly—not slammed, but gently shut, as if afraid of disturbing someone. But besides the two of you, the entire floor isn't full. You go out to get some water and bump into someone on the balcony. {name} is leaning against the railing, a thin, unlit cigarette between her fingers, wearing only a loose silk shirt. The moonlight cuts {ta}'s profile coldly, like a watercolor painting that hasn't quite dried."
+        },
+        {
+          "who": "name",
+          "text": "\"...New here?\" {ta} didn't look at you, her voice as warm as the moonlight. \"This building has poor soundproofing. Be careful at night from now on.\""
+        },
+        {
+          "who": "self",
+          "text": "It was clearly a dismissive remark, but {ta}'s tone was languid, as if she didn't really care—more like she was looking for a reason to speak. She didn't light a cigarette, and her words weren't heartfelt."
+        },
+        {
+          "who": "name",
+          "text": "{ta} suddenly turned her head and glanced at you, her gaze like a ray of not-too-hot sunlight in winter: \"Never mind. Anyway... you're not the only one who can't sleep.\""
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Prologue: The Light Next Door",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After that, you noticed a detail: every morning at dawn, the light next door was always on. Through that thin wall, you could occasionally hear a very soft piano piece—Chopin's Nocturnes, always the same few pieces over and over. You weren't sure if they were listening or playing it themselves. But you started to get used to it—used to hearing movement behind that wall before going to sleep. It was a kind of security that was hardest to find in the city: you knew you weren't the only one still awake in the building."
+        },
+        {
+          "who": "self",
+          "text": "We're like two lights that can't be turned off, separated by a wall. We know the other is awake, but neither of us dares to say, \"Are you having insomnia too?\" The unspoken understanding between adults often begins with pretending not to care."
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "sad",
+      "chapter": "Prologue: The Light Next Door",
+      "goto": "s1d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "In the early hours of the third Saturday, you are awakened by a violent coughing fit—through that thin load-bearing wall, {name} is coughing as if he's going to cough up his lungs. He pauses for a few seconds, then starts again."
+        },
+        {
+          "who": "self",
+          "text": "I lay in bed listening for a full twenty minutes. Every time it stopped, I thought—this time it should be over by now. But the next bout of coughing was always worse than the last."
+        },
+        {
+          "who": "narration",
+          "text": "You put on your coat, hesitated three times, and finally went out to stand on the terrace. {ta} was there too—wearing a men's oversized trench coat, holding a cup of ginger tea, the steam gathering into a small puff of mist in the cold air."
+        },
+        {
+          "who": "name",
+          "text": "\"Did I disturb you?\" {ta}'s voice was hoarse from coughing, hissing like sandpaper. \"Sorry. It's an old problem—it happens every time the seasons change. I thought the soundproofing wasn't that bad.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said, \"I thought the soundproofing wasn't that bad,\" but at the same time, she handed me half of her ginger tea—the rim of the cup was still warm. How did someone who wouldn't explain her illness but was willing to share her cup with a stranger survive in this city?"
+        },
+        {
+          "who": "narration",
+          "text": "You watch her profile as she sips ginger tea, head bowed—her hair still damp, dark circles under her eyes. This is the first time you realize that her insomnia is more than just insomnia."
+        }
+      ]
+    },
+    {
+      "id": "s1d",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Prologue: The Light Next Door",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next morning, you find a small paper bag on the shoe rack in front of your house—it contains two packets of powder, a small bottle of honey, and a note."
+        },
+        {
+          "who": "name",
+          "text": "The note, written in neat handwriting, read: \"Last night's ginger tea contained alcohol, I was worried you wouldn't sleep well when you got home. These two are good for your throat. —Not a thank you, but a return gift.\""
+        },
+        {
+          "who": "self",
+          "text": "Returning the favor. {ta} drew a clear line between 'gratitude' and 'owing a favor' in an almost detached, precise way. But the label on that bottle of honey—it was from a handmade market, a place you had to travel halfway across the city to buy."
+        },
+        {
+          "who": "narration",
+          "text": "A small sticker on the honey jar showed the expiration date. Below it, in even smaller print, {ta} wrote: \"One spoonful before bed, dissolved in warm water.\" — Like a doctor's order, or a carefully crafted expression of care, packaged with minimal words."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Prologue: The Light Next Door",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next evening, you bumped into {ta} again at the coffee shop downstairs. {ta} was sitting alone by the window, a barely touched latte in front of her. The setting sun outside cast a long shadow of {ta}."
+        },
+        {
+          "who": "name",
+          "text": "\"Have a seat.\" {ta} gestured with her chin to the empty seat opposite her, a half-smile playing on her lips. \"Is it interesting to stand and watch me? Or do you think I'm the kind of person who doesn't like being disturbed?\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} always speaks with a sharp edge, but when her eyes crinkle, the sharpness softens. Like a medicine coated in sugar—bitter inside, sweet on the outside. If Wong Kar-wai were to film {ta}, he'd probably play an old song and have {ta} smoke a cigarette that she'd never lit, while gazing at the neon lights outside the window."
+        },
+        {
+          "who": "name",
+          "text": "\"My name is {name}.\" {ta} stirred her coffee, the silver spoon clinking against the cup, speaking slowly and deliberately. \"What you want to know is probably more than just my name, isn't it, neighbor?\""
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Prologue: The Light Next Door",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} rested her chin on her hand, her little finger lightly touching her lips—a very casual pose, yet her eyes clearly held something waiting to be understood."
+        }
+      ],
+      "options": [
+        {
+          "text": "I want to know, who are you waiting for so late at night?",
+          "textVariants": [
+            "I'd rather know what's keeping you awake too.",
+            "More than the name, I'm curious about who your lamp is lit for."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name} paused, her hand stirring her coffee stopping, the silver spoon falling to the bottom of the cup with a soft thud: \"...Asking so directly, aren't you afraid of burning yourself?\"",
+          "os": "(I never expected that someone would skip the formalities and small talk and get straight to the point. It's been a long time.)"
+        },
+        {
+          "text": "I wonder if you look even better when you smile.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} chuckled, covering her lips with the back of her hand: \"Glib talk. That won't work on me—someone used it three years ago.\"",
+          "os": "(She feigned disdain, but her ears secretly warmed. The person from three years ago—long gone, yet you're still here.)"
+        },
+        {
+          "text": "I can run errands for you whatever you need.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} sighed softly: \"What I need is someone who can talk, not someone who runs errands. This building doesn't need a delivery guy.\"",
+          "os": "(What they lack isn't someone to boss them around, but someone willing to listen to their piano playing from behind a wall.)"
+        },
+        {
+          "text": "There's nothing I want to know, it's just on the way.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "reply": "{name} withdrew her gaze, picked up the now-cold latte, and said, \"What a coincidence. I was just craving it. The coffee's cold—I'll be going now.\"",
+          "os": "({ta} swallowed back the tentative advance she had just made, along with her cold coffee. As she stood up, the hem of her skirt brushed against the corner of the table.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter 1: Sharing an Umbrella",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "As the party ended, it started to rain. The early autumn rain wasn't heavy, but it was fine and dense, like a layer of gauze. {name} pulled a long-handled black umbrella from her bag—the kind that never folds, just like {ta}'s temperament. {ta} opened the umbrella, but didn't leave immediately. Standing under the café's porch, she twirled the umbrella in her hand, as if considering whether to invite you. Finally—the umbrella tilted inwards by half an inch, just enough to accommodate both of your shoulders."
+        },
+        {
+          "who": "name",
+          "text": "\"Going the same way.\" {ta} said casually, tilting the black umbrella more towards you. \"Getting wet and catching a cold, and then passing it on to me—that's troublesome. My project is really tight lately.\""
+        },
+        {
+          "who": "self",
+          "text": "It was clearly an excuse to avoid trouble, yet {ta} offered most of her shoulder to the rain. The coldness she spoke of and the warmth in her hands were never on the same level."
+        },
+        {
+          "who": "name",
+          "text": "\"...Slow down.\" {ta} suddenly slowed her pace. The rain pattered against the umbrella, but {ta}'s voice was clear. \"We're already soaked anyway. No rush.\""
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter 1: Sharing an Umbrella",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The road back to the apartment wasn't long, only two traffic lights away. But {they} walked very slowly—so slowly that even when the green light turned red, {they} didn't rush you. In the rain, {they}'s shoulder was close. You smelled a very faint perfume—not the kind you find in department stores, but the scent of gardenias crushed between your fingers after the rain. It was cool and refreshing, but sweet up close."
+        },
+        {
+          "who": "self",
+          "text": "The ancients said, \"Those near the water get the moonlight first.\" But me and {them}—we may be close, but there's always an invisible railing between us. That railing isn't an apartment balcony—it's {them}'s habit of not letting anyone get close."
+        },
+        {
+          "who": "narration",
+          "text": "Your arms occasionally brushed against each other under the umbrella. {ta} didn't flinch—she just turned her face away, pretending to watch the rain. But the tips of her ears flushed a thin red under the streetlights."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "rain_street",
+      "face": "shy",
+      "chapter": "Chapter 1: Sharing an Umbrella",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The streetlights cast the shadows of the umbrellas onto the wet ground, like a constantly flowing ink painting. A small patch of her shoulder was damp—her silk shirt clung to her skin, exuding a subtle warmth."
+        }
+      ],
+      "options": [
+        {
+          "text": "Push the umbrella back towards {ta}, it doesn't matter if you get a little wet.",
+          "textVariants": [
+            "Quietly push the umbrella towards {ta} so that {ta} doesn't get wet.",
+            "I'd rather have half my shoulder wet than let {ta}'s hair get wet in the rain."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3c",
+          "reply": "{name} frowned, forcefully pushing the umbrella back, her strength far exceeding yours: \"Stop showing off. If we're going to get wet, let's get wet together. The umbrella is big enough.\"",
+          "os": "(This clumsy thoughtfulness—I haven't received it in so long. {ta} won't let you be the only gentleman.)"
+        },
+        {
+          "text": "I deliberately moved closer: That way I won't get wet.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3c",
+          "reply": "{name} glanced at you, but the corners of her mouth curled up: \"You're quite the thinker. Stay three centimeters away from me.\" But {ta}'s umbrella didn't budge.",
+          "os": "(He said it was three centimeters away, but the umbrella didn't move back a single millimeter. His actions spoke louder than his words.)"
+        },
+        {
+          "text": "He snatched the umbrella and held it for {ta}, keeping it high the whole time.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3c",
+          "reply": "{name} looked at your raised arm and your wrist that was about to cramp, and sighed: \"Aren't your arms sore? Okay—do a side-by-side push-up, so you don't have to show off.\"",
+          "os": "(She's not used to being protected so carefully. But this time—she doesn't seem to mind as much.)"
+        },
+        {
+          "text": "Keep your distance, and don't touch each other.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3c",
+          "reply": "{name} silently straightened her umbrella, making room for them. Raindrops fell between them, widening the gap: \"...Fine. It's clearer this way.\"",
+          "os": "(You took that step back, and {ta} saw it all. Clearly—meaning to draw a clear line.)"
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Interlude: The Truth About the Piano",
+      "goto": "s3d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Back at the apartment building, {ta} didn't immediately get into the elevator. {ta} stood in front of the full-length mirror in the lobby, fixing her rain-soaked hair, her expression focused as if she were performing surgery. The mirror reflected that the second button of {ta}'s shirt was askew—something you'd touched when you squeezed close under the umbrella."
+        },
+        {
+          "who": "name",
+          "text": "\"I used to study piano,\" {ta} suddenly said, her gaze still fixed on the mirror. \"Chopin's Nocturne Op. 9 No. 2 was my mother's favorite piece. She was still clutching the sheet music when she passed away—I couldn't see her one last time.\""
+        },
+        {
+          "who": "self",
+          "text": "Those few sections played over and over in the dead of night weren't practice—they were a lament. {they} weren't playing the piano; {they} were conversing with someone who would never return."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} turned around, her buttons already fastened. {ta} offered no explanation—she simply stood at the elevator entrance, waiting for you to press the floor button. This habit—speaking out her vulnerability and then quickly putting her mask back on—was the most skillful move {ta} had learned in this city."
+        }
+      ]
+    },
+    {
+      "id": "s3d",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Interlude: The Truth About the Piano",
+      "goto": "s4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The elevator reached the 11th floor. {ta} exited first, and you followed behind. {ta} walked to the door of 1102, paused for a moment as she took out her keys—her back to you, and her shoulders shrugged slightly."
+        },
+        {
+          "who": "name",
+          "text": "\"Next time,\" {ta} said softly without turning around, \"I'll play the whole thing for you next time. Consider it a thank you for the honey.\""
+        },
+        {
+          "who": "self",
+          "text": "Next time. This was the first time someone as aloof as if viewed through three layers of frosted glass had used the word \"next time\" with me."
+        },
+        {
+          "who": "narration",
+          "text": "{ta} opened the door and went in, closing it gently behind her. A second later, piano music drifted from the other side of the wall—not the old melody of Op. 9 No. 2, but Debussy's \"Clair de Lune,\" beginning with a series of soft descending scales. It was as if {ta} was telling you in a roundabout way: tonight's performance is for you."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Borrowed Night",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Over the weekend, {name} suddenly sent you a message—the wording was as concise as a work email: 'Saturday evening, 8 PM, observatory. Work's too boring, want to stargaze.' No question marks, no requests for permission. But it was an invitation in itself. Under the observatory's dome, a simulated star chart slowly rotated, projecting the entire sky of stars into the darkness. {ta} stood looking up in the center, the light shining up from below, illuminating {ta}'s cool, aloof silhouette."
+        },
+        {
+          "who": "name",
+          "text": "\"I rarely bring people here.\" {ta} didn't look at you, her voice echoing slightly under the dome. \"It's too quiet here—so quiet that even your heartbeat echoes. No matter what your little thoughts are, you can't hide them.\""
+        },
+        {
+          "who": "self",
+          "text": "In the silence of the universe, the two stood beneath virtual stars. {ta}'s breathing was a little heavier than usual—not from nervousness, but because here, finally, she didn't have to hold back anymore."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Borrowed Night",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "When the star chart moved to Lyra, {ta} suddenly stopped. The light from Vega fell on {ta}'s face, making {ta}'s eyes appear as if they were sparkling."
+        },
+        {
+          "who": "name",
+          "text": "\"The Cowherd and the Weaver Girl meet only once a year.\" {ta} suddenly said something unrelated, her voice eight octaves lower than before, \"Is that enough? One night a year—is that enough?\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} wasn't asking the gods. {ta} was asking—is this kind of insomniac relationship, where we're separated by walls, with the lights on every night but neither of us willing to knock on the door, enough?"
+        },
+        {
+          "who": "name",
+          "text": "\"You say it.\" {ta} suddenly turned around, the star map slowly rotating behind {ta}, \"Two people who both say they 'just can't sleep,' together for so long—how long can they keep up this excuse?\""
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Borrowed Night",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The star chart slowly rotates, and the light of Vega falls between you. {ta} stands just a step away from you—close enough to count {ta}'s eyelashes, close enough that not a single word in {ta}'s sentence can escape your notice."
+        }
+      ],
+      "options": [
+        {
+          "text": "Then stop pretending. I like you, from the first night that light came on.",
+          "textVariants": [
+            "I'm not pretending anymore. The person I've been waiting for has always been you.",
+            "I'll admit defeat first—I like you, I can't hide it anymore."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "Make it clear",
+          "reply": "{name} stood frozen in place, the light of the star chart lingering on {ta}'s face for a long time. After a long while, she turned her face away, her voice trembling slightly: \"...How dare you say it so lightly?\"",
+          "os": "(The heartbeat of {ta} could no longer be concealed in this silence. How long has it been—how long has it been since someone approached {ta} so directly?)"
+        },
+        {
+          "text": "Let's pretend a little longer; this kind of ambiguity is quite interesting.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "ambiguous",
+          "reply": "{name} chuckled softly, a hint of disappointment in her smile that you couldn't decipher—like a shooting star, too quick to leave a trace: \"...That's right. You love this the most.\"",
+          "os": "(You craved this sweet, irresponsible ambiguity, but you didn't see {their} outstretched hand. That hand—quickly withdrew.)"
+        },
+        {
+          "text": "Whatever answer you want, I'll give you that answer.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "Make it clear",
+          "reply": "{name} shook her head: \"I don't want you to agree with me. I want you to—say what you really want to say. Not the answer I want to hear, but your own.\"",
+          "os": "(What they want is the real you, not tailor-made sweet nothings. Compliance is just anesthesia; authenticity is what makes a relationship work.)"
+        },
+        {
+          "text": "Don't overthink it, they're just neighbors.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "sB1",
+          "flag": "ambiguous",
+          "reply": "{name} was silent for a moment, a moment longer than the starlight of an entire night. Then {ta} spoke softly, \"Um. Neighbor. I've said too much. The observatory is closing—let's go.\"",
+          "os": "({ta} swallowed back the words that were about to come out. Vega has moved on; Vega won't wait anymore.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Interlude: Pushing Open That Wall",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the way back to the apartment, {name} took you to the rooftop. The city lights stretched out beneath our feet, like a starry sky fallen to earth. {ta} turned her back to the city and looked at you properly for the first time."
+        },
+        {
+          "who": "name",
+          "text": "\"I've had a few relationships—all of them failed because of one thing.\" {ta}'s voice was steady, but her fingers had left white marks on the railing. \"The other person always backed away when I became a little cold. No one had the patience to wait for me to peel off that shell.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {their} aloofness wasn't their nature, but a test. Too many people backed away, and too few were willing to stay and wait for {their} to melt. Like the rose in \"The Little Prince,\" they use thorns to protect themselves, but are actually incredibly fragile."
+        },
+        {
+          "who": "name",
+          "text": "{ta} reached out, very lightly—hesitating for half a second—and gently smoothed your hair, which had been ruffled by the wind on the rooftop. Her fingertips paused briefly on your forehead: \"Then this time—I'll try to get a little closer. Don't let me regret it.\""
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Interlude: Pushing Open That Wall",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "When {ta} lowered her hand, her fingertips lingered on your shoulder for a second—as lightly as a butterfly landing on a petal. Then {ta} quickly turned her face away to look at the night view, her ears honestly blushing."
+        },
+        {
+          "who": "name",
+          "text": "\"...The wind is so strong.\" {ta} changed the subject, her voice a little soft—the person who had been holding an umbrella alone in the dead of night had suddenly shed all her armor, \"Go back. You have to go to work tomorrow.\""
+        },
+        {
+          "who": "self",
+          "text": "The phrase \"It's so windy\" hides the unspoken message, \"I'm blushing.\" Adults don't need to say \"I love you\" to confess their feelings—they need to admit they're blushing when the wind is strong."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Interlude - Through That Wall",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Back on the rooftop of the apartment, the polite, neither-too-close nor-too-distant distance between you returned. {name} put on that aloof shell again—quickly, like putting on an old coat that's been worn too many times."
+        },
+        {
+          "who": "name",
+          "text": "\"That's fine too.\" {ta} looked at the bustling traffic below, her tone as calm as if she were reading a weather forecast. \"The most charming thing about ambiguity is that you never have to take responsibility, right—no need to explain where you're going, no need to explain why you can't sleep.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} smiled—the corners of her mouth curved, but her eyes disappeared. It turns out that someone so adept at hiding their feelings can even package disappointment as a nonchalant philosophical statement."
+        },
+        {
+          "who": "narration",
+          "text": "You stood side by side, watching the night view, separated by an invisible wall that you both knew perfectly well. The sounds of the city were far away, but the sound of your heartbeats was close—yet neither of you knocked on the door again."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Borrowed Night",
+      "goto": "s4d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The observatory was about to close. The star map on the dome slowly faded, returning to a plain white cement color—as if the universe had suddenly gone off duty. {name} didn't rush to leave, {ta} slowly strolled to the corner of the exhibition hall next to an old astronomical telescope—the kind from the 1980s made of brass, now only for display purposes."
+        },
+        {
+          "who": "name",
+          "text": "\"My dad is an astronomy enthusiast.\" {ta} lightly brushed his finger across the copper ring on the telescope tube, leaving a faint fingerprint. \"There's an identical one on our balcony. He brings it out every weekend night—to watch the stars alone until the wee hours. My mom thinks he's childish.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta}'s insomnia is hereditary. Her father would stay up until the early hours of the morning looking through a telescope, while her mother slept alone in bed—and {ta} inherited both of these habits as she grew up: the unseen stars, and the solitary wakefulness."
+        },
+        {
+          "who": "name",
+          "text": "\"Then my mom passed away. My dad moved the telescope up to the attic—and never used it again.\" {ta} withdrew her hand, a trace of verdigris on her fingertips. \"Sometimes I think—if he had spent more time with my mom back then, would the ending have been different? So now—I try my best not to become the kind of person who would rather look at the stars than look at the people around me.\""
+        }
+      ]
+    },
+    {
+      "id": "s4d",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Two: The Borrowed Night",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A security guard approached from a distance, urging them to hurry up. {ta} walked half a step ahead of you, the light shining down from the ceiling spotlights—stretching {ta}'s shadow long, covering all the gaps between you."
+        },
+        {
+          "who": "name",
+          "text": "\"The question I just asked you—\" {ta} stopped abruptly at the exit without turning around, \"I didn't want an answer. I wanted to hear—were you also waiting for the same question? Two people who refuse to ask first will just keep wasting time. I've already wasted time once.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta}“It’s been over once.” This one sentence revealed to me the complete picture of the person who left three years ago. From this moment on, all ambiguity was no longer fleeting—it weighed down the embers of another failure.",
+          "when": "tag: Sincerity>=1"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter Three: Two Lamps",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It was another late night on the terrace. The early autumn night was already a bit chilly, and you each stood on one side of the railing. This time—{ta} didn't rush back to her room as usual."
+        },
+        {
+          "who": "name",
+          "text": "\"Since you moved in, I've actually been working more overtime.\" {ta} leaned against the railing, a cigarette that would never be lit in her hand, a faint smile on her face. \"Because I know that when I get home—there will be someone's light still on on the balcony. Working overtime suddenly has something to look forward to.\"",
+          "when": "flag: to make clear"
+        },
+        {
+          "who": "name",
+          "text": "\"You're... really strange.\" {ta} gazed at the few stars that were unusually clear in the night sky. \"Even though I never promised anything, never gave you any title—I still get used to checking if your lamp is on before I go to sleep.\"",
+          "when": "flag: Ambiguous"
+        },
+        {
+          "who": "self",
+          "text": "Two lamps, a railing. What exactly are we—a support group for insomniacs, or a house of cards built on the edge of the city by two people afraid of being alone?"
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter Three: Two Lamps",
+      "goto": "s5c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The night breeze slightly billowed her silk shirt, and she suddenly turned to look at you—closer than ever before. Close enough that you could see a small reflection of yourself standing on the terrace in her eyes."
+        },
+        {
+          "who": "name",
+          "text": "\"Now,\" {ta} said softly, her voice hoarse with a sense of desperation, \"what do you want to do? I don't want to guess from behind the fence anymore—you put your thoughts on this fence.\""
+        },
+        {
+          "who": "self",
+          "text": "Placed on the railing—not hidden in my heart, not a nonchalant continuation of insomnia. This is the most naked invitation {ta} can offer."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter Three: Two Lamps",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The moonlight shone directly on the railing between you, making that section of metal appear white—like a galaxy waiting to be crossed."
+        }
+      ],
+      "options": [
+        {
+          "text": "I'll pretend that railing doesn't exist and be with you wholeheartedly.",
+          "textVariants": [
+            "Let's tear down this wall. I want to be by your side openly and honestly.",
+            "Stop standing behind those fences. What I want to be is the person you are, openly and honestly."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "reply": "{name}'s ear tips were translucent red in the moonlight, yet she didn't back down an inch: \"...You can't go back on your word. I have a very good memory.\"",
+          "os": "(The phrase \"{ta} etc.\" means waiting longer than expected. \"Good memory\" means being diligent.)"
+        },
+        {
+          "text": "Let's try holding hands first, what's the rush?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name} glanced at you: \"Try? I'm not someone you can use for testing.\" But before you could finish speaking, {ta}'s fingertips had already touched the back of your hand—cool, and she didn't pull them back.",
+          "os": "(She's stubborn—but her hands tell a different story. That touch on the back of her hand was half a step she took, summoning all her courage.)"
+        },
+        {
+          "text": "Whatever you say, I'll do it.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name} sighed: \"I'm asking what you want. This time—you decide. I don't want you to listen to me, I want to hear what you say.\"",
+          "os": "(They want your initiative, not your compliance. Obedience is for safety, initiative is for love.)"
+        },
+        {
+          "text": "Maintaining the status quo is fine; why break it?",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6",
+          "reply": "{name} took a half step back—exactly the distance of a railing. The renewed distance and the re-donning of the shell, all in one smooth motion: \"...Yeah, you're right. There's no point in breaking through. Goodnight.\"",
+          "os": "(The step {ta} took to get closer was pushed into the future by yourself. Goodnight—meaning it ends here.)"
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter Three: Two Lamps",
+      "goto": "s5d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The following evening, {name} returned from her business trip—dragging a suitcase and wearing high heels, she stepped out of the elevator. But she had only walked halfway down the corridor when her foot slipped—she had to brace herself against the wall to avoid falling. Her heel broke."
+        },
+        {
+          "who": "name",
+          "text": "\"What a disappointment.\" {ta} looked down at the broken heel and gave a helpless smile—the kind of smile that comes from someone used to handling everything alone. \"This was a gift from a project I negotiated on a business trip—and it's like this after only a week of wearing it. The biggest downside of living alone isn't loneliness, it's that there's no one to clean up these little messes for you.\""
+        },
+        {
+          "who": "self",
+          "text": "\"No one will deal with these little mishaps for you\"—{ta} said this casually, but there was a subtle weariness in her eyes, a weariness that had been worn down too many times. The cruelest thing about city life is not loneliness itself, but those little mishaps that are not worth talking about, yet happen day after day."
+        },
+        {
+          "who": "narration",
+          "text": "You didn't say anything, but simply took {ta}'s suitcase and then squatted down—taking off {ta}'s broken high heel. {ta} paused for a moment, then raised her hand to hold onto the wall, without flinching."
+        }
+      ]
+    },
+    {
+      "id": "s5d",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Chapter Three: Two Lamps",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} walked barefoot to the door, turned the key in the lock, and opened the door halfway. {ta} didn't go in immediately—she turned back to look at you."
+        },
+        {
+          "who": "name",
+          "text": "\"Want to come in for a glass of water?\" {ta}'s tone was still languid, but this was the first time since you'd known {ta} that {ta} had proactively invited you to cross that threshold. \"The water is just cooled boiled water. I never turn on the stereo at home. Nor do I have a piano. Everything is the opposite of what you think.\""
+        },
+        {
+          "who": "self",
+          "text": "{They} leave themselves an escape route by saying \"everything is the opposite of what you expected\"—in case you refuse, {they} can say, \"I knew it, it's pointless.\" This is {they}'s habitual self-defense—writing their own script before any possible disappointment occurs."
+        },
+        {
+          "who": "narration",
+          "text": "You followed {ta} into room 1102. The room wasn't what you expected—it wasn't cold—it was empty. Besides a real piano, two chairs, and a bookshelf filled with your father's old astronomical photographs, there was almost no other furniture. The whole room seemed to have been deliberately 'emptied' by {ta', waiting for someone to move in."
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "happy",
+      "chapter": "Final Chapter: No More Sleepless Nights",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "A few weeks later, at the same coffee shop downstairs. The difference was—this time, you were sitting in a booth on the same side. Your coat was draped over the back of {ta}'s chair, and {ta}'s latte was beside you."
+        },
+        {
+          "who": "name",
+          "text": "\"I've moved out of 1102.\" {ta} stirred her coffee, seemingly casually, but the curve of her lips betrayed her. \"Anyway, I probably won't need a room to sleep in alone anymore. The rent I save can buy a lot more lattes.\"",
+          "when": "flag: to make clear"
+        },
+        {
+          "who": "name",
+          "text": "\"Go on,\" {ta} said, resting her chin on her hand and looking at you with a languid scrutiny in her eyes, \"What are we trying to achieve by staying like this, neither too close nor too distant? Is it for the sake of our lights always being on at the same time?\"",
+          "when": "flag: Ambiguous"
+        },
+        {
+          "who": "self",
+          "text": "{ta} remained aloof, but when it came to saying \"checking out,\" it was like a general secretly putting away his cot. The battle was over, and the armor could finally be taken off and aired in the sun."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Final Chapter: No More Sleepless Nights",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{TA} pushed the cup of coffee on the table towards you—there was a faint lip print on the rim. Even more noteworthy was that {TA}, who never adds sugar, had half a packet of undissolved sugar in this cup today."
+        },
+        {
+          "who": "name",
+          "text": "\"I didn't add sugar before because life was already bitter enough—adding sweetness would be too much of a contrast, and I couldn't accept it.\" {ta} looked down at the cloudy coffee. \"But lately, I think I can drink sweet coffee now.\""
+        },
+        {
+          "who": "self",
+          "text": "\"I can drink sweet things now\"—this is what {they} is saying: Because of you, life isn't so bitter anymore. An adult's sweet talk is like putting a sugar packet in coffee and telling you—it doesn't seem so bad after all."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Final Chapter: No More Sleepless Nights",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sweetness of coffee lingered faintly in the air. {ta}'s fingers rested on the rim of the cup, her nails painted a barely visible nude color—just like {ta} herself, concealing everything in a subtle and profound way."
+        }
+      ],
+      "options": [
+        {
+          "text": "Hold {their} hand: If you can't sleep in the future, I'll stay with you—always.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name} held your hand tightly, almost as if afraid you'd run away. Her voice softened for the first time: \"...Remember what you said. Always. I really have a good memory.\"",
+          "os": "(Being given a sincere promise—this is what warmth feels like. {ta} locked those two words deep in her heart.)"
+        },
+        {
+          "text": "I take a sip of my sugared coffee with a smile: it's sweet, just like you.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "Together",
+          "reply": "{name}: \"Poverty. I'll never change my poverty.\" But {ta} picked up your cup, took a sip, wrinkled her nose, and said, \"...Too sweet. Put less next time.\"",
+          "os": "({ta} let you talk nonsense without complaining anymore. And—she's already thinking about next time.)"
+        },
+        {
+          "text": "For {TA}, I can give up everything and move here to take care of {TA}.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} frowned and withdrew her hand: \"What I want is for two people to be equal—not for you to sacrifice yourself. The person who lets go of everything will one day pick everything up again.\"",
+          "os": "(Your selfless devotion only made them back down. They've been let down before—they know the difference between sacrifice and love.)"
+        },
+        {
+          "text": "Push the coffee back: The sugar will be too much, I'd rather not.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "fulfill",
+          "reply": "{name} slowly withdrew her hand, picked up the cup of sugared coffee, and drank it herself—after finishing, she gently placed the cup back on the saucer: \"...I was just being presumptuous. The coffee's on me.\"",
+          "os": "(All the courage {ta} mustered was gently withdrawn by you—along with that half-pack of sugar that was useless even when sweetened. I'll pay the bill—we'll just go our separate ways.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Lamp",
+      "goto": "s7_newlife",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You returned to the observatory. The simulated star chart continued to rotate, Vega and Altair meeting and separating as usual. Only this time—{name} didn't stand half a step away, but naturally leaned against your shoulder."
+        },
+        {
+          "who": "name",
+          "text": "\"It's too quiet here; my heart can't be hidden.\" {ta} repeated that tentative question from before, but then smiled—not a cold smile, but a smile that curved both her lips and eyes. \"Now, I don't want to hide anymore. After hiding for so many years, I can finally hand in my paper.\"",
+          "when": "flag: Together"
+        },
+        {
+          "who": "self",
+          "text": "The thin wall, the narrow terrace, and the two lamps that once burned alone until dawn—now, they have finally become one. And from the other side of Vega, there has finally been an echo.",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7_newlife",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Lamp",
+      "goto": "s7a",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It's the first Saturday morning after you moved in together. You wake up to find {name} no longer in bed—there's a faint sound of a spatula being used in the kitchen. You go to the kitchen doorway and see {ta} standing barefoot in front of the stove, wearing your old shirt and frying eggs. Sunlight streams in through the window, turning {ta}'s hair a golden hue."
+        },
+        {
+          "who": "name",
+          "text": "{ta} turned around and saw you, and smiled naturally—a smile {ta} had never shown in front of anyone before, a smile that was completely unguarded. The egg was fried with slightly burnt edges, and {ta} picked it up with a spatula, a little annoyed: \"Your pan is better than mine—I'm not used to it yet. I'll get used to it.\""
+        },
+        {
+          "who": "self",
+          "text": "In her novel *Love in a Fallen City*, Eileen Chang wrote: \"In this chaotic era, individualists have nowhere to go.\" But in this city, no longer in chaos, two sleepless neighbors finally found a place where \"two people\" could fit in."
+        },
+        {
+          "who": "narration",
+          "text": "You moved your father's brass binoculars and pointed them out the window—from the eleventh-floor kitchen, you could see the street you first walked across under an umbrella. {ta} came over carrying two plates of fried eggs and leaned against your shoulder. So light, like a butterfly alighting on a petal."
+        }
+      ]
+    },
+    {
+      "id": "s7a",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Lamp",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On moving day, {ta} carried three cardboard boxes out of 1102—one contained clothes, one contained sheet music, and the last one, the heaviest, was {ta}'s father's old brass binoculars. {ta} placed it on your 1103 balcony, pointing it northwest."
+        },
+        {
+          "who": "name",
+          "text": "\"My dad said that his biggest regret in life wasn't not being able to see any stars clearly, but not moving the telescope from the balcony into the bedroom before the people around him passed away.\" {ta} adjusted the tripod, turned to you, and said, \"This telescope is yours. Call me if you want to look at the stars someday. I won't look at them alone anymore.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} moved the telescope that her father had regretted from her balcony (1102, where she lived alone) into our home (1103, where we live together). With this gesture, {ta} told me—that in this life, {ta} chose to look at the starry sky with me, rather than separately looking at it from across a room."
+        },
+        {
+          "who": "narration",
+          "text": "The evening glow reflected off the lens, bathing the entire wall in an orange-red hue. {ta} took a small key from her inner pocket—the last spare key for room 1102 before moving out—and handed it to you. \"Keep it. In case you ever want to live alone again, remember there's an empty room waiting for you to come back.\""
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Final Chapter: The Same Lamp",
+      "goto": "s7_morning",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The star map completed its final rotation, and the exhibition hall lights were about to come on. {ta} lingered on your shoulder for a moment, then straightened up—the starlight in its eyes was brighter than the projected image."
+        },
+        {
+          "who": "name",
+          "text": "\"Thank you,\" {ta} said softly, her voice as spacious and gentle as the observatory's dome. \"Every time I wanted to cool down, to retreat, you didn't back down. You are the only person I know who, after I closed all the doors, was still waiting for them to open.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} said \"thank you\" like a love confession. It turns out that for someone accustomed to solitude, being waited for is a luxury even more precious than being loved."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Final Chapter: Each Person's Lamp",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The spilled sugar in the coffee lay cold on the table. {name} put her outer shell back on—thicker and colder. She didn't even use an umbrella when she went out, just walked into the rain, the sound of her high heels gradually fading into the street."
+        },
+        {
+          "who": "name",
+          "text": "Later, when we occasionally bumped into each other in the hallway, {ta} simply nodded—polite, distant, and impeccably polite. Those late-night terraces, the shared black umbrellas, the starlight at the observatory—they were all just figments of imagination on some sleepless night.",
+          "when": "flag: fulfill"
+        },
+        {
+          "who": "self",
+          "text": "As I watched {ta}'s figure disappear at the end of the corridor, I realized that some walls, once missed the chance to be pushed open, will forever become load-bearing walls, impossible to demolish or overcome.",
+          "when": "tag: trash>=2"
+        },
+        {
+          "who": "narration",
+          "text": "After that night, the light in apartment 1102 next door was often left off. Perhaps it was because {they} finally learned to go to bed early—or perhaps it was simply because they no longer needed to leave a light on for anyone."
+        }
+      ]
+    },
+    {
+      "id": "s7_morning",
+      "type": "story",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "happy",
+      "chapter": "Final Chapter: The Same Lamp",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Another sleepless night has passed. As dawn breaks, {name} leans against the balcony railing—this time without cigarettes, holding a freshly brewed hot coffee. The coffee machine was bought together—It's Italian-made, cast iron; {ta} says it'll last a lifetime."
+        },
+        {
+          "who": "name",
+          "text": "\"When I couldn't sleep before—I always felt like the night would never end.\" She gazed at the clouds on the horizon, tinged with a pale purple by the first rays of dawn. \"Now it's different—I know the sun will eventually rise. Because someone is waiting with me.\""
+        },
+        {
+          "who": "narration",
+          "text": "The brass telescope on the balcony was pointed at the brightest star in the morning light—Venus. Venus is both a morning star and an evening star, just like {ta}—it can be very cold when it's cold, but when it's warm, it's the brightest star in the entire night sky."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "apartment_balcony_dawn",
+      "face": "shy",
+      "chapter": "Final Chapter - Epilogue",
+      "goto": "END",
+      "prompt": "As night falls, this story separated by a wall is about to come to an end. Now—what would you like to say to {name}? (≤100 words, it will be the final stroke of your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} leans on your shoulder, the breeze on the terrace is gentle, carrying the scent of night-blooming jasmine from downstairs. {ta} is waiting for you to speak—waiting for a word that belongs only to this moment, only to you two. The railing is already pressed very low by your arms.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The light in apartment 1102 next door is off. You stand alone on the terrace, gazing at the tightly closed window and the potted mint on the windowsill that you forgot to bring in. You want to whisper those unspoken words to the wind before dawn.",
+          "when": "flag: fulfill"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "The wall pusher",
+      "trigger": "top: sincerity",
+      "caption": "Even when {name} wanted to cool off and back down, you didn't let go—ultimately turning two rooms separated by a wall into two people under the same lamp. Finally, someone finished that cup of coffee with sugar.",
+      "report": "[Relationship Personality - The Wall-Pusher] You belong to the rare \"secure\" type: you can give your heart sincerely and accept tentative, unpredictable advances. You are not misled by ambiguity, nor deterred by aloofness—you always take a step forward at the right time. Eileen Chang said that meeting is \"in the boundless wilderness of time\"—and you not only met, but also pushed down that wall. Those who can be sincerely liked by you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "Shadow Chaser",
+      "trigger": "Top: Aquaman",
+      "caption": "You enjoy this push-and-pull game, coating every flutter of your heart with sugar, yet never letting a single glance truly settle into your heart.",
+      "report": "[Relationship Personality - The Shadow Chaser] You are incredibly charming and adept at navigating social situations. You understand the sweetness of ambiguity best, yet you fear the weight of commitment most. You've warmed countless nights, but you've always run away from the one willing to cancel another room for you. Don't wait until all the lights are off to realize you're all alone."
+    },
+    {
+      "endingId": "toxic",
+      "title": "Cold Wall",
+      "trigger": "top: scum",
+      "caption": "You meticulously calculated every inch of distance, treating every approach the other person made as a bargaining chip you could easily withdraw. The cup of coffee with sugar, in the end, remained untouched and cooled.",
+      "report": "[Relationship Personality - The Cold Wall] You are adept at weighing options, approaching when needed and retreating when not. You may never get hurt, but you also never truly get close—the wall you build doesn't block others, it blocks yourself."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Lamplighter",
+      "trigger": "top: Loyal Dog",
+      "caption": "For {name}, you'd gladly give up everything, move to {ta}'s side, and take on all the compromises yourself. But what {ta} wants is someone to stand shoulder to shoulder with.",
+      "report": "[Relationship Personality - The Light Bearer] You give your all, always ready to help, lowering yourself considerably, often moving yourself but leaving the other person feeling unresponsive. What {name} wants is an equal partner, not someone to sacrifice for {them}. Don't forget, two lights are meant to be together, not one burning itself out for the other."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "Lantern viewers",
+      "min": -99,
+      "caption": "As night fell, even the two lights that had lit up at the same time and then went out one after the other could not provide a definitive conclusion about your relationship.",
+      "report": "[Relationship Personality - The Observer] Your choices are unpredictable, sometimes sincere, sometimes distant. Perhaps you haven't figured out how close you really want to get. Recognize this first, then decide whether to push down that wall."
+    }
+  ]
+}

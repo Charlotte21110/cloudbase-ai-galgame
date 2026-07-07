@@ -1,0 +1,1003 @@
+{
+  "_id": "script_biz",
+  "id": "script_biz",
+  "title": "Merger Night: Capital and Original Aspirations",
+  "openingTip": "A merger and acquisition deal that could reshape the industry unfolds quietly in an office building at midnight. You are an analyst temporarily brought in, while the person holding the veto power—{name}—sits by the floor-to-ceiling window awaiting an answer. The night is long; most of the time, you only need to tap the screen to read this story. There aren't many crossroads where you truly need to make choices, but each one concerns money, people, and who you want to become.",
+  "prologue": "The lights were still on in the conference room on the 37th floor. A merger agreement valued at four billion lay on the table, the signature field blank. The opposing side was eyeing it covetously, the board was pressing hard, but {name}, who had championed the acquisition, pressed down on the pen at the last moment. \"I've looked at those numbers a thousand times,\" {ta} said. \"What I want to know now is what you think.\" From this night on, you and {name} would decide together: whether to swallow it whole, or to let it live.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Prologue: The Midnight Protocol",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "It was 11 PM, and only one light remained on in the entire office. Outside the floor-to-ceiling windows, the city lights shone coldly like a pool of frozen glass, reflecting a motionless figure. That was {name}—thirty-two years old, known in the M&A world as \"the knife that never misses.\" His resume was as clean as an unfolded sheet of paper, but everyone in the industry knew that once {ta} signed something, there was no turning back. When you were temporarily seconded here, the previous analyst only left one sentence: \"{ta} doesn't need advisors; {ta} just needs someone who can stand and listen to all the numbers without trembling.\""
+        },
+        {
+          "who": "name",
+          "text": "\"Sit down.\" She didn't turn around, her voice neither warm nor cold. \"The board meeting is tomorrow at nine o'clock. Have you read this agreement?\""
+        },
+        {
+          "who": "self",
+          "text": "I'm just a temporary analyst who was thrown in at the last minute; I haven't even had time to warm up to my new job yet. But the way {TA} asked me didn't sound like she was testing a subordinate—it sounded like she was assessing the worth of a partner."
+        },
+        {
+          "who": "name",
+          "text": "\"Don't read me reports.\" {ta} finally turned around, loosened his tie by two knots, and looked at him with a deep gaze. \"Tell me, do you think this deal is clean or not?\""
+        },
+        {
+          "who": "self",
+          "text": "The word \"clean\"—coming from {ta}'s mouth, surprised me more than any financial indicator. When did someone in M&A start caring about cleanliness?"
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Prologue: The Midnight Protocol",
+      "goto": "s2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You open the agreement and find that {ta} has written a line in pencil on the last page: \"A family that accumulates good deeds will surely have abundant blessings.\" It's a sentence from the I Ching."
+        },
+        {
+          "who": "self",
+          "text": "A person who has worked in mergers and acquisitions up to the 37th floor, writing the I Ching on a 4 billion contract... {ta} is hesitating about far more than just the numbers."
+        },
+        {
+          "who": "name",
+          "text": "\"You think I'm being pretentious too, right?\" {ta} gave a self-deprecating smile. \"Guan Zhong said, 'When the granaries are full, people know etiquette,' but when the granaries are too full, people tend to forget etiquette.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} isn't asking about mergers and acquisitions—{ta} is asking whether someone who has climbed so high still remembers how to come down."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "cafe_window",
+      "face": "shy",
+      "chapter": "Prologue: The Midnight Protocol",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} will take you downstairs to the coffee shop next to the lobby that's still open. It's the middle of the night, and there are only the two of you in the shop; the coffee machine is humming like a cat about to fall asleep."
+        },
+        {
+          "who": "name",
+          "text": "\"The company we've got our eye on was built from scratch by my college roommate.\" {ta} swirled his cup, the steam from the black coffee blurring his features. \"Now its cash flow is about to dry up, making it a good target.\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said \"good meat\", her tone was as flat as if she were giving a weather forecast. But {ta} didn't drink the coffee—she picked it up, then put it down again."
+        },
+        {
+          "who": "name",
+          "text": "\"That winter during my freshman year, I had a fever of 40 degrees Celsius, and {ta} carried me three kilometers to the hospital.\" {ta} suddenly said something unrelated, her voice so soft it was almost a soliloquy. \"Swallow it, I'll make a great quarterly report, the shareholders will applaud. But that company has over two hundred people; it's either layoffs or being reorganized.\" {ta} looked up, her eyes deep in the dim light, \"What would you say to me?\""
+        },
+        {
+          "who": "self",
+          "text": "It wasn't that he was cold-blooded. He had just suppressed all his passion into a rational mind capable of calculating."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "cafe_window",
+      "face": "angry",
+      "chapter": "Prologue: The Midnight Protocol",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} placed that pen between you. The bitterness of the black coffee hadn't faded yet, and {ta} was waiting for you to respond—not for you to agree, but for you to give a judgment that {ta} herself dared not make."
+        }
+      ],
+      "options": [
+        {
+          "text": "Numbers may expire, but reputation will. I'll help you make it a respectable acquisition.",
+          "textVariants": [
+            "Respect is more valuable than quick money. I'll talk to you slowly and reach a win-win solution.",
+            "Don't just look at the quarterly reports. Let me work with you to make it a clean business."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "reply": "{name} raised an eyebrow: \"Dignity...it's been a long time since anyone dared to mention those two words in front of me.\"",
+          "os": "(A hint of surprise flashed in her eyes, as if she had been caught after a long time.)"
+        },
+        {
+          "text": "Cleanliness doesn't matter, making money is what matters, don't you think?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} said calmly, \"Smooth. Too bad that's not what I was asking.\"",
+          "os": "(He/She has heard this kind of talk too many times; it goes in one ear and out the other.)"
+        },
+        {
+          "text": "I'll follow whatever you decide. I'll do the dirty work, and you can keep the reputation.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "reply": "{name} frowned: \"What I need is judgment, not a knife to take the blame for me.\"",
+          "os": "(Another person who only wants to take the blame for others.)"
+        },
+        {
+          "text": "It's just a matter of the strong preying on the weak; swallowing it is only natural.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s3",
+          "reply": "{name} put down her pen, her tone turning cold: \"...Sure enough, it's the same no matter who you ask.\"",
+          "os": "(The glimmer of hope that had just begun to rise has cooled down again.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Chapter 1: Opponent's Position",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Back in the office, {name} unfolded the second document—a competitor's offer, a full two hundred million higher than theirs. The wording of that offer was as cold as a sharpened whetstone: \"Upon completion of the acquisition, the brand will be deregistered, the core team disbanded, and the assets sold off in installments.\""
+        },
+        {
+          "who": "name",
+          "text": "\"It's not just us who want to eat it.\" {ta} pointed to the number. \"The other side offered an even more ruthless price and had even dirtier terms: buy it, dismantle it, bury the brand along with it. Don't even leave the ashes.\""
+        },
+        {
+          "who": "self",
+          "text": "It turns out that what {ta} was hesitating about wasn't just whether or not to acquire it—but that if they didn't act, the company would fall into the hands of someone even more ruthless. This wasn't about seizing territory; it was about saving a life."
+        },
+        {
+          "who": "name",
+          "text": "\"So this isn't about 'whether or not to do something bad,'\" {ta} said in a low voice, looking out the window. \"It's up to me to be the less bad one, even if the financial reports don't look so good.\""
+        },
+        {
+          "who": "self",
+          "text": "The Records of the Grand Historian, in its chapter on \"Biographies of Merchants,\" says, \"Buy what others discard, sell what others buy.\" But what {ta} is doing now is: if others want to kill, {ta} will come to their rescue. This is no longer business."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter 1: Opponent's Position",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} laid two quotes side by side on the table. One was his own, conservative, respectable, with a three-point profit margin. The other was the other party's, aggressive, ruthless, and full of clauses designed to cut off their profits."
+        },
+        {
+          "who": "name",
+          "text": "\"Look at these two things,\" {ta} said, arms crossed, \"doesn't it look like a mirror? The left side is what I want to do, and the right side is what the market wants me to do.\""
+        },
+        {
+          "who": "self",
+          "text": "When {ta} said \"mirror\", her lips were pressed into a very straight line. On either side of that line were the views from the thirty-seventh floor and the abyss."
+        },
+        {
+          "who": "name",
+          "text": "\"Come on, which way should we make the first cut—give me a direction.\" {ta} placed the pen between the two quotes. \"Tonight, I'll listen to you.\""
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter 1: Opponent's Position",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} closed the counterparty's offer sheet and pulled out another old, curled-edge document from deep within the drawer—a merger and acquisition file from twelve years ago. The cover was stamped with the word \"Terminated\" in bright red."
+        },
+        {
+          "who": "name",
+          "text": "\"Twelve years ago, on my first independent project,\" {ta}'s voice suddenly softened, \"I used the harshest terms to acquire a family business that had been around for twenty years. The boss's wife knelt down before me on the day of signing—begging me to keep twenty long-time employees, all over fifty years old. I didn't. At the time, I only thought—for someone doing mergers and acquisitions, if you soften your heart, you're finished.\""
+        },
+        {
+          "who": "self",
+          "text": "I looked at the table of contents of the \"Termination\" file—a full seventy-two pages. {ta} kept this case until now—not as a battle record, but as a disciplinary rod. Every page was a reminder {ta} hadn't dared to forget when taking action over the past twelve years."
+        },
+        {
+          "who": "name",
+          "text": "\"The boss's wife jumped off a building six months later.\" {ta} closed the file, her voice chillingly steady. \"Her youngest daughter was only ten years old at the time. Over the years, I've anonymously sent money to that family every year during holidays—but I can't bring that life back. So, regarding Old Shen's situation—I don't want to go down that path again.\""
+        },
+        {
+          "who": "self",
+          "text": "Sima Qian said in the Records of the Grand Historian, \"All the world's hustle and bustle is for profit.\" But {ta}'s twelve years of secret atonement tells me—business people are also human. Account books can be settled, but the account of conscience—can never be settled fairly."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Chapter 1: Opponent's Position",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} presents two quotes side by side in front of you, waiting for you to make your first cut. The pen lies in the middle, like an undecided pointer."
+        }
+      ],
+      "options": [
+        {
+          "text": "We secured it, but wrote it into the agreement: the people stay, the brand stays.",
+          "textVariants": [
+            "Seize the opportunity, but with conditions—preserve the team and the brand.",
+            "If we take them in, at least we can give those two hundred people a chance to survive."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "reply": "{name} whispered, \"Do you know this will lower my profit margin?\" but was already revising the terms.",
+          "os": "({ta} talks the talk, but writes exactly what you say.)"
+        },
+        {
+          "text": "First, spread rumors to raise prices, putting the other side in a very difficult position.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}: \"Your methods are good, but you've avoided what I'm really asking.\"",
+          "os": "(Clever, but didn't catch her heart.)"
+        },
+        {
+          "text": "With your approval, I worked through the night to perfect the repairs.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "reply": "{name}: \"Don't just stay up all night, lend me your brain first.\"",
+          "os": "(He's willing to work hard, but what he lacks isn't strength.)"
+        },
+        {
+          "text": "Why fight over it? It's smarter to let the other side take on this mess.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s4",
+          "reply": "{name} paused for two seconds: \"...Those two hundred people, in your words, are just a 'mess'.\"",
+          "os": "({ta} noted that you have no one in your eyes.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Chapter Two: Old Feuds on the Rooftop",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At three in the morning, you went up to the rooftop for some fresh air. It was still dark; the city looked like a cold circuit board. {name} leaned against the railing, unusually quiet, not talking about numbers. The night wind billowed {ta}'s shirt as {ta} gazed at the small building in the distance still lit up—that was the headquarters of the acquired company; the founders probably hadn't slept all night either."
+        },
+        {
+          "who": "name",
+          "text": "\"That roommate... back when my business failed and I was heavily in debt, it was {them} who took me in and let me sleep on the sofa for three months.\" {them} gripped the railing tightly. \"They left me food every day, while they ate instant noodles themselves.\""
+        },
+        {
+          "who": "self",
+          "text": "For the first time, I realized that beneath that cold, hard exterior lay a debt that had never been repaid. This debt wasn't something that could be converted into a quantifiable amount of goodwill."
+        },
+        {
+          "who": "name",
+          "text": "\"Do you know what's most ironic?\" {ta} smiled bitterly, \"Back then, {ta} taught me: 'In business, character comes first.' Now, it's my turn to decide {ta}'s business and {ta}'s character.\""
+        },
+        {
+          "who": "self",
+          "text": "The ancients said, \"A drop of water in need deserves a spring in return.\" But when gratitude and self-interest are mixed together, even a spring of water can turn into spilled water."
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Chapter Two: Old Feuds on the Rooftop",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} pulled an old photo out of the inside pocket of his suit—a group photo from their university days, with the two of them arm in arm, laughing carefree."
+        },
+        {
+          "who": "name",
+          "text": "\"I've thrown this photo away three times during my moves, only to pick it up again each time.\" {ta} placed it on the railing. \"My dad said, 'Don't be too sentimental in business.' But I'm the kind of person who's overly sentimental.\" \"I can be very clean, or I can be very ruthless.\" {ta} finally turned to look at you, a rare vulnerability in her eyes. \"For this next step, I want to hear your opinion—not the board's, not the market's.\""
+        },
+        {
+          "who": "self",
+          "text": "At this moment, {ta} doesn't seem like a trader who never makes a mistake. More like someone clutching an IOU, unsure how to repay it."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "sad",
+      "chapter": "Chapter Two: Old Feuds on the Rooftop",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The old photograph trembled slightly in the night breeze, like an unresolved past relationship. {ta} gave you two paths: one was to meet with an old friend that very night for a frank negotiation; the other was to launch a lightning-fast attack according to the opponent's rhythm, striking first to gain the upper hand."
+        }
+      ],
+      "options": [
+        {
+          "text": "Go see {them}. Put down the knife and sit down to talk.",
+          "textVariants": [
+            "Arrange a face-to-face meeting. This kind of thing shouldn't be done through a sneak attack.",
+            "Go in person. Make things clear face-to-face; that's the only way to justify those three months on the sofa."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "sA1",
+          "flag": "Honesty",
+          "reply": "{name} paused for a moment: \"...What if {ta} turns hostile on the spot?\" She asked, but her feet were already turning towards the elevator.",
+          "os": "What they fear is never a falling out, but facing the person who saved them."
+        },
+        {
+          "text": "I'll go with you; if the negotiations break down, I'll cover for you.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "sA1",
+          "flag": "Honesty",
+          "reply": "{name}: \"This time, you're not allowed to take the blame for me. I have to pay this debt myself.\"",
+          "os": "(For the first time ever, she wants to face it herself.)"
+        },
+        {
+          "text": "In the business world, there are no fathers or sons; the first to strike wins. A swift and decisive victory is key.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "sB1",
+          "flag": "storm",
+          "reply": "{name} smiled coldly: \"That's true. Soft-hearted people don't survive past the thirty-seventh floor.\"",
+          "os": "(Your decisiveness pushed {ta} back into that armor.)"
+        },
+        {
+          "text": "Old feelings are old feelings, business is business; let bygones be bygones.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "sB1",
+          "flag": "storm",
+          "reply": "{name} turned her face away: \"...You're right. I was being dramatic.\"",
+          "os": "(You personally extinguished that last bit of hesitation from her.)"
+        }
+      ]
+    },
+    {
+      "id": "sA1",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "shy",
+      "chapter": "Interlude: Negotiations in the Rain",
+      "goto": "sA1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At four in the morning in the old town, under the awnings of the shopping arcades, {name}'s old friend waited there with an umbrella. Seeing {ta} approach, he gave a bitter smile—a smile that came from having prepared for the worst."
+        },
+        {
+          "who": "name",
+          "text": "\"Old Shen.\" {name} softened his voice, stopping three steps away from his old friend. \"I'm not here to collect a debt. I'm here... to find a decent way to live with you.\" \"You took me in for three months back then, I haven't forgotten.\" {ta}'s voice was steady, but the veins on his hand gripping the umbrella handle were bulging. \"Today, consider it paying back the interest on those three months—but not by devouring you, but by protecting you.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} crumpled up the prepared, legally jargon-filled, and forceful clauses into a ball and threw it into the rainwater by the roadside. At that moment, {ta} didn't seem like a CEO, but rather like an old friend finally willing to repay a favor."
+        }
+      ]
+    },
+    {
+      "id": "sA1b",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "shy",
+      "chapter": "Interlude: Negotiations in the Rain",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The three of them talked under the eaves until dawn. The old friend was initially reserved, but his eyes slowly reddened—not because of the acquisition, but because after waiting for so many years, he finally heard the words, \"I haven't forgotten.\""
+        },
+        {
+          "who": "name",
+          "text": "\"Here's the plan: you stay and manage the brand, no changes to personnel, we'll invest, and your team will still be yours.\" {ta} pushed the newly drafted terms over, \"The only condition—you get the company back.\""
+        },
+        {
+          "who": "narration",
+          "text": "Amidst the sound of rain, Old Shen took the pen—the same one {name} had pressed down earlier. This time, it didn't mark conquest, but reconciliation."
+        },
+        {
+          "who": "self",
+          "text": "A dignified acquisition is not about making the other party kneel down, but about making them willing to stand up with you."
+        }
+      ]
+    },
+    {
+      "id": "sB1",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "angry",
+      "chapter": "Interlude: A Powerful Attack in the Rain",
+      "goto": "sB1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On a rainy night, {name} launched a lightning-fast acquisition. Legal teams, investment banks, and media press releases were all in place overnight—this is {ta}'s signature style: fast, accurate, ruthless, and leaving no room for error."
+        },
+        {
+          "who": "name",
+          "text": "\"We won.\" {ta} stood under the arcade, looking at the victory report flashing on her phone, but there was no smile on her face. Rain soaked half of {ta}'s suit, but {ta} was completely unaware."
+        },
+        {
+          "who": "self",
+          "text": "She won, she did. But her expression after winning was like someone who had just gambled away all their best friend's money at the gambling table."
+        },
+        {
+          "who": "narration",
+          "text": "On {ta}'s phone screen, the message she had edited three times but hadn't sent to Lao Shen remained stuck there: \"Lao Shen, don't blame me.\" She typed those three words, deleted them, and typed them again."
+        }
+      ]
+    },
+    {
+      "id": "sB1b",
+      "type": "story",
+      "sceneKey": "shopping_arcade_rain",
+      "face": "sad",
+      "chapter": "Interlude: A Powerful Attack in the Rain",
+      "goto": "s5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The opposing team was caught off guard and surrendered before dawn. But {name} held his phone tightly in his palm—as if pressing down on something he didn't want anyone to see."
+        },
+        {
+          "who": "name",
+          "text": "\"Sun Tzu's Art of War says, 'To subdue the enemy without fighting is the supreme excellence.'\" {ta} suddenly laughed self-deprecatingly, \"What am I? I subdued an old enemy's army through battle.\""
+        },
+        {
+          "who": "self",
+          "text": "The strategy won, but what about human relationships? {ta}, with her back to the rain, looked like someone who had just used the sharpest knife to cut the last thread that held them together."
+        },
+        {
+          "who": "narration",
+          "text": "The rain fell harder and harder. That message sent to Lao Shen was eventually deleted, word by word, by {ta}."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Chapter Three: The Night Before the Vote",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The rain stopped. You made a brief stop at the suburban station, with only a few hours left before the board vote. The first rays of sunlight peeked through the clouds, like a hesitant verdict."
+        },
+        {
+          "who": "name",
+          "text": "\"You advised me last night to keep the staff and the brand...\" {ta} looked at the empty platform, her voice unusually weary, \"I did as you said. The price is, the quarterly report will look terrible.\"",
+          "when": "flag: Honesty"
+        },
+        {
+          "who": "name",
+          "text": "\"I won, cleanly and decisively.\" {ta}'s voice was flat, as if reading a briefing unrelated to herself, \"But for some reason, I don't feel any satisfaction at all.\"",
+          "when": "flag: Strong Attack"
+        },
+        {
+          "who": "self",
+          "text": "{ta} stood in the newly cleared sunlight, like someone who had finally removed half of their armor—the other half was still rusted on, having grown into the flesh because it hadn't been removed for so long."
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Chapter Three: The Night Before the Vote",
+      "goto": "s5c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The last train had long since departed, and only the wind blew across the empty tracks on the platform. At the end of the tracks, the sky was gradually brightening, like an answer slowly unfolding."
+        },
+        {
+          "who": "name",
+          "text": "\"I've always felt that people who do mergers and acquisitions need to have a scale in their hearts,\" {ta} suddenly said. \"On one hand, there's the consideration of interests; on the other hand, there's the consideration of bottom lines. No one can weigh the scales for you.\" \"If the board forces me to renege on my promises tomorrow and lower the price again...\" {ta} looked at you, her gaze containing both probing and a rare sense of entrustment, \"What do you think I should do?\""
+        },
+        {
+          "who": "self",
+          "text": "The last time {ta} asked someone \"what should I do\" was probably back in college. Turns out, even this armor isn't seamless."
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Chapter Three: The Night Before the Vote",
+      "goto": "s5d",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} pulled his phone from his inside suit pocket. On the screen was a draft text message he hadn't sent—the recipient was listed as \"Old Shen,\" and the message itself contained only six characters: \"Sorry, let me take this gamble.\""
+        },
+        {
+          "who": "name",
+          "text": "\"I edited this text message every time I wrote the proposal.\" {ta} handed you her phone, her eyes showing the exhaustion from days of overtime work. \"I edited it seventeen times, but I didn't dare send it even once. I was afraid that if the board forced me to break my promise—these six words would become a second lie to them.\""
+        },
+        {
+          "who": "self",
+          "text": "Sima Guang wrote in *Zizhi Tongjian*: \"Trust is the treasure of a nation and the protection of its people.\" {ta} told me through seventeen edits and seventeen unsent text messages—that a true businessman holds the word \"trust\" in higher esteem than any contract."
+        },
+        {
+          "who": "name",
+          "text": "\"Before the vote tomorrow.\" {ta} shoved her phone back into her pocket. \"No matter the outcome, I have to send this text. It'll either be 'Thank you for trusting me,' or 'Sorry, I failed'—I can't avoid this.\""
+        }
+      ]
+    },
+    {
+      "id": "s5d",
+      "type": "story",
+      "sceneKey": "station_after_rain",
+      "face": "shy",
+      "chapter": "Chapter Three: The Night Before the Vote",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "At the train station, just as dawn was breaking, {ta} suddenly asked a question that caught you completely off guard."
+        },
+        {
+          "who": "name",
+          "text": "\"Why are you willing to stay up all night with me?\" {ta} didn't look at you, her voice was very soft, \"You're just an analyst who was temporarily assigned here. If I win—you won't get much credit. If I lose—you'll have to change your employee badge. From an economic point of view, this kind of deal isn't worthwhile.\""
+        },
+        {
+          "who": "self",
+          "text": "I didn't answer immediately. {ta} didn't press further. The two of us stood there in the station, watching the sky gradually brighten. I suddenly realized—{ta} wasn't asking why; {ta} was confirming: there are still people in this world who are willing to walk with {ta} for a while, even without expecting anything in return."
+        },
+        {
+          "who": "name",
+          "text": "\"No need to answer.\" {ta} turned and walked towards the taxi stand, glancing back at you with a vulnerability {ta} would never normally show. \"You've stayed until now—that's the answer in itself. See you at nine tomorrow. The board meeting—and you.\""
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "station_after_rain",
+      "face": "sad",
+      "chapter": "Chapter Three: The Night Before the Vote",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The railway tracks gleamed coldly in the morning light, and once again, {TA} handed the decision-making power to you. This time, there were no financial models, no risk assessments—only {TA}'s bottom line, which was revealed in your answer."
+        }
+      ],
+      "options": [
+        {
+          "text": "Keep your promise. I'll stand by you through thick and thin with the board.",
+          "textVariants": [
+            "You can't take back what you've said. I'll stand up to the board of directors and fight you to the death.",
+            "I promised, so I'll keep my word. I'll go to the meeting with you tomorrow."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "reply": "{name} chuckled softly: \"For the first time, someone said 'I'll stand by you and bear this together,' and it actually felt like a serious offer.\"",
+          "os": "({ta} has secretly memorized this phrase \"together\" for a long time.)"
+        },
+        {
+          "text": "I'll help you come up with a good response; you can always smooth things over no matter what you say.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Being tactful might get me through this, but I can't get through my own self-criticism.\"",
+          "os": "(What {ta} needs is not a stepping stone, but confidence.)"
+        },
+        {
+          "text": "If you step back, I'll take the brunt of the board's criticism.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6",
+          "reply": "{name}: \"Don't always try to block my way or stand next to me.\"",
+          "os": "(What {ta} wants is to stand shoulder to shoulder, not to be a shield.)"
+        },
+        {
+          "text": "What's the value of a promise? If the profit margin isn't good, tear it up first.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s6",
+          "reply": "{name}'s eyes turned cold: \"...So, in your eyes, my words are worthless.\"",
+          "os": "({ta} remembered what you just said as a crack.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Final Chapter: Board of Directors",
+      "goto": "s6_board",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Voting day. Suits filled both sides of the long conference table, the air thick with numbers and calculations. Sunlight streamed through the blinds, dividing everyone's faces into light and shadow."
+        },
+        {
+          "who": "name",
+          "text": "\"I know this plan has a three-point lower profit margin.\" {ta} looked around the room, stood up, and projected the plan onto the big screen. \"But it saved a team and a brand.\""
+        },
+        {
+          "who": "narration",
+          "text": "Several shareholders' expressions changed immediately. One senior director slammed his teacup on the table: \"{name}, when did you start treating quarterly reports like charity?\""
+        },
+        {
+          "who": "name",
+          "text": "\"This is not charity.\" {ta}'s voice was unusually steady. \"This is what Guanzi said: 'For a year's plan, nothing is better than planting grain; for a ten-year plan, nothing is better than planting trees; for a lifelong plan, nothing is better than cultivating people.' What you want is a year, what I want is ten years.\""
+        },
+        {
+          "who": "self",
+          "text": "All eyes in the room were fixed on {ta} like needles. But {ta} didn't back down; she simply turned her head and glanced at you quickly. Only you understood the meaning in that glance.",
+          "when": "flag: Honesty"
+        },
+        {
+          "who": "self",
+          "text": "{ta} won the case, but was unwilling to accept defeat. Standing there now, {ta} seemed to be negotiating with her past self—the winning self was the ruthless operator, the losing self was the one who owed three months' worth of sofas.",
+          "when": "flag: Strong Attack"
+        }
+      ]
+    },
+    {
+      "id": "s6_board",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "angry",
+      "chapter": "Final Chapter: Board of Directors",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The old director tapped the corner of the table—and the room fell silent. \"Let's vote.\" He took off his reading glasses and placed them on the table. \"Everyone—please raise your paddles. Those who agree to the plan to reduce the profit margin by three percentage points—white paddle. Those who insist on breaking their promise and renegotiating the price—blue paddle.\""
+        },
+        {
+          "who": "narration",
+          "text": "A dozen hands shot up one after another. White card, blue card, blue card, blue card—the first three votes were all blue. The old director himself hadn't raised his hand yet—he stared at the table, rubbing his thumb three times on his temple."
+        },
+        {
+          "who": "name",
+          "text": "{name} didn't move. {ta} simply opened the text message she had typed seventeen times but never dared to send—to Lao Shen, the message read, \"Sorry, let me take this gamble.\" {ta} pressed send. Then she looked up—and continued waiting."
+        },
+        {
+          "who": "narration",
+          "text": "The text message was sent. Old Shen didn't reply immediately—but {name} stopped looking at the screen. {ta} placed the phone screen-down on the table—like a gambler who had staked out their last chip. The rest was up to the person raising the pawn."
+        },
+        {
+          "who": "self",
+          "text": "The Art of War says, \"Throw them into a place of certain death, and they will live; trap them in a deadly situation, and they will survive.\" But today, {ta} isn't betting on tactics or strategies—it's betting on the hearts and minds of people accumulated over twelve years in those seventeen \"send\" buttons that she didn't dare press."
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Final Chapter: Board of Directors",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The silence was so long it was suffocating. You could hear the hum of the central air conditioning, the soft clinking of teacups, and the faint sound of {name}'s fingertips rubbing against the casing as he gripped the laser pointer."
+        },
+        {
+          "who": "self",
+          "text": "At this moment, {ta} stands alone on a dividing line—to the left are the gazes of shareholders and executives, to the right is the young man who carried {ta} for three kilometers. {ta} stands in the middle, waiting for someone to give {ta} a push."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Final Chapter: Board of Directors",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The senior director pressed on, demanding the immediate withdrawal of the commitment and a heavy price increase. {name} remained silent, waiting for your response—waiting for a reason that would allow {ta} to stand firm amidst widespread condemnation."
+        }
+      ],
+      "options": [
+        {
+          "text": "Stand up for them: This isn't charity; it's a long-term business.",
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s7",
+          "flag": "side by side",
+          "reply": "For the first time, a smile appeared in {name}'s eyes: \"Did you hear that? This is the real account.\"",
+          "os": "(Someone publicly stood on {ta}'s side, and {ta} suddenly didn't feel lonely anymore.)"
+        },
+        {
+          "text": "To smooth things over: Promise shareholders a return on investment within three years.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s7",
+          "flag": "side by side",
+          "reply": "{name}: \"Promises can only buy time. But... thank you for getting me out of that predicament.\"",
+          "os": "(Even though it was just a bluff, it did shield {ta} from some trouble.)"
+        },
+        {
+          "text": "Forget everything else, I'll just quit my job and take the blame for {ta}.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "sad",
+          "goto": "s7s",
+          "flag": "sacrifice",
+          "reply": "{name} retorted urgently, \"Nonsense! Who asked you to trade your future for my dignity!\"",
+          "os": "(Your reckless act of self-sacrifice failed to resolve the situation for {them}.)"
+        },
+        {
+          "text": "If things turn bad, shut up and pretend you didn't see it.",
+          "score": -10,
+          "tag": "scum",
+          "face": "angry",
+          "goto": "s7s",
+          "flag": "sacrifice",
+          "reply": "{name} faced the room full of questions alone, without glancing at you again.",
+          "os": "(When someone should have stood up, you chose to remain silent.)"
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "s7_reply",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The debate continued until noon. {name} convinced half of the wavering shareholders with a longer-term cash flow model—dragging out curves for three, five, and ten years. The proposal passed by a narrow margin. As the meeting adjourned, the old director who had slammed his fist on the table walked to the door, then suddenly turned back: \"{name}, what you said today reminded me of when I first entered the industry. Back then, we also valued propriety.\""
+        },
+        {
+          "who": "name",
+          "text": "\"We won.\" {ta} loosened her tie, turned to you, and a genuine smile finally appeared on her lips. \"This time, it was truly satisfying. Not through crushing, but through persuasion.\"",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "self",
+          "text": "You suddenly understand the night {ta} held down that pen—{ta} never wanted to swallow the most ruthlessly, but to close a deal that wouldn't make you blush with shame later. This is probably what the ancients meant by \"looking up to heaven without shame, and looking down to men without remorse.\"",
+          "when": "tag: Sincerity >= 3"
+        }
+      ]
+    },
+    {
+      "id": "s7_reply",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "shy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "s7b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} walked to the French windows and turned her phone over—the text message she sent to Lao Shen had finally received a reply. Only eight words: \"Thank you. Those three months sleeping on the sofa weren't for nothing.\""
+        },
+        {
+          "who": "name",
+          "text": "After reading those eight words, {ta} held her phone in her hand and smiled—not the standard smile from a board meeting, but the smile of someone patting her on the shoulder in her college dorm and telling her how lucky she was. {ta}'s fingers trembled slightly as she put the phone in her suit pocket. \"Twelve years—this text message, I've waited twelve years.\""
+        },
+        {
+          "who": "self",
+          "text": "This wasn't just a polite thank you; it was something Lao Shen earned through his own heartfelt gratitude. Lao Shen took {ta} in during their university years, and now {ta} has taken over Lao Shen's company—as the Book of Songs says, \"You give me a peach, I return you a precious jade,\" and they use the idiom \"returning a favor\" to describe their relationship."
+        },
+        {
+          "who": "narration",
+          "text": "{name} took a screenshot of the text message. Above the screenshot was the message {ta} had sent: \"Sorry, let me take this gamble.\" The distance between the two messages was exactly the distance between owing three months' worth of sofas and saving the livelihoods of over two hundred people."
+        }
+      ]
+    },
+    {
+      "id": "s7b",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "happy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "s8",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} walked to the French windows and drew back all the curtains. The midday sun rushed in, illuminating the signed agreement on the table—the terms were much more lenient than initially suggested. The dying company had survived, and over two hundred people had kept their jobs. The news spread, and Old Shen sent a text message with only four words: \"Thanks, brother.\" {name} stared at it for a long time without replying—but {ta} took a screenshot of those four words."
+        },
+        {
+          "who": "self",
+          "text": "In the end, what remains in business is never the numbers on the financial statements, but the people who dare to call you late at night, and whom you dare to answer."
+        }
+      ]
+    },
+    {
+      "id": "s7s",
+      "type": "story",
+      "sceneKey": "office_night",
+      "face": "sad",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "s8",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "No one came to the rescue for {name}. Under intense pressure from shareholders, the promises were halved, and the offer was pushed back down."
+        },
+        {
+          "who": "name",
+          "text": "\"It's done.\" {ta} signed the document, her smile faint, as if seen through frosted glass. \"I've earned everything I was supposed to. It's just... not quite what I originally wanted to do.\""
+        },
+        {
+          "who": "self",
+          "text": "I impulsively wanted to take on everything for {them}, but I couldn't help at all. It turns out that carrying someone's burden and helping someone win are two different things.",
+          "when": "tag: Loyal dog >= 2"
+        },
+        {
+          "who": "narration",
+          "text": "That company was ultimately broken up. {name} won with a brilliant quarterly report, but lost an old debt it could never repay. That message sent to Lao Shen remains forever buried in the drafts folder."
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "happy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "s8_contract",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Dusk falls, and it's that rooftop again. {name} hands you a cup of coffee—this time, {ta}'s, with sugar. On the rim of the white porcelain cup, there's a faint lip print from {ta}. The setting sun bathes the entire city in a warm gold. You lean side-by-side against the railing, below you see the flow of people leaving get off work and the streetlights gradually lighting up. This is the essence of everyday life."
+        },
+        {
+          "who": "name",
+          "text": "\"You're probably the only person in this building who dares to talk to me about 'decency,'\" {ta} said, gazing at the setting sun. \"And the only one I'm willing to listen to.\"",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "name",
+          "text": "\"I didn't do my best this time,\" {ta} said softly, gripping her coffee cup tightly. \"But you showed me that I can do differently next time.\"",
+          "when": "flag: sacrifice"
+        },
+        {
+          "who": "self",
+          "text": "The setting sun bathed {their} profile in a warm glow. Even the toughest person longs for someone to settle scores with them, to ease their mind. Not for the sake of the moment, not for the sake of gain or loss."
+        }
+      ]
+    },
+    {
+      "id": "s8_contract",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "happy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} pulled the signed agreement from her suit pocket—on the last blank page, the words she had originally written in pencil, \"A family that accumulates good deeds will surely have abundant blessings,\" were still there. Next to them was a new line of text, written in fountain pen: \"This agreement prioritizes people.\""
+        },
+        {
+          "who": "name",
+          "text": "\"These eight characters—from now on, will be my signature stamp.\" {ta} handed you the pen. \"Next time there's a merger or acquisition, you'll sign for me—I want you to oversee things for me because you're the only one who, when reading an agreement, doesn't first calculate profits, but first counts how many 'person' characters are on it.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} spun off a 4 billion yuan acquisition deal into an eight-word promise. From the I Ching to \"people first\"—{ta} spent an entire night transforming a trader into a guardian of the truth."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Final Chapter - The Gavel Falls",
+      "goto": "END",
+      "prompt": "The merger is over, the long night has ended. Now—what would you like to say to {name}? (≤100 words, this will be the final piece of your story)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} leans against the railing, handing you coffee. The setting sun casts an amber glow on {ta}'s eyes. {ta} is waiting for you to speak—waiting for a sentence unrelated to the quarterly report, only about you two.",
+          "when": "flag: side by side"
+        },
+        {
+          "who": "narration",
+          "text": "{name} gazed at the departing crowd below, a hint of lingering regret in her expression. She wanted to tell {ta} the words she hadn't yet uttered. Perhaps it wasn't too late.",
+          "when": "flag: sacrifice"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Fellow travelers",
+      "trigger": "top: sincerity",
+      "caption": "In this battle of capital, you consistently held onto that line—making business a respectable and dignified affair. From the I Ching to Guanzi, the words you wrote on the contract have finally resonated.",
+      "report": "[Relationship Personality - Partner] You belong to the rare \"safety-conscious\" type: you are clear-headed and uphold your principles. When faced with the tug-of-war between interests and initial intentions, you are neither naive nor cold-blooded; you always manage to guide the other person down the more difficult but more dignified path. The ancients said, \"A gentleman loves wealth, but acquires it in a righteous way\"—you are the one who puts that righteousness into practice. Those who can partner with you are truly blessed."
+    },
+    {
+      "endingId": "playboy",
+      "title": "profiteers",
+      "trigger": "Top: Aquaman",
+      "caption": "You are incredibly tactful and your words are always perfectly crafted, smoothing things over for everyone—yet you never truly invest your heart in any deal.",
+      "report": "[Relationship Personality - The Profit-Seeker] You are quick-witted, resourceful, and adept at navigating social situations, making you the most popular negotiator. However, you are so skilled at gracefully exiting the game that no one can truly understand your intentions. Don't wait until the dust settles to realize that you are surrounded by partners but have no peers."
+    },
+    {
+      "endingId": "toxic",
+      "title": "annexers",
+      "trigger": "top: scum",
+      "caption": "You won every round of the game, turning the old affections and trust offered into disposable costs. \"The Biographies of Merchants\" teaches you to calculate, but it doesn't teach you that some accounts are simply impossible to settle.",
+      "report": "[Relationship Personality - The Devourer] You are adept at weighing options, approaching others when needed and discarding them once used. You may have swallowed everything, but you haven't realized that the void that devours human warmth has already taken up residence in your heart. You've won financial rewards, but lost the people who could have stood shoulder to shoulder with you."
+    },
+    {
+      "endingId": "devoted",
+      "title": "Burnout",
+      "trigger": "top: Loyal Dog",
+      "caption": "Throughout the entire acquisition, you took on all the dirty work, the hard work, and the scapegoating, burning yourself out to make {name} succeed. But what {ta} needed was never a scapegoat.",
+      "report": "[Relationship Personality - The Burnout] You're incredibly open and helpful, always willing to lend a hand, and habitually humble yourself, often moving yourself in the process but doing the wrong thing. What {name} needs isn't a tool to shield {them} from harm, but someone who dares to stand by {them}'s side. Don't forget, you also deserve to be cherished."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "observers",
+      "min": -99,
+      "caption": "The game of strategy ended overnight, and even the first light of dawn couldn't definitively determine your stance. You were like a bystander who never placed a bet.",
+      "report": "[Relationship Personality - The Observer] Your choices are difficult to categorize—sometimes sincere, sometimes calculating, and sometimes detached observation. Perhaps you haven't figured out who you really want to be in this game. Recognize this first, then decide how to treat those around you who are willing to sail with you."
+    }
+  ]
+}

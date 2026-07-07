@@ -75,15 +75,16 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import { MALE_CHARACTERS, FEMALE_CHARACTERS } from '@/game/data/characters'
+import { computed } from 'vue'
+import { getCharacters } from '@/game/data/characters'
 import { faceImg } from '@/game/assets'
 import { startGame } from '@/game/store'
 import type { Character } from '@/game/types'
 
 const { t } = useI18n()
 
-const males = MALE_CHARACTERS
-const females = FEMALE_CHARACTERS
+const males = computed(() => getCharacters().filter((c) => c.gender === 'male'))
+const females = computed(() => getCharacters().filter((c) => c.gender === 'female'))
 
 const starryBg = '/static/game/ui/starry-bg.png'
 const titleArt = '/static/game/ui/title-art.png'

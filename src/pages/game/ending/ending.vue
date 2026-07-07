@@ -9,8 +9,8 @@
     <!-- 生成中 -->
     <view v-if="loading" class="loading-box">
       <view class="spinner"></view>
-      <text class="loading-text">长夜正在为你封存这一夜…</text>
-      <text class="loading-sub">{{ char?.name }} 与你的故事，正落下最后一笔</text>
+      <text class="loading-text">{{ t('ending.loadingText') }}</text>
+      <text class="loading-sub">{{ t('ending.loadingSub', { name: char?.name }) }}</text>
     </view>
 
     <!-- 全屏 CG：生成完成后先整图展示，点击进入结局 -->
@@ -18,7 +18,7 @@
       <image class="cg-full-img" :src="session.cgUrl" mode="aspectFit" />
       <view class="cg-full-tag">{{ ending?.title }}</view>
       <view class="cg-full-tip">
-        <text class="cg-full-tip-text">轻触继续</text>
+        <text class="cg-full-tip-text">{{ t('ending.tapContinue') }}</text>
         <view class="cg-full-tri"></view>
       </view>
     </view>
@@ -46,7 +46,7 @@
         <view class="verdict">
           <view class="verdict-head">
             <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
-            <text class="verdict-label">长夜判词</text>
+            <text class="verdict-label">{{ t('ending.verdictLabel') }}</text>
             <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
           </view>
           <text class="verdict-text">{{ session.aiReport }}</text>
@@ -55,7 +55,7 @@
         <!-- 主按钮：渐变胶囊 + 渐变星 -->
         <button class="result-btn" @click="goReport">
           <image class="btn-star" src="/static/game/ui/ending/button-star.png" mode="aspectFit" />
-          <text class="btn-tx">查看关系人格档案 →</text>
+          <text class="btn-tx">{{ t('ending.resultBtn') }}</text>
         </button>
       </view>
     </view>
@@ -63,10 +63,13 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, computed, onMounted } from 'vue'
 import { session, finalize, tagCloud } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
 import { aiReport, aiEndingImage } from '@/game/ai'
+
+const { t } = useI18n()
 
 const bgImg = '/static/game/ui/report/starfield-bg.png'
 

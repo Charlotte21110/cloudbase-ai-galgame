@@ -1,0 +1,829 @@
+{
+  "_id": "script_campus_love",
+  "id": "script_campus_love",
+  "title": "Cherry blossoms fall in a flurry; an ambiguous distance",
+  "openingTip": "In the autumn of your senior year of high school, you were the class's arts and culture representative, while {name} was the transfer student—so quiet she was practically invisible—always number one in grades, always the quietest, and with an expression that was always as calm as still water. You thought your relationship would remain like two parallel lines, until one evening after a monthly exam, {ta}'s notebook fell onto your desk—on the first page was a line of small writing: \"If the world only had one last page, I want to write your name.\" This was a youthful story of suffocating ambiguity, where neither of you dared to speak first.",
+  "prologue": "The September wind made the school building corridor quite cool. On {name}'s first day there, they sat to your right, behind you, by the window. {ta} didn't talk much, always with their head down, writing something in their notebook with an old fountain pen. When the teacher called on {ta} to answer a question, their voice was soft and slow, like moonlight on a lake at night—present, yet always felt veiled. A month later, you started noticing some details: {ta}'s water bottle was always within easy reach, during recess {ta} always stood half a step behind you, and when writing on the blackboard, that old fountain pen would quietly appear in your pencil case. But every time you turned to look at {ta}, {ta} was still writing—as if nothing had happened.",
+  "initScore": 50,
+  "start": "s1",
+  "nodes": [
+    {
+      "id": "s1",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "happy",
+      "chapter": "Prologue: The Transfer Student",
+      "goto": "s1b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The sunlight during early morning study sessions is always lazy, as if reluctantly squeezing in through the gaps in the curtains. You're dozing off at your desk when you suddenly feel a gaze fall on the back of your head—not too heavy, not too light, like a feather skimming the surface of water. You turn around, and {name} is bent over, copying notes, the nib of his pen making a soft scratching sound on the paper, unusually quiet for someone his age."
+        },
+        {
+          "who": "self",
+          "text": "It's that feeling again. Every time I turn around, {they} doesn't look at me, but that gaze—like the fragrance of osmanthus in autumn, you can't grasp it, yet it's clearly there."
+        },
+        {
+          "who": "narration",
+          "text": "Your deskmate nudged you with his elbow: \"Hey, the new guy is watching you again. When you leaned down just now, {they} draped their school uniform jacket over the back of your chair—didn't you notice?\" You looked down and sure enough, there was a neatly folded school uniform on the back of your chair, smelling faintly of soap."
+        },
+        {
+          "who": "self",
+          "text": "The school uniform on the back of the chair was still warm from my body. When did they put it there? I was sitting right here—but they were so quiet that even putting down a piece of clothing wouldn't disturb anyone."
+        }
+      ]
+    },
+    {
+      "id": "s1b",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Prologue: The Transfer Student",
+      "goto": "s1c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You picked up your school uniform to return it and walked to {ta}'s desk. {name} was reading a very old book of poems, the cover so worn that the title was almost illegible. {ta} looked up slowly, as if rising from the bottom of the water, and when your eyes met—{ta}'s eyelashes trembled, like the wings of a startled butterfly."
+        },
+        {
+          "who": "name",
+          "text": "\"Good morning.\" {ta}'s voice was as light as dust falling on paper. \"It's getting windy outside. I'm afraid you'll catch a cold if you sleep on your stomach.\" After saying that, she lowered her head and continued reading, but the tips of her ears seemed to have been dotted with cinnabar."
+        },
+        {
+          "who": "self",
+          "text": "That's it? She took off her school uniform and gave it to me because she was worried I'd catch a cold? But after she finished speaking, her expression was calm, as if nothing had happened—only her ear, which had revealed the truth, was telling me a different version of the story."
+        },
+        {
+          "who": "narration",
+          "text": "{ta}'s poetry collection was turned to the page with Nalan Rongruo's poem—\"If life were only as beautiful as our first meeting, why would the autumn wind bring sorrow to the painted fan?\" On the edge of the page, a plum blossom was lightly drawn in pencil, next to which was a line of extremely small characters. You couldn't see the content clearly, but you vaguely felt that the number of strokes in that line was the same as the number of strokes in your name."
+        }
+      ]
+    },
+    {
+      "id": "s1c",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Prologue: The Transfer Student",
+      "goto": "c1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After the monthly exam, most people had left for evening self-study. Only you and {name} remained in the classroom. You were organizing the proposal for the arts festival, while {ta} was reading—or at least appeared to be reading. When you returned from getting water, you found a sticky note on the table, written in that old fountain pen: 'There's a typo on page three of your proposal. Also, the window is open, and your scarf is on the chair.'"
+        },
+        {
+          "who": "self",
+          "text": "The typo on the third page... When did {ta} see it? I was clearly reading a book while I was writing it—or was that book just a cover, and {ta} was actually reading me the whole time?"
+        },
+        {
+          "who": "narration",
+          "text": "You turn to look at them, and they happen to look up too—this time they don't look away. Under the fluorescent lights of the empty classroom, three rows of desks separate you, but their eyes are as clear as a mirror, reflecting your entire being. At that moment, the wind outside the window suddenly stops, and even the hum of the fluorescent lights seems to transform into a tacit understanding."
+        },
+        {
+          "who": "name",
+          "text": "{ta} was the first to look away, lowering her eyelashes, her fingertips unconsciously gripping the corner of the page: \"...Your proposal is well written. It's just that idiom—it's '美轮美奂' (měilún měihuàn), not '美仑美奂' (měilún měihuàn).\" Her voice was so soft it was as if she was afraid of breaking something."
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "type": "choice",
+      "sceneKey": "classroom_morning",
+      "face": "shy",
+      "chapter": "Prologue: The Transfer Student",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The empty classroom was filled only with the sound of your breathing. {ta}'s pen rested on the open notebook, the ink slowly seeping into a small dot—like {ta}'s restless heartbeat at that moment."
+        }
+      ],
+      "options": [
+        {
+          "text": "I walked over and sat down next to {ta}: Help me check the whole thing, you're even more meticulous than a Chinese teacher.",
+          "textVariants": [
+            "Move a stool over there: Since you've already read it, why don't you help me finish revising it?",
+            "Smiling, she leaned closer: \"So you've been secretly watching me write all this time.\""
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s2",
+          "reply": "{name}'s pen almost slipped from her hand. {ta} caught it hastily, pretending to be calm as she flipped through her notebook: \"...I just happened to see it. Your handwriting is too big; I can see it even three lines apart.\" But {ta} was already annotating your proposal word by word.",
+          "os": "({ta}'s handwriting has never been so messy before—because you're sitting so close, close enough that {ta} can smell your shampoo.)"
+        },
+        {
+          "text": "Oh, so you've been watching me all this time? Did you even count how many times I yawned?",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s2",
+          "reply": "{name}'s ears instantly turned bright red, and she pretended to flip through a book: \"I just... happened to catch a glimpse of it within my field of vision.\" But she was holding the book upside down.",
+          "os": "(She was so flustered that she didn't even realize she was holding the book upside down. The word \"coincidentally\" has been used far too many times.)"
+        },
+        {
+          "text": "Thanks for reminding me. If you're cold, I'll return your school uniform.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s2",
+          "reply": "{name} gently shook her head: \"No need. You're more afraid of the cold than I am.\" She paused and added in a very soft voice: \"The places I'm afraid of the cold... you can't warm them up.\" The last half of the sentence was almost inaudible.",
+          "os": "(The place {ta} mentioned that couldn't be warmed was probably in the left side of the chest cavity.)"
+        },
+        {
+          "text": "Okay, I got it. Don't touch my things next time.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s2",
+          "reply": "{name}'s fingertips paused on the pages, as if gently burned by something. {ta} slowly closed the book: \"...Okay. Sorry.\" The old fountain pen that had been a regular in your pencil case disappeared the next day.",
+          "os": "(She apologized very softly, as if afraid of causing you the slightest trouble. But the pencil writing on the title page of that poetry collection was erased that very night.)"
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1: The Library's Code",
+      "goto": "s2b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "From that day on, a strange unspoken understanding developed between you and {name}—like Morse code only the two of you could understand. If you forgot your textbook, {ta} would silently push it to the center line between the two desks, so you could just see it. On rainy days, you would bring an extra umbrella, hanging it on the back of {ta}'s chair, without saying a word."
+        },
+        {
+          "who": "self",
+          "text": "We never explain these little gestures. It's like some unwritten agreement—you give me a kindness, I'll return a thoughtful gesture, and neither of us asks why. But strangely, each exchange makes me feel like something inside me has been gently tugged, like a pendulum starting to swing."
+        },
+        {
+          "who": "narration",
+          "text": "On Friday afternoon, the classical literature section of the library was almost deserted. You sat in the far corner, flipping through a copy of *Six Records of a Floating Life*, when you suddenly noticed a handwritten bookmark tucked inside—not from the library, but cut from old letter paper. It read: 'There's a very good sentence on page thirty-seven of this book. If you also like it, put a mint on the windowsill before morning self-study tomorrow.'"
+        },
+        {
+          "who": "self",
+          "text": "This is {ta}'s handwriting. I recognize the ink marks left by that old fountain pen—the strokes are thin and clean, like withered branches in late autumn. Page thirty-seven… I turn to it, and that sentence is lightly underlined in pencil—“Life is but a dream, how much joy can we have? Leaning against the window listening to the rain, let us not waste the precious time.”"
+        }
+      ]
+    },
+    {
+      "id": "s2b",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1: The Library's Code",
+      "goto": "s2c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The next morning before self-study, you placed a mint on the windowsill. When the bell rang, the mint was gone. In its place was a small paper crane folded from old letter paper—with a note on its wing: 'You really like it. Then page 52 is also worth reading.'"
+        },
+        {
+          "who": "self",
+          "text": "Is this person... using the entire \"Six Records of a Floating Life\" to exchange secret codes with me? Page 52—I went back and flipped through it: \"The affairs of the world are vast and unpredictable, spring sorrows darken my sleep alone. If I meet a true friend, it can be worth ten years of wandering in this mortal world.\" The underlined sentence is the last one—\"If I meet a true friend.\""
+        },
+        {
+          "who": "narration",
+          "text": "From that day on, your secret code spread from one book to the entire library: {ta} slipped a note into *Renjian Cihua* asking if you preferred Li Qingzhao or Nalan Rongruo; you replied in *The Little Prince* with \"Everyone has a rose in their heart\"; {ta} drew a cat at the beginning of *One Hundred Years of Solitude*, with the caption, \"Doesn't this look like you dozing off in class?\" You laughed out loud—the librarian turned around and glared at you."
+        },
+        {
+          "who": "self",
+          "text": "Over the course of a month, we exchanged forty-seven notes across twenty-three books. We talked about literature, music, the colors of sunsets, and the temperature of the wind—but we never exchanged more than ten complete sentences face-to-face. This unspoken understanding was addictive, yet unsettling—because I didn't know which of the sentences {ta} wrote on the notes were excerpts, and which were things she truly wanted to say to me."
+        }
+      ]
+    },
+    {
+      "id": "s2c",
+      "type": "story",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1: The Library's Code",
+      "goto": "c2",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "That day after school, you went to the library again to look for the new note {ta} had left. You opened the book \"Me and the Temple of Heaven,\" but there was no note inside—only a maple leaf bookmark. On the back of the maple leaf, in tiny print, were written: \"I've thought about it for a long time. I don't know how to start—but if you're also hesitating, then it wouldn't be bad if we hesitated together.\""
+        },
+        {
+          "who": "self",
+          "text": "We hesitated together. This is probably the most honest yet cowardly way of confessing I've ever heard—not \"I like you,\" but \"I dare not say it, but I hope you know I dare not say it.\" This person has turned unrequited love into an art form—exquisite, restrained, and so heartbreaking that you want to shake their shoulders and shout: Just tell me already!"
+        },
+        {
+          "who": "narration",
+          "text": "You stand between the bookshelves, clutching that maple leaf, the setting sun streaming in through the window, bathing the spines of the entire row of books in a honey-colored hue. At the other end of the bookshelf, {name} sits by the window, backlit, his expression obscured—but the old fountain pen twirls three times between his fingers, without writing a single word. {ta} is waiting."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "type": "choice",
+      "sceneKey": "library_sunset",
+      "face": "shy",
+      "chapter": "Chapter 1: The Library's Code",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The setting sun cast a golden maze over the three rows of bookshelves between you. The maple leaf in your hand feels like a beating heart. You know that if you just walk over there, everything will be different—but you also know that some doors, once opened, can't be closed again."
+        }
+      ],
+      "options": [
+        {
+          "text": "Walk over and sit opposite {ta}, placing the maple leaf on {ta}'s notebook: No need to hesitate.",
+          "textVariants": [
+            "I walked over and gently tucked the maple leaf back into {ta}'s poetry collection: I didn't hesitate. What about you?",
+            "I walked past the bookshelf to stand in front of {ta}: I received all your signals. Now it's time to talk face to face, isn't it?"
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s3",
+          "flag": "near",
+          "reply": "{name}'s pen slipped from her fingers and rolled to the edge of the table. {ta} didn't pick it up—{ta} simply looked up at you, her eyes reddening, her voice as soft as a sigh: \"...You really did understand.\"",
+          "os": "(The sentiments hidden in those forty-seven notes were finally received in person. {ta}, who had held back tears for a whole semester, almost burst into tears in the library.)"
+        },
+        {
+          "text": "Write on the back of the maple leaf: \"Hesitation is fine; at least it shows you care.\" Then put it back in the book.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "hesitate",
+          "reply": "The next day, a new note appeared in the book: 'You're right. You can't hide things like caring—like how I always pretend not to notice when you look back at me. But I counted, you looked back seven times today.'",
+          "os": "({ta} is using numbers to say: I've been watching you. Whether you look at me or not, I'm still watching you.)"
+        },
+        {
+          "text": "He put the maple leaf in his pocket, smiled, waved goodbye to {ta}, and left.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s3",
+          "flag": "hesitate",
+          "reply": "{name} watched your departing figure, her fingers tightening around the pen cap. {ta} wrote a line in her notebook, then crossed it out—but the ink still left its mark: 'You took my maple leaves. And my autumn, you took it with you.'",
+          "os": "(I don't know what you mean by collecting maple leaves—do you like them, or are you just doing it for fun? This uncertainty is more agonizing than being rejected.)"
+        },
+        {
+          "text": "Let's put it back. I'm afraid if we get too familiar with each other, we won't be able to be friends anymore.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s3",
+          "flag": "hesitate",
+          "reply": "{name} slowly closed the notebook, {ta}'s expression unchanged—but the old fountain pen was gripped tightly by {ta}, knuckles white. \"...That's right. Being friends is safer.\" {ta}'s last word was like a maple leaf falling into water—silent.",
+          "os": "({ta} removed all the notes from the books. The next day, the books in the library's classics section were spotless, as if no secret codes had ever existed.)"
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Two: The Secret of the Rooftop",
+      "goto": "s3b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Autumn is deepening. Half of the ginkgo leaves at school have turned yellow, while the other half are still hesitant—like the distance between you and {name}. The arts festival is approaching, and you, as the arts committee member, are extremely busy. {ta} volunteered to help you set up the venue—this is the first time {ta} has voluntarily participated in a class activity."
+        },
+        {
+          "who": "name",
+          "text": "\"I need help.\" {ta} stood at the classroom door, said three words, and then fell silent. But {ta} was holding a complete set of calligraphy brushes and an inkstone—which {ta} had brought from home, with {ta}'s name engraved on the brush handles."
+        },
+        {
+          "who": "self",
+          "text": "A person who never participates in group activities brought their most treasured calligraphy brush to help me write the logo. They probably don't know—or perhaps they do know but pretend not to—what this means to me."
+        },
+        {
+          "who": "narration",
+          "text": "You spent the entire afternoon decorating the empty classroom. {ta}'s calligraphy was exceptionally beautiful—flowing and powerful. When she wrote the four characters \"Youth Without Regret,\" the moment the ink spread on the rice paper, even you were stunned. After {ta} finished writing, she put down her brush, her fingertips still damp with ink, and glanced at you—at that angle, backlit, a tiny speck of golden dust rested on her eyelashes."
+        }
+      ]
+    },
+    {
+      "id": "s3b",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Two: The Secret of the Rooftop",
+      "goto": "s3c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After setting up the venue, it was already dark. You noticed that {ta} hadn't left—{ta} was standing at the entrance of the teaching building's stairs, as if waiting for someone. As you walked over, {ta} tilted her head slightly: \"...Let's go up and take a look? The rooftop; we should be able to see the stars at this time.\""
+        },
+        {
+          "who": "self",
+          "text": "{TA} asked me out. My brain processed the information in 0.3 seconds, and my heart rate increased by 30%. But I just nodded—pretending it was a normal thing."
+        },
+        {
+          "who": "narration",
+          "text": "The wind was strong on the rooftop. City lights stretched out beneath her feet, stars overhead—through a thin layer of light pollution, like the unbreakable window paper separating you two. {name} leaned against the railing, the wind blowing {ta}'s hair across her face, but {ta} didn't brush it away, just staring into the distance, lost in thought."
+        },
+        {
+          "who": "name",
+          "text": "\"...You know what?\" {ta}'s voice was carried by the wind, somewhat broken, \"Before I transferred schools, I had no friends at my old school. Not because I was ostracized—it was because I didn't know how to talk to people. I felt that language was too clumsy, and I always failed to express myself properly. So I got used to writing. Words written on paper can't be wrong.\""
+        },
+        {
+          "who": "self",
+          "text": "Those notes weren't just codes—they were {their} only way of speaking. A person rendered speechless in the real world poured their heart and soul into books, notes, and the backs of maple leaves. It wasn't that {their} didn't want to speak—it was that they were afraid speaking would ruin their image."
+        }
+      ]
+    },
+    {
+      "id": "s3c",
+      "type": "story",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Two: The Secret of the Rooftop",
+      "goto": "c3",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The wind subsided a bit. {name} took the old fountain pen out of his pocket—there was a small dent on the cap, like a scar left by some distant memory."
+        },
+        {
+          "who": "name",
+          "text": "\"This pen belongs to my mother.\" {ta}'s voice was soft, as if telling a story from a long time ago. \"She was my language arts teacher. She got sick when I was very young... The last thing she taught me was how to write. She said, 'Write down what you want to say, and the paper will keep it for you. When the right person comes along, the paper will speak for you.'\""
+        },
+        {
+          "who": "self",
+          "text": "Those notes, those bookmarks, that maple leaf—these were all ways her mother taught her. She entrusted all the words she couldn't say to paper and pen—and then, one by one, placed them in the books I would open. This wasn't unrequited love. This was someone using an old fountain pen to make the most clumsy, yet most tender, outpouring."
+        },
+        {
+          "who": "name",
+          "text": "{ta} turned to face you, the rooftop wind whipping her hair into a small flag. Her eyes shone brightly in the city lights—like two polished old stars: \"So—you read all those notes? Every single one?\""
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "type": "choice",
+      "sceneKey": "rooftop_dusk",
+      "face": "shy",
+      "chapter": "Chapter Two: The Secret of the Rooftop",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Only the sound of the wind and the faint distant rumble of traffic remained on the rooftop. {ta} stood before you, clutching an old fountain pen—the only means of communication left to {ta} by her mother. And now, {ta} chose to speak. This meant—{ta} was trying to learn a new language."
+        }
+      ],
+      "options": [
+        {
+          "text": "I looked at every single one. I kept every single one of them.",
+          "textVariants": [
+            "I've read them all, and I've even sorted them by date—do you believe me?",
+            "I've seen it. That's how I realized—you like Li Qingzhao more than Nalan Rongruo."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s4",
+          "flag": "Confession",
+          "reply": "{name}'s lips trembled, {ta} turned her face away, but her voice was nasal: \"...You actually kept it. I thought you just thought it was funny.\" {ta}'s fingers tightened on the pen, as if she were holding the whole world in her hands.",
+          "os": "(Forty-seven notes. {ta} thought those notes would disappear after being sent—but unexpectedly, every single one was treasured. This made {ta} want to cry more than any love letter.)"
+        },
+        {
+          "text": "Of course I read it. But some of the sentences were too literary; I had to look them up in the dictionary to understand them.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s4",
+          "flag": "joke",
+          "reply": "{name} paused for a second, then the corners of her mouth curved slightly—this was the first time you'd seen {ta} smile. It wasn't a big smile, like a crescent moon, but it was enough to brighten the entire rooftop by a shade: \"...Next time I'll write in vernacular Chinese.\"",
+          "os": "({ta} laughed. Laughed because of a joke—this was the first time {ta} had laughed at this school. {ta} even surprised herself.)"
+        },
+        {
+          "text": "I've read it. Your writing is much better than your words. If you have anything you want to say in the future, just write it down for me.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s4",
+          "flag": "guard",
+          "reply": "{name} lowered her head and gently tapped the railing with the cap of her pen: \"...But I want to learn to speak. At least to you—I don't want to only ever be able to write.\"",
+          "os": "({ta} always thought that writing was enough. But after meeting this person—{ta} wanted for the first time to lift words off the paper and turn them into sound.)"
+        },
+        {
+          "text": "I read it. But a note is still just a note—it's better to say things face-to-face than to write them down.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s4",
+          "flag": "reject",
+          "reply": "{name}'s smile froze at the corner of her mouth. {ta} slowly put the pen back into her pocket—the movement was very light, as if she were taking back a package that had already been returned: \"...You're right. It only counts if it's said face to face.\" But {ta} didn't say another word.",
+          "os": "(The only way {ta} could speak was rejected. {ta} reverted to being that quiet transfer student, almost invisible.)"
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Chapter Three: Snow Before the Exam",
+      "goto": "s4b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "December arrived in the blink of an eye. A week before the final exams, the entire campus was covered with a thin layer of the first snow—snow rarely falls in this southern city, and everyone was running wildly on the playground. Only {name} sat alone in the classroom, his desk covered with densely packed notes and a stack of mock college entrance exam papers."
+        },
+        {
+          "who": "self",
+          "text": "Everyone else was playing in the snow, but {ta} was still doing homework. It wasn't because she didn't want to play—it was because {ta} had once told me: 'I promised my mom I'd be in the top ten in the province. She didn't see me grow up—but I want her to see me do it.' That sentence was also written on a note."
+        },
+        {
+          "who": "narration",
+          "text": "You got two meals from the cafeteria and brought them to the classroom. {name} was engrossed in her work and didn't notice you coming in—until you placed the lunchboxes next to {ta}'s notes and gently tapped the desk. The moment {ta} looked up, you noticed deep dark circles under her eyes."
+        },
+        {
+          "who": "name",
+          "text": "\"...Why didn't you go play in the snow?\" {ta} rubbed her eyes, her voice hoarse as if she had a mouthful of sand. \"It rarely snows in the South. You should go see it.\" As she spoke, {ta} took off her scarf and handed it to you—a very old, gray-blue scarf with hand-knitted marks on it. \"It's cold outside.\""
+        }
+      ]
+    },
+    {
+      "id": "s4b",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Chapter Three: Snow Before the Exam",
+      "goto": "s4c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "You didn't go play in the snow. You sat next to {ta}, flipping through your study materials. {ta} glanced at you, didn't say anything—but the corners of her mouth curved into a smile, more captivating than the snow scene outside the window. You sat there quietly for the entire afternoon, occasionally {ta} would present you with an uncertain problem—not asking for the answer, but for your thought process."
+        },
+        {
+          "who": "self",
+          "text": "Our way of communicating has always been strange—notes, bookmarks, maple leaves, and now math problems. But this strange tacit understanding is addictive. Like the roots of two trees intertwined underground—nothing is visible on the surface, but beneath they are already inseparable."
+        },
+        {
+          "who": "narration",
+          "text": "In the evening, the snow stopped. You walked out of the teaching building together. The snow on the playground had been trampled into a mess, except for a layer of pristine white snow under the old ginkgo tree in the corner. {name} walked to the tree, squatted down, and wrote two words on the snow with his fingertip—then quickly wiped them away with his palm."
+        },
+        {
+          "who": "self",
+          "text": "Though it was only for a moment, I saw it—{ta} wrote my name. Wrote it, then erased it—like everything {ta} had ever done: gave it, then pretended not to. Approached, then pretended not to. This person lived their unrequited love as a meticulously crafted one-person show—but {ta} didn't know, there was someone sitting in the audience the whole time."
+        }
+      ]
+    },
+    {
+      "id": "s4c",
+      "type": "story",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter Three: Snow Before the Exam",
+      "goto": "c4",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "On the night the final exams ended, the results weren't out, and {name} wasn't in the classroom. You searched the library, the rooftop, the playground—finally finding {ta} in the alley behind the school. {ta} was crouching against the wall under a streetlamp, with an envelope in front of her—open, containing a letter from out of town."
+        },
+        {
+          "who": "name",
+          "text": "\"...My dad is remarrying.\" {ta}'s voice was calmer than that of a seventeen-year-old. \"He said there aren't enough rooms in the new house. He'll let me live at school and I won't have to go back home for winter break.\" {ta} folded the letter and put it back in the envelope, pressing her fingers on the seal for a long time—as if pressing down on a wound to prevent it from reopening."
+        },
+        {
+          "who": "self",
+          "text": "It turns out that {ta} wasn't just quiet. {ta} was using silence to hide all her wounds. Those notes, those bookmarks, that old fountain pen—these were the only outlet {ta} found for herself in a world where no one spoke. And I—just so happens to be on the other side of that outlet."
+        },
+        {
+          "who": "narration",
+          "text": "The streetlights cast a long shadow of {ta}. {ta} didn't cry—but {ta}'s hands were trembling, and a deep crease ran down the corner of the envelope. The winter night wind swept through the alley, ruffling {ta}'s hair—but {ta} ignored it."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "type": "choice",
+      "sceneKey": "rain_street",
+      "face": "sad",
+      "chapter": "Chapter Three: Snow Before the Exam",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The streetlights in the alley cast a dim, yellow glow. {ta} squatted there, like a cat abandoned by the roadside—clearly cold and in pain, yet refusing to utter a sound. You know that saying anything at this moment would be too little—but if you don't speak, it will be too late."
+        }
+      ],
+      "options": [
+        {
+          "text": "I crouched down and wrapped the scarf around {ta}'s neck: Come to my house during winter vacation. My mom makes delicious dumplings.",
+          "textVariants": [
+            "Kneel down in front of them and gently hug them: It's okay if there aren't any extra rooms. There will always be a place for you here.",
+            "Squat down next to {ta}: I have a spare room at my place. Want to come?"
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s5",
+          "flag": "accompany",
+          "reply": "{name} finally couldn't hold back anymore. {ta} buried her face in her knees, her shoulders trembling—not from the cold, but because {ta} had waited so long, finally hearing someone say, \"There's a place for you here.\" {ta}'s voice was muffled: \"...Won't your mother think I'm too quiet?\"",
+          "os": "(What {they} were afraid of wasn't the lack of a room—it was that no one was willing to make room for {they}. And you said it. {they} held onto their scarf tightly all night.)"
+        },
+        {
+          "text": "I sat next to {ta} without saying anything, just keeping her company.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s5",
+          "flag": "silence",
+          "reply": "You sat under the streetlight for a long time. {name} didn't speak, and neither did you. But as you were leaving, {ta} suddenly tugged at your sleeve—very gently, as if afraid of hurting you: \"...Thank you. You're the first person to come to me without saying a word.\"",
+          "os": "(She thought being quiet was her flaw. But you showed her through silence that companionship can happen without words. This was the most heartwarming lesson she learned.)"
+        },
+        {
+          "text": "Patting them on the shoulder: It's okay, if you do well on the college entrance exam, everything will be alright. Good luck!",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s5",
+          "flag": "bystander",
+          "reply": "{name} nodded, forcing a faint smile: \"...Yeah. You're right. If you do well on the exam, you'll have everything.\" But {ta}'s eyes dimmed—like a lamp whose brightness had been turned down.",
+          "os": "(What they need isn't \"cheer them on.\" What they need is for someone to kneel down, to be at their level. But you just stood there and patted them on the shoulder.)"
+        },
+        {
+          "text": "Don't overthink it. Adult matters are none of our business. Let's go back.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s5",
+          "flag": "bystander",
+          "reply": "{name} slowly stood up and brushed the dust off her trousers. {ta} folded the envelope and put it in her bag—her movements were light and steady, as if she were doing something she had done many times before: \"...Okay. Let's go back.\" {ta} walked ahead of you, her back straight, her shadow lonely.",
+          "os": "(She had gotten used to being alone. But for a fleeting moment—she thought she no longer needed to get used to it.)"
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Four: The Answer Under the Stars",
+      "goto": "s5b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The last weekend before winter break. You received a text message from {name}—the first time {ta} had messaged you first. Only six words: '7 PM. Rooftop.'"
+        },
+        {
+          "who": "self",
+          "text": "{ta} never initiates contact with anyone. These six words carry the weight of a thousand-word love letter."
+        },
+        {
+          "who": "narration",
+          "text": "You arrived on the rooftop on time. The winter night sky was exceptionally clear—no clouds, and the stars were so numerous it looked as if someone had poured a whole can of silver powder onto the heavens. {name} leaned against the railing, wearing that school uniform jacket—the cuffs were slightly frayed, but it was very clean. Beside {ta}, an old newspaper lay on the ground, with two cups of hot cocoa and a small bag of mints on it."
+        },
+        {
+          "who": "name",
+          "text": "\"...The last note.\" {ta} handed you a piece of paper folded into a heart shape. The paper was the same material as all the previous notes—old paper, old pen, each stroke deliberate. It read: \"To the one who taught me to speak—this time, I won't hide it.\""
+        }
+      ]
+    },
+    {
+      "id": "s5b",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Four: The Answer Under the Stars",
+      "goto": "s5c",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{ta} took a deep breath. Starlight shone on {ta}'s face, and those eyes that usually avoided eye contact were now staring straight at you—like two pieces of amber rising from the bottom of the water."
+        },
+        {
+          "who": "name",
+          "text": "\"I practiced it many times.\" {ta}'s voice trembled, but every word was enunciated clearly, as if reading a text that had been written countless times—\"Forty-seven slips of paper, each containing the same sentence. I broke it down into forty-seven different ways of saying it—because I didn't dare say it all at once. But today, I'm going to put them all together into one sentence.\""
+        },
+        {
+          "who": "self",
+          "text": "{ta} is trembling. Not because of the cold. It's because for someone used to speaking with paper, choosing to speak for the first time is harder than any exam for {ta}."
+        },
+        {
+          "who": "name",
+          "text": "{ta} gripped the old fountain pen tightly, like holding her mother's hand—and then spoke. Her voice wasn't loud, but the wind on the rooftop seemed to stop, as if the whole world was holding its breath to hear {ta} say those words: \"I like you. From the first day I sat behind you. From the first note, the first maple leaf, the first mint. Forty-seven ways to say it, but all of them are these three words.\""
+        },
+        {
+          "who": "narration",
+          "text": "A rooftop on a winter night. The scent of starlight, hot cocoa, and mints. A person who is always silent turned the voice accumulated throughout autumn into the shortest yet most profound sentence in the world."
+        }
+      ]
+    },
+    {
+      "id": "s5c",
+      "type": "story",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Four: The Answer Under the Stars",
+      "goto": "c5",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After saying that, {ta} lowered her head—like a runner who had exhausted all her strength, only to find her legs were weak after crossing the finish line. The old fountain pen spun between {ta}'s fingers without falling—the only thing that remained steady."
+        },
+        {
+          "who": "self",
+          "text": "Forty-seven slips of paper. An old fountain pen. A sentence practiced countless times. I suddenly understood—so-called ambiguity isn't about being afraid to speak. It's about being afraid that once you speak, you can't even maintain the ambiguity. And {ta} has staked everything today—including those things that might be lost."
+        },
+        {
+          "who": "narration",
+          "text": "The white steam from the hot cocoa drifted between you. {ta} didn't urge you to answer—someone who had waited for forty-seven notes wouldn't mind waiting another starry night. But {ta}'s fingertips gently caressed the pen cap—that small gesture betrayed {ta}: {ta} was incredibly nervous."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "type": "choice",
+      "sceneKey": "observatory_star_night",
+      "face": "shy",
+      "chapter": "Chapter Four: The Answer Under the Stars",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "The stars are shining overhead. {ta} stands before you. Everything is as quiet as a painting—only when you speak will this painting come to life."
+        }
+      ],
+      "options": [
+        {
+          "text": "He took a mint out of his pocket and placed it in {ta}'s palm: The forty-eighth statement—Me too.",
+          "textVariants": [
+            "He took out the forty-seven slips of paper from his pocket—you brought them all: the forty-eighth, let me write it to you.",
+            "Hug {ta} directly: Do you think you're the only one counting the slips of paper? I'm counting them too."
+          ],
+          "score": 12,
+          "tag": "sincere",
+          "face": "shy",
+          "goto": "s6",
+          "flag": "Together",
+          "reply": "{name} looked down at the mint in her hand—and then {ta} cried. Not a loud sob, but tears that silently slid down, landing on the mint's clear wrapper, refracting starlight: \"...The forty-eighth. I'll remember it. For a lifetime.\"",
+          "os": "(A person who used forty-seven notes before daring to speak finally received a reply with a piece of candy. {ta} felt that this candy was sweeter than all the stars in the world.)"
+        },
+        {
+          "text": "I can't give you an answer right now. But those forty-seven slips of paper—I didn't throw any of them away.",
+          "score": 6,
+          "tag": "Loyal Dog",
+          "face": "happy",
+          "goto": "s6s",
+          "flag": "Undecided",
+          "reply": "{name} rubbed her nose and forced a small smile: \"It's good that you didn't throw it away. Well... let me know when you've thought it through. I can wait. Waiting is what I'm best at—I've already waited all autumn anyway.\"",
+          "os": "({ta} said she could wait—her voice was very steady when she said it. But the sweat in her palms soaked through the heart-shaped letter.)"
+        },
+        {
+          "text": "Your confession was quite literary. But right now, all I want to do is focus on my studies.",
+          "score": 3,
+          "tag": "Neptune",
+          "face": "happy",
+          "goto": "s6s",
+          "flag": "Undecided",
+          "reply": "{name} paused for a moment, then chuckled softly—a chuckle tinged with both relief and bitterness: \"Literary... okay. Then I'll choose a version without literary merit next time.\" {ta} handed you the hot cocoa: \"At least drink the cocoa. It won't taste good when it's cold.\"",
+          "os": "(You poured your heart and soul into a confession, only to receive a comment that described it as \"literary.\" But you still handed me cocoa—because you were worried I was cold.)"
+        },
+        {
+          "text": "You're a good person. But we're not a good match.",
+          "score": -10,
+          "tag": "scum",
+          "face": "sad",
+          "goto": "s6s",
+          "flag": "Undecided",
+          "reply": "{name} remained silent for a long time—long enough for the wind to cool the hot cocoa. {ta} finally bent down and gently placed the bag of mints at your feet: \"...Hmm. Here, take these. Your mouth will feel dry in winter; sucking on one will make you feel better.\" {ta} turned and walked away, her back straight, her shadow long.",
+          "os": "({ta} still managed to turn her last sentence into one of concern. Even as she was leaving, the person who was rejected was still worried about your dry mouth. This tenderness—is a kind of stubbornness that touches the heart.)"
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "happy",
+      "chapter": "Final Chapter: The Last Note",
+      "goto": "s6b",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Winter break. {name} really came to your house. Your mom made dumplings with three kinds of filling and set out an extra pair of chopsticks. {ta} sat at the table, feeling awkward and unsure of what to do with her hands—your mom smiled and patted {ta} on the shoulder: \"Don't be nervous about eating, it's not like an exam.\" {ta} paused for a moment, then said very quietly, \"Thank you, Auntie.\""
+        },
+        {
+          "who": "self",
+          "text": "The tone in which {ta} said \"Thank you, Auntie\" was like that of someone who had been wandering for a long time, finally walking through a door with a light on. It wasn't just politeness; it was a feeling of being so moved that no words could express it. When my mother put food on {ta}'s plate, {ta} ate with her head down, and her eyes reddened for a moment—I saw that moment.",
+          "when": "flag: companionship"
+        },
+        {
+          "who": "narration",
+          "text": "On the last night before winter break ended, you sat on the balcony looking at the stars—there weren't as many stars in the city as on the rooftop, but {ta} said: \"It's the same no matter where you look at them, because it's the same person looking at the stars.\""
+        },
+        {
+          "who": "name",
+          "text": "\"I've made up my mind.\" {ta} pulled a small notebook from her pocket—about the size of a palm, with a clumsy cat drawn on the cover. \"From today onwards, I won't just talk through notes anymore. I'm going to say what I want to say to you out loud. At least one sentence a day. Starting with this sentence—thank you for giving me a reason to speak.\""
+        }
+      ]
+    },
+    {
+      "id": "s6b",
+      "type": "story",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Final Chapter: The Last Note",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "After the start of the school year, you walked along the ginkgo-lined path on campus. The leaves had long since fallen, leaving bare branches that painted a print against the winter sky. But you know—when spring arrives, they will be full again. {name} walked beside you, half a step closer than before—that half step, {ta} had taken an entire autumn."
+        },
+        {
+          "who": "name",
+          "text": "\"One sentence for today.\" {ta} took a deep breath, as if solving a mathematical proof—serious, cautious, and leaving no room for error: \"You are the recipient of my forty-seven notes, and also the sole listener to all the voices I will ever hear for the rest of my life.\""
+        },
+        {
+          "who": "self",
+          "text": "From notes to voices, from ambiguity to spoken words. {ta} learned one thing over an entire autumn—the best literature isn't written on paper, but spoken to someone worthy. And I happen to be that worthy person."
+        },
+        {
+          "who": "narration",
+          "text": "The road ends at the school gate. The sunlight is beautiful, casting your shadows together—the distance between the two shadows is just half a step. Not too far, not too near—just the distance between two hearts touching."
+        }
+      ]
+    },
+    {
+      "id": "s6s",
+      "type": "story",
+      "sceneKey": "classroom_morning",
+      "face": "sad",
+      "chapter": "Final Chapter - Blank Title Page",
+      "goto": "open1",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "Winter break is over, and it's the first day of school. {name}'s seat is still the one to your right behind the window—but the desk is empty; there's no notebook, no old pen, no copy of Nalan Rongruo's poetry. The homeroom teacher said {ta} transferred—to a top-tier high school in the provincial capital. They didn't say goodbye to anyone before leaving."
+        },
+        {
+          "who": "self",
+          "text": "While tidying my desk, I found an envelope at the very back of my drawer. Inside was a maple leaf—exactly the same one as the one in the library that day. On the back was the last line written by {ta}: 'I'm sorry, I'm still better at writing. But this time, I left the last page blank—hoping that one day you'll write something on it.'"
+        },
+        {
+          "who": "narration",
+          "text": "Inside the envelope, besides the maple leaf, was a mint—the same brand as the one you first placed on the windowsill in response to {ta}. You put it in your mouth—the coolness of the mint spread from the tip of your tongue to the depths of your heart. On the shelves of the classical literature section of the library, the books where those notes were hidden still stand quietly. But when you open them—there are no more secrets tucked between the pages."
+        },
+        {
+          "who": "self",
+          "text": "The ginkgo tree outside the window has sprouted new buds. Spring has come, and the note will no longer arrive. But every time I open page thirty-seven of *Six Records of a Floating Life*—that line lightly drawn with a pencil—is still there. Like evidence that someone was here. Like an ambiguous, tender, chaotic battle that belongs only to seventeen-year-olds."
+        }
+      ]
+    },
+    {
+      "id": "open1",
+      "type": "open",
+      "sceneKey": "sakura_path",
+      "face": "shy",
+      "chapter": "Final Chapter - Last Page",
+      "goto": "END",
+      "prompt": "If you were given a blank piece of paper and an old pen—what would you write to {name}? (≤100 characters, this is the forty-eighth piece of paper between you)",
+      "beats": [
+        {
+          "who": "narration",
+          "text": "{name} once said, \"The paper will keep your thoughts safe, and when the right person appears, the paper will speak for you.\" Now, it's your turn. This is the forty-eighth note between you—and the last one.",
+          "when": "flag: Together"
+        },
+        {
+          "who": "narration",
+          "text": "The back of the maple leaf is still blank. {ta} says—I hope one day you'll write something on it. Now—while the ink is still wet, while you still remember {ta}'s pen handwriting.",
+          "when": "flag:Undecided"
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "endingId": "genuine",
+      "title": "Soulmate",
+      "trigger": "top: sincerity",
+      "caption": "From the first note to the last mint—you understood the same sentence hidden in forty-seven different ways {name} spoke, and responded to {ta} in the simplest way: Me too. Those ambiguous distances, hesitant silences, names erased in the snow—all became the most genuine closeness to you.",
+      "report": "[Relationship Personality - Soulmate] You are a rare \"resonance personality\": you can catch the unspoken feelings of the other person without them having to say everything. Your sensitivity is not shrewdness, but gentleness—you tell them in your own way: you don't have to be perfect, you don't have to be fluent, and you don't have to be afraid to speak. Those you see are illuminated by the safest gaze in the world."
+    },
+    {
+      "endingId": "playboy",
+      "title": "bystander",
+      "trigger": "Top: Aquaman",
+      "caption": "You collected the maple leaves, laughed at the confession, and drank the hot cocoa—but never gave a definite answer. You treated the ambiguity of {name} as an interesting game—but when the game ended, only {ta} remained.",
+      "report": "[Relationship Personality - The Observer] You are intelligent, interesting, and good at setting the mood—yet you always back down at the most crucial moment. You enjoy being cared for, but you fear the price of being cared for. Ambiguity is your safe zone—but for the person who wrote forty-seven notes, your 'uncertainty' is more suffocating than rejection."
+    },
+    {
+      "endingId": "toxic",
+      "title": "indifferent",
+      "trigger": "top: scum",
+      "caption": "You casually push away the notes, maple leaves, mints, and old pens that {name} offers you time and time again—you don't even deserve a second glance from someone who has carefully written forty-seven notes.",
+      "report": "[Relationship Personality - The Cold-Hearted] You are so clear-headed as to be cold-hearted—when faced with someone's heartfelt kindness, your first reaction is to back away. It's not that you don't understand—it's that you're afraid. Afraid of getting close and getting hurt, afraid of taking on the responsibility. But have you ever considered—that person crouching alone under the streetlight is even more afraid of getting hurt than you are? {They} still saved the last bit of sweetness for you."
+    },
+    {
+      "endingId": "devoted",
+      "title": "The Guardian",
+      "trigger": "top: Loyal Dog",
+      "caption": "You silently stayed by {name}'s side—offering an umbrella in the rain, bringing lunch before exams, sitting under streetlights. You did everything right—but you never said that simplest of words. You protected {ta}'s loneliness, but almost lost your future together.",
+      "report": "[Relationship Personality - The Guardian] You are a natural guardian—gentle, considerate, and selfless. But the difference between protecting and loving isn't action—it's speaking up. You hide all your feelings in your actions, forgetting that your partner also needs to hear a clear statement. Don't let silence become the greatest distance between you."
+    },
+    {
+      "endingId": "wanderer",
+      "title": "passerby",
+      "min": -99,
+      "caption": "You passed by {name}'s forty-seven notes, a maple leaf, and a confession under the starry sky—but didn't stop at any of them. It's not that you're bad—you're just not ready to settle down in anyone's story yet.",
+      "report": "[Relationship Personality - Passerby] Your choices are erratic, like a bird that refuses to land—it perches on every tree but never builds a nest on any. Perhaps you're still waiting—waiting for a reason that makes you willing to break your wings. But remember: some people's notes, once expired, will never be received again."
+    }
+  ]
+}

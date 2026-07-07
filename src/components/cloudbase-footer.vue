@@ -11,26 +11,26 @@
 
     <!-- 链接行 -->
     <view class="cb-links">
-      <text class="cb-link" @click="showModal = true">作者碎碎念</text>
+      <text class="cb-link" @click="showModal = true">{{ t('cloudbaseFooter.authorNote') }}</text>
       <text class="cb-dot">|</text>
       <text class="cb-link" @click="openToolkit">CloudBase AI ToolKit</text>
     </view>
 
     <!-- 版权 -->
-    <text class="cb-copy">© {{ year }} {{ title }} · 基于腾讯云开发构建</text>
+    <text class="cb-copy">© {{ year }} {{ title }} · {{ t('cloudbaseFooter.copyright', { year, title: title || '' }) }}</text>
 
     <!-- 弹窗遮罩 -->
     <view class="modal-mask" v-if="showModal" @click="showModal = false">
       <view class="modal-box" @click.stop>
-        <text class="modal-title">作者碎碎念</text>
+        <text class="modal-title">{{ t('cloudbaseFooter.modalTitle') }}</text>
         <view class="memo-content">
-          <text class="memo-text">感谢你玩这个游戏！本人是一位最近速成编程糕手的coser少女，平时喜欢玩乙游和旮旯给木，这个文字游戏是我用心打造的agent小项目，里面有混合剧情变体，AI回应，每次的选项将有可能引发不同的故事发展。\n素材均感谢🍌、gpt、wb，可能切图得有点生草，token和服务费用在热爱里持续消耗中😭，希望能每次给你带来不一样的快乐。</text>
-          <text class="memo-text">如果有任何建议或问题，欢迎联系我 💌</text>
+          <text class="memo-text">{{ t('cloudbaseFooter.memoText') }}</text>
+          <text class="memo-text">{{ t('cloudbaseFooter.memoTip') }}</text>
           <text class="memo-email">charlotte21110@icloud.com</text>
           <text class="memo-text" style="display: flex; justify-content: right;">update: 2026.7.1</text>
         </view>
         <view class="modal-btn" @click="showModal = false">
-          <text class="modal-btn-text">关闭</text>
+          <text class="modal-btn-text">{{ t('cloudbaseFooter.closeBtn') }}</text>
         </view>
       </view>
     </view>
@@ -38,7 +38,10 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref } from 'vue'
+
+const { t } = useI18n()
 
 defineProps<{ title?: string }>()
 
@@ -50,7 +53,7 @@ const openUrl = (url: string) => {
   window.open(url, '_blank')
   // #endif
   // #ifndef H5
-  uni.setClipboardData({ data: url, success: () => uni.showToast({ title: '链接已复制', icon: 'none' }) })
+  uni.setClipboardData({ data: url, success: () => uni.showToast({ title: t('cloudbaseFooter.toastLinkCopied'), icon: 'none' }) })
   // #endif
 }
 

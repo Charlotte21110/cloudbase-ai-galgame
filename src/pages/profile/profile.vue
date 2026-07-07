@@ -1,49 +1,49 @@
 <template>
   <view class="profile-container">
     <view class="profile-header">
-      <text class="title">用户信息</text>
+      <text class="title">{{ t('profile.title') }}</text>
     </view>
     
     <view class="profile-content">
       <view v-if="userInfo" class="user-info">
         <view class="info-item">
-          <text class="label">用户ID:</text>
-          <text class="value">{{ userInfo.id || '未知' }}</text>
+          <text class="label">{{ t('profile.userId') }}</text>
+          <text class="value">{{ userInfo.id || t('common.unknown') }}</text>
         </view>
         <!-- <view class="info-item">
           <text class="label">登录类型:</text>
           <text class="value">{{ session.scope }}</text>
         </view> -->
         <view v-if="userInfo.phone" class="info-item">
-          <text class="label">手机号:</text>
+          <text class="label">{{ t('profile.phone') }}</text>
           <text class="value">{{ userInfo.phone }}</text>
         </view>
         <view v-if="userInfo.email" class="info-item">
-          <text class="label">邮箱:</text>
+          <text class="label">{{ t('profile.email') }}</text>
           <text class="value">{{ userInfo.email }}</text>
         </view>
         <view class="info-item">
-          <text class="label">用户名:</text>
+          <text class="label">{{ t('profile.username') }}</text>
           <text class="value">{{ getUserName(userInfo) }}</text>
         </view>
         <view class="info-item">
-          <text class="label">创建时间:</text>
+          <text class="label">{{ t('profile.created') }}</text>
           <text class="value">{{ formatDate(userInfo.created_at) }}</text>
         </view>
         <view class="info-item">
-          <text class="label">最后登录:</text>
+          <text class="label">{{ t('profile.lastLogin') }}</text>
           <text class="value">{{ formatDate(userInfo.last_sign_in_at) }}</text>
         </view>
         
         <button class="logout-btn" @click="handleLogout">
-          退出登录
+          {{ t('profile.logoutBtn') }}
         </button>
       </view>
       
       <view v-else class="no-user">
-        <text class="no-user-text">未登录</text>
+        <text class="no-user-text">{{ t('profile.notLoggedIn') }}</text>
         <button class="login-btn" @click="goToLogin">
-          去登录
+          {{ t('profile.gotoLogin') }}
         </button>
       </view>
     </view>
@@ -51,8 +51,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { ref, onMounted } from 'vue'
 import { app, logout, auth } from '../../utils/cloudbase'
+
+const { t } = useI18n()
 
 const userInfo = ref<any>(null)
 const session = ref<any>(null)
@@ -81,7 +84,7 @@ const getUserInfo = async () => {
 
 // 获取用户名
 const getUserName = (user: any) => {
-  if (!user || !user.user_metadata) return '未知'
+  if (!user || !user.user_metadata) return t('common.unknown')
   
   // 优先显示用户设置的昵称
   if (user.user_metadata.nickName) return user.user_metadata.nickName
@@ -114,12 +117,12 @@ const getUserName = (user: any) => {
     return `匿名用户 (${user.id.substring(0, 8)}...)`
   }
   
-  return '未设置'
+  return t('profile.notSet')
 }
 
 // 格式化日期
 const formatDate = (timestamp: number) => {
-  if (!timestamp) return '未知'
+  if (!timestamp) return t('common.unknown')
   
   try {
     // 处理不同的时间戳格式
@@ -134,7 +137,7 @@ const formatDate = (timestamp: number) => {
     
     // 检查日期是否有效
     if (isNaN(date.getTime())) {
-      return '无效日期'
+      return t('profile.invalidDate')
     }
     
     return date.toLocaleString('zh-CN', {

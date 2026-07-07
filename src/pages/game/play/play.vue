@@ -14,7 +14,7 @@
 
     <!-- 右上角：第N幕（灰色半透明圆角） + 羁绊条 -->
     <view class="topbar-right">
-      <view class="step-pill">第 {{ session.step }} 幕</view>
+      <view class="step-pill">{{ t('play.stepPill', { n: session.step }) }}</view>
       <view class="affinity-heart"></view>
       <view class="affinity-track">
         <view
@@ -24,7 +24,7 @@
         ></view>
         <text class="affinity-num">{{ session.score }}</text>
       </view>
-      <text class="bond-label">羁绊</text>
+      <text class="bond-label">{{ t('play.bondLabel') }}</text>
     </view>
 
     <!-- 飘分 / 心形粒子 -->
@@ -56,7 +56,7 @@
             class="open-input"
             v-model="openText"
             :maxlength="100"
-            placeholder="写下你最想说的那句话…（≤100字）"
+            :placeholder="t('play.openPlaceholder')"
             placeholder-class="open-ph"
             :adjust-position="true"
             @click.stop
@@ -70,7 +70,7 @@
         </view>
 
         <!-- 加载态 -->
-        <view v-else-if="phase === 'reacting'" class="loading">{{ char?.name }} 正在回应…</view>
+        <view v-else-if="phase === 'reacting'" class="loading">{{ char?.name }} {{ t('play.reacting', { name: char?.name }) }}</view>
       </view>
 
       <!-- 对话框：固定最小高度、常驻底部，玻璃透明气泡 -->
@@ -92,19 +92,19 @@
       <view class="ctrl-row">
         <view class="ctrl-btn" :class="{ disabled: !canPrev }" @click.stop="goPrev">
           <view class="ctrl-ico-css ico-prev"></view>
-          <text class="ctrl-tip">上一句</text>
+          <text class="ctrl-tip">{{ t('play.ctrlPrev') }}</text>
         </view>
         <view class="ctrl-btn" :class="{ disabled: !canNext }" @click.stop="goNext">
           <view class="ctrl-ico-css ico-next"></view>
-          <text class="ctrl-tip">下一句</text>
+          <text class="ctrl-tip">{{ t('play.ctrlNext') }}</text>
         </view>
         <view class="ctrl-btn" :class="{ disabled: !canSkip }" @click.stop="goSkip">
           <view class="ctrl-ico-css ico-skip"></view>
-          <text class="ctrl-tip">跳过</text>
+          <text class="ctrl-tip">{{ t('play.ctrlSkip') }}</text>
         </view>
         <view class="ctrl-btn" :class="{ active: autoPlay }" @click.stop="toggleAuto">
           <view class="ctrl-ico-css ico-auto"></view>
-          <text class="ctrl-tip">{{ autoPlay ? '自动中' : '自动' }}</text>
+          <text class="ctrl-tip">{{ autoPlay ? t('play.ctrlAutoPlaying') : t('play.ctrlAuto') }}</text>
         </view>
       </view>
     </view>
@@ -114,7 +114,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import {
+import { useI18n } from 'vue-i18n'
   session,
   currentNode,
   applyChoice,
@@ -135,6 +135,8 @@ import type { NodeOption, Beat } from '@/game/types'
 //  open     开放题输入
 type Phase = 'story' | 'choosing' | 'reacting' | 'react' | 'open'
 
+const { t } = useI18n()
+
 const char = computed(() => session.char)
 const node = computed(() => currentNode())
 
@@ -151,7 +153,7 @@ let autoTimer: any = null
 function openMenu() {
   clearAuto()
   uni.showActionSheet({
-    itemList: ['返回首页', '重新选择角色'],
+    itemList: [t('play.menuItems.0'), t('play.menuItems.1')],
     success: (res) => {
       if (res.tapIndex === 0 || res.tapIndex === 1) {
         uni.reLaunch({ url: '/pages/game/pick/pick' })
@@ -434,7 +436,7 @@ async function submitOpen() {
   const text = openText.value.trim()
   if (!text) return
   if (text.length > 100) {
-    uni.showToast({ title: '不能超过 100 字哦', icon: 'none' })
+    uni.showToast({ title: t('play.toastOpenMax'), icon: 'none' })
     return
   }
   session.openAnswer = text

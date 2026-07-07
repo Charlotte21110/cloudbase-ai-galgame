@@ -26,7 +26,7 @@
         />
         <view v-else class="sc-loading">
           <view class="sc-spin"></view>
-          <text class="sc-loading-tx">正在生成你的长夜档案…</text>
+          <text class="sc-loading-tx">{{ t('shareCard.generating') }}</text>
         </view>
       </view>
 
@@ -34,16 +34,16 @@
       <view class="sc-actions">
         <view class="act" :class="{ disabled: !shotUrl || saving }" @click="save">
           <view class="act-circle"><view class="ic ic-dl"><view class="dl-tray"></view></view></view>
-          <text class="act-label">保存到相册</text>
+          <text class="act-label">{{ t('shareCard.saveToAlbum') }}</text>
         </view>
         <view class="act" @click="copyLink">
           <view class="act-circle"><view class="ic ic-copy"></view></view>
-          <text class="act-label">复制链接</text>
+          <text class="act-label">{{ t('shareCard.copyLink') }}</text>
         </view>
         <!-- #ifdef MP-WEIXIN -->
         <view class="act" @click="shareWx">
           <view class="act-circle"><view class="ic ic-share"><view class="sh-tray"></view></view></view>
-          <text class="act-label">微信分享</text>
+          <text class="act-label">{{ t('shareCard.wxShare') }}</text>
         </view>
         <!-- #endif -->
       </view>
@@ -52,8 +52,11 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { getCurrentInstance, ref, watch } from 'vue'
 import { session, tagCloud } from '@/game/store'
+
+const { t } = useI18n()
 
 const props = defineProps<{ visible: boolean }>()
 const emit = defineEmits<{ (e: 'close'): void }>()
@@ -192,7 +195,7 @@ async function render() {
   ctx.setShadow(0, 0, 0, 'rgba(0,0,0,0)')
 
   // 4. 顶部品牌：爱心 + 文字
-  const label = '辰星 · 长夜文游'
+  const label = t('shareCard.brand')
   ctx.setFontSize(30)
   const tw = measureText(ctx, label, 30)
   const heartW = 46
@@ -277,8 +280,8 @@ async function render() {
   ctx.setTextAlign('center')
   ctx.setFontSize(24)
   ctx.setFillStyle('#b9a8e6')
-  ctx.fillText('灵魂契合度', leftX, statY + 8)
-  ctx.fillText('标签', rightX, statY + 8)
+  ctx.fillText(t('report.matchLabel'), leftX, statY + 8)
+  ctx.fillText(t('report.tagsLabel'), rightX, statY + 8)
 
   ctx.setFontSize(46)
   ctx.setFillStyle('#ffd9f0')
@@ -302,7 +305,7 @@ async function render() {
   ctx.setTextAlign('center')
   ctx.setFontSize(22)
   ctx.setFillStyle('#8d7bc0')
-  ctx.fillText('Powered by CloudBase · 云开发', cx, footY)
+  ctx.fillText(t('shareCard.poweredBy'), cx, footY)
 
   ctx.draw(false, () => {
     setTimeout(() => exportImage(), 150)
@@ -320,7 +323,7 @@ function exportImage() {
       },
       fail: (e) => {
         console.error('[share-card] export fail', e)
-        uni.showToast({ title: '生成失败，可长按页面截图', icon: 'none' })
+        uni.showToast({ title: t('shareCard.toast.genFail'), icon: 'none' })
       },
     },
     inst as any
@@ -336,13 +339,13 @@ function save() {
   try {
     const a = document.createElement('a')
     a.href = shotUrl.value
-    a.download = '辰星-长夜档案.png'
+    a.download = t('shareCard.brand') + '.png'
     document.body.appendChild(a)
     a.click()
     a.remove()
-    uni.showToast({ title: '已开始下载 💜', icon: 'none' })
+    uni.showToast({ title: t('shareCard.toast.download'), icon: 'none' })
   } catch (e) {
-    uni.showToast({ title: '请长按图片保存', icon: 'none' })
+    uni.showToast({ title: t('shareCard.toast.longPress'), icon: 'none' })
   }
   saving.value = false
   // #endif
@@ -350,22 +353,22 @@ function save() {
   uni.saveImageToPhotosAlbum({
     filePath: shotUrl.value,
     success: () => {
-      uni.showToast({ title: '已保存到相册 💜', icon: 'none' })
+      uni.showToast({ title: t('shareCard.toast.saved'), icon: 'none' })
       saving.value = false
     },
     fail: (e) => {
       saving.value = false
       if (/auth|deny/i.test(JSON.stringify(e))) {
         uni.showModal({
-          title: '需要相册权限',
-          content: '请在设置中允许保存到相册后重试',
-          confirmText: '去设置',
+          title: t('shareCard.perms.title'),
+          content: t('shareCard.perms.content'),
+          confirmText: t('shareCard.perms.confirm'),
           success: (m) => {
             if (m.confirm) uni.openSetting()
           },
         })
       } else {
-        uni.showToast({ title: '保存失败，可长按图片保存', icon: 'none' })
+        uni.showToast({ title: t('shareCard.saveFail'), icon: 'none' })
       }
     },
   })
@@ -385,19 +388,19 @@ function shareLink(): string {
 function copyLink() {
   uni.setClipboardData({
     data: shareLink(),
-    success: () => uni.showToast({ title: '链接已复制 💜', icon: 'none' }),
-    fail: () => uni.showToast({ title: '复制失败', icon: 'none' }),
+    success: () => uni.showToast({ title: t('shareCard.toast.copied'), icon: 'none' }),
+    fail: () => uni.showToast({ title: t('shareCard.toast.copyFail'), icon: 'none' }),
   })
 }
 
 function shareWx() {
   // #ifdef MP-WEIXIN
-  uni.showToast({ title: '点击右上角 ··· 分享给好友', icon: 'none' })
+  uni.showToast({ title: t('shareCard.toast.wxShare'), icon: 'none' })
   // #endif
   // #ifndef MP-WEIXIN
   uni.setClipboardData({
     data: shareLink(),
-    success: () => uni.showToast({ title: '链接已复制，粘贴到微信分享吧', icon: 'none' }),
+    success: () => uni.showToast({ title: t('shareCard.toast.wxFallback'), icon: 'none' }),
   })
   // #endif
 }
