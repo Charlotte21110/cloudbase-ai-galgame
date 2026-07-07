@@ -1,8 +1,8 @@
 <template>
   <view class="login-container">
     <view class="login-header">
-      <text class="title">选择登录方式</text>
-      <text class="subtitle">请选择您喜欢的登录方式</text>
+      <text class="title">{{ t('login.title') }}</text>
+      <text class="subtitle">{{ t('login.subtitle') }}</text>
     </view>
     
     <view class="login-options">
@@ -10,8 +10,8 @@
       <view class="login-option" @click="anonymousLogin">
         <view class="option-icon">👤</view>
         <view class="option-content">
-          <text class="option-title">确认登录（默认匿名登录）</text>
-          <text class="option-desc">无需注册，快速体验</text>
+          <text class="option-title">{{ t('login.anonymous.title') }}</text>
+          <text class="option-desc">{{ t('login.anonymous.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </view>
@@ -20,8 +20,8 @@
       <view class="login-option" @click="openIdLogin">
         <view class="option-icon">💬</view>
         <view class="option-content">
-          <text class="option-title">微信小程序 openId 静默登录</text>
-          <text class="option-desc">使用微信 OpenID 静默登录</text>
+          <text class="option-title">{{ t('login.openid.title') }}</text>
+          <text class="option-desc">{{ t('login.openid.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </view>
@@ -34,8 +34,8 @@
       >
         <view class="option-icon">📞</view>
         <view class="option-content">
-          <text class="option-title">微信小程序手机号授权登录</text>
-          <text class="option-desc">推荐未注册用户使用</text>
+          <text class="option-title">{{ t('login.phoneAuth.title') }}</text>
+          <text class="option-desc">{{ t('login.phoneAuth.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </button>
@@ -44,8 +44,8 @@
       <view class="login-option" @click="phoneLogin">
         <view class="option-icon">📱</view>
         <view class="option-content">
-          <text class="option-title">手机验证码登录</text>
-          <text class="option-desc">使用手机号获取验证码登录</text>
+          <text class="option-title">{{ t('login.phone.title') }}</text>
+          <text class="option-desc">{{ t('login.phone.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </view>
@@ -54,8 +54,8 @@
       <view class="login-option" @click="passwordLogin">
         <view class="option-icon">🔐</view>
         <view class="option-content">
-          <text class="option-title">密码登录</text>
-          <text class="option-desc">使用手机号/邮箱/用户名 + 密码登录</text>
+          <text class="option-title">{{ t('login.password.title') }}</text>
+          <text class="option-desc">{{ t('login.password.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </view>
@@ -64,30 +64,33 @@
       <view class="login-option" @click="emailLogin">
         <view class="option-icon">📧</view>
         <view class="option-content">
-          <text class="option-title">邮箱验证码登录</text>
-          <text class="option-desc">使用邮箱获取验证码登录</text>
+          <text class="option-title">{{ t('login.email.title') }}</text>
+          <text class="option-desc">{{ t('login.email.desc') }}</text>
         </view>
         <view class="option-arrow">></view>
       </view>
     </view>
     
     <view class="footer-text">
-      <text>选择登录方式即表示您同意我们的</text>
-      <text class="link-text">服务条款</text>
-      <text>和</text>
-      <text class="link-text">隐私政策</text>
+      <text>{{ t('login.footer.prefix') }}</text>
+      <text class="link-text">{{ t('login.footer.terms') }}</text>
+      <text>{{ t('login.footer.and') }}</text>
+      <text class="link-text">{{ t('login.footer.privacy') }}</text>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { initCloudBase, signInWithPhoneAuth, signInWithOpenId, login } from '../../utils/cloudbase'
+
+const { t } = useI18n()
 
 // 匿名登录
 const anonymousLogin = async () => {
   try {
     uni.showLoading({
-      title: '登录中...'
+      title: t('login.toast.loading')
     })
     
     // 使用现有的初始化函数，若没登录会自动进行匿名登录
@@ -99,10 +102,10 @@ const anonymousLogin = async () => {
         url: '/pages/index/index'
       })
     }, 1000)
-  } catch (error: any) {
+  } catch (error: unknown) {
     uni.hideLoading()
     uni.showToast({
-      title: error.message || '登录失败',
+      title: (error as Error)?.message || t('login.toast.fail'),
       icon: 'none'
     })
   }
@@ -111,7 +114,7 @@ const anonymousLogin = async () => {
 // 添加 openIdLogin 方法
 const openIdLogin = async () => {
   uni.showLoading({
-    title: '正在登录...'
+    title: t('login.toast.loggingIn')
   })
 
   try {
@@ -120,7 +123,7 @@ const openIdLogin = async () => {
     uni.hideLoading()
 
     uni.showToast({
-      title: '登录成功',
+      title: t('login.toast.success'),
       icon: 'success'
     })
     // 登录成功后，跳转到首页并关闭所有历史页面
@@ -130,11 +133,11 @@ const openIdLogin = async () => {
       })
     }, 1000)
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     uni.hideLoading()
     console.error('微信 OpenID 登录失败:', error)
     uni.showToast({
-      title: error.message || '登录失败，请重试',
+      title: (error as Error)?.message || t('login.toast.retry'),
       icon: 'none'
     })
   }
@@ -146,14 +149,14 @@ const handleGetPhoneNumber = async (event: any) => {
   if(!event.detail.code){
     console.error('获取手机号失败:', event.detail.errMsg)
     uni.showToast({
-      title: '获取手机号失败',
+      title: t('login.toast.phoneFail'),
       icon: 'none'
     })
     return
   }
   console.log('获取到动态令牌(code):', event.detail.code)
   uni.showLoading({
-    title: '登录中...'
+    title: t('login.toast.loading')
   })
   try {
     // 手机号授权登录
@@ -161,7 +164,7 @@ const handleGetPhoneNumber = async (event: any) => {
     console.log('手机号授权登录结果:', loginResult)
     uni.hideLoading()
     uni.showToast({
-      title: '登录成功',
+      title: t('login.toast.success'),
       icon: 'success'
     })
     // 延迟跳转到首页
@@ -171,11 +174,11 @@ const handleGetPhoneNumber = async (event: any) => {
       })
     }, 1000)
 
-  }catch (error: any) {
+  }catch (error: unknown) {
     // 处理登录失败
     console.error('手机号授权登录失败:', error)
     uni.showToast({
-      title: error.message || '登录失败',
+      title: (error as Error)?.message || t('login.toast.fail'),
       icon: 'none'
     })
   } finally {

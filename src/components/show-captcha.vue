@@ -3,7 +3,7 @@
     <uni-popup ref="popup" type="center" :is-mask-click="false">
       <view class="popup-content">
         <view class="captcha-header">
-          <text class="title">请完成安全验证</text>
+          <text class="title">{{ t('captcha.title') }}</text>
         </view>
         <view class="captcha-body">
           <slot></slot>
@@ -13,24 +13,23 @@
   </view>
 </template>
 
-<script>
-// uni-popup 通过 pages.json 的 easycom 自动引入，无需手动 import
-export default {
-  name: "show-captcha",
-  data() {
-    return {
-      popup: null,
-    };
-  },
-  methods: {
-    open() {
-      this.$refs.popup.open();
-    },
-    close() {
-      this.$refs.popup.close();
-    },
-  },
-};
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
+const popup = ref<any>(null)
+
+const open = () => {
+  popup.value?.open()
+}
+
+const close = () => {
+  popup.value?.close()
+}
+
+defineExpose({ open, close })
 </script>
 
 <style lang="scss" scoped>

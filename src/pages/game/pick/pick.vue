@@ -7,15 +7,15 @@
     <view class="pick-inner">
       <view class="pick-header">
         <image class="pick-title-art" :src="titleArt" mode="widthFix" />
-        <text class="pick-sub">12 个人，12 段故事 · 史诗 / 商战 / 暧昧 / 青春 / 友情 / 亲情 / 职场 / 日常 · 选一位，走进 TA 的开场</text>
+        <text class="pick-sub">{{ t('pick.subtitle') }}</text>
       </view>
 
       <!-- 男生线 -->
       <view class="line-block">
         <view class="line-head">
           <view class="line-gem male"></view>
-          <text class="line-name">男生线</text>
-          <text class="line-tip">高富帅 / 竹马 / 精英</text>
+          <text class="line-name">{{ t('pick.maleLine') }}</text>
+          <text class="line-tip">{{ t('pick.maleTip') }}</text>
         </view>
         <view class="card-row">
           <view
@@ -39,8 +39,8 @@
       <view class="line-block">
         <view class="line-head">
           <view class="line-gem female"></view>
-          <text class="line-name">女生线</text>
-          <text class="line-tip">大女主 / 萌妹 / 御姐</text>
+          <text class="line-name">{{ t('pick.femaleLine') }}</text>
+          <text class="line-tip">{{ t('pick.femaleTip') }}</text>
         </view>
         <view class="card-row">
           <view
@@ -60,20 +60,27 @@
         </view>
       </view>
 
+      <view class="pick-lang">
+        <lang-switch />
+      </view>
+
       <view class="pick-foot">
-        <text>AI Agent文字游戏：选一张卡→ 开始你们的故事</text>
+        <text>{{ t('pick.foot.ai') }}</text>
         <br/>
-        <text>By：小夏-云开发CloudBase构建</text>
+        <text>{{ t('pick.foot.by') }}</text>
       </view>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { MALE_CHARACTERS, FEMALE_CHARACTERS } from '@/game/data/characters'
 import { faceImg } from '@/game/assets'
 import { startGame } from '@/game/store'
 import type { Character } from '@/game/types'
+
+const { t } = useI18n()
 
 const males = MALE_CHARACTERS
 const females = FEMALE_CHARACTERS
@@ -93,7 +100,7 @@ const choose = (id: string) => {
   if (startGame(id)) {
     uni.navigateTo({ url: '/pages/game/opening/opening' })
   } else {
-    uni.showToast({ title: '角色加载失败', icon: 'none' })
+    uni.showToast({ title: t('pick.toast.loadFail'), icon: 'none' })
   }
 }
 </script>
@@ -254,6 +261,11 @@ const choose = (id: string) => {
   line-height: 1.45;
   color: #8f86b3;
   text-align: left;
+}
+.pick-lang {
+  display: flex;
+  justify-content: center;
+  margin: 24rpx 0 8rpx;
 }
 .pick-foot {
   text-align: center;
