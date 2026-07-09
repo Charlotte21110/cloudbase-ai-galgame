@@ -12,7 +12,6 @@
  *   const all = getScripts()   // 全部剧本
  *
  * ⚠️ 切换语言后需要刷新页面 / reLaunch，才会加载对应语言的剧本。
- *    英文环境下 scripts.json（默认剧本）暂无翻译，回退中文版。
  */
 import type { Script } from '../types'
 import { getLocale } from '@/locale/lang'
@@ -56,7 +55,8 @@ export async function loadScripts(): Promise<void> {
   if (locale !== 'en-US' || enLoaded) return
 
   try {
-    const modules = await Promise.all([
+    const [defaultEn, ...enExtras] = await Promise.all([
+      import('./scripts.en-US.json'),
       import('./scripts/biz_merger.en-US.json'),
       import('./scripts/urban_amour.en-US.json'),
       import('./scripts/summer_childhood.en-US.json'),
@@ -70,15 +70,15 @@ export async function loadScripts(): Promise<void> {
       import('./scripts/queen_rise.en-US.json'),
     ])
 
-    const enExtra: Script[] = modules.map((m) => (m as any).default as Script)
-
-    loadedScripts = [
-      ...(defaultScriptsZh as unknown as Script[]),
-      ...enExtra,
+    const enExtra: Script[] = [
+      ...((defaultEn as any).default as Script[]),
+      ...enExtras.map((m) => (m as any).default as Script),
     ]
+
+    loadedScripts = enExtra
     enLoaded = true
 
-    console.log(`[scripts] 英文专属剧本加载完成 (${enExtra.length} 本)`)
+    console.log(`[scripts] 英文剧本加载完成 (${enExtra.length} 本)`)
   } catch (e) {
     console.warn('[scripts] 英文剧本加载失败，回退中文版', e)
     loadedScripts = ZH_SCRIPTS

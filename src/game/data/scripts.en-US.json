@@ -1,0 +1,1544 @@
+[
+  {
+    "_id": "script_default",
+    "id": "script_default",
+    "title": "Morning Star - Long Night Cycle",
+    "openingTip": "Chenxing, a city suspended above a sea of ​​stars. Every seventy years, a long night descends, and the stars go out. Tonight, when you open your eyes, you find yourself one of the very few still awake in this slumbering city… This night is long; most of the time, you only need to tap the screen to finish this story. The crossroads that truly require your choices won't be many—but each one counts.",
+    "prologue": "Legend has it that every seventy years, the planet Chenxing experiences a \"Long Night\": its orbits reverse, dawn never arrives, and all who sleep are forgotten. But no one knows that this Long Night is not a natural disaster—it is the primordial tide called \"Star Devourer,\" a void that slowly gnaws at the heart of this city's star when an ancient seal loosens. Seventy years ago, someone sacrificed their life to light an eternal lamp, suppressing it. Now, the lamp is about to go out, and the tide is about to rise. And you are the one chosen by the stars to awaken on this night. Is your encounter with {name} a coincidence, or the beginning of another cycle?",
+    "initScore": 50,
+    "start": "s1",
+    "nodes": [
+      {
+        "id": "s1",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "Prologue: The Long Night Is Coming",
+        "goto": "s2",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "Chenxing—a city suspended above an endless sea of ​​stars. Legend has it that every seventy years, it experiences a \"long night\": the stars go out, and dawn is slow to arrive."
+          },
+          {
+            "who": "narration",
+            "text": "No one knows the true meaning of the long night. People only remember that when the long night falls, the whole city falls asleep, and when they wake up, it's as if nothing has ever happened."
+          },
+          {
+            "who": "narration",
+            "text": "And at that moment, you opened your eyes. All the lights in the office building were off, and the star trails outside the window were slowly reversing, like a giant eye closing."
+          },
+          {
+            "who": "self",
+            "text": "Why am I the only one awake in the whole city?"
+          },
+          {
+            "who": "narration",
+            "text": "The streets were deathly silent, the neon lights frozen in mid-air. In this sleeping city, only your heartbeat, clear to the point of being jarring."
+          },
+          {
+            "who": "self",
+            "text": "The Long Night… the legendary Long Night that swallows up a whole night's memories every seventy years. It has truly arrived."
+          },
+          {
+            "who": "narration",
+            "text": "You stand up, supporting yourself against the cold glass curtain wall. In the reflection, a giant eye, made up of inverted star trails, silently looks down at you."
+          }
+        ]
+      },
+      {
+        "id": "s2",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "Prologue: The Long Night Is Coming",
+        "goto": "c1",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You follow the only flowing light out of the building. The rain has started falling, but it hangs in mid-air, condensing into countless still silver lines."
+          },
+          {
+            "who": "name",
+            "text": "\"You're... awake too?\" A figure stood in the middle of the rain, holding an umbrella for you, but not for themselves. It was {name}."
+          },
+          {
+            "who": "name",
+            "text": "\"That's great. I thought I'd be the only one left in this round.\" There was a sense of relief, almost exhaustion, in {ta}'s voice."
+          },
+          {
+            "who": "self",
+            "text": "\"This round\"...{ta} said it as if she had experienced countless long nights."
+          },
+          {
+            "who": "name",
+            "text": "\"There's no time to go into details. Those who stay awake during the long night will be targeted by 'it'.\" {ta} shoved the umbrella into your hand. \"Stay close to me—unless you want to be swallowed up.\""
+          },
+          {
+            "who": "narration",
+            "text": "Before the words were even finished, the shadows on the street corner began to writhe and rise, condensing into a faceless black mist that silently surged toward you."
+          }
+        ]
+      },
+      {
+        "id": "c1",
+        "type": "choice",
+        "sceneKey": "rain_street",
+        "face": "angry",
+        "chapter": "Prologue: The Long Night Is Coming",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The black mist moved swiftly along the ground, swallowing even the frozen raindrops into nothingness in its wake. {name} had already assumed a fighting stance, yet still managed to spare a sliver of gaze for you."
+          },
+          {
+            "who": "name",
+            "text": "\"It's the remnant of 'Star Eater.' Don't be afraid—but how you get through the rest of the night is up to you.\""
+          }
+        ],
+        "options": [
+          {
+            "text": "I'll stand shoulder to shoulder with you; if we're going to fight, we'll fight together.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "s3",
+            "reply": "{name} paused for a moment, then smiled and said, \"...Okay, let's go together then.\"",
+            "os": "(A long-lost light flashed in {ta}'s eyes.)"
+          },
+          {
+            "text": "With such a beauty in front of me, how could I possibly hide behind?",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s3",
+            "reply": "{name}: \"Just be cheeky. Just don't let your hands shake.\"",
+            "os": "(Joking aside, {ta} still quietly protected you by her side.)"
+          },
+          {
+            "text": "Step back, let me block them!",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "s3",
+            "reply": "{name} grabbed you: \"Don't be stubborn, let's do it together.\"",
+            "os": "(This reckless drive is both frustrating and exasperating.)"
+          },
+          {
+            "text": "You think you're so tough? I'll just be your assistant.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "s3",
+            "reply": "{name} calmly withdrew his gaze: \"...Alright then.\"",
+            "os": "(The light that had just been there dimmed again.)"
+          }
+        ]
+      },
+      {
+        "id": "s3",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "shy",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "goto": "s3b",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The moment the black mist dissipated into specks of stardust, {name} ceased his attack, his chest rising and falling slightly. {ta} gazed into the distance as the rain began to fall again."
+          },
+          {
+            "who": "name",
+            "text": "\"You must have many questions. I'll try to keep it brief.\""
+          },
+          {
+            "who": "name",
+            "text": "\"This city is called Chenxing, floating above a sea of ​​stars. At its center lies a 'Heart of the Stars'—it is this that gives light to the entire city and dreams to everyone.\""
+          },
+          {
+            "who": "name",
+            "text": "\"But deep within the sea of ​​stars lies something called 'Star Devourer.' It is neither hungry nor hateful; it simply wants to pull everything that has light back to the primordial nothingness.\""
+          },
+          {
+            "who": "name",
+            "text": "\"Seventy years ago, it almost succeeded. It was a group of people known as the 'Lamp Bearers' who sacrificed their lives to light the eternal lamp and put it back down.\""
+          },
+          {
+            "who": "self",
+            "text": "They risked their lives to light lamps... but what happened to those people afterward?"
+          },
+          {
+            "who": "name",
+            "text": "\"Those who light the lamps will remain forever in the long night. The city will forget them, along with that entire night.\" {ta} paused. \"And I am the successor of the last lamplighter.\""
+          },
+          {
+            "who": "name",
+            "text": "\"Now, the lights are about to go out. The long night has returned once again.\" {ta} said this as if stating something that had been destined long ago."
+          },
+          {
+            "who": "self",
+            "text": "Once every seventy years, a life is traded for seventy years of peace for the entire city... This deal is too cruel."
+          },
+          {
+            "who": "name",
+            "text": "\"Don't look at me like that.\" {ta} turned her head away. \"This is something that those who carry the lamp are born with. Whoever's turn it is, they accept their fate.\""
+          }
+        ]
+      },
+      {
+        "id": "s3b",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "goto": "c2",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You walk along the empty streets toward the city center. In the shop windows along the way, the peaceful faces of the sleeping are frozen in time—they have no idea that someone is risking their life for them tonight."
+          },
+          {
+            "who": "name",
+            "text": "\"Everyone in this city is dreaming their own dreams right now,\" {name} whispered. \"And the lamplighter's duty is to keep those dreams alive until dawn.\""
+          },
+          {
+            "who": "self",
+            "text": "When {ta} said the word \"responsibility\", it was both so light and so heavy."
+          },
+          {
+            "who": "narration",
+            "text": "The star trails overhead continued to slowly reverse, like an eye that refused to close. In the direction of the city center, the faint light of the ever-burning lamp flickered uncertainly."
+          },
+          {
+            "who": "name",
+            "text": "\"Let's go. Before the lights go out completely, I want to... show you the part of this city that is most worthy of being protected.\""
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "type": "choice",
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You walk through a sleeping neighborhood. In front of a residential building, a person who couldn't fall asleep in time is entangled in a lingering afterimage, their consciousness rapidly slipping away."
+          },
+          {
+            "who": "name",
+            "text": "\"Rescuing {ta} will take effort and expose our location. However...\" {name} looked at you, leaving the words unsaid."
+          }
+        ],
+        "options": [
+          {
+            "text": "Save them. Protect as many as you can.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "s4",
+            "reply": "{name} nodded and stepped forward with you: \"...I knew you would choose this.\"",
+            "os": "(This soft heart, {ta} has seen it before, and has been saved by it before.)"
+          },
+          {
+            "text": "Don't worry, I'm an expert at putting a little crippled elephant to sleep.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s4",
+            "reply": "{name}: \"He's all talk and no action, but his hands are steady.\"",
+            "os": "(In crucial moments, {ta} is still reliable.)"
+          },
+          {
+            "text": "You conserve your energy; I'll handle the dangerous parts.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "s4",
+            "reply": "{name}: \"Don't always push yourself forward.\"",
+            "os": "(It's the same old story; they're leaving all the escape routes to others.)"
+          },
+          {
+            "text": "We're barely able to take care of ourselves, so let's not meddle in other people's business.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "s4",
+            "reply": "{name} glanced at the person silently and followed you.",
+            "os": "(You didn't see the disappointment in that glance.)"
+          }
+        ]
+      },
+      {
+        "id": "s4",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "goto": "s4b",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The closer you get to the city center, the more rapidly the star trails reverse. Occasionally, the ground beneath your feet becomes transparent, revealing the surging, inky sea of ​​stars below."
+          },
+          {
+            "who": "name",
+            "text": "\"The tide of star-devouring has already reached here.\" A glimmer of light gathered at {name}'s fingertip—it was the power of the Lamp Bearer, but it was much dimmer than {ta} remembered."
+          },
+          {
+            "who": "self",
+            "text": "{ta}'s light was trembling. {ta} was much more tired than she appeared."
+          },
+          {
+            "who": "name",
+            "text": "\"Don't look at me like that.\" {ta} seemed to sense something, and smiled faintly, \"I've walked this road so many times, I wouldn't get lost even with my eyes closed.\""
+          },
+          {
+            "who": "narration",
+            "text": "But you could clearly hear that when {ta} said those words, there was a deep, long-standing loneliness in her voice."
+          }
+        ]
+      },
+      {
+        "id": "s4b",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "goto": "c3",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The closer you get to the city center, the heavier the traces of slumber become. The bus is stopped in the middle of the tracks, and the passengers are slumped in their seats, their lips still lingering on unfinished dreams."
+          },
+          {
+            "who": "self",
+            "text": "You suddenly realize—your footsteps are the only sound in the entire city. This silence is more unsettling than any monster."
+          },
+          {
+            "who": "name",
+            "text": "\"Are you afraid?\" {name} didn't turn around. \"Anyone who steps into the long night for the first time will be afraid.\""
+          },
+          {
+            "who": "self",
+            "text": "And what about {ta}? Having gone through so many times, has {ta} long since lost the feeling of 'fear'?"
+          },
+          {
+            "who": "name",
+            "text": "\"Don't worry.\" {ta}'s voice softened. \"As long as one person is awake, this city hasn't truly fallen asleep.\""
+          }
+        ]
+      },
+      {
+        "id": "c3",
+        "type": "choice",
+        "sceneKey": "piano_room",
+        "face": "sad",
+        "chapter": "Chapter One: The Lamplighter's Fate",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "Pushing open a half-closed door, a memory that doesn't belong to you rushes in—in the scene, a younger {name} is kneeling before the gradually fading figure of another lamplighter."
+          },
+          {
+            "who": "name",
+            "text": "\"...This door shouldn't have been opened.\" {name}'s face turned pale, and she reached out to cover the memory. \"Don't look.\""
+          }
+        ],
+        "options": [
+          {
+            "text": "I won't look. Tell me in person when you're ready.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "s5",
+            "reply": "{name} slowly lowered her hand: \"...Thank you.\"",
+            "os": "(People willing to wait for me to speak are extremely rare.)"
+          },
+          {
+            "text": "So this is how you grew up; it makes my heart ache even more.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s5",
+            "reply": "{name}'s face turned cold: \"My past is not something to be talked about with pity.\"",
+            "os": "(Even something like this can be glossed over so easily.)"
+          },
+          {
+            "text": "Don't be sad. If you want to cry, lean on me. I can handle anything.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "s5",
+            "reply": "{name}: \"My injury shouldn't have been placed on your shoulder.\"",
+            "os": "(You always want to take the blame for everything for me.)"
+          },
+          {
+            "text": "The previous lamplighter is dead? Then you'll be next.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "s5",
+            "reply": "{name} turned her face away and closed her eyes briefly: \"...Yes. Next.\"",
+            "os": "(What you've touched is the place {ta} is most afraid to touch.)"
+          }
+        ]
+      },
+      {
+        "id": "s5",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "Chapter Two: The Cycle of Seventy Years",
+        "goto": "c4",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "In the city center square, an old man in an old cloak stands guard over a dying lamp. He looks up at you, a knowing glint in his cloudy eyes."
+          },
+          {
+            "who": "Night Watch",
+            "text": "\"It's that time of night again. {name}, you've grown so much... You look just like {ta} back then.\""
+          },
+          {
+            "who": "name",
+            "text": "{name}'s body stiffened almost imperceptibly: \"...Night Watchman. How much longer can the lamp hold?\""
+          },
+          {
+            "who": "Night Watch",
+            "text": "\"It won't last until dawn. Either someone will put a new fire on it, or the whole city will sink into the star-devouring abyss along with this lamp.\""
+          },
+          {
+            "who": "Night Watch",
+            "text": "The old man turned to you: \"You are the one chosen by the stars in this round. So you should understand—'Continuing the fire' means that the one who continues the fire must leave themselves forever in the long night.\""
+          },
+          {
+            "who": "self",
+            "text": "\"Leave it forever...\" exactly the same as what {name} just said."
+          },
+          {
+            "who": "Night Watch",
+            "text": "\"A cycle of seventy years, and in each cycle, the one holding the lamp walks alone into the light.\" The old man looked at {name}, \"This time, it should have been {ta}.\""
+          },
+          {
+            "who": "narration",
+            "text": "{name} did not deny it. {ta} simply stared at the flickering lamp, her back so thin it seemed as if she might be blown away by the wind at any moment."
+          },
+          {
+            "who": "Night Watch",
+            "text": "\"The wick recognizes its owner. It only recognizes the bloodline of the person holding the lamp; outsiders cannot keep the fire burning.\" The old man gave you a meaningful look. \"At least... that was how it used to be.\""
+          },
+          {
+            "who": "self",
+            "text": "\"In the past\"... {ta}'s words were loaded with meaning. Could something be different this time?"
+          }
+        ]
+      },
+      {
+        "id": "c4",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "Chapter Two: The Cycle of Seventy Years",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "Leaving the city center, {name} remained silent for a long time. It wasn't until they reached a high platform that {ta} stopped, gazing at the slumbering lights of countless homes below."
+          },
+          {
+            "who": "name",
+            "text": "\"You heard it all. At the end of this night, I will walk into the lamp, just like {ta} did back then.\""
+          },
+          {
+            "who": "name",
+            "text": "\"So... don't get too close to me. Those destined to be forgotten shouldn't have anyone to hold them back.\" {ta} turned around, a half-smile playing on her lips. \"This is what I owe this city.\""
+          }
+        ],
+        "options": [
+          {
+            "text": "Why should you bear your fate alone? I'll accompany you and find another path.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "sA1",
+            "flag": "side by side",
+            "reply": "{name} froze, as if struck by those words: \"...You don't understand, there was no other way.\"",
+            "os": "(But {ta}'s gaze clearly softened for a moment.)"
+          },
+          {
+            "text": "Then let me walk into the lamp in your place, and you live on.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "sA1",
+            "flag": "side by side",
+            "reply": "{name} retorted sharply, \"What nonsense! I absolutely will not allow it.\"",
+            "os": "({ta}'s sudden panic betrayed her deepest concern.)"
+          },
+          {
+            "text": "Don't say such depressing things. We can think about things when it's light out.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "sB1",
+            "flag": "Solo",
+            "reply": "{name} smiled, but the smile didn't reach her eyes: \"...That's true.\"",
+            "os": "(Your avoidance caused {ta} to silently retreat into its shell.)"
+          },
+          {
+            "text": "This is your fate; I, an outsider, should not interfere.",
+            "score": -10,
+            "tag": "scum",
+            "face": "sad",
+            "goto": "sB1",
+            "flag": "Solo",
+            "reply": "{name} paused for a moment: \"...You're right. It was my fault for dragging you into this.\"",
+            "os": "(The last bit of hope that {ta} had been dashed.)"
+          }
+        ]
+      },
+      {
+        "id": "sA1",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "Interlude: The Road Side by Side",
+        "goto": "cA",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "{name} stared at you for a long time, so long that you thought {ta} was about to get angry. But in the end, {ta} just sighed very softly."
+          },
+          {
+            "who": "name",
+            "text": "\"Do you know that in the past seventy years, not a single chosen person has ever said 'I'm with you' to the lamplighter?\""
+          },
+          {
+            "who": "name",
+            "text": "\"They either respect me or run away. Only you... insist on coming close to me.\" The tips of {ta}'s ears turned red quietly in the fading night."
+          },
+          {
+            "who": "self",
+            "text": "It turns out that {ta} wasn't cold, it's just that it's been so long that no one dares to get close."
+          },
+          {
+            "who": "narration",
+            "text": "{ta} reached out and gently touched your fingertips, as if to confirm your authenticity. The frozen cherry blossom-colored dust in the air began to drift gently with {ta}'s movement."
+          },
+          {
+            "who": "name",
+            "text": "\"Then... let's look together. Even if there's only a one in ten thousand chance that we don't need to go inside the lamp.\""
+          }
+        ]
+      },
+      {
+        "id": "cA",
+        "type": "choice",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "Interlude: The Road Side by Side",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You searched for clues left by the previous lamplighter. {name} found a half-finished scroll, but hesitated when handing it to you."
+          },
+          {
+            "who": "name",
+            "text": "\"This might contain the truth that I can't go on living. Do you... really want to see it with me?\""
+          }
+        ],
+        "options": [
+          {
+            "text": "Let's watch it together. Whether it's good or bad, I'll face it with you.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "sA2",
+            "reply": "{name} spread the tattered pages among you: \"...Okay.\"",
+            "os": "(Finally, {ta} dared to believe the word \"together\".)"
+          },
+          {
+            "text": "Let me see first; I'll filter out the bad news for you before telling you.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "sA2",
+            "reply": "{name}: \"Don't shield me from it, I'm not that fragile.\"",
+            "os": "(Your maintenance is appreciated, and we appreciate it too.)"
+          },
+          {
+            "text": "Promise me before you watch—don't scare yourself.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "sA2",
+            "reply": "{name} chuckled: \"Even at a time like this, you're still being sarcastic.\"",
+            "os": "(You always manage to loosen the string when it's at its tightest.)"
+          },
+          {
+            "text": "See for yourself, I'm not interested in these things.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "sA2",
+            "reply": "{name} paused, then silently put the torn page away.",
+            "os": "(What happened to \"together\"?)"
+          }
+        ]
+      },
+      {
+        "id": "sA2",
+        "type": "story",
+        "sceneKey": "piano_room",
+        "face": "happy",
+        "chapter": "Interlude: The Road Side by Side",
+        "goto": "sA3",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The writing on the tattered pages was already faded, but it pieced together a startling conjecture: the Star Eater did not intend to destroy everything; it was merely... repeatedly enacting a lonely scene with no one to respond."
+          },
+          {
+            "who": "name",
+            "text": "\"The last lamplighter investigated this matter until his death.\" {name}'s fingertips traced the words. \"{ta} said that perhaps one day, someone will be able to end the long night without having to sacrifice themselves.\""
+          },
+          {
+            "who": "self",
+            "text": "There's no need for sacrifice... then {name} won't need to step into the lamp."
+          },
+          {
+            "who": "name",
+            "text": "{ta} looked up at you, and for the first time, her eyes held something beyond fate—hope. \"Thank you. You've made me believe that this path might truly exist.\""
+          },
+          {
+            "who": "narration",
+            "text": "The distance between you two quietly shrank that night, as if you had known each other for a very long time."
+          }
+        ]
+      },
+      {
+        "id": "sA3",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "happy",
+        "chapter": "Interlude: The Road Side by Side",
+        "goto": "s6",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "During a break in your search for clues, you rested under the eaves of a building. Frozen petals hung between you, as if someone had pressed a pause button."
+          },
+          {
+            "who": "name",
+            "text": "\"Speaking of which, I don't think I... know anything about you yet.\" {name} rarely spoke first. \"What do you plan to do after the long night ends?\""
+          },
+          {
+            "who": "self",
+            "text": "This was the first time {ta} had asked about \"after the long night\". It was as if, in {ta}'s heart, for the first time, you had a place in that future."
+          },
+          {
+            "who": "narration",
+            "text": "You chatted casually, talking about trivial but heartwarming little things that had nothing to do with fate. At that moment, {ta} smiled softly, like an ordinary person."
+          },
+          {
+            "who": "name",
+            "text": "\"It's strange,\" {ta} whispered, \"It should have been the most desperate night, but I... don't want it to end.\""
+          }
+        ]
+      },
+      {
+        "id": "sB1",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "Interlude: The Solitary Journey",
+        "goto": "cB",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You didn't ask any further questions. As {ta} had hoped, {name} left you far behind, half a step behind."
+          },
+          {
+            "who": "name",
+            "text": "\"That's good.\" {ta} walked ahead without looking back. \"The fewer worries you have, the less pain you'll experience in the end.\""
+          },
+          {
+            "who": "self",
+            "text": "The silhouette of {ta} resembled more than any afterimage—a person slowly disappearing."
+          },
+          {
+            "who": "narration",
+            "text": "The raindrops froze again. This time, {name} didn't offer you the umbrella."
+          },
+          {
+            "who": "name",
+            "text": "\"We're almost there. Just follow along for the rest of the way, don't overthink it.\" {ta}'s voice sounded very, very far away through the rain."
+          }
+        ]
+      },
+      {
+        "id": "cB",
+        "type": "choice",
+        "sceneKey": "rain_street",
+        "face": "angry",
+        "chapter": "Interlude: The Solitary Journey",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "An exceptionally fierce tide rushed in, and {name} shielded you from it, but was thrown to the ground, kneeling and unable to get up for a long time."
+          },
+          {
+            "who": "name",
+            "text": "\"Don't come any closer.\" {ta} gritted her teeth and held on. \"I told you... don't get too close to me.\""
+          }
+        ],
+        "options": [
+          {
+            "text": "Shut up. I'm coming right now to help you up.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "sB2",
+            "reply": "{name} froze, letting you help her up, and didn't push you away again: \"...You...\"",
+            "os": "(A belated approach is still a close approach.)"
+          },
+          {
+            "text": "You're injured and still trying to be tough. Next time, let me take the hit!",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "sB2",
+            "reply": "{name}: \"...Thank you.\" The voice was so soft it was almost inaudible.",
+            "os": "(I never expected you would turn back.)"
+          },
+          {
+            "text": "Look at you, so pathetic, and still so stubborn.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "sB2",
+            "reply": "{name} forced a smile and struggled to her feet.",
+            "os": "(Even now, all you can offer is a sarcastic remark.)"
+          },
+          {
+            "text": "You told me not to come any closer, so I'll wait for you here.",
+            "score": -10,
+            "tag": "scum",
+            "face": "sad",
+            "goto": "sB2",
+            "reply": "{name} stood up alone, dusted himself off, and said nothing.",
+            "os": "(You really just stayed where you were.)"
+          }
+        ]
+      },
+      {
+        "id": "sB2",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "Interlude: The Solitary Journey",
+        "goto": "sB3",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "In the latter half, you hardly spoke anymore. {name} endured each tide alone, his wounds layered upon layer on his body."
+          },
+          {
+            "who": "name",
+            "text": "\"We'll be at the Heart of the Stars soon.\" {ta} glanced back at you, her eyes filled with no resentment, only a calmness you couldn't decipher."
+          },
+          {
+            "who": "self",
+            "text": "{ta} seems to have long been accustomed to walking to the end alone."
+          },
+          {
+            "who": "name",
+            "text": "\"Thank you for staying with me all night. That's enough,\" {ta} whispered. \"From now on, it's my own business.\""
+          },
+          {
+            "who": "narration",
+            "text": "{ta} turned and walked towards the city center, her back showing no hesitation, as if she had walked alone towards the end in every round over the past seventy years."
+          }
+        ]
+      },
+      {
+        "id": "sB3",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "Interlude: The Solitary Journey",
+        "goto": "s6",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "There was always that half-step distance between you. {name} walked very steadily, as steadily as a machine that had long since resigned itself to its fate."
+          },
+          {
+            "who": "self",
+            "text": "{ta}'s silhouette was cut into a solitary, straight line by the frozen rain. Several times I wanted to speak, but the words caught in the distance and remained unspoken."
+          },
+          {
+            "who": "narration",
+            "text": "Passing by a dark shop window, you two are reflected in the glass—walking side by side, yet seemingly separated by an entire long night."
+          },
+          {
+            "who": "name",
+            "text": "\"...Actually, this is fine too.\" {ta} suddenly spoke softly, as if saying to herself, \"If you get used to being alone, you won't be afraid of ending up alone.\""
+          },
+          {
+            "who": "self",
+            "text": "She said those words so casually, yet you could clearly hear how much unspoken loneliness was hidden in that half-step distance."
+          }
+        ]
+      },
+      {
+        "id": "s6",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "angry",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "s7",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You have reached the deepest part of the city. The sea of ​​stars beneath your feet is almost overwhelming; every step feels like walking on the boundary between the world and nothingness."
+          },
+          {
+            "who": "name",
+            "text": "\"If we go any further, there's no turning back.\" {name} stopped and glanced back at you.",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "name",
+            "text": "\"Thanks to you by my side all this way... For the first time in seventy years, I don't feel this road is so cold.\"",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "self",
+            "text": "{ta} always walked half a step ahead of you, and neither of you ever mentioned that deliberately maintained distance again.",
+            "when": "flag: Solo"
+          },
+          {
+            "who": "narration",
+            "text": "At the end of the ever-burning lamp lies a swirling void. The Heart of the Star hangs in the center of the vortex, its light so faint, like a breath about to fade away."
+          },
+          {
+            "who": "narration",
+            "text": "The moment you approached, that void suddenly rose—condensing into a colossal figure composed of countless overlapping faces. That was the Star Eater."
+          },
+          {
+            "who": "name",
+            "text": "\"It looks like this every time.\" {name} stood in front of you, his voice low, \"A monster pieced together from the faces of the Forsaken.\""
+          },
+          {
+            "who": "self",
+            "text": "The forgotten...those who walk into the lamps in round after round, forgotten by the whole city, the lamplighters."
+          }
+        ]
+      },
+      {
+        "id": "s7",
+        "type": "story",
+        "sceneKey": "rain_street",
+        "face": "sad",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "s7b",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The Star Eater did not attack. It simply looked down at you, and from those countless faces, a overlapping, aged yet youthful voice emanated."
+          },
+          {
+            "who": "Star Eater",
+            "text": "\"...Does anyone still remember? Remember us, people who once had names, who could laugh, and who were afraid of the dark?\""
+          },
+          {
+            "who": "name",
+            "text": "{name} shuddered: \"This voice... belongs to the Lamplighters of all ages. It's not the Star Eater—it's the echo of those forgotten souls, accumulated over seventy years after seventy years.\""
+          },
+          {
+            "who": "narration",
+            "text": "It turns out that so-called calamity is never hatred. Rather, it is a question that has been asked for thousands of years, yet no one has ever stopped to answer—\"Does anyone remember me?\""
+          },
+          {
+            "who": "Star Eater",
+            "text": "\"Were we ever waited for by someone, loved by someone? Why, in the end, did we not even leave behind a name...\""
+          },
+          {
+            "who": "name",
+            "text": "{name}'s eyes reddened: \"{they} aren't monsters. {they} are just... for far too long, no one has spoken a single word to {they}.\""
+          },
+          {
+            "who": "self",
+            "text": "Sacrifice can never quell it. Because what it wants is never just another name to be swallowed up."
+          }
+        ]
+      },
+      {
+        "id": "s7b",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "c5",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "Those countless faces hung silently in the void, waiting for an answer that they hadn't received in seventy years."
+          },
+          {
+            "who": "name",
+            "text": "{name} slowly withdrew the power of the Lamp Bearer that had been half-condensed, {ta}'s hand trembled."
+          },
+          {
+            "who": "name",
+            "text": "\"I always thought that stepping into the lamplight was the only destination for the lamplighter...\" {ta} looked back at you, tears welling in her eyes, \"But if even the Star Eater only wanted a response—\""
+          },
+          {
+            "who": "self",
+            "text": "For the first time, {ta} showed some hesitation about the destiny she had carried for her entire life."
+          },
+          {
+            "who": "name",
+            "text": "\"Tell me,\" {ta}'s voice was soft, yet it felt like grasping at a last straw, \"This time, can we... really be different?\""
+          }
+        ]
+      },
+      {
+        "id": "c5",
+        "type": "choice",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "beats": [
+          {
+            "who": "Night Watch",
+            "text": "The Night's Watchman's voice rang out behind them: \"Light the lamp, {name}. As in the past, surrender yourself and imprison it for another seventy years.\""
+          },
+          {
+            "who": "narration",
+            "text": "{name}'s feet have already stepped into that void."
+          }
+        ],
+        "options": [
+          {
+            "text": "Don't go! It wants a response, not sacrifice—we already know that!",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "s8",
+            "flag": "Breaking the Cycle of Reincarnation",
+            "reply": "{name}'s steps suddenly stopped: \"...You mean, take a gamble?\"",
+            "os": "(Your certainty gave {ta} the courage to stop.)"
+          },
+          {
+            "text": "Don't act rashly! What if there really is a third way?",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s8",
+            "flag": "Breaking the Cycle of Reincarnation",
+            "reply": "{name} hesitated: \"...You always stop me at the last minute.\"",
+            "os": "(Though it's a diplomatic gesture, it's also a way of trying to retain the person.)"
+          },
+          {
+            "text": "If anyone should be handed over, it should be me, not you.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "s8s",
+            "flag": "sacrifice",
+            "reply": "{name}: \"Enough! But you can't stop a predetermined cycle...\"",
+            "os": "(Your unwavering determination to sacrifice yourself ultimately failed to rewrite fate.)"
+          },
+          {
+            "text": "Since this has been done throughout history, let's just do it as well.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "s8s",
+            "flag": "sacrifice",
+            "reply": "{name}'s figure froze for a moment before stepping into that void.",
+            "os": "(You personally pushed {ta} to the last step.)"
+          }
+        ]
+      },
+      {
+        "id": "s8",
+        "type": "story",
+        "sceneKey": "rooftop_dusk",
+        "face": "shy",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "s8b",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "You passed {name} and walked alone toward the countless faces of the Star Eater. You neither lit a lamp nor raised any weapon."
+          },
+          {
+            "who": "self",
+            "text": "If all it wants is to be remembered... then let me answer it."
+          },
+          {
+            "who": "narration",
+            "text": "You raise your head, facing that void formed from solitude, and utter, word by word, the words it has waited a thousand years for."
+          },
+          {
+            "who": "Star Eater",
+            "text": "The countless faces froze. In the overlapping voices, for the first time, a sob escaped: \"...You...would you...remember us?\""
+          },
+          {
+            "who": "narration",
+            "text": "The vortex stopped swirling. The light of the Star Heart, little by little, began to shine again. {name} stared blankly at this scene, her eyes red-rimmed."
+          },
+          {
+            "who": "name",
+            "text": "\"Seventy years... no, from the very first night, no one has ever answered it like that.\""
+          },
+          {
+            "who": "name",
+            "text": "\"And this time,\" {ta}'s voice trembled as she looked at you, \"you're standing beside me.\"",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "self",
+            "text": "Reincarnation, for the first time, stopped in this uttered answer."
+          }
+        ]
+      },
+      {
+        "id": "s8b",
+        "type": "story",
+        "sceneKey": "rooftop_dusk",
+        "face": "shy",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "c6",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The outline of the Star Eater softened little by little in the dawn light, and its countless faces finally revealed an almost serene expression."
+          },
+          {
+            "who": "name",
+            "text": "{name} stood there, stunned, as if unable to believe that the deadlock that had weighed on {ta} for a lifetime had actually found another solution."
+          },
+          {
+            "who": "name",
+            "text": "\"I've prepared my whole life to walk into that light...\" {ta}'s voice choked, \"But you, you gave me a reason to live.\"",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "self",
+            "text": "Seventy years have passed, and countless people have risked their lives for peace and stability—but you have won a gamble on a possibility that no one dared to imagine."
+          },
+          {
+            "who": "narration",
+            "text": "The light of the Star Heart finally stabilized. {name} turned around, her eyes reflecting the rising sun, and also reflecting you."
+          }
+        ]
+      },
+      {
+        "id": "c6",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The star-devourer is dissipating into gentle stardust. The Night Watchman says: The long night is coming to an end. As long as {name} and this night are remembered by the whole city, {ta} will no longer be swallowed by the lights—but the price is that those who remember will bear the burden of this entire night alone."
+          },
+          {
+            "who": "name",
+            "text": "\"Forget about it,\" {name} whispered. \"You go back to your daytime, and I... will stay where I belong.\""
+          }
+        ],
+        "options": [
+          {
+            "text": "I will remember you, even if the whole city forgets you.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "S9",
+            "reply": "{name}'s tears finally fell: \"...You big idiot.\"",
+            "os": "(So ​​this is what it feels like to be remembered by someone.)"
+          },
+          {
+            "text": "Let me carry this burden for the night, so you can live on easily.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "s9",
+            "reply": "{name}: \"Why is it always you who has to shoulder this burden alone?\"",
+            "os": "(You always keep the heavier side for yourself.)"
+          },
+          {
+            "text": "I'll remember someone as beautiful as you; I can't bear to forget you.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s9",
+            "reply": "{name} burst into tears, glaring at you: \"At a time like this!\"",
+            "os": "Even your deepest affection is coated with a layer of sugar."
+          },
+          {
+            "text": "It's better to forget about it, so we don't have to worry about each other and get tired of it.",
+            "score": -10,
+            "tag": "scum",
+            "face": "sad",
+            "goto": "S9",
+            "reply": "{name} lowered her eyes and nodded very slightly: \"...Yes, that's fine too.\"",
+            "os": "(You wouldn't even stay for the last leg of your journey.)"
+          }
+        ]
+      },
+      {
+        "id": "s9",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "happy",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "open1",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The moment the Heart of the Stars fully illuminated, the inverted star orbits slowly returned to their original positions. The city, which had been asleep all night, was gradually awakening from its deepest recesses."
+          },
+          {
+            "who": "narration",
+            "text": "The star-devouring entity was not destroyed, but soothed by the \"response.\" Countless faces transformed into gentle stardust, melting into the rising morning light, as if finally able to sleep peacefully."
+          },
+          {
+            "who": "narration",
+            "text": "The first true ray of sunlight pierced the long night and fell at your feet. For the first time in seventy years, this night did not end with anyone's sacrifice."
+          },
+          {
+            "who": "name",
+            "text": "{name} stood in the morning light, as if she couldn't believe she was still standing there. {ta} slowly turned around and looked at you."
+          },
+          {
+            "who": "name",
+            "text": "\"You never let go of my hand the whole way... Thank you for not letting me go through the dark alone.\"",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "name",
+            "text": "\"You could have just turned and left... but you didn't,\" {ta} whispered. \"It was you who pulled me back from that lonely path.\"",
+            "when": "flag: Solo"
+          },
+          {
+            "who": "self",
+            "text": "From the night you opened the umbrella, you've never truly left {ta} alone—not even now.",
+            "when": "tag: Sincerity >= 3"
+          },
+          {
+            "who": "name",
+            "text": "\"It's... truly dawn. And I'm still alive.\" {ta}'s voice trembled slightly. \"All of this is because of you.\""
+          }
+        ]
+      },
+      {
+        "id": "open1",
+        "type": "open",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "Final Chapter: Star Eater and Dawn",
+        "goto": "END",
+        "prompt": "This night will soon be sealed away by time. Now—what would you like to say to {name}? (≤100 words, it will be the final touch of your story)",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "{name} stands quietly beneath the flowering tree, the morning breeze ruffling {ta}'s hair. {ta} is waiting for you to speak—waiting for a word that belongs only to this moment, and only to you two.",
+            "when": "flag: Break the Cycle of Reincarnation"
+          },
+          {
+            "who": "narration",
+            "text": "{name} is gone. But you still stand where {ta} disappeared, gazing at the gradually brightening sky, wanting to whisper those unspoken words to the wind.",
+            "when": "flag: sacrifice"
+          }
+        ]
+      },
+      {
+        "id": "s8s",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "sad",
+        "chapter": "Final Chapter: The Lights Burn Everlasting",
+        "goto": "c6s",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "No one can stop a predetermined cycle of reincarnation. The flame of the eternal lamp licks the outline of {name}, and {ta} walks step by step toward that nothingness."
+          },
+          {
+            "who": "name",
+            "text": "\"This... is the right way.\" {ta} glanced back at you one last time, her gaze so calm it was heartbreaking. \"For seventy years, this has always been how it should be.\""
+          },
+          {
+            "who": "self",
+            "text": "I rushed forward to try and grab {ta}, but I was blocked in place by invisible star power and couldn't move an inch.",
+            "when": "tag: Sincerity>=2"
+          },
+          {
+            "who": "narration",
+            "text": "{ta}'s figure gradually became transparent in the lamplight, like an old painting faded by the morning light."
+          },
+          {
+            "who": "Star Eater",
+            "text": "Those countless faces calmly accepted yet another name: \"...yet another one. Thank you for coming to be with us.\""
+          },
+          {
+            "who": "narration",
+            "text": "The Heart of the Stars has been rekindled, and the city has been saved. The price is—{name}, like all the previous Lamplighters, will be completely forgotten by the city, as if they had never existed."
+          }
+        ]
+      },
+      {
+        "id": "c6s",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "Final Chapter: The Lights Burn Everlasting",
+        "beats": [
+          {
+            "who": "Night Watch",
+            "text": "The watchman's aged voice sounded behind him: \"When dawn breaks, you too will forget this night, forget that {name} ever existed—unless, you choose to remember it alone.\""
+          },
+          {
+            "who": "narration",
+            "text": "To remember means to carry the weight of the entire night through the rest of the day; to forget is to act as if nothing ever happened."
+          }
+        ],
+        "options": [
+          {
+            "text": "I will remember {ta}. Even if the whole world forgets {ta}'s name.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "s9s",
+            "reply": "The Night's Watchman stared at you for a long time: \"...In seventy years, this is the first time someone has made this choice.\"",
+            "os": "(Being remembered is the last thing you can do for {them}.)"
+          },
+          {
+            "text": "Please, let me stay in the lamp in place of {ta}, and bring {ta} back!",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "sad",
+            "goto": "s9s",
+            "reply": "The night watchman shook his head: \"The lights are off, they can't be brought back, child.\"",
+            "os": "(A belated act of self-sacrifice is ultimately too late.)"
+          },
+          {
+            "text": "Remembering something so heavy... it's enough to leave only a vague memory.",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "s9s",
+            "reply": "The Night's Watchman sighed, \"Even when you're remembering, you choose the less important ones.\"",
+            "os": "(You won't even put in the effort to remember.)"
+          },
+          {
+            "text": "Forget about it. {ta} was meant to disappear anyway.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "s9s",
+            "reply": "The Night's Watchman closed his eyes and looked away from you.",
+            "os": "(You're even stingy with a single memory for {them}.)"
+          }
+        ]
+      },
+      {
+        "id": "s9s",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "sad",
+        "chapter": "Final Chapter: The Lights Burn Everlasting",
+        "goto": "open1",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The morning light rose as usual. The city awoke, unaware of the previous night; and completely unfamiliar with the name '{name}'."
+          },
+          {
+            "who": "self",
+            "text": "But you remember. The person holding the umbrella, the person with reddened ears, the light in their eyes when you said \"I'll be with you\"—you haven't forgotten a single detail.",
+            "when": "tag: Sincerity>=2"
+          },
+          {
+            "who": "self",
+            "text": "You thought about it and ultimately decided not to remember too much. After all, remembering too clearly would hurt.",
+            "when": "tag: trash>=2"
+          },
+          {
+            "who": "narration",
+            "text": "You stand alone where {name} disappeared. This round, too, ends in sacrifice—but at least this time, one person will forever remember that {ta} was ever here."
+          }
+        ]
+      }
+    ],
+    "endings": [
+      {
+        "endingId": "genuine",
+        "title": "fellow travelers",
+        "trigger": "top: sincerity",
+        "caption": "No matter how this night ends—you never let go of {name}'s hand, never left {ta} behind.",
+        "report": "[Relationship Personality - Companion] You belong to the rare \"secure\" type: you can give your heart sincerely, and you can also protect your boundaries. Throughout the long night, you always choose to stand shoulder to shoulder. You may not be the strongest awakener, but you are the most trustworthy. Those who can walk with you are truly blessed."
+      },
+      {
+        "endingId": "playboy",
+        "title": "Light Chaser",
+        "trigger": "Top: Aquaman",
+        "caption": "That night, you treated everyone you met with kindness, yet you never allowed any light to truly shine into your heart.",
+        "report": "[Relationship Personality - The Light Chaser (Aquaman)] You are captivating and charming, charming everyone you meet, and warm to all, yet you're unwilling to commit fully to anyone. You've warmed the hearts of many, but you've avoided the one willing to stay for you. Don't wait until the starlight fades to find yourself alone."
+      },
+      {
+        "endingId": "toxic",
+        "title": "Star Eater",
+        "trigger": "top: scum",
+        "caption": "You meticulously planned your way through the night, treating every sincere offer as a bargaining chip to be used or discarded.",
+        "report": "[Relationship Personality - Star Eater (Scumbag)] You are adept at weighing options, approaching when needed and discarding when finished. You may have won every trade-off, but you haven't realized that the real 'Star Eater,' that void that devours all warmth, has long since taken up residence in your heart."
+      },
+      {
+        "endingId": "devoted",
+        "title": "The Light Picker",
+        "trigger": "top: Loyal Dog",
+        "caption": "That night, you burned yourself out for {name}, silently shouldering all the burdens and pain.",
+        "report": "[Relationship Personality - The Light Collector (Loyal Dog)] You give your all, always ready to help, putting yourself in a very humble position. You often move yourself but lose yourself in the process. You are willing to be the lamp that burns for others, but don't forget—you are also a star that deserves to be illuminated and cherished."
+      },
+      {
+        "endingId": "wanderer",
+        "title": "Wanderer",
+        "min": -99,
+        "caption": "After a whole night, even the stars that turned upside down and returned to their original positions couldn't give you a definitive answer.",
+        "report": "[Relationship Personality - The Wanderer (Multifaceted)] Your choices defy categorization, like a multifaceted cube still in motion—sometimes sincere, sometimes aloof. Perhaps you're still searching for your shape in the long night. This isn't a bad thing: first understand yourself, then decide how to treat those who walk alongside you. The answer will come in the next cycle."
+      }
+    ]
+  },
+  {
+    "_id": "script_test",
+    "id": "script_test",
+    "title": "[Test] Speedrun Short Chapter",
+    "openingTip": "This is a short test chapter for quickly seeing the ending: two story segments + two choices + one open-ended question, and you can reach the ending in no time. To test which ending you want to see, just click on the corresponding tags (sincere/playboy/loyal/scumbag).",
+    "prologue": "(This is a short test script. To change the plot, only modify the section in scripts.json with the id \"script_test\"; after testing, change the character's scriptId back to \"script_default\".) You meet {name} in the long night—this time, the story will be short.",
+    "initScore": 50,
+    "start": "t1",
+    "nodes": [
+      {
+        "id": "t1",
+        "type": "story",
+        "sceneKey": "office_night",
+        "face": "happy",
+        "chapter": "Test - Act One",
+        "goto": "tc1",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "[Test Chapter] As night falls, the whole city falls asleep, except for you and {name} who are still awake."
+          },
+          {
+            "who": "name",
+            "text": "\"Time is running out.\" {name} looked at you. \"You choose what to do next.\""
+          }
+        ]
+      },
+      {
+        "id": "tc1",
+        "type": "choice",
+        "sceneKey": "rain_street",
+        "face": "shy",
+        "chapter": "Test & Choice 1",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "A dark fog rolls in. {name} casts a sliver of light at you—the tone of this night is set by you."
+          }
+        ],
+        "options": [
+          {
+            "text": "I'll be with you, shoulder to shoulder, we'll face it together.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "t2",
+            "flag": "side by side",
+            "reply": "{name} smiled and said, \"...Okay, let's do it together.\"",
+            "os": "(A long-lost light flashed in {ta}'s eyes.)"
+          },
+          {
+            "text": "With such a beauty in front of me, how could I possibly hide behind?",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "t2",
+            "flag": "Solo",
+            "reply": "{name}: \"Just be cheeky. Just don't let your hands shake.\"",
+            "os": "(Joking aside, {ta} still protected you.)"
+          },
+          {
+            "text": "Step back, let me block them!",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "t2",
+            "flag": "side by side",
+            "reply": "{name} grabbed you: \"Don't be stubborn, let's go together.\"",
+            "os": "(This reckless spirit is both frustrating and heartwarming.)"
+          },
+          {
+            "text": "You think you're so tough? I'll just be your assistant.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "t2",
+            "flag": "Solo",
+            "reply": "{name} calmly withdrew his gaze: \"...Alright then.\"",
+            "os": "(The light that had just appeared dimmed again.)"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "type": "story",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "Test - Act Two",
+        "goto": "tc2",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The black mist dissipated into stardust. You caught your breath for a moment under the flowering trees."
+          },
+          {
+            "who": "name",
+            "text": "\"With you by my side, this road isn't so cold for the first time.\"",
+            "when": "flag: side by side"
+          },
+          {
+            "who": "name",
+            "text": "\"...It's better to keep some distance; the less you worry, the less it hurts.\"",
+            "when": "flag: Solo"
+          },
+          {
+            "who": "self",
+            "text": "(This \"when\" demonstrates \"imprinting/karmic retribution\"—different choices will elicit different narration.)"
+          }
+        ]
+      },
+      {
+        "id": "tc2",
+        "type": "choice",
+        "sceneKey": "rooftop_dusk",
+        "face": "sad",
+        "chapter": "Test & Choice Two",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "The eternal light in the heart of the city will be extinguished. {name} has stepped into that void—this is the final choice."
+          }
+        ],
+        "options": [
+          {
+            "text": "Don't go! Let's find another way.",
+            "score": 12,
+            "tag": "sincere",
+            "face": "shy",
+            "goto": "topen",
+            "flag": "Breaking the Cycle of Reincarnation",
+            "reply": "{name} paused: \"...You mean, take a gamble on it?\"",
+            "os": "(Your certainty gave {ta} the courage to stop.)"
+          },
+          {
+            "text": "Don't act rashly. What if there's a third way?",
+            "score": 3,
+            "tag": "Neptune",
+            "face": "happy",
+            "goto": "topen",
+            "flag": "Breaking the Cycle of Reincarnation",
+            "reply": "{name} hesitated: \"You always stop me at the last minute.\"",
+            "os": "(A tactful attempt, yet also a way of trying to retain the person.)"
+          },
+          {
+            "text": "If anyone should be handing it over, it should be me.",
+            "score": 6,
+            "tag": "Loyal Dog",
+            "face": "happy",
+            "goto": "topen",
+            "flag": "sacrifice",
+            "reply": "{name}: \"Enough! But you can't stop the inevitable cycle of reincarnation...\"",
+            "os": "(His unwavering determination to sacrifice himself could not rewrite his destiny.)"
+          },
+          {
+            "text": "This has been done throughout history, so just follow suit.",
+            "score": -10,
+            "tag": "scum",
+            "face": "angry",
+            "goto": "topen",
+            "flag": "sacrifice",
+            "reply": "{name}'s back stiffened, and he stepped into nothingness.",
+            "os": "(You pushed the last step yourself.)"
+          }
+        ]
+      },
+      {
+        "id": "topen",
+        "type": "open",
+        "sceneKey": "sakura_path",
+        "face": "shy",
+        "chapter": "Test - Epilogue",
+        "goto": "END",
+        "prompt": "Open-ended test question: What would you like to say to {name}? (Write anything; submission will trigger the final results calculation.)",
+        "beats": [
+          {
+            "who": "narration",
+            "text": "{name} stands under the flowering tree, waiting for you to speak.",
+            "when": "flag: Break the Cycle of Reincarnation"
+          },
+          {
+            "who": "narration",
+            "text": "{name} is gone. You face the wind and say the words you never had a chance to say.",
+            "when": "flag: sacrifice"
+          }
+        ]
+      }
+    ],
+    "endings": [
+      {
+        "endingId": "genuine",
+        "title": "fellow travelers",
+        "trigger": "top: sincerity",
+        "caption": "No matter how the night ended—you never let go of {name}'s hand.",
+        "report": "[Relationship Personality - Companion] (Test Outcome) You belong to the rare \"secure type\": you can give your heart sincerely, and you can also protect your boundaries."
+      },
+      {
+        "endingId": "playboy",
+        "title": "Light Chaser",
+        "trigger": "Top: Aquaman",
+        "caption": "You treat everyone with kindness, but you never let a single ray of light truly shine into your heart.",
+        "report": "【Relationship Personality - The Light Chaser (Aquaman)】(Test Ending) Charming and charming, able to get along with everyone, yet unwilling to commit seriously to anyone."
+      },
+      {
+        "endingId": "toxic",
+        "title": "Star Eater",
+        "trigger": "top: scum",
+        "caption": "You calculated your way through the night, treating every sincere sentiment as a disposable bargaining chip.",
+        "report": "【Relationship Personality - Star Eater (Scum)】(Test Ending) Skilled at weighing options, approaching when needed and discarding when finished."
+      },
+      {
+        "endingId": "devoted",
+        "title": "The Light Picker",
+        "trigger": "top: Loyal Dog",
+        "caption": "You burned yourself out for {name}, shouldering all the heavy and painful burdens.",
+        "report": "【Relationship Personality - The Light Picker (Loyal Dog)】(Test Ending) They are open-hearted and always ready to help others, often moving themselves in the process, but losing themselves in the process."
+      },
+      {
+        "endingId": "wanderer",
+        "title": "Wanderer",
+        "min": -99,
+        "caption": "As the night drew to a close, even the stars couldn't offer a definitive conclusion about you.",
+        "report": "【Relationship Personality - The Wanderer (Polyhedron)】(Test Outcome) Your choices are difficult to categorize, like a polyhedron that is still turning."
+      }
+    ]
+  }
+]
