@@ -90,14 +90,15 @@
 import { useI18n } from 'vue-i18n'
 import { computed, onMounted, ref } from 'vue'
 import { session, tagCloud, resetGame } from '@/game/store'
+import { cdnUrl } from '@/game/assets'
 import shareCard from '@/components/share-card.vue'
 import cloudbaseFooter from '@/components/cloudbase-footer.vue'
 
 const { t } = useI18n()
 
-const bgImg = '/static/game/ui/report/starfield-bg.png'
-const starMain = '/static/game/ui/report/star-main.png'
-const starCluster = '/static/game/ui/report/star-cluster.png'
+const bgImg = cdnUrl('/static/game/ui/report/starfield-bg.png')
+const starMain = cdnUrl('/static/game/ui/report/star-main.png')
+const starCluster = cdnUrl('/static/game/ui/report/star-cluster.png')
 
 const char = computed(() => session.char)
 const ending = computed(() => session.ending)

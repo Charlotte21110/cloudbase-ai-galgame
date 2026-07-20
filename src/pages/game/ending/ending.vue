@@ -26,35 +26,35 @@
     <!-- 结局展示 -->
     <view v-else class="result-box">
       <view class="result-card">
-        <image class="result-bg-img" src="/static/game/ui/ending/result-clean-bg.png" mode="aspectFill" />
+        <image class="result-bg-img" :src="cdnUrl('/static/game/ui/ending/result-clean-bg.png')" mode="aspectFill" />
 
         <!-- 顶部立绘 / CG -->
         <view class="hero-frame">
           <image class="hero-img" :src="session.cgUrl" mode="aspectFill" />
-          <image class="hero-mist" src="/static/game/ui/ending/soft-mist-overlay.png" mode="scaleToFill" />
+          <image class="hero-mist" :src="cdnUrl('/static/game/ui/ending/soft-mist-overlay.png')" mode="scaleToFill" />
         </view>
 
         <!-- 标题（渐变） + 两侧装饰 -->
         <view class="title-row">
-          <image class="title-sparkle" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
+          <image class="title-sparkle" :src="cdnUrl('/static/game/ui/ending/sparkle-soft.png')" mode="aspectFit" />
           <text class="result-title">{{ ending?.title }}</text>
-          <image class="title-sparkle right" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
+          <image class="title-sparkle right" :src="cdnUrl('/static/game/ui/ending/sparkle-soft.png')" mode="aspectFit" />
         </view>
         <text class="result-caption">{{ caption }}</text>
 
         <!-- 长夜判词卡 -->
         <view class="verdict">
           <view class="verdict-head">
-            <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
+            <image class="verdict-star" :src="cdnUrl('/static/game/ui/ending/sparkle-soft.png')" mode="aspectFit" />
             <text class="verdict-label">{{ t('ending.verdictLabel') }}</text>
-            <image class="verdict-star" src="/static/game/ui/ending/sparkle-soft.png" mode="aspectFit" />
+            <image class="verdict-star" :src="cdnUrl('/static/game/ui/ending/sparkle-soft.png')" mode="aspectFit" />
           </view>
           <text class="verdict-text">{{ session.aiReport }}</text>
         </view>
 
         <!-- 主按钮：渐变胶囊 + 渐变星 -->
         <button class="result-btn" @click="goReport">
-          <image class="btn-star" src="/static/game/ui/ending/button-star.png" mode="aspectFit" />
+          <image class="btn-star" :src="cdnUrl('/static/game/ui/ending/button-star.png')" mode="aspectFit" />
           <text class="btn-tx">{{ t('ending.resultBtn') }}</text>
         </button>
       </view>
@@ -68,10 +68,11 @@ import { ref, computed, onMounted } from 'vue'
 import { session, finalize, tagCloud } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
 import { aiReport, aiEndingImage } from '@/game/ai'
+import { cdnUrl } from '@/game/assets'
 
 const { t } = useI18n()
 
-const bgImg = '/static/game/ui/report/starfield-bg.png'
+const bgImg = cdnUrl('/static/game/ui/report/starfield-bg.png')
 
 const loading = ref(true)
 const showCG = ref(false)

@@ -55,15 +55,16 @@
 import { useI18n } from 'vue-i18n'
 import { getCurrentInstance, ref, watch } from 'vue'
 import { session, tagCloud } from '@/game/store'
+import { cdnUrl } from '@/game/assets'
 
 const { t } = useI18n()
 
 const props = defineProps<{ visible: boolean }>()
 const emit = defineEmits<{ (e: 'close'): void }>()
 
-const bgImg = '/static/game/ui/report/starfield-bg.png'
-const starMain = '/static/game/ui/report/star-main.png'
-const heartStar = '/static/game/ui/report/heart-star.png'
+const bgImg = cdnUrl('/static/game/ui/report/starfield-bg.png')
+const starMain = cdnUrl('/static/game/ui/report/star-main.png')
+const heartStar = cdnUrl('/static/game/ui/report/heart-star.png')
 
 // 画布逻辑尺寸（9:16 竖版分享图）
 const CW = 750

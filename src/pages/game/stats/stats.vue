@@ -1,6 +1,6 @@
 <template>
   <view class="stats">
-    <image class="bg" src="/static/game/ui/report/starfield-bg.png" mode="aspectFill" />
+    <image class="bg" :src="cdnUrl('/static/game/ui/report/starfield-bg.png')" mode="aspectFill" />
     <view class="bg-veil"></view>
 
     <scroll-view class="wrap" scroll-y>
@@ -107,6 +107,7 @@ import { ref, reactive, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { session } from '@/game/store'
 import { getCharacters } from '@/game/data/characters'
+import { cdnUrl } from '@/game/assets'
 
 const { t } = useI18n()
 

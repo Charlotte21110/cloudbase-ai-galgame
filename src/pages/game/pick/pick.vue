@@ -77,7 +77,7 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 import { getCharacters } from '@/game/data/characters'
-import { faceImg } from '@/game/assets'
+import { faceImg, cdnUrl } from '@/game/assets'
 import { startGame } from '@/game/store'
 import type { Character } from '@/game/types'
 
@@ -86,8 +86,8 @@ const { t, locale } = useI18n()
 const males = computed(() => getCharacters().filter((c) => c.gender === 'male'))
 const females = computed(() => getCharacters().filter((c) => c.gender === 'female'))
 
-const starryBg = '/static/game/ui/starry-bg.png'
-const titleArt = computed(() => locale.value === 'en-US' ? '/static/game/ui/title-art-en.png' : '/static/game/ui/title-art.png')
+const starryBg = cdnUrl('/static/game/ui/starry-bg.png')
+const titleArt = computed(() => cdnUrl(locale.value === 'en-US' ? '/static/game/ui/title-art-en.png' : '/static/game/ui/title-art.png'))
 
 const avatar = (c: Character) => faceImg(c.style, c.id, 'happy')
 

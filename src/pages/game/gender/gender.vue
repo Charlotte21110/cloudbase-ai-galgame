@@ -1,6 +1,6 @@
 <template>
   <view class="gender">
-    <image class="bg" src="/static/game/ui/report/starfield-bg.png" mode="aspectFill" />
+    <image class="bg" :src="cdnUrl('/static/game/ui/report/starfield-bg.png')" mode="aspectFill" />
     <view class="bg-veil"></view>
 
     <view class="wrap">
@@ -57,6 +57,7 @@
 import { useI18n } from 'vue-i18n'
 import { ref, onMounted } from 'vue'
 import { session, finalize } from '@/game/store'
+import { cdnUrl } from '@/game/assets'
 
 const { t } = useI18n()
 

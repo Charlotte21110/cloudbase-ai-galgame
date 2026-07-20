@@ -4,7 +4,7 @@
     "charId": "guchenzhou",
     "endingId": "good",
     "artStyle": "real",
-    "url": "/static/game/ending/real/guchenzhou/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/guchenzhou/good.png",
     "caption": "顶层夕阳下，城市天际线替你们见证这场双向奔赴。"
   },
   {
@@ -12,7 +12,7 @@
     "charId": "guchenzhou",
     "endingId": "mid",
     "artStyle": "real",
-    "url": "/static/game/ending/real/guchenzhou/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/guchenzhou/mid.png",
     "caption": "深夜车窗映着霓虹，差一点碰到的手比告白更响。"
   },
   {
@@ -20,7 +20,7 @@
     "charId": "luyan",
     "endingId": "good",
     "artStyle": "real",
-    "url": "/static/game/ending/real/luyan/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/luyan/good.png",
     "caption": "烟花在河堤上空盛放，你们终于把心意握紧。"
   },
   {
@@ -28,7 +28,7 @@
     "charId": "luyan",
     "endingId": "mid",
     "artStyle": "real",
-    "url": "/static/game/ending/real/luyan/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/luyan/mid.png",
     "caption": "体育馆的夕阳斜落，暧昧停在球网下那一步距离。"
   },
   {
@@ -36,7 +36,7 @@
     "charId": "baishiyu",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/baishiyu/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/baishiyu/good.png",
     "caption": "灯塔与星河都很安静，只剩牵住彼此的手在发光。"
   },
   {
@@ -44,7 +44,7 @@
     "charId": "baishiyu",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/baishiyu/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/baishiyu/mid.png",
     "caption": "星图漂浮在穹顶上，未说出口的心事也有了轨道。"
   },
   {
@@ -52,7 +52,7 @@
     "charId": "yunmobai",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/yunmobai/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/yunmobai/good.png",
     "caption": "月夜竹海里，剑意归鞘，心意终于并肩。"
   },
   {
@@ -60,7 +60,7 @@
     "charId": "yunmobai",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/yunmobai/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/yunmobai/mid.png",
     "caption": "雪山古亭风声很轻，差一点相触的手藏住了答案。"
   },
   {
@@ -68,7 +68,7 @@
     "charId": "jianglinchuan",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/jianglinchuan/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/jianglinchuan/good.png",
     "caption": "LiveHouse 后场的霓虹亮起，他把最吵的心跳唱给你听。"
   },
   {
@@ -76,7 +76,7 @@
     "charId": "jianglinchuan",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/jianglinchuan/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/jianglinchuan/mid.png",
     "caption": "屋顶停车场的霓虹很近，告白却还差半拍。"
   },
   {
@@ -84,7 +84,7 @@
     "charId": "xiaye",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/xiaye/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/xiaye/good.png",
     "caption": "便利店的暖光落下来，少年把喜欢认真递到你手心。"
   },
   {
@@ -92,7 +92,7 @@
     "charId": "xiaye",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/xiaye/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/xiaye/mid.png",
     "caption": "储物柜走廊的黄昏里，他的勇气还停在一步之外。"
   },
   {
@@ -100,7 +100,7 @@
     "charId": "jiangzhaoyue",
     "endingId": "good",
     "artStyle": "real",
-    "url": "/static/game/ending/real/jiangzhaoyue/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/jiangzhaoyue/good.png",
     "caption": "红毯酒会灯火璀璨，她终于允许你并肩站在身侧。"
   },
   {
@@ -108,7 +108,7 @@
     "charId": "jiangzhaoyue",
     "endingId": "mid",
     "artStyle": "real",
-    "url": "/static/game/ending/real/jiangzhaoyue/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/jiangzhaoyue/mid.png",
     "caption": "游艇甲板的海风吹过，强势的人也把心动藏得很轻。"
   },
   {
@@ -116,7 +116,7 @@
     "charId": "lintaotao",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/lintaotao/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/lintaotao/good.png",
     "caption": "草莓花田甜得过分，她把所有喜欢都写在笑眼里。"
   },
   {
@@ -124,7 +124,7 @@
     "charId": "lintaotao",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/lintaotao/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/lintaotao/mid.png",
     "caption": "摩天轮顶舱靠近天空，也靠近了没说破的喜欢。"
   },
   {
@@ -132,7 +132,7 @@
     "charId": "sumanqing",
     "endingId": "good",
     "artStyle": "real",
-    "url": "/static/game/ending/real/sumanqing/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/sumanqing/good.png",
     "caption": "雪夜壁炉旁，她把清冷外壳融成只给你的暖光。"
   },
   {
@@ -140,7 +140,7 @@
     "charId": "sumanqing",
     "endingId": "mid",
     "artStyle": "real",
-    "url": "/static/game/ending/real/sumanqing/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/real/sumanqing/mid.png",
     "caption": "威士忌吧台的暖光里，暧昧像琥珀一样慢慢沉淀。"
   },
   {
@@ -148,7 +148,7 @@
     "charId": "shenbaishuang",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/shenbaishuang/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/shenbaishuang/good.png",
     "caption": "云海日出照亮山巅，也照亮她不善言辞的真心。"
   },
   {
@@ -156,7 +156,7 @@
     "charId": "shenbaishuang",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/shenbaishuang/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/shenbaishuang/mid.png",
     "caption": "古寺红枫落下，她的心动仍停在克制的距离里。"
   },
   {
@@ -164,7 +164,7 @@
     "charId": "chixiaoman",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/chixiaoman/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/chixiaoman/good.png",
     "caption": "海岛阳光太明亮，她的喜欢比浪花还藏不住。"
   },
   {
@@ -172,7 +172,7 @@
     "charId": "chixiaoman",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/chixiaoman/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/chixiaoman/mid.png",
     "caption": "夜市灯笼亮起来，她闹着笑着，却把手停在半空。"
   },
   {
@@ -180,7 +180,7 @@
     "charId": "xuzhixia",
     "endingId": "good",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/xuzhixia/good.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/xuzhixia/good.png",
     "caption": "秋日书店阁楼的光很慢，她把温柔分给你整页。"
   },
   {
@@ -188,7 +188,7 @@
     "charId": "xuzhixia",
     "endingId": "mid",
     "artStyle": "anime",
-    "url": "/static/game/ending/anime/xuzhixia/mid.png",
+    "url": "https://newtest-6gzd5kqm6c4eaa2b-1308771514.tcloudbaseapp.com/game-assets/game/ending/anime/xuzhixia/mid.png",
     "caption": "雨后天台花园里，玻璃温室替未说完的话亮着灯。"
   }
 ]

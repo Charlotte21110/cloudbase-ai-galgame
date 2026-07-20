@@ -13,12 +13,12 @@
       </view>
 
       <view class="opening-card prologue-card" v-if="prologue">
-        <image class="opening-card-icon doc" src="/static/game/ui/opening/doc-icon.png" mode="aspectFit" />
+        <image class="opening-card-icon doc" :src="cdnUrl('/static/game/ui/opening/doc-icon.png')" mode="aspectFit" />
         <text class="prologue-text">{{ prologue }}</text>
       </view>
 
       <view class="opening-card tip-card">
-        <image class="opening-card-icon sparkle" src="/static/game/ui/opening/sparkle-icon.png" mode="aspectFit" />
+        <image class="opening-card-icon sparkle" :src="cdnUrl('/static/game/ui/opening/sparkle-icon.png')" mode="aspectFit" />
         <view class="tip-copy">
           <text class="tip-title">{{ t('opening.introTitle') }}</text>
           <text class="tip-text">{{ tip }}</text>
@@ -36,7 +36,7 @@ import { useI18n } from 'vue-i18n'
 import { computed, onMounted } from 'vue'
 import { session } from '@/game/store'
 import { replaceTokens } from '@/game/engine'
-import { faceImg, bgImg } from '@/game/assets'
+import { faceImg, bgImg, cdnUrl } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
 
 const { t } = useI18n()

@@ -123,7 +123,7 @@ import {
   filterBeats,
 } from '@/game/store'
 import { replaceTokens, pickRandom } from '@/game/engine'
-import { faceImg, bgImg } from '@/game/assets'
+import { faceImg, bgImg, cdnUrl } from '@/game/assets'
 import { themeCssVars } from '@/game/theme'
 import { aiLine, aiOpenLine } from '@/game/ai'
 import type { NodeOption, Beat } from '@/game/types'
@@ -142,7 +142,7 @@ const char = computed(() => session.char)
 const node = computed(() => currentNode())
 
 // 剧情页 UI 素材
-const textbox = '/static/game/ui/textbox.png'
+const textbox = cdnUrl('/static/game/ui/textbox.png')
 
 
 

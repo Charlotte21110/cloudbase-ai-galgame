@@ -18,6 +18,9 @@ dist
 
 docs
 
+# CDN 图片本地备份（已上传到 CloudBase 静态托管，不需要打包）
+.static-backup
+
 # 云函数依赖
 cloudfunctions/*/node_modules
 
