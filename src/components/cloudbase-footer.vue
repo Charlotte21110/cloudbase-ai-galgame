@@ -17,7 +17,7 @@
     </view>
 
     <!-- 版权 -->
-    <text class="cb-copy">© {{ year }} {{ title }} · {{ t('cloudbaseFooter.copyright', { year, title: title || '' }) }}</text>
+    <text class="cb-copy">{{ t('cloudbaseFooter.copyright', { year, title: title || '' }) }}</text>
 
     <!-- 弹窗遮罩 -->
     <view class="modal-mask" v-if="showModal" @click="showModal = false">
