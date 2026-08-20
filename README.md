@@ -1,445 +1,247 @@
-# CloudBase UniApp 模板
+# 辰星 · 长夜轮回（Galgame CloudBase AI）
 
-基于 UniApp 和腾讯云开发（CloudBase）的跨平台应用模板，目前已适配 **H5** 、 **微信小程序** 、 **支付宝小程序** 、 **抖音小程序** 以及 **App (iOS/Android)**，其他端的适配正在开发中。为开发者提供了快速构建全栈跨平台应用的能力。
+一款基于 **UniApp + 腾讯云开发 CloudBase** 的跨端剧情互动文字游戏（Galgame / Visual Novel）。玩家在「长夜」降临的虚构城市中与角色相遇，通过一系列关键抉择推进分支剧情，最终由引擎根据选择判定结局，并由 AI 生成专属的结局报告与纪念图。
 
-[![Powered by CloudBase](https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/mcp/powered-by-cloudbase-badge.svg)](https://github.com/TencentCloudBase/CloudBase-AI-ToolKit)
+项目采用「传统文字游戏骨架 + AI 点睛」的架构：剧情结构、选项分值、流程跳转、配图等沉浸感要素全部由内置 JSON 剧本与纯函数引擎驱动，AI 只负责在关键节点生成有温度的、每次不同的角色回应，且所有 AI 调用都有内置兜底，失败时主流程零中断。
 
-> 本项目基于 [**CloudBase AI ToolKit**](https://github.com/TencentCloudBase/CloudBase-AI-ToolKit) 开发，通过AI提示词和 MCP 协议+云开发，让开发更智能、更高效，支持AI生成全栈代码、一键部署至腾讯云开发（免服务器）、智能日志修复。
+- **前端框架**：UniApp（Vue 3 + Vite + TypeScript），一套代码多端运行
+- **支持平台**：微信小程序、H5、App（iOS / Android）
+- **后端**：腾讯云开发 CloudBase（云函数、云数据库、云存储、身份认证、AI 能力）
+- **运行环境**：无需自建服务器，前端匿名登录即可游玩，不存储任何用户数据
 
-## 项目特点
+---
 
-- 🚀 基于 UniApp 构建，一套代码多端运行
-- ⚡ 使用 Vue 3 Composition API 构建现代化 UI
-- 🌐 目前支持 **H5** 、 **微信小程序** 、 **支付宝小程序** 、 **抖音小程序** 以及 **App (iOS/Android)** ，其他平台适配开发中
-- 🎁 深度集成腾讯云开发 CloudBase，提供一站式后端云服务
-- 🔧 自定义 UniApp 适配器，完美适配云开发能力
-- 📱 完整的 TypeScript 支持，提供更好的开发体验
+## 目录
 
-## 各平台展示效果
+- [项目简介](#项目简介)
+- [核心特性](#核心特性)
+- [技术架构](#技术架构)
+- [游戏引擎设计](#游戏引擎设计)
+- [项目结构](#项目结构)
+- [快速开始](#快速开始)
+- [部署上线](#部署上线)
+- [云函数说明](#云函数说明)
+- [常用脚本](#常用脚本)
+- [相关链接](#相关链接)
 
-各平台展示如下：
+---
 
- 
- H5 端 | 微信小程序 |
-|:---:|:---:|
-| ![H5 端](https://qcloudimg.tencent-cloud.cn/raw/cec528e3e0d4dddadff11c66a11013cc.png) | ![微信小程序](https://qcloudimg.tencent-cloud.cn/raw/826666e480af55c2c886ffa1a451dea8.png) |
+## 项目简介
 
- 支付宝小程序 | 抖音小程序 |
-|:---:|:---:|
-| ![支付宝小程序](https://qcloudimg.tencent-cloud.cn/raw/5fa5a46ae73b325bb1199b7e4059e480.png) | ![抖音小程序](https://qcloudimg.tencent-cloud.cn/raw/c4750c695aa81dab6cd3ef2de0aee8f0.png) |
+「辰星」是一座悬浮于星海之上的城市，每七十年迎来一次「长夜」：星辰熄灭、黎明不至、沉睡者尽数遗忘。玩家是在这一夜醒来的人，将与选定的角色共同走过这一夜，每一次选择都会真实地改变故事走向。
 
- Android 和 iOS |
-|:---:|
-| <img src="https://qcloudimg.tencent-cloud.cn/raw/34cb2e31c0a667caf8396a2b12c87c94.jpg" width="50%"/> |
+项目内置多套主题各异的完整剧本，覆盖商战、校园、武侠、都市、亲情、乐队等不同类型的故事世界；支持中英文双语切换。所有剧本以 JSON 描述，替换一个文件即可新增一套剧情，无需改动引擎代码。
 
+### 界面预览
 
+| 选角色 | 剧情进行中 | 结局报告 |
+|:---:|:---:|:---:|
+| ![选角色](https://qcloudimg.tencent-cloud.cn/raw/4cd2e8c7910b65b5310d9e24795561af.png) | ![剧情进行中](https://qcloudimg.tencent-cloud.cn/raw/876c980433ad613150346bfd99b23be0.png) | ![结局报告](https://qcloudimg.tencent-cloud.cn/raw/fd0703f71eaabcc28c8d5021a20f19e3.png) |
 
-## 项目架构
+## 核心特性
 
-### 前端架构
+- **节点图剧本引擎**：剧本是一张「图」而非一条线。每个节点可跳转到任意其他节点，支持分支与汇合，可编写复杂的多结局叙事。
+- **选择即塑造**：每个选项会改变羁绊值、关系人格标签，并留下「印记」，供后续剧情条件化回收（业力回收机制）。
+- **人格结局判定（两级漏斗）**：若玩家在关键抉择中多次选择同一类人格，将锁定对应特殊结局；否则回退到羁绊值阈值匹配的普通结局。
+- **AI 点睛**：选择后的角色回应台词 + 内心 OS、开放题回应、结局判词、结局 Q 版纪念图，均由大模型在云端生成，每次游玩不同。
+- **兜底优先**：所有 AI 调用均设置超时与内置兜底文案，AI 失败时玩家完全无感，主流程零中断。
+- **零后端运维**：AI 调用、统计等后端逻辑全部托管在 CloudBase 云函数，前端不接触任何模型凭证。
+- **隐私友好**：仅使用匿名登录，不落库用户个人信息，刷新即重开一局。
 
-- **框架**：UniApp (基于 Vue 3)
-- **构建工具**：Vite
-- **多端支持**：H5、微信小程序、支付宝小程序、抖音小程序、App (iOS/Android)（其他平台适配开发中）
-- **状态管理**：Vue 3 Reactivity API
-- **类型支持**：TypeScript
+## 技术架构
 
-### 云开发资源
+### 前端
 
-本项目使用了以下腾讯云开发（CloudBase）资源：
+| 模块 | 说明 |
+|------|------|
+| 框架 | UniApp（Vue 3 Composition API） |
+| 构建 | Vite |
+| 语言 | TypeScript |
+| 云开发 SDK | `@cloudbase/js-sdk` + `@cloudbase/adapter-uni-app`（多端共用一份调用代码） |
+| 多语言 | vue-i18n，内置中英文语言包 |
 
-- **身份认证**：用于用户登录和身份验证（匿名登录、手机验证码登录、邮箱验证码登录、手机号/用户名/邮箱密码登录、微信小程序 openId 静默登录）
-- **云数据库**：用于存储应用数据
-- **云函数**：用于实现业务逻辑
-- **云托管**：用于实现业务逻辑
-- **云存储**：用于存储文件
-- **静态网站托管**：用于部署 H5 版本
+### 后端（CloudBase）
 
-## 目录结构
+- **云函数 `galgame-ai`**：承载全部 AI 调用。Prompt 模板保存在服务端，前端只传业务参数，通过 SDK `callFunction` 调用（自带鉴权），避免接口被外部裸调用。
+- **云函数 `galgame-stats`**：全站匿名统计，基于云数据库单行文档做原子自增，含枚举白名单校验。
+- **云数据库 / 云存储**：用于统计与图片等业务资源。
+- **身份认证**：使用 CloudBase 匿名登录，无需注册即可游玩。
+
+### 架构总览
+
+![架构图](https://qcloudimg.tencent-cloud.cn/raw/bba8e53a54c2033ca757cc498c280435.png)
+
+### 调用链路
+
+```
+前端页面 → src/utils/cloudbase.ts（SDK 初始化/匿名登录）
+         → src/utils/cloudfn.ts → callFunction('galgame-ai')
+         → 云函数内 @cloudbase/node-sdk app.ai() 调用大模型
+         → 返回结果 → 失败则走内置兜底文案
+```
+
+## 游戏引擎设计
+
+核心代码位于 `src/game/`，为纯 TypeScript 实现，不依赖 AI，保证基础体验稳定。
+
+- **`types.ts`**：核心类型定义。`Script` 描述一部剧本，`GameNode` 是剧情节点（`story` 纯剧情 / `choice` 关键抉择 / `open` 开放题），`Ending` 定义结局及其触发条件。
+- **`engine.ts`**：引擎纯函数。包括文案占位符替换（`{name}` / `{ta}` / `{TA}`）、羁绊值夹紧、`when` 条件求值（支持 `tag:` / `score:` / `flag:` / `top:` 及取反）、结局判定与契合度换算。
+- **`store.ts`**：游戏会话状态（`reactive` 单例，仅内存不落库）。负责开局、应用选项、跳转节点、过滤条件台词、结算结局。
+- **`ai.ts`**：AI 客户端封装，统一处理匿名登录、超时、失败兜底。
+
+### 结局判定
+
+1. **特殊结局**：剧本中带 `trigger` 的结局优先匹配，如某标签被选够一定次数，或某一标签成为「主导人格」（被选次数最多且达到阈值）。
+2. **普通结局**：无主导人格时，按最终羁绊值匹配剧本中配置的 `min` 阈值，取满足条件的最高档。
+3. **兜底**：始终返回最后一个可匹配结局，保证任何游玩路径都能正常结算。
+
+## 项目结构
 
 ```
 ├── src/
-│   ├── components/
-│   │   ├── show-captcha.vue       # 登录验证弹窗组件
-│   ├── pages/                     # 页面文件
-│   │   ├── index/                 # 首页
-│   │   │   ├── index.vue
-│   │   │   └── index.json
-│   │   ├── demo/                  # 云开发演示页面
-│   │   │   ├── demo.vue
-│   │   │   └── demo.json
-│   │   ├── login/
-│   │   │   ├── index.vue          # 登录主页面
-│   │   │   ├── phone-login.vue    # 手机验证码登录页面
-│   │   │   ├── email-login.vue    # 邮箱验证码登录页面
-│   │   │   └── password-login.vue # 密码登录页面
-│   │   └── profile/               # 用户信息页面
-│   │       └── profile.vue        # 用户信息查看页面              
-│   ├── utils/                     # 工具函数和云开发初始化
-│   │   ├── cloudbase.ts           # 云开发配置
-│   │   └── index.ts               # 通用工具函数
-│   ├── static/                    # 静态资源
-│   ├── App.vue                    # 应用入口组件
-│   ├── main.ts                    # 应用入口文件
-│   ├── pages.json                 # 页面路由配置
-│   └── manifest.json              # 应用配置文件
-├── cloudfunctions/                # 云函数目录
-│   └── hello/                     # 示例云函数
-│       ├── index.js
-│       └── package.json
-├── index.html                     # H5 模板
-├── vite.config.ts                 # Vite 配置
-├── tsconfig.json                  # TypeScript 配置
-├── package.json                   # 项目依赖
-├── cloudbaserc.json               # CloudBase CLI 配置
-└── README.md                      # 项目说明
+│   ├── pages/                     # 页面（游戏主流程 + 模板示例页）
+│   │   └── game/                  # pick → opening → play → gender → ending → report → stats
+│   ├── game/                      # 游戏核心
+│   │   ├── engine.ts              # 引擎纯函数（计分/条件/结局判定）
+│   │   ├── store.ts               # 会话状态
+│   │   ├── ai.ts                  # AI 客户端封装
+│   │   ├── types.ts               # 核心类型
+│   │   └── data/                  # 数据源（JSON 唯一真源）
+│   │       ├── characters.json    # 角色库
+│   │       ├── scripts.json       # 默认剧本
+│   │       ├── scripts/           # 各主题剧本（中英双语）
+│   │       └── endingCG.json      # 结局图库（兜底）
+│   ├── components/                # 公共组件
+│   ├── locale/                    # i18n 语言包
+│   ├── utils/                     # cloudbase.ts / cloudfn.ts / db.ts / ai.ts
+│   ├── App.vue · main.ts · pages.json · manifest.json
+├── cloudfunctions/                # 云函数
+│   ├── galgame-ai/                # AI 调用（line / openLine / report / image）
+│   ├── galgame-stats/             # 全站匿名统计
+│   └── hello/ · common/           # 模板自带示例
+├── cloudbaserc.json               # CloudBase CLI 部署配置
+├── vite.config.ts · tsconfig.json
+└── package.json
 ```
 
-## 开始使用
+## 快速开始
 
-### VS Code 预览功能
+### 环境要求
 
-本项目已配置 VS Code 预览功能，支持自动打开浏览器预览：
+- Node.js 16+
+- 一个腾讯云开发（CloudBase）账号，并创建环境（可在 [CloudBase 控制台](https://tcb.cloud.tencent.com/) 免费开通）
+- 本地开发微信小程序需安装微信开发者工具；App 端需 HBuilderX
 
-1. 在 VS Code 中打开项目
-2. 项目会自动加载 `.vscode/preview.yml` 配置
-3. 启动开发服务器后会自动打开浏览器预览页面
-4. 默认端口：5173
-
-配置文件位置：`.vscode/preview.yml`
-
-<details>
-<summary>前提条件</summary>
-
-- 安装 Node.js (版本 16 或更高)
-- 安装 HBuilderX 或其他支持 UniApp 的开发工具
-- 腾讯云开发账号 (可在[腾讯云开发官网](https://tcb.cloud.tencent.com/)注册)
-
-</details>
-
-<details>
-<summary>安装依赖</summary>
+### 1. 安装依赖
 
 ```bash
 npm install
 ```
 
-</details>
+### 2. 配置云开发环境
 
-<details>
-<summary>配置云开发环境</summary>
+在项目根目录创建 `.env.local`（或直接编辑 `src/utils/cloudbase.ts` 中的 `ENV_ID`）：
 
-1. 打开 `src/utils/cloudbase.ts` 文件
-2. 将 `ENV_ID` 变量的值修改为您的云开发环境 ID
-
-```typescript
-const ENV_ID = 'your-env-id'; // 替换为您的云开发环境ID
+```env
+VITE_ENV_ID=你的云开发环境ID
+VITE_PUBLISHABLE_KEY=你的Publishable Key
 ```
 
-</details>
+- 环境 ID（envId）与环境密钥可在 [CloudBase 控制台](https://tcb.cloud.tencent.com/dev?envId=你的环境ID#/env/apikey) 获取。
+- 小程序端还需在 `src/manifest.json` 的 `mp-weixin.appid` 填入微信小程序 AppID。
+- 若需启用 AI 能力，请确认环境已开通相应大模型，并按需通过环境变量配置 `GALGAME_TEXT_MODEL` / `GALGAME_IMAGE_MODEL`（见 `cloudfunctions/galgame-ai/index.js` 顶部）。
 
-<details>
-<summary>云开发环境配置</summary>
+### 3. 配置安全域名（H5 端）
 
-#### 1. 开启登录认证方式
+在 CloudBase 控制台【环境配置 → 安全来源 → 安全域名】中添加：
 
-在云开发控制台的【扩展能力】->【身份认证】->【登录方式】中开启
-- 匿名登录
-- 用户名密码登录
-- 短信验证码登录
-- 邮箱登录
-- 微信小程序 openId 登录（需要先在【环境配置】->【小程序认证】中完成小程序认证）
+- 开发：`http://localhost:5173`
+- 生产：你的实际部署域名
 
-#### 2. 配置安全域名（H5 端）
+微信小程序端需在微信公众平台后台配置 CloudBase 相关 request / uploadFile / downloadFile 合法域名。
 
-在云开发控制台的【环境配置】->【安全来源】->【安全域名】中添加：
-- 开发域名：`http://localhost:5173`（本地开发）
-- 生产域名：您的实际部署域名
-
-#### 3. 配置安全域名（抖音小程序、支付宝小程序）
-在云开发控制台的【环境配置】->【安全来源】->【安全域名】中添加域名：
-
-- 抖音小程序开发域名：`tmaservice.developer.toutiao.com`
-- 支付宝开发域名：`devappid.hybrid.alipay-eco.com`
-
-#### 4. 配置微信小程序域名
-
-在微信小程序管理后台的【开发】->【开发管理】->【开发设置】->【服务器域名】中配置：
-
-**request 合法域名：**
-```
-https://tcb-api.tencentcloudapi.com
-https://your-env-id.service.tcloudbase.com
-```
-
-**uploadFile 合法域名：**
-```
-https://cos.ap-shanghai.myqcloud.com
-```
-
-**downloadFile 合法域名：**
-```
-https://your-env-id.tcb.qcloud.la
-https://cos.ap-shanghai.myqcloud.com
-```
-
-
-> 注意：请将 `your-env-id` 替换为您的实际环境 ID，地域根据您的云开发环境所在地域调整。
-
-#### 5. **（仅 App 端需要）**配置安全应用来源
-在云开发控制台的【环境配置】->【安全来源】->【移动应用安全来源】中添加应用：
-- 应用标识：`your-appSign`
-- 应用凭证：`your-appAccessKey`
-在 `src/utils/cloudbase.ts` 文件中，找到 `appConfig` 对象，填入您获取到的凭证信息。
-
-```typescript
-const appConfig = {
-    env: config.env || ENV_ID,
-    timeout: config.timeout || 15000,
-    appSign: 'your-appSign', // 应用标识
-    appSecret: {
-        appAccessKeyId: 1, // 凭证版本
-        appAccessKey: 'your-appAccessKey' // 凭证
-    }
-```
-
-</details>
-
-<details>
-<summary>本地开发</summary>
+### 4. 本地开发
 
 ```bash
-# H5 开发
+# H5（浏览器，默认 http://localhost:5173）
 npm run dev:h5
 
-# 微信小程序开发
+# 微信小程序（编译输出 dist/dev/mp-weixin，用微信开发者工具导入）
 npm run dev:mp-weixin
-
-# 抖音小程序开发
-npm run dev:mp-toutiao
-
-# 支付宝小程序开发
-npm run dev:mp-alipay
-
-# App (iOS/Android) 开发
-# 1. 使用 HBuilderX 打开项目
-# 2. 在顶部菜单栏选择【运行】->【运行到手机或模拟器】-> 选择您的设备
-
-# 注意：目前仅支持 APP、H5、微信小程序、抖音小程序和支付宝小程序开发，其他平台适配开发中
 ```
 
-</details>
-
-<details>
-<summary>构建生产版本</summary>
+### 5. 类型检查
 
 ```bash
-# 构建 H5 版本
-npm run build:h5
-
-# 构建微信小程序
-npm run build:mp-weixin
-
-# 构建抖音小程序
-npm run build:mp-toutiao
-
-# 构建支付宝小程序
-npm run build:mp-alipay
-
-# 注意：目前仅支持 H5 、微信小程序、抖音小程序和支付宝小程序构建，其他平台适配开发中
+npm run type-check
 ```
 
-</details>
+## 部署上线
 
-## 云开发使用示例
-
-通过 `src/utils/cloudbase.ts` 访问云开发服务：
-
-```typescript
-import { app, checkLogin } from './utils/cloudbase'
-
-// 数据库操作
-await checkLogin();
-const db = app.database();
-const result = await db.collection('users').get(); // 查询数据
-await db.collection('users').add({ name: 'test' }); // 添加数据
-
-// 调用云函数
-const funcResult = await app.callFunction({ name: 'hello' });
-
-// 调用云托管
-app.callContainer({
-    name: 'helloworld',
-    method: 'POST',
-    path: '/abc',
-    header:{
-      'Content-Type': 'application/json; charset=utf-8'
-    },
-    data: {
-      key1: 'test value 1',
-      key2: 'test value 2'
-    },
-  }).then((res) => {
-    console.log(res)
-  });
-
-// 文件上传
-const uploadResult = await app.uploadFile({ cloudPath: 'test.jpg', filePath: file });
-
-// 文件下载
-cloudbase.downloadFile({
-    fileID: "cloud://aa-99j9f/my-photo.png"
-  }).then((res) => {});
-
-```
-
-## 部署指南
-
-### 部署云函数
-
-可以使用 CloudBase CLI 或 MCP 工具部署云函数：
+### H5 静态托管
 
 ```bash
-# 使用 CloudBase CLI
-tcb functions:deploy hello
+npm run build:h5                 # 产物在 dist/build/h5/
+npx @cloudbase/cli login         # 首次登录
+npx @cloudbase/cli hosting deploy dist/build/h5 -e 你的环境ID
 ```
 
-### 部署到云开发静态网站托管（H5版本）
+也可直接使用 `tcb framework deploy` 按 `cloudbaserc.json` 中的配置一键部署。
 
-1. 构建 H5 版本：`npm run build:h5`
-2. 登录腾讯云开发控制台
-3. 进入您的环境 -> 静态网站托管
-4. 上传 `dist/build/h5` 目录中的文件
-
-### 微信小程序发布
-
-1. 构建微信小程序版本：`npm run build:mp-weixin`
-2. 使用微信开发者工具打开 `dist/build/mp-weixin` 目录
-3. 上传代码包并发布
-
-### 抖音小程序发布
-
-1. 构建抖音小程序版本：`npm run build:mp-toutiao`
-2. 使用抖音开发者工具打开 `dist/build/mp-toutiao` 目录
-3. 上传代码包并发布
-
-### 支付宝小程序发布
-
-1. 构建支付宝小程序版本：`npm run build:mp-alipay`
-2. 使用支付宝开发者工具打开 `dist/build/mp-alipay` 目录
-3. 上传代码包并发布
-
-
-## 平台适配状态
-
-### ✅ 已适配平台
-
-#### H5 端
-- ✅ 完全支持所有云开发功能
-- ✅ 支持本地开发和生产部署
-- ✅ 已配置相关安全域名
-
-#### 微信小程序
-- ✅ 完全支持所有云开发功能
-- ✅ 支持本地开发和发布
-- ✅ 已配置相关域名白名单
-
-#### 抖音小程序
-- ✅ 完全支持所有云开发功能
-- ✅ 支持本地开发和发布
-- ✅ 已配置相关域名白名单
-
-#### 支付宝小程序
-- ✅ 完全支持所有云开发功能
-- ✅ 支持本地开发和发布
-- ✅ 已配置相关域名白名单
-
-#### App 端 (iOS/Android)
-- ✅ 完全支持所有云开发功能
-- ✅ 支持通过 HBuilderX 进行本地开发
-- ✅ 需要配置移动应用安全来源
-
-
-### 🚧 开发中平台
-
-#### 其他小程序平台
-- 🚧 适配开发中
-
-<!--
-## 移动应用安全凭证配置
-
-如果需要在 App 端使用，需要配置移动应用安全凭证：
-
-1. 在云开发控制台【环境】->【安全配置】->【移动应用安全来源】中添加应用
-2. 输入应用标识（如：`uni-app`）
-3. 获取凭证信息
-4. 在 `src/utils/cloudbase.ts` 中取消注释并配置：
-
-```typescript
-const config = {
-  env: 'your-env-id',
-  appSign: 'your-app-sign',
-  appSecret: {
-    appAccessKeyId: 1,
-    appAccessKey: 'your-app-secret'
-  }
-};
-```
-
--->
-
-## 功能演示
-
-项目包含完整的云开发功能演示：
-
-- **认证功能**: 匿名登录/退出、手机验证码登录、邮箱验证码登录、密码登录、微信小程序 openId 静默登录
-- **云函数调用**: 调用示例云函数
-- **云托管**: 调用云托管服务
-- **数据库操作**: 增加和查询数据
-- **数据库监听**: 实时监听数据变化
-- **文件存储**: 上传和下载文件
-
-
-
-## 使用 CloudBase CLI 部署
+### 微信小程序
 
 ```bash
-# 安装 CloudBase CLI
-npm install -g @cloudbase/cli
-
-# 登录
-tcb login
-
-# 部署到云开发
-tcb framework deploy
+npm run build:mp-weixin          # 产物在 dist/build/mp-weixin/
 ```
 
-## 技术栈
+用微信开发者工具打开 `dist/build/mp-weixin`，填写 AppID 后上传代码并提交审核发布。
 
-- **UniApp** - 跨平台应用开发框架
-- **Vue 3** - 渐进式 JavaScript 框架
-- **TypeScript** - JavaScript 的超集，提供类型支持
-- **Vite** - 下一代前端构建工具
-- **CloudBase JS SDK** - 腾讯云开发 JavaScript SDK
+### 云函数
 
-## 开发注意事项
+```bash
+npx @cloudbase/cli fn deploy galgame-ai -e 你的环境ID
+npx @cloudbase/cli fn deploy galgame-stats -e 你的环境ID
+```
 
-1. **环境变量**: 确保正确配置云开发环境 ID
-2. **安全域名**: 根据部署平台配置相应的安全域名
-3. **权限配置**: 注意数据库集合的读写权限设置
-4. **跨端兼容**: 部分 API 在不同平台表现可能不同，注意测试
+`cloudbaserc.json` 已预置两个云函数的部署配置（Node.js 18.15，自动安装依赖）。
+
+## 云函数说明
+
+### galgame-ai
+
+通过 `action` 分发，提供四类 AI 能力：
+
+| action | 说明 |
+|--------|------|
+| `line` | 选择后角色回应台词 + 内心 OS（带反差感） |
+| `openLine` | 开放题，玩家输入一段话，角色以人设口吻回应 |
+| `report` | 结局总结判词（MBTI 式人格点评风格） |
+| `image` | 结局 Q 版纪念图（文生图，服务端 node-sdk 生成） |
+
+Prompt 模板全部在云函数内拼接，前端仅透传业务参数与语言标记；支持中英文。
+
+### galgame-stats
+
+提供 `incStats` / `getStats` / `initStats` 三个 action，基于云数据库 `galgame_stats` 集合中唯一文档 `global` 做原子自增统计（性别、角色、剧本、人格、设备、浏览器等维度），所有枚举字段均做白名单校验。
+
+## 常用脚本
+
+| 命令 | 作用 |
+|------|------|
+| `npm run dev:h5` | 启动 H5 开发服务器 |
+| `npm run dev:mp-weixin` | 微信小程序开发编译（watch） |
+| `npm run build:h5` | 构建 H5 生产包 |
+| `npm run build:mp-weixin` | 构建微信小程序生产包 |
+| `npm run type-check` | TypeScript 类型检查 |
 
 ## 相关链接
 
-- [UniApp 官方文档](https://uniapp.dcloud.io/)
-- [云开发官方文档](https://cloud.tencent.com/document/product/876)
-- [云开发 JS SDK](https://docs.cloudbase.net/api-reference/webv3/initialization)
+- [腾讯云开发 CloudBase 控制台](https://tcb.cloud.tencent.com/)
+- [CloudBase 文档](https://docs.cloudbase.net/)
+- [CloudBase AI+ 文档](https://docs.cloudbase.net/ai/ai-plus)
 - [CloudBase AI ToolKit](https://github.com/TencentCloudBase/CloudBase-AI-ToolKit)
+- [UniApp 官方文档](https://uniapp.dcloud.io/)
 
-## 贡献指南
+---
 
-欢迎提交 Issue 和 Pull Request 来改进这个模板！
-
-## 许可证
-
-MIT License
+> 本项目基于 CloudBase UniApp 模板初始化，由 [CloudBase AI ToolKit](https://github.com/TencentCloudBase/CloudBase-AI-ToolKit) 生态支持开发。
